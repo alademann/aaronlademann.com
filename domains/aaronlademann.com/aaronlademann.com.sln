@@ -5,6 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portfolio", "Portfolio", "{
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "html", "..\portfolio.aaronlademann.com\html\", "{FC018022-3EA1-4664-B189-F8F43136CD74}"
 	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/html"
 		Debug.AspNetCompiler.PhysicalPath = "..\portfolio.aaronlademann.com\html\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\html\"

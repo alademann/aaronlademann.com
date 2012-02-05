@@ -80,7 +80,7 @@
   
                     <em class="serif">Creative leader</em> with 9 years experience successfully building and managing diverse creative teams, and providing business direction that forges a path for teams to have fun producing innovative and profitable results. <br /><br />
                     
-                    <em class="serif">Consumate innovator</em> and passionate designer with a keen ability to define, develop and implement stunning web properties, user interfaces and product marketing / brand building strategies. <br /><br />
+                    <em class="serif">Consummate innovator</em> and passionate designer with a keen ability to define, develop and implement stunning web properties, user interfaces and product marketing / brand building strategies. <br /><br />
                     
                     <em class="serif">Exceptional communicator</em> capable of quickly identifying and addressing business needs with a relentless work-ethic and a unique blend of marketing, branding, design, development and analytical skills.
                   </p>

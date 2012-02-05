@@ -29,7 +29,7 @@
             	<div class="line"></div>
             </div>-->
 			
-            <?php if(!is_page() && !is_page_template('template-portfolio.php') && !is_tax('skill-type') && get_post_type() != 'portfolio') : ?>
+            <?php if(!is_page() && !is_page_template('template-portfolio.php') && !is_tax('skill-type') && !is_tax('media-type') && !is_tax('tools-used') && !is_tax('project') && get_post_type() != 'portfolio') : ?>
             
 						<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar() ) ?>
             
@@ -39,22 +39,28 @@
             <?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Page Sidebar') ) ?>
             
             
-            <?php elseif(is_page_template('template-portfolio.php') || is_tax('skill-type') || get_post_type() == 'portfolio') :?>
+            <?php elseif(is_page_template('template-portfolio.php') || is_tax('skill-type') || is_tax('media-type') || is_tax('tools-used') || is_tax('project') || get_post_type() == 'portfolio') :?>
             
             <?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Portfolio Sidebar') ) ?> 
             
             
             <?php endif; ?>
             
-            <?php if(is_page_template('template-portfolio.php') || is_tax('skill-type') || get_post_type() == 'portfolio') :?>
-            <div class="widget">
+            <?php if(is_page_template('template-portfolio.php') || is_tax('skill-type') || is_tax('media-type') || is_tax('tools-used') || is_tax('project') || get_post_type() == 'portfolio') :?>
+						<div class="widget">
                 <span class="widget-title"><strong>View Options</strong></span>
                 <ul id="filter" class="insetBox">
                 	<li <?php if(is_page_template('template-portfolio.php')) : ?>class="current-menu-item"<?php endif; ?>>
                   	<?php $full_folio_rel = ( is_home() || is_front_page() ) ? 'rel="nofollow"' : ''; ?>
                     <a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>" <?php echo $full_folio_rel; ?>>Full Portfolio</a>
                   </li>
-                  <?php wp_list_categories(array('title_li' => '', 'taxonomy' => 'skill-type', 'depth' => 1)); ?>
+                  <?php wp_list_categories(array('title_li' => 'Project Type', 'taxonomy' => 'skill-type', 'depth' => 1)); ?>
+									<?php if(is_tax('project')) :?>
+									<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project')); ?>
+									<?php endif; ?>
+									<?php if(!is_tax('project')) :?>
+									<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project', 'depth' => 1)); ?>
+									<?php endif; ?>
                 </ul>
             </div>
             <?php endif; ?>

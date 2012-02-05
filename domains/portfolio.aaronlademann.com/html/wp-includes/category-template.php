@@ -53,12 +53,14 @@ function get_category_parents( $id, $link = false, $separator = '/', $nicename =
 	if ( $parent->parent && ( $parent->parent != $parent->term_id ) && !in_array( $parent->parent, $visited ) ) {
 		$visited[] = $parent->parent;
 		$chain .= get_category_parents( $parent->parent, $link, $separator, $nicename, $visited );
+		// AARONL - separator should be here instead of in the $chain .= $name area below to prevent an extra separator at the end.
+		$chain .= $separator;
 	}
 
 	if ( $link )
 		$chain .= '<a href="' . get_category_link( $parent->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $parent->name ) ) . '">'.$name.'</a>' . $separator;
 	else
-		$chain .= $name.$separator;
+		$chain .= $name;
 	return $chain;
 }
 
@@ -831,10 +833,12 @@ class Walker_Category extends Walker {
 		extract($args);
 
 		$cat_name = esc_attr( $category->name );
+		$cat_id = esc_attr( $category->id );
 		$cat_name = apply_filters( 'list_cats', $cat_name, $category );
 		$link = '<a href="' . esc_attr( get_term_link($category) ) . '" ';
 		if ( $use_desc_for_title == 0 || empty($category->description) )
-			$link .= 'title="' . esc_attr( sprintf(__( 'View all posts filed under %s' ), $cat_name) ) . '"';
+			// AARONL: Custom link title attribute so that entire hierarchy is represented.
+			$link .= 'title="' . esc_attr( sprintf(__( 'View all posts filed under %s' ), get_category_parents($category, FALSE, ' &raquo; ')) ) . '"';
 		else
 			$link .= 'title="' . esc_attr( strip_tags( apply_filters( 'category_description', $category->description, $category ) ) ) . '"';
 		$link .= '>';

@@ -33,6 +33,7 @@ function tz_create_post_type_portfolio()
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'menu_position' => null,
+		'rewrite' => true,
 		"rewrite" => array('slug' => 'portfolio', 'hierarchical' => true), 
 		'supports' => array('title','editor','thumbnail','custom-fields','excerpt','comments')
 	  ); 
@@ -64,6 +65,17 @@ function tz_build_taxonomies(){
 		"public" => true
 	);
 	register_taxonomy(__( "media-type" ), array(__( "portfolio" )), $media_args); 	
+
+	$project_args = array(
+		"hierarchical" => true, 
+		"show_option_all" => __( "[ empty ]" ),
+		"show_option_none" => __( "[ empty ]" ),
+		"label" => __( "Client Projects" ), 
+		"singular_label" => __( "Client Project" ), 
+		"rewrite" => array('slug' => 'portfolio/project', 'hierarchical' => true), 
+		"public" => true
+	);
+	register_taxonomy(__( "project" ), array(__( "portfolio" )), $project_args); 	
 	
 	$tool_args = array(
 		"hierarchical" => true, 

@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------------
 
 	Theme Name: Gridlocked
 	Theme URI: http://www.premiumpixels.com
@@ -671,6 +671,16 @@ button {
 	margin: 0;
 }
 
+#single-sidebar li a:hover { text-decoration: none !important; }
+
+#single-sidebar li ul.children li { padding-left: 10px; }
+#single-sidebar li ul.children li a::before {
+	font-size: 1.4em;
+	margin-right: 5px;
+  color: Grey;
+	content: "➥";
+}
+
 #single-sidebar ul.entry-meta {
 	margin: -5px 0 20px 0;
 }
@@ -976,14 +986,14 @@ label.error { color: red; }
 
 /* Portfolio ------------------------------*/
 
-.tax-skill-type #primary,
+.archive #primary,
 .page.page-template-template-portfolio-php #primary {
 	width: auto;
 	margin-left: 205px;
 	float: none;
 }
 
-.tax-skill-type .hentry,
+.archive .hentry,
 .page.page-template-template-portfolio-php .hentry {
 	width: 230px;
 	height: 290px;
@@ -993,18 +1003,18 @@ label.error { color: red; }
 	float: left;
 }
 
-.tax-skill-type .hentry .arrow,
+.archive .hentry .arrow,
 .page.page-template-template-portfolio-php .hentry .arrow {
 	top: 162px;
 	right: 15px;
 }
 
-.tax-skill-type a .overlay .icon,
+.archive a .overlay .icon,
 .page.page-template-template-portfolio-php a .overlay .icon {
 	left: 46%;
 }
 
-.tax-skill-type .entry-title,
+.archive .entry-title,
 .page.page-template-template-portfolio-php .entry-title {
 	font-size: 12px;
 	border: none;
@@ -1012,7 +1022,7 @@ label.error { color: red; }
 	padding: 20px 15px 15px 15px
 }
 
-.tax-skill-type .entry-excerpt,
+.archive .entry-excerpt,
 .page.page-template-template-portfolio-php .entry-excerpt {
 	padding: 0 15px 20px 15px;
 	font-size: 11px;

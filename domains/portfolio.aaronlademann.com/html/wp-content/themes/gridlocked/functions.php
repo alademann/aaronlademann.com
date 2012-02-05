@@ -433,7 +433,7 @@ include("functions/tinymce/tinymce.php");
 // Add the post meta
 include("functions/theme-postmeta.php");
 
-// Add the post meta
+// Add the portfolio meta
 include("functions/theme-portfoliometa.php");
 
 // Add the post types

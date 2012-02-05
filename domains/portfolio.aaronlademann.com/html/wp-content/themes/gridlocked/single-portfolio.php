@@ -324,15 +324,67 @@
               </a> </li>
             <?php endif; ?>
             <li class="terms">
-              <ul>
-                <?php wp_list_categories(array('title_li' => '<h3 class="widget-title first">Skills Used</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'skill-type')); ?>
-              </ul>
-              <ul>
-                <?php wp_list_categories(array('title_li' => '<h3 class="widget-title">Media Type</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'media-type')); ?>
-              </ul>
-              <ul>
-                <?php wp_list_categories(array('title_li' => '<h3 class="widget-title">Tools Used</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'tools-used')); ?>
-              </ul>
+				    <?php
+								// GLOBAL SETTINGS
+							$orderby      = 'name'; 
+              $show_count   = 0;      // 1 for yes, 0 for no
+              $pad_counts   = 0;      // 1 for yes, 0 for no
+              $hierarchical = 1;      // 1 for yes, 0 for no
+
+								// TAXONOMY TYPES
+							$project_taxonomy = "project";
+								$project_count = count( get_terms($project_taxonomy) );	
+							$skill_taxonomy = "skill-type";
+								$skill_count = count( get_terms($skill_taxonomy) );
+							$media_taxonomy = "media-type";
+								$media_count = count( get_terms($media_taxonomy) );
+							$tool_taxonomy = "tools-used";
+								$tool_count = count( get_terms($tool_taxonomy) );
+	
+
+					     // CLIENT PROJECTS
+					    $project_args = array(
+                'taxonomy'     => $project_taxonomy,
+                'orderby'      => $orderby,
+                'show_count'   => $show_count,
+                'pad_counts'   => $pad_counts,
+                'hierarchical' => $hierarchical,
+                'title_li'     => $title
+              );
+					    
+					     if ( $project_count > 0 ){ 
+								if( $project_count > 1 ){ echo '<h3 class="widget-title first">Client / Project</h3>'; } else { echo '<h3 class="widget-title first">Client</h3>';  }
+                
+								echo '<ul>';
+									wp_list_categories( $project_args );
+								echo '</ul>';
+               }
+
+					     // SKILLS USED
+							 $skill_args = array(
+                'taxonomy'     => $skill_taxonomy,
+                'orderby'      => $orderby,
+                'show_count'   => $show_count,
+                'pad_counts'   => $pad_counts,
+                'hierarchical' => $hierarchical,
+                'title_li'     => $title
+              );
+					    
+					     if ( $skill_count > 0 ){ 
+                echo '<h3 class="widget-title">Skills</h3>'; 
+								echo '<ul>';
+									wp_list_categories( $skill_args );
+								echo '</ul>';
+               }
+
+               // MEDIA TYPE
+
+
+               // TOOLS USED
+
+
+				    ?>
+
             </li>
             <!--END .entry-meta entry-header -->
           </ul>
