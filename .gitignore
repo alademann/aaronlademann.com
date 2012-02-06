@@ -6,3 +6,4 @@
 domains/aaronlademann.com/_ReSharper.aaronlademann.com/*
 *.DS_Store
 */Thumbs.db
+*.suo
