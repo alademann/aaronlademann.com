@@ -64,6 +64,13 @@ $meta_box = array(
 			'std' => 'Browse'
 		),
 	array(
+			'name' =>  __('Image 1 Caption', 'framework'),
+			'desc' => __('', 'framework'),
+			'id' => $prefix.'portfolio_image_caption',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
 			'name' =>  __('Image 2', 'framework'),
 			'desc' => __('550px x unlimited', 'framework'),
 			'id' => $prefix.'portfolio_image2',
@@ -76,6 +83,13 @@ $meta_box = array(
 			'id' => $prefix.'portfolio_image_button2',
 			'type' => 'button',
 			'std' => 'Browse'
+		),
+	array(
+			'name' =>  __('Image 2 Caption', 'framework'),
+			'desc' => __('', 'framework'),
+			'id' => $prefix.'portfolio_image2_caption',
+			'type' => 'text',
+			'std' => ''
 		),
 	array(
 			'name' =>  __('Image 3', 'framework'),
@@ -92,6 +106,13 @@ $meta_box = array(
 			'std' => 'Browse'
 		),
 	array(
+			'name' =>  __('Image 3 Caption', 'framework'),
+			'desc' => __('', 'framework'),
+			'id' => $prefix.'portfolio_image3_caption',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
 			'name' =>  __('Image 4', 'framework'),
 			'desc' => __('550px x unlimited', 'framework'),
 			'id' => $prefix.'portfolio_image4',
@@ -106,6 +127,13 @@ $meta_box = array(
 			'std' => 'Browse'
 		),
 	array(
+			'name' =>  __('Image 4 Caption', 'framework'),
+			'desc' => __('', 'framework'),
+			'id' => $prefix.'portfolio_image4_caption',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
 			'name' =>  __('Image 5', 'framework'),
 			'desc' => __('550px x unlimited', 'framework'),
 			'id' => $prefix.'portfolio_image5',
@@ -118,6 +146,13 @@ $meta_box = array(
 			'id' => $prefix.'portfolio_image_button5',
 			'type' => 'button',
 			'std' => 'Browse'
+		),
+	array(
+			'name' =>  __('Image 5 Caption', 'framework'),
+			'desc' => __('', 'framework'),
+			'id' => $prefix.'portfolio_image5_caption',
+			'type' => 'text',
+			'std' => ''
 		),
 	),
 	

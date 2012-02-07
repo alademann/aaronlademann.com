@@ -4,11 +4,19 @@
         <div id="primary" class="hfeed">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php 
+									
+											
+
                   $image1 = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
+										$image1_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image_caption', TRUE); 
                   $image2 = get_post_meta(get_the_ID(), 'tz_portfolio_image2', TRUE); 
+										$image2_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image2_caption', TRUE); 
                   $image3 = get_post_meta(get_the_ID(), 'tz_portfolio_image3', TRUE); 
+										$image3_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image3_caption', TRUE); 
                   $image4 = get_post_meta(get_the_ID(), 'tz_portfolio_image4', TRUE); 
+										$image4_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image4_caption', TRUE); 
                   $image5 = get_post_meta(get_the_ID(), 'tz_portfolio_image5', TRUE);
+										$image5_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image5_caption', TRUE); 
                   $height = get_post_meta(get_the_ID(), 'tz_portfolio_image_height', TRUE);
                   
 									
@@ -18,12 +26,15 @@
 										$thumb = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 
 										$lightbox = TRUE;
 										 
-                  $custom_gallery = FALSE;
                   
                   //echo $height;
                 ?> 
+
+					<h1><?php the_title(); ?></h1>
+
           <!--BEGIN .hentry -->
           <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
             <?php if($image1 != '') : ?>
             <!-- its an image gallery -->
             	<!-- aaronl: custom -->
@@ -110,106 +121,26 @@
 									});
 							</script>
               <!-- aaronl: custom -->
-              <?php if($custom_gallery) : ?>
-              <!-- aaronl: custom - use the fullscreen custom gallery -->
-              
-              <div id="custom-gallery">
-              
-              <div class="galleria-bar" style="bottom: 0px; "><div class="galleria-fullscreen"></div><div class="galleria-play"></div><div class="galleria-popout"></div><div class="galleria-thumblink"></div><div class="galleria-info"><div class="galleria-counter" style="opacity: 1; "><span class="galleria-current">1</span> / <span class="galleria-total">13</span></div><div class="galleria-info-text"><div class="galleria-info-title">Manzanar birds on wire</div><div class="galleria-info-description">Birds on wire, evening, Manzanar Relocation Center / photograph by Ansel Adams.</div></div></div><div class="galleria-s1"></div><div class="galleria-s2"></div><div class="galleria-s3"></div><div class="galleria-s4"></div></div> 
-              </div>
-              <script type="text/javscript">
 
-									var data = [
-											<?php if($image1 != '') : ?>
-											{
-													thumb: get_image_src('1','thumb'),
-													image: get_image_src('1','image'), 
-													big: get_image_src('1','big'),
-													original: get_image_src('1','big')
-													/*title: 'My title',
-													description: 'My description',
-													link: 'http://my.destination.com'*/
-											}
-											<?php endif; ?>
-											<?php if($image2 != '') : ?>
-											,{
-													thumb: get_image_src('2','thumb'),
-													image: get_image_src('2','image'), 
-													big: get_image_src('2','big'),
-													title: 'My title',
-													description: 'My description',
-													link: 'http://my.destination.com'
-											}
-											<?php endif; ?>
-											<?php if($image3 != '') : ?>
-											,{
-													thumb: get_image_src('3','thumb'),
-													image: get_image_src('3','image'), 
-													big: get_image_src('3','big'),
-													title: 'My title', 
-													description: 'My description',
-													link: 'http://my.destination.com'
-											}
-											<?php endif; ?>
-											<?php if($image4 != '') : ?>
-											,{
-													thumb: get_image_src('4','thumb'),
-													image: get_image_src('4','image'), 
-													big: get_image_src('4','big'),
-													title: 'My title',
-													description: 'My description',
-													link: 'http://my.destination.com'
-											}
-											<?php endif; ?>
-											<?php if($image5 != '') : ?>
-											,{
-													thumb: get_image_src('5','thumb'),
-													image: get_image_src('5','image'), 
-													big: get_image_src('5','big'),
-													title: 'My title',
-													description: 'My description',
-													link: 'http://my.destination.com'
-											}
-											<?php endif; ?>
-									];
-								
-									Galleria.loadTheme('/wp-content/plugins/galleria/themes/classic/galleria.classic.min.js');
-									size: 'big',
-									$("#custom-gallery").galleria({
-											width: 550,
-											dataSource: data,
-											showImageNav: false,
-											height: <?php echo $height; ?>,
-											extend: function(){
-												var gallery = this;
-												$(".galleria-image").click(function(){
-													gallery.enterFullscreen();
-												});
-											}
-									});
-							</script>
-              
-              <?php else: ?>
-              <!-- aaronl: custom - use the standard fancybox "slider" gallery -->
               
 								<?php tz_gallery(get_the_ID()); ?>
                 <!--BEGIN .slider -->
                 <div id="slider-<?php the_ID(); ?>" class="slider" data-loader="<?php echo  get_template_directory_uri(); ?>/images/<?php if(get_option('tz_alt_stylesheet') == 'dark.css'):?>dark<?php else: ?>light<?php endif; ?>/ajax-loader.gif">
                   <div id="" class="slides_container clearfix">
                     <?php if($image1 != '') : ?>
-                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#" rel="gallery_<?php the_ID(); ?>"><img height="<?php echo $height; ?>" width="550" src="<?php echo $image1; ?>" alt="<?php the_title(); ?>" /></a></div>   
+                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#1" rel="gallery_<?php the_ID(); ?>"><img height="<?php echo $height; ?>" width="550" src="<?php echo $image1; ?>" alt="<?php echo $image1_caption; ?>" /></a></div>   
                     <?php endif; ?>
                     <?php if($image2 != '') : ?>
-                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image2; ?>" alt="<?php the_title(); ?>" /></a></div> 
+                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#2" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image2; ?>" alt="<?php echo $image2_caption; ?>" /></a></div> 
                     <?php endif; ?>
                     <?php if($image3 != '') : ?>
-                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image3; ?>" alt="<?php the_title(); ?>" /></a></div>
+                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#3" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image3; ?>" alt="<?php echo $image3_caption; ?>" /></a></div>
                     <?php endif; ?>
                     <?php if($image4 != '') : ?>
-                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image4; ?>" alt="<?php the_title(); ?>" /></a></div>
+                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#4" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image4; ?>" alt="<?php echo $image4_caption; ?>" /></a></div>
                     <?php endif; ?>
                     <?php if($image5 != '') : ?>
-                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image5; ?>" alt="<?php the_title(); ?>" /></a></div> 
+                    <div><a class="lightbox" title="<?php the_title(); ?>" href="#5" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image5; ?>" alt="<?php echo $image5_caption; ?>" /></a></div> 
                     <?php endif; ?>
                   </div>
                   <!--END .slider -->
@@ -219,9 +150,7 @@
                 <?php else: ?>
                 <div class="arrow noslider"></div>
                 <?php endif; ?>
-              
-              <?php endif; ?>
-              <!-- END if(custom_gallery) -->
+
 
             <?php else: ?>
             <!-- its a video gallery -->
@@ -278,7 +207,7 @@
             <?php endif; ?>
             <!-- END IF(image or video) -->
             
-            <h1 class="entry-title"><?php the_title(); ?></h1>
+            
             
             <!--BEGIN .entry-content -->
             <div class="entry-content">
@@ -324,66 +253,8 @@
               </a> </li>
             <?php endif; ?>
             <li class="terms">
-				    <?php
-								// GLOBAL SETTINGS
-							$orderby      = 'name'; 
-              $show_count   = 0;      // 1 for yes, 0 for no
-              $pad_counts   = 0;      // 1 for yes, 0 for no
-              $hierarchical = 1;      // 1 for yes, 0 for no
-
-								// TAXONOMY TYPES
-							$project_taxonomy = "project";
-								$project_count = count( get_terms($project_taxonomy) );	
-							$skill_taxonomy = "skill-type";
-								$skill_count = count( get_terms($skill_taxonomy) );
-							$media_taxonomy = "media-type";
-								$media_count = count( get_terms($media_taxonomy) );
-							$tool_taxonomy = "tools-used";
-								$tool_count = count( get_terms($tool_taxonomy) );
-	
-
-					     // CLIENT PROJECTS
-					    $project_args = array(
-                'taxonomy'     => $project_taxonomy,
-                'orderby'      => $orderby,
-                'show_count'   => $show_count,
-                'pad_counts'   => $pad_counts,
-                'hierarchical' => $hierarchical,
-                'title_li'     => $title
-              );
-					    
-					     if ( $project_count > 0 ){ 
-								if( $project_count > 1 ){ echo '<h3 class="widget-title first">Client / Project</h3>'; } else { echo '<h3 class="widget-title first">Client</h3>';  }
-                
-								echo '<ul>';
-									wp_list_categories( $project_args );
-								echo '</ul>';
-               }
-
-					     // SKILLS USED
-							 $skill_args = array(
-                'taxonomy'     => $skill_taxonomy,
-                'orderby'      => $orderby,
-                'show_count'   => $show_count,
-                'pad_counts'   => $pad_counts,
-                'hierarchical' => $hierarchical,
-                'title_li'     => $title
-              );
-					    
-					     if ( $skill_count > 0 ){ 
-                echo '<h3 class="widget-title">Skills</h3>'; 
-								echo '<ul>';
-									wp_list_categories( $skill_args );
-								echo '</ul>';
-               }
-
-               // MEDIA TYPE
-
-
-               // TOOLS USED
-
-
-				    ?>
+							<?php echo custom_taxonomies_terms_links(); ?>
+				    
 
             </li>
             <!--END .entry-meta entry-header -->
