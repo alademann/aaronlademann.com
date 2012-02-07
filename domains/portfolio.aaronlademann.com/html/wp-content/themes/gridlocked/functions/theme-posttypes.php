@@ -72,7 +72,7 @@ function tz_build_taxonomies(){
 		"show_option_none" => __( "[ empty ]" ),
 		"label" => __( "Client Projects" ), 
 		"singular_label" => __( "Client Project" ), 
-		"rewrite" => array('slug' => 'portfolio/client', 'hierarchical' => true), 
+		"rewrite" => array('slug' => 'portfolio/project', 'hierarchical' => true), 
 		"public" => true
 	);
 	register_taxonomy(__( "project" ), array(__( "portfolio" )), $project_args); 	
