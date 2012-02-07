@@ -517,7 +517,7 @@ switch ($item_tax)
         $parent_slug = 'portfolio/media';
         break;
 		case __( 'project' ):  
-        $parent_slug = 'portfolio/client';
+        $parent_slug = 'portfolio/project';
         break;
 		case __( 'tools-used' ):  
         $parent_slug = 'portfolio/tool';
