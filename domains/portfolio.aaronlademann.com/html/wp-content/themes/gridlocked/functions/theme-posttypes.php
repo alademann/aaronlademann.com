@@ -72,7 +72,7 @@ function tz_build_taxonomies(){
 		"show_option_none" => __( "[ empty ]" ),
 		"label" => __( "Client Projects" ), 
 		"singular_label" => __( "Client Project" ), 
-		"rewrite" => array('slug' => 'portfolio/project', 'hierarchical' => true), 
+		"rewrite" => array('slug' => 'portfolio/client', 'hierarchical' => true), 
 		"public" => true
 	);
 	register_taxonomy(__( "project" ), array(__( "portfolio" )), $project_args); 	
@@ -95,7 +95,10 @@ function tz_portfolio_edit_columns($columns){
         $columns = array(  
             "cb" => "<input type=\"checkbox\" />",  
             "title" => __( 'Portfolio Item Title' ),
-            "type" => __( 'type' )
+            "type" => __( 'type' ),
+						"client" => __( 'client' ),
+						"tools" => __( 'tools' ),
+						"media" => __( 'media' )
         );  
   
         return $columns;  
@@ -108,6 +111,16 @@ function tz_portfolio_custom_columns($column){
             case __( 'type' ):  
                 echo get_the_term_list($post->ID, __( 'skill-type' ), '', ', ','');  
                 break;
+						case __( 'client' ):  
+                echo get_the_term_list($post->ID, __( 'project' ), '', ', ','');  
+                break;
+						case __( 'tools' ):  
+                echo get_the_term_list($post->ID, __( 'tools-used' ), '', ', ','');  
+                break;
+						case __( 'media' ):  
+                echo get_the_term_list($post->ID, __( 'media-type' ), '', ', ','');  
+                break;
+
         }  
 }  
 

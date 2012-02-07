@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-			
-            <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
             
 			<!--BEGIN #primary .hfeed-->
 			<div id="primary" class="hfeed">
+
+				<?php tz_taxonomy_crumbs(); ?>
             
             	<!--BEGIN #masonry-->
             	<div id="masonry-portfolio">

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*-----------------------------------------------------------------------------------
 
@@ -462,5 +462,83 @@ require_once (TZ_FILEPATH . '/admin/admin-functions.php');
 require_once (TZ_FILEPATH . '/admin/admin-interface.php');
 require_once (TZ_FILEPATH . '/admin/theme-options.php');
 require_once (TZ_FILEPATH . '/admin/theme-functions.php');
+
+?>
+<?php // get taxonomies terms links
+function custom_taxonomies_terms_links() {
+	global $post, $post_id;
+	// get post by post id
+	$post = &get_post($post->ID);
+	// get post type by post
+	$post_type = $post->post_type;
+	// get post type taxonomies
+	$taxonomies = get_object_taxonomies($post_type);
+	foreach ($taxonomies as $taxonomy) {
+		// get the terms related to post
+		$terms = get_the_terms( $post->ID, $taxonomy );
+		if ( !empty( $terms ) ) {
+			$out = array();
+			foreach ( $terms as $term )
+				$out[] = '<a href="' .get_term_link($term->slug, $taxonomy) .'">'.$term->name.'</a>';
+			$return = join( ', ', $out );
+		}
+		return $return;
+	}
+} ?>
+
+<?php
+/* Taxonomy Breadcrumb */
+function be_taxonomy_breadcrumb() {
+// Get the current term
+$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+
+// Create a list of all the term's parents
+$parent = $term->parent;
+while ($parent):
+$parents[] = $parent;
+$new_parent = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ));
+$parent = $new_parent->parent;
+endwhile;
+if(!empty($parents)):
+$parents = array_reverse($parents);
+
+// For each parent, create a breadcrumb item
+foreach ($parents as $parent):
+$item = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ));
+$item_tax = $item->taxonomy;
+$parent_slug;
+
+switch ($item_tax)  
+{    
+    case __( 'skill-type' ):  
+        $parent_slug = 'portfolio/skill';
+        break;
+		case __( 'media-type' ):  
+        $parent_slug = 'portfolio/media';
+        break;
+		case __( 'project' ):  
+        $parent_slug = 'portfolio/client';
+        break;
+		case __( 'tools-used' ):  
+        $parent_slug = 'portfolio/tool';
+        break;
+
+}  
+
+$url = get_bloginfo('url').'/'.$parent_slug.'/'.$item->slug;
+echo '<li><a href="'.$url.'/">'.$item->name.'</a></li>';
+endforeach;
+endif;
+
+// Display the current term in the breadcrumb
+echo '<li><h1>'.$term->name.'</h1></li>';
+}
+
+
+function tz_taxonomy_crumbs(){
+	echo '<ul class="breadcrumb"><li><a href="http://aaronlademann.com/">Home</a></li><li><a href="/">Portfolio</a></li>';
+	echo be_taxonomy_breadcrumb();
+	echo '</ul>';
+}
 
 ?>

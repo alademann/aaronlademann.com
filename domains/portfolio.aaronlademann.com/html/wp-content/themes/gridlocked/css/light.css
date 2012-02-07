@@ -72,7 +72,8 @@ a:hover { color: #000; }
 
 .widget-title { color: #3a3c3d; }
 
-.entry-content h1,
+.single h1 { color: black; }
+
 .entry-content h2,
 .entry-content h3,
 .entry-content h4,

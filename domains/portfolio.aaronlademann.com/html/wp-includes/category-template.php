@@ -58,7 +58,7 @@ function get_category_parents( $id, $link = false, $separator = '/', $nicename =
 	}
 
 	if ( $link )
-		$chain .= '<a href="' . get_category_link( $parent->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $parent->name ) ) . '">'.$name.'</a>' . $separator;
+		$chain .= '<a href="' . get_category_link( $parent->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $parent->name ) ) . '">'.$name.'</a>';
 	else
 		$chain .= $name;
 	return $chain;
