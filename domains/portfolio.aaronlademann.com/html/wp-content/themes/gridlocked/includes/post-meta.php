@@ -1,11 +1,11 @@
     <!--BEGIN .entry-meta .entry-header-->
     <ul class="entry-meta entry-header clearfix">
     
-    <li class="published">
-        <a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'framework');?> <?php the_title(); ?>">
+    <li class="published" title="Published <?php echo the_date('n/j/Y'); ?>">
+        <!--<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'framework');?> <?php the_title(); ?>">-->
             <span class="icon"></span>
             <?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) .' '. __('ago', 'framework'); ?>
-        </a>
+        <!--</a>-->
     </li>
     
     <?php if(!is_singular()) : ?>
