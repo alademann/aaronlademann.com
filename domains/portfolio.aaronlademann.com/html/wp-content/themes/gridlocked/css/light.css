@@ -32,9 +32,9 @@ blockquote,
 }
 
 #commentform span,
-#single-sidebar a
+#single-sidebar a,
 .entry-meta a,
-.comment-met a {
+.comment-meta a {
 	color: #b3b7bc;
 }
 
@@ -119,7 +119,9 @@ a:hover { color: #000; }
 input,
 textarea,
 #load-more-link a,
-.hentry { background-color: #ffffff; }
+.hentry { background-color: #fafafa; }
+
+.hentry.hover { background-color: white; }
 
 .single-page-navigation a,
 #submit span.icon,

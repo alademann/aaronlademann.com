@@ -21,7 +21,7 @@ register_nav_menus( array(
 /*	Exclude pages from search
 /*-----------------------------------------------------------------------------------*/
 
-
+/*
 function tz_exclude_pages($query) {
         if ($query->is_search) {
         $query->set('post_type', 'post');
@@ -29,7 +29,7 @@ function tz_exclude_pages($query) {
         return $query;
 }
 add_filter('pre_get_posts','tz_exclude_pages');
-
+*/
 
 /*-----------------------------------------------------------------------------------*/
 /*	Load Translation Text Domain
@@ -179,6 +179,7 @@ function tz_register_js() {
 		wp_register_script('tz_shortcodes', get_template_directory_uri() . '/js/jquery.shortcodes.js', 'jquery'); 
 // aaronl: custom
 		//wp_register_script('galleria', '/wp-content/plugins/galleria/galleria-1.2.4.min.js', 'jquery');	 	
+		wp_register_script('custom-javascript', '/wp-content/resources/custom-javascript.js', 'jquery');	 	
 
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-custom');
@@ -186,6 +187,7 @@ function tz_register_js() {
 		//wp_enqueue_script('browser-detect');		
 // aaronl: custom
 		wp_enqueue_script('jquery-animate-colors');
+		wp_enqueue_script('custom-javascript');
 		wp_enqueue_script('tz_shortcodes');
 		wp_enqueue_script('tz_custom');
 // aaronl: custom		
@@ -487,6 +489,7 @@ function custom_taxonomies_terms_links() {
 } ?>
 
 <?php
+
 /* Taxonomy Breadcrumb */
 function be_taxonomy_breadcrumb() {
 // Get the current term
@@ -539,6 +542,9 @@ function tz_taxonomy_crumbs(){
 	echo '<ul class="breadcrumb"><li><a href="http://aaronlademann.com/">Home</a></li><li><a href="/">Portfolio</a></li>';
 	echo be_taxonomy_breadcrumb();
 	echo '</ul>';
+
+	
+
 }
 
 ?>

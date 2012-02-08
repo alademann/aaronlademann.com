@@ -693,10 +693,13 @@ button {
 	padding: 0;
 }
 
+/* like buttons, date, comments, edit button, etc... */
 .entry-meta {
 	font-size: 11px;
 	margin: 0;
+	padding: 5px 15px;
 }
+.entry-meta a:hover { text-decoration: none !important; }
 
 .author-bio {
 	padding: 20px;
@@ -998,8 +1001,10 @@ label.error { color: red; }
 
 .archive .hentry,
 .page.page-template-template-portfolio-php .hentry {
-	width: 230px;
-	height: 290px;
+	min-width: 230px; /* actual width determined by custom javascript in /wp-content/resources/custom-javascript.js */
+	min-height: 220px;
+	width: auto;
+	height: auto;
 	overflow: hidden;
 	margin: 0 0 20px 25px;
 	padding: 0;
@@ -1022,15 +1027,19 @@ label.error { color: red; }
 	font-size: 12px;
 	border: none;
 	margin: 0;
-	padding: 20px 15px 15px 15px
+	padding: 15px 15px 7px 15px
 }
 
 .archive .entry-excerpt,
 .page.page-template-template-portfolio-php .entry-excerpt {
-	padding: 0 15px 20px 15px;
+	padding: 0 15px 0 15px;
 	font-size: 11px;
 	line-height: 16px;
 }
+.entry-excerpt p { margin-bottom: 0; }
+
+.hentry * { cursor: default; }
+.hentry a, .hentry a * { cursor: pointer; }
 
 .single-portfolio .slider {
 	width: 360px;
@@ -1505,14 +1514,14 @@ a:hover.button.black { border: 1px solid #2c2c2c; }
 .published { float: left; }
 
 .published .icon {
-	background-position: 0 0;
-	width: 12px;
-	height: 6px;
+	background-position: 0 -47px;
+	width: 14px;
+	height: 14px;
 	float: left;
-	margin: 7px 5px 0 0;
+	margin: 3px 5px 0 0;
 }
-
-.published a:hover .icon { background-position: -13px 0; }
+.published:hover { color: #66696D; }
+.published a:hover .icon, .published:hover .icon { background-position: -14px -47px; }
 
 .comment-count .icon {
 	background-position: 0 -7px;
@@ -1550,6 +1559,7 @@ a:hover.button.black { border: 1px solid #2c2c2c; }
 	top: 0;
 	z-index: 30; 
 }
+.hentry.hover .arrow { background-position: 0 -164px; }
 
 a .overlay {
 	position: absolute;
@@ -1581,9 +1591,30 @@ a .overlay .icon {
 	display: block;
 	position: relative;
 }
-
 .post-thumb a,
-.post-thumb a img { float: left; }
+.post-thumb a img { 
+	float: left;
+	display: block;
+	width: auto;
+}
+
+.post-thumb a img { 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	*filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8; 
+}
+.hover .post-thumb a img {
+	/* opacity fades back to 100% via jquery 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	*filter: alpha(opacity=100);
+	-moz-opacity: 1.0;
+	-khtml-opacity: 1.0;
+	opacity: 1.0; 
+	*/
+}
+
 
 /* Aside ------------------------------*/
 
