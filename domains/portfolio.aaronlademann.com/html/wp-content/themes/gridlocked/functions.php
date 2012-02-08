@@ -186,8 +186,8 @@ function tz_register_js() {
 // aaronl: custom
 		//wp_enqueue_script('browser-detect');		
 // aaronl: custom
-		wp_enqueue_script('jquery-animate-colors');
 		wp_enqueue_script('custom-javascript');
+		wp_enqueue_script('jquery-animate-colors');
 		wp_enqueue_script('tz_shortcodes');
 		wp_enqueue_script('tz_custom');
 // aaronl: custom		

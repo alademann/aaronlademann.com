@@ -1,4 +1,5 @@
-﻿jQuery(document).ready(function($) {
+﻿var $ = jQuery.noConflict();
+$(document).ready(function() {
 
 	// make the hentry boxes have the same width as the thumbnail
 	var hentries = $("#masonry-portfolio").find(".hentry");
