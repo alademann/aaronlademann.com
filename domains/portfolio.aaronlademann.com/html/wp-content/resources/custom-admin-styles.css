@@ -1,0 +1,15 @@
+﻿/*-------------------------------------------------------------------------------------------*/
+/* AARONL: CUSTOM STYLES */
+/*-------------------------------------------------------------------------------------------*/
+#wpbody-content .inline-edit-col-left, #wpbody-content .inline-edit-col-right {
+	width: 25% !important;
+}
+#wpbody-content .inline-edit-col-right { clear: both; }
+#wpbody-content .inline-edit-col-center {
+	width: 74%;
+}
+#wpbody-content .inline-edit-col-center .inline-edit-categories-label, #wpbody-content .inline-edit-col-center .cat-checklist {
+	float: left;
+	width: auto;
+}
+#wpbody-content .inline-edit-col-center .cat-checklist { clear: right; }
