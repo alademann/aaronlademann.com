@@ -54,7 +54,7 @@
                   	<?php $full_folio_rel = ( is_home() || is_front_page() ) ? 'rel="nofollow"' : ''; ?>
                     <a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>" <?php echo $full_folio_rel; ?>>Full Portfolio</a>
                   </li>
-                  <?php wp_list_categories(array('title_li' => 'Project Type', 'taxonomy' => 'skill-type', 'depth' => 1)); ?>
+                  <?php wp_list_categories(array('title_li' => 'Project Type', 'taxonomy' => 'skill-type')); ?>
 									<?php if(is_tax('project')) :?>
 									<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project')); ?>
 									<?php endif; ?>
