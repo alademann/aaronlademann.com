@@ -106,11 +106,12 @@ function tz_portfolio_edit_columns($columns){
         $columns = array(  
             "cb" => "<input type=\"checkbox\" />",  
             "title" => __( 'Portfolio Item Title' ),
-            "type" => __( 'Portfolio Type' ),
-						"skill-type" => __( 'Skills Used' ),
 						"project" => __( 'Client / Projects' ),
+						"type" => __( 'Portfolio Type' ),
+						"skill-type" => __( 'Skills Used' ),
 						"tools-used" => __( 'Tools Used' ),
 						"media-type" => __( 'Media Type' )
+						
         );  
   
         return $columns;  
@@ -141,7 +142,7 @@ function tz_portfolio_custom_columns($column){
 
 add_action( 'init', 'tz_create_post_type_portfolio' );
 add_action( 'init', 'tz_build_taxonomies', 0 );
-add_filter("manage_edit-portfolio_columns", "tz_portfolio_edit_columns");  
-add_action("manage_posts_custom_column",  "tz_portfolio_custom_columns");  
+//add_filter("manage_edit-portfolio_columns", "tz_portfolio_edit_columns");  
+//add_action("manage_posts_custom_column",  "tz_portfolio_custom_columns");  
 
 ?>

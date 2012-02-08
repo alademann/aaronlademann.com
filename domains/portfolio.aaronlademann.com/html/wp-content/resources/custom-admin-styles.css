@@ -1,15 +1,45 @@
 ﻿/*-------------------------------------------------------------------------------------------*/
 /* AARONL: CUSTOM STYLES */
 /*-------------------------------------------------------------------------------------------*/
-#wpbody-content .inline-edit-col-left, #wpbody-content .inline-edit-col-right {
-	width: 25% !important;
-}
-#wpbody-content .inline-edit-col-right { clear: both; }
+
+/* --------------------- "QUICK EDIT" ADMIN PAGE STYLES --------------------- */
+
+/* make the cancel/update button not be ten miles apart */
+#posts-filter .inline-edit-save { width: 140px; }
+
+/* fix the column widths */
 #wpbody-content .inline-edit-col-center {
-	width: 74%;
+	width: 75% !important;
+	margin-top: 1% !important;
 }
+#wpbody-content .inline-edit-col-center, #wpbody-content .inline-edit-col-center .cat-checklist {
+	min-height: 275px !important;
+}
+/* if the min-height above increases, the top absolute positioning below will need to change as well. */
+#wpbody-content .inline-edit-col-right { clear: left; position: absolute; top: 300px; }
 #wpbody-content .inline-edit-col-center .inline-edit-categories-label, #wpbody-content .inline-edit-col-center .cat-checklist {
 	float: left;
 	width: auto;
+	clear: right;
 }
-#wpbody-content .inline-edit-col-center .cat-checklist { clear: right; }
+.inline-edit-categories-label { display: none !important; }
+#wpbody-content .inline-edit-col-center .cat-checklist { clear: right; width: 17% !important; margin-right: 1.8%; }
+#wpbody-content .inline-edit-col-left, #wpbody-content .inline-edit-col-right {
+	width: 25% !important;
+}
+/* make the table headers line up with the fieldset widths that exist within the table */
+#posts-filter .wp-list-table thead #title {
+	width: 28% !important;
+}
+
+#posts-filter .wp-list-table thead #_likes { width: 5% !important; }
+#posts-filter .wp-list-table thead #comments { width: 3% !important; }
+
+/* individual custom column headers that all fit within .inline-edit-col-center (75% width)... should line up with .cat-checklist widdths */
+#posts-filter .wp-list-table thead #column-taxonomy-type,
+#posts-filter .wp-list-table thead #column-taxonomy-skill-type,
+#posts-filter .wp-list-table thead #column-taxonomy-project,
+#posts-filter .wp-list-table thead #column-taxonomy-tools-used { width: 18% !important; }
+
+/* whatever the last taxonomy column is */
+#posts-filter .wp-list-table thead #column-taxonomy-media-type { width: 12% !important; }

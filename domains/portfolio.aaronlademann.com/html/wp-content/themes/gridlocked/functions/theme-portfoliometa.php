@@ -205,6 +205,13 @@ $meta_box_info = array(
 	'priority' => 'high',
 	'fields' => array(
 	array(
+			'name' =>  __('Likes', 'framework'),
+			'desc' => 'How many users "like" this piece?',
+			'id' => '_likes',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
 			'name' =>  __('Portfolio Caption', 'framework'),
 			'desc' => 'A small description of the project.',
 			'id' => $prefix.'portfolio_caption',
