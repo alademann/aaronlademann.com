@@ -1,4 +1,4 @@
-﻿<?php
+﻿<?php 
 
 /*-----------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ register_nav_menus( array(
 /*	Exclude pages from search
 /*-----------------------------------------------------------------------------------*/
 
-/*
+
 function tz_exclude_pages($query) {
         if ($query->is_search) {
         $query->set('post_type', 'post');
@@ -29,7 +29,7 @@ function tz_exclude_pages($query) {
         return $query;
 }
 add_filter('pre_get_posts','tz_exclude_pages');
-*/
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Load Translation Text Domain
@@ -487,7 +487,6 @@ function custom_taxonomies_terms_links() {
 		return $return;
 	}
 } ?>
-
 <?php
 
 /* Taxonomy Breadcrumb */

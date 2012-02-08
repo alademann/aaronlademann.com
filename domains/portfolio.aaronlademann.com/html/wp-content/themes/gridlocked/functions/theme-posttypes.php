@@ -31,11 +31,11 @@ function tz_create_post_type_portfolio()
 		'show_ui' => true, 
 		'query_var' => true,
 		'capability_type' => 'post',
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'menu_position' => null,
 		'rewrite' => true,
 		"rewrite" => array('slug' => 'portfolio', 'hierarchical' => true), 
-		'supports' => array('title','editor','thumbnail','custom-fields','excerpt','comments')
+		'supports' => array('title','editor','thumbnail','custom-fields','excerpt','comments','revisions','page-attributes','post-formats')
 	  ); 
 	  
 	  register_post_type(__( 'portfolio' ),$args);
