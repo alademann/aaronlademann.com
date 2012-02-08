@@ -31,6 +31,8 @@ blockquote,
 	color: #66696d;
 }
 
+.hentry .entry-meta { border-top: 1px solid whitesmoke; }
+
 #commentform span,
 #single-sidebar a,
 .entry-meta a,
@@ -81,7 +83,7 @@ a:hover { color: #000; }
 .entry-content h6,
 .page.page-template-template-portfolio-php .entry-title,
 .entry-title,
-.entry-title a { color: #66696d; }
+.entry-title a { color: #4a4c4e; }
 
 .format-link .entry-title a,
 .format-quote blockquote {
