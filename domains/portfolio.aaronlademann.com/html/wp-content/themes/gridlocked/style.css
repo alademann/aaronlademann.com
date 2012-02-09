@@ -1010,7 +1010,7 @@ label.error { color: red; }
 .page.page-template-template-portfolio-php .hentry {
 	min-width: 230px; /* actual width determined by custom javascript in /wp-content/resources/custom-javascript.js */
 	min-height: 220px;
-	width: auto;
+	width: 230px;
 	height: auto;
 	overflow: hidden;
 	margin: 0 0 20px 25px;
