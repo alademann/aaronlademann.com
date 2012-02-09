@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 
 /*-----------------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ function tz_exclude_pages($query) {
                                 }
         return $query;
 }
-add_filter('pre_get_posts','tz_exclude_pages');
+//add_filter('pre_get_posts','tz_exclude_pages');
 
 
 /*-----------------------------------------------------------------------------------*/

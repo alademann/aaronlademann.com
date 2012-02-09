@@ -6,18 +6,25 @@ Template Name: Portfolio
 
 <?php get_header(); ?>
 
+
+
 			<!--BEGIN #primary .hfeed-->
 			<div id="primary" class="hfeed">
-            
-            <?php 
-			
-			query_posts( array(
-							'post_type' => 'portfolio',
-							'posts_per_page' => -1
-				)
-			);
-			
+      
+			<?php
+					query_posts( array(
+						'post_type' => 'portfolio',
+						'posts_per_page' => -1
+						)
+					);
 			?>
+
+			<?php 
+				if(is_search()){
+					echo "<h1>Search Results for ". get_search_query() ."</h1>";
+				}
+			?>
+			      
             	<!--BEGIN #masonry-->
             	<div id="masonry-portfolio">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
