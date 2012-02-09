@@ -223,8 +223,6 @@
             </div>
             <!--END .hentry-->
           </div>
-          
-					<h1><?php the_title(); ?></h1>
 
           <?php endwhile; else: ?>
           <!--BEGIN #post-0-->
@@ -251,6 +249,7 @@
                     $link = get_post_meta(get_the_ID(), 'tz_portfolio_link', TRUE); 
                   ?>
           <!--BEGIN .entry-meta .entry-header-->
+					<h1><?php the_title(); ?></h1>
           <ul class="entry-meta entry-header clearfix">
             
             <?php if($caption != '') : ?>

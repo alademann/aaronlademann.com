@@ -157,6 +157,11 @@ h1 {
 	margin-bottom: 20px;
 }
 .breadcrumb li h1 { font-size: 12px;color: black; }
+#single-sidebar h1 {
+	font-weight: bold;
+	line-height: 1.1;
+	letter-spacing: -.1ex;	
+}
 
 h2 {
 	font-size: 20px;
@@ -266,7 +271,7 @@ h6 {
 
 .line {
 	float: left;
-	width: 20px;
+	width: 80%;
 	border-bottom: 1px solid #66696d;
 }
 
