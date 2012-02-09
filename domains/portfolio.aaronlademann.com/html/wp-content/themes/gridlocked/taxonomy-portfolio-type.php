@@ -38,7 +38,7 @@
 
 								query_posts(array( 
 										'post_type' => 'portfolio', 
-										'type' => $curr_slug
+										'portfolio-type' => $curr_slug
 									)
 								); 
 

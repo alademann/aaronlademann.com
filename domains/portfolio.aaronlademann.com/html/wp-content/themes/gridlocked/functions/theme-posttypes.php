@@ -64,7 +64,7 @@ function tz_build_taxonomies(){
 		"rewrite" => array('slug' => 'portfolio/type', 'hierarchical' => true), 
 		"public" => true
 	);
-	register_taxonomy(__( "type" ), array(__( "portfolio" )), $type_args); 
+	register_taxonomy(__( "portfolio-type" ), array(__( "portfolio" )), $type_args); 
 	
 	$media_args = array(
 		"hierarchical" => true, 
@@ -107,7 +107,7 @@ function tz_portfolio_edit_columns($columns){
             "cb" => "<input type=\"checkbox\" />",  
             "title" => __( 'Portfolio Item Title' ),
 						"project" => __( 'Client / Projects' ),
-						"type" => __( 'Portfolio Type' ),
+						"portfolio-type" => __( 'Portfolio Type' ),
 						"skill-type" => __( 'Skills Used' ),
 						"tools-used" => __( 'Tools Used' ),
 						"media-type" => __( 'Media Type' )
@@ -122,7 +122,7 @@ function tz_portfolio_custom_columns($column){
         switch ($column)  
         {    
             case __( 'type' ):  
-                echo get_the_term_list($post->ID, __( 'type' ), '', ', ','');  
+                echo get_the_term_list($post->ID, __( 'portfolio-type' ), '', ', ','');  
                 break;
 						case __( 'skill-type' ):  
                 echo get_the_term_list($post->ID, __( 'skill-type' ), '', ', ','');  
