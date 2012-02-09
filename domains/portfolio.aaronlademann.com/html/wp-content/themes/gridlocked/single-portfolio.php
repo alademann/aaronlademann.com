@@ -210,7 +210,16 @@
             
             
             <!--BEGIN .entry-content -->
-            <div class="entry-content">
+						<?php
+							$simple_style = '';
+							$item_content = the_content('');
+							if($image2 == ''){
+								if($item_content == ''){
+									$simple_style = 'min-height: 1px !important; margin-top: -22px !important;';
+								}
+							}
+						?>
+            <div class="entry-content" style="<?php echo $simple_style; ?>">
               <?php the_content(''); ?>
               <!--END .entry-content -->
             </div>

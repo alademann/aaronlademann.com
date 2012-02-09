@@ -151,6 +151,8 @@ a .overlay .icon,
 .comment-count .icon,
 .published .icon { background-image: url(../images/light/sprite2.png); }
 
+.arrow.noslider { background-image: none !important; }
+
 #commentform small,
 #single-sidebar .like-count a.active,
 #single-sidebar .like-count a:hover,
