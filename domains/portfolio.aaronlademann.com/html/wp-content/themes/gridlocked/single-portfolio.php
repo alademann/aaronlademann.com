@@ -30,8 +30,6 @@
                   //echo $height;
                 ?> 
 
-					<h1><?php the_title(); ?></h1>
-
           <!--BEGIN .hentry -->
           <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
@@ -226,7 +224,7 @@
             <!--END .hentry-->
           </div>
           
-
+					<h1><?php the_title(); ?></h1>
 
           <?php endwhile; else: ?>
           <!--BEGIN #post-0-->
