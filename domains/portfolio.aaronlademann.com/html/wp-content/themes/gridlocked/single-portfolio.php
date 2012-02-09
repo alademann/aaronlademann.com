@@ -247,7 +247,7 @@
           <ul class="entry-meta entry-header clearfix">
             <?php edit_post_link( __('[Edit]', 'framework'), '<li class="edit-post">', '</li>' ); ?>
             <?php if($caption != '') : ?>
-            <li class="caption"> <?php echo stripslashes(htmlspecialchars_decode($caption)); ?> </li>
+            <li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo stripslashes(htmlspecialchars_decode($caption)); ?> </li>
             <?php endif; ?>
             <?php if($link != '') : ?>
             <li class="link"> <a target="_blank" href="<?php echo $link; ?>"><span class="icon"></span>
@@ -260,6 +260,11 @@
           </div>
 					<ul class="entry-meta entry-header clearfix">
             <li class="terms">
+							<!--<ul>
+								<li><h3 class="widget-title">Date Completed</h3></li>
+								<li><a href="#" onclick="return false;"><?php echo the_date('F j, Y'); ?></a></li>
+							</ul>-->
+							
               <ul>
 								<?php
 								$client_args = array('orderby' => 'term_group', 'order' => 'ASC', 'fields' => 'all');

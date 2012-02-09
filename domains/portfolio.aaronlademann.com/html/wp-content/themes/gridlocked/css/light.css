@@ -188,8 +188,8 @@ blockquote,
 
 .overlay { background: url(../images/light/overlay.png) repeat; }
 
-.format-standard .entry-title,
-.page .entry-title { border-bottom: 1px solid #f3f3f3; }
+/*.format-standard .entry-title,
+.page .entry-title { border-bottom: 1px solid #f3f3f3; }*/
 
 .line { border-bottom: 1px solid #d6d6d6; }
 
@@ -227,3 +227,5 @@ blockquote,
 	text-decoration: none !important; 
 	color: #333 !important;   
 }
+
+.black { color: black !important; }

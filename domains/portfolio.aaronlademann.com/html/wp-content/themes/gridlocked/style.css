@@ -2027,14 +2027,18 @@ div.jp-jplayer { background-color: #292a2b; }
 /* Standard ------------------------------*/
 
 .format-standard .entry-title { 
-	padding: 20px 15px 20px 15px;
-	margin: 0 0 20px 0;
-	font-size: 14px;
+	padding: 10px 15px 7px 15px;
+	/*margin: 0 0 20px 0;*/
+	font-size: 12px;
 }
 
 .format-standard .entry-content { padding: 0 15px;min-height: 40px; }
 
-.format-standard .entry-meta { padding: 0 15px 20px 15px; }
+.format-standard .entry-meta {
+	font-size: 11px;
+	margin: 0;
+	padding: 5px 15px;
+}
 
 #new-posts { display: none; }
 
@@ -2072,3 +2076,5 @@ div.jp-jplayer { background-color: #292a2b; }
 	background:url(http://aaronlademann.com/_images/_template/_portfolio/arrow2.gif) no-repeat right center;
 }
 /*.breadcrumb li a:after { content: "»"; }*/
+
+.entry-title { min-height: 34px !important; }
