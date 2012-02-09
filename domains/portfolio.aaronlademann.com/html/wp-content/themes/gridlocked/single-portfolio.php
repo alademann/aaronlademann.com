@@ -128,19 +128,19 @@
                 <div id="slider-<?php the_ID(); ?>" class="slider" data-loader="<?php echo  get_template_directory_uri(); ?>/images/<?php if(get_option('tz_alt_stylesheet') == 'dark.css'):?>dark<?php else: ?>light<?php endif; ?>/ajax-loader.gif">
                   <div id="" class="slides_container clearfix">
                     <?php if($image1 != '') : ?>
-                    <div><a class="lightbox" title="Click to view fulls-size <?php echo $image1_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>"><img height="<?php echo $height; ?>" width="550" src="<?php echo $image1; ?>" alt="<?php echo $image1_caption; ?>" /></a></div>   
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image1_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>"><img height="<?php echo $height; ?>" width="550" src="<?php echo $image1; ?>" alt="<?php echo $image1_caption; ?>" /></a></div>   
                     <?php endif; ?>
                     <?php if($image2 != '') : ?>
-                    <div><a class="lightbox" title="Click to view fulls-size <?php echo $image2_caption; ?>" href="#2" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image2; ?>" alt="<?php echo $image2_caption; ?>" /></a></div> 
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image2_caption; ?>" href="#2" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image2; ?>" alt="<?php echo $image2_caption; ?>" /></a></div> 
                     <?php endif; ?>
                     <?php if($image3 != '') : ?>
-                    <div><a class="lightbox" title="Click to view fulls-size <?php echo $image3_caption; ?>" href="#3" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image3; ?>" alt="<?php echo $image3_caption; ?>" /></a></div>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image3_caption; ?>" href="#3" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image3; ?>" alt="<?php echo $image3_caption; ?>" /></a></div>
                     <?php endif; ?>
                     <?php if($image4 != '') : ?>
-                    <div><a class="lightbox" title="Click to view fulls-size <?php echo $image4_caption; ?>" href="#4" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image4; ?>" alt="<?php echo $image4_caption; ?>" /></a></div>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image4_caption; ?>" href="#4" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image4; ?>" alt="<?php echo $image4_caption; ?>" /></a></div>
                     <?php endif; ?>
                     <?php if($image5 != '') : ?>
-                    <div><a class="lightbox" title="Click to view fulls-size <?php echo $image5_caption; ?>" href="#5" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image5; ?>" alt="<?php echo $image5_caption; ?>" /></a></div> 
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image5_caption; ?>" href="#5" rel="gallery_<?php the_ID(); ?>"><img width="550" src="<?php echo $image5; ?>" alt="<?php echo $image5_caption; ?>" /></a></div> 
                     <?php endif; ?>
                   </div>
                   <!--END .slider -->
@@ -269,9 +269,9 @@
 										echo '<li><h3 class="widget-title">Client / Project</h3></li><li>';
 										$i = 0;
 										foreach($client_terms as $client){
-											if($i == 0){ echo '<strong>'; }
-											if($i > 0){ echo ' > '; }
-											echo '<a href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>'; 
+											if($i == 0){ echo '<strong>'; $title = 'View all projects done for ' . $client->name; }
+											if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for this client'; }
+											echo '<a title="'. $title .'" href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>'; 
 											if($i == 0){ echo '</strong>'; }
 											$i++;
 										}
@@ -279,8 +279,7 @@
 									}
 								}
 								?>
-								<!--<?php echo get_the_term_list( get_the_ID(), 'type', '<li><h3 class="widget-title">Portfolio Type</h3> ', ', ', '</li>' ); ?>
-                <?php wp_list_categories(array('title_li' => '<h3 class="widget-title first">Portfolio Type</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'type')); ?>-->
+
               </ul>
 							<ul>
 								<?php
@@ -293,7 +292,7 @@
 										foreach($skill_terms as $skill){
 											if($i == 0){ echo '<strong>'; }
 											if($i > 0){ echo ' > '; }
-											echo '<a href="'.get_term_link($skill->slug, 'skill-type').'">'.$skill->name.'</a>'; 
+											echo '<a title="View all ' . $skill->name . ' content in Aaron&rsquo;s Portfolio" href="'.get_term_link($skill->slug, 'skill-type').'">'.$skill->name.'</a>'; 
 											if($i == 0){ echo '</strong>'; }
 											$i++;
 										}
@@ -301,8 +300,7 @@
 									}
 								}
 								?>
-								<!--<?php echo get_the_term_list( get_the_ID(), 'skill-type', '<li><h3 class="widget-title">Skills Used</h3> ', ', ', '</li>' ); ?>
-                php wp_list_categories(array('title_li' => '<h3 class="widget-title">Skills Used</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'skill-type')); ?>-->
+
               </ul>
               <ul>
 								<?php
@@ -315,7 +313,7 @@
 										foreach($media_terms as $media){
 											if($i == 0){ echo '<strong>'; }
 											if($i > 0){ echo ' > '; }
-											echo '<a href="'.get_term_link($media->slug, 'media-type').'">'.$media->name.'</a>'; 
+											echo '<a title="View all portfolio content made for the following media: ' . $media->name . '" href="'.get_term_link($media->slug, 'media-type').'">'.$media->name.'</a>'; 
 											if($i == 0){ echo '</strong>'; }
 											$i++;
 										}
@@ -323,8 +321,7 @@
 									}
 								}
 								?>
-								<!--<?php echo get_the_term_list( get_the_ID(), 'media-type', '<li><h3 class="widget-title">Media</h3> ', ', ', '</li>' ); ?>
-                <?php wp_list_categories(array('title_li' => '<h3 class="widget-title">Media Type</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'media-type')); ?>-->
+
               </ul>
               <ul>
 								<?php
@@ -332,21 +329,20 @@
 								$tool_terms = wp_get_object_terms($post->ID, 'tools-used', $tool_args);
 								if(!empty($tool_terms)){
 									if(!is_wp_error( $tool_terms )){
-										echo '<li><h3 class="widget-title">tool Type(s)</h3></li><li>';
+										echo '<li><h3 class="widget-title">Tool(s) Used</h3></li><li>';
 										$i = 0;
 										foreach($tool_terms as $tool){
-											if($i == 0){ echo '<strong>'; }
-											if($i > 0){ echo ' > '; }
-											echo '<a href="'.get_term_link($tool->slug, 'tools-used').'">'.$tool->name.'</a>'; 
-											if($i == 0){ echo '</strong>'; }
+											//if($i == 0){ echo '<strong>'; }
+											if($i > 0){ echo ', '; }
+											echo '<a title="View all pieces created using ' . $tool->name . '" href="'.get_term_link($tool->slug, 'tools-used').'">'.$tool->name.'</a>'; 
+											//if($i == 0){ echo '</strong>'; }
 											$i++;
 										}
 										echo '</li>';
 									}
 								}
 								?>
-								<!--<?php echo get_the_term_list( get_the_ID(), 'tools-used', '<li><h3 class="widget-title">Tools Used</h3> ', ', ', '</li>' ); ?>
-                <?php wp_list_categories(array('title_li' => '<h3 class="widget-title">Tools Used</h3>', 'show_option_none' => '[ empty ]', 'taxonomy' => 'tools-used')); ?>-->
+
               </ul>
             </li>
             <!--END .entry-meta entry-header -->
