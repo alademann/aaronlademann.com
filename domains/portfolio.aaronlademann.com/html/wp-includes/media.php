@@ -39,15 +39,26 @@ function image_constrain_size_for_editor($width, $height, $size = 'medium') {
 		$max_height = $size[1];
 	}
 	elseif ( $size == 'thumb' || $size == 'thumbnail' ) {
+		
+		//aaronl: custom
+		//max_width = 230;
+		//$max_height = 170;
+		
 		$max_width = intval(get_option('thumbnail_size_w'));
 		$max_height = intval(get_option('thumbnail_size_h'));
-		// last chance thumbnail size defaults
-		if ( !$max_width && !$max_height ) {
-			$max_width = 128;
-			$max_height = 96;
-		}
+		//// last chance thumbnail size defaults
+		//if ( !$max_width && !$max_height ) {
+		//	$max_width = 230;
+		//	$max_height = 170;
+		//}
+
 	}
 	elseif ( $size == 'medium' ) {
+
+		//aaronl:custom
+		//$max_width = 550;
+		//$max_height = 3000;
+
 		$max_width = intval(get_option('medium_size_w'));
 		$max_height = intval(get_option('medium_size_h'));
 		// if no width is set, default to the theme content width if available
@@ -57,15 +68,21 @@ function image_constrain_size_for_editor($width, $height, $size = 'medium') {
 		// big image we'll scale it down to fit reasonably within the editor
 		// itself, and within the theme's content width if it's known.  the user
 		// can resize it in the editor if they wish.
-		$max_width = intval(get_option('large_size_w'));
+
+		//aaronl: custom
+		//max_width = 1024;
+		//$max_height = 5000;
+
+	  $max_width = intval(get_option('large_size_w'));
 		$max_height = intval(get_option('large_size_h'));
-		if ( intval($content_width) > 0 )
-			$max_width = min( intval($content_width), $max_width );
+		//if ( intval($content_width) > 0 )
+		//	$max_width = min( intval($content_width), $max_width );
+
 	} elseif ( isset( $_wp_additional_image_sizes ) && count( $_wp_additional_image_sizes ) && in_array( $size, array_keys( $_wp_additional_image_sizes ) ) ) {
 		$max_width = intval( $_wp_additional_image_sizes[$size]['width'] );
 		$max_height = intval( $_wp_additional_image_sizes[$size]['height'] );
-		if ( intval($content_width) > 0 && is_admin() ) // Only in admin. Assume that theme authors know what they're doing.
-			$max_width = min( intval($content_width), $max_width );
+		//if ( intval($content_width) > 0 && is_admin() ) // Only in admin. Assume that theme authors know what they're doing.
+		//	$max_width = min( intval($content_width), $max_width );
 	}
 	// $size == 'full' has no constraint
 	else {
@@ -435,8 +452,46 @@ function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $de
 	imagedestroy( $image );
 
 	// $suffix will be appended to the destination filename, just before the extension
+
+	//aaronl:custom
 	if ( !$suffix )
-		$suffix = "{$dst_w}x{$dst_h}";
+
+switch ($item_tax)  
+{    
+    case __( 'skill-type' ):  
+        $parent_slug = 'portfolio/skill';
+        break;
+		case __( 'media-type' ):  
+        $parent_slug = 'portfolio/media';
+        break;
+		case __( 'project' ):  
+        $parent_slug = 'portfolio/project';
+        break;
+		case __( 'tools-used' ):  
+        $parent_slug = 'portfolio/tool';
+        break;
+
+}  
+
+		switch($dst_w)
+		{
+			case __( '1024' ):
+				$suffix = 'lg';
+				break;	
+			case __( '550' ):
+				$suffix = 'med';
+				break;
+			case __( '230' ):
+				$suffix = 'thumb';
+				break;
+			case __( '50' ):
+				$suffix = 'thumb_sm';
+				break;
+			default:
+				$suffix = "{$dst_w}x{$dst_h}";
+		}
+		
+		//$suffix = "{$dst_w}x{$dst_h}";
 
 	$info = pathinfo($file);
 	$dir = $info['dirname'];

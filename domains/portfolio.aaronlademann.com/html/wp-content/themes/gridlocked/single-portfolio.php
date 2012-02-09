@@ -4,10 +4,8 @@
         <div id="primary" class="hfeed">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php 
-									
-											
-
                   $image1 = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
+									//echo $image1;
 										$image1_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image_caption', TRUE); 
                   $image2 = get_post_meta(get_the_ID(), 'tz_portfolio_image2', TRUE); 
 										$image2_caption = get_post_meta(get_the_ID(), 'tz_portfolio_image2_caption', TRUE); 
@@ -22,7 +20,7 @@
 									
 										$lightbox = get_post_meta(get_the_ID(), 'tz_portfolio_lightbox', TRUE); 
                     $embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
-                    $large_image =  wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'fullsize', false, '' );
+                    $large_image =  wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full', false, '' );
 										$thumb = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 
 										$lightbox = TRUE;
 										 
@@ -70,29 +68,17 @@
 											// something went wrong
 											//console.warn("no index " + index + " is defined here.");
 										} 
-										switch(size)
-										{
-											case 'thumb':
-												img_size = "_thumb";
-											break;
-											case 'image':
-												img_size = "_550";
-											break;
-											case 'full':
-												img_size = "_full";
-											break;
-											case 'big':
-												img_size = "_1920";
-											break;
-											default:
-											// something went wrong
-											//console.warn("no size " + size + " is defined here.");
-										} 
+										var img_suffix = "-";
 										var img_dir =  raw_src.slice(0,raw_src.lastIndexOf("/") + 1);
-										var img_name = raw_src.slice(raw_src.lastIndexOf("/") + 1,raw_src.lastIndexOf("_"));    
+										var img_name = raw_src.slice(raw_src.lastIndexOf("/") + 1,raw_src.lastIndexOf(img_suffix));    
 										var img_mime = raw_src.slice(raw_src.lastIndexOf("."),raw_src.length);
-										
-										var image = img_dir + img_name + img_size + img_mime;
+										var image;
+
+										if(size == "full"){
+											image = img_dir + img_name + img_mime; // original uploaded file... no suffix / size added to filename
+										} else {
+											image = img_dir + img_name + img_suffix + size + img_mime;	
+										}
 										//console.info("raw_src: " + raw_src + "\nimage: " + image);
 										return image;
 										
@@ -103,9 +89,13 @@
 										var win_width = $(window).width();
 										var large_image_size;
 										if(win_width > 1024) {
-											large_image_size = 'big';
+											if(win_width > 1200) {
+												large_image_size = 'full';
+											} else {
+												large_image_size = 'lg';
+											}
 										} else {
-											large_image_size = 'full';
+											large_image_size = 'med';
 										}
 										var lightImages = $(".slider").find("a.lightbox");
 										$(lightImages).each(function(index){
@@ -122,6 +112,12 @@
 
               
 								<?php tz_gallery(get_the_ID()); ?>
+
+								<?php if($image2 != '') : ?>
+                <div class="arrow"></div>
+                <?php else: ?>
+                <div class="arrow noslider"></div>
+                <?php endif; ?>
                 <!--BEGIN .slider -->
                 <div id="slider-<?php the_ID(); ?>" class="slider" data-loader="<?php echo  get_template_directory_uri(); ?>/images/<?php if(get_option('tz_alt_stylesheet') == 'dark.css'):?>dark<?php else: ?>light<?php endif; ?>/ajax-loader.gif">
                   <div id="" class="slides_container clearfix">
@@ -143,11 +139,6 @@
                   </div>
                   <!--END .slider -->
                 </div>
-                <?php if($image2 != '') : ?>
-                <div class="arrow"></div>
-                <?php else: ?>
-                <div class="arrow noslider"></div>
-                <?php endif; ?>
 
 
             <?php else: ?>
@@ -273,22 +264,61 @@
 							
               <ul>
 								<?php
-								$client_args = array('orderby' => 'term_group', 'order' => 'ASC', 'fields' => 'all');
-								$client_terms = wp_get_object_terms($post->ID, 'project', $client_args);
-								if(!empty($client_terms)){
-									if(!is_wp_error( $client_terms )){
-										echo '<li><h3 class="widget-title">Client / Project</h3></li><li>';
+								// depending on the type of portfolio piece it is, there may be no client...
+								$portfolio_type_args = array('orderby' => 'term_group', 'order' => 'ASC', 'fields' => 'all');
+								$portfolio_type_terms = wp_get_object_terms($post->ID, 'portfolio-type', $portfolio_type_args);
+								if(!empty($portfolio_type_terms)){
+									if(!is_wp_error( $portfolio_type_terms )){
+										echo '<li><h3 class="widget-title">Portfolio Type</h3></li><li>';
 										$i = 0;
-										foreach($client_terms as $client){
-											if($i == 0){ echo '<strong>'; $title = 'View all projects done for ' . $client->name; }
-											if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for this client'; }
-											echo '<a title="'. $title .'" href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>'; 
+										foreach($portfolio_type_terms as $portfolio_type){
+											if($i == 0){ 
+												$portfolio_type_main = $portfolio_type->name; 
+												$portfolio_type_main_link = get_term_link($portfolio_type->slug, 'portfolio-type');
+												
+													echo '<strong>'; 
+													$title = 'View all ' . $portfolio_type_main . ' content in Aaron&rsquo;s Portfolio'; 
+
+											}
+											if($i > 0){ 
+												$portfolio_type_child = $portfolio_type->name; 
+												$portfolio_type_child_link = get_term_link($portfolio_type->slug, 'portfolio-type');
+
+													echo ' > '; 
+													$title = 'View all ' . $portfolio_type_main . ' ' . $portfolio_type_child . ' content in Aaron&rsquo;s Portfolio';
+
+											}
+
+											echo '<a title="'. $title .'" href="'.get_term_link($portfolio_type->slug, 'portfolio-type').'">'.$portfolio_type->name.'</a>'; 
+
 											if($i == 0){ echo '</strong>'; }
 											$i++;
 										}
 										echo '</li>';
 									}
 								}
+
+								if($portfolio_type_main == "Professional"){
+
+									$client_args = array('orderby' => 'term_group', 'order' => 'ASC', 'fields' => 'all');
+									$client_terms = wp_get_object_terms($post->ID, 'project', $client_args);
+									if(!empty($client_terms)){
+										if(!is_wp_error( $client_terms )){
+											echo '<li><h3 class="widget-title">Client / Project</h3></li><li>';
+											$i = 0;
+											foreach($client_terms as $client){
+												if($i == 0){ echo '<strong>'; $title = 'View all projects done for ' . $client->name; }
+												if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for this client'; }
+												echo '<a title="'. $title .'" href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>'; 
+												if($i == 0){ echo '</strong>'; }
+												$i++;
+											}
+											echo '</li>';
+										}
+									}
+
+								} // END if(professional)
+
 								?>
 
               </ul>
