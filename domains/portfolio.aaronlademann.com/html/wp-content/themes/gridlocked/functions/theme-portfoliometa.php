@@ -43,13 +43,6 @@ $meta_box = array(
 			'std' => 'Browse'
 		),
 	array(
-			'name' =>  __('Image 1 Height', 'framework'),
-			'desc' => __('You need to define a height of the first image to enable the autoHeight feature. E.g. 500', 'framework'),
-			'id' => $prefix.'portfolio_image_height',
-			'type' => 'text',
-			'std' => ''
-		),
-	array(
 			'name' =>  __('Image 1', 'framework'),
 			'desc' => __('550px x unlimited', 'framework'),
 			'id' => $prefix.'portfolio_image',
