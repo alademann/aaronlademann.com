@@ -5,9 +5,12 @@ $(document).ready(function() {
 	var hentries = $("#masonry-portfolio").find(".hentry");
 	$.each(hentries, function() {
 		var thumbnail = $(".post-thumb > a > img", this);
-		
+		var pic_width = $(this).width();
+		console.debug(pic_width);
+		$(this).closest(".hentry").css("width", pic_width + "px");
+
 		$(thumbnail).load(function() {
-			var pic_width = $(this).width();
+			pic_width = $(this).width();	
 			//var pic_height = $(this).height();
 			console.debug(pic_width);
 			$(this).closest(".hentry").css("width", pic_width + "px");
