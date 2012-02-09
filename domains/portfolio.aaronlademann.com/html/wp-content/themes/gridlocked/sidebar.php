@@ -42,28 +42,29 @@
 						</div>
 
 						<?php endif; ?>
-			
-						<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Portfolio Sidebar') ) :?> 
+						<?php if(!is_single()) : ?>
+								<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Portfolio Sidebar') ) :?> 
             
-							<div class="widget">
-											<span class="widget-title"><strong>View Options</strong></span>
-											<ul id="filter" class="insetBox">
-                				<li <?php if(is_page_template('template-portfolio.php')) : ?>class="current-menu-item"<?php endif; ?>>
-                  				<?php $full_folio_rel = ( is_home() || is_front_page() ) ? 'rel="nofollow"' : ''; ?>
-													<a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>" <?php echo $full_folio_rel; ?>>Full Portfolio</a>
-												</li>
-												<?php wp_list_categories(array('title_li' => 'Project Type', 'taxonomy' => 'skill-type')); ?>
-												<?php if(is_tax('project')) :?>
-												<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project')); ?>
-												<?php endif; ?>
-												<?php if(!is_tax('project')) :?>
-												<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project', 'depth' => 1)); ?>
-												<?php endif; ?>
-											</ul>
-									</div>
+								<div class="widget">
+												<span class="widget-title"><strong>View Options</strong></span>
+												<ul id="filter" class="insetBox">
+                					<li <?php if(is_page_template('template-portfolio.php')) : ?>class="current-menu-item"<?php endif; ?>>
+                  					<?php $full_folio_rel = ( is_home() || is_front_page() ) ? 'rel="nofollow"' : ''; ?>
+														<a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>" <?php echo $full_folio_rel; ?>>Full Portfolio</a>
+													</li>
+													<?php wp_list_categories(array('title_li' => 'Project Type', 'taxonomy' => 'skill-type')); ?>
+													<?php if(is_tax('project')) :?>
+													<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project')); ?>
+													<?php endif; ?>
+													<?php if(!is_tax('project')) :?>
+													<?php wp_list_categories(array('title_li' => 'Clients', 'taxonomy' => 'project', 'depth' => 1)); ?>
+													<?php endif; ?>
+												</ul>
+										</div>
             
-            <?php endif; ?>
+								<?php endif; ?>
 
+						<?php endif; ?>
 						<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Page Sidebar') ) :?>
 
 

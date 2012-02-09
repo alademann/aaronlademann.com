@@ -1134,7 +1134,7 @@ label.error { color: red; }
 
 #single-sidebar .terms ul {	margin: 0; }
 
-#sidebar .single-page-navigation { position: relative;left: 25px; } 
+#sidebar .single-page-navigation { position: relative;left: 55px;top: -20px; } 
 .portfolio-link a .icon {
 	margin: 5px 0 0 5px;
 	display: block;
