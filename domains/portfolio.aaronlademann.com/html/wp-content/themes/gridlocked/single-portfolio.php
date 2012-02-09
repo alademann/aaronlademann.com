@@ -225,7 +225,7 @@
             </div>
             <!--END .hentry-->
           </div>
-          <?php comments_template('', true); ?>
+          
 
 
           <?php endwhile; else: ?>
@@ -254,7 +254,7 @@
                   ?>
           <!--BEGIN .entry-meta .entry-header-->
           <ul class="entry-meta entry-header clearfix">
-            <?php edit_post_link( __('[Edit]', 'framework'), '<li class="edit-post">', '</li>' ); ?>
+            
             <?php if($caption != '') : ?>
             <li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo stripslashes(htmlspecialchars_decode($caption)); ?> </li>
             <?php endif; ?>
@@ -364,21 +364,7 @@
           <div class="seperator clearfix">
             <div class="line"></div>
           </div>
-          <?php if(is_single()) : ?>
-          <!--BEGIN .navigation .single-page-navigation -->
-          <div class="navigation single-page-navigation clearfix">
-            <div class="nav-previous">
-              <?php next_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
-            </div>
-            <div class="portfolio-link"> <a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>"> <span class="icon">
-              <?php _e('Back to Portfolio', 'framework'); ?>
-              </span> </a> </div>
-            <div class="nav-next">
-              <?php previous_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
-            </div>
-            <!--END .navigation .single-page-navigation -->
-          </div>
-          <?php endif; ?>
+          <?php edit_post_link( __('[Edit]', 'framework'), '<li class="edit-post">', '</li>' ); ?>
           <!--END #single-sidebar-->
         </div>
 <?php get_footer(); ?>

@@ -140,8 +140,8 @@ textarea,
 .format-quote .quote-wrap .icon{ background: url(../images/light/quote.png) no-repeat; }
 
 
-#single-sidebar .portfolio-link a .icon,
-#single-sidebar .link a span.icon,
+.portfolio-link a .icon,
+.link a span.icon,
 a .overlay .icon,
 .format-link .entry-title .icon,
 .arrow, 

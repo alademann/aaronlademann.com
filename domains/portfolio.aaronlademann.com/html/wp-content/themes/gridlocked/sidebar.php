@@ -25,9 +25,23 @@
 			<!-- END #logo -->
 			</div>
             
-            <!--<div class="seperator clearfix">
-            	<div class="line"></div>
-            </div>-->
+						<?php if(is_single()) : ?>
+						<!--BEGIN .navigation .single-page-navigation -->
+						<div class="navigation single-page-navigation clearfix">
+							<div class="nav-previous">
+								<?php next_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
+							</div>
+							<div class="portfolio-link"> <a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>"> <span class="icon">
+								<?php _e('Back to Portfolio', 'framework'); ?>
+								</span> </a> </div>
+							<div class="nav-next">
+								<?php previous_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
+							</div>
+							<!--END .navigation .single-page-navigation -->
+							
+						</div>
+
+						<?php endif; ?>
 			
 						<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Portfolio Sidebar') ) :?> 
             

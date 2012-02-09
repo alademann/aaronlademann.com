@@ -663,11 +663,11 @@ button {
 
 #single-sidebar {
 	min-width: 150px;
-	width: auto;
-	margin: 0 0 0 40px;
+	width: 18%;
+	margin: 0 0 0 2%;
 	float: left;
 	position: relative;
-	z-index: 998;
+	z-index: 99;
 }
 
 #single-sidebar li {
@@ -1107,15 +1107,15 @@ label.error { color: red; }
 	z-index: 500;
 }
 
-.single-portfolio #single-sidebar .caption a { display: inline; }
+.single-portfolio .caption a { display: inline; }
 
-#single-sidebar .caption { font-size: 12px; }
+.caption { font-size: 12px; }
 
-#single-sidebar .link { margin: 15px 0 0 0; }
+.link { margin: 15px 0 0 0; }
 
-#single-sidebar .link a { display: block; }
+.link a { display: block; }
 
-#single-sidebar .link a span.icon {
+.link a span.icon {
 	float: left;
 	width: 8px;
 	height: 8px;
@@ -1123,13 +1123,14 @@ label.error { color: red; }
 	background-position: 0 -119px;
 }
 
-#single-sidebar .link a:hover span.icon { background-position: -9px -119px; }
+.link a:hover span.icon { background-position: -9px -119px; }
 
 #single-sidebar .terms { margin: 15px 0 0 0; }
 
 #single-sidebar .terms ul {	margin: 0; }
 
-#single-sidebar .portfolio-link a .icon {
+#sidebar .single-page-navigation { position: relative;left: 25px; } 
+.portfolio-link a .icon {
 	margin: 5px 0 0 5px;
 	display: block;
 	background-position: 0 -128px;
@@ -1137,7 +1138,7 @@ label.error { color: red; }
 	height: 11px;
 }
 
-#single-sidebar .portfolio-link a:hover .icon {
+.portfolio-link a:hover .icon {
 	background-position: -12px -128px;
 }
 
