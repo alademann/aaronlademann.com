@@ -541,8 +541,89 @@ function tz_taxonomy_crumbs(){
 	echo '<ul class="breadcrumb"><li><a href="http://aaronlademann.com/">Home</a></li><li><a href="/">Portfolio</a></li>';
 	echo be_taxonomy_breadcrumb();
 	echo '</ul>';
+}
 
+function get_attachment_id_from_src($image_src) {
+
+	global $wpdb;
+	$query = $wpdb->get_row( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = '$image_src'" ) );
+	$id = $query->ID;
+
+	//$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
+	//$id = $wpdb->get_var($query);
 	
+	if($id == null){
+      $image_src = basename ( $image_src );
+      $q2 = "SELECT post_id FROM {$wpdb->postmeta}  WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE '%$image_src%'";
+      $id = $wpdb->get_var($q2);
+  }
+
+	return $id;
+
+
+}
+
+function image_meta($image_src,$meta_key,$size) {
+
+	// size is optional when calling this function... we'll set the default here.
+	if(!$size || $size == ''){
+		$this_size = 'full';
+	} else {
+		$this_size = $size;
+	}
+	$img_id = get_attachment_id_from_src($image_src);
+	$img_size = wp_get_attachment_image_src($image_src, $this_size);
+	$image = get_post($img_id);
+	$meta = '';
+
+  switch($meta_key)
+  {
+		case 'caption':
+			$meta = $image->post_excerpt;
+			break;
+		case 'content':
+			$meta = $image->post_content;
+			break;
+		case 'title':
+			$meta = $image->post_title;
+			break;
+	  case 'alt':
+			$meta = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+			break;
+		case 'width':
+			$meta = $img_size[1];
+			break;
+		case 'height':
+			$meta = $img_size[2];
+			break;
+		case 'mime':
+			$meta = $image->post_mime_type;
+			break;
+		default:
+		// the meta they are looking for is a custom field
+			custom_meta($image_src,$meta_key);
+			break;
+	}
+
+	return $meta;
+
+}
+
+function custom_meta($image_src,$meta_key){
+	
+	// for getting custom field data
+  $meta = wp_get_attachment_metadata(get_attachment_id_from_src($image_src));
+	if($meta){
+		foreach($meta['image_meta'] as $key => $value){
+			if($key == $meta_key){
+				return $key . ': ' . $value;
+			}
+		}
+		return $meta;
+	} else {
+		//something went wrong here.
+		return 'no such value exists for key: "' . $meta_key . '"';
+	}
 
 }
 

@@ -100,20 +100,28 @@ form,
 
 .first { float: left; }
 
-.hentry {
+.masoned .hentry {
 	position: relative;
 	width: 360px;
 	margin: 0 0 20px 20px;
 	float: left;
-	-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.10);
-	   -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.10);
-    		box-shadow:0 1px 1px rgba(0, 0, 0, 0.10);
+	-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+	   -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+    		box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+				
+}
+
+
+.slider a img {
+	-webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.50);
+	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
+    		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
 }
 
 .single .hentry {
 	width: 550px;
 	margin: 0 40px 20px 0;
-	padding: 0 0 15px 0;
+	padding: 30px 0 0 0;
 	float: none;
 }
 
@@ -863,17 +871,29 @@ li #commentform { margin: 0 0 40px 0; }
 
 .page-navigation .nav-previous { float: left; }
 
+#sidebar .single-page-navigation {
+	position: relative;
+	left: 55px;
+	top: -20px;
+} 
+
 .single-page-navigation .nav-next { float: left; }
 
 .single-page-navigation .nav-previous { float: left; }
 
-.single-page-navigation a {
+.single-page-navigation div, .single-page-navigation a {
 	display: block;
 	float: left;
-	text-indent: -9999px;
 	width: 21px;
 	height: 21px;
+}
+
+.single-page-navigation div {
 	margin: 0 5px 0 0;
+}
+
+.single-page-navigation a {
+	text-indent: -9999px;
 	-webkit-border-radius: 2px;
 	   -moz-border-radius: 2px;
 	   		border-radius: 2px;
@@ -1007,7 +1027,7 @@ label.error { color: red; }
 }
 
 .archive .hentry,
-.page.page-template-template-portfolio-php .hentry {
+.page.page-template-template-portfolio-php .masoned .hentry {
 	min-width: 230px; /* actual width determined by custom javascript in /wp-content/resources/custom-javascript.js */
 	min-height: 220px;
 	width: 230px;
@@ -1019,18 +1039,29 @@ label.error { color: red; }
 }
 
 .archive .hentry .arrow,
-.page.page-template-template-portfolio-php .hentry .arrow {
+.page.page-template-template-portfolio-php .masoned .hentry .arrow {
 	top: 162px;
 	right: 15px;
 }
 
+/* so the custom image caption will show */
+.slides_container { overflow: visible !important; }
+.slider .caption {
+	margin-bottom: 0;
+	position: absolute;
+	top: -24px;
+	left: 10px;
+	font-size: 14px;
+	font-weight: bold; 
+}
+
 .archive a .overlay .icon,
-.page.page-template-template-portfolio-php a .overlay .icon {
+.page.page-template-template-portfolio-php .masoned a .overlay .icon {
 	left: 46%;
 }
 
 .archive .entry-title,
-.page.page-template-template-portfolio-php .entry-title {
+.page.page-template-template-portfolio-php .masoned .entry-title {
 	font-size: 12px;
 	border: none;
 	margin: 0;
@@ -1038,7 +1069,7 @@ label.error { color: red; }
 }
 
 .archive .entry-excerpt,
-.page.page-template-template-portfolio-php .entry-excerpt {
+.page.page-template-template-portfolio-php .masoned .entry-excerpt {
 	padding: 0 15px 0 15px;
 	font-size: 11px;
 	line-height: 16px;
@@ -1048,28 +1079,14 @@ label.error { color: red; }
 .hentry * { cursor: default; }
 .hentry a, .hentry a * { cursor: pointer; }
 
-.single-portfolio .slider {
-	width: 360px;
-	height: 270px;
-}
-
-.single-portfolio .slider {
+.single-portfolio .slider, .single-portfolio .slides_container {
 	width: 550px;
-	height: auto;
-}
-
-.single-portfolio .slides_container {
-    width: 360px;
-	height: 270px;
-}
-
-.single-portfolio .slides_container {
-    width: 550px;
 	height: auto;
 }
 
 .single-portfolio  ul.pagination {
 	right: 0;
+	top: -15px; /* half of the top padding for .single .hentry */
 	position: absolute;
 	padding: 25px 15px 0 0;
 	margin: 0;
@@ -1102,14 +1119,13 @@ label.error { color: red; }
 
 .single-portfolio .entry-meta { padding: 0 15px 20px 15px; }
 
-.single-portfolio .arrow { margin: 262px 0 0 327px; }
-
 .single-portfolio .hentry .arrow {
 	margin: -14px 15px 0 0;
 	position: relative;
 	float: right;
 	top: auto;
 	z-index: 500;
+	display: none;
 }
 
 .single-portfolio .caption a { display: inline; }
@@ -1134,7 +1150,6 @@ label.error { color: red; }
 
 #single-sidebar .terms ul {	margin: 0; }
 
-#sidebar .single-page-navigation { position: relative;left: 55px;top: -20px; } 
 .portfolio-link a .icon {
 	margin: 5px 0 0 5px;
 	display: block;
@@ -1156,7 +1171,8 @@ label.error { color: red; }
 
 .widget-title {
 	font-size: 12px;
-	margin: 0 0 10px 0;
+	margin: 5px 0 -5px 0 !important;
+	font-weight: normal !important;
 }
 
 .widget ul {

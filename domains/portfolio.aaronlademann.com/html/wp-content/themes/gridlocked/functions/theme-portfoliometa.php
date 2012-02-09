@@ -64,13 +64,6 @@ $meta_box = array(
 			'std' => 'Browse'
 		),
 	array(
-			'name' =>  __('Image 1 Caption', 'framework'),
-			'desc' => __('', 'framework'),
-			'id' => $prefix.'portfolio_image_caption',
-			'type' => 'text',
-			'std' => ''
-		),
-	array(
 			'name' =>  __('Image 2', 'framework'),
 			'desc' => __('550px x unlimited', 'framework'),
 			'id' => $prefix.'portfolio_image2',
@@ -83,13 +76,6 @@ $meta_box = array(
 			'id' => $prefix.'portfolio_image_button2',
 			'type' => 'button',
 			'std' => 'Browse'
-		),
-	array(
-			'name' =>  __('Image 2 Caption', 'framework'),
-			'desc' => __('', 'framework'),
-			'id' => $prefix.'portfolio_image2_caption',
-			'type' => 'text',
-			'std' => ''
 		),
 	array(
 			'name' =>  __('Image 3', 'framework'),
@@ -106,13 +92,6 @@ $meta_box = array(
 			'std' => 'Browse'
 		),
 	array(
-			'name' =>  __('Image 3 Caption', 'framework'),
-			'desc' => __('', 'framework'),
-			'id' => $prefix.'portfolio_image3_caption',
-			'type' => 'text',
-			'std' => ''
-		),
-	array(
 			'name' =>  __('Image 4', 'framework'),
 			'desc' => __('550px x unlimited', 'framework'),
 			'id' => $prefix.'portfolio_image4',
@@ -125,13 +104,6 @@ $meta_box = array(
 			'id' => $prefix.'portfolio_image_button4',
 			'type' => 'button',
 			'std' => 'Browse'
-		),
-	array(
-			'name' =>  __('Image 4 Caption', 'framework'),
-			'desc' => __('', 'framework'),
-			'id' => $prefix.'portfolio_image4_caption',
-			'type' => 'text',
-			'std' => ''
 		),
 	array(
 			'name' =>  __('Image 5', 'framework'),
@@ -147,12 +119,75 @@ $meta_box = array(
 			'type' => 'button',
 			'std' => 'Browse'
 		),
-	array(
-			'name' =>  __('Image 5 Caption', 'framework'),
-			'desc' => __('', 'framework'),
-			'id' => $prefix.'portfolio_image5_caption',
+		array(
+			'name' =>  __('Image 6', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image6',
 			'type' => 'text',
 			'std' => ''
+		),
+	array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button6',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+	array(
+			'name' =>  __('Image 7', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image7',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button7',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+	array(
+			'name' =>  __('Image 8', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image8',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button8',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+	array(
+			'name' =>  __('Image 9', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image9',
+			'type' => 'text',
+			'std' => ''
+		),
+	array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button9',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+		array(
+			'name' =>  __('Image 10', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image10',
+			'type' => 'text',
+			'std' => ''
+		),
+		array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button10',
+			'type' => 'button',
+			'std' => 'Browse'
 		),
 	),
 	

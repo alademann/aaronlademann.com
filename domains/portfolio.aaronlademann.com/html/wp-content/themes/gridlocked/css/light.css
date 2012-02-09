@@ -56,7 +56,10 @@ input,
 textarea,
 .tabs ul.nav li a,
 body,
-a { color: #686a6c;}
+a, .caption { color: #686a6c;}
+
+.single a .caption, .single a.caption { color: #08f; }
+.single a:hover .caption, .single a.caption:hover { text-decoration: underline !important; }
 
 #tagline {
 	color: #7b7d80;
@@ -130,6 +133,8 @@ textarea,
 .hentry { background-color: #fafafa; }
 
 .hentry.hover { background-color: white; }
+
+.single .hentry { background-color: transparent; }
 
 .single-page-navigation a,
 #submit span.icon,
