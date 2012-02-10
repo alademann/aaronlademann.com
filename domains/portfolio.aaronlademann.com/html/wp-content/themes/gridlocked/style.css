@@ -1046,7 +1046,7 @@ label.error { color: red; }
 	min-width: 230px; /* actual width determined by custom javascript in /wp-content/resources/custom-javascript.js */
 	min-height: 220px;
 	width: 230px;
-	height: auto;
+	height: 254px;
 	overflow: hidden;
 	margin: 0 0 20px 25px;
 	padding: 0;

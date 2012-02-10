@@ -193,7 +193,7 @@ blockquote,
 			box-shadow: inset -1px 1px 1px rgba(70, 70, 70, 0.20); 
 }
 
-.current-cat>a,
+.current-cat>a, .current-cat-parent>a,
 .current-page>a,
 .current-menu-item>a { background-color: #ffedac; color: #3a3c3d; }
 

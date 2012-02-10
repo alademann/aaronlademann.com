@@ -6,16 +6,6 @@
 .entry-meta ul, .entry-meta ul ul, .entry-meta ul ul ul, .entry-meta ul ul ul ul, .entry-meta ul ul ul ul ul { clear: left; }
 .widget-title { margin: 10px 0 4px 0; font-weight: bold; }
 .widget-title.first { margin-top: 0; }
-.contactform #submit:hover span.icon,
-.comment-body p a:hover,
-#submit:hover span.icon,
-.single-page-navigation a:hover,
-#back-to-top a:hover .icon,
-.entry-content a:hover,
-#overlay-inner a:hover,
-.current-cat a,
-.current-page a,
-.current-menu-item a { background-color: #ffedac; }
 
 a, .aafolio .link { color: #08c; }
 .link { cursor: pointer !important; }
