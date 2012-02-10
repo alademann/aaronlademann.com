@@ -28,31 +28,22 @@ Template Name: Portfolio
 										);
 								?>
 
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
                     <!--BEGIN .hentry -->
                     <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                         
                         <?php 
-                        
-                        
                         $lightbox = get_post_meta(get_the_ID(), 'tz_portfolio_lightbox', TRUE); 
                         $thumb = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 
-												//$thumb_caption = get_post_meta(get_the_ID(), 'tz-meta-box-portfolio-info', TRUE);
-                        
-													$embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
-						
+												$embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
                         $image  = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
-													$image_caption  = image_meta($image,'caption', 'med'); 
+												$image_caption  = image_meta($image,'caption', 'med'); 
+                        $lightbox = FALSE;
                         
-                        
-                        //if($lightbox == 'no')
-                            $lightbox = FALSE;
-                        
-                        if($thumb == '')
-                            $thumb = FALSE;
-
-                         //$large_image = $large_image[0];
+													if($thumb == ''){
+															$thumb = FALSE;
+													}
                             
                         ?>
                         

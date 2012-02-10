@@ -158,9 +158,14 @@ function tz_gallery($postid){
 					//generateNextPrev: true, 
 					preloadImage: jQuery("#slider-<?php echo $postid; ?>").attr('data-loader'), 
 					generatePagination: true,
-					effect: 'fade'<?php if(!is_singular()): ?>,
+					effect: 'fade',
+					//slideSpeed: 3000,
+					play: 8000,
+					pause: 1500,
+					hoverPause: true<?php if(!is_singular()): ?>,
 					crossfade: true<?php endif; ?><?php if(is_singular()): ?>,
 					autoHeight: true<?php endif; ?>
+					
 				});
 			});
 
