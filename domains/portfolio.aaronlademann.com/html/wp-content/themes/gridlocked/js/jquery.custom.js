@@ -276,7 +276,7 @@ jQuery(document).ready(function() {
 	function tz_backToTop(topLink) {
 
 		if(jQuery(window).scrollTop() > 0) {
-			console.info(jQuery(window).scrollTop());
+			//console.info(jQuery(window).scrollTop());
 			topLink.stop().fadeIn(200);
 		} else {
 			topLink.stop().fadeOut(200);

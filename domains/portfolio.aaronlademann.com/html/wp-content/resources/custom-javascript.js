@@ -9,18 +9,31 @@ $(document).ready(function() {
 	// make the hentry boxes have the same width as the thumbnail
 	var hentries = $("#masonry-portfolio").find(".hentry");
 	$.each(hentries, function() {
-		var thumbnail = $(".post-thumb > a > img", this);
-		//var pic_width = $(this).width();
-		//console.debug(pic_width);
-		//$(this).closest(".hentry").css("width", pic_width + "px");
-		//
-		//		$(thumbnail).load(function() {
-		//			pic_width = $(this).width();	
-		//var pic_height = $(this).height();
-		//			console.debug(pic_width);
-		//			$(this).closest(".hentry").css("width", pic_width + "px");
 
-		//		});
+		// track "likes" in google analytics
+		var folioItemTitle = $(this).find(".entry-title").text();
+		//console.info(folioItemTitle);
+		var likeButton = $(this).find(".likeThis").not(".active");
+		$.each(likeButton, function() {
+			var cssID = $(this).attr("id");
+			var folioItemID = cssID.substring(cssID.lastIndexOf("-") + 1);
+
+			$(this).live("click", function(e) {
+				// make sure right-clicks arent tracked
+				if(e.button == 0) {
+					//console.info("button != 0");
+					// track "like" event in google analytics
+					_gaq.push(['_trackEvent', 'portfolio', 'likes', folioItemTitle]);
+				}
+
+			}); // END .live(click)
+
+		}); // end .each(likeButton)
+
+
+		// thumbnail hover effects
+
+		var thumbnail = $(".post-thumb > a > img", this);
 
 		// activate a hover in / hover out function for each entry
 		$(this).hover(function() {
