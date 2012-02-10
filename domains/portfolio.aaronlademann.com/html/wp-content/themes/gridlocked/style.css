@@ -121,7 +121,7 @@ form,
 .single .hentry {
 	width: 550px;
 	margin: 0 40px 20px 0;
-	padding: 30px 0 0 0;
+	padding: 40px 0 0 0;
 	float: none;
 }
 
@@ -1049,7 +1049,7 @@ label.error { color: red; }
 .slider .caption {
 	margin-bottom: 0;
 	position: absolute;
-	top: -24px;
+	top: -32px;
 	left: 10px;
 	font-size: 14px;
 	font-weight: bold; 
