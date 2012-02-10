@@ -159,9 +159,8 @@ function tz_gallery($postid){
 					preloadImage: jQuery("#slider-<?php echo $postid; ?>").attr('data-loader'), 
 					generatePagination: true,
 					effect: 'fade',
-					//slideSpeed: 3000,
 					play: 8000,
-					pause: 1500,
+					pause: 8000,
 					hoverPause: true<?php if(!is_singular()): ?>,
 					crossfade: true<?php endif; ?><?php if(is_singular()): ?>,
 					autoHeight: true<?php endif; ?>
