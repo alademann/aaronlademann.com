@@ -130,16 +130,17 @@ class WP_Media_List_Table extends WP_List_Table {
 		$posts_columns['icon'] = '';
 		/* translators: column name */
 		$posts_columns['title'] = _x( 'File', 'column name' );
-		$posts_columns['author'] = __( 'Author' );
+		$posts_columns['author'] = _x( 'Caption', 'column name' );
 		//$posts_columns['tags'] = _x( 'Tags', 'column name' );
 		/* translators: column name */
 		if ( !$this->detached ) {
-			$posts_columns['parent'] = _x( 'Attached to', 'column name' );
+		//	$posts_columns['parent'] = _x( 'Attached to', 'column name' );
 			if ( post_type_supports( 'attachment', 'comments' ) )
 				$posts_columns['comments'] = '<span class="vers"><img alt="' . esc_attr__( 'Comments' ) . '" src="' . esc_url( admin_url( 'images/comment-grey-bubble.png' ) ) . '" /></span>';
 		}
 		/* translators: column name */
 		$posts_columns['date'] = _x( 'Date', 'column name' );
+		//$posts_columns['caption'] = _x( 'Caption', 'column name' );
 		$posts_columns = apply_filters( 'manage_media_columns', $posts_columns, $this->detached );
 
 		return $posts_columns;
@@ -149,7 +150,8 @@ class WP_Media_List_Table extends WP_List_Table {
 		return array(
 			'title'    => 'title',
 			'author'   => 'author',
-			'parent'   => 'parent',
+			//'parent'   => 'parent',
+			//'caption'  => 'caption',
 			'comments' => 'comment_count',
 			'date'     => array( 'date', true ),
 		);
@@ -245,9 +247,16 @@ foreach ( $columns as $column_name => $column_display_name ) {
 
 	case 'author':
 ?>
-		<td <?php echo $attributes ?>><?php the_author() ?></td>
+		
+		<td <?php echo $attributes ?>><?php the_excerpt() ?></td>
 <?php
 		break;
+
+//	case 'caption':
+?>
+		<!--<td <?php echo $attributes ?>><?php the_excerpt() ?></td>-->
+<?php
+//		break;
 
 	case 'tags':
 ?>
@@ -293,35 +302,6 @@ foreach ( $columns as $column_name => $column_display_name ) {
 <?php
 		break;
 
-	case 'parent':
-		if ( $post->post_parent > 0 ) {
-			if ( get_post( $post->post_parent ) ) {
-				$title =_draft_or_post_title( $post->post_parent );
-			}
-?>
-			<td <?php echo $attributes ?>><strong>
-				<?php if( current_user_can( 'edit_post', $post->post_parent ) ) { ?>
-					<a href="<?php echo get_edit_post_link( $post->post_parent ); ?>">
-						<?php echo $title ?></a>
-				<?php } else {
-					echo $title;
-				} ?></strong>,
-				<?php echo get_the_time( __( 'Y/m/d' ) ); ?>
-			</td>
-<?php
-		} else {
-?>
-			<td <?php echo $attributes ?>><?php _e( '(Unattached)' ); ?><br />
-			<?php if( $user_can_edit ) {?>
-				<a class="hide-if-no-js"
-					onclick="findPosts.open( 'media[]','<?php echo $post->ID ?>' ); return false;"
-					href="#the-list">
-					<?php _e( 'Attach' ); ?></a>
-			<?php } ?></td>
-<?php
-		}
-		break;
-
 	case 'comments':
 		$attributes = 'class="comments column-comments num"' . $style;
 ?>
@@ -339,9 +319,9 @@ foreach ( $columns as $column_name => $column_display_name ) {
 
 	default:
 ?>
-		<td <?php echo $attributes ?>>
+		<!--td <?php echo $attributes ?>>
 			<?php do_action( 'manage_media_custom_column', $column_name, $id ); ?>
-		</td>
+		</td>-->
 <?php
 		break;
 	}
