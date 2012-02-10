@@ -85,7 +85,7 @@
                                     <?php if($thumb) : ?>
                                     <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" />
                                     <?php else: ?>
-                                    <?php the_post_thumbnail('portfolio-thumb'); ?>
+                                    <?php the_post_thumbnail('thumbnail'); ?>
                                     <?php endif; ?>
                                 </a>
                             <?php else: ?>
@@ -94,7 +94,7 @@
                                 <?php if($thumb) : ?>
                                 	<img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" />
                                 <?php else: ?>
-                                <?php the_post_thumbnail('portfolio-thumb'); ?>
+                                <?php the_post_thumbnail('thumbnail'); ?>
                                 <?php endif; ?>
                                 </a>
                                 
