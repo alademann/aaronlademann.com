@@ -1097,6 +1097,7 @@ label.error { color: red; }
 .single-portfolio .slider, .single-portfolio .slides_container {
 	width: 550px;
 	height: auto;
+	min-height: 300px;
 }
 
 /* pages that only have one image need this */
