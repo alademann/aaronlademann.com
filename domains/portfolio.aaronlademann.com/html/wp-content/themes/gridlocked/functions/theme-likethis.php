@@ -1,7 +1,8 @@
 <?php
 
-function tz_likeThis($post_id,$action = 'get') {
-
+// hard-coding $action to 'get' since dynamically sending it update based on cookie status throws a ridiculous error
+function tz_likeThis( $post_id, $action = 'get' ) {
+	
 	if(!is_numeric($post_id)) {
 		error_log("Error: Value submitted for post_id was not numeric");
 		return;
@@ -9,6 +10,7 @@ function tz_likeThis($post_id,$action = 'get') {
 
 	switch($action) {
 	
+	// the get action doesn't check for / set a cookie
 	case 'get':
 		$data = get_post_meta($post_id, '_likes');
 		
@@ -16,16 +18,13 @@ function tz_likeThis($post_id,$action = 'get') {
 			$data[0] = 0;
 			add_post_meta($post_id, '_likes', '0', true);
 		} //if
-		
-		//if(!isset($_COOKIE["like_" + $post_id])) {
-		//	setcookie("like_" + $post_id, $post_id,time()*20, '/');
-		//} //if
-		//setcookie("like_" + $post_id, $post_id,time()*20, '/');
+
 		return $data[0];
 	break;
 	
-	
+	// appears unable to check the cookie / set the cookie... so 'update' is not currently an option.
 	case 'update':
+		
 		if(isset($_COOKIE["like_" + $post_id])) {
 			return;
 		} //if
