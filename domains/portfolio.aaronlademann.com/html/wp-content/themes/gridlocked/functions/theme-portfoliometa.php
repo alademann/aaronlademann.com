@@ -182,6 +182,77 @@ $meta_box = array(
 			'type' => 'button',
 			'std' => 'Browse'
 		),
+		array(
+			'name' =>  __('Image 11', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image11',
+			'type' => 'text',
+			'std' => ''
+		),
+		array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button11',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+		array(
+			'name' =>  __('Image 12', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image12',
+			'type' => 'text',
+			'std' => ''
+		),
+		array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button12',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+		array(
+			'name' =>  __('Image 13', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image13',
+			'type' => 'text',
+			'std' => ''
+		),
+		array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button13',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+		array(
+			'name' =>  __('Image 14', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image14',
+			'type' => 'text',
+			'std' => ''
+		),
+		array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button14',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+		array(
+			'name' =>  __('Image 15', 'framework'),
+			'desc' => __('550px x unlimited', 'framework'),
+			'id' => $prefix.'portfolio_image15',
+			'type' => 'text',
+			'std' => ''
+		),
+		array(
+			'name' => '',
+			'desc' => '',
+			'id' => $prefix.'portfolio_image_button15',
+			'type' => 'button',
+			'std' => 'Browse'
+		),
+
 	),
 	
 );

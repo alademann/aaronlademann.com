@@ -75,6 +75,41 @@
 								$image10_h = image_meta($image10,'height', 'medium');
 								$image10_w = image_meta($image10,'width', 'medium');
 							}
+						$image11 = get_post_meta(get_the_ID(), 'tz_portfolio_image11', TRUE);
+							if($image11 != ''){
+								$image11_caption = image_meta($image11,'caption', 'full'); 
+								$image11_mime = image_meta($image11,'mime', 'medium');
+								$image11_h = image_meta($image11,'height', 'medium');
+								$image11_w = image_meta($image11,'width', 'medium');
+							}
+						$image12 = get_post_meta(get_the_ID(), 'tz_portfolio_image12', TRUE);
+							if($image12 != ''){
+								$image12_caption = image_meta($image12,'caption', 'full'); 
+								$image12_mime = image_meta($image12,'mime', 'medium');
+								$image12_h = image_meta($image12,'height', 'medium');
+								$image12_w = image_meta($image12,'width', 'medium');
+							}
+						$image13 = get_post_meta(get_the_ID(), 'tz_portfolio_image13', TRUE);
+							if($image13 != ''){
+								$image13_caption = image_meta($image13,'caption', 'full'); 
+								$image13_mime = image_meta($image13,'mime', 'medium');
+								$image13_h = image_meta($image13,'height', 'medium');
+								$image13_w = image_meta($image13,'width', 'medium');
+							}
+						$image14 = get_post_meta(get_the_ID(), 'tz_portfolio_image14', TRUE);
+							if($image14 != ''){
+								$image14_caption = image_meta($image14,'caption', 'full'); 
+								$image14_mime = image_meta($image14,'mime', 'medium');
+								$image14_h = image_meta($image14,'height', 'medium');
+								$image14_w = image_meta($image14,'width', 'medium');
+							}
+						$image15 = get_post_meta(get_the_ID(), 'tz_portfolio_image15', TRUE);
+							if($image15 != ''){
+								$image15_caption = image_meta($image15,'caption', 'full'); 
+								$image15_mime = image_meta($image15,'mime', 'medium');
+								$image15_h = image_meta($image15,'height', 'medium');
+								$image15_w = image_meta($image15,'width', 'medium');
+							}
 
             $embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
             $large_image =  wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full', false, '' );
@@ -235,6 +270,36 @@
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image10_caption; ?>" href="#10" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image10_caption; ?></strong> 
 											<img height="<?php echo $image10_h; ?>" width="<?php echo $image10_w; ?>" src="<?php echo $image10; ?>" alt="<?php echo $image10_caption; ?>" class="<?php echo $image10_mime; ?>" />
+										</a></div>
+                    <?php endif; ?>
+										<?php if($image11 != '') : ?>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image11_caption; ?>" href="#11" rel="gallery_<?php the_ID(); ?>">
+											<strong class="caption"><?php echo $image11_caption; ?></strong> 
+											<img height="<?php echo $image11_h; ?>" width="<?php echo $image11_w; ?>" src="<?php echo $image11; ?>" alt="<?php echo $image11_caption; ?>" class="<?php echo $image11_mime; ?>" />
+										</a></div>
+                    <?php endif; ?>
+										<?php if($image12 != '') : ?>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image12_caption; ?>" href="#12" rel="gallery_<?php the_ID(); ?>">
+											<strong class="caption"><?php echo $image12_caption; ?></strong> 
+											<img height="<?php echo $image12_h; ?>" width="<?php echo $image12_w; ?>" src="<?php echo $image12; ?>" alt="<?php echo $image12_caption; ?>" class="<?php echo $image12_mime; ?>" />
+										</a></div>
+                    <?php endif; ?>
+										<?php if($image13 != '') : ?>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image13_caption; ?>" href="#13" rel="gallery_<?php the_ID(); ?>">
+											<strong class="caption"><?php echo $image13_caption; ?></strong> 
+											<img height="<?php echo $image13_h; ?>" width="<?php echo $image13_w; ?>" src="<?php echo $image13; ?>" alt="<?php echo $image13_caption; ?>" class="<?php echo $image13_mime; ?>" />
+										</a></div>
+                    <?php endif; ?>
+										<?php if($image14 != '') : ?>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image14_caption; ?>" href="#14" rel="gallery_<?php the_ID(); ?>">
+											<strong class="caption"><?php echo $image14_caption; ?></strong> 
+											<img height="<?php echo $image14_h; ?>" width="<?php echo $image14_w; ?>" src="<?php echo $image14; ?>" alt="<?php echo $image14_caption; ?>" class="<?php echo $image14_mime; ?>" />
+										</a></div>
+                    <?php endif; ?>
+										<?php if($image15 != '') : ?>
+                    <div><a class="lightbox" title="Click to view full-size <?php echo $image15_caption; ?>" href="#15" rel="gallery_<?php the_ID(); ?>">
+											<strong class="caption"><?php echo $image15_caption; ?></strong> 
+											<img height="<?php echo $image15_h; ?>" width="<?php echo $image15_w; ?>" src="<?php echo $image15; ?>" alt="<?php echo $image15_caption; ?>" class="<?php echo $image15_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                   </div>
