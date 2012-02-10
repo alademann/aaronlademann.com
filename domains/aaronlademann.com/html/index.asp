@@ -6,7 +6,7 @@
 <!-- InstanceBeginEditable name="docmeta" -->
 <link rel="canonical" href="http://aaronlademann.com" />
 <meta name="robots" content="index,follow" />
-<title>Aaron Lademann - Designer, Developer, Innovator { aaronlademann.com }</title>
+<title>Aaron Lademann - Innovator, Designer, Leader { aaronlademann.com }</title>
 <meta name="keywords" content="web developer, interface designer, web designer, web professional, graphic designer, business identity specialist, web portfolio, aaron lademann, lademann, lademann resume, st. louis professionals, st. louis graphic designer, st. louis web developer, st. louis IT pro" />
 <meta name="description" content="aaronlademann.com is the official home page of Aaron Lademann - professional designer, web developer and innovate, creative professional." />
 <!-- InstanceEndEditable -->
@@ -98,11 +98,11 @@
 		<!--#include virtual="/_includes/_content/nav.asp"-->
 
 	<!-- InstanceEndEditable -->      
-    		<li><a href="http://www.linkedin.com/in/aaronlademann" target="_blank">LinkedIn</a></li>
+    		
     		<li><a href="http://twitter.com/alademann" target="_blank">twitter</a></li>    
     	</ul> 
     </div>
-    <p id="copyright"><small>&copy; <% Response.Write Year(now) %></small></p>
+    <p id="copyright"><small>&copy; 2012</small></p>
 </div>
 <script> 
 		head.js("/_includes/_js/jquery-1.6.2.min.js").js("/_includes/_js/analytics.js", 

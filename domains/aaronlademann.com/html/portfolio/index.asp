@@ -66,7 +66,6 @@
 		<!--#include virtual="/_includes/_content/nav.asp"-->
 
 	<!-- InstanceEndEditable -->      
-    		<li><a href="http://www.linkedin.com/in/aaronlademann" target="_blank">LinkedIn</a></li>
     		<li><a href="http://twitter.com/alademann" target="_blank">twitter</a></li>    
     	</ul> 
     </div>
