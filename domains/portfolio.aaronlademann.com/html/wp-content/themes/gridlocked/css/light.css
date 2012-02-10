@@ -202,7 +202,7 @@ blockquote,
 /*.format-standard .entry-title,
 .page .entry-title { border-bottom: 1px solid #f3f3f3; }*/
 
-.line { border-bottom: 1px solid #d6d6d6; }
+.line { border-bottom: 1px solid rgba(0,0,0,.1); border-top: 1px solid rgba(255,255,255,.4);}
 
 /* custom "inset box" style links and effects (requires .js effects in jquery.custom.js */
 #back-to-top.hover, 

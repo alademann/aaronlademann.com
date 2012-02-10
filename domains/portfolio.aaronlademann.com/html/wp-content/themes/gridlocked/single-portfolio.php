@@ -342,7 +342,7 @@
                   ?>
           <!--BEGIN .entry-meta .entry-header-->
 					<h1><?php the_title(); ?></h1>
-          <ul class="entry-meta entry-header clearfix">
+          <ul class="entry-header clearfix">
             
             <?php if($caption != '') : ?>
             <li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo stripslashes(htmlspecialchars_decode($caption)); ?> </li>
@@ -356,7 +356,7 @@
 					<div class="seperator clearfix">
             <div class="line"></div>
           </div>
-					<ul class="entry-meta entry-header clearfix">
+					<ul class="entry-meta clearfix">
             <li class="terms">
 							<!--<ul>
 								<li><h3 class="widget-title">Date Completed</h3></li>
@@ -408,8 +408,12 @@
 											echo '<li><h3 class="widget-title">Client / Project</h3></li><li>';
 											$i = 0;
 											foreach($client_terms as $client){
-												if($i == 0){ echo '<strong>'; $title = 'View all projects done for ' . $client->name; }
-												if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for this client'; }
+												if($i == 0){ 
+													$client_main = $client->name;
+													echo '<strong>'; 
+													$title = 'View all projects done for ' . $client_main; 
+												}
+												if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for ' . $client_main; }
 												echo '<a title="'. $title .'" href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>'; 
 												if($i == 0){ echo '</strong>'; }
 												$i++;
@@ -453,10 +457,10 @@
 										echo '<li><h3 class="widget-title">Media Type(s)</h3></li><li>';
 										$i = 0;
 										foreach($media_terms as $media){
-											if($i == 0){ echo '<strong>'; }
-											if($i > 0){ echo ' > '; }
+											//if($i == 0){ echo '<strong>'; }
+											if($i > 0){ echo ', '; }
 											echo '<a title="View all portfolio content made for the following media: ' . $media->name . '" href="'.get_term_link($media->slug, 'media-type').'">'.$media->name.'</a>'; 
-											if($i == 0){ echo '</strong>'; }
+											//if($i == 0){ echo '</strong>'; }
 											$i++;
 										}
 										echo '</li>';
