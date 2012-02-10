@@ -112,7 +112,7 @@ form,
 }
 
 
-.slider a img {
+.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
 	-webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.50);
 	   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
     		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
@@ -1089,7 +1089,7 @@ label.error { color: red; }
 
 .single-portfolio  ul.pagination {
 	right: 0;
-	top: -15px; /* half of the top padding for .single .hentry */
+	top: -20px; /* half of the top padding for .single .hentry */
 	position: absolute;
 	padding: 25px 15px 0 0;
 	margin: 0;
@@ -1101,15 +1101,25 @@ label.error { color: red; }
 }
 
 .single-portfolio  ul.pagination li a {
-	display: block;
-	background-position: 0 -32px;
-	width: 12px;
-	height: 12px;
-	text-indent: -9999px;
+	display: block;	
+	width: auto;
+	height: auto;
+	padding: 2px 8px 2px 8px;
+	background-image: none !important;
+	font-size: 15px;
+	text-align: center;
+	font-weight: bold;
+	background-color: #66696d;
+	color: #d2d6db;
+	text-decoration: none !important;
+	text-shadow: 1px 1px 0 #333 !important;
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	   		border-radius: 2px;
 }
 
 .single-portfolio  ul.pagination li.current a,
-.single-portfolio  ul.pagination li a:hover { background-position: -19px -32px; }
+.single-portfolio  ul.pagination li a:hover { background-color: #08f; color: white; }
 
 .single-portfolio .entry-title { padding: 20px 15px 10px 15px; }
 

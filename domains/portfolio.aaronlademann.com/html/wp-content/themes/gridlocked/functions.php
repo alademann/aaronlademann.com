@@ -597,7 +597,7 @@ function image_meta($image_src,$meta_key,$size) {
 			$meta = $img_size[2];
 			break;
 		case 'mime':
-			$meta = $image->post_mime_type;
+			$meta = substr($image->post_mime_type, strrpos($image->post_mime_type,"/") + 1);
 			break;
 		default:
 		// the meta they are looking for is a custom field
@@ -605,7 +605,7 @@ function image_meta($image_src,$meta_key,$size) {
 			break;
 	}
 
-	return $meta;
+	return htmlspecialchars($meta, ENT_QUOTES);
 
 }
 
