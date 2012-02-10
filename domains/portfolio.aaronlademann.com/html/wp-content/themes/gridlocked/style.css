@@ -359,12 +359,12 @@ h6 {
 	z-index: 500;
 }
 /* webkit browsers */
-.chrome #sidebar, .safari #sidebar { margin-top: 73px; }
+.chrome #sidebar, .safari #sidebar { margin-top: 46px; }
 #sidebar .widget {
 	position: relative;
 	width: 170px;
 	left: 20px;
-	top: -20px;
+	top: -6px;
 }
 #sidebar #logo {
 	/* exclude the logo div from the above margin */
@@ -1064,7 +1064,7 @@ label.error { color: red; }
 .slider .caption {
 	margin-bottom: 0;
 	position: absolute;
-	top: -32px;
+	top: -35px;
 	left: 10px;
 	font-size: 14px;
 	font-weight: bold; 
