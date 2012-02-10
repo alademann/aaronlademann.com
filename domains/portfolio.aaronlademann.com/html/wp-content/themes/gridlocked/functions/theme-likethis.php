@@ -42,8 +42,7 @@ function tz_likeThis( $post_id, $action = 'get' ) {
 		update_post_meta($post_id, '_likes', $currentValue[0]);
 		update_post_meta($post_id, '_wholikes', tz_whoLikes($post_id, $currentValue[0]));
 
-		//$30days = time()+60*60*24*30;
-		setcookie("like_" + $post_id, $post_id);
+		setcookie("like_" + $post_id, $post_id, time()+60*60*24*30*600, '/');
 	break;
 
 	} //switch
@@ -61,10 +60,15 @@ function tz_whoLikes($post_id, $likes){
 	if(isset($_COOKIE["like_" + $post_id])) {	
 
 		$who = 'You ';
-		$others_count = "$likes" - 1;
-		$others = 'and ' . $others_count . ' others like ';
-		if($likes == 2) {
-			$others = 'and 1 other person like ';
+		if($likes > 1){
+			$others_count = "$likes" - 1;
+			$others = 'and ' . $others_count . ' others like ';
+			if($likes == 2) {
+				$others = 'and 1 other person like ';
+			}
+		} else {
+			// only you like it.
+			$others = 'like ';
 		}
 
 		$wholikesit = $who . $others . $what;
