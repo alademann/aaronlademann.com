@@ -1,6 +1,11 @@
 ﻿var $ = jQuery.noConflict();
 $(document).ready(function() {
 
+	// disable right click on all images
+	$('img').live('contextmenu', function(e){
+			return false;
+	});
+
 	// make the hentry boxes have the same width as the thumbnail
 	var hentries = $("#masonry-portfolio").find(".hentry");
 	$.each(hentries, function() {
