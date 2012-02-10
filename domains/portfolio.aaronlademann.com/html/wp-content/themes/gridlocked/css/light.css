@@ -114,12 +114,6 @@ textarea,
 
 .single .hentry { background-color: transparent; }
 
-.single-page-navigation a,
-#submit span.icon,
-#back-to-top .icon {
-	background-color: #66696d;
-}
-
 .comment-body p,
 #load-more-link a,
 .hentry { color: #96999d; }
@@ -182,7 +176,13 @@ blockquote,
 
 .line { border-bottom: 1px solid rgba(0,0,0,.1); border-top: 1px solid rgba(255,255,255,.4);}
 
-.contactform #submit:hover span.icon, .comment-body p a:hover, #submit:hover span.icon, .single-page-navigation a:hover, #back-to-top a:hover .icon, .entry-content a:hover, #overlay-inner a:hover { background-color: #ffedac; color: #3a3c3d; }
+.single-page-navigation a,
+#submit span.icon,
+#back-to-top .icon {
+	background-color: #66696d;
+}
+
+.contactform #submit:hover span.icon, .comment-body p a:hover, #submit:hover span.icon, .single-page-navigation a:hover, #back-to-top.hover .icon, .entry-content a:hover, #overlay-inner a:hover { background-color: #ffedac; color: #3a3c3d; }
 
 /* custom "inset box" style links and effects (requires .js effects in jquery.custom.js */
 #back-to-top.hover, 

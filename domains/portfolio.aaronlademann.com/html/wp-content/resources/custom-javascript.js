@@ -2,8 +2,8 @@
 $(document).ready(function() {
 
 	// disable right click on all images
-	$('img').live('contextmenu', function(e){
-			return false;
+	$('img').live('contextmenu', function(e) {
+		return false;
 	});
 
 	// make the hentry boxes have the same width as the thumbnail
@@ -13,14 +13,14 @@ $(document).ready(function() {
 		//var pic_width = $(this).width();
 		//console.debug(pic_width);
 		//$(this).closest(".hentry").css("width", pic_width + "px");
-//
-//		$(thumbnail).load(function() {
-//			pic_width = $(this).width();	
-			//var pic_height = $(this).height();
-//			console.debug(pic_width);
-//			$(this).closest(".hentry").css("width", pic_width + "px");
+		//
+		//		$(thumbnail).load(function() {
+		//			pic_width = $(this).width();	
+		//var pic_height = $(this).height();
+		//			console.debug(pic_width);
+		//			$(this).closest(".hentry").css("width", pic_width + "px");
 
-//		});
+		//		});
 
 		// activate a hover in / hover out function for each entry
 		$(this).hover(function() {
@@ -28,31 +28,31 @@ $(document).ready(function() {
 			//var thumbnail = $(".post-thumb > a > img", this);
 			$(this).stop(true, true).animate({
 				backgroundColor: "#ffffff"
-			}, { queue: true, duration: 1000 }, function () {
+			}, { queue: true, duration: 1000 }, function() {
 				// animation complete
 			});
 			$(thumbnail).stop(true, true).animate({
 				opacity: 1.0
-			}, { queue: true, duration: 1000 }, function () {
+			}, { queue: true, duration: 1000 }, function() {
 				// animation complete
 				$(this).toggleClass("hover");
 			});
-			
+
 		}, function() {
 			// hover out
 			//var thumbnail = $(".post-thumb > a > img", this);
 			$(this).stop(true, true).animate({
 				backgroundColor: "#fafafa"
-			}, { queue: true, duration: 1000 }, function () {
+			}, { queue: true, duration: 1000 }, function() {
 				// animation complete
 			});
 			$(thumbnail).stop(true, true).animate({
 				opacity: 0.8
-			}, { queue: true, duration: 1000 }, function () {
+			}, { queue: true, duration: 1000 }, function() {
 				// animation complete
 				$(this).toggleClass("hover");
 			});
-			
+
 		}
 		);
 
