@@ -515,11 +515,14 @@ switch ($item_tax)
     case __( 'skill-type' ):  
         $parent_slug = 'portfolio/skill';
         break;
+		case __( 'portfolio-type' ):  
+        $parent_slug = 'portfolio/type';
+        break;
 		case __( 'media-type' ):  
         $parent_slug = 'portfolio/media';
         break;
 		case __( 'project' ):  
-        $parent_slug = 'portfolio/project';
+        $parent_slug = 'portfolio/client';
         break;
 		case __( 'tools-used' ):  
         $parent_slug = 'portfolio/tool';
