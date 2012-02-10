@@ -59,7 +59,7 @@ function tz_build_taxonomies(){
 		"hierarchical" => true, 
 		"show_option_all" => __( "[ empty ]" ),
 		"show_option_none" => __( "[ empty ]" ),
-		"label" => __( "Types" ), 
+		"label" => __( "Work Types" ), 
 		"singular_label" => __( "Type" ), 
 		"rewrite" => array('slug' => 'portfolio/type', 'hierarchical' => true), 
 		"public" => true
@@ -81,7 +81,7 @@ function tz_build_taxonomies(){
 		"hierarchical" => true, 
 		"show_option_all" => __( "[ empty ]" ),
 		"show_option_none" => __( "[ empty ]" ),
-		"label" => __( "Client Projects" ), 
+		"label" => __( "Clients" ), 
 		"singular_label" => __( "Client Project" ), 
 		"rewrite" => array('slug' => 'portfolio/client', 'hierarchical' => true), 
 		"public" => true

@@ -104,28 +104,6 @@ a:hover { color: #000; }
 
 .format-link .entry-title a:hover { color: #fff; }
 
-.contactform #submit:hover span.icon,
-.comment-body p a:hover,
-#submit:hover span.icon,
-.single-page-navigation a:hover,
-#back-to-top.hover .icon,
-.entry-content a:hover,
-#overlay-inner a:hover,
-.current-cat a,
-.current-page a,
-.current-menu-item a { background-color: #ffedac; }
-
-.comment-body p a:hover,
-.entry-content a:hover,
-#overlay-inner a:hover,
-.current-cat a,
-.current-cat a:hover,
-.current-page a,
-.current-page a:hover,
-.current-menu-item a,
-.current-menu-item a:hover{ color: #3a3c3d; }
-
-
 .comment-body,
 input,
 textarea,
@@ -204,6 +182,8 @@ blockquote,
 
 .line { border-bottom: 1px solid rgba(0,0,0,.1); border-top: 1px solid rgba(255,255,255,.4);}
 
+.contactform #submit:hover span.icon, .comment-body p a:hover, #submit:hover span.icon, .single-page-navigation a:hover, #back-to-top a:hover .icon, .entry-content a:hover, #overlay-inner a:hover { background-color: #ffedac; color: #3a3c3d; }
+
 /* custom "inset box" style links and effects (requires .js effects in jquery.custom.js */
 #back-to-top.hover, 
 .insetBox a:hover,
@@ -212,6 +192,11 @@ blockquote,
 		-moz-box-shadow: inset -1px 1px 1px rgba(70, 70, 70, 0.20); 
 			box-shadow: inset -1px 1px 1px rgba(70, 70, 70, 0.20); 
 }
+
+.current-cat>a,
+.current-page>a,
+.current-menu-item>a { background-color: #ffedac; color: #3a3c3d; }
+
 /* firefox 5 doesn't like my animated bg color */
 .gecko #back-to-top.hover, 
 .gecko .insetBox a:hover,

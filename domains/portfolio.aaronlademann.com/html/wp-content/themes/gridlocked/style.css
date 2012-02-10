@@ -362,8 +362,9 @@ h6 {
 .chrome #sidebar, .safari #sidebar { margin-top: 73px; }
 #sidebar .widget {
 	position: relative;
-	width: 164px;
-	left: 26px;
+	width: 170px;
+	left: 20px;
+	top: -20px;
 }
 #sidebar #logo {
 	/* exclude the logo div from the above margin */
@@ -469,7 +470,7 @@ h6 {
 /*-----------------------------------------------------------------------------------*/
 /*	4.	Navigation & Menus
 /*-----------------------------------------------------------------------------------*/
-
+#sidebar .seperator { visibility: hidden; }
 #header ul {
 	list-style: none;
 	margin: 0 0 20px 0;
@@ -477,12 +478,24 @@ h6 {
 	line-height: 18px;
 }
 
-.current-cat a,
-.current-page a,
-.current-menu-item a {
-	padding: 1px 2px;
-	margin: -1px -2px;
+/* #sidebar category collapsing / expanding navigation */
+#sidebar .widget ul li { font-weight: bold;margin-top: 5px; }
+#sidebar .widget ul li ul li { font-weight: normal; font-size: 11px;margin-top: 0; }
+#sidebar .widget ul li ul li:before {
+	content: "➥";
+	margin-right: 2px;
+	font-size: 14px;
+	font-weight: bold;
+	color: rgba(0,0,0,0.3);
+	line-height: 11px;
+	position: relative;
+	top: 1px;
 }
+#sidebar .widget ul li ul li ul { padding-left: 6px; }
+#sidebar .widget ul li a { padding: 1px 4px; }
+/* don't show the client or tools menu by default... only if the archive page shown is filtered by that term.*/
+#sidebar .widget li.project, #sidebar .widget li.tools-used { display: none; }
+.tax-project #sidebar .widget li.project, .tax-tools-used #sidebar .widget li.tools-used { display: block; }
 
 
 /*-----------------------------------------------------------------------------------*/
