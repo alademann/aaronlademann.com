@@ -30,6 +30,7 @@ function tz_likeThis( $post_id, $action = 'get' ) {
 		} //if
 		
 		$currentValue = get_post_meta($post_id, '_likes');
+		$currentTitle = get_post_meta($post_id, '_wholikes');
 		
 		if(!is_numeric($currentValue[0])) {
 			$currentValue[0] = 0;
@@ -37,44 +38,65 @@ function tz_likeThis( $post_id, $action = 'get' ) {
 		} //if
 		
 		$currentValue[0]++;
-		update_post_meta($post_id, '_likes', $currentValue[0]);
 		
-		setcookie("like_" + $post_id, $post_id,time()*20, '/');
+		update_post_meta($post_id, '_likes', $currentValue[0]);
+		update_post_meta($post_id, '_wholikes', tz_whoLikes($post_id, $currentValue[0]));
+
+		//$30days = time()+60*60*24*30;
+		setcookie("like_" + $post_id, $post_id);
 	break;
 
 	} //switch
 
 } //tz_likeThis
 
-function tz_printLikes($post_id) {
-	$likes = tz_likeThis($post_id);
-	$what = "'" . get_the_title($post_id) . "'";
-
-	$who = $likes . ' people like ';
+function tz_whoLikes($post_id, $likes){
 	
+	$what = "'" . get_the_title($post_id) . "'";
+	$who = $likes . ' people like ';
 	if($likes == 1) {
 		$who = $likes . ' person likes ';
 	} 
-	
 	 // if(current user likes it)
-	if(isset($_COOKIE["like_" + $post_id])) {
+	if(isset($_COOKIE["like_" + $post_id])) {	
 
 		$who = 'You ';
-		$others = 'and ' . $likes-1 . ' others like ';
+		$others_count = "$likes" - 1;
+		$others = 'and ' . $others_count . ' others like ';
 		if($likes == 2) {
 			$others = 'and 1 other person like ';
 		}
 
-		$wholikesit = $who . $oters . $what;
+		$wholikesit = $who . $others . $what;
 
-		print '<a title="'. $wholikesit .'" href="#" rel="nofollow" class="likeThis active" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
+	} else {
+		// current user hasn't liked it yet	
+		$wholikesit = $who . $what;
+	}
+
+	return $wholikesit;
+
+}
+
+function tz_printLikes($post_id) {
+	$likes = tz_likeThis($post_id);
+	$wholikes = tz_whoLikes($post_id, $likes);
+
+	update_post_meta($post_id, '_wholikes', $wholikes);
+
+	 // if(current user likes it)
+	if(isset($_COOKIE["like_" + $post_id])) {	
+
+		print '<a title="'. $wholikes .'" href="#" rel="nofollow" class="likeThis active" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
 		return;
 
-	} // END if(current user likes it)
+	} else {
+		// current user hasn't liked it yet
 
-	$wholikesit = $who . $what;
+		print '<a title="'. $wholikes .'" href="#" rel="nofollow" class="likeThis" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
 
-	print '<a title="'. $wholikesit .'" href="#" rel="nofollow" class="likeThis" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
+	}
+
 } //tz_printLikes
 
 
@@ -86,6 +108,7 @@ function setUpPostLikes($post_id) {
 	
 	
 	add_post_meta($post_id, '_likes', '0', true);
+	add_post_meta($post_id, '_wholikes', '', true);
 
 } //setUpPost
 
