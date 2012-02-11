@@ -125,8 +125,8 @@
             <?php if($image1 != '') : ?>
             <!-- its an image gallery -->
 
-							<?php if($image8 != '') : 
-							// if there are 8 or more images... don't display the caption.
+							<?php if($image8 != '' || $image2 == '') : 
+							// if there is only 1, or there are 8 or more images... don't display the caption.
 							?>
 								
 								<style type="text/css">
