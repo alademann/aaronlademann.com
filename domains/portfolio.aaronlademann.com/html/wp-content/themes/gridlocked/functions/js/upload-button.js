@@ -95,5 +95,165 @@ jQuery(document).ready(function() {
 		return false;
 		
 	});
+	
+	jQuery('#tz_portfolio_image_button6').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image6').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button7').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image7').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button8').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image8').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button9').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image9').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button10').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image10').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button11').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image11').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button12').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image12').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button13').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image13').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button14').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image14').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
+	
+	jQuery('#tz_portfolio_image_button15').click(function() {
+		
+		window.send_to_editor = function(html) 
+		
+		{
+			imgurl = jQuery('img',html).attr('src');
+			jQuery('#tz_portfolio_image15').val(imgurl);
+			tb_remove();
+		}
+	 
+	 
+		tb_show('', 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true');
+		return false;
+		
+	});
 
 });
