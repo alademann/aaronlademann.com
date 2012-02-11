@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
-        
+
         <div id="primary" class="hfeed">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php 
@@ -124,6 +124,16 @@
 
             <?php if($image1 != '') : ?>
             <!-- its an image gallery -->
+
+							<?php if($image8 != '') : 
+							// if there are 8 or more images... don't display the caption.
+							?>
+								
+								<style type="text/css">
+									.lightbox .caption { visibility: hidden !important; }
+								</style>
+							<?php endif; ?>
+
             	<!-- aaronl: custom -->
             	<script type="text/javascript">
 							// break down all the different sizes i have for each shot
@@ -132,6 +142,16 @@
 									<?php if($image3 != '') : ?>raw_src3 = "<?php echo $image3; ?>";<?php endif; ?>
 									<?php if($image4 != '') : ?>raw_src4 = "<?php echo $image4; ?>";<?php endif; ?>
 									<?php if($image5 != '') : ?>raw_src5 = "<?php echo $image5; ?>";<?php endif; ?>
+									<?php if($image6 != '') : ?>raw_src6 = "<?php echo $image6; ?>";<?php endif; ?>
+									<?php if($image7 != '') : ?>raw_src7 = "<?php echo $image7; ?>";<?php endif; ?>
+									<?php if($image8 != '') : ?>raw_src8 = "<?php echo $image8; ?>";<?php endif; ?>
+									<?php if($image9 != '') : ?>raw_src9 = "<?php echo $image9; ?>";<?php endif; ?>
+									<?php if($image10 != '') : ?>raw_src10 = "<?php echo $image10; ?>";<?php endif; ?>
+									<?php if($image11 != '') : ?>raw_src11 = "<?php echo $image11; ?>";<?php endif; ?>
+									<?php if($image12 != '') : ?>raw_src12 = "<?php echo $image12; ?>";<?php endif; ?>
+									<?php if($image13 != '') : ?>raw_src13 = "<?php echo $image13; ?>";<?php endif; ?>
+									<?php if($image14 != '') : ?>raw_src14 = "<?php echo $image14; ?>";<?php endif; ?>
+									<?php if($image15 != '') : ?>raw_src15 = "<?php echo $image15; ?>";<?php endif; ?>
 
 									function get_image_src(index,size){
 										// break down the raw src info pieces
@@ -154,6 +174,36 @@
 											break;
 											case '5':
 												raw_src = raw_src5;
+											break;
+											case '6':
+												raw_src = raw_src6;
+											break;
+											case '7':
+												raw_src = raw_src7;
+											break;
+											case '8':
+												raw_src = raw_src8;
+											break;
+											case '9':
+												raw_src = raw_src9;
+											break;
+											case '10':
+												raw_src = raw_src10;
+											break;
+											case '11':
+												raw_src = raw_src11;
+											break;
+											case '12':
+												raw_src = raw_src12;
+											break;
+											case '13':
+												raw_src = raw_src13;
+											break;
+											case '14':
+												raw_src = raw_src14;
+											break;
+											case '15':
+												raw_src = raw_src15;
 											break;
 											default:
 											// something went wrong

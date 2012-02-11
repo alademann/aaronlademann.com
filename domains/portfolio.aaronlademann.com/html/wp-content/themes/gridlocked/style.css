@@ -703,6 +703,12 @@ button {
 	line-height: 1.4;
 }
 
+#single-sidebar li.link {
+	margin-top: 10px;
+	line-height: 1.7;
+	font-weight: bold;
+} 
+
 #single-sidebar li a:hover { text-decoration: none !important; }
 
 #single-sidebar li.terms li.cat-item { font-weight: bold; }
