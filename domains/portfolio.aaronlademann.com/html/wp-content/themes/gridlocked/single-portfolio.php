@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
-
         <div id="primary" class="hfeed">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
           <?php 
 
             $image1 = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
@@ -457,8 +457,12 @@
                   ?>
           <!--BEGIN .entry-meta .entry-header-->
 					<h1><?php the_title(); ?></h1>
-          <ul class="entry-header clearfix">
-            
+          
+						
+					<ul class="entry-header clearfix">
+            <li class="like-count">
+							<?php tz_printLikes(get_the_ID()); ?>
+						</li>
             <?php if($caption != '') : ?>
             <li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo stripslashes(htmlspecialchars_decode($caption)); ?> </li>
             <?php endif; ?>
@@ -514,7 +518,7 @@
 									}
 								}
 
-								if($portfolio_type_main == "Professional"){
+								//if($portfolio_type_main == "Professional"){
 
 									$client_args = array('orderby' => 'term_group', 'order' => 'ASC', 'fields' => 'all');
 									$client_terms = wp_get_object_terms($post->ID, 'project', $client_args);
@@ -537,7 +541,7 @@
 										}
 									}
 
-								} // END if(professional)
+								//} // END if(professional)
 
 								?>
 

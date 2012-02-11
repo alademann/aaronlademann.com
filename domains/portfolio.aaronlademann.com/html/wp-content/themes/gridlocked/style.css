@@ -1154,6 +1154,13 @@ label.error { color: red; }
 .single-portfolio .entry-meta { padding: 0 15px 20px 15px; }
 .single-portfolio #single-sidebar .entry-meta { padding: 0 4%;width: 92%; }
 
+.single .entry-header .like-count {
+	position: relative;
+	top: -16px;
+	/*text-shadow: 0 0 0 none !important;*/
+	line-height: 1.7 !important;
+}
+
 .single-portfolio .hentry .arrow {
 	margin: -14px 15px 0 0;
 	position: relative;
