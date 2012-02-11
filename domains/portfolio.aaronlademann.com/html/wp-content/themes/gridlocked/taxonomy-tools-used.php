@@ -38,6 +38,7 @@
 
 								query_posts(array( 
 										'post_type' => 'portfolio', 
+										'posts_per_page' => -1,
 										'tools-used' => $curr_slug
 									)
 								); 
