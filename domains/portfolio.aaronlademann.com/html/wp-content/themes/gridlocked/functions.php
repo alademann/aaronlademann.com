@@ -170,8 +170,10 @@ function tz_register_js() {
 		// comment out the next two lines to load the local copy of jQuery
 		//wp_deregister_script('jquery');
 		//wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+		
 		wp_register_script('tz_custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE); 
 		wp_register_script('jquery-ui-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.5.custom.min.js', 'jquery');
+		wp_register_script('jquery-cookie', get_template_directory_uri() . '/js/carhartl-jquery-cookie/jquery.cookie.js', 'jquery');
 // aaronl: custom
 		wp_register_script('jquery-animate-colors', get_template_directory_uri() . '/js/jquery.animate-colors.js', 'jquery');
 // aaronl: custom
@@ -183,6 +185,7 @@ function tz_register_js() {
 
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-custom');
+		wp_enqueue_script('jquery-cookie');
 // aaronl: custom
 		//wp_enqueue_script('browser-detect');		
 // aaronl: custom

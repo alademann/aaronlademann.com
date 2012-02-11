@@ -25,10 +25,13 @@ function tz_likeThis( $post_id, $action = 'get' ) {
 	// appears unable to check the cookie / set the cookie... so 'update' is not currently an option.
 	case 'update':
 		
-		if(isset($_COOKIE["like_" + $post_id])) {
-			return;
-		} //if
+		//if(isset($_COOKIE["like_" + $post_id])) {
+		//	return;
+		//} //if
 		
+		// we're setting this in jquery.custom.js now in the tz_likeInit() function.
+		//setcookie("like_" + $post_id, $post_id, time() + 31536000000*1000000000, '/'); 
+
 		$currentValue = get_post_meta($post_id, '_likes');
 		$currentTitle = get_post_meta($post_id, '_wholikes');
 		
@@ -42,7 +45,7 @@ function tz_likeThis( $post_id, $action = 'get' ) {
 		update_post_meta($post_id, '_likes', $currentValue[0]);
 		update_post_meta($post_id, '_wholikes', tz_whoLikes($post_id, $currentValue[0]));
 
-		setcookie("like_" + $post_id, $post_id, time()+60*60*24*30*600, '/');
+		
 	break;
 
 	} //switch
@@ -89,15 +92,15 @@ function tz_printLikes($post_id) {
 	update_post_meta($post_id, '_wholikes', $wholikes);
 
 	 // if(current user likes it)
-	if(isset($_COOKIE["like_" + $post_id])) {	
+	if($_COOKIE["like_" + $post_id] != '') {	
 
 		print '<a title="'. $wholikes .'" href="#" rel="nofollow" class="likeThis active" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
 		return;
 
 	} else {
 		// current user hasn't liked it yet
-
-		print '<a title="'. $wholikes .'" href="#" rel="nofollow" class="likeThis" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
+		//print $_COOKIE["like_" + $post_id];
+		print '<a title="'. $wholikes . '" href="#" rel="nofollow" class="likeThis" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.'</span></a>';
 
 	}
 

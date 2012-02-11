@@ -179,36 +179,36 @@ $(document).ready(function() {
 		);
 
 	}); // END .each(hentries)
-	
+
 	//------------------------------ track navigation items that go elsewhere
-		var navBtns = $(".nav").find("a");
-		$.each(navBtns, function() {
+	var navBtns = $(".nav").find("a");
+	$.each(navBtns, function() {
 
-			//console.info($(this).text());
+		//console.info($(this).text());
 
-			$(this).bind("click", function() {
+		$(this).bind("click", function() {
 
-				var btn_text = $(this).text();
-				switch(btn_text) {
-					case "photos":
-						_gaq.push(['_trackEvent', 'nav_external', 'photos.aaronlademann.com']);
-						break;
-					case "photography":
-						_gaq.push(['_trackEvent', 'nav_external', 'photos.aaronlademann.com']);
-						break;
-					case "contact":
-						_gaq.push(['_trackEvent', 'nav_external', 'contact email']);
-						break;
-					case "resume":
-						_gaq.push(['_trackEvent', 'nav_external', 'linkedin']);
-						break;
-					case "twitter":
-						_gaq.push(['_trackEvent', 'nav_external', 'twitter']);
-						break;
-				}
+			var btn_text = $(this).text();
+			switch(btn_text) {
+				case "photos":
+					_gaq.push(['_trackEvent', 'nav_external', 'photos.aaronlademann.com']);
+					break;
+				case "photography":
+					_gaq.push(['_trackEvent', 'nav_external', 'photos.aaronlademann.com']);
+					break;
+				case "contact":
+					_gaq.push(['_trackEvent', 'nav_external', 'contact email']);
+					break;
+				case "resume":
+					_gaq.push(['_trackEvent', 'nav_external', 'linkedin']);
+					break;
+				case "twitter":
+					_gaq.push(['_trackEvent', 'nav_external', 'twitter']);
+					break;
+			}
 
-			}); //end .bind("click");
+		}); //end .bind("click");
 
-		}); // END .each(navBtns)
+	}); // END .each(navBtns)
 
 });

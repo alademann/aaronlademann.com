@@ -1,6 +1,7 @@
+var $ = jQuery.noConflict();
 /*-----------------------------------------------------------------------------------
 
- 	Custom JS - All front-end jQuery
+ 	Custom JS - All front-end $
  
 -----------------------------------------------------------------------------------*/
 
@@ -8,21 +9,21 @@
 /*	Remove JavaScript fallback class
 /*-----------------------------------------------------------------------------------*/
  
-jQuery('#container').removeClass('js-disabled');
+$('#container').removeClass('js-disabled');
  
 /*-----------------------------------------------------------------------------------*/
 /*	Let's get ready!
 /*-----------------------------------------------------------------------------------*/
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
 
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Widget Overlay Stuff
 	/*-----------------------------------------------------------------------------------*/
 
-	var widgetOverlay = jQuery('#widget-overlay-container');
-	var widgetTrigger = jQuery('#overlay-open a');
+	var widgetOverlay = $('#widget-overlay-container');
+	var widgetTrigger = $('#overlay-open a');
 
 	var widgetOverlayHeight = widgetOverlay.height() + 3;
 
@@ -53,10 +54,10 @@ jQuery(document).ready(function() {
 	/*	Masonry Layout
 	/*-----------------------------------------------------------------------------------*/
 
-	if(jQuery().masonry) {
+	if($().masonry) {
 
 		// cache masonry wrap
-		var $wall = jQuery('#masonry');
+		var $wall = $('#masonry');
 
 		$wall.masonry({
 			columnWidth: 380,
@@ -68,11 +69,11 @@ jQuery(document).ready(function() {
 			},
 			itemSelector: '.hentry'
 		}, function() {
-			jQuery('#load-more-link').fadeIn(200);
+			$('#load-more-link').fadeIn(200);
 		});
 
 		// cache masonry wrap
-		var $port = jQuery('#masonry-portfolio');
+		var $port = $('#masonry-portfolio');
 
 		$port.masonry({
 			singleMode: true,
@@ -91,7 +92,7 @@ jQuery(document).ready(function() {
 	/*	Load More Post Functions
 	/*-----------------------------------------------------------------------------------*/
 
-	var loadMoreLink = jQuery('#load-more-link a');
+	var loadMoreLink = $('#load-more-link a');
 
 	var offset = parseInt(loadMoreLink.attr('data-offset'));
 	var cat = parseInt(loadMoreLink.attr('data-category'));
@@ -119,7 +120,7 @@ jQuery(document).ready(function() {
 
 		var off = false;
 
-		var currentCount = parseInt(jQuery('#post-count').text());
+		var currentCount = parseInt($('#post-count').text());
 
 		if(currentCount == 0) {
 			loadMoreLink.text(loadMoreLink.attr('data-empty'));
@@ -127,7 +128,7 @@ jQuery(document).ready(function() {
 		}
 
 		loadMoreLink.click(function(e) {
-			var newCount = currentCount - jQuery(this).attr('data-offset');
+			var newCount = currentCount - $(this).attr('data-offset');
 
 			e.preventDefault();
 
@@ -135,13 +136,13 @@ jQuery(document).ready(function() {
 
 			if(off != true) {
 
-				jQuery(this).unbind("click");
+				$(this).unbind("click");
 
-				jQuery('#post-count').html('<img src="' + jQuery('#post-count').attr('data-src') + '" alt="Loading..." />');
-				jQuery('#remaining').html('');
+				$('#post-count').html('<img src="' + $('#post-count').attr('data-src') + '" alt="Loading..." />');
+				$('#remaining').html('');
 
 
-				jQuery('#new-posts').load(jQuery(this).attr('data-src'), {
+				$('#new-posts').load($(this).attr('data-src'), {
 
 					offset: offset,
 					category: cat,
@@ -152,10 +153,10 @@ jQuery(document).ready(function() {
 
 				}, function() {
 
-					// create jQuery object
-					$boxes = jQuery('#new-posts .hentry');
+					// create $ object
+					$boxes = $('#new-posts .hentry');
 
-					if(jQuery().masonry) {
+					if($().masonry) {
 						$wall.append($boxes).masonry({ appendedContent: $boxes }, function() {
 
 							tz_fancybox();
@@ -163,19 +164,19 @@ jQuery(document).ready(function() {
 							tz_likeInit();
 
 							if(newCount > 0) {
-								jQuery('#load-more-link a').find('#post-count').text(newCount);
-								jQuery('#remaining').text(' ' + jQuery('#remaining').attr('data-text'));
+								$('#load-more-link a').find('#post-count').text(newCount);
+								$('#remaining').text(' ' + $('#remaining').attr('data-text'));
 							} else {
-								jQuery('#load-more-link a').text(jQuery('#load-more-link a').attr('data-empty'));
+								$('#load-more-link a').text($('#load-more-link a').attr('data-empty'));
 								off = true;
 							}
 
-							jQuery('#load-more-link a').bind("click", tz_loadMore());
+							$('#load-more-link a').bind("click", tz_loadMore());
 
 						});
 					}
 
-					offset = offset + parseInt(jQuery('#load-more-link a').attr('data-offset'));
+					offset = offset + parseInt($('#load-more-link a').attr('data-offset'));
 				});
 			}
 
@@ -187,15 +188,15 @@ jQuery(document).ready(function() {
 
 	tz_loadMore();
 
-	jQuery(window).resize(function() {
+	$(window).resize(function() {
 		loadMoreWidth();
 		contentHeight();
 	});
 
 	function loadMoreWidth() {
 
-		var loadMoreLink = jQuery('#load-more-link a');
-		var masonryWrap = jQuery('#masonry').width();
+		var loadMoreLink = $('#load-more-link a');
+		var masonryWrap = $('#masonry').width();
 
 		if(masonryWrap > 380 && masonryWrap < 760) {
 			animateWidth(loadMoreLink, 340);
@@ -229,8 +230,8 @@ jQuery(document).ready(function() {
 	/*-----------------------------------------------------------------------------------*/
 
 	function tz_fancybox() {
-		if(jQuery().fancybox) {
-			jQuery("a.lightbox").fancybox({
+		if($().fancybox) {
+			$("a.lightbox").fancybox({
 				'transitionIn': 'fade',
 				'transitionOut': 'fade',
 				'speedIn': 300,
@@ -258,10 +259,10 @@ jQuery(document).ready(function() {
 	/*-----------------------------------------------------------------------------------*/
 
 	function tz_overlay() {
-		jQuery('.post-thumb a').hover(function() {
-			jQuery(this).find('.overlay').fadeIn(150);
+		$('.post-thumb a').hover(function() {
+			$(this).find('.overlay').fadeIn(150);
 		}, function() {
-			jQuery(this).find('.overlay').fadeOut(150);
+			$(this).find('.overlay').fadeOut(150);
 		});
 	}
 
@@ -271,34 +272,34 @@ jQuery(document).ready(function() {
 	/*	Back to Top
 	/*-----------------------------------------------------------------------------------*/
 
-	var topLink = jQuery('#back-to-top');
+	var topLink = $('#back-to-top');
 
 	function tz_backToTop(topLink) {
 
-		if(jQuery(window).scrollTop() > 0) {
-			//console.info(jQuery(window).scrollTop());
+		if($(window).scrollTop() > 0) {
+			//console.info($(window).scrollTop());
 			topLink.stop().fadeIn(200);
 		} else {
 			topLink.stop().fadeOut(200);
 		}
 	}
 
-	jQuery(window).scroll(function() {
+	$(window).scroll(function() {
 		tz_backToTop(topLink);
 	});
 
 	// aaronl: custom (was pointing to the anchor link)
-	jQuery(topLink).click(function() {
-		jQuery('html, body').stop().animate({ scrollTop: 0 }, 500);
+	$(topLink).click(function() {
+		$('html, body').stop().animate({ scrollTop: 0 }, 500);
 		return false;
 	});
 
 	// aaronl: custom (since i'm removing the anchor link, i need to set up a hover system for the wrapper div)				
-	jQuery(document).ready(function() {
+	$(document).ready(function() {
 		var colorIn;
 		var colorOut;
 		var hovClass;
-		if(jQuery.support.opacity) {
+		if($.support.opacity) {
 			colorIn = 'rgba(0, 0, 0, .1)';
 			colorOut = 'rgba(0, 0, 0, 0)';
 			hovClass = 'hover';
@@ -310,14 +311,14 @@ jQuery(document).ready(function() {
 
 		// firefox seems to be making the browser itself change opacity
 		// the plugin i'm using here may be pretty buggy.
-		jQuery('#back-to-top, .insetBox > li:not([class*="current"]) > a').hover(
+		$('#back-to-top, .insetBox > li:not([class*="current"]) > a').hover(
 			function() {
-				jQuery(this).addClass(hovClass);
-				jQuery(this).stop().animate({ backgroundColor: colorIn });
+				$(this).addClass(hovClass);
+				$(this).stop().animate({ backgroundColor: colorIn });
 			},
 			function() {
-				jQuery(this).removeClass(hovClass);
-				jQuery(this).stop().animate({ backgroundColor: colorOut });
+				$(this).removeClass(hovClass);
+				$(this).stop().animate({ backgroundColor: colorOut });
 			}
 		);
 
@@ -326,16 +327,16 @@ jQuery(document).ready(function() {
 	/*	Add title attributes
 	/*-----------------------------------------------------------------------------------*/
 
-	jQuery('.nav-previous a').attr('title', jQuery('.nav-previous a').text());
-	jQuery('.nav-next a').attr('title', jQuery('.nav-next a').text());
+	$('.nav-previous a').attr('title', $('.nav-previous a').text());
+	$('.nav-next a').attr('title', $('.nav-next a').text());
 
 	function contentHeight() {
 
-		var windowHeight = jQuery(window).height();
-		var footerHeight = jQuery('#footer').height();
+		var windowHeight = $(window).height();
+		var footerHeight = $('#footer').height();
 		// aaronl: custom (changed offset to 170
 		var yOffset = 170;
-		jQuery('#content').css('min-height', windowHeight - footerHeight - yOffset);
+		$('#content').css('min-height', windowHeight - footerHeight - yOffset);
 
 	}
 
@@ -345,38 +346,107 @@ jQuery(document).ready(function() {
 	/*	Like Script
 	/*-----------------------------------------------------------------------------------*/
 
-	function tz_reloadLikes(who) {
-		var text = jQuery("#" + who).html();
+	function tz_whoLikes($post_id, $likes) {
+
+		var page_type = $("body").attr("class");
+		page_type = page_type.split(" ");
+		if(page_type[0] = "single") {
+			$what = $("#single-sidebar h1").text();
+		} else {
+			$what = $("#post-" + $post_id).find(".entry-title").text();
+		}
+
+			
+		$who = $likes + ' people like ';
+		if($likes == 1) {
+			$who = $likes + ' person likes ';
+		}
+		// if(current user likes it)
+		if($.cookie("like_" + $post_id)) {
+
+			$who = 'You ';
+			if($likes > 1) {
+				$others_count = $likes - 1;
+				$others = 'and ' + $others_count + ' others like ';
+				if($likes == 2) {
+					$others = 'and 1 other person like ';
+				}
+			} else {
+				// only you like it.
+				$others = 'like ';
+			}
+
+			$wholikesit = $who + $others + $what;
+
+		} else {
+			// current user hasn't liked it yet	
+			$wholikesit = $who + $what;
+		}
+
+		return $wholikesit;
+
+	}
+
+	function tz_reloadLikes(who, postID) {
+		var text = $("#" + who).html();
 		var patt = /(\d)+/;
 
 		var num = patt.exec(text);
 		num[0]++;
 		text = text.replace(patt, num[0]);
-		jQuery("#" + who).html('<span class="count">' + text + '</span>');
+		var updated_title = tz_whoLikes(postID, num[0]);
+		$("#" + who).attr("title", updated_title);
+		$("#" + who).html('<span class="count">' + text + '</span>');
+
+		// is it active?
+		if($.cookie("like_" + postID)) {
+			$("#" + who).addClass("active");
+		}
+
 	} //reloadLikes
 
 
 	function tz_likeInit() {
-		jQuery(".likeThis").click(function() {
-			var classes = jQuery(this).attr("class");
-			classes = classes.split(" ");
 
-			if(classes[1] == "active") {
-				return false;
-			}
-			var classes = jQuery(this).addClass("active");
-			var id = jQuery(this).attr("id");
+		var likeThisLinks = $(".likeThis");
+
+		$.each(likeThisLinks, function() {
+
+			var id = $(this).attr("id");
 			id = id.split("like-");
-			jQuery.ajax({
-				type: "POST",
-				url: "index.php",
-				data: "likepost=" + id[1],
-				success: tz_reloadLikes("like-" + id[1])
+
+			tz_reloadLikes("like-" + id[1], id[1]);
+
+
+
+			$(this).click(function() {
+				var classes = $(this).attr("class");
+				classes = classes.split(" ");
+
+				if(classes[1] == "active") {
+					return false;
+				}
+				var classes = $(this).addClass("active");
+				//var id = $(this).attr("id");
+				//id = id.split("like-");
+
+				// set the cookies here instead of in the php file since php cannot get the expiration set correctly.
+				$.cookie("like_" + id[1], id[1], { expires: 7300, path: '/', domain: '.aaronlademann.com' });
+
+				$.ajax({
+					type: "POST",
+					url: "/index.php",
+					data: "likepost=" + id[1],
+					success: tz_reloadLikes("like-" + id[1], id[1])
+				});
+
+
+				return false;
 			});
 
-
-			return false;
 		});
+
+
 	}
 
 	tz_likeInit();
