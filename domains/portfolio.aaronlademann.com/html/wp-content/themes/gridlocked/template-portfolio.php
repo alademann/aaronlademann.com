@@ -38,7 +38,10 @@ Template Name: Portfolio
                         $thumb = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 
 												$embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
                         $image  = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
-												$image_caption  = image_meta($image,'caption', 'med'); 
+												$folio_summary  = get_post_meta(get_the_ID(),'tz_portfolio_caption', TRUE); 
+												if($folio_summary == ''){
+													$folio_summary = the_title();
+												}
                         $lightbox = FALSE;
                         
 													if($thumb == ''){
@@ -63,7 +66,7 @@ Template Name: Portfolio
                                 </a>
                             <?php else: ?>
                             
-                            	<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+                            	<a title="<?php echo $folio_summary; ?>" href="<?php the_permalink(); ?>">
                                 <?php if($thumb) : ?>
                                 	<img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" />
                                 <?php else: ?> 

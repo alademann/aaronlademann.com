@@ -280,7 +280,7 @@ $meta_box_portfolio_video = array(
 				"type" => "text"
 			),
 		array( "name" => __('Poster Image','framework'),
-				"desc" => __('The preivew image.','framework'),
+				"desc" => __('The preview image.','framework'),
 				"id" => $prefix."video_poster",
 				"type" => "text"
 			),
