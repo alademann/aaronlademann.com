@@ -13,6 +13,8 @@
 	top: 0;
 	width: 100%;
 }
-.tax-skill-type #primary, .page.page-template-template-portfolio-php #primary {
-	margin-left: 0;
-}
+#sidebar .sgr-custom-taxonomies-menu, 
+#footer { display: none !important; }
+
+.archive #primary, .page.page-template-template-portfolio-php #primary,
+.archive .hentry, .page.page-template-template-portfolio-php .hentry { margin-left: 0 !important;}

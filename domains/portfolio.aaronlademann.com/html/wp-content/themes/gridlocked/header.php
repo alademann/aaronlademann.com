@@ -26,9 +26,11 @@
 		// set false for now
 		//$is_ios = false;
 		$is_ios = true; 
+
 		if ( !is_single() ) {
 		?>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/iOS.css" />    
   <link rel="stylesheet" type="text/css" media="screen" href="http://aaronlademann.com/_includes/_css/iOS.css" />    
 	<?php }} ?>
 	<!-- Theme Hook -->
