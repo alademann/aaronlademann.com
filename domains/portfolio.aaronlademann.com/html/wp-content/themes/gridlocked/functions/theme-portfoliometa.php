@@ -21,12 +21,20 @@ $meta_box = array(
 	'priority' => 'high',
 	'fields' => array(
 	array(
+			'name' =>  __('Home Page Feature', 'framework'),
+			'desc' => __('Check this to display on the home page.', 'framework'),
+			'id' => $prefix.'portfolio_home_feature',
+			"type" => "select",
+			'std' => 'no',
+			'options' => array('yes', 'no')
+		),
+	array(
 			'name' =>  __('Enable Lightbox', 'framework'),
 			'desc' => __('Check this to enable the lightbox.', 'framework'),
 			'id' => $prefix.'portfolio_lightbox',
 			"type" => "select",
 			'std' => 'no',
-			'options' => array('yes', 'no')
+			'options' => array('no', 'yes')
 		),
 	array(
 			'name' =>  __('Image Thumbnail', 'framework'),
