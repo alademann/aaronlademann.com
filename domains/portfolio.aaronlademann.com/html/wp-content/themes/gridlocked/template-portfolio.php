@@ -32,7 +32,7 @@ Template Name: Portfolio
 								
 								<?php 
 									$home_feature = get_post_meta(get_the_ID(), 'tz_portfolio_home_feature', TRUE);
-									if($home_feature) : 
+									if($home_feature == 'yes') : 
 								?>
 								
                     <!--BEGIN .hentry -->

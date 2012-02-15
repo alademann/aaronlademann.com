@@ -3,7 +3,6 @@
 	padding-bottom: 0 !important;
 }
 /* fix any static widths */
-#bg-line, #masthead { display: none !important; }
 #masthead, #contentWrap, #footer {
 	min-width: auto;
 }
@@ -14,7 +13,7 @@
 	width: 100%;
 }
 #sidebar .sgr-custom-taxonomies-menu, 
-#footer { display: none !important; }
+#footer, #bg-line, #masthead { display: none !important; }
 
 .archive #primary, .page.page-template-template-portfolio-php #primary,
 .archive .hentry, .page.page-template-template-portfolio-php .hentry { margin-left: 0 !important;}
