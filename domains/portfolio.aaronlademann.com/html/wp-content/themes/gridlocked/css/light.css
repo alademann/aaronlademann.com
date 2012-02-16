@@ -58,8 +58,9 @@ textarea,
 body,
 a, .caption { color: #686a6c;}
 
-.single a .caption, .single a.caption { color: #08f; }
-.single a:hover .caption, .single a.caption:hover { text-decoration: underline !important; }
+.single a .caption, .single a.caption, .single #single-sidebar .caption a { color: #08f; }
+.single #single-sidebar .caption a:hover { color: #09c; }
+.single a:hover .caption, .single a.caption:hover, .single #single-sidebar .caption a:hover { text-decoration: underline !important; }
 
 #tagline {
 	color: #7b7d80;

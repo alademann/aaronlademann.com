@@ -417,7 +417,7 @@
             <!--BEGIN .entry-content -->
 						<?php
 							$simple_style = '';
-							$item_content = the_content('');
+							$item_content = get_the_content();
 							if($image2 == ''){
 								if($item_content == ''){
 									$simple_style = 'min-height: 1px !important; margin-top: -22px !important;';
@@ -425,7 +425,7 @@
 							}
 						?>
             <div class="entry-content" style="<?php echo $simple_style; ?>">
-              <?php the_content(''); ?>
+              
               <!--END .entry-content -->
             </div>
             <!--END .hentry-->
@@ -452,9 +452,14 @@
         <!--BEGIN #single-sidebar-->
         <div id="single-sidebar">
           <?php 
-                    $caption = get_post_meta(get_the_ID(), 'tz_portfolio_caption', TRUE); 
-                    $link = get_post_meta(get_the_ID(), 'tz_portfolio_link', TRUE); 
-                  ?>
+						if(get_the_content() != ''){
+							$caption = get_the_content(); 
+						} else {
+							$caption = stripslashes(htmlspecialchars_decode(get_post_meta(get_the_ID(), 'tz_portfolio_caption', TRUE))); 
+						}
+						
+						$link = get_post_meta(get_the_ID(), 'tz_portfolio_link', TRUE); 
+          ?>
           <!--BEGIN .entry-meta .entry-header-->
 					<h1><?php the_title(); ?></h1>
           
@@ -464,7 +469,7 @@
 							<?php tz_printLikes(get_the_ID()); ?>
 						</li>
             <?php if($caption != '') : ?>
-            <li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo stripslashes(htmlspecialchars_decode($caption)); ?> </li>
+            <li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo $caption; ?> </li>
             <?php endif; ?>
             <?php if($link != '') : ?>
             <li class="link"> <a target="_blank" href="<?php echo $link; ?>"><span class="icon"></span>

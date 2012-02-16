@@ -45,7 +45,7 @@ Template Name: Portfolio
                         $image  = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
 												$folio_summary  = get_post_meta(get_the_ID(),'tz_portfolio_caption', TRUE); 
 												if($folio_summary == ''){
-													$folio_summary = the_title();
+													$folio_summary = get_the_title();
 												}
                         $lightbox = FALSE;
                         
