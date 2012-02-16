@@ -110,6 +110,18 @@ window.addEventListener('DOMNodeInserted', function(event) {
 
 $(document).ready(function() {
 
+
+	//------------------------------ add 2nd level of parent categories in sidebar nav
+	var sidebar = $("#sidebar").attr("id");
+	//console.info(sidebar);
+	if(sidebar = "sidebar") {
+		//console.info("found the sidebar");
+		var nestedParentCat = $("#" + sidebar).find(".widget li>ul.children>li.current-cat-parent");
+		var nestedGrandParentCat = $(nestedParentCat).parent().parent();
+		$(nestedGrandParentCat).addClass("current-cat-grandparent");
+
+	} // END if(sidebar);
+
 	// disable right click on all images
 	$('img').live('contextmenu', function(e) {
 		return false;

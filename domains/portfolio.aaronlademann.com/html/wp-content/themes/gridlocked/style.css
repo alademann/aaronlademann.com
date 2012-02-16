@@ -495,7 +495,11 @@ h6 {
 #sidebar .widget ul li a { padding: 1px 4px; }
 /* don't show the client or tools menu by default... only if the archive page shown is filtered by that term.*/
 #sidebar .widget li.project, #sidebar .widget li.tools-used { display: none; }
-.tax-project #sidebar .widget li.project, .tax-tools-used #sidebar .widget li.tools-used { display: block; }
+
+.tax-project #sidebar .widget li.project, .tax-project #sidebar .widget li.project li.current-cat, .tax-project #sidebar .widget li.project li.current-cat-parent, .tax-project #sidebar .widget li.project li.current-cat-grandparent,
+.tax-tools-used #sidebar .widget li.tools-used, .tax-tools-used #sidebar .widget li.tools-used li.current-cat, .tax-tools-used #sidebar .widget li.tools-used li.current-cat-parent, .tax-tools-used #sidebar .widget li.tools-used li.current-cat-grandparent { display: block; }
+
+.tax-project #sidebar .widget li.project li, .tax-tools-used #sidebar .widget li.tools-used li { display: none; }
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -1589,6 +1593,8 @@ a:hover.button.black { border: 1px solid #2c2c2c; }
 }
 .published:hover { color: #66696D; }
 .published a:hover .icon, .published:hover .icon { background-position: -14px -47px; }
+
+.comment-count { display: none; }
 
 .comment-count .icon {
 	background-position: 0 -7px;
