@@ -182,6 +182,7 @@ function tz_register_js() {
 // aaronl: custom
 		//wp_register_script('galleria', '/wp-content/plugins/galleria/galleria-1.2.4.min.js', 'jquery');	 	
 		wp_register_script('custom-javascript', '/wp-content/resources/custom-javascript.js', 'jquery');	 	
+		wp_register_script('head-min', get_template_directory_uri() . '/js/head.min.js', 'jquery');	 
 
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-custom');
@@ -193,6 +194,7 @@ function tz_register_js() {
 		wp_enqueue_script('jquery-animate-colors');
 		wp_enqueue_script('tz_shortcodes');
 		wp_enqueue_script('tz_custom');
+		wp_enqueue_script('head-min');
 // aaronl: custom		
 		//wp_enqueue_script('galleria');		
 		

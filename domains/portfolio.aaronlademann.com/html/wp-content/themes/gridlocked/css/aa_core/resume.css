@@ -1,25 +1,25 @@
 /* ChunkFiveWeb */
 @font-face {
   font-family: "ChunkFiveWeb";
-  src: url("/_includes/_webfonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
+  src: url("http://aaronlademann.com/_includes/_webfonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
 }
 
 @font-face {
   font-family: "ChunkFiveWeb";
-  src: url("http://:/") format("No-IE-404"), url("/_includes/_webfonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("/_includes/_webfonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("/_includes/_webfonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
+  src: url("http://:/") format("No-IE-404"), url("http://aaronlademann.com/_includes/_webfonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("http://aaronlademann.com/_includes/_webfonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("http://aaronlademann.com/_includes/_webfonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
 }
 
 /* DroidSerif Regular */
 @font-face {
   font-family: "DroidSerifRegular";
-  src: url("/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.eot?iefix") format("eot");
+  src: url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
   font-family: "DroidSerifRegular";
-  src: url("http://:/") format("No-IE-404"), url("/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.woff") format("woff"), url("/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.ttf") format("truetype"), url("/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.svg#svgFontName") format("svg");
+  src: url("http://:/") format("No-IE-404"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.woff") format("woff"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.ttf") format("truetype"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Regular-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -27,14 +27,14 @@
 /* DroidSerif Italic */
 @font-face {
   font-family: "DroidSerifItalic";
-  src: url("/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.eot?iefix") format("eot");
+  src: url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
   font-family: "DroidSerifItalic";
-  src: url("http://:/") format("No-IE-404"), url("/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.woff") format("woff"), url("/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.ttf") format("truetype"), url("/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.svg#svgFontName") format("svg");
+  src: url("http://:/") format("No-IE-404"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.woff") format("woff"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.ttf") format("truetype"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Italic-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -42,14 +42,14 @@
 /* DroidSerif Bold */
 @font-face {
   font-family: "DroidSerifBold";
-  src: url("/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.eot?iefix") format("eot");
+  src: url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
   font-family: "DroidSerifBold";
-  src: url("http://:/") format("No-IE-404"), url("/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.woff") format("woff"), url("/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.ttf") format("truetype"), url("/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.svg#svgFontName") format("svg");
+  src: url("http://:/") format("No-IE-404"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.woff") format("woff"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.ttf") format("truetype"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-Bold-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -57,20 +57,16 @@
 /* DroidSerif Bold Italic */
 @font-face {
   font-family: "DroidSerifBoldItalic";
-  src: url("/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.eot?iefix") format("eot");
+  src: url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
   font-family: "DroidSerifBoldItalic";
-  src: url("http://:/") format("No-IE-404"), url("/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.woff") format("woff"), url("/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.ttf") format("truetype"), url("/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.svg#svgFontName") format("svg");
+  src: url("http://:/") format("No-IE-404"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.woff") format("woff"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.ttf") format("truetype"), url("http://aaronlademann.com/_includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
-}
-
-#contentWrap {
-	background: #f2f2f2 url('/_images/_template/_portfolio/spackle_bg_base.png') left top repeat;
 }
 
 #resume, p {

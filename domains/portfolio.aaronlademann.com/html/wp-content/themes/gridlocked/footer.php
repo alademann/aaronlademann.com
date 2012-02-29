@@ -22,6 +22,20 @@
 	<!-- HOOK FOOT -->
 	<?php wp_footer(); ?>
 	<!--// HOOK FOOT -->
+	
+	<script> 
+		head.js("<?php echo get_template_directory_uri(); ?>/js/analytics.js");
+	</script>
+	
+	<?php if( is_page_template('template-resume.php') ){ ?>	
+	<script> 
+		head.js("<?php echo get_template_directory_uri(); ?>/js/lettering.min.js", 
+			function() {
+				// inline scripts here
+				$("#name").lettering('words'); 
 			
+			});
+	</script>
+	<?php } ?>
 </body>
 </html>

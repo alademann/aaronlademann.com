@@ -7,10 +7,11 @@
 	<!--// IE Compliance Mode Control -->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	<meta name="robots" content="index,follow" />
 	<meta name="author" content="Aaron Lademann" />
 	<meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?> Aaron Lademann. All Rights Reserved." />
 
-	<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+	<title><?php wp_title(' &#124; ', true, 'right'); ?><?php if( !is_page_template('template-resume.php') ){ ?><?php bloginfo('name'); ?><?php } ?></title>
 	
 	<!-- Styles -->
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
@@ -41,37 +42,20 @@
 		?>
 	<!-- Mobile Visitor -->
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/iOS.css" />    
-  <link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/iOS.css" />    
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/iOS.css" />    
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/aa_core/iOS.css" />    
 	<!--// Mobile Visitor -->
 	<?php }} ?>
 
 	<!-- HOOK HEAD -->
 	<?php wp_head(); ?>
 	<!--// HOOK HEAD -->
-
-	<!-- Google Analytics -->
-	<script type="text/javascript">
-
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-3765006-1']);
-		_gaq.push(['_setDomainName', 'aaronlademann.com']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-	</script>
-	<!--// Google Analytics -->
-
+	
 </head>
 <body <?php body_class(); ?>>
 
 	<!-- #bg-line-->
-    <div id="bg-line"></div>
+    <!--<div id="bg-line"></div>-->
 
     <!-- aaronlademann.com primary navigation-->
       <div id="masthead">
@@ -135,6 +119,14 @@
                  
 								<?php endif; ?>
 
+								<?php 
+									if( !is_page_template('template-resume.php') ){ 
+										if( !is_page_template('template-full-width.php') ){ 
+								?>
 								<!-- SIDEBAR -->        
 								<?php get_sidebar(); ?>
 								<!--// SIDEBAR -->
+								<?php 
+										}
+									}
+								?>
