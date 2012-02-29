@@ -82,7 +82,7 @@ hr.contentDivider {
 	z-index: 1;*/
 	left: 0;
 	top: 0;
-	background: url("http://aaronlademann.com/_images/_template/section-shade.png") -20px top no-repeat;
+	/*background: url("http://aaronlademann.com/_images/_template/section-shade.png") -20px top no-repeat;*/
 	border: 0 none;
 	margin: 0;
 	color: Transparent;
@@ -93,7 +93,7 @@ hr.contentDivider {
 	position: relative;
 	min-height: 200px;
 	height: auto;
-	background: url("http://aaronlademann.com/_images/_template/section.png") left top repeat-x;
+	/*background: url("http://aaronlademann.com/_images/_template/section.png") left top repeat-x;*/
 }
 *html .section { height: 200px; }
 .project .desc { padding: 0 2% 50px 2%; }

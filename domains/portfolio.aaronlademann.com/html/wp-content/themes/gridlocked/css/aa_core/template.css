@@ -35,17 +35,17 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * { text-decora
 .nav ul { overflow: hidden; float: right; }
 .nav li { float: left; }
 .nav li a { display: block; color: #949494; text-transform: uppercase; }
-.nav li a:hover, .nav .current_page_item, .nav .current-menu-item a, .nav .active a, .nav .menu-item-home { color: #fff !important; text-decoration: none; background-color: #171920 !important; }
+.nav li a:hover, .nav .current_page_item, .nav .current-menu-item a, .nav .active a { color: #fff !important; text-decoration: none; background-color: #171920 !important; }
 /* topNav */
 #topNav { position: absolute; width: auto; *width: 346px; top: 0; right: 25px; background: Transparent url("http://aaronlademann.com/_images/_template/topNav-active.png") right top repeat-x; }
-#topNav .active, #topNav .current_page_item, #topNav .menu-item-home { background: Transparent url("http://aaronlademann.com/_images/_template/topNav-arrow.gif") center bottom no-repeat; }
+#topNav .active, #topNav .current_page_item { background: Transparent url("http://aaronlademann.com/_images/_template/topNav-arrow.gif") center bottom no-repeat; }
 #topNav li a { 
 	padding: 0 20px;
 	line-height: 80px;
 	text-transform: uppercase;
 	background: Transparent url("http://aaronlademann.com/_images/_template/body-bg.gif") left top repeat-x; 
 }
-#topNav li a:hover, #topNav li:hover, #topNav .current_page_item a, #topNav .active a, .nav .menu-item-home a { background-image: none !important; background-color: Transparent !important; } /* reveal the hover image which is contained in #topNav */
+#topNav li a:hover, #topNav li:hover, #topNav .current_page_item a, #topNav .active a { background-image: none !important; background-color: Transparent !important; } /* reveal the hover image which is contained in #topNav */
 /* footernav */
 #footerNav {
 position: absolute;

@@ -17,12 +17,18 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo get_option('tz_alt_stylesheet'); ?>" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/template.css" type="text/css" media="screen" />
-	<?php if( is_page_template('template-resume.php') ){ ?>	
-		<!-- Resume Styles -->
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/base.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/yui-reset.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/resume.css" type="text/css" media="all" />
-		<!--// Resume Styles -->
+	<?php 
+		if( is_page_template('template-resume.php') OR is_page_template('template-full-width.php') ){ 
+	?>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/base.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/yui-reset.css" type="text/css" media="all" />
+	
+		<?php if( is_page_template('template-resume.php') ){ ?>	
+			<!-- Resume Styles -->
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/resume.css" type="text/css" media="all" />
+			<!--// Resume Styles -->
+		<?php } ?>
+	
 	<?php } ?>
 	<!--// Styles -->
 
@@ -120,13 +126,11 @@
 								<?php endif; ?>
 
 								<?php 
-									if( !is_page_template('template-resume.php') ){ 
-										if( !is_page_template('template-full-width.php') ){ 
+									if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') ){ 
 								?>
 								<!-- SIDEBAR -->        
 								<?php get_sidebar(); ?>
 								<!--// SIDEBAR -->
 								<?php 
-										}
 									}
 								?>
