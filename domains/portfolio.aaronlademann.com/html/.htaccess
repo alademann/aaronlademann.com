@@ -1,5 +1,5 @@
-AddHandler php5-script .php
-
+AddHandler php-stable .php
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
