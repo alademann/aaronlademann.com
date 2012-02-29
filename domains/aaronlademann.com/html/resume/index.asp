@@ -379,7 +379,7 @@
     		<li><a href="http://twitter.com/alademann" target="_blank">twitter</a></li>    
     	</ul> 
     </div>
-    <p id="copyright"><small>&copy; 2011</small></p>
+    <p id="copyright"><small>&copy; 2012</small></p>
 </div>
 <script> 
 		head.js("/_includes/_js/jquery-1.6.2.min.js").js("/_includes/_js/analytics.js", 
