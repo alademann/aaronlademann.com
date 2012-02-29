@@ -37,6 +37,9 @@
     </div>
     
 </div>
+
+<!-- noformat on -->
+
 <div id="contentWrap">
   <div id="resume">
   
@@ -57,13 +60,13 @@
                 <p class="h3"><a href="mailto:aaron@aaronlademann.com">aaron.lademann@gmail.com</a></p>
                 <p class="h3">573.356.0456</p>
               </div>
-              <!--// .contact-info -->
+              <!-- END .contact-info -->
             </div>
           </div>
         </div>
-        <!--// header -->
+        <!-- END header -->
     
-    		<!-- body -->
+    	<!-- body -->
         <div id="bd">
           <div id="yui-main">
             <div class="yui-b">
@@ -84,7 +87,7 @@
                   </p>
                 </div>
               </div>
-              <!--// PROFILE -->
+              <!-- END PROFILE -->
     
               <!-- SKILLS -->
               <div class="yui-gf" id="skills">
@@ -109,7 +112,7 @@
                     </div>
                 </div>
               </div>
-              <!--// SKILLS -->
+              <!-- END SKILLS -->
     
               <!-- EXPERIENCE -->
               <div class="yui-gf" id="experience">
@@ -298,7 +301,7 @@
 
                 </div>
               </div>
-              <!--// EXPERIENCE -->
+              <!-- END EXPERIENCE -->
     
     					<!-- TOOLBOX -->
               <div class="yui-gf" id="toolbox">
@@ -335,7 +338,7 @@
                     
                 </div>
               </div>
-              <!--// TOOLBOX -->
+              <!-- END TOOLBOX -->
     
               <!-- EDUCATION -->
               <div class="yui-gf last" id="education">
@@ -347,29 +350,29 @@
                   <h3>Name of School <strong>4.0 GPA</strong> </h3>
                 </div>
               </div>
-              <!--// EDUCATION -->
+              <!-- END EDUCATION -->
     
             </div>
           </div>
         </div>
-    		<!-- // body -->
+    		<!-- END body -->
     
         <div id="ft">
           <p>Aaron Lademann &mdash; <a href="mailto:aaron.lademann@gmail.com">aaron.lademann@gmail.com</a> &mdash; 573.356.045</p>
         </div>
-        <!--// footer -->
+        <!-- END footer -->
     
       </div>
-      <!-- // inner -->
+      <!-- END inner -->
 
     </div>
-    <!--// doc -->
+    <!-- END doc -->
   
   </div>
-  <!-- // #resume -->
+  <!-- END #resume -->
   
 </div>
-<!-- // #contentWrap -->
+<!-- END #contentWrap -->
 
 <div id="footer">
 	<div class="nav" id="footerNav">

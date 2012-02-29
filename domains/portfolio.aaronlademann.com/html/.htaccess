@@ -1,5 +1,9 @@
 AddHandler php5-script .php
 
+Options +Includes
+AddHandler server-parsed .shtml .html .htm .asp .php
+
+AddType text/x-component .htc
 AddType font/ttf .ttf
 AddType font/eot .eot
 AddType font/otf .otf
