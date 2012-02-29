@@ -47,14 +47,14 @@
         <div id="hd">
           <div class="yui-gc">
             <div class="yui-u first">
-              <h1><span class="word1">Aaron</span> <span class="word2">Lademann</span></h1>
-              <p class="h2">Executive Leader | Innovator | Designer</p>
+              <h1 id="name"><span class="word1">Aaron</span> <span class="word2">Lademann</span></h1>
+              <p class="h2" id="headline">Innovator | Designer | Leader</p>
             </div>
             <div class="yui-u">
             	<!-- contact info -->
               <div class="contact-info">
                 <!--<h3><a id="pdf" href="/files/resume_aaron-lademann_latest.pdf" target="_blank">Download PDF</a></h3>-->
-                <p class="h3"><a href="mailto:aaron@aaronlademann.com">aaron@aaronlademann.com</a></p>
+                <p class="h3"><a href="mailto:aaron@aaronlademann.com">aaron.lademann@gmail.com</a></p>
                 <p class="h3">573.356.0456</p>
               </div>
               <!--// .contact-info -->
@@ -69,14 +69,12 @@
             <div class="yui-b">
     
               <!-- PROFILE -->
-              <div class="yui-gf">
+              <div class="yui-gf" id="profile">
                 <div class="yui-u first">
                   <h2>Profile</h2>
                 </div>
                 <div class="yui-u">
                   <p class="enlarge serif" id="profile">
-                    <!--Most designers don&rsquo;t know how to write code, most developers don&rsquo;t want to design, and most business leaders don&rsquo;t want to get their hands dirty alongside their team. <br /><br />
-                    Executive leader with 9 years experience demonstrating exceptions to those rules by combining marketing, branding, design, development and analytical skills with proven servant leadership abilities that drive multi-faceted teams to have fun producing innovative &amp; profitable results.-->
   
                     <em class="serif">Creative leader</em> with 9 years experience successfully building and managing diverse creative teams, and providing business direction that forges a path for teams to have fun producing innovative and profitable results. <br /><br />
                     
@@ -89,7 +87,7 @@
               <!--// PROFILE -->
     
               <!-- SKILLS -->
-              <div class="yui-gf">
+              <div class="yui-gf" id="skills">
                 <div class="yui-u first">
                   <h2>Skills</h2>
                 </div>
@@ -114,7 +112,7 @@
               <!--// SKILLS -->
     
               <!-- EXPERIENCE -->
-              <div class="yui-gf">
+              <div class="yui-gf" id="experience">
       
                 <div class="yui-u first">
                   <h2>Experience</h2>
@@ -122,18 +120,18 @@
     
                 <div class="yui-u">
     
-                  <dl class="job last">
+                  <dl class="job">
                   
-                    <dt><h3 class="h2">Creative Director</h3></dt>
+                    <dt class="h2">Creative Director</dt>
                     <dd class="h3"><strong>Fpweb.net LC</strong> | The World Leader in SharePoint Hosting Services</dd>
-                    <dd class="h4 timeperiod">09.2008-Present</dd>
+                    <dd class="h4 timeperiod">9/2008 - 3/2012</dd>
                     <dd class="intro">
 
                       <p>Manage the Web Services and Marketing departments by fostering a team environment that cultivates innovation and empowers individuals to take creative chances without fear of failure. Demonstrate servant leadership by providing hands on assistance in all phases of project management, marketing campaigns and concept development.</p>
                       
                     </dd>
                     
-                    <dt><h4>Responsibilities</h4></dt>
+                    <dt class="h4">Responsibilities</dt>
                     <dd class="responsibilities">
                     	<ul>
                       	<li>Provide creative direction to ensure brand consistency across all Web, Marketing and Sales initiatives</li>
@@ -145,10 +143,11 @@
                       </ul>
                     </dd>
                     
-                    <dt><h4>Key Accomplishments</h4></dt>
+                    <dt class="h4">Key Accomplishments</dt>
                     <dd class="accomplishments">
                     	<ul>
                       	<li>Reinvented the Fpweb.net brand with a total identity and Web site transformation</li>
+												<li>Company Revenue grew over 160% in the three years following the brand transformation</li>
                         <li>Increased online organic sales conversions by over 400%</li>
                         <li>Improved Fpweb.net visitor traffic by over 63%</li>
                         <li>Oversaw department growth of over 150% three consecutive years</li>
@@ -157,12 +156,152 @@
                     
                   </dl>
                   
+									<dl class="job">
+                  
+                    <dt class="h2">Web Interface Designer &amp; Developer</dt>
+                    <dd class="h3"><strong>Fpweb.net LC</strong> | The World Leader in SharePoint Hosting Services</dd>
+                    <dd class="h4 timeperiod">4/2008 - 9/2008</dd>
+                    
+                    <dt class="h4">Responsibilities</dt>
+                    <dd class="responsibilities">
+                    	<ul>
+                      	<li>Lead the interface design / webmaster efforts for Fpweb.net</li>
+                        <li>Landing page optimization and headline testing</li>
+                        <li>Manage source control and drive quality control for a 300+ page dynamic ASP Web site</li>
+                      </ul>
+                    </dd>
+                    
+                    <dt class="h4">Key Accomplishments</dt>
+                    <dd class="accomplishments">
+                    	<ul>
+                      	<li>Awarded the company’s highest honor in my third month of employment</li>
+												<li>Promoted to department head after only five months – ahead of individuals with longer tenures</li>
+                      </ul>
+                    </dd>
+                    
+                  </dl>
+
+									<dl class="job">
+                  
+                    <dt class="h2">Web Specialist / Art Director</dt>
+                    <dd class="h3"><strong>Mercy Health System</strong> | One of America&rsquo;s largest private non-profit health systems</dd>
+                    <dd class="h4 timeperiod">4/2007 - 4/2008</dd>
+                    
+										<dd class="intro">
+
+                      <p>Planning, developing and managing all internal Web communications for six intranet sites within a multi-billion dollar corporation and it’s five umbrella entities. Provide expertise and guidance to top executives in identifying and implementing Web-based solutions in support of business needs.</p>
+											<p>Manage dozens of Web site contributors by providing customized, dynamic Stellent fragment and layouts, and enterprise cascading stylesheets. Provide creative direction for all corporate brands and external marketing materials, and manage the work of vendors and freelance designers.</p>
+                      
+                    </dd>
+
+                    <dt class="h4">Responsibilities</dt>
+                    <dd class="responsibilities">
+                    	<ul>
+												<li>Plan, develop and manage all Web interaction and communication within the corporation</li>
+												<li>Utilize a Stellent&trade; content management system to organize four internal intranet Web sites</li>
+												<li>Provide guidance to executives in identifying and implementing Web solutions in support of business needs</li>
+												<li>Provide creative direction to enhance public‐facing marketing efforts and brand consistency</li>
+                      </ul>
+                    </dd>
+                    
+                    <dt class="h4">Key Accomplishments</dt>
+                    <dd class="accomplishments">
+                    	<ul>
+                      	<li>Developed a physician intranet site to facilitate interaction and communication between thousands of Mercy doctors, helping to increase adaptation of a new five‐billion dollar <abbr title="Electronic Health Record">EHR</abbr> system.</li>
+												<li>Designed a new corporate branding strategy to align the visual treatments of all logos and symbols used throughout numerous umbrella corporations within the health system.</li>
+                      </ul>
+                    </dd>
+                    
+                  </dl>
+
+									<dl class="job">
+                  
+                    <dt class="h2">Web Designer / Web Developer</dt>
+                    <dd class="h3"><strong>Network Solutions</strong> | The Original Domain Name Registrar</dd>
+                    <dd class="h4 timeperiod">9/2006 - 4/2007</dd>
+
+                    <dt class="h4">Responsibilities</dt>
+                    <dd class="responsibilities">
+                    	<ul>
+												<li>Design, develop and implement effective Web interfaces using CSS/HTML</li>
+												<li>Determine and manage project time lines, and handle a workload of up to ten clients at once</li>
+												<li>Perform user requirements gathering, prototyping, interface & graphic design, and SEO/PPC optimization</li>
+                      </ul>
+                    </dd>
+                    
+                    <dt class="h4">Key Accomplishments</dt>
+                    <dd class="accomplishments">
+                    	<ul>
+                      	<li>Nominated for designer of the month three times, and won the award during my second month on the team</li>
+                      </ul>
+                    </dd>
+                    
+                  </dl>
+
+									<dl class="job">
+                  
+                    <dt class="h2">Technical Support Representative</dt>
+                    <dd class="h3"><strong>Network Solutions</strong> | The Original Domain Name Registrar</dd>
+                    <dd class="h4 timeperiod">8/2006 - 9/2006</dd>
+
+										<dd class="intro">
+
+                      <p>Utilized my expertise within the MonsterCommerce (now Network Solutions) E-Commerce Shopping Cart Application to assist customers with troubleshooting and site setup procedures.</p>
+											<p>During my short time in this position before being promoted to Web Designer, I consistently exceeded call-time and call-volume goals.</p>
+                      
+                    </dd>
+
+                  </dl>
+
+									<dl class="job">
+                  
+                    <dt class="h2">Design Intern</dt>
+                    <dd class="h3"><strong>MonsterCommerce</strong> | A Network Solutions Company</dd>
+                    <dd class="h4 timeperiod">6/2006 - 8/2006</dd>
+
+										<dt class="h4">Responsibilities</dt>
+                    <dd class="responsibilities">
+                    	<ul>
+												<li>Work with a team of interns from various backgrounds to plan, develop & launch a successful online venture</li>
+												<li>Personally responsible for brand development, interface design, user studies and usability enhancements</li>
+												<li>Develop a twenty‐five page guide to accompany our business plan for prospective <abbr title="Venture Capital">VC</abbr> investors</li>
+                      </ul>
+                    </dd>
+                    
+                    <dt class="h4">Key Accomplishments</dt>
+                    <dd class="accomplishments">
+                    	<ul>
+                      	<li>Rewarded with a full-time position within the company following the internship</li>
+                      </ul>
+                    </dd>
+
+                  </dl>
+
+									<dl class="job">
+                  
+                    <dt class="h2">Graphic Designer / Production Supervisor</dt>
+                    <dd class="h3"><strong>Signs Now, Inc.</strong> | An Industry Pioneer in Professional Graphics Solutions</dd>
+                    <dd class="h4 timeperiod">6/2006 - 8/2006</dd>
+
+										<dt class="h4">Responsibilities</dt>
+                    <dd class="responsibilities">
+                    	<ul>
+												<li>Turn client visions into effective brand identities through various traditional media</li>
+												<li>Train &amp; supervise three production associates to ensure quality output on all finished media</li>
+												<li>Plan &amp; execute large‐scale on‐site installations, keeping them within scope and budget</li>
+												<li>Operate small and large format ink jet/heat transfer printing &amp; lamination equipment</li>
+												<li>Implement standards and provide quality‐assurance for all pre‐press color standards and equipment calibration methods</li>
+                      </ul>
+                    </dd>
+
+                  </dl>
+
                 </div>
               </div>
               <!--// EXPERIENCE -->
     
     					<!-- TOOLBOX -->
-              <div class="yui-gf">
+              <div class="yui-gf" id="toolbox">
                 <div class="yui-u first">
                   <h2>Toolbox</h2>
                 </div>
@@ -199,7 +338,7 @@
               <!--// TOOLBOX -->
     
               <!-- EDUCATION -->
-              <div class="yui-gf last">
+              <div class="yui-gf last" id="education">
                 <div class="yui-u first">
                   <h2>Education</h2>
                 </div>
@@ -216,7 +355,7 @@
     		<!-- // body -->
     
         <div id="ft">
-          <p>Aaron Lademann &mdash; <a href="mailto:aaron@aaronlademann.com">aaron@aaronlademann.com</a> &mdash; 573.356.045</p>
+          <p>Aaron Lademann &mdash; <a href="mailto:aaron.lademann@gmail.com">aaron.lademann@gmail.com</a> &mdash; 573.356.045</p>
         </div>
         <!--// footer -->
     
