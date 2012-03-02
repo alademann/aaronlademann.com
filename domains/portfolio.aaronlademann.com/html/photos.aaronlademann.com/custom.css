@@ -4,7 +4,7 @@ div#toolbar { position: absolute; right: 2em; }
 .searchResults #header, .searchResults #content, .shareHomepage #content, .datePage #header, .datePage #content, .keywordPage #header, .keywordPage #content, .shareHomepage #header, .Original #singleImage, .Large #singleImage, .Medium #singleImage, .Small #singleImage, #traditional, #traditional #photos, #category, #homepage, .singleImage #header, .traditional #header, .category #header, .homepage #header, .homepage #footer, .homepage #feeds, .tempClass #header { width: auto; padding-left: 3em; padding-right: 3em; }
 #header_wrapper #header { padding-left: 0 !important; padding-right: 0 !important; }
 #header { color: #aaa; }
-#bodyWrapper { padding-bottom: 6em !important; } /* make room for the fixed pos. footer */
+#bodyWrapper { padding-bottom: 40px !important; } /* make room for the fixed pos. footer */
 
 #bodyWrapper img.imgBorder { border-color: #000; }
 #bodyWrapper img.imgBorder.imgBorderSuccess, #bodyWrapper .galleryPage img.imgBorder { border: 1px solid #999; }
@@ -117,7 +117,7 @@ div#toolbar { position: absolute; right: 2em; }
 /*------------------------------------------------------- top and bottom (footer) navigation boxes */
 .albumNav, #custom_footer .inner { 
   background-color: rgba(0,0,0,0.6) !important;
-	*background-color: black !important;
+	*background-color: black;
 	border: 1px solid rgba(0,0,0,0.8) !important;
 	*border: 1px solid black !important; 
 }
@@ -133,35 +133,53 @@ div#toolbar { position: absolute; right: 2em; }
 
 /* customize footer (bottom) */
 #cobrand_footer { display: none !important; }
-#custom_footer {
-	position: fixed;
+
+
+#custom_footer, #footer_inner {
 	bottom: 0;
 	width: 100% !important;
-	padding: 0;
-	font-size: 11px;
-	color: #555;
 }
-#custom_footer .inner { 
-	background-color: rgba(35,35,35,0.9) !important;
-	*background-color #232323 !important: 
-	float: left;
-	height: auto;
-	padding: 10px 1% !important;
-  width: 98%;
-	margin-bottom: 0; 		
-	border: 0 none !important; 
-	border-radius: 0 !important;
-	-moz-border-radius: 0 !important;
+#custom_footer {
+	position: fixed;
+	z-index:900;
+	height: 63px; /* total height of image bg */ 
+	padding-top: 14px; /* drop shadow from image bg */
+	/* Other/My SmugMug Site Files/photos_cf_footer_bg2.png */
+	background: transparent url("/photos/i-hRHszNq/0/O/i-hRHszNq.png") left bottom repeat-x;
 }
-#custom_footer a { 
-  color: #666;
+#footer_inner, #footerNav, #footerNav a { height: 49px;line-height: 49px;font-size: 11px; }
+#footer_inner {
+	position: absolute;
+	background-color: black; 
+	background-color: rgba(0,0,0,0.6) !important;
 }
-#custom_footer a:hover {
+
+#custom_footer #copyright { color: #5b5b5b; display: block; height: auto; width: auto; text-align: right; position: relative; float: left; left: 3em; top: 0; line-height: 49px; }
+/* top and bottom nav (global nav attr) */
+#custom_footer .nav ul, #custom_footer .nav li, #custom_footer .nav li a { width: auto; }
+#custom_footer .nav ul, #custom_footer .nav li { margin: 0; padding: 0; list-style-type: none; list-style-image: none; border: 0; outline: 0; }
+#custom_footer .nav ul { overflow: hidden; float: right; }
+#custom_footer .nav li { float: left; }
+#custom_footer .nav li a { display: block; color: #949494; text-transform: uppercase; }
+#custom_footer .nav li a:hover, #custom_footer .nav .current_page_item, #custom_footer .nav .current-menu-item a, #custom_footer .nav .active a { color: #fff !important; text-decoration: none; background-color: black; background-color: rgba(0,0,0,0.9) !important; }
+/* footernav */
+#footerNav {
+	position: absolute;
+	right: 25px;
+	bottom: 0;
+	width: auto;
+}
+#footerNav a {
+	display: block; 
+	width: auto; 
+	padding: 0 15px;
+	color: #66696D;
+}
+#footerNav a:hover {
 	color: #a0e22e;
 	text-decoration: none;
 	border: 0 none !important;
 }
-
 /*------------------------------------------------------- IMAGE REPLACED H1 */
 #header h1, #header h1 a { width: 292px !important; height: 37px !important; }
 #header h1 { margin: 0 !important; padding: 0 !important; line-height: normal; float: left; }
@@ -185,6 +203,14 @@ h3.title, #footerLogin { visibility: hidden; }
 #custom_footer a, #custom_footer .nav, #custom_footer div, #custom_footer span, #custom_footer * { font-size: 11px !important; }
 
 /*------------------------------------------------------- MISC COLORS and FONT STYLINGS */
+body {
+  /* Other/My SmugMug Site Files/spackle_bg_base_dark.png 
+  background: #686868 url("/photos/i-hRLRL2K/0/O/i-hRLRL2K.png") left top repeat !important;*/
+  /* Other/My SmugMug Site Files/bg_pattern_dark_dotted.png 
+  background: black url("/photos/i-QMHmPvz/0/O/i-QMHmPvz.png") left top repeat !important;*/
+  /* Other/My SmugMug Site Files/bg_pattern_dark_leather.png */
+  background: #313131 url("/photos/i-Gz623s3/0/O/i-Gz623s3.png") left top repeat !important;
+}
 #bodyWrapper a { text-decoration: none !important; }
 #bodyWrapper a, #bodyWrapper a:active, #bodyWrapper a:visited { border-bottom: 1px dotted White; }
 #bodyWrapper a:hover { border-bottom: 1px solid White; }
