@@ -43,15 +43,19 @@
 		// set false for now
 		//$is_ios = false;
 		$is_ios = true; 
-
-		if ( !is_single() ) {
-		?>
+	?>
 	<!-- Mobile Visitor -->
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/iOS.css" />    
+		<?php if ( !is_single() ) { 
+						if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') ) {
+		?>
+			<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+		<?php		}
+					} 
+		?>
   <link rel="stylesheet" type="text/css" media="screen" href="/css/aa_core/iOS.css" />    
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/iOS.css" />    
 	<!--// Mobile Visitor -->
-	<?php }} ?>
+	<?php } ?>
 
 	<!-- HOOK HEAD -->
 	<?php wp_head(); ?>

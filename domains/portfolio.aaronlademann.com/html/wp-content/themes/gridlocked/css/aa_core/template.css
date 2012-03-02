@@ -1,5 +1,5 @@
 /* TEMPLATE */
-
+body, body * { -webkit-font-smoothing: antialiased; }
 /* override gridlocked theme defaults */
 .aafolio #masthead { background: #fff url("http://aaronlademann.com/_images/_template/body-bg.gif") left top repeat-x !important; z-index: 2; }
 .aafolio #wpadminbar { display: none; }
@@ -45,7 +45,7 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * { text-decora
 	text-transform: uppercase;
 	background: Transparent url("http://aaronlademann.com/_images/_template/body-bg.gif") left top repeat-x; 
 }
-#topNav li a:hover, #topNav li:hover, #topNav .current_page_item a, #topNav .active a { background-image: none !important; background-color: Transparent !important; } /* reveal the hover image which is contained in #topNav */
+#topNav li a:hover, #topNav .current_page_item a, #topNav .active a { background-image: none !important; background-color: Transparent !important; } /* reveal the hover image which is contained in #topNav */
 /* footernav */
 #footerNav {
 position: absolute;

@@ -3,7 +3,7 @@
 /* base.css ------- aaronlademann.com ------- */
 /* RESET */
 body { overflow-x: hidden; /*background: transparent url("http://aaronlademann.com/_images/_template/body-bg.gif") left top repeat-x !important;*/ }
-body,p { font: 13px/20px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; color: #484848; }
+body,p { font: 13px/20px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; color: #484848; -webkit-font-smoothing: antialiased; }
 /* TYPE */
 p { margin-bottom: 18px;  }
 small { font-size: 11px; line-height: 16px; }

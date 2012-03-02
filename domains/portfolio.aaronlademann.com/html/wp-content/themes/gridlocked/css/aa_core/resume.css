@@ -69,6 +69,9 @@
 	font-style: normal;
 }
 
+
+#contentWrap { top: 10px; }
+
 #resume, p {
      color: #333;
 		 font-size: 1.01em;
@@ -104,6 +107,7 @@ text-transform: uppercase;
 #resume .contact-info .h3 { font-weight: normal !important; }
 #resume h2, #resume .h2, #resume .job h3.h2 {
      font-size: 1.5em;
+		 clear: both;
 }
 #resume .first h2, #resume .first .h2, #resume h3, #resume .h3, #resume p.h3
 #resume .serif, #resume em.serif {
@@ -114,6 +118,9 @@ text-transform: uppercase;
 }
 #resume .first h2, #resume .first .h2 { font-size: 1.5em; color: #111; }
 
+#resume dt.h2 { padding-top: 1em; }
+#resume dt.h2:first-child { padding-top: 0; }
+
 #resume #hd h3, #resume #hd .h3 {
 	font-family: inherit;
 	text-transform: none;
@@ -121,7 +128,7 @@ text-transform: uppercase;
 
 #resume h3, #resume .h3 { font-size: 1.2em; margin-top: .2em; }
 #resume .job h3, #resume .job .h3 { font-size: 1.12em; }
-#resume h4, #resume .h4 { font-size: 1.12em; }
+#resume h4, #resume .h4 { font-size: 1.12em;clear: both; }
 
 
 #resume p {
@@ -181,7 +188,7 @@ text-transform: uppercase;
 		 padding: 0 10px;
 		 font-size: .9em;
 }
-#resume .job li:last-child, #resume .job:last-child { border-bottom: 0 none;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none; }
+#resume .job li:last-child, #resume .job:last-child, #resume li:last-child { border-bottom: 0 none;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none; }
 
 #resume #ft {
 		 border-top: 1px solid rgba(255,255,255,0.8);
@@ -302,15 +309,26 @@ text-transform: uppercase;
      padding: 0pt;
 }
 
-#resume .talent {
+#resume .talent, #resume .third {
      float: left;
      width: 31%;
 		 margin-right: 3%;
 }
-#resume .talent.last { margin-right: 0; }
-#resume .talent p { padding-right: 1em; }
+#resume .half {
+	float: left;
+	width: 48%;
+	margin-right: 3%;
+}
+#resume .half.last, #resume .half:last-child,
+#resume .talent.last, #resume .talent:last-child, 
+#resume .third.last, #resume .third:last-child { margin-right: 0; }
 
-#resume .talent h2, #resume .talent .h2 {
+#resume .talent p, #resume .talent li, #resume .third li,
+#resume .half p, #resume .half li { padding-right: 1em; }
+
+#resume .talent h2, #resume .talent .h2, 
+#resume .third h2, #resume .third .h2,
+#resume .half h2, #resume .half .h2 {
      font-size: 1.4em;
 		 margin-bottom: 6px;
 }
