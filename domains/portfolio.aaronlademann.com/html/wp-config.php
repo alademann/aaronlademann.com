@@ -28,7 +28,7 @@
 
  */
 
-
+ define('COOKIE_DOMAIN', 'portfolio.aaronlademann.com');
 
 // ** MySQL settings - You can get this info from your web host ** //
 

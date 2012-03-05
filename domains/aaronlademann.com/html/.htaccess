@@ -1,5 +1,7 @@
 DirectoryIndex index.asp
 
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/javascript text/css application/x-javascript
+
 AddType text/x-component .htc
 
 Options +Includes
