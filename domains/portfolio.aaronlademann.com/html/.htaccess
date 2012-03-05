@@ -1,28 +1,31 @@
 AddHandler php5-script .php
-
 Options +Includes
-AddHandler server-parsed .shtml .html .htm .asp .php
-
 AddType text/x-component .htc
-AddType font/ttf .ttf
-AddType font/eot .eot
-AddType font/otf .otf
-AddType font/woff .woff
 
-<FilesMatch "\.(ttf|otf|eot|woff)$">
-<IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "*"
-</IfModule>
-</FilesMatch>
+# BEGIN REQUIRED FOR WEBFONTS
+
+	AddType font/ttf .ttf
+	AddType font/eot .eot
+	AddType font/otf .otf
+	AddType font/woff .woff
+
+	<FilesMatch "\.(ttf|otf|eot|woff)$">
+		<IfModule mod_headers.c>
+			Header set Access-Control-Allow-Origin "*"
+		</IfModule>
+	</FilesMatch>
+
+# END REQUIRED FOR WEBFONTS
 
 # BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
+
+	<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /index.php [L]
+	</IfModule>
 
 # END WordPress
