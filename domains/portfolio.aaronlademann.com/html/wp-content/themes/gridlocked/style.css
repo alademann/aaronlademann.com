@@ -2144,7 +2144,7 @@ div.jp-jplayer { background-color: #292a2b; }
 .breadcrumb li a {
 	display: block;
 	padding: 0 15px 0 0;
-	background:url(http://aaronlademann.com/_images/_template/_portfolio/arrow2.gif) no-repeat right center;
+	background:url(/images/_template/_portfolio/arrow2.gif) no-repeat right center;
 }
 /*.breadcrumb li a:after { content: "»"; }*/
 

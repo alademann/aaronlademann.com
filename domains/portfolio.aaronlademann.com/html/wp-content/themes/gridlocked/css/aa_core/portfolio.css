@@ -7,8 +7,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 
-body { background: url(http://aaronlademann.com/_images/_template/_portfolio/bg_tile.gif) left top repeat; }
-#masthead { background: url(http://aaronlademann.com/_images/_template/body-bg.gif) left top repeat-x; }
+body { background: url(/images/_template/_portfolio/bg_tile.gif) left top repeat; }
+#masthead { background: url(/images/_template/body-bg.gif) left top repeat-x; }
 #contentWrap {
 	font-family: "HelveticaNeue-Regular", 'Helvetica Neue', Helvetica, Arial, Tahoma, Verdana, sans-serif;
 	font-weight: 300;
@@ -145,7 +145,7 @@ clear: both;
 	padding: 0 0 15px 0;
 	float: left;
 	display: block;
-	background: url(http://aaronlademann.com/_images/_template/_portfolio/hr.gif) repeat-x bottom left;
+	background: url(/images/_template/_portfolio/hr.gif) repeat-x bottom left;
 }
 
         #contentWrap #header .button { display: none; }        
@@ -175,14 +175,14 @@ clear: both;
 		width: 28px;
 		height: 30px;
 		color: #b3b4b7;
-		background: transparent url(http://aaronlademann.com/_images/_template/_portfolio/breadcrumb_home-symbol.png) right top no-repeat;
+		background: transparent url(/images/_template/_portfolio/breadcrumb_home-symbol.png) right top no-repeat;
 	}
 	
 	.crumbTitles #home {
 		display: block;
 		width: 72px;
 		height: 30px;
-		background: transparent url(http://aaronlademann.com/_images/_template/_portfolio/breadcrumb_home-symbol.png) left top no-repeat;
+		background: transparent url(/images/_template/_portfolio/breadcrumb_home-symbol.png) left top no-repeat;
 		text-decoration: none !important;
 		text-indent: -999em;
 	}
@@ -229,7 +229,7 @@ clear: both;
 	#contentWrap .back,
 	#contentWrap .back a,
 	#contentWrap .back a span {
-		background-image: url(http://aaronlademann.com/_images/_template/_portfolio/buttons2.png);
+		background-image: url(/images/_template/_portfolio/buttons2.png);
 	}
 	
 	#contentWrap .button,
@@ -439,7 +439,7 @@ clear: both;
 	float: left;
 	display: block;
 	overflow: hidden;
-	background: url(http://aaronlademann.com/_images/_template/_portfolio/highlight.png) repeat-y top center;
+	background: url(/images/_template/_portfolio/highlight.png) repeat-y top center;
 }
 
 	#contentWrap #projects {
@@ -457,7 +457,7 @@ clear: both;
 		font-weight: bold;
 		text-align: center;
 		text-transform: uppercase;
-		background: url(http://aaronlademann.com/_images/_template/_portfolio/img_bg_280.png) no-repeat 0 0;
+		background: url(/images/_template/_portfolio/img_bg_280.png) no-repeat 0 0;
 	}
 
 		#contentWrap #projects ul li a {
@@ -521,7 +521,7 @@ clear: both;
 	margin: 0 0 10px;
 	padding: 5px 6px 14px;
 	opacity: 0.95;
-	background: url(http://aaronlademann.com/_images/_template/_portfolio/img_bg_360.png) no-repeat 0 0;
+	background: url(/images/_template/_portfolio/img_bg_360.png) no-repeat 0 0;
 	-webkit-transition: opacity 0.2s ease-in;
 }
 
@@ -592,7 +592,7 @@ float: left;
 	width: 900px;
 	padding: 20px 20px 40px 20px;
 position: absolute;
-	background: url(http://aaronlademann.com/_images/_template/_portfolio/hr.gif) repeat-x top left;
+	background: url(/images/_template/_portfolio/hr.gif) repeat-x top left;
 }
 
 #contentWrap #footer2 h2, #contentWrap #footer .h2 {
@@ -606,7 +606,7 @@ position: absolute;
 	margin: 0 0 10px;
 	display: block;
 	float: left;
-	background: url(http://aaronlademann.com/_images/_template/_portfolio/hr_4px.png) no-repeat 0 0;
+	background: url(/images/_template/_portfolio/hr_4px.png) no-repeat 0 0;
 }
 
 #contentWrap .hr hr {
