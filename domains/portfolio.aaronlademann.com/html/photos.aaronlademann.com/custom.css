@@ -236,6 +236,16 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 /*#photoKeywords a::outside::before { content: '[ '; }
 #photoKeywords a::outside::after { content: ' ] '; }*/
 
+/* related keywords */
+.nav#relatedKeywords, .nav#relatedKeywords .title { color: #999 !important; }
+.nav#relatedKeywords a { color: #bfbfbf; border-color: #bfbfbf; }
+.nav#relatedKeywords a:hover { color: white; }
+#relatedKeywords, #relatedKeywords a { font-size: .8em !important; }
+#relatedKeywords br { display: none; }
+#relatedKeywords .title { padding-left: 10px; }
+#relatedKeywords .title:first-child { padding-left: 0; }
+
+
 
 /*------------------------------------------------------- menu::base */
 div#menu a, #searchWords { font: normal 12px Trebuchet MS; }

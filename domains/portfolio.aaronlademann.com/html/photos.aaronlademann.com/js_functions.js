@@ -97,7 +97,7 @@ function huntdowntheword(word,header,elem){
 function fixBrokenImages(container,type){
 	
 	var theseImages = $(container).find('img');
-	comingSoonImg = "http://aaronlademann.com/_images/_template/photos_thumbnail-coming-soon_100x100.png";
+	comingSoonImg = "http://portfolio.aaronlademann.com/images/_template/photos_thumbnail-coming-soon_100x100.png";
 	
 	if(type = "error"){
 		
@@ -105,7 +105,7 @@ function fixBrokenImages(container,type){
 																 
 			//replace the broken image with another image
 			$(this).bind('error', function(){
-					$(this).attr("src", "http://aaronlademann.com/_images/_template/photos_thumbnail-coming-soon_100x100.png");
+					$(this).attr("src", "http://portfolio.aaronlademann.com/images/_template/photos_thumbnail-coming-soon_100x100.png");
 					$(this).addClass("error");
 			});
 			

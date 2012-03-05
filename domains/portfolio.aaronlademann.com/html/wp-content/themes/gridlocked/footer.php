@@ -12,7 +12,7 @@
 							<?php wp_nav_menu( array( 'theme_location' => 'secondary') ); ?>
             </div>
             
-            <p class="copyright" id="copyright">&copy; Copyright <?php echo date( 'Y' ); ?> <a href="http://aaronlademann.com">Aaron Lademann</a></p>
+            <p class="copyright" id="copyright">&copy; Copyright <?php echo date( 'Y' ); ?> Aaron Lademann</p>
             
             <p class="credit"><?php echo get_option('tz_footer_copy'); ?></p>
 

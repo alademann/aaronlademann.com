@@ -530,13 +530,14 @@ cite { font-style: italic; }
 
 dfn { font-weight: bold; }
 
+sub, sup { font-size: .8em;position: relative;left: auto; }
 sup {
-	font-size: 11px;
+	top: -2px;
 	vertical-align: top;
 }
 
 sub {
-	font-size: 11px;
+	top: 2px;
 	vertical-align: bottom;
 }
 
