@@ -77,8 +77,8 @@
         </div>
           
         <div id="logoContainer">
-            <a id="mastlogo" href="http://aaronlademann.com/" title="AaronLademann.com" rel="nofollow">
-              <img src="http://aaronlademann.com/_images/_template/masthead-aaronlademann.com-logo.png" width="294" height="52" alt="<?php echo bloginfo( 'name' ) ?>" />
+            <a id="mastlogo" href="<?php echo site_url(); ?>" title="AaronLademann.com" rel="nofollow">
+              <img src="<?php echo site_url(); ?>/images/_template/masthead-aaronlademann.com-logo.png" width="294" height="52" alt="<?php echo bloginfo( 'name' ) ?>" />
             </a> 
   
         </div>
