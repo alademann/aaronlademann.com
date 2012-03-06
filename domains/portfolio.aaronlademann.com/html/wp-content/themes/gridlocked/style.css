@@ -1669,6 +1669,8 @@
 	.post-thumb a {
 		display: block;
 		position: relative;
+		/* so that even an image that is not 170px being used as a thumbnail will not throw off the grid view */
+		min-height: 170px;
 	}
 	.post-thumb a,
 	.post-thumb a img { 
