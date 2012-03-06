@@ -16,7 +16,7 @@
 	#content { background: url('/wp-content/themes/gridlocked/images/light/spackle_bg_lighting_compressed.jpg') 140px top no-repeat; }*/
 
 	/* aaronl: custom gray leather bg */
-	body { background: #eeeeee url('/wp-content/themes/gridlocked/images/light/bg_pattern_gray_leather_subtle.png'); }
+	body { background: #eeeeee url('/wp-content/themes/gridlocked/images/light/bg_pattern_gray_leather_subtler.png'); }
 
 	#content p, #content li, #content blockquote, #content em, #content i { text-shadow: 1px 0 0 #f5f5f5; }
 	#content h1 { text-shadow: 1px 1px 0 white; }

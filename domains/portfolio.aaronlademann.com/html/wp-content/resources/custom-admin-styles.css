@@ -1,7 +1,9 @@
 ﻿/*-------------------------------------------------------------------------------------------*/
 /* AARONL: CUSTOM STYLES */
 /*-------------------------------------------------------------------------------------------*/
-
+.wp-admin table.fixed {
+		table-layout: inherit !important;
+	}
 /* --------------------- "QUICK EDIT" ADMIN PAGE STYLES --------------------- */
 
 /* make the cancel/update button not be ten miles apart */
