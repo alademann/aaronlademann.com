@@ -5,6 +5,11 @@ WP-Cache Config Sample File
 See wp-cache.php for author details.
 */
 
+$wp_cache_preload_on = 1; //Added by WP-Cache Manager
+$wp_cache_preload_email_volume = 'less'; //Added by WP-Cache Manager
+$wp_cache_preload_email_me = 0; //Added by WP-Cache Manager
+$wp_cache_preload_interval = 0; //Added by WP-Cache Manager
+$wp_cache_preload_posts = '52'; //Added by WP-Cache Manager
 $cache_schedule_interval = '0'; //Added by WP-Cache Manager
 $cache_gc_email_me = 0; //Added by WP-Cache Manager
 $cache_time_interval = '3600'; //Added by WP-Cache Manager
@@ -14,9 +19,9 @@ $wp_cache_mobile_groups = ''; //Added by WP-Cache Manager
 $wp_cache_mobile_prefixes = 'w3c , w3c-, acs-, alav, alca, amoi, audi, avan, benq, bird, blac, blaz, brew, cell, cldc, cmd-, dang, doco, eric, hipt, htc_, inno, ipaq, ipod, jigs, kddi, keji, leno, lg-c, lg-d, lg-g, lge-, lg/u, maui, maxo, midp, mits, mmef, mobi, mot-, moto, mwbp, nec-, newt, noki, palm, pana, pant, phil, play, port, prox, qwap, sage, sams, sany, sch-, sec-, send, seri, sgh-, shar, sie-, siem, smal, smar, sony, sph-, symb, t-mo, teli, tim-, tosh, tsm-, upg1, upsi, vk-v, voda, wap-, wapa, wapi, wapp, wapr, webc, winw, winw, xda , xda-'; //Added by WP-Cache Manager
 $wp_cache_refresh_single_only = '0'; //Added by WP-Cache Manager
 $wp_cache_make_known_anon = 0; //Added by WP-Cache Manager
-$wp_cache_mod_rewrite = 1; //Added by WP-Cache Manager
-$wp_cache_front_page_checks = 1; //Added by WP-Cache Manager
-$wp_supercache_304 = 1; //Added by WP-Cache Manager
+$wp_cache_mod_rewrite = 0; //Added by WP-Cache Manager
+$wp_cache_front_page_checks = 0; //Added by WP-Cache Manager
+$wp_supercache_304 = 0; //Added by WP-Cache Manager
 $cache_page_secret = 'fcf78bc4af10870120956ed13f3ee2bb'; //Added by WP-Cache Manager
 $wp_cache_home_path = '/'; //Added by WP-Cache Manager
 $wp_cache_slash_check = 1; //Added by WP-Cache Manager
@@ -30,7 +35,7 @@ $cache_max_time = 3600; //in seconds
 //$use_flock = true; // Set it true or false if you know what to use
 $cache_path = WP_CONTENT_DIR . '/cache/';
 $file_prefix = 'wp-cache-';
-$ossdlcdn = 1; //Added by WP-Cache Manager
+$ossdlcdn = 0; //Added by WP-Cache Manager
 
 // Array of files that have 'wp-' but should still be cached 
 $cache_acceptable_files = array( 'wp-comments-popup.php', 'wp-links-opml.php', 'wp-locations.php' );
@@ -71,7 +76,7 @@ $wp_super_cache_front_page_notification = '0';
 
 $wp_cache_object_cache = 0; //Added by WP-Cache Manager
 $wp_cache_anon_only = 0;
-$wp_supercache_cache_list = 1; //Added by WP-Cache Manager
+$wp_supercache_cache_list = 0; //Added by WP-Cache Manager
 $wp_cache_debug_to_file = 0;
 $wp_super_cache_debug = 0;
 $wp_cache_debug_level = 5;
@@ -88,7 +93,7 @@ $wp_cache_pages[ "archives" ] = 0;
 $wp_cache_pages[ "pages" ] = 0;
 $wp_cache_pages[ "single" ] = 0;
 $wp_cache_hide_donation = 0;
-$wp_cache_not_logged_in = 0; //Added by WP-Cache Manager
+$wp_cache_not_logged_in = 1; //Added by WP-Cache Manager
 $wp_cache_clear_on_post_edit = 1; //Added by WP-Cache Manager
 $wp_cache_hello_world = 0; //Added by WP-Cache Manager
 $wp_cache_mobile_enabled = 1; //Added by WP-Cache Manager

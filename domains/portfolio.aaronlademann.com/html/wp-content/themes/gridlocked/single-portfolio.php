@@ -225,7 +225,7 @@
 										
 									}
 									
-									$(document).ready(function(){
+									head.ready(function(){
 									
 										var win_width = $(window).width();
 										var large_image_size;

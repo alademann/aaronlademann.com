@@ -165,43 +165,40 @@ add_filter('wp_trim_excerpt', 'tz_excerpt_more');
 /*	Register and load common JS
 /*-----------------------------------------------------------------------------------*/
 
+function tz_register_js(){
+	wp_deregister_script('jquery');
+}
+add_action('init', 'tz_register_js');
+/* REPLACED WITH head.js calls in FOOTER.PHP
 function tz_register_js() {
 	if (!is_admin()) {
-		// comment out the next two lines to load the local copy of jQuery
-		//wp_deregister_script('jquery');
-		//wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
 		
 		wp_register_script('tz_custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE); 
-		wp_register_script('jquery-ui-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.5.custom.min.js', 'jquery');
-		wp_register_script('jquery-cookie', get_template_directory_uri() . '/js/carhartl-jquery-cookie/jquery.cookie.js', 'jquery');
-// aaronl: custom
-		wp_register_script('jquery-animate-colors', get_template_directory_uri() . '/js/jquery.animate-colors.js', 'jquery');
-// aaronl: custom
-		//wp_register_script('browser-detect', 'http://aaronlademann.com/_includes/_js/cssBrowserSelector.js', 'jquery');
-		wp_register_script('tz_shortcodes', get_template_directory_uri() . '/js/jquery.shortcodes.js', 'jquery'); 
-// aaronl: custom
-		//wp_register_script('galleria', '/wp-content/plugins/galleria/galleria-1.2.4.min.js', 'jquery');	 	
-		wp_register_script('custom-javascript', '/wp-content/resources/custom-javascript.js', 'jquery');	 	
-		wp_register_script('head-min', get_template_directory_uri() . '/js/head.min.js', 'jquery');	 
+		wp_register_script('jquery-ui-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.5.custom.min.js', 'jquery', '1.0', TRUE);
+		wp_register_script('jquery-cookie', get_template_directory_uri() . '/js/carhartl-jquery-cookie/jquery.cookie.js', 'jquery', '1.0', TRUE);
+		wp_register_script('jquery-animate-colors', get_template_directory_uri() . '/js/jquery.animate-colors.js', 'jquery', '1.0', TRUE);
+		wp_register_script('tz_shortcodes', get_template_directory_uri() . '/js/jquery.shortcodes.js', 'jquery', '1.0', TRUE); 
+		wp_register_script('custom-javascript', '/wp-content/resources/custom-javascript.js', 'jquery', '1.0', TRUE);	 	
+		wp_register_script('head-min', get_template_directory_uri() . '/js/head.min.js');	 
 
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-custom');
 		wp_enqueue_script('jquery-cookie');
-// aaronl: custom
-		//wp_enqueue_script('browser-detect');		
-// aaronl: custom
 		wp_enqueue_script('custom-javascript');
 		wp_enqueue_script('jquery-animate-colors');
 		wp_enqueue_script('tz_shortcodes');
+			$browserAsString = $_SERVER['HTTP_USER_AGENT'];
+			if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
+					wp_register_script('iOS', get_template_directory_uri() . '/js/iOSfixedPosition.js', 'jquery', '1.0', TRUE);
+					wp_enqueue_script( 'iOS' );
+			}
 		wp_enqueue_script('tz_custom');
 		wp_enqueue_script('head-min');
-// aaronl: custom		
-		//wp_enqueue_script('galleria');		
-		
+
 	}
 }
 add_action('init', 'tz_register_js');
-
+*/
 
 /*-----------------------------------------------------------------------------------*/
 /*	Register and load admin javascript
@@ -232,77 +229,63 @@ add_action('wp_print_scripts', 'tz_contact_js');
 /* Load scripts for single pages
 /*-----------------------------------------------------------------------------------*/
 
+/* REPLACED WITH head.js calls in FOOTER.PHP
 function tz_single_scripts() {
 	
 	if(is_singular()) 
 		
-		wp_register_script('easing', get_template_directory_uri().'/js/jquery.easing.1.3.js', 'jquery');
-		wp_enqueue_script( 'comment-reply' );
+		wp_register_script('easing', get_template_directory_uri().'/js/jquery.easing.1.3.js', 'jquery', '1.0', TRUE);
+		//wp_enqueue_script( 'comment-reply' );
 		wp_enqueue_script( 'easing' );
 		
 	if(is_singular() && has_post_format('image'))
 	
-		wp_register_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox-1.3.4.pack.js', 'jquery');
+		wp_register_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox-1.3.4.pack.js', 'jquery', '1.0', TRUE);
 		wp_enqueue_script( 'fancybox' );
 		
 	if(is_singular() && has_post_format('gallery') || get_post_type() == 'portfolio')
 	
-		wp_register_script('slidesjs', get_template_directory_uri().'/js/slides.min.jquery.js', 'jquery');
+		wp_register_script('slidesjs', get_template_directory_uri().'/js/slides.min.jquery.js', 'jquery', '1.0', TRUE);
 		wp_enqueue_script( 'slidesjs' );
 		
-		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery');
+		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery', '1.0', TRUE);
 		wp_enqueue_script( 'jPlayer' );
 		
 	if(is_singular() && has_post_format('video') || has_post_format('audio') )
 	
-		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery');
+		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery', '1.0', TRUE);
 		wp_enqueue_script( 'jPlayer' );
-		
-	// aaronl: custom
-  $browserAsString = $_SERVER['HTTP_USER_AGENT'];
-  if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
-			wp_register_script('iOS', 'http://aaronlademann.com/_includes/_js/iOSfixedPosition.js', 'jquery');
-			wp_enqueue_script( 'iOS' );
-	}
 		
 	
 }
 add_action('wp_print_scripts', 'tz_single_scripts');
-
+*/
 
 /*-----------------------------------------------------------------------------------*/
 /*	Scripts for blog pages
 /*-----------------------------------------------------------------------------------*/
 
+/* REPLACED WITH head.js calls in FOOTER.PHP
 function tz_non_singular_scripts() {
 	if(!is_singular())
 	
-		wp_register_script('slidesjs', get_template_directory_uri().'/js/slides.min.jquery.js', 'jquery');
-		wp_register_script('masonry', get_template_directory_uri().'/js/jquery.masonry.min.js', 'jquery');
-		wp_register_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox-1.3.4.pack.js', 'jquery');
-		wp_register_script('easing', get_template_directory_uri().'/js/jquery.easing.1.3.js', 'jquery');
-		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery');
+		wp_register_script('slidesjs', get_template_directory_uri().'/js/slides.min.jquery.js', 'jquery', '1.0', TRUE);
+		wp_register_script('masonry', get_template_directory_uri().'/js/jquery.masonry.min.js', 'jquery', '1.0', TRUE);
+		wp_register_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox-1.3.4.pack.js', 'jquery', '1.0', TRUE);
+		wp_register_script('easing', get_template_directory_uri().'/js/jquery.easing.1.3.js', 'jquery', '1.0', TRUE);
+		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery', '1.0', TRUE);
 		
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'slidesjs' );
 		wp_enqueue_script( 'fancybox' );
 		wp_enqueue_script( 'jPlayer' );
 		wp_enqueue_script( 'easing' );
-		
-	//if(is_page_template('template-portfolio.php'))
-	//	wp_register_script('masonry', get_template_directory_uri().'/js/jquery.masonry.min.js', 'jquery');
-		wp_enqueue_script( 'masonry' );
-		
-	// aaronl: custom
-	$browserAsString = $_SERVER['HTTP_USER_AGENT'];
-  if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
-			wp_register_script('iOS', 'http://aaronlademann.com/_includes/_js/iOSfixedPosition.js', 'jquery');
-			wp_enqueue_script( 'iOS' );
-	}
+		//wp_enqueue_script( 'masonry' );
+
 		
 }
 add_action('wp_print_scripts', 'tz_non_singular_scripts');
-
+*/
 
 /*-----------------------------------------------------------------------------------*/
 /*	Load stylesheets if needed

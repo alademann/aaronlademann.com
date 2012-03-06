@@ -132,7 +132,7 @@ function relativeTime($time)
 function tz_contact_validate() {
 	if (is_page_template('template-contact.php')) { ?>
 		<script type="text/javascript">
-			jQuery(document).ready(function(){
+			head.ready(function(){
 				jQuery("#contactForm").validate();
 			});
 		</script>
@@ -149,7 +149,7 @@ function tz_gallery($postid){
 	 if(has_post_format('gallery', $postid) || get_post_type($postid) == 'portfolio') {
 	?>
 		<script type="text/javascript">
-			jQuery(document).ready(function(){
+			head.ready(function(){
 				jQuery("#slider-<?php echo $postid; ?>").slides({
 					preload: true, 
 					// aaronl: custom
@@ -186,7 +186,7 @@ function tz_audio($postid) {
 	 ?>
 		<script type="text/javascript">
 		
-			jQuery(document).ready(function(){
+			head.ready(function(){
 	
 				if(jQuery().jPlayer) {
 					jQuery("#jquery_jplayer_<?php echo $postid; ?>").jPlayer({
@@ -226,7 +226,7 @@ function tz_video($postid) {
 	if(has_post_format('video', $postid) || get_post_type($postid) == 'portfolio') {
 	 ?>
 		<script type="text/javascript">
-			jQuery(document).ready(function(){
+			head.ready(function(){
 				
 				if(jQuery().jPlayer) {
 					jQuery("#jquery_jplayer_<?php echo $postid; ?>").jPlayer({
