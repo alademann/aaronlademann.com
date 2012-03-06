@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<!--// IE Compliance Mode Control -->
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	<meta name="robots" content="index,follow" />
 	<meta name="author" content="Aaron Lademann" />
 	<meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?> Aaron Lademann. All Rights Reserved." />
 
-	<title><?php wp_title(' &#124; ', true, 'right'); ?><?php if( !is_page_template('template-resume.php') ){ ?><?php bloginfo('name'); ?><?php } ?></title>
+	<title><?php wp_title(''); ?></title>
 	
 	<!-- Styles -->
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
