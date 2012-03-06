@@ -1,20 +1,57 @@
+<?php
+function is_folio_home(){
+	$home_page = home_url() . "/";
+	$protocol = ($_SERVER['HTTPS'] ? "https" : "http") . "://";
+	$curr_page = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	if($curr_page == $home_page) {
+	 return true;
+	}
+}
+?>
 		<!--BEGIN #sidebar .aside-->
 		<div id="sidebar" class="aside">
         
         	<!-- BEGIN #logo -->
 			<div id="logo">
+
 				<?php /*
 				If "plain text logo" is set in theme options then use text
 				if a logo url has been set in theme options then use that
 				if none of the above then use the default logo.png */
 				if (get_option('tz_plain_logo') == 'true') { ?>
-				<a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+					
+					<?php if(is_folio_home()) { ?>
+					<!-- HOME PAGE -->
+					<h1><?php bloginfo( 'name' ); ?></h1>
+					<?php } ?>
+					<?php if(!is_folio_home()){ ?>
+					<!-- NOT THE HOME PAGE -->
+					<a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+					<?php } ?> 
+
 				<?php } elseif (get_option('tz_logo')) { ?>
-				<a href="<?php echo home_url(); ?>" rel="nofollow"><img id="logoimg" src="<?php echo get_option('tz_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
+					<?php if(is_folio_home()) { ?>
+					<!-- HOME PAGE -->
+					<h1 style="background-image: url(<?php echo get_option('tz_logo'); ?>);"><?php bloginfo( 'name' ); ?></h1>
+					<?php } ?>
+					<?php if(!is_folio_home()){ ?>
+					<!-- NOT THE HOME PAGE -->
+					<a href="<?php echo home_url(); ?>" rel="nofollow"><img id="logoimg" src="<?php echo get_option('tz_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
+					<?php } ?> 
+				
 				<?php } else { ?>
-				<a href="<?php echo home_url(); ?>" rel="nofollow"><img id="logoimg" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+
+					<?php if(is_folio_home()) { ?>
+					<!-- HOME PAGE -->
+					<h1 style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/logo.png);"><?php bloginfo( 'name' ); ?></h1>
+					<?php } ?>
+					<?php if(!is_folio_home()){ ?>
+					<!-- NOT THE HOME PAGE -->
+					<a href="<?php echo home_url(); ?>" rel="nofollow"><img id="logoimg" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+					<?php } ?> 
+
 				<?php } ?>
-                
+        
                 <?php $tagline = get_option('tz_tagline'); ?>
                 <?php if($tagline != '') : ?>
                 
