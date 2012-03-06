@@ -50,3 +50,5 @@ Redirect 301 /about/index.asp http://portfolio.aaronlademann.com/resume/
 Redirect 301 /files/Lademann_Resume_0208.pdf http://portfolio.aaronlademann.com/resume/
 Redirect 301 /files/Lademann_Resume_0409.pdf http://portfolio.aaronlademann.com/resume/
 Redirect 301 /files/Lademann_Resume_0409-c.pdf http://portfolio.aaronlademann.com/resume/
+Redirect 301 /files/Lademann_Resume_0511.pdf http://portfolio.aaronlademann.com/resume/
+Redirect 301 /files/resume_aaron-lademann_latest.pdf http://portfolio.aaronlademann.com/resume/
