@@ -114,7 +114,9 @@ class WPSEO_Breadcrumbs {
 		$opt 		= get_option("wpseo_internallinks");
 		$on_front 	= get_option('show_on_front');
 		$blog_page 	= get_option('page_for_posts');
-		$sep		= ( isset($opt['breadcrumbs-sep']) && $opt['breadcrumbs-sep'] != '' ) ? $opt['breadcrumbs-sep'] : '&raquo;';
+		// aaronl: custom - just want a simple bulleted list
+		$sep		= '</li><li>';
+		//$sep		= ( isset($opt['breadcrumbs-sep']) && $opt['breadcrumbs-sep'] != '' ) ? $opt['breadcrumbs-sep'] : '&raquo;';
 		$home		= ( isset($opt['breadcrumbs-home']) && $opt['breadcrumbs-home'] != '' ) ? $opt['breadcrumbs-home'] : __('Home');
 		$selmenu	= ( isset($opt['breadcrumbs-selectedmenu']) && $opt['breadcrumbs-selectedmenu'] != '' ) ? $opt['breadcrumbs-selectedmenu'] : 0;
 		
