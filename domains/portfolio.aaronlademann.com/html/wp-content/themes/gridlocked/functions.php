@@ -166,7 +166,9 @@ add_filter('wp_trim_excerpt', 'tz_excerpt_more');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_register_js(){
-	wp_deregister_script('jquery');
+	if(!is_admin()){
+		wp_deregister_script('jquery');
+	}
 }
 add_action('init', 'tz_register_js');
 /* REPLACED WITH head.js calls in FOOTER.PHP
