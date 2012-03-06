@@ -45,7 +45,7 @@ function updateOrientation() {
 		
 }
         
-$(document).ready(function(){
+head.ready("jquery", function(){
 	
 	var isSingle = $("body").hasClass("single");
 	if(isSingle){

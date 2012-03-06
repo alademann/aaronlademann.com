@@ -2,7 +2,7 @@
 /*	Tabbed Widget JS (if active)
 /*-----------------------------------------------------------------------------------*/
 
-jQuery(document).ready(function() {
+head.ready("jquery", function() {
 
 	jQuery("#tabs").tabs({ fx: { opacity: 'show' } });
 	jQuery(".tabs").tabs({ fx: { opacity: 'show' } });

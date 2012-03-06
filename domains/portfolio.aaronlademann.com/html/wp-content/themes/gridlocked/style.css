@@ -1167,6 +1167,8 @@
 		top: -16px;
 		/*text-shadow: 0 0 0 none !important;*/
 		line-height: 1.7 !important;
+		/* .js will reveal it */
+		visibility: hidden;
 	}
 
 	.single-portfolio .hentry .arrow {

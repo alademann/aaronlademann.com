@@ -15,7 +15,7 @@ $('#container').removeClass('js-disabled');
 /*	Let's get ready!
 /*-----------------------------------------------------------------------------------*/
 
-$(document).ready(function() {
+head.ready("jquery", function() {
 
 
 	/*-----------------------------------------------------------------------------------*/
@@ -295,7 +295,7 @@ $(document).ready(function() {
 	});
 
 	// aaronl: custom (since i'm removing the anchor link, i need to set up a hover system for the wrapper div)				
-	$(document).ready(function() {
+	head.ready("jquery", function() {
 		var colorIn;
 		var colorOut;
 		var hovClass;
@@ -400,7 +400,7 @@ $(document).ready(function() {
 
 		// is it active?
 		if($.cookie("like_" + postID)) {
-			$("#" + who).addClass("active");
+			$("#" + who).addClass("active").css("visibility","visible");
 		}
 
 	} //reloadLikes
