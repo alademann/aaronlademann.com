@@ -122,8 +122,8 @@ $(document).ready(function() {
 
 	} // END if(sidebar);
 
-	// disable right click on all images
-	$('img').live('contextmenu', function(e) {
+	// disable right click on all portfolio images
+	$('#masonry-portfolio img, .lightbox img, .fancybox-img').live('contextmenu', function(e) {
 		return false;
 	});
 
