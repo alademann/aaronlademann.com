@@ -210,9 +210,17 @@
 											//console.warn("no index " + index + " is defined here.");
 										} 
 										var img_suffix = "-";
+										var img_scaled = "-med."; // if there is a larger version of the image, this will show up at the end of the filename
 										var img_dir =  raw_src.slice(0,raw_src.lastIndexOf("/") + 1);
-										var img_name = raw_src.slice(raw_src.lastIndexOf("/") + 1,raw_src.lastIndexOf(img_suffix));    
 										var img_mime = raw_src.slice(raw_src.lastIndexOf("."),raw_src.length);
+										var img_name = '';
+										if( raw_src.lastIndexOf(img_scaled) != -1 ){
+											//console.info(raw_src.lastIndexOf(img_scaled));
+											img_name = raw_src.slice(raw_src.lastIndexOf("/") + 1,raw_src.lastIndexOf(img_suffix));	
+										} else {
+											//console.info("else " + raw_src.lastIndexOf(img_scaled));
+											img_name = raw_src.slice(raw_src.lastIndexOf("/") + 1,raw_src.lastIndexOf(img_mime));  	
+										}
 										var image;
 
 										if(size == "full"){
@@ -236,13 +244,20 @@
 												large_image_size = 'lg';
 											}
 										} else {
-											large_image_size = 'medium';
+											large_image_size = 'med';
 										}
 										var lightImages = $(".slider").find("a.lightbox");
 										$(lightImages).each(function(index){
-
 											var strIndex = (index + 1)+'';
-											var lightLink = get_image_src(strIndex,large_image_size);
+											var lightLink;
+
+											var scaled_image = $(this).find("img").attr("src");
+											if( scaled_image.lastIndexOf("-med") ){
+												lightLink = get_image_src(strIndex,large_image_size);
+											} else {
+												lightLink = get_image_src(strIndex,"full");
+											}
+
 											$(this).attr("href",lightLink);
 											//console.info("link #1 href=" + lightLink);
 											
