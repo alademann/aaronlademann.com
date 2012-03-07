@@ -97,7 +97,7 @@ function relativeTime($time)
 	define("DAY", 24 * HOUR);
 	define("MONTH", 30 * DAY);
 
-	$delta = strtotime('+2 hours') - $time;
+	$delta = strtotime('now') - $time;
 	if ($delta < 2 * MINUTE) {
 		return "1 min ago";
 	}

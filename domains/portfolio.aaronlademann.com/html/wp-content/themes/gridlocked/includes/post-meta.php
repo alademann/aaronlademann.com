@@ -5,7 +5,7 @@
         <!--<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'framework');?> <?php the_title(); ?>">-->
             <span class="icon"></span>
             
-						<?php echo relativeTime(get_the_time('U')); ?>
+						<?php echo relativeTime(get_post_time('U', true)); ?>
         <!--</a>-->
     </li>
     
