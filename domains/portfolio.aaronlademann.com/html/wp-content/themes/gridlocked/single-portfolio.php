@@ -130,7 +130,7 @@
 							?>
 								
 								<style type="text/css">
-									.lightbox .caption { visibility: hidden !important; }
+									.lightbox .caption { visibility: hidden !important; display: none !important; }
 								</style>
 							<?php endif; ?>
 

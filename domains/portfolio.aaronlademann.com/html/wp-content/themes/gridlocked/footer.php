@@ -55,27 +55,21 @@
 	<script id="singlesonly">
 		head.js({ jqueryeasing: "<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js" });
 		<?php if(has_post_format('image')) { ?>
-			head.js({ fancybox: "<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox-1.3.4.pack.js" }
-			, function(){
-				head.ready(function(){
-					var lboxcaptions = jQuery(".slider").find(".lightbox .caption");
-					jQuery.each(lboxcaptions, function(){
-						$(this).css("visibility","visible");
-					});	
-				});
-			});
+			head.js({ fancybox: "<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox-1.3.4.pack.js" });
 		<?php } ?>
 		<?php if(has_post_format('gallery') || get_post_type() == 'portfolio') { ?>
-			head.js({ fancybox: "<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox-1.3.4.pack.js" }
+			head.js({ fancybox: "<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox-1.3.4.pack.js" });;
+			head.js({ slidesjs: "<?php echo get_template_directory_uri(); ?>/js/slides.min.jquery.js" }
 			, function(){
 				head.ready(function(){
-					var lboxcaptions = jQuery(".slider").find(".lightbox .caption");
-					jQuery.each(lboxcaptions, function(){
-						$(this).css("visibility","visible");
+					// slides.jquery.js is finished loading.
+					var lboxes = jQuery(".slider").find(".lightbox");
+					jQuery.each(lboxes, function(){
+						jQuery(this).find(".caption, img").css("visibility","visible");
 					});	
 				});
 			});
-			head.js({ slidesjs: "<?php echo get_template_directory_uri(); ?>/js/slides.min.jquery.js" }, { jPlayer: "<?php echo get_template_directory_uri(); ?>/js/jquery.jplayer.min.js" });
+			head.js({ jPlayer: "<?php echo get_template_directory_uri(); ?>/js/jquery.jplayer.min.js" });
 		<?php } ?>
 		<?php if(has_post_format('video') || has_post_format('audio')) { ?>
 			head.js({ jPlayer: "<?php echo get_template_directory_uri(); ?>/js/jquery.jplayer.min.js" });

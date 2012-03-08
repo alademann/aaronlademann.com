@@ -68,7 +68,8 @@
 	.single a:hover .caption, .single a.caption:hover, .single #single-sidebar .caption a:hover { text-decoration: underline !important; }
 
 	/* .js will reveal this */
-	.lightbox .caption { visibility: hidden; }
+	.lightbox .caption, .lightbox img { visibility: hidden; }
+
 
 	#tagline {
 		color: #7b7d80;
