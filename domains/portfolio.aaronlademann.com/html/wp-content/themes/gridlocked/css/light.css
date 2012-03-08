@@ -64,7 +64,7 @@
 	a, .caption { color: #686a6c;}
 
 	.single a .caption, .single a.caption, .single #single-sidebar .caption a { color: #08f; }
-	.single #single-sidebar .caption a:hover { color: #09c; }
+	.single #single-sidebar .caption a:hover, a:hover { color: #0099ff !important; }
 	.single a:hover .caption, .single a.caption:hover, .single #single-sidebar .caption a:hover { text-decoration: underline !important; }
 
 	/* .js will reveal this */
@@ -134,12 +134,17 @@
 	.link a span.icon,
 	a .overlay .icon,
 	.format-link .entry-title .icon,
-	.arrow, 
+	.arrow, .folio_link .icon,
 	.format-gallery  ul.pagination li a,
 	.single-portfolio  ul.pagination li a,
 	.like-count .icon,
 	.comment-count .icon,
-	.published .icon { background-image: url(../images/light/sprite2.png); }
+	.published .icon { background-image: url(../images/light/sprite2.png);background-repeat: no-repeat; }
+
+	#resume .folio_link .icon { width: 8px;height: 8px;margin-right: 4px;position: relative;top: -1px; display: inline-block; }
+	#resume .job .folio_link .icon { background-position: 0 -119px; }
+	#resume .job .folio_link:hover .icon { background-position: -9px -119px; }
+
 
 	.arrow.noslider { background-image: none !important; }
 
