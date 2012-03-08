@@ -142,8 +142,9 @@
 	.published .icon { background-image: url(../images/light/sprite2.png);background-repeat: no-repeat; }
 
 	#resume .folio_link .icon { width: 8px;height: 8px;margin-right: 4px;position: relative;top: -1px; display: inline-block; }
-	#resume .job .folio_link .icon { background-position: 0 -119px; }
-	#resume .job .folio_link:hover .icon { background-position: -9px -119px; }
+	#resume .folio_link .icon.right { margin-right: 0;margin-left: 4px; }
+	#resume .folio_link .icon { background-position: 0 -119px; }
+	#resume .folio_link:hover .icon { background-position: -9px -119px; }
 
 
 	.arrow.noslider { background-image: none !important; }
