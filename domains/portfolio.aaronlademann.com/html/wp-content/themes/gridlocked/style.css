@@ -1,5 +1,5 @@
 ﻿@media screen {
-
+.archive h1 { display: none !important; }
 		/*-----------------------------------------------------------------------------------
 
 		Theme Name: Gridlocked
@@ -73,6 +73,17 @@
 		height: 0;
 		line-height: 0;
 		width:100%;
+	}
+
+	/* ChunkFiveWeb */
+	@font-face {
+		font-family: "ChunkFiveWeb";
+		src: url("/includes/_webfonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
+	}
+
+	@font-face {
+		font-family: "ChunkFiveWeb";
+		src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
 	}
 
 	a { text-decoration: none; }
@@ -173,7 +184,7 @@
 		letter-spacing: -.1ex;	
 	}
 
-	h2 {
+	h2, .emptyResults h2, .emptyResults .h2 {
 		font-size: 20px;
 		line-height: 22px;
 		margin: 0 0 20px 0;
@@ -373,7 +384,20 @@
 		/* exclude the logo div from the above margin */
 		margin-left: 0;
 	}
-
+	#sidebar #logo h1 {
+		display: block;
+		width: auto;
+		font-size: 11px;
+		text-align: center;
+		text-indent: 18px;
+		color: #555555;
+		padding: 32px 0 0 0;
+		background-repeat: no-repeat;
+		background-position: left top;
+		/* background image is defined inline in sidebar.php */
+		height: 42px; /* this will have to change based on the "logo" image option set in the gridlocked theme options */
+	}
+	
 	/* aaronl: custom ( customize the bulleted list sidebar nav(s) ) */
 	.insetBox li, .insetBox li a {
 		display: block;
@@ -942,7 +966,6 @@
 
 	.single-page-navigation .nav-next a .arrow { background-position: 0 -113px; }
 	.single-page-navigation .nav-next a:hover .arrow { background-position: -10px -113px; }
-
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	9.	Footer Styles
@@ -1585,6 +1608,7 @@
 	/* All ------------------------------*/
 
 	.entry-content p { margin: 0 0 18px 0; }
+	.emptyResults p { margin: 0 0 9px 0;line-height: normal; }
 
 	.entry-meta a { display: block; }
 	.entry-meta li.terms a { display: inline; }
