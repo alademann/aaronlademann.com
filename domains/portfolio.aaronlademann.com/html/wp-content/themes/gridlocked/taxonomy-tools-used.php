@@ -1,5 +1,6 @@
 <?php get_header(); ?>
  <?php
+	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
 	$base_slug = "portfolio"; // configure this based on what the home dir of the wordpress portfolio system is
 
 		$path_elements = pathinfo($_SERVER['REQUEST_URI']); // array that stores the diff parts of the uri
@@ -110,7 +111,12 @@
                     <!--END .hentry-->  
                     </div>
 
-                <?php endwhile; endif; ?>
+                <?php endwhile; else: ?>
+									<div style="padding-left: 24px;" class="emptyResults">
+										<p class="h2"><strong>Nothing to see here&hellip;</strong></p>
+										<p>Sorry, there are no projects posted yet in which Aaron used <?php echo $term->name; ?> to do the job. <br /><br />Eventually, Aaron should be adding projects here - but in the meantime, you can <a rel="nofollow" href="mailto:aaron.lademann@gmail.com?subject=Empty Archives Page for  <?php echo $term->name; ?>">Contact Aaron</a> to let him know you were looking for projects he made using <?php echo $term->name; ?>.</p>
+									</div>
+								<?php endif; ?>
                 </div>
                 <!--END #masonry-->
                 
