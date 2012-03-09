@@ -1,6 +1,6 @@
 /* base.css ------- aaronlademann.com ------- */
 /* RESET */
-body { overflow-x: hidden; /*background: transparent url("/images/_template/body-bg.gif") left top repeat-x !important;*/ }
+body { overflow-x: hidden; /*background: transparent url("/public/images/body-bg.gif") left top repeat-x !important;*/ }
 body,p { font: 13px/20px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; color: #484848; -webkit-font-smoothing: antialiased; }
 /* TYPE */
 p { margin-bottom: 18px;  }
@@ -80,7 +80,7 @@ hr.contentDivider {
 	z-index: 1;*/
 	left: 0;
 	top: 0;
-	/*background: url("/images/_template/section-shade.png") -20px top no-repeat;*/
+	/*background: url("/public/images/section-shade.png") -20px top no-repeat;*/
 	border: 0 none;
 	margin: 0;
 	color: Transparent;
@@ -91,7 +91,7 @@ hr.contentDivider {
 	position: relative;
 	min-height: 200px;
 	height: auto;
-	/*background: url("/images/_template/section.png") left top repeat-x;*/
+	/*background: url("/public/images/section.png") left top repeat-x;*/
 }
 *html .section { height: 200px; }
 .project .desc { padding: 0 2% 50px 2%; }
@@ -100,7 +100,7 @@ hr.contentDivider {
 	position: relative;
 	width: 280px;
 	height: 102px;
-	background: url("/images/_template/feature-thumbnail.png") left bottom no-repeat;
+	background: url("/public/images/feature-thumbnail.png") left bottom no-repeat;
 }
 .projectThumb:hover { background-position: left top; }
 .projectThumb img {
@@ -119,7 +119,7 @@ hr.contentDivider {
 	width: auto;
 	text-transform: uppercase;
 	border: 1px solid #e8e8e8;
-	background: Transparent url("/images/_template/btn-gray.png") left bottom repeat-x;
+	background: Transparent url("/public/images/btn-gray.png") left bottom repeat-x;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-khtml-border-radius: 5px;

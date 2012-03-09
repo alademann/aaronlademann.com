@@ -1,5 +1,10 @@
 <?php 
 
+// echo the public directory where all the dynamic sass, template images, etc... are compiled
+function public_uri(){
+	return "/public/";
+}
+
 /*-----------------------------------------------------------------------------------
 
 	Here we have all the custom functions for the theme
@@ -295,14 +300,11 @@ add_action('wp_print_scripts', 'tz_non_singular_scripts');
 
 function tz_styles() {
 	// aaronl: custom
-		wp_register_style( 'fancybox', get_template_directory_uri() . '/css/fancybox/jquery.fancybox-1.3.4.css' );
-		
-		wp_enqueue_style( 'fancybox' );
-		wp_enqueue_style( 'jPlayer' );
+	//	wp_register_style( 'fancybox', get_template_directory_uri() . '/css/fancybox/jquery.fancybox-1.3.4.css' );
+	//	wp_enqueue_style( 'fancybox' );
 		
 }
 add_action('wp_print_styles', 'tz_styles');
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	Add Browser Detection Body Class

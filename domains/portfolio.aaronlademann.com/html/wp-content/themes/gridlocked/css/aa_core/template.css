@@ -3,8 +3,7 @@
 	/* TEMPLATE */
 	body, body * { -webkit-font-smoothing: antialiased; }
 	/* override gridlocked theme defaults */
-	.aafolio #masthead { background: #fff url("/images/_template/body-bg.gif") left top repeat-x !important; z-index: 2; }
-	.aafolio #wpadminbar { display: none; }
+	.aafolio #masthead { background: #fff url("/public/images/body-bg.gif") left top repeat-x !important; z-index: 2; }
 	.entry-meta ul, .entry-meta ul ul, .entry-meta ul ul ul, .entry-meta ul ul ul ul, .entry-meta ul ul ul ul ul { clear: left; }
 	.widget-title { margin: 10px 0 4px 0; font-weight: bold; }
 	.widget-title.first { margin-top: 0; }
@@ -24,7 +23,7 @@
 	#footer {
 		bottom: 0;
 		height: 35px;
-		background: #27272f url("/images/_template/footer-aaronlademann.com-left.png") left bottom no-repeat; 
+		background: #27272f url("/public/images/footer-aaronlademann.com-left.png") left bottom no-repeat; 
 			font-size: 11px;
 		position: fixed;
 		z-index:900;
@@ -39,13 +38,13 @@
 	.nav li a { display: block; color: #949494; text-transform: uppercase; }
 	.nav li a:hover, .nav .current_page_item, .nav .current-menu-item a, .nav .active a { color: #fff !important; text-decoration: none; background-color: #171920 !important; }
 	/* topNav */
-	#topNav { position: absolute; width: auto; *width: 346px; top: 0; right: 25px; background: Transparent url("/images/_template/topNav-active.png") right top repeat-x; }
-	#topNav .active, #topNav .current_page_item { background: Transparent url("/images/_template/topNav-arrow.gif") center bottom no-repeat; }
+	#topNav { position: absolute; width: auto; *width: 346px; top: 0; right: 25px; background: Transparent url("/public/images/topNav-active.png") right top repeat-x; }
+	#topNav .active, #topNav .current_page_item { background: Transparent url("/public/images/topNav-arrow.gif") center bottom no-repeat; }
 	#topNav li a { 
 		padding: 0 20px;
 		line-height: 80px;
 		text-transform: uppercase;
-		background: Transparent url("/images/_template/body-bg.gif") left top repeat-x; 
+		background: Transparent url("/public/images/body-bg.gif") left top repeat-x; 
 	}
 	#topNav li a:hover, #topNav .current_page_item a, #topNav .active a { background-image: none !important; background-color: Transparent !important; } /* reveal the hover image which is contained in #topNav */
 	/* footernav */

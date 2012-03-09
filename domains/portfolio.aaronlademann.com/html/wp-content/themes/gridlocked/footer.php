@@ -29,9 +29,10 @@
 		
 			head.js(
 				 { jqueryuicustom: "<?php echo get_template_directory_uri(); ?>/js/jquery-ui-1.8.5.custom.min.js" }
+				,{ jqueryshadowanimate: "<?php echo get_template_directory_uri(); ?>/js/jquery.animate-shadow-min.js" }
+				,{ jqueryanimatecolors: "<?php echo get_template_directory_uri(); ?>/js/jquery.animate-colors.js" }
 				,{ jquerycookie: "<?php echo get_template_directory_uri(); ?>/js/carhartl-jquery-cookie/jquery.cookie.js" }
 				,{ customjavascript: "/wp-content/resources/custom-javascript.js" }
-				,{ jqueryanimatecolors: "<?php echo get_template_directory_uri(); ?>/js/jquery.animate-colors.js" }
 				,{ tzshortcodes: "<?php echo get_template_directory_uri(); ?>/js/jquery.shortcodes.js" }
 				,{ tzcustom: "<?php echo get_template_directory_uri(); ?>/js/jquery.custom.js" }
 			, function() {
@@ -94,7 +95,7 @@
 		head.js({ jquerylettering: "<?php echo get_template_directory_uri(); ?>/js/lettering.min.js" }, 
 			function() {
 				// inline scripts here
-				$("#name").lettering('words'); 
+				jQuery("#name").lettering('words'); 
 			
 			});
 	</script>

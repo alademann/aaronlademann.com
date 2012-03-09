@@ -2,17 +2,15 @@
 
 <html <?php language_attributes(); ?>>
 <head>
-  <!-- IE Compliance Mode Control -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<!--// IE Compliance Mode Control -->
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	<meta name="author" content="Aaron Lademann" />
-	<meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?> Aaron Lademann. All Rights Reserved." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="author" content="Aaron Lademann">
+	<meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?> Aaron Lademann. All Rights Reserved.">
 
 	<title><?php wp_title(''); ?></title>
 	
 	<!-- Styles -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/screen.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo get_option('tz_alt_stylesheet'); ?>" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aa_core/template.css" type="text/css" media="screen" />
 	<?php 
@@ -88,7 +86,7 @@
           
         <div id="logoContainer">
             <a id="mastlogo" href="<?php echo site_url(); ?>" title="AaronLademann.com" rel="nofollow">
-              <img src="<?php echo site_url(); ?>/images/_template/masthead-aaronlademann.com-logo.png" width="294" height="52" alt="<?php echo bloginfo( 'name' ) ?>" />
+              <img src="<?php echo site_url(); ?>/public/images/masthead-aaronlademann.com-logo.png" width="294" height="52" alt="<?php echo bloginfo( 'name' ) ?>" />
             </a> 
   
         </div>

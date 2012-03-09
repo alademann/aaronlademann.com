@@ -78,12 +78,12 @@
 	/* ChunkFiveWeb */
 	@font-face {
 		font-family: "ChunkFiveWeb";
-		src: url("/includes/_webfonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
+		src: url("/public/fonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
 	}
 
 	@font-face {
 		font-family: "ChunkFiveWeb";
-		src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
+		src: url("http://:/") format("No-IE-404"), url("/public/fonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("/public/fonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("/public/fonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
 	}
 
 	a { text-decoration: none; }
@@ -118,9 +118,9 @@
 		width: 360px;
 		margin: 0 0 20px 20px;
 		float: left;
-		-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+		/*-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
 			 -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
-    			box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+    			box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);*/
 				
 	}
 
@@ -1703,13 +1703,13 @@
 		width: auto;
 	}
 
-	.post-thumb a img { 
+	/*.post-thumb a img { 
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 		*filter: alpha(opacity=80);
 		-moz-opacity: 0.8;
 		-khtml-opacity: 0.8;
 		opacity: 0.8; 
-	}
+	}*/
 	.hover .post-thumb a img {
 		/* opacity fades back to 100% via jquery 
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -2175,7 +2175,7 @@
 	.breadcrumb li a {
 		display: block;
 		padding: 0 15px 0 0;
-		background:url(/images/_template/_portfolio/arrow2.gif) no-repeat right center;
+		background:url(/public/images/icons/arrow2.gif) no-repeat right center;
 	}
 	/*.breadcrumb li a:after { content: "»"; }*/
 
