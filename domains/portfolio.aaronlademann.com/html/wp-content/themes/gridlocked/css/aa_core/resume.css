@@ -1,14 +1,14 @@
 /* DroidSerif Regular */
 @font-face {
 	font-family: "DroidSerifRegular";
-	src: url("/public/fonts/droidserif/DroidSerif-Regular-webfont.eot?iefix") format("eot");
+	src: url("/includes/_webfonts/droidserif/DroidSerif-Regular-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "DroidSerifRegular";
-	src: url("http://:/") format("No-IE-404"), url("/public/fonts/droidserif/DroidSerif-Regular-webfont.woff") format("woff"), url("/public/fonts/droidserif/DroidSerif-Regular-webfont.ttf") format("truetype"), url("/public/fonts/droidserif/DroidSerif-Regular-webfont.svg#svgFontName") format("svg");
+	src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/droidserif/DroidSerif-Regular-webfont.woff") format("woff"), url("/includes/_webfonts/droidserif/DroidSerif-Regular-webfont.ttf") format("truetype"), url("/includes/_webfonts/droidserif/DroidSerif-Regular-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -16,14 +16,14 @@
 /* DroidSerif Italic */
 @font-face {
 	font-family: "DroidSerifItalic";
-	src: url("/public/fonts/droidserif/DroidSerif-Italic-webfont.eot?iefix") format("eot");
+	src: url("/includes/_webfonts/droidserif/DroidSerif-Italic-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "DroidSerifItalic";
-	src: url("http://:/") format("No-IE-404"), url("/public/fonts/droidserif/DroidSerif-Italic-webfont.woff") format("woff"), url("/public/fonts/droidserif/DroidSerif-Italic-webfont.ttf") format("truetype"), url("/public/fonts/droidserif/DroidSerif-Italic-webfont.svg#svgFontName") format("svg");
+	src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/droidserif/DroidSerif-Italic-webfont.woff") format("woff"), url("/includes/_webfonts/droidserif/DroidSerif-Italic-webfont.ttf") format("truetype"), url("/includes/_webfonts/droidserif/DroidSerif-Italic-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,14 +31,14 @@
 /* DroidSerif Bold */
 @font-face {
 	font-family: "DroidSerifBold";
-	src: url("/public/fonts/droidserif/DroidSerif-Bold-webfont.eot?iefix") format("eot");
+	src: url("/includes/_webfonts/droidserif/DroidSerif-Bold-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "DroidSerifBold";
-	src: url("http://:/") format("No-IE-404"), url("/public/fonts/droidserif/DroidSerif-Bold-webfont.woff") format("woff"), url("/public/fonts/droidserif/DroidSerif-Bold-webfont.ttf") format("truetype"), url("/public/fonts/droidserif/DroidSerif-Bold-webfont.svg#svgFontName") format("svg");
+	src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/droidserif/DroidSerif-Bold-webfont.woff") format("woff"), url("/includes/_webfonts/droidserif/DroidSerif-Bold-webfont.ttf") format("truetype"), url("/includes/_webfonts/droidserif/DroidSerif-Bold-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -46,14 +46,14 @@
 /* DroidSerif Bold Italic */
 @font-face {
 	font-family: "DroidSerifBoldItalic";
-	src: url("/public/fonts/droidserif/DroidSerif-BoldItalic-webfont.eot?iefix") format("eot");
+	src: url("/includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.eot?iefix") format("eot");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "DroidSerifBoldItalic";
-	src: url("http://:/") format("No-IE-404"), url("/public/fonts/droidserif/DroidSerif-BoldItalic-webfont.woff") format("woff"), url("/public/fonts/droidserif/DroidSerif-BoldItalic-webfont.ttf") format("truetype"), url("/public/fonts/droidserif/DroidSerif-BoldItalic-webfont.svg#svgFontName") format("svg");
+	src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.woff") format("woff"), url("/includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.ttf") format("truetype"), url("/includes/_webfonts/droidserif/DroidSerif-BoldItalic-webfont.svg#svgFontName") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }

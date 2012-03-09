@@ -1,0 +1,15 @@
+﻿@mixin clearfix() {
+// For clearing floats like a boss h5bp.com/q
+	*zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin hide_wp_adminbar(){
+	#wpadminbar { display: none !important; }
+}
