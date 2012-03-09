@@ -78,12 +78,12 @@
 	/* ChunkFiveWeb */
 	@font-face {
 		font-family: "ChunkFiveWeb";
-		src: url("/includes/_webfonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
+		src: url("/public/fonts/chunkfive/Chunkfive-webfont.eot?iefix") format("eot");
 	}
 
 	@font-face {
 		font-family: "ChunkFiveWeb";
-		src: url("http://:/") format("No-IE-404"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("/includes/_webfonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
+		src: url("http://:/") format("No-IE-404"), url("/public/fonts/chunkfive/Chunkfive-webfont.woff") format("woff"), url("/public/fonts/chunkfive/Chunkfive-webfont.ttf") format("truetype"), url("/public/fonts/chunkfive/Chunkfive-webfont.svg#svgFontName") format("svg");
 	}
 
 	a { text-decoration: none; }
