@@ -159,32 +159,26 @@ $(document).ready(function() {
 		// activate a hover in / hover out function for each entry
 		$(this).hover(function() {
 			// hover in
+			$(this).addClass("hover");
 			//var thumbnail = $(".post-thumb > a > img", this);
 			$(this).stop(true, true).animate({
-				backgroundColor: "#ffffff"
-			}, { queue: true, duration: 1000 }, function() {
+				//backgroundColor: "#ffffff",
+				backgroundColor: "rgba(255,255,255,1.0)",
+				boxShadow: "0 0 0 rgba(0,0,0,0.2) inset"
+			}, { queue: true, duration: 600 }, function() {
 				// animation complete
-			});
-			$(thumbnail).stop(true, true).animate({
-				opacity: 1.0
-			}, { queue: true, duration: 1000 }, function() {
-				// animation complete
-				$(this).toggleClass("hover");
 			});
 
 		}, function() {
 			// hover out
+			$(this).removeClass("hover");
 			//var thumbnail = $(".post-thumb > a > img", this);
 			$(this).stop(true, true).animate({
-				backgroundColor: "#fafafa"
-			}, { queue: true, duration: 1000 }, function() {
+				//backgroundColor: "#f2f2f2",
+				backgroundColor: "rgba(242,242,242,0.5)",
+				boxShadow: "0 0 6px rgba(0,0,0,0.2) inset"
+			}, { queue: true, duration: 600 }, function() {
 				// animation complete
-			});
-			$(thumbnail).stop(true, true).animate({
-				opacity: 0.8
-			}, { queue: true, duration: 1000 }, function() {
-				// animation complete
-				$(this).toggleClass("hover");
 			});
 
 		}

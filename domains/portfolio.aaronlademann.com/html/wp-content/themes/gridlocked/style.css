@@ -118,9 +118,9 @@
 		width: 360px;
 		margin: 0 0 20px 20px;
 		float: left;
-		-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+		/*-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
 			 -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
-    			box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
+    			box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);*/
 				
 	}
 
@@ -1703,13 +1703,13 @@
 		width: auto;
 	}
 
-	.post-thumb a img { 
+	/*.post-thumb a img { 
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 		*filter: alpha(opacity=80);
 		-moz-opacity: 0.8;
 		-khtml-opacity: 0.8;
 		opacity: 0.8; 
-	}
+	}*/
 	.hover .post-thumb a img {
 		/* opacity fades back to 100% via jquery 
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
