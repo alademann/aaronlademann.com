@@ -1,4 +1,6 @@
 @import "theme-aa-base";
+@include yui_core();
+
 @include webfont("DroidSerifRegular","/public/fonts/droidserif/DroidSerif-Regular-webfont");
 @include webfont("DroidSerifItalic","/public/fonts/droidserif/DroidSerif-Italic-webfont");
 @include webfont("DroidSerifBold","/public/fonts/droidserif/DroidSerif-Bold-webfont");
@@ -339,7 +341,7 @@
 			width: 80.2%;
 		}
 
-		& .yui-gf div.first {
+		& .yui-gf .first {
 			width: 12.3%;
 		}
 
