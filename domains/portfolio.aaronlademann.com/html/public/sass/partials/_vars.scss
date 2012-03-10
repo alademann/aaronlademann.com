@@ -1,6 +1,20 @@
-﻿// REQUIRES: @import "compass/css3/text-shadow"
+﻿// aa.com color palette
+$aa_darkGray: #2e313d; // mast bg color 1
+$aa_darkerGray: #242630; // mast bg color 2
+$aa_darkestGray: #0a0b0f; // mast bg color 3
+	// nav hover
+	$aa_darkGrayHover: darken($aa_darkGray, 50%);
+	$aa_darkerGrayHover: darken($aa_darkerGray, 50%);
+	$aa_darkestGrayHover: darken($aa_darkestGray, 50%);
+
+// aa.com global sizes
+$aa_mastHeight: 80px;
+$aa_footHeight: 35px;
+
+// REQUIRES: @import "compass/css3/text-shadow"
 $default-text-shadow-color: #f2f2f2;
 $default-text-shadow-h-offset: 1px;
 $default-text-shadow-v-offset: 1px;
 $default-text-shadow-blur: 0;
 // END compass/css3/text-shadow
+$experimental-support-for-svg: true;

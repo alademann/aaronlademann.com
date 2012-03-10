@@ -99,14 +99,14 @@
 	}
 
 	.single .hentry {
-		width: 550px;
+		width: auto;
 		margin: 0 40px 20px 0;
 		padding: 40px 0 0 0;
 		float: none;
 	}
 
 	.page-template-template-full-width-php .hentry {
-		width: auto!important;
+		width: auto !important;
 		margin: 0 0 70px 0;
 		padding: 0 0 15px 0;
 		float: none;
@@ -129,12 +129,7 @@
 	.entry-content h5,
 	.entry-content h6 { margin: 0 0 20px 0; }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
+	h1,	h2,	h3,	h4,	h5,	h6 {
 		font-weight: normal;
 		padding: 0;
 	}
@@ -219,12 +214,13 @@
 	.single #primary,
 	.page #primary {
 		margin-left: 230px;
-		width: 550px;
+		//width: 550px;
+		width: auto;
 		float: left;
 	}
 
 	.page .hentry,
-	.page #primary { width: 740px; }
+	.page #primary { width: auto; }
 
 	.page .hentry { margin: 0 0 70px 0; }
 
@@ -1870,27 +1866,27 @@
 
 	.format-video .entry-meta { padding: 0 15px 20px 15px; }
 
-	div.jp-audio,
-	div.jp-video {
+	.jp-audio,
+	.jp-video {
 		font-size: 1em;
 		font-family: Verdana, Arial, sans-serif;
 		color: #fff;
 		line-height: 1.6;
 	}
 
-	div.jp-audio,
-	div.jp-video { width: 360px; }
+	.jp-audio,
+	.jp-video { width: 360px; }
 
-	.single div.jp-audio,
-	.single div.jp-video { width: 550px; }
+	.single .jp-audio,
+	.single .jp-video { width: 550px; }
 
 	.jp-video-play,
-	div.jp-jplayer.jp-jplayer-video { width: 360px; }
+	.jp-jplayer.jp-jplayer-video { width: 360px; }
 
 	.single .jp-video-play,
-	.single div.jp-jplayer.jp-jplayer-video { width: 550px; }
+	.single .jp-jplayer.jp-jplayer-video { width: 550px; }
 
-	div.jp-interface {
+	.jp-interface {
 		position: relative;
 		width: 100%;
 		background: url("/wp-content/themes/gridlocked/images/jplayer_bg.png") repeat-x;
@@ -1900,17 +1896,17 @@
 		box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
 	}
 
-	div.jp-type-single div.jp-interface { height: 30px; }
+	.jp-type-single .jp-interface { height: 30px; }
 
-	div.jp-interface ul.jp-controls {
+	.jp-interface ul.jp-controls {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
 	}
 
-	div.jp-interface ul.jp-controls li { display: inline; }
+	.jp-interface ul.jp-controls li { display: inline; }
 
-	div.jp-interface ul.jp-controls a {
+	.jp-interface ul.jp-controls a {
 		position: absolute;
 		overflow: hidden;
 		text-indent: -9999px;
@@ -1924,8 +1920,8 @@
 		outline: none;
 	}
 
-	div.jp-type-single a.jp-play,
-	div.jp-type-single a.jp-pause {
+	.jp-type-single a.jp-play,
+	.jp-type-single a.jp-pause {
 		top: 0;
 		left: 0;
 	}
@@ -1941,7 +1937,7 @@
 
 	a.jp-pause:hover { background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -33px -30px no-repeat; }
 
-	div.jp-progress-container {
+	.jp-progress-container {
 		position: absolute;
 		top: 0;
 		left: 34px;
@@ -1950,21 +1946,21 @@
 		padding: 12px 10px;
 	}
 
-	div.jp-progress {
+	.jp-progress {
 		position: absolute;
 		overflow:hidden;
 	}
 
-	div.jp-type-single div.jp-progress {
+	.jp-type-single .jp-progress {
 		width: 223px;
 		height: 7px;
 		padding: 1px;
 		background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") 0 -192px repeat-x ;
 	}
 
-	.single div.jp-type-single div.jp-progress { width: 411px; }
+	.single .jp-type-single .jp-progress { width: 411px; }
 
-	div.jp-seek-bar {
+	.jp-seek-bar {
 		width: 0px;
 		height: 5px;
 		cursor: pointer;
@@ -1974,7 +1970,7 @@
 		border-radius: 1px;
 	}
 
-	div.jp-play-bar {
+	.jp-play-bar {
 		width: 0px;
 		height: 5px;
 		background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") 0 -133px repeat-x ;
@@ -1984,12 +1980,12 @@
 	}
 
 	/* The seeking class is added/removed inside jPlayer
-	div.jp-seeking-bg {
+	.jp-seeking-bg {
 		background: url("pbar-ani.gif");
 	}
 	*/
 
-	div.jp-volume-bar-container {
+	.jp-volume-bar-container {
 		position: absolute;
 		top: 0;
 		left: 281px;
@@ -1998,9 +1994,9 @@
 		padding: 12px 10px;
 	}
 
-	.single div.jp-volume-bar-container { left: 470px; }
+	.single .jp-volume-bar-container { left: 470px; }
 
-	div.jp-volume-bar {
+	.jp-volume-bar {
 		position: relative;
 		overflow: hidden;
 		background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") 0 -192px repeat-x;
@@ -2009,12 +2005,12 @@
 		cursor: pointer;
 	}
 
-	div.jp-type-single div.jp-volume-bar {
+	.jp-type-single .jp-volume-bar {
 		top: 0;
 		left: 18px;
 	}
 
-	div.jp-volume-bar-value {
+	.jp-volume-bar-value {
 		width: 0px;
 		height: 5px;
 		margin: 1px;
@@ -2032,14 +2028,14 @@
 		outline: none;
 	}
 
-	div.jp-type-single a.jp-mute,
-	div.jp-type-single a.jp-unmute {
+	.jp-type-single a.jp-mute,
+	.jp-type-single a.jp-unmute {
 		top: 9px;
 		left: 290px;
 	}
 
-	.single div.jp-type-single a.jp-mute,
-	.single div.jp-type-single a.jp-unmute {
+	.single .jp-type-single a.jp-mute,
+	.single .jp-type-single a.jp-unmute {
 		top: 9px;
 		left: 478px;
 	}
@@ -2068,12 +2064,12 @@
 
 	a.jp-unmute:hover { background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -43px -98px no-repeat; }
 
-	div.jp-jplayer {
+	.jp-jplayer {
 		width:0px;
 		height:0px;
 	}
 
-	div.jp-jplayer { background-color: #292a2b; }
+	.jp-jplayer { background-color: #292a2b; }
 
 
 	/* Standard ------------------------------*/

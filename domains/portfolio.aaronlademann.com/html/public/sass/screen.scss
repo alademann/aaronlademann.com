@@ -5,11 +5,10 @@
 @import "compass/utilities";
 @import "compass/layout";
 @import "compass/reset";
-@include global-reset;
+//@include global-reset;
 /*------------------------ BASE ------------------------*/
 @import "partials/vars";
 @import "partials/base";
-@import "partials/bootstrap/bootstrap"; // includes responsive media queries for layouts
 /*------------------------ UTILITIES ------------------------*/
 @import "partials/webfonts";
 @include webfont("chunkfive/Chunkfive-webfont","ChunkFiveWeb");
@@ -25,6 +24,12 @@
 @import "partials/resume";
 /*------------------------ PLUGINS ------------------------*/
 @import "partials/fancybox/jquery.fancybox-1.3.4";
+
+/*------------------------ MOBILE ------------------------*/
+@import "partials/bootstrap/responsive";
+@import "partials/mobile/aa_responsive";
+//@import "partials/bootstrap/bootstrap"; // includes responsive media queries for layouts
+
 /*------------------------ OVERRIDES ------------------------*/
 @include hide_wp_adminbar();
 // tempmorary quick fixes
