@@ -585,8 +585,8 @@
 						      foreach($tool_terms as $tool){
 										if($i > 0){ echo ', '; 
 										}
-						        echo '<a title="View all pieces created using ' . $tool->name . '" href="'.get_term_link($tool->slug, 'tools-used').'">'.$tool->name.'</a>'; 
-						        i++;
+						        echo '<a title="View all pieces created using ' . $tool->name . '" href="'.get_term_link($tool->slug, 'tools-used').'">'.$tool->name.'</a>';
+										$i++;
 						      }
 						      echo '</li>';
 								}
