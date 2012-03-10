@@ -9317,6 +9317,442 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
   height: auto;
 }
 
+/*------------------------ PAGES ------------------------*/
+@font-face {
+  font-family: "/public/fonts/droidserif/DroidSerif-Regular-webfont";
+  src: url(/public/fonts/DroidSerifRegular.eot);
+  src: url(/public/fonts/DroidSerifRegular.eot?iefix) format('eot'), url(/public/fonts/DroidSerifRegular.woff) format('woff'), url(/public/fonts/DroidSerifRegular.ttf) format('truetype'), url(/public/fonts/DroidSerifRegular.svg#/public/fonts/droidserif/DroidSerif-Regular-webfont) format('svg');
+}
+
+@font-face {
+  font-family: "/public/fonts/droidserif/DroidSerif-Italic-webfont";
+  src: url(/public/fonts/DroidSerifItalic.eot);
+  src: url(/public/fonts/DroidSerifItalic.eot?iefix) format('eot'), url(/public/fonts/DroidSerifItalic.woff) format('woff'), url(/public/fonts/DroidSerifItalic.ttf) format('truetype'), url(/public/fonts/DroidSerifItalic.svg#/public/fonts/droidserif/DroidSerif-Italic-webfont) format('svg');
+}
+
+@font-face {
+  font-family: "/public/fonts/droidserif/DroidSerif-Bold-webfont";
+  src: url(/public/fonts/DroidSerifBold.eot);
+  src: url(/public/fonts/DroidSerifBold.eot?iefix) format('eot'), url(/public/fonts/DroidSerifBold.woff) format('woff'), url(/public/fonts/DroidSerifBold.ttf) format('truetype'), url(/public/fonts/DroidSerifBold.svg#/public/fonts/droidserif/DroidSerif-Bold-webfont) format('svg');
+}
+
+@font-face {
+  font-family: "/public/fonts/droidserif/DroidSerif-BoldItalic-webfont";
+  src: url(/public/fonts/DroidSerifBoldItalic.eot);
+  src: url(/public/fonts/DroidSerifBoldItalic.eot?iefix) format('eot'), url(/public/fonts/DroidSerifBoldItalic.woff) format('woff'), url(/public/fonts/DroidSerifBoldItalic.ttf) format('truetype'), url(/public/fonts/DroidSerifBoldItalic.svg#/public/fonts/droidserif/DroidSerif-BoldItalic-webfont) format('svg');
+}
+
+@media screen {
+  /* line 11, ../sass/partials/_resume.scss */
+  #contentWrap #resume {
+    top: 30px;
+  }
+  /* line 13, ../sass/partials/_resume.scss */
+  #resume p, #resume {
+    color: #333;
+    font-size: 1.01em;
+    line-height: 1.5em;
+    font-family: 'Lucida Sans Unicode' , Helvetica, Arial, Sans-Serif;
+  }
+  /* line 20, ../sass/partials/_resume.scss */
+  #resume h1, #resume .h1, #resume h2, #resume .h2, #resume h3, #resume .h3, #resume p.h3, #resume h4, #resume .h4 {
+    padding: 0;
+    padding-right: 0 !important;
+    margin: 0;
+    text-shadow: #f2f2f2 1px 1px 0;
+  }
+  /* line 27, ../sass/partials/_resume.scss */
+  #resume #hd h1 {
+    font-family: 'ChunkFiveWeb' ,Arial,Helvetica,sans-serif;
+    font-size: 3.9em;
+    font-weight: normal;
+    letter-spacing: -1px;
+    margin-bottom: .4em;
+  }
+  /* line 35, ../sass/partials/_resume.scss */
+  #resume h2, #resume .h2, #resume h3, #resume .h3, #resume h4, #resume .h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #111;
+  }
+  /* line 43, ../sass/partials/_resume.scss */
+  #resume .contact-info .h3 {
+    font-weight: normal !important;
+  }
+  /* line 46, ../sass/partials/_resume.scss */
+  #resume h2, #resume .h2, #resume .job h3.h2 {
+    font-size: 1.5em;
+    clear: both;
+  }
+  /* line 50, ../sass/partials/_resume.scss */
+  #resume .first h2, #resume .first .h2, #resume h3, #resume .h3, #resume p.h3 #resume .serif, #resume em.serif {
+    font-family: 'DroidSerifItalic' ,Georgia,Times,Serif;
+    text-transform: none;
+    font-weight: normal !important;
+    font-style: normal !important;
+  }
+  /* line 56, ../sass/partials/_resume.scss */
+  #resume .first h2, #resume .first .h2 {
+    font-size: 1.5em;
+    color: #111;
+  }
+  /* line 61, ../sass/partials/_resume.scss */
+  #resume dt.h2 {
+    padding-top: 1em;
+  }
+  /* line 64, ../sass/partials/_resume.scss */
+  #resume dt.h2:first-child {
+    padding-top: 0;
+  }
+  /* line 68, ../sass/partials/_resume.scss */
+  #resume #hd h3, #resume #hd .h3 {
+    font-family: inherit;
+    text-transform: none;
+  }
+  /* line 73, ../sass/partials/_resume.scss */
+  #resume h3, #resume .h3 {
+    font-size: 1.2em;
+    margin-top: .2em;
+  }
+  /* line 77, ../sass/partials/_resume.scss */
+  #resume .job h3, #resume .job .h3 {
+    font-size: 1.12em;
+  }
+  /* line 80, ../sass/partials/_resume.scss */
+  #resume h4, #resume .h4 {
+    font-size: 1.12em;
+    clear: both;
+  }
+  /* line 86, ../sass/partials/_resume.scss */
+  #resume p {
+    padding-right: 3em;
+  }
+  /* line 89, ../sass/partials/_resume.scss */
+  #resume .last p, #resume p.last {
+    padding-right: 0;
+  }
+  /* line 93, ../sass/partials/_resume.scss */
+  #resume p.enlarge {
+    font-size: 1.12em;
+    line-height: 1.5em;
+  }
+  /* line 98, ../sass/partials/_resume.scss */
+  #resume p.enlarge em {
+    color: #000000;
+    font-style: normal;
+  }
+  /* line 104, ../sass/partials/_resume.scss */
+  #resume .msg {
+    background: none repeat scroll 0% 0% #222222;
+    padding: 10px;
+    position: relative;
+  }
+  /* line 110, ../sass/partials/_resume.scss */
+  #resume .msg h1 {
+    color: #FFFFFF;
+  }
+  /* line 114, ../sass/partials/_resume.scss */
+  #resume .msg a {
+    background: none repeat scroll 0% 0% #408814;
+    color: white;
+    margin-left: 20px;
+    padding: 4px 8px;
+    text-decoration: none;
+  }
+  /* line 122, ../sass/partials/_resume.scss */
+  #resume .msg a:hover {
+    background: none repeat scroll 0% 0% #266400;
+  }
+  /* line 126, ../sass/partials/_resume.scss */
+  #resume #inner {
+    margin: 0pt auto;
+    padding: 10px 80px;
+  }
+  /* line 131, ../sass/partials/_resume.scss */
+  #resume .yui-gf, #resume #hd, #resume .job, #resume li {
+    border-bottom: 1px solid rgba(178, 178, 178, 0.6);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  /* line 137, ../sass/partials/_resume.scss */
+  #resume .job li {
+    border-bottom: 1px solid rgba(178, 178, 178, 0.3);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    padding: 0 10px;
+    font-size: .9em;
+  }
+  /* line 145, ../sass/partials/_resume.scss */
+  #resume .job li:last-child, #resume .job:last-child, #resume li:last-child {
+    border-bottom: 0 none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  /* line 151, ../sass/partials/_resume.scss */
+  #resume .job dd.intro {
+    margin-top: -1em;
+  }
+  /* line 152, ../sass/partials/_resume.scss */
+  #resume .job .folio_link {
+    position: relative;
+    top: -1em;
+  }
+  /* line 154, ../sass/partials/_resume.scss */
+  #resume #ft {
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 2em 0;
+  }
+  /* line 158, ../sass/partials/_resume.scss */
+  #resume #bd {
+    border-bottom: 1px solid rgba(178, 178, 178, 0.6);
+  }
+  /* line 163, ../sass/partials/_resume.scss */
+  #resume .yui-gf {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+  }
+  /* line 168, ../sass/partials/_resume.scss */
+  #resume #ft {
+    font-size: 92%;
+    padding: 1em 0pt 5em;
+    text-align: center;
+  }
+  /* line 174, ../sass/partials/_resume.scss */
+  #resume #ft p {
+    margin-bottom: 0pt;
+    text-align: center;
+  }
+  /* line 179, ../sass/partials/_resume.scss */
+  #resume a {
+    color: #333333;
+  }
+  /* line 180, ../sass/partials/_resume.scss */
+  #resume .job a {
+    color: #0088cc;
+  }
+  /* line 181, ../sass/partials/_resume.scss */
+  #resume a:hover {
+    text-decoration: none;
+  }
+  /* line 185, ../sass/partials/_resume.scss */
+  #resume li {
+    line-height: 24px;
+  }
+  /* line 189, ../sass/partials/_resume.scss */
+  #resume .contact-info {
+    margin-top: 0pt;
+    position: absolute;
+    top: 26px;
+    right: 0;
+    text-align: right;
+  }
+  /* line 197, ../sass/partials/_resume.scss */
+  #resume #hd {
+    margin: 0 0 1.8em;
+    padding-bottom: 1.5em;
+    position: relative;
+  }
+  /* line 203, ../sass/partials/_resume.scss */
+  #resume #hd h2, #resume #hd .h2 {
+    font-size: 132%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  /* line 209, ../sass/partials/_resume.scss */
+  #resume #hd h3, #resume #hd .h3 {
+    /*margin-bottom: .6em;*/
+  }
+  /* line 213, ../sass/partials/_resume.scss */
+  #resume #pdf {
+    padding: 4px;
+    background: transparent;
+    background: rgba(155, 155, 155, 0.1);
+    display: block;
+    float: right;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -90px;
+    right: 0;
+  }
+  /* line 230, ../sass/partials/_resume.scss */
+  #resume #pdf a {
+    background: transparent url(/public/images/icons/pdf_28.png) 2px top no-repeat;
+    display: block;
+    float: right;
+    padding: 0 12px 0 38px;
+    text-decoration: none;
+    line-height: 28px;
+    font-weight: bold;
+  }
+  /* line 240, ../sass/partials/_resume.scss */
+  #resume #pdf a:hover {
+    background-position: 2px bottom;
+  }
+  /* line 244, ../sass/partials/_resume.scss */
+  #resume .job {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    padding-top: 4px;
+    position: relative;
+  }
+  /* line 251, ../sass/partials/_resume.scss */
+  #resume .job h4.timeperiod, #resume .job .h4.timeperiod {
+    position: absolute;
+    right: 0pt;
+    top: 0.35em;
+  }
+  /* line 256, ../sass/partials/_resume.scss */
+  #resume .job h2, #resume .job .h2 {
+    margin-bottom: .5em;
+  }
+  /* line 259, ../sass/partials/_resume.scss */
+  #resume .job .h3 {
+    margin-bottom: 2em;
+  }
+  /* line 262, ../sass/partials/_resume.scss */
+  #resume .job .h3 strong {
+    letter-spacing: -1px;
+  }
+  /* line 265, ../sass/partials/_resume.scss */
+  #resume .job p {
+    margin: 0.75em 0pt 1.25em;
+  }
+  /* line 268, ../sass/partials/_resume.scss */
+  #resume .job p:last-child {
+    margin-bottom: 2.75em;
+  }
+  /* line 271, ../sass/partials/_resume.scss */
+  #resume .job p.h2, #resume .job p.h3, #resume .job p.h4 {
+    margin: 0 0 1em 0;
+  }
+  /* line 275, ../sass/partials/_resume.scss */
+  #resume .last {
+    border: medium none;
+    border-bottom: 0pt none;
+    -moz-box-shadow: 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+  }
+  /* line 286, ../sass/partials/_resume.scss */
+  #resume .skills-list ul {
+    margin: 0pt;
+  }
+  /* line 290, ../sass/partials/_resume.scss */
+  #resume .skills-list li {
+    margin: 3px 0pt;
+    padding: 3px 0pt;
+  }
+  /* line 295, ../sass/partials/_resume.scss */
+  #resume .skills-list li span {
+    display: block;
+    font-size: 152%;
+    margin-bottom: -2px;
+    padding: 0pt;
+  }
+  /* line 302, ../sass/partials/_resume.scss */
+  #resume .talent, #resume .third {
+    float: left;
+    width: 31%;
+    margin-right: 3%;
+  }
+  /* line 307, ../sass/partials/_resume.scss */
+  #resume .half {
+    float: left;
+    width: 48%;
+    margin-right: 3%;
+  }
+  /* line 312, ../sass/partials/_resume.scss */
+  #resume dl.half {
+    width: 46%;
+    margin-right: 8%;
+  }
+  /* line 316, ../sass/partials/_resume.scss */
+  #resume .half.last, #resume .half:last-child, #resume .talent.last, #resume .talent:last-child, #resume .third.last, #resume .third:last-child {
+    margin-right: 0 !important;
+  }
+  /* line 320, ../sass/partials/_resume.scss */
+  #resume .talent p, #resume .talent li, #resume .third li, #resume .half p, #resume .half li {
+    padding-right: 1em;
+  }
+  /* line 324, ../sass/partials/_resume.scss */
+  #resume .talent h2, #resume .talent .h2, #resume .third h2, #resume .third .h2, #resume .half h2, #resume .half .h2 {
+    font-size: 1.4em;
+    margin-bottom: 6px;
+  }
+  /* line 329, ../sass/partials/_resume.scss */
+  #resume #srt-ttab {
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  /* line 334, ../sass/partials/_resume.scss */
+  #resume #srt-ttab img.last {
+    margin-top: 20px;
+  }
+  /* line 338, ../sass/partials/_resume.scss */
+  #resume .yui-gf .yui-u {
+    width: 80.2%;
+  }
+  /* line 342, ../sass/partials/_resume.scss */
+  #resume .yui-gf div.first {
+    width: 12.3%;
+  }
+
+  /* line 349, ../sass/partials/_resume.scss */
+  .mozilla #contentWrap {
+    top: 50px;
+  }
+  /* line 350, ../sass/partials/_resume.scss */
+  .mozilla #resume #pdf {
+    top: -80px;
+  }
+}
+@media print {
+  /* line 358, ../sass/partials/_resume.scss */
+  * {
+    text-shadow: none !important;
+  }
+
+  /* line 359, ../sass/partials/_resume.scss */
+  #masthead, #footer, #pdf {
+    display: none !important;
+  }
+
+  /* line 360, ../sass/partials/_resume.scss */
+  #content, #contentWrap, #resume, #resume #inner {
+    margin: 0;
+    padding: 0;
+    top: 0;
+  }
+
+  /* line 361, ../sass/partials/_resume.scss */
+  body {
+    margin: 3%;
+  }
+
+  /* line 362, ../sass/partials/_resume.scss */
+  body, #content, #contentWrap, #resume, #resume #doc2, #resume #doc2 #inner {
+    width: 94%;
+  }
+
+  /* line 363, ../sass/partials/_resume.scss */
+  #resume {
+    margin-top: .7in;
+  }
+
+  /* line 365, ../sass/partials/_resume.scss */
+  #skills, #education {
+    page-break-before: always;
+  }
+}
 /*------------------------ PLUGINS ------------------------*/
 /*
  * FancyBox - jQuery Plugin
@@ -9797,7 +10233,7 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
   display: none !important;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 .archive h1 {
   display: none !important;
 }

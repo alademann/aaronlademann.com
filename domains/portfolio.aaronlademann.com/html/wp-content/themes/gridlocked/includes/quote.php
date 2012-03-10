@@ -1,5 +1,5 @@
 				<!--BEGIN .hentry -->
-				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+				<div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
                 
                 	<?php $quote =  get_post_meta(get_the_ID(), 'tz_quote', true); ?>
                 	

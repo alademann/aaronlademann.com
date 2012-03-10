@@ -12,7 +12,7 @@ get_header(); ?>
 		<div id="container">
 			<div id="content" role="main">
             
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
 			<h2 class="entry-title">Options Check Theme</h2>
             
             <div class="entry-content">

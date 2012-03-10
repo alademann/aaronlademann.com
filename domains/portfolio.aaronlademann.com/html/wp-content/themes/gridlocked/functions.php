@@ -2,9 +2,26 @@
 
 // echo the public directory where all the dynamic sass, template images, etc... are compiled
 function public_uri(){
-	return "/public/";
+	return "/public";
 }
 
+function is_ios($browserAsString){
+
+  if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
+		return true;
+	} else {
+		return false;
+	}
+	
+}
+function is_folio_home(){
+	$home_page = home_url() . "/";
+	$protocol = ($_SERVER['HTTPS'] ? "https" : "http") . "://";
+	$curr_page = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	if($curr_page == $home_page) {
+	 return true;
+	}
+}
 /*-----------------------------------------------------------------------------------
 
 	Here we have all the custom functions for the theme

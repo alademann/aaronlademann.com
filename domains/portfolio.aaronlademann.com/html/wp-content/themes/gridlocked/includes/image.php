@@ -1,5 +1,5 @@
 				<!--BEGIN .hentry -->
-				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">	
+				<div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">	
                 
                 	<?php /* if the post has a WP 2.9+ Thumbnail */
 					if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ): ?>

@@ -1,5 +1,5 @@
 				<!--BEGIN .hentry -->
-				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+				<div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
                 
                 	<?php $url =  get_post_meta(get_the_ID(), 'tz_link_url', true); ?>
                 
