@@ -1,4 +1,5 @@
 *.suo
+*.scssc
 *.dat
 *.crc
 *.version
@@ -6,5 +7,4 @@
 */Thumbs.db
 domains/aaronlademann.com/_ReSharper.aaronlademann.com/*
 domains/portfolio.aaronlademann.com/html/portfolio-media/*
-domains/portfolio.aaronlademann.com/html/.sass-cache/*
 domains/aaronlademann.com/html/__dev/HTMLPage.htm
