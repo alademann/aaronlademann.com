@@ -2143,22 +2143,22 @@
 
 	==========================================================================================*/
 
-	/*body { background: url(../images/light/body_bg.gif) repeat fixed; }*/
-	/*#bg-line { background: url(../images/light/line.png) no-repeat; }*/
+	/*body { background: url(/public/images/gridlocked/light/body_bg.gif) repeat fixed; }*/
+	/*#bg-line { background: url(/public/images/gridlocked/light/line.png) no-repeat; }*/
 
 	/* aaronl: custom spackle bg */
-	/*body { background: #ecf0f1 url('/wp-content/themes/gridlocked/images/light/spackle_bg_base.png'); }
-	#container { background: url('/wp-content/themes/gridlocked/images/light/spackle_bg_top.png') left top repeat-x; }
-	#content { background: url('/wp-content/themes/gridlocked/images/light/spackle_bg_lighting_compressed.jpg') 140px top no-repeat; }*/
+	/*body { background: #ecf0f1 url('/public/images/gridlocked/light/spackle_bg_base.png'); }
+	#container { background: url('/public/images/gridlocked/light/spackle_bg_top.png') left top repeat-x; }
+	#content { background: url('/public/images/gridlocked/light/spackle_bg_lighting_compressed.jpg') 140px top no-repeat; }*/
 
 	/* aaronl: custom gray leather bg */
-	body { background: #eeeeee url('/wp-content/themes/gridlocked/images/light/bg_pattern_gray_leather_subtler.png'); }
+	body { background: #eeeeee url('/public/images/gridlocked/light/bg_pattern_gray_leather_subtler.png'); }
 
 	#content p, #content li, #content blockquote, #content em, #content i { text-shadow: 1px 0 0 #f5f5f5; }
 	#content h1 { text-shadow: 1px 1px 0 white; }
 	#content h2, #content h3, #content h4, #content h5, #content h6, #content strong, #content a { text-shadow: 1px 0 0 white; }
 
-	pre { background: url(../images/light/pre_bg.png); }
+	pre { background: url(/public/images/gridlocked/light/pre_bg.png); }
 
 	blockquote,
 	#comments,
@@ -2280,7 +2280,7 @@
 	#load-more-link a,
 	.hentry { color: #96999d; }
 
-	.format-quote .quote-wrap .icon{ background: url(../images/light/quote.png) no-repeat; }
+	.format-quote .quote-wrap .icon{ background: url(/public/images/gridlocked/light/quote.png) no-repeat; }
 
 
 	.portfolio-link a .icon,
@@ -2292,7 +2292,7 @@
 	.single-portfolio  ul.pagination li a,
 	.like-count .icon,
 	.comment-count .icon,
-	.published .icon { background-image: url(../images/light/sprite2.png);background-repeat: no-repeat; }
+	.published .icon { background-image: url(/public/images/gridlocked/light/sprite2.png);background-repeat: no-repeat; }
 
 	#resume .folio_link .icon { width: 8px;height: 8px;margin-right: 4px;position: relative;top: -1px; display: inline-block; }
 	#resume .folio_link .icon.right { margin-right: 0;margin-left: 4px; }
@@ -2337,7 +2337,7 @@
 	blockquote,
 	.format-link .entry-title a { border-left: 1px solid #4d4f51; }
 
-	.overlay { background: url(../images/light/overlay.png) repeat; }
+	.overlay { background: url(/public/images/gridlocked/light/overlay.png) repeat; }
 
 	/*.format-standard .entry-title,
 	.page .entry-title { border-bottom: 1px solid #f3f3f3; }*/
@@ -2369,7 +2369,7 @@
 	.gecko #back-to-top.hover, 
 	.gecko .insetBox a:hover,
 	.gecko .insetBox .hover {
-		background-image: url('/wp-content/themes/gridlocked/images/light/rgba_black_10pct.png');
+		background-image: url('/public/images/gridlocked/light/rgba_black_10pct.png');
 	}
 	/* ie just sucks all around. */
 	#back-to-top.ieHover, 

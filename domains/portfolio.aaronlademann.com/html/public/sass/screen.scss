@@ -9,7 +9,7 @@
 /*------------------------ BASE ------------------------*/
 @import "partials/vars";
 @import "partials/base";
-@import "partials/bootstrap/bootstrap";
+@import "partials/bootstrap/bootstrap"; // includes responsive media queries for layouts
 /*------------------------ UTILITIES ------------------------*/
 @import "partials/webfonts";
 @include webfont("chunkfive/Chunkfive-webfont","ChunkFiveWeb");
