@@ -11,7 +11,7 @@ Template Name: Archives
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
 								<!--BEGIN .hentry -->
-				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">	
+				<div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">	
 					
                     <h2 class="entry-title"><?php the_title(); ?></h2>
                     

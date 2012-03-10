@@ -36,7 +36,7 @@ Template Name: Sandbox
 								?>
 								
                     <!--BEGIN .hentry -->
-                    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                    <div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
                         
                         <?php 
                         $lightbox = get_post_meta(get_the_ID(), 'tz_portfolio_lightbox', TRUE); 
