@@ -51,11 +51,7 @@
 			'media-type' => $curr_slug
 		)); 
 	?>
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
-	<?php 
-		$home_feature = get_post_meta(get_the_ID(), 'tz_portfolio_home_feature', TRUE);
-		if($home_feature == 'yes') : 
-	?>			
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>			
 		<!--BEGIN .hentry -->
     <article class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">                
     <?php 
