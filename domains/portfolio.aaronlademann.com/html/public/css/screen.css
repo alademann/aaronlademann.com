@@ -67,6 +67,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /*------------------------ BASE ------------------------*/
 /*------------------------ UTILITIES ------------------------*/
+/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+    readers do not read off random characters that represent icons */
+/* \f020 is not a valid unicode character. all shifted one down */
 @font-face {
   font-family: "ChunkFiveWeb";
   src: url(/public/fonts/chunkfive/Chunkfive-webfont.eot);
@@ -166,706 +169,703 @@ li[class*=" icon-"].icon-large:before {
 
 /*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
     readers do not read off random characters that represent icons */
-/* \f020 is not a valid unicode character. all shifted one down */
-/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-    readers do not read off random characters that represent icons */
-/* line 248, ../sass/partials/_webfonts.scss */
+/* line 95, ../sass/partials/_webfonts.scss */
 .icon-glass:before {
   content: "\f000";
 }
 
-/* line 249, ../sass/partials/_webfonts.scss */
+/* line 96, ../sass/partials/_webfonts.scss */
 .icon-music:before {
   content: "\f001";
 }
 
-/* line 250, ../sass/partials/_webfonts.scss */
+/* line 97, ../sass/partials/_webfonts.scss */
 .icon-search:before {
   content: "\f002";
 }
 
-/* line 251, ../sass/partials/_webfonts.scss */
+/* line 98, ../sass/partials/_webfonts.scss */
 .icon-envelope:before {
   content: "\f003";
 }
 
-/* line 252, ../sass/partials/_webfonts.scss */
+/* line 99, ../sass/partials/_webfonts.scss */
 .icon-heart:before {
   content: "\f004";
 }
 
-/* line 253, ../sass/partials/_webfonts.scss */
+/* line 100, ../sass/partials/_webfonts.scss */
 .icon-star:before {
   content: "\f005";
 }
 
-/* line 254, ../sass/partials/_webfonts.scss */
+/* line 101, ../sass/partials/_webfonts.scss */
 .icon-star-empty:before {
   content: "\f006";
 }
 
-/* line 255, ../sass/partials/_webfonts.scss */
+/* line 102, ../sass/partials/_webfonts.scss */
 .icon-user:before {
   content: "\f007";
 }
 
-/* line 256, ../sass/partials/_webfonts.scss */
+/* line 103, ../sass/partials/_webfonts.scss */
 .icon-film:before {
   content: "\f008";
 }
 
-/* line 257, ../sass/partials/_webfonts.scss */
+/* line 104, ../sass/partials/_webfonts.scss */
 .icon-th-large:before {
   content: "\f009";
 }
 
-/* line 258, ../sass/partials/_webfonts.scss */
+/* line 105, ../sass/partials/_webfonts.scss */
 .icon-th:before {
   content: "\f00a";
 }
 
-/* line 259, ../sass/partials/_webfonts.scss */
+/* line 106, ../sass/partials/_webfonts.scss */
 .icon-th-list:before {
   content: "\f00b";
 }
 
-/* line 260, ../sass/partials/_webfonts.scss */
+/* line 107, ../sass/partials/_webfonts.scss */
 .icon-ok:before {
   content: "\f00c";
 }
 
-/* line 261, ../sass/partials/_webfonts.scss */
+/* line 108, ../sass/partials/_webfonts.scss */
 .icon-remove:before {
   content: "\f00d";
 }
 
-/* line 262, ../sass/partials/_webfonts.scss */
+/* line 109, ../sass/partials/_webfonts.scss */
 .icon-zoom-in:before {
   content: "\f00e";
 }
 
-/* line 264, ../sass/partials/_webfonts.scss */
+/* line 111, ../sass/partials/_webfonts.scss */
 .icon-zoom-out:before {
   content: "\f010";
 }
 
-/* line 265, ../sass/partials/_webfonts.scss */
+/* line 112, ../sass/partials/_webfonts.scss */
 .icon-off:before {
   content: "\f011";
 }
 
-/* line 266, ../sass/partials/_webfonts.scss */
+/* line 113, ../sass/partials/_webfonts.scss */
 .icon-signal:before {
   content: "\f012";
 }
 
-/* line 267, ../sass/partials/_webfonts.scss */
+/* line 114, ../sass/partials/_webfonts.scss */
 .icon-cog:before {
   content: "\f013";
 }
 
-/* line 268, ../sass/partials/_webfonts.scss */
+/* line 115, ../sass/partials/_webfonts.scss */
 .icon-trash:before {
   content: "\f014";
 }
 
-/* line 269, ../sass/partials/_webfonts.scss */
+/* line 116, ../sass/partials/_webfonts.scss */
 .icon-home:before {
   content: "\f015";
 }
 
-/* line 270, ../sass/partials/_webfonts.scss */
+/* line 117, ../sass/partials/_webfonts.scss */
 .icon-file:before {
   content: "\f016";
 }
 
-/* line 271, ../sass/partials/_webfonts.scss */
+/* line 118, ../sass/partials/_webfonts.scss */
 .icon-time:before {
   content: "\f017";
 }
 
-/* line 272, ../sass/partials/_webfonts.scss */
+/* line 119, ../sass/partials/_webfonts.scss */
 .icon-road:before {
   content: "\f018";
 }
 
-/* line 273, ../sass/partials/_webfonts.scss */
+/* line 120, ../sass/partials/_webfonts.scss */
 .icon-download-alt:before {
   content: "\f019";
 }
 
-/* line 274, ../sass/partials/_webfonts.scss */
+/* line 121, ../sass/partials/_webfonts.scss */
 .icon-download:before {
   content: "\f01a";
 }
 
-/* line 275, ../sass/partials/_webfonts.scss */
+/* line 122, ../sass/partials/_webfonts.scss */
 .icon-upload:before {
   content: "\f01b";
 }
 
-/* line 276, ../sass/partials/_webfonts.scss */
+/* line 123, ../sass/partials/_webfonts.scss */
 .icon-inbox:before {
   content: "\f01c";
 }
 
-/* line 277, ../sass/partials/_webfonts.scss */
+/* line 124, ../sass/partials/_webfonts.scss */
 .icon-play-circle:before {
   content: "\f01d";
 }
 
-/* line 278, ../sass/partials/_webfonts.scss */
+/* line 125, ../sass/partials/_webfonts.scss */
 .icon-repeat:before {
   content: "\f01e";
 }
 
 /* \f020 is not a valid unicode character. all shifted one down */
-/* line 281, ../sass/partials/_webfonts.scss */
+/* line 128, ../sass/partials/_webfonts.scss */
 .icon-refresh:before {
   content: "\f021";
 }
 
-/* line 282, ../sass/partials/_webfonts.scss */
+/* line 129, ../sass/partials/_webfonts.scss */
 .icon-list-alt:before {
   content: "\f022";
 }
 
-/* line 283, ../sass/partials/_webfonts.scss */
+/* line 130, ../sass/partials/_webfonts.scss */
 .icon-lock:before {
   content: "\f023";
 }
 
-/* line 284, ../sass/partials/_webfonts.scss */
+/* line 131, ../sass/partials/_webfonts.scss */
 .icon-flag:before {
   content: "\f024";
 }
 
-/* line 285, ../sass/partials/_webfonts.scss */
+/* line 132, ../sass/partials/_webfonts.scss */
 .icon-headphones:before {
   content: "\f025";
 }
 
-/* line 286, ../sass/partials/_webfonts.scss */
+/* line 133, ../sass/partials/_webfonts.scss */
 .icon-volume-off:before {
   content: "\f026";
 }
 
-/* line 287, ../sass/partials/_webfonts.scss */
+/* line 134, ../sass/partials/_webfonts.scss */
 .icon-volume-down:before {
   content: "\f027";
 }
 
-/* line 288, ../sass/partials/_webfonts.scss */
+/* line 135, ../sass/partials/_webfonts.scss */
 .icon-volume-up:before {
   content: "\f028";
 }
 
-/* line 289, ../sass/partials/_webfonts.scss */
+/* line 136, ../sass/partials/_webfonts.scss */
 .icon-qrcode:before {
   content: "\f029";
 }
 
-/* line 290, ../sass/partials/_webfonts.scss */
+/* line 137, ../sass/partials/_webfonts.scss */
 .icon-barcode:before {
   content: "\f02a";
 }
 
-/* line 291, ../sass/partials/_webfonts.scss */
+/* line 138, ../sass/partials/_webfonts.scss */
 .icon-tag:before {
   content: "\f02b";
 }
 
-/* line 292, ../sass/partials/_webfonts.scss */
+/* line 139, ../sass/partials/_webfonts.scss */
 .icon-tags:before {
   content: "\f02c";
 }
 
-/* line 293, ../sass/partials/_webfonts.scss */
+/* line 140, ../sass/partials/_webfonts.scss */
 .icon-book:before {
   content: "\f02d";
 }
 
-/* line 294, ../sass/partials/_webfonts.scss */
+/* line 141, ../sass/partials/_webfonts.scss */
 .icon-bookmark:before {
   content: "\f02e";
 }
 
-/* line 295, ../sass/partials/_webfonts.scss */
+/* line 142, ../sass/partials/_webfonts.scss */
 .icon-print:before {
   content: "\f02f";
 }
 
-/* line 297, ../sass/partials/_webfonts.scss */
+/* line 144, ../sass/partials/_webfonts.scss */
 .icon-camera:before {
   content: "\f030";
 }
 
-/* line 298, ../sass/partials/_webfonts.scss */
+/* line 145, ../sass/partials/_webfonts.scss */
 .icon-font:before {
   content: "\f031";
 }
 
-/* line 299, ../sass/partials/_webfonts.scss */
+/* line 146, ../sass/partials/_webfonts.scss */
 .icon-bold:before {
   content: "\f032";
 }
 
-/* line 300, ../sass/partials/_webfonts.scss */
+/* line 147, ../sass/partials/_webfonts.scss */
 .icon-italic:before {
   content: "\f033";
 }
 
-/* line 301, ../sass/partials/_webfonts.scss */
+/* line 148, ../sass/partials/_webfonts.scss */
 .icon-text-height:before {
   content: "\f034";
 }
 
-/* line 302, ../sass/partials/_webfonts.scss */
+/* line 149, ../sass/partials/_webfonts.scss */
 .icon-text-width:before {
   content: "\f035";
 }
 
-/* line 303, ../sass/partials/_webfonts.scss */
+/* line 150, ../sass/partials/_webfonts.scss */
 .icon-align-left:before {
   content: "\f036";
 }
 
-/* line 304, ../sass/partials/_webfonts.scss */
+/* line 151, ../sass/partials/_webfonts.scss */
 .icon-align-center:before {
   content: "\f037";
 }
 
-/* line 305, ../sass/partials/_webfonts.scss */
+/* line 152, ../sass/partials/_webfonts.scss */
 .icon-align-right:before {
   content: "\f038";
 }
 
-/* line 306, ../sass/partials/_webfonts.scss */
+/* line 153, ../sass/partials/_webfonts.scss */
 .icon-align-justify:before {
   content: "\f039";
 }
 
-/* line 307, ../sass/partials/_webfonts.scss */
+/* line 154, ../sass/partials/_webfonts.scss */
 .icon-list:before {
   content: "\f03a";
 }
 
-/* line 308, ../sass/partials/_webfonts.scss */
+/* line 155, ../sass/partials/_webfonts.scss */
 .icon-indent-left:before {
   content: "\f03b";
 }
 
-/* line 309, ../sass/partials/_webfonts.scss */
+/* line 156, ../sass/partials/_webfonts.scss */
 .icon-indent-right:before {
   content: "\f03c";
 }
 
-/* line 310, ../sass/partials/_webfonts.scss */
+/* line 157, ../sass/partials/_webfonts.scss */
 .icon-facetime-video:before {
   content: "\f03d";
 }
 
-/* line 311, ../sass/partials/_webfonts.scss */
+/* line 158, ../sass/partials/_webfonts.scss */
 .icon-picture:before {
   content: "\f03e";
 }
 
-/* line 313, ../sass/partials/_webfonts.scss */
+/* line 160, ../sass/partials/_webfonts.scss */
 .icon-pencil:before {
   content: "\f040";
 }
 
-/* line 314, ../sass/partials/_webfonts.scss */
+/* line 161, ../sass/partials/_webfonts.scss */
 .icon-map-marker:before {
   content: "\f041";
 }
 
-/* line 315, ../sass/partials/_webfonts.scss */
+/* line 162, ../sass/partials/_webfonts.scss */
 .icon-adjust:before {
   content: "\f042";
 }
 
-/* line 316, ../sass/partials/_webfonts.scss */
+/* line 163, ../sass/partials/_webfonts.scss */
 .icon-tint:before {
   content: "\f043";
 }
 
-/* line 317, ../sass/partials/_webfonts.scss */
+/* line 164, ../sass/partials/_webfonts.scss */
 .icon-edit:before {
   content: "\f044";
 }
 
-/* line 318, ../sass/partials/_webfonts.scss */
+/* line 165, ../sass/partials/_webfonts.scss */
 .icon-share:before {
   content: "\f045";
 }
 
-/* line 319, ../sass/partials/_webfonts.scss */
+/* line 166, ../sass/partials/_webfonts.scss */
 .icon-check:before {
   content: "\f046";
 }
 
-/* line 320, ../sass/partials/_webfonts.scss */
+/* line 167, ../sass/partials/_webfonts.scss */
 .icon-move:before {
   content: "\f047";
 }
 
-/* line 321, ../sass/partials/_webfonts.scss */
+/* line 168, ../sass/partials/_webfonts.scss */
 .icon-step-backward:before {
   content: "\f048";
 }
 
-/* line 322, ../sass/partials/_webfonts.scss */
+/* line 169, ../sass/partials/_webfonts.scss */
 .icon-fast-backward:before {
   content: "\f049";
 }
 
-/* line 323, ../sass/partials/_webfonts.scss */
+/* line 170, ../sass/partials/_webfonts.scss */
 .icon-backward:before {
   content: "\f04a";
 }
 
-/* line 324, ../sass/partials/_webfonts.scss */
+/* line 171, ../sass/partials/_webfonts.scss */
 .icon-play:before {
   content: "\f04b";
 }
 
-/* line 325, ../sass/partials/_webfonts.scss */
+/* line 172, ../sass/partials/_webfonts.scss */
 .icon-pause:before {
   content: "\f04c";
 }
 
-/* line 326, ../sass/partials/_webfonts.scss */
+/* line 173, ../sass/partials/_webfonts.scss */
 .icon-stop:before {
   content: "\f04d";
 }
 
-/* line 327, ../sass/partials/_webfonts.scss */
+/* line 174, ../sass/partials/_webfonts.scss */
 .icon-forward:before {
   content: "\f04e";
 }
 
-/* line 329, ../sass/partials/_webfonts.scss */
+/* line 176, ../sass/partials/_webfonts.scss */
 .icon-fast-forward:before {
   content: "\f050";
 }
 
-/* line 330, ../sass/partials/_webfonts.scss */
+/* line 177, ../sass/partials/_webfonts.scss */
 .icon-step-forward:before {
   content: "\f051";
 }
 
-/* line 331, ../sass/partials/_webfonts.scss */
+/* line 178, ../sass/partials/_webfonts.scss */
 .icon-eject:before {
   content: "\f052";
 }
 
-/* line 332, ../sass/partials/_webfonts.scss */
+/* line 179, ../sass/partials/_webfonts.scss */
 .icon-chevron-left:before {
   content: "\f053";
 }
 
-/* line 333, ../sass/partials/_webfonts.scss */
+/* line 180, ../sass/partials/_webfonts.scss */
 .icon-chevron-right:before {
   content: "\f054";
 }
 
-/* line 334, ../sass/partials/_webfonts.scss */
+/* line 181, ../sass/partials/_webfonts.scss */
 .icon-plus-sign:before {
   content: "\f055";
 }
 
-/* line 335, ../sass/partials/_webfonts.scss */
+/* line 182, ../sass/partials/_webfonts.scss */
 .icon-minus-sign:before {
   content: "\f056";
 }
 
-/* line 336, ../sass/partials/_webfonts.scss */
+/* line 183, ../sass/partials/_webfonts.scss */
 .icon-remove-sign:before {
   content: "\f057";
 }
 
-/* line 337, ../sass/partials/_webfonts.scss */
+/* line 184, ../sass/partials/_webfonts.scss */
 .icon-ok-sign:before {
   content: "\f058";
 }
 
-/* line 338, ../sass/partials/_webfonts.scss */
+/* line 185, ../sass/partials/_webfonts.scss */
 .icon-question-sign:before {
   content: "\f059";
 }
 
-/* line 339, ../sass/partials/_webfonts.scss */
+/* line 186, ../sass/partials/_webfonts.scss */
 .icon-info-sign:before {
   content: "\f05a";
 }
 
-/* line 340, ../sass/partials/_webfonts.scss */
+/* line 187, ../sass/partials/_webfonts.scss */
 .icon-screenshot:before {
   content: "\f05b";
 }
 
-/* line 341, ../sass/partials/_webfonts.scss */
+/* line 188, ../sass/partials/_webfonts.scss */
 .icon-remove-circle:before {
   content: "\f05c";
 }
 
-/* line 342, ../sass/partials/_webfonts.scss */
+/* line 189, ../sass/partials/_webfonts.scss */
 .icon-ok-circle:before {
   content: "\f05d";
 }
 
-/* line 343, ../sass/partials/_webfonts.scss */
+/* line 190, ../sass/partials/_webfonts.scss */
 .icon-ban-circle:before {
   content: "\f05e";
 }
 
-/* line 345, ../sass/partials/_webfonts.scss */
+/* line 192, ../sass/partials/_webfonts.scss */
 .icon-arrow-left:before {
   content: "\f060";
 }
 
-/* line 346, ../sass/partials/_webfonts.scss */
+/* line 193, ../sass/partials/_webfonts.scss */
 .icon-arrow-right:before {
   content: "\f061";
 }
 
-/* line 347, ../sass/partials/_webfonts.scss */
+/* line 194, ../sass/partials/_webfonts.scss */
 .icon-arrow-up:before {
   content: "\f062";
 }
 
-/* line 348, ../sass/partials/_webfonts.scss */
+/* line 195, ../sass/partials/_webfonts.scss */
 .icon-arrow-down:before {
   content: "\f063";
 }
 
-/* line 349, ../sass/partials/_webfonts.scss */
+/* line 196, ../sass/partials/_webfonts.scss */
 .icon-share-alt:before {
   content: "\f064";
 }
 
-/* line 350, ../sass/partials/_webfonts.scss */
+/* line 197, ../sass/partials/_webfonts.scss */
 .icon-resize-full:before {
   content: "\f065";
 }
 
-/* line 351, ../sass/partials/_webfonts.scss */
+/* line 198, ../sass/partials/_webfonts.scss */
 .icon-resize-small:before {
   content: "\f066";
 }
 
-/* line 352, ../sass/partials/_webfonts.scss */
+/* line 199, ../sass/partials/_webfonts.scss */
 .icon-plus:before {
   content: "\f067";
 }
 
-/* line 353, ../sass/partials/_webfonts.scss */
+/* line 200, ../sass/partials/_webfonts.scss */
 .icon-minus:before {
   content: "\f068";
 }
 
-/* line 354, ../sass/partials/_webfonts.scss */
+/* line 201, ../sass/partials/_webfonts.scss */
 .icon-asterisk:before {
   content: "\f069";
 }
 
-/* line 355, ../sass/partials/_webfonts.scss */
+/* line 202, ../sass/partials/_webfonts.scss */
 .icon-exclamation-sign:before {
   content: "\f06a";
 }
 
-/* line 356, ../sass/partials/_webfonts.scss */
+/* line 203, ../sass/partials/_webfonts.scss */
 .icon-gift:before {
   content: "\f06b";
 }
 
-/* line 357, ../sass/partials/_webfonts.scss */
+/* line 204, ../sass/partials/_webfonts.scss */
 .icon-leaf:before {
   content: "\f06c";
 }
 
-/* line 358, ../sass/partials/_webfonts.scss */
+/* line 205, ../sass/partials/_webfonts.scss */
 .icon-fire:before {
   content: "\f06d";
 }
 
-/* line 359, ../sass/partials/_webfonts.scss */
+/* line 206, ../sass/partials/_webfonts.scss */
 .icon-eye-open:before {
   content: "\f06e";
 }
 
-/* line 361, ../sass/partials/_webfonts.scss */
+/* line 208, ../sass/partials/_webfonts.scss */
 .icon-eye-close:before {
   content: "\f070";
 }
 
-/* line 362, ../sass/partials/_webfonts.scss */
+/* line 209, ../sass/partials/_webfonts.scss */
 .icon-warning-sign:before {
   content: "\f071";
 }
 
-/* line 363, ../sass/partials/_webfonts.scss */
+/* line 210, ../sass/partials/_webfonts.scss */
 .icon-plane:before {
   content: "\f072";
 }
 
-/* line 364, ../sass/partials/_webfonts.scss */
+/* line 211, ../sass/partials/_webfonts.scss */
 .icon-calendar:before {
   content: "\f073";
 }
 
-/* line 365, ../sass/partials/_webfonts.scss */
+/* line 212, ../sass/partials/_webfonts.scss */
 .icon-random:before {
   content: "\f074";
 }
 
-/* line 366, ../sass/partials/_webfonts.scss */
+/* line 213, ../sass/partials/_webfonts.scss */
 .icon-comment:before {
   content: "\f075";
 }
 
-/* line 367, ../sass/partials/_webfonts.scss */
+/* line 214, ../sass/partials/_webfonts.scss */
 .icon-magnet:before {
   content: "\f076";
 }
 
-/* line 368, ../sass/partials/_webfonts.scss */
+/* line 215, ../sass/partials/_webfonts.scss */
 .icon-chevron-up:before {
   content: "\f077";
 }
 
-/* line 369, ../sass/partials/_webfonts.scss */
+/* line 216, ../sass/partials/_webfonts.scss */
 .icon-chevron-down:before {
   content: "\f078";
 }
 
-/* line 370, ../sass/partials/_webfonts.scss */
+/* line 217, ../sass/partials/_webfonts.scss */
 .icon-retweet:before {
   content: "\f079";
 }
 
-/* line 371, ../sass/partials/_webfonts.scss */
+/* line 218, ../sass/partials/_webfonts.scss */
 .icon-shopping-cart:before {
   content: "\f07a";
 }
 
-/* line 372, ../sass/partials/_webfonts.scss */
+/* line 219, ../sass/partials/_webfonts.scss */
 .icon-folder-close:before {
   content: "\f07b";
 }
 
-/* line 373, ../sass/partials/_webfonts.scss */
+/* line 220, ../sass/partials/_webfonts.scss */
 .icon-folder-open:before {
   content: "\f07c";
 }
 
-/* line 374, ../sass/partials/_webfonts.scss */
+/* line 221, ../sass/partials/_webfonts.scss */
 .icon-resize-vertical:before {
   content: "\f07d";
 }
 
-/* line 375, ../sass/partials/_webfonts.scss */
+/* line 222, ../sass/partials/_webfonts.scss */
 .icon-resize-horizontal:before {
   content: "\f07e";
 }
 
-/* line 377, ../sass/partials/_webfonts.scss */
+/* line 224, ../sass/partials/_webfonts.scss */
 .icon-bar-chart:before {
   content: "\f080";
 }
 
-/* line 378, ../sass/partials/_webfonts.scss */
+/* line 225, ../sass/partials/_webfonts.scss */
 .icon-twitter-sign:before {
   content: "\f081";
 }
 
-/* line 379, ../sass/partials/_webfonts.scss */
+/* line 226, ../sass/partials/_webfonts.scss */
 .icon-facebook-sign:before {
   content: "\f082";
 }
 
-/* line 380, ../sass/partials/_webfonts.scss */
+/* line 227, ../sass/partials/_webfonts.scss */
 .icon-camera-retro:before {
   content: "\f083";
 }
 
-/* line 381, ../sass/partials/_webfonts.scss */
+/* line 228, ../sass/partials/_webfonts.scss */
 .icon-key:before {
   content: "\f084";
 }
 
-/* line 382, ../sass/partials/_webfonts.scss */
+/* line 229, ../sass/partials/_webfonts.scss */
 .icon-cogs:before {
   content: "\f085";
 }
 
-/* line 383, ../sass/partials/_webfonts.scss */
+/* line 230, ../sass/partials/_webfonts.scss */
 .icon-comments:before {
   content: "\f086";
 }
 
-/* line 384, ../sass/partials/_webfonts.scss */
+/* line 231, ../sass/partials/_webfonts.scss */
 .icon-thumbs-up:before {
   content: "\f087";
 }
 
-/* line 385, ../sass/partials/_webfonts.scss */
+/* line 232, ../sass/partials/_webfonts.scss */
 .icon-thumbs-down:before {
   content: "\f088";
 }
 
-/* line 386, ../sass/partials/_webfonts.scss */
+/* line 233, ../sass/partials/_webfonts.scss */
 .icon-star-half:before {
   content: "\f089";
 }
 
-/* line 387, ../sass/partials/_webfonts.scss */
+/* line 234, ../sass/partials/_webfonts.scss */
 .icon-heart-empty:before {
   content: "\f08a";
 }
 
-/* line 388, ../sass/partials/_webfonts.scss */
+/* line 235, ../sass/partials/_webfonts.scss */
 .icon-signout:before {
   content: "\f08b";
 }
 
-/* line 389, ../sass/partials/_webfonts.scss */
+/* line 236, ../sass/partials/_webfonts.scss */
 .icon-linkedin-sign:before {
   content: "\f08c";
 }
 
-/* line 390, ../sass/partials/_webfonts.scss */
+/* line 237, ../sass/partials/_webfonts.scss */
 .icon-pushpin:before {
   content: "\f08d";
 }
 
-/* line 391, ../sass/partials/_webfonts.scss */
+/* line 238, ../sass/partials/_webfonts.scss */
 .icon-external-link:before {
   content: "\f08e";
 }
 
-/* line 393, ../sass/partials/_webfonts.scss */
+/* line 240, ../sass/partials/_webfonts.scss */
 .icon-signin:before {
   content: "\f090";
 }
 
-/* line 394, ../sass/partials/_webfonts.scss */
+/* line 241, ../sass/partials/_webfonts.scss */
 .icon-trophy:before {
   content: "\f091";
 }
 
-/* line 395, ../sass/partials/_webfonts.scss */
+/* line 242, ../sass/partials/_webfonts.scss */
 .icon-github-sign:before {
   content: "\f092";
 }
 
-/* line 396, ../sass/partials/_webfonts.scss */
+/* line 243, ../sass/partials/_webfonts.scss */
 .icon-upload-alt:before {
   content: "\f093";
 }
 
-/* line 397, ../sass/partials/_webfonts.scss */
+/* line 244, ../sass/partials/_webfonts.scss */
 .icon-lemon:before {
   content: "\f094";
 }
@@ -4385,7 +4385,6 @@ body, body * {
   background-image: linear-gradient(#2e313d, #242630 50%, #0a0b0f);
   z-index: 2;
   /* topNav */
-  /* reveal the hover image which is contained in #topNav */
 }
 /* line 7, ../sass/partials/_theme-aa-template.scss */
 #masthead h1, #masthead h2, #masthead .h1, #masthead .h2 {
@@ -4410,8 +4409,14 @@ body, body * {
   width: auto;
   right: 0;
 }
-/* line 28, ../sass/partials/_theme-aa-template.scss */
-#masthead #topNav .active, #masthead #topNav .curent_page_item {
+/* line 29, ../sass/partials/_theme-aa-template.scss */
+#masthead #topNav li a {
+  padding: 0 1em;
+  line-height: 80px;
+  text-transform: uppercase;
+}
+/* line 34, ../sass/partials/_theme-aa-template.scss */
+#masthead #topNav li.current_menu_item a, #masthead #topNav li.current_page_item a, #masthead #topNav li.active a, #masthead #topNav li a:hover {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(100%, #000000));
@@ -4421,24 +4426,18 @@ body, body * {
   background-image: -ms-linear-gradient(#000000, #000000 50%, #000000);
   background-image: linear-gradient(#000000, #000000 50%, #000000);
 }
-/* line 35, ../sass/partials/_theme-aa-template.scss */
-#masthead #topNav .active, #masthead #topNav .current_page_item {
-  background: Transparent url("/public/images/topNav-arrow.gif") center bottom no-repeat;
-}
-/* line 36, ../sass/partials/_theme-aa-template.scss */
-#masthead #topNav li a {
-  padding: 0 20px;
+/* line 39, ../sass/partials/_theme-aa-template.scss */
+#masthead #topNav li.current_menu_item a:before, #masthead #topNav li.current_menu_item a:hover:before, #masthead #topNav li.current_page_item a:before, #masthead #topNav li.current_page_item a:hover:before, #masthead #topNav li.active a:before, #masthead #topNav li.active a:hover:before {
+  font-family: "FontAwesome";
+  content: "\f052";
   line-height: 80px;
-  text-transform: uppercase;
-  background: Transparent url("/public/images/body-bg.gif") left top repeat-x;
-}
-/* line 42, ../sass/partials/_theme-aa-template.scss */
-#masthead #topNav li a:hover, #masthead #topNav .current_page_item a, #masthead #topNav .active a {
-  background-image: none !important;
-  background-color: Transparent !important;
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  text-align: center;
 }
 
-/* line 46, ../sass/partials/_theme-aa-template.scss */
+/* line 57, ../sass/partials/_theme-aa-template.scss */
 #footer {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBhMGIwZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJlMzEzZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4454,66 +4453,66 @@ body, body * {
   height: 35px;
   font-size: 11px;
 }
-/* line 54, ../sass/partials/_theme-aa-template.scss */
+/* line 65, ../sass/partials/_theme-aa-template.scss */
 #footer #copyright {
   color: #abafbf;
   line-height: 35px;
 }
 
-/* line 62, ../sass/partials/_theme-aa-template.scss */
+/* line 73, ../sass/partials/_theme-aa-template.scss */
 .no-gradient #masthead, .no-gradient #footer {
   background: #0a0b0f;
 }
 
-/* line 66, ../sass/partials/_theme-aa-template.scss */
+/* line 77, ../sass/partials/_theme-aa-template.scss */
 .entry-meta ul, .entry-meta ul ul, .entry-meta ul ul ul, .entry-meta ul ul ul ul, .entry-meta ul ul ul ul ul {
   clear: left;
 }
 
-/* line 67, ../sass/partials/_theme-aa-template.scss */
+/* line 78, ../sass/partials/_theme-aa-template.scss */
 .widget-title {
   margin: 10px 0 4px 0;
   font-weight: bold;
 }
 
-/* line 68, ../sass/partials/_theme-aa-template.scss */
+/* line 79, ../sass/partials/_theme-aa-template.scss */
 .widget-title.first {
   margin-top: 0;
 }
 
-/* line 70, ../sass/partials/_theme-aa-template.scss */
+/* line 81, ../sass/partials/_theme-aa-template.scss */
 a, .aafolio .link {
   color: #08c;
 }
 
-/* line 71, ../sass/partials/_theme-aa-template.scss */
+/* line 82, ../sass/partials/_theme-aa-template.scss */
 .link {
   cursor: pointer !important;
 }
 
-/* line 72, ../sass/partials/_theme-aa-template.scss */
+/* line 83, ../sass/partials/_theme-aa-template.scss */
 a, input {
   outline: 0 none !important;
 }
 
-/* line 73, ../sass/partials/_theme-aa-template.scss */
+/* line 84, ../sass/partials/_theme-aa-template.scss */
 a:link, a:visited, a:active {
   text-decoration: none;
 }
 
-/* line 74, ../sass/partials/_theme-aa-template.scss */
+/* line 85, ../sass/partials/_theme-aa-template.scss */
 a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
   text-decoration: underline;
   color: #09f;
 }
 
 /* top and bottom nav (global nav attr) */
-/* line 77, ../sass/partials/_theme-aa-template.scss */
+/* line 88, ../sass/partials/_theme-aa-template.scss */
 .nav ul, .nav li, .nav li a {
   width: auto;
 }
 
-/* line 78, ../sass/partials/_theme-aa-template.scss */
+/* line 89, ../sass/partials/_theme-aa-template.scss */
 .nav ul, .nav li {
   margin: 0;
   padding: 0;
@@ -4523,25 +4522,25 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
   outline: 0;
 }
 
-/* line 79, ../sass/partials/_theme-aa-template.scss */
+/* line 90, ../sass/partials/_theme-aa-template.scss */
 .nav ul {
   overflow: hidden;
   float: right;
 }
 
-/* line 80, ../sass/partials/_theme-aa-template.scss */
+/* line 91, ../sass/partials/_theme-aa-template.scss */
 .nav li {
   float: left;
 }
 
-/* line 81, ../sass/partials/_theme-aa-template.scss */
+/* line 92, ../sass/partials/_theme-aa-template.scss */
 .nav li a {
   display: block;
   color: #949494;
   text-transform: uppercase;
 }
 
-/* line 82, ../sass/partials/_theme-aa-template.scss */
+/* line 93, ../sass/partials/_theme-aa-template.scss */
 .nav li a:hover, .nav .current_page_item, .nav .current-menu-item a, .nav .active a {
   color: #fff !important;
   text-decoration: none;
@@ -4549,7 +4548,7 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
 }
 
 /* footernav */
-/* line 85, ../sass/partials/_theme-aa-template.scss */
+/* line 96, ../sass/partials/_theme-aa-template.scss */
 #footerNav {
   position: absolute;
   right: 25px;
@@ -4558,7 +4557,7 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
   height: 35px;
 }
 
-/* line 92, ../sass/partials/_theme-aa-template.scss */
+/* line 103, ../sass/partials/_theme-aa-template.scss */
 #footerNav a {
   display: block;
   height: 25px;
@@ -4566,25 +4565,25 @@ a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * {
   padding: 7px 15px 3px 15px;
 }
 
-/* line 93, ../sass/partials/_theme-aa-template.scss */
+/* line 104, ../sass/partials/_theme-aa-template.scss */
 .aafolio #footerNav {
   right: 100px;
 }
 
 /* SUBNAV */
-/* line 97, ../sass/partials/_theme-aa-template.scss */
+/* line 108, ../sass/partials/_theme-aa-template.scss */
 #topNav .subnav a {
   line-height: 30px;
   padding: 0 20px;
   background: 0 none;
 }
 
-/* line 98, ../sass/partials/_theme-aa-template.scss */
+/* line 109, ../sass/partials/_theme-aa-template.scss */
 #topNav .subnav a:hover, #topNav .subnav .current-menu-item, #topNav .subnav .current-menu-item a {
   color: #08c !important;
 }
 
-/* line 99, ../sass/partials/_theme-aa-template.scss */
+/* line 110, ../sass/partials/_theme-aa-template.scss */
 #topNav .subnav ul, #topNav .subnav li, #topNav .subnav ul li a {
   height: auto;
 }

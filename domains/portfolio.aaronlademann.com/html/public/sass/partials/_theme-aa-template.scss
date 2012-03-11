@@ -19,27 +19,38 @@ body, body * { -webkit-font-smoothing: antialiased; }
 
 	/* topNav */
 	#topNav { 
-		
 		position: absolute; 
 		width: auto; 
 		right: 0; 
 		//background: Transparent url("/public/images/topNav-active.png") right top repeat-x; }
 
-		.active, .curent_page_item {  
-			@include background-image(linear-gradient($aa_darkGrayHover, $aa_darkerGrayHover 50%, $aa_darkestGrayHover));	
+		li {
+
+			a {
+				padding: 0 1em;
+				line-height: $aa_mastHeight; // center vertically
+				text-transform: uppercase;
+			}
+			&.current_menu_item a, &.current_page_item a, &.active a, & a:hover {
+				@include background-image(linear-gradient($aa_darkGrayHover, $aa_darkerGrayHover 50%, $aa_darkestGrayHover));						
+			}
+			&.current_menu_item a, &.current_page_item a, &.active a {
+
+				&:before, &:hover:before {
+					font-family: "FontAwesome";
+					content: $icon-eject;
+					line-height: $aa_mastHeight;
+					position: absolute;
+					bottom: 0;
+					left: auto;
+					text-align: center;
+				}	
+			}
+
 		}
 
 	} // END #topNav
 		
-	
-	#topNav .active, #topNav .current_page_item { background: Transparent url("/public/images/topNav-arrow.gif") center bottom no-repeat; }
-	#topNav li a { 
-		padding: 0 20px;
-		line-height: 80px;
-		text-transform: uppercase;
-		background: Transparent url("/public/images/body-bg.gif") left top repeat-x; 
-	}
-	#topNav li a:hover, #topNav .current_page_item a, #topNav .active a { background-image: none !important; background-color: Transparent !important; } /* reveal the hover image which is contained in #topNav */
 	
 } // END #masthead
 
