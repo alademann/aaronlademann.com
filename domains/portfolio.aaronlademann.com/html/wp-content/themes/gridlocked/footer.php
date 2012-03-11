@@ -86,6 +86,32 @@
 <?php } ?>
 <?php if( is_page_template('template-resume.php') ){ ?>	
 <script> 
+	head.js({ jqueryhotkeys: "<?php echo public_uri(); ?>/js/jquery/jquery.hotkeys.js" }, 
+		function(){
+			try{
+			// forward ctrl+p folks to the printed version of the resume.
+				jQuery(document).bind("keydown", "ctrl+p", function(event){
+					event.preventDefault();
+					_gaq.push(["_trackPageview", "/resume/pdf-download"]);
+					window.location = jQuery("#resume #pdf > a").attr("href");
+				});
+			} catch(err){
+				//error - didn't work, go ahead and do the default action.
+				_gaq.push(["_trackPageview", "/resume/print"]);
+				return true;
+			}
+			try{
+				jQuery(document).bind("keydown", "ctrl+shift+p", function(event){
+					event.preventDefault();
+					_gaq.push(["_trackPageview", "/resume/pdf-download"]);
+					window.location = jQuery("#resume #pdf > a").attr("href");
+				});
+			} catch(err){
+				//error - didn't work, go ahead and do the default action.
+				_gaq.push(["_trackPageview", "/resume/print"]);
+				return true;
+			}
+		});
 	head.js({ jquerylettering: "<?php echo public_uri(); ?>/js/jquery/lettering.min.js" }, 
 		function() {
 			// inline scripts here
