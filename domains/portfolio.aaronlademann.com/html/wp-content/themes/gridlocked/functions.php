@@ -5,6 +5,14 @@ function public_uri(){
 	return "/public";
 }
 
+function include_php($path){
+	return $_SERVER['DOCUMENT_ROOT'] . $path;
+}
+
+function custom_includes_dir(){
+	return include_php("/wp-content/resources/includes");
+}
+
 function is_ios($browserAsString){
 
   if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
