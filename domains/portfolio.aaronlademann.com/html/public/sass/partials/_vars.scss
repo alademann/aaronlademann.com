@@ -1,15 +1,29 @@
-﻿// aa.com color palette
-$aa_darkGray: #2e313d; // mast bg color 1
-$aa_darkerGray: #242630; // mast bg color 2
-$aa_darkestGray: #0a0b0f; // mast bg color 3
+﻿$legacy-support-for-ie: true;
+$legacy-support-for-ie6: false;
+$support-for-original-webkit-gradients: false;
+
+// media sizes
+$aa_media_widthMax:			1920px;
+$aa_media_widthLg:			1024px;
+$aa_media_widthMed:			550px;
+$aa_media_widthThumb:		230px;
+$aa_media_heightThumb:	170px;
+$aa_media_widthThumbSm: 50px;
+
+// media filename suffixes
+$aa_mediaSuffix_medium: "-med";
+$aa_mediaSuffix_large:	"-lg";
+$aa_mediaSuffix_thumb:	"-thumb";
+$aa_mediaSuffix_small:	"-thumb_sm";
+
+// aa.com color palette
+$aa_darkGray:			#2e313d; // mast bg color 1
+$aa_darkerGray:		#242630; // mast bg color 2
+$aa_darkestGray:	#0a0b0f; // mast bg color 3
 	// nav hover
 	$aa_darkGrayHover: darken($aa_darkGray, 50%);
 	$aa_darkerGrayHover: darken($aa_darkerGray, 50%);
 	$aa_darkestGrayHover: darken($aa_darkestGray, 50%);
-
-// aa.com global sizes
-$aa_mastHeight: 80px;
-$aa_footHeight: 35px;
 
 // REQUIRES: @import "compass/css3/text-shadow"
 $default-text-shadow-color: #f2f2f2;

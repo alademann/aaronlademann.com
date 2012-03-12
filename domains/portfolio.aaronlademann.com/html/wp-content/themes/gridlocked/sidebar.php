@@ -42,21 +42,6 @@
     <?php endif; ?>
 	</header>
   <!-- END #logo -->
-	<?php if(is_single()) : ?>
-	<!--BEGIN .navigation .single-page-navigation -->
-	<nav class="navigation single-page-navigation clearfix">
-		<section class="nav-previous">
-			<?php next_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
-		</section>
-		<section class="portfolio-link">
-			<a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>"> <span class="icon"><?php _e('Back to Portfolio', 'framework'); ?></span></a> 
-		</section>
-		<section class="nav-next">
-			<?php previous_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
-		</section>					
-	</nav>
-	<!--END .navigation .single-page-navigation -->
-	<?php endif; ?>
 	<?php if(!is_single()) : ?>
 	<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Portfolio Sidebar') ) :?> 
   <section class="widget">

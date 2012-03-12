@@ -1,4 +1,4 @@
-﻿@mixin wp_gridlocked() {
+﻿
 /*-----------------------------------------------------------------------------------
 
 		Theme Name: Gridlocked
@@ -80,29 +80,10 @@
 
 	.first { float: left; }
 
-	.page.page-template-template-portfolio-php .hentry {
-		position: relative;
-		width: 360px;
-		margin: 0 0 20px 20px;
-		float: left;
-		/*-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
-			 -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);
-    			box-shadow:0 1px 1px rgba(0, 0, 0, 0.50);*/
-				
-	}
-
-
 	.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
 		-webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.50);
 			 -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
     			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
-	}
-
-	.single .hentry {
-		width: auto;
-		margin: 0 40px 20px 0;
-		padding: 40px 0 0 0;
-		float: none;
 	}
 
 	.page-template-template-full-width-php .hentry {
@@ -186,80 +167,18 @@
 		letter-spacing: normal !important;
 	}
 
-	/* aaronl: custom - #container and #content adjusted to fit aaronlademann.com masthead positioning */
-	#container {
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		position: relative;
-		top: 52px;
-		/*top: 80px;*/
-	}
-	/* FF 
-	.gecko #container { top: 52px; }*/
-
-	#content { 
-		float: left;
-		width: 100%;
-		position: relative;
-		padding: 50px 0;
-	}
-	
-	#primary {
-		margin-left: 210px;
-		position: relative;
-		z-index: 2;
-	}
-
-	.single #primary,
-	.page #primary {
-		margin-left: 230px;
-		//width: 550px;
-		width: auto;
-		float: left;
-	}
-
-	.page .hentry,
-	.page #primary { width: auto; }
-
-	.page .hentry { margin: 0 0 70px 0; }
-
-	.page-template-template-full-width-php #primary {
-		margin-left: 230px;
-		margin-right: 40px;
-		width: auto;
-		float: none;
-	}
-
-	#masonry-portfolio,
-	#masonry {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		float: left;
-	}
-
-	#bg-line {
-		position: fixed;
-		top: 0;
-		width: 980px;
-		height: 980px;
-		z-index: 1;
-	}
-
 	.layout-2cl #sidebar { float: left; }
 
 	#footer { clear: both; }
 
-	.seperator { margin: 0 0 20px 0; }
-
-	.line {
+	.seperator { margin: 0 0 $articleHPad 0; }
+	.line {  
+		position: relative;
 		float: left;
 		width: 98%;
-		position: relative;
 		left: 1%;
 	}
+
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	2.	Widget Overlay
@@ -280,9 +199,7 @@
 		z-index: 1000;
 		padding: 50px 0;
 		background: url("/wp-content/themes/gridlocked/images/widget_overlay.png") repeat;
-		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.80);
-			 -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.80);
-    			box-shadow:0 1px 4px rgba(0, 0, 0, 0.80);
+		@include single-box-shadow(rgba(0,0,0,0.8),0,1px,4px);
 	}
 
 	#overlay-inner {
@@ -327,39 +244,6 @@
 	/*	3.	Sidebar Styles
 	/*-----------------------------------------------------------------------------------*/
 
-	#sidebar {
-		position: fixed;
-		/* aaronl: custom - need to widen and move margin to child divs to fit aa.com logo */
-		width: 190px;
-		margin: 21px 0 0 0;
-		left: 0;
-		z-index: 500;
-	}
-	/* webkit browsers */
-	.chrome #sidebar, .safari #sidebar { margin-top: 46px; }
-	#sidebar .widget {
-		position: relative;
-		width: 170px;
-		left: 20px;
-		top: -6px;
-	}
-	#sidebar #logo {
-		/* exclude the logo div from the above margin */
-		margin-left: 0;
-	}
-	#sidebar #logo h1 {
-		display: block;
-		width: auto;
-		font-size: 11px;
-		text-align: center;
-		text-indent: 18px;
-		color: #555555;
-		padding: 32px 0 0 0;
-		background-repeat: no-repeat;
-		background-position: left top;
-		/* background image is defined inline in sidebar.php */
-		height: 42px; /* this will have to change based on the "logo" image option set in the gridlocked theme options */
-	}
 	
 	/* aaronl: custom ( customize the bulleted list sidebar nav(s) ) */
 	.insetBox li, .insetBox li a {
@@ -683,15 +567,6 @@
 	/*	6.	Post Content Styles
 	/*-----------------------------------------------------------------------------------*/
 
-	#single-sidebar {
-		min-width: 150px;
-		width: 18%;
-		margin: 0 0 0 2%;
-		float: left;
-		position: relative;
-		z-index: 99;
-	}
-
 	#single-sidebar li {
 		float: none;
 		margin: 0;
@@ -887,24 +762,19 @@
 
 	.page-navigation .nav-previous { float: left; }
 
-	#sidebar .single-page-navigation {
-		position: relative;
-		left: 55px;
-		top: -20px;
-	} 
-
 	.single-page-navigation .nav-next { float: left; }
 
 	.single-page-navigation .nav-previous { float: left; }
 
-	.single-page-navigation div, .single-page-navigation a {
+	.single-page-navigation div, .single-page-navigation section,
+	.single-page-navigation a {
 		display: block;
 		float: left;
 		width: 21px;
 		height: 21px;
 	}
 
-	.single-page-navigation div {
+	.single-page-navigation div, .single-page-navigation section {
 		margin: 0 5px 0 0;
 	}
 
@@ -1034,41 +904,20 @@
 
 	/* Portfolio ------------------------------*/
 
-	.archive #primary,
-	.page.page-template-template-portfolio-php #primary {
-		width: auto;
-		margin-left: 205px;
-		float: none;
-	}
-
 	.archive .hentry,
 	.page.page-template-template-portfolio-php .hentry {
-		min-width: 230px; /* actual width determined by custom javascript in /wp-content/resources/custom-javascript.js */
-		min-height: 220px;
-		width: 230px;
-		height: 254px;
 		overflow: hidden;
-		margin: 0 0 20px 25px;
-		padding: 0;
 		float: left;
 	}
 
 	.archive .hentry .arrow,
 	.page.page-template-template-portfolio-php .hentry .arrow {
-		top: 162px;
+		top: 162px; // should be thumbnail height - height of arrow img
 		right: 15px;
 	}
 
 	/* so the custom image caption will show */
 	.slides_container { overflow: visible !important; }
-	.slider .caption {
-		margin-bottom: 0;
-		position: absolute;
-		top: -35px;
-		left: 10px;
-		font-size: 14px;
-		font-weight: bold; 
-	}
 
 	.archive a .overlay .icon,
 	.page.page-template-template-portfolio-php a .overlay .icon {
@@ -1094,22 +943,8 @@
 	.hentry * { cursor: default; }
 	.hentry a, .hentry a * { cursor: pointer; }
 
-	.single-portfolio .slider, .single-portfolio .slides_container {
-		width: 550px;
-		height: auto;
-		min-height: 300px;
-	}
-
 	/* pages that only have one image need this */
 	.single-portfolio .slides_control div { position: absolute; }
-
-	.single-portfolio  ul.pagination {
-		right: 0;
-		top: -20px; /* half of the top padding for .single .hentry */
-		position: absolute;
-		padding: 25px 15px 0 0;
-		margin: 0;
-	}
 
 	.single-portfolio  ul.pagination li {
 		float: left;
@@ -1120,18 +955,12 @@
 		display: block;	
 		width: auto;
 		height: auto;
-		padding: 2px 8px 2px 8px;
 		background-image: none !important;
-		font-size: 15px;
-		text-align: center;
-		font-weight: bold;
 		background-color: #66696d;
 		color: #d2d6db;
 		text-decoration: none !important;
 		text-shadow: 1px 1px 0 #333 !important;
-		-webkit-border-radius: 2px;
-			 -moz-border-radius: 2px;
-	   			border-radius: 2px;
+		@include border-radius(2px, 2px);
 	}
 
 	.single-portfolio  ul.pagination li.current a,
@@ -1210,7 +1039,7 @@
 	.widget-title {
 		font-size: 12px;
 		margin: 5px 0 0 0 !important;
-		font-weight: normal !important;
+		//font-weight: normal !important;
 	}
 
 	.widget ul {
@@ -2080,8 +1909,6 @@
 		font-size: 12px;
 	}
 
-	.format-standard .entry-content { padding: 0 15px;min-height: 40px; }
-
 	.format-standard .entry-meta {
 		font-size: 11px;
 		margin: 0;
@@ -2103,33 +1930,9 @@
 			padding-bottom: 0 !important;
 	}
 
-	.breadcrumb, .breadcrumb li {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
-	.breadcrumb {
-		/*border:1px solid #dedede;*/
-		height:2.3em;
-		margin: 0 0 22px 25px !important;
-	}
-	.breadcrumb li {
-		float: left;
-		line-height: 2.3em;
-		padding-right: .5em;
-	}
-	.breadcrumb li a { 
-		display: block;
-		padding: 0 15px 0 0;
-		background: url("/public/images/icons/arrow2.gif") no-repeat right center;
-	}
-	/*.breadcrumb li a:after { content: "»"; }*/
-
 	.entry-title { min-height: 34px !important; }
 
-} // end wp_gridlocked
-
-
+	
 @mixin wp_gridlocked_light() {
 
 	/*==========================================================================================
@@ -2139,14 +1942,6 @@
 
 	==========================================================================================*/
 
-	/*body { background: url(/public/images/gridlocked/light/body_bg.gif) repeat fixed; }*/
-	/*#bg-line { background: url(/public/images/gridlocked/light/line.png) no-repeat; }*/
-
-	/* aaronl: custom spackle bg */
-	/*body { background: #ecf0f1 url('/public/images/gridlocked/light/spackle_bg_base.png'); }
-	#container { background: url('/public/images/gridlocked/light/spackle_bg_top.png') left top repeat-x; }
-	#content { background: url('/public/images/gridlocked/light/spackle_bg_lighting_compressed.jpg') 140px top no-repeat; }*/
-
 	/* aaronl: custom gray leather bg */
 	body { background: #eeeeee url('/public/images/gridlocked/light/bg_pattern_gray_leather_subtler.png'); }
 
@@ -2154,7 +1949,7 @@
 	#content h1 { text-shadow: 1px 1px 0 white; }
 	#content h2, #content h3, #content h4, #content h5, #content h6, #content strong, #content a { text-shadow: 1px 0 0 white; }
 
-	pre { background: url(/public/images/gridlocked/light/pre_bg.png); }
+	pre { background: url("/public/images/gridlocked/light/pre_bg.png"); }
 
 	blockquote,
 	#comments,
@@ -2224,6 +2019,20 @@
 	.widget-title { color: #7e7e7e; }
 
 	.single h1 { color: black; }
+
+	#sidebar {
+		#logo {
+			$sidebarLogoHeight: 42px;
+			h1 {
+				color: #555;
+				height: $sidebarLogoHeight;
+				padding: ($sidebarLogoHeight - 10) 0 0 0;
+				// background image is defined dynamically inline in sidebar.php
+				background-repeat: no-repeat;
+				background-position: left top;
+			}
+		}
+	}
 
 	.entry-content h2,
 	.entry-content h3,

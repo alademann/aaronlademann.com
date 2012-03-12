@@ -28,7 +28,10 @@
 <!-- HOOK HEAD -->
 <?php wp_head(); ?>
 <!--// HOOK HEAD -->
-	
+<style media="screen" id="stupidadminbar">
+	html { margin-top: 0 !important; }
+	* html body { margin-top: 0 !important; }
+</style>
 <script id="googleanalytics">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-3765006-1']);
@@ -58,6 +61,10 @@
 <!-- // HEADER -->
 <!-- #container -->
 <section id="container" class="clearfix js-disabled">
+	<section class="tapestry">
+		<section class="mediaImg"></section>
+		<section class="mediaMeta"></section>
+	</section>
 	<!-- #content -->
 	<section id="content">
 		<?php if(get_option('tz_widget_overlay') == 'true') : ?>
@@ -87,7 +94,7 @@
     </section>
 		<!--// #widget-overlay-container -->
     <?php endif; ?>
-		<?php if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') ){ ?>
+		<?php if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') AND !is_single() ){ ?>
     <!-- SIDEBAR -->        
     <?php get_sidebar(); ?>
     <!--// SIDEBAR -->

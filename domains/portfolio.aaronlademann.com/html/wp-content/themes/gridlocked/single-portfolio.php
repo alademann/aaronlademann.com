@@ -1,7 +1,31 @@
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
 <section id="primary" class="hfeed">
+	<header>
+<?php if ( function_exists('yoast_breadcrumb') ) { ?>
+	<!-- BEGIN .breadcrumb navigation -->
+		<nav id="crumbpaths">
+			<?php	yoast_breadcrumb('<ul class="breadcrumb"><li>','</li></ul>'); ?>
+		</nav>
+	<!-- END .breadcrumb navigation --> 
+<?php } ?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<!--BEGIN .single-page-navigation -->
+		<nav class="navigation single-page-navigation clearfix">
+			<section class="nav-previous">
+				<?php next_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
+			</section>
+			<!--<section class="portfolio-link">
+				<a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>"> <span class="icon"><?php _e('Back to Portfolio', 'framework'); ?></span></a> 
+			</section>-->
+			<section class="nav-next">
+				<?php previous_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
+			</section>					
+		</nav>
+		<!--END .single-page-navigation -->
+	</header>
+
 <?php 
   $image1 = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
 		if($image1 != ''){
@@ -125,7 +149,7 @@
 		?>
 		<style type="text/css">.lightbox .caption { visibility: hidden !important; display: none !important; }</style>
 		<?php endif; ?>
-																																																																																			<script id="image_raw_sources">
+																																																		<script id="image_raw_sources">
 			// break down all the different sizes i have for each shot
 			<?php if($image1 != '') : ?>raw_src1 = "<?php echo $image1; ?>";<?php endif; ?>
 			<?php if($image2 != '') : ?>raw_src2 = "<?php echo $image2; ?>";<?php endif; ?>
@@ -604,6 +628,7 @@
   </article>
 	<!--END .hentry-->
 <?php endwhile; else: ?>
+	</header>
 	<!--BEGIN #post-0-->
 	<article id="post-0" class="<?php post_class() ?>">
 		<h1 class="entry-title">
