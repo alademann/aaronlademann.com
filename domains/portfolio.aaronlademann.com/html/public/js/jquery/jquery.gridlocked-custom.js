@@ -412,7 +412,7 @@ head.ready("jquery", function() {
 	tz_loadMore();
 
 	$(window).resize(function() {
-		isFirstLoad = false;
+		//isFirstLoad = false;
 		loadMoreWidth();
 		contentHeight();
 	});
@@ -548,12 +548,12 @@ head.ready("jquery", function() {
 
 	});
 
-	head.ready(function() {
-		if(isFirstLoad) {
-			$("html").addClass("noscroll");
-		}
-		contentHeight();
-	});
+	//	head.ready(function() {
+	//		if(isFirstLoad) {
+	//			$("html").addClass("noscroll");
+	//		}
+	//		contentHeight();
+	//	});
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Add title attributes
@@ -581,10 +581,11 @@ head.ready("jquery", function() {
 			}
 		});
 		// apply 100% height
-		$('#container, #content, #primary, .single #primary .hentry').css('min-height', elemHeight);
-		$("#single-sidebar").css("min-height", elemHeight - 100);
+		//$('#container, #content, #primary, .single #primary .hentry').css('min-height', elemHeight);
+		//$("#single-sidebar").css("min-height", elemHeight - 100);
+		$("#container").css("min-height", elemHeight);
 
-		contentWidth();
+		//contentWidth();
 	}
 	function contentWidth() {
 		var slider = $(".single .slider");
@@ -611,7 +612,7 @@ head.ready("jquery", function() {
 
 		}
 
-		
+
 
 	}
 
