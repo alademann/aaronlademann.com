@@ -13,3 +13,6 @@
 @mixin hide_wp_adminbar(){
 	#wpadminbar { display: none !important; }
 }
+// prevent flickering on dynamic js resize
+html { overflow-x: hidden; }
+.noscroll { overflow: hidden; overflow-y: hidden; } 

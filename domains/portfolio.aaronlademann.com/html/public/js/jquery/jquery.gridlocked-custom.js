@@ -1,5 +1,5 @@
 var $ = jQuery.noConflict();
-
+var isFirstLoad = true;
 var currPage = window.location.pathname;
 //console.info(currPage);
 
@@ -108,7 +108,7 @@ window.addEventListener('DOMNodeInserted', function(event) {
 	} // END if ($(thisLoaded).is( lightboxGalleryDiv ))
 }, false);     // end addEventListener
 
-$(document).ready(function() {
+head.ready("jquery", function() {
 
 
 	//------------------------------ add 2nd level of parent categories in sidebar nav
@@ -412,6 +412,7 @@ head.ready("jquery", function() {
 	tz_loadMore();
 
 	$(window).resize(function() {
+		isFirstLoad = false;
 		loadMoreWidth();
 		contentHeight();
 	});
@@ -517,7 +518,7 @@ head.ready("jquery", function() {
 		return false;
 	});
 
-	// aaronl: custom (since i'm removing the anchor link, i need to set up a hover system for the wrapper div)				
+	// aaronl: custom (since i'm removing the anchor link, i need to set up a hover system for the wrapper div)			
 	head.ready("jquery", function() {
 		var colorIn;
 		var colorOut;
@@ -546,6 +547,14 @@ head.ready("jquery", function() {
 		);
 
 	});
+
+	head.ready(function() {
+		if(isFirstLoad) {
+			$("html").addClass("noscroll");
+		}
+		contentHeight();
+	});
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	Add title attributes
 	/*-----------------------------------------------------------------------------------*/
@@ -556,14 +565,57 @@ head.ready("jquery", function() {
 	function contentHeight() {
 
 		var windowHeight = $(window).height();
+		var mastHeight = $("#masthead").height();
 		var footerHeight = $('#footer').height();
+
 		// aaronl: custom (changed offset to 170
-		var yOffset = 170;
-		$('#content').css('min-height', windowHeight - footerHeight - yOffset);
+		//var yOffset = 170;
+		var elemHeight = windowHeight - footerHeight - mastHeight;
+		var elemScrollHeight = $("#content").height() - footerHeight - mastHeight;
+		// prevent flicker
+		$(window).resize(function() {
+			if(elemScrollHeight > elemHeight) {
+				$("html").addClass("noscroll");
+			} else if(elemScrollHeight <= elemHeight) {
+				$("html").removeClass("noscroll");
+			}
+		});
+		// apply 100% height
+		$('#container, #content, #primary, .single #primary .hentry').css('min-height', elemHeight);
+		$("#single-sidebar").css("min-height", elemHeight - 100);
+
+		contentWidth();
+	}
+	function contentWidth() {
+		var slider = $(".single .slider");
+		var sidebar = $(".single #single-sidebar");
+		var windowWidth = $(window).width();
+		var hSpacing = 40; // width of horizontal gaps
+		var hSpaces = 3; // number of horizontal gaps
+		var hPads = hSpacing * hSpaces;
+		//console.info($(slider).width());
+		//console.info(windowWidth);
+		if($(slider).width() > 0) {
+			// single page, figure out the dynamic width of the 
+			// right sidebar as long as the window width isn't less than 1024
+			var scrollBarWidth = 16;
+			var newWidth = windowWidth - $(slider).width() - hPads - scrollBarWidth;
+			var isNoScroll = $("html.noscroll").attr("id");
+			//isNoScroll = $(isNoScroll).width();
+			if(isNoScroll != -1) {
+				newWidth = newWidth + scrollBarWidth;
+			}
+
+			$(sidebar).width(newWidth);
+			$(sidebar).css("visibility", "visible");
+
+		}
+
+		
 
 	}
 
-	contentHeight();
+
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Like Script
@@ -579,7 +631,7 @@ head.ready("jquery", function() {
 			$what = $("#post-" + $post_id).find(".entry-title").text();
 		}
 
-			
+
 		$who = $likes + ' people like ';
 		if($likes == 1) {
 			$who = $likes + ' person likes ';
@@ -623,7 +675,7 @@ head.ready("jquery", function() {
 
 		// is it active?
 		if($.cookie("like_" + postID)) {
-			$("#" + who).addClass("active").css("visibility","visible");
+			$("#" + who).addClass("active").css("visibility", "visible");
 		}
 
 	} //reloadLikes

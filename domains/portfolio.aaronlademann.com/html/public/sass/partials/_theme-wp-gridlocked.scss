@@ -116,16 +116,12 @@
 	}
 
 	h1 {
-		font-size: 24px;
-		line-height: 28px;
-		margin-bottom: 20px;
+		font-size: 2em;
+		line-height: 2.2em;
+		margin-bottom: 1.9em;
+		font-weight: bold;
 	}
 	.breadcrumb li h1 { font-size: 12px;color: black; }
-	#single-sidebar h1 {
-		font-weight: bold;
-		line-height: 1.1;
-		letter-spacing: -.1ex;	
-	}
 
 	h2, .emptyResults h2, .emptyResults .h2 {
 		font-size: 20px;
@@ -171,12 +167,11 @@
 
 	#footer { clear: both; }
 
-	.seperator { margin: 0 0 $articleHPad 0; }
 	.line {  
 		position: relative;
 		float: left;
-		width: 98%;
-		left: 1%;
+		width: 100%;
+		left: 0;
 	}
 
 
@@ -590,21 +585,6 @@
 		content: "➥";
 	}
 
-	#single-sidebar ul.entry-meta {
-		margin: -5px 0 20px 0;
-	}
-
-	#single-sidebar ul {
-		margin: 0 0 20px 0;
-		padding: 0;
-	}
-
-	/* like buttons, date, comments, edit button, etc... */
-	.entry-meta {
-		font-size: 11px;
-		margin: 0;
-		padding: 5px 15px;
-	}
 	.entry-meta a:hover { text-decoration: none !important; }
 
 	.author-bio {
@@ -975,11 +955,9 @@
 
 	.single-portfolio .entry-content { font-size: 12px; }
 	.single-portfolio .entry-meta { padding: 0 15px 20px 15px; }
-	.single-portfolio #single-sidebar .entry-meta { padding: 0 4%;width: 92%; }
 
 	.single .entry-header .like-count {
 		position: relative;
-		top: -16px;
 		/*text-shadow: 0 0 0 none !important;*/
 		line-height: 1.7 !important;
 		/* .js will reveal it */
@@ -1018,7 +996,7 @@
 	#single-sidebar .terms ul {	margin: 0; }
 
 	.portfolio-link a .icon {
-		margin: 5px 0 0 5px;
+		margin: 3px 0 0 5px;
 		display: block;
 		background-position: 0 -128px;
 		width: 11px;
