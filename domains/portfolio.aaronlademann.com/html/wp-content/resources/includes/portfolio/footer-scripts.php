@@ -2,22 +2,24 @@
 <script id="nomatterwhat">
 	head.js({ jquery: "/wp-includes/js/jquery/jquery.js" }, function(){
 		
-		head.js(
-			{ jqueryuicustom: "<?php echo public_uri(); ?>/js/jquery/jquery-ui-1.8.5.custom.min.js" }
-			,{ jqueryshadowanimate: "<?php echo public_uri(); ?>/js/jquery/jquery.animate-shadow-min.js" }
-			,{ jqueryanimatecolors: "<?php echo public_uri(); ?>/js/jquery/jquery.animate-colors.js" }
-			,{ jquerycookie: "<?php echo public_uri(); ?>/js/jquery/carhartl-jquery-cookie/jquery.cookie.js" }
-			,{ tzshortcodes: "<?php echo public_uri(); ?>/js/jquery/jquery.shortcodes.js" }
-			,{ tzcustom: "<?php echo public_uri(); ?>/js/jquery/jquery.gridlocked-custom.js" }
-		, function() {
-			// all done
+		head.ready("jquery", function(){		
+
+			head.js(
+				{ bootstrapcollapse: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-collapse.js" }
+				,{ bootstrapbutton: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-button.js" }
+				,{ bootstrapdropdown: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-dropdown.js" }
+				,{ jqueryuicustom: "<?php echo public_uri(); ?>/js/jquery/jquery-ui-1.8.5.custom.min.js" }
+				,{ jqueryshadowanimate: "<?php echo public_uri(); ?>/js/jquery/jquery.animate-shadow-min.js" }
+				,{ jqueryanimatecolors: "<?php echo public_uri(); ?>/js/jquery/jquery.animate-colors.js" }
+				,{ jquerycookie: "<?php echo public_uri(); ?>/js/jquery/carhartl-jquery-cookie/jquery.cookie.js" }
+				,{ tzshortcodes: "<?php echo public_uri(); ?>/js/jquery/jquery.shortcodes.js" }
+				,{ tzcustom: "<?php echo public_uri(); ?>/js/jquery/jquery.gridlocked-custom.js" }
+			, function() {
+				// all done
+			});
+
 		});
 
-	});
-</script>
-<script id="bootstrap">
-	head.ready("jquery", function(){
-		head.js({ jquerycollapse: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-collapse.js" });
 	});
 </script>
 <!--[if (gte IE 6)&(lte IE 8)]>

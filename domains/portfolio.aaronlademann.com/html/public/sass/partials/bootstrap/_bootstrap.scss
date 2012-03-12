@@ -12,9 +12,6 @@
 @import "variables"; // Modify this for custom colors, font-sizes, etc
 @import "mixins";
 
-// Responsive Layouts
-@import "responsive";
-
 // CSS Reset
 //@import "reset";
 
@@ -63,3 +60,6 @@
 
 // Utility classes
 @import "utilities"; // Has to be last to override when necessary
+
+// Responsive Layouts
+@import "responsive";

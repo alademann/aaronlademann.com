@@ -13,9 +13,10 @@
 /*------------------------ UTILITIES ------------------------*/
 @import "partials/webfonts";
 @include webfont("chunkfive/Chunkfive-webfont","ChunkFiveWeb");
-@include fontawesome();
+//@include fontawesome();
 /*------------------------ RESPONSIVE LAYOUT ------------------------*/
-@import "partials/bootstrap/responsive";
+@import "partials/bootstrap/bootstrap";
+//@import "partials/bootstrap/responsive";
 @import "partials/mobile/aa_responsive";
 //@import "partials/bootstrap/bootstrap"; // includes responsive media queries for layouts
 /*------------------------ THEME ------------------------*/
