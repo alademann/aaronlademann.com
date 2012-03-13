@@ -12,6 +12,10 @@ body, body * { -webkit-font-smoothing: antialiased; }
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
 	text-transform: lowercase;
 	background: url("/public/images/aa-symbol_button.png") left top no-repeat;
+	@include transition-duration(.2s);
+	@include transition-timing-function(linear);
+	@include transition-property(color);
+	@include transition-property(text-shadow);
   //-webkit-transition: all .2s linear;
   //-moz-transition: all .2s linear;
   //transition: all .2s linear;

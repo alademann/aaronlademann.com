@@ -59,8 +59,8 @@
     float: left;
     display: block;
     padding: 8px 20px 12px;
-    margin-left: -20px; // negative indent to left-align the text down the page
-    font-size: 20px;
+    //margin-left: -20px; // negative indent to left-align the text down the page
+    //font-size: 20px;
     font-weight: 200;
     line-height: 1;
     color: $white;
@@ -267,40 +267,64 @@
 }
 
 // Dropdown toggle caret
-.navbar .nav .dropdown-toggle,
-.navbar .nav .open.dropdown {
-	
-	.caret {
-		border-top-color: darken($navbarLinkColor,20%);
-	}
-	&:hover .caret {
-		border-top-color: darken($navbarLinkColorHover,10%);
-	}
-}
-.navbar .nav .active .caret {
-  @include opacity(100);
-}
+$caretInactive: darken($navbarLinkColor,25%);
+$caretActive: darken($navbarLinkColorHover,15%);
+.navbar .nav .dropdown {
+	// .dropdown outer li
 
-// Remove background color from open dropdown
-.navbar .nav .open > .dropdown-toggle,
-.navbar .nav .active > .dropdown-toggle,
-.navbar .nav .open.active > .dropdown-toggle {
-	color: darken($navbarLinkColorHover,10%);
-	
-	.caret {
-		border-top-color: darken($navbarLinkColorHover,20%);
-	}
+	& > .dropdown-toggle {
+		// .dropdown anchor link
+		color: $navbarLinkColor;
 
-}
+		.caret {
+			// .dropdown anchor link caret (arrow)
+			@include opacity(100);
+			border-top-color: $caretInactive;
+			//@include rotate(180deg);	
+		}
 
-// Dropdown link on hover
-.navbar .nav .active > .dropdown-toggle:hover {
-  color: $navbarLinkColorHover;
-	
-	.caret {
-		border-top-color: darken($navbarLinkColorHover,10%);			
-	}
-}
+		// HOVERED .dropdown anchor link
+		&:hover {
+			color: $navbarLinkColorHover;
+
+			.caret {
+				border-top-color: $caretActive;
+			}
+
+		} // END HOVERED .dropdown anchor link
+
+	} // END .dropdown anchor link
+
+	&.open {
+	// .dropdown outer li (OPEN)
+
+		& > .dropdown-toggle {
+			// .dropdown anchor link (OPEN)
+			color: lighten($navbarLinkColor, 20%);
+
+			.caret {
+				// .dropdown anchor link caret (arrow) (OPEN)
+				border-top-color: $caretInactive;
+				@include opacity(50);
+				@include rotate(180deg);	
+			}
+
+			// HOVERED .dropdown anchor link (OPEN)
+			&:hover {
+				color: $navbarLinkColorHover;
+
+				.caret {
+					border-top-color: $caretActive;
+				}
+
+			} // END (OPEN) HOVERED .dropdown anchor link
+
+		} // END (OPEN) .dropdown anchor link	
+
+	} // END .dropdown outer li (OPEN)
+
+} // END .dropdown outer li
+
 
 // Right aligned menus need alt position
 .navbar .nav.pull-right .dropdown-menu {

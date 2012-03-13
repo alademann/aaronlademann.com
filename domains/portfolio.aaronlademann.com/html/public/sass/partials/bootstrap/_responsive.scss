@@ -249,6 +249,14 @@
     @include border-radius(0);
     @include box-shadow(none);
   }
+
+	// rotate caret when activated
+	.navbar .nav .dropdown {
+		& > .dropdown-toggle .caret { @include rotate(270deg); }
+		&.open > .dropdown-toggle .caret { @include rotate(360deg); }
+	}
+	
+
   .navbar .dropdown-menu:before,
   .navbar .dropdown-menu:after {
     display: none;

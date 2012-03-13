@@ -2299,15 +2299,19 @@ table .span12 {
   margin-top: 8px;
   margin-left: 2px;
 }
+/* line 36, ../sass/partials/bootstrap/_dropdowns.scss */
+.navbar .dropdown .caret {
+  margin-left: 4px;
+}
 
-/* line 37, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 39, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown:hover .caret,
 .open.dropdown .caret {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
   opacity: 100;
 }
 
-/* line 41, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 43, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -2341,13 +2345,13 @@ table .span12 {
   *border-right-width: 2px;
   *border-bottom-width: 2px;
 }
-/* line 67, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 69, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown-menu.bottom-up {
   top: auto;
   bottom: 100%;
   margin-bottom: 2px;
 }
-/* line 74, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 76, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown-menu .divider {
   height: 1px;
   margin: 5px 1px;
@@ -2357,7 +2361,7 @@ table .span12 {
   *width: 100%;
   *margin: -5px 0 5px;
 }
-/* line 90, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 92, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown-menu a {
   display: block;
   padding: 3px 15px;
@@ -2368,31 +2372,31 @@ table .span12 {
   white-space: nowrap;
 }
 
-/* line 104, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 106, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown-menu li > a:hover,
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover {
-  color: white;
+  color: white !important;
   text-decoration: none;
   background-color: #0088cc;
 }
 
-/* line 111, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 113, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown.open {
   *z-index: 1000;
 }
-/* line 116, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 118, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown.open .dropdown-toggle {
   color: white;
   background: #ccc;
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 121, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 123, ../sass/partials/bootstrap/_dropdowns.scss */
 .dropdown.open .dropdown-menu {
   display: block;
 }
 
-/* line 127, ../sass/partials/bootstrap/_dropdowns.scss */
+/* line 129, ../sass/partials/bootstrap/_dropdowns.scss */
 .typeahead {
   margin-top: 2px;
   -moz-border-radius: 4px;
@@ -3596,8 +3600,6 @@ input[type="submit"].btn.small {
   float: left;
   display: block;
   padding: 8px 20px 12px;
-  margin-left: -20px;
-  font-size: 20px;
   font-weight: 200;
   line-height: 1;
   color: white;
@@ -3845,56 +3847,59 @@ input[type="submit"].btn.small {
   left: 10px;
 }
 
-/* line 273, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .dropdown-toggle .caret,
-.navbar .nav .open.dropdown .caret {
-  border-top-color: #666666;
+/* line 275, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown > .dropdown-toggle {
+  color: #999999;
 }
-/* line 276, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .dropdown-toggle:hover .caret,
-.navbar .nav .open.dropdown:hover .caret {
-  border-top-color: #e6e6e6;
-}
-
-/* line 280, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .active .caret {
+/* line 279, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown > .dropdown-toggle .caret {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
   opacity: 100;
+  border-top-color: #595959;
 }
-
 /* line 287, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .open > .dropdown-toggle,
-.navbar .nav .active > .dropdown-toggle,
-.navbar .nav .open.active > .dropdown-toggle {
-  color: #e6e6e6;
-}
-/* line 290, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .open > .dropdown-toggle .caret,
-.navbar .nav .active > .dropdown-toggle .caret,
-.navbar .nav .open.active > .dropdown-toggle .caret {
-  border-top-color: #cccccc;
-}
-
-/* line 297, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .active > .dropdown-toggle:hover {
+.navbar .nav .dropdown > .dropdown-toggle:hover {
   color: white;
 }
-/* line 300, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .active > .dropdown-toggle:hover .caret {
-  border-top-color: #e6e6e6;
+/* line 290, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown > .dropdown-toggle:hover .caret {
+  border-top-color: #d9d9d9;
+}
+/* line 301, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown.open > .dropdown-toggle {
+  color: #cccccc;
+}
+/* line 305, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown.open > .dropdown-toggle .caret {
+  border-top-color: #595959;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
+  opacity: 50;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 313, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown.open > .dropdown-toggle:hover {
+  color: white;
+}
+/* line 316, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .dropdown.open > .dropdown-toggle:hover .caret {
+  border-top-color: #d9d9d9;
 }
 
-/* line 306, ../sass/partials/bootstrap/_navbar.scss */
+/* line 330, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu {
   left: auto;
   right: 0;
 }
-/* line 309, ../sass/partials/bootstrap/_navbar.scss */
+/* line 333, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:before {
   left: auto;
   right: 12px;
 }
-/* line 313, ../sass/partials/bootstrap/_navbar.scss */
+/* line 337, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:after {
   left: auto;
   right: 13px;
@@ -5482,18 +5487,35 @@ a.thumbnail:hover {
     box-shadow: none;
   }
 
-  /* line 253, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 255, ../sass/partials/bootstrap/_responsive.scss */
+  .navbar .nav .dropdown > .dropdown-toggle .caret {
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+  /* line 256, ../sass/partials/bootstrap/_responsive.scss */
+  .navbar .nav .dropdown.open > .dropdown-toggle .caret {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
+  /* line 261, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .dropdown-menu:before,
   .navbar .dropdown-menu:after {
     display: none;
   }
 
-  /* line 256, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 264, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .dropdown-menu .divider {
     display: none;
   }
 
-  /* line 261, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 269, ../sass/partials/bootstrap/_responsive.scss */
   .navbar-form,
   .navbar-search {
     float: none;
@@ -5507,31 +5529,31 @@ a.thumbnail:hover {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 271, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 279, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav.pull-right {
     float: none;
     margin-left: 0;
   }
 
-  /* line 276, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 284, ../sass/partials/bootstrap/_responsive.scss */
   .navbar-static .navbar-inner {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  /* line 281, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 289, ../sass/partials/bootstrap/_responsive.scss */
   .btn-navbar {
     display: block;
   }
 
-  /* line 286, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 294, ../sass/partials/bootstrap/_responsive.scss */
   .nav-collapse {
     overflow: hidden;
     height: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 298, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 306, ../sass/partials/bootstrap/_responsive.scss */
   .nav-collapse.collapse {
     height: auto !important;
   }
@@ -5823,12 +5845,12 @@ a.thumbnail:hover {
     width: 1160px;
   }
 
-  /* line 320, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 328, ../sass/partials/bootstrap/_responsive.scss */
   .thumbnails {
     margin-left: -30px;
   }
 
-  /* line 323, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 331, ../sass/partials/bootstrap/_responsive.scss */
   .thumbnails > li {
     margin-left: 30px;
   }
@@ -9568,8 +9590,24 @@ body, body * {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
   text-transform: lowercase;
   background: url("/public/images/aa-symbol_button.png") left top no-repeat;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-property: text-shadow;
+  -webkit-transition-property: text-shadow;
+  -o-transition-property: text-shadow;
+  transition-property: text-shadow;
 }
-/* line 19, ../sass/partials/_theme-aa-template.scss */
+/* line 23, ../sass/partials/_theme-aa-template.scss */
 .navbar-fixed-top .brand:hover {
   background-position: left bottom;
   color: #ddd !important;
@@ -9632,7 +9670,7 @@ body, body * {
 	
 } // END #masthead
 */
-/* line 84, ../sass/partials/_theme-aa-template.scss */
+/* line 88, ../sass/partials/_theme-aa-template.scss */
 #footer {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBhMGIwZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJlMzEzZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -9647,29 +9685,29 @@ body, body * {
   height: 35px;
   font-size: 11px;
 }
-/* line 92, ../sass/partials/_theme-aa-template.scss */
+/* line 96, ../sass/partials/_theme-aa-template.scss */
 #footer #copyright {
   color: #abafbf;
   line-height: 35px;
 }
 
-/* line 100, ../sass/partials/_theme-aa-template.scss */
+/* line 104, ../sass/partials/_theme-aa-template.scss */
 .no-gradient #masthead, .no-gradient #footer {
   background: #0a0b0f;
 }
 
-/* line 104, ../sass/partials/_theme-aa-template.scss */
+/* line 108, ../sass/partials/_theme-aa-template.scss */
 .entry-meta ul, .entry-meta ul ul, .entry-meta ul ul ul, .entry-meta ul ul ul ul, .entry-meta ul ul ul ul ul {
   clear: left;
 }
 
-/* line 105, ../sass/partials/_theme-aa-template.scss */
+/* line 109, ../sass/partials/_theme-aa-template.scss */
 .widget-title {
   margin: 10px 0 4px 0;
   font-weight: bold;
 }
 
-/* line 106, ../sass/partials/_theme-aa-template.scss */
+/* line 110, ../sass/partials/_theme-aa-template.scss */
 .widget-title.first {
   margin-top: 0;
 }
