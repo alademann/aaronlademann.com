@@ -158,142 +158,171 @@ $aa_footHeight: 35px;
 			padding: 0 0 0 0;
 			float: left;
 			position: relative;
+		} // END .single article (.hentry)
 
 		// sections within the article
-			.slider, .entry-content, #single-sidebar {
-				float: left;
-				position: relative;
-				padding-top: ($articleVPad + (($primaryVPad/2) + $primaryVPad));
+		.slider, .entry-content, #single-sidebar {
+			float: left;
+			position: relative;
+			padding-top: ($articleVPad + (($primaryVPad/2) + $primaryVPad));
+		}
+		// slider image area
+		.slider {
+			//background: rgba(100,100,100,.5);
+
+			&, .slides_container {
+				width: $folioImgWidth;
+				@include min-height(300px);
 			}
-			// slider image area
-			.slider {
-				//background: rgba(100,100,100,.5);
-
-				&, .slides_container {
-					width: $folioImgWidth;
-					@include min-height(300px);
-				}
-				.caption, .pagination {
-					position: absolute;
-					top: -$articleVPad;
-					margin: 0;
-					padding: 0; 
-				}
-				.caption, .pagination li a {
-					font-size: 14px;
-					font-weight: bold;
-				}
-				.caption {
-					left: 0;
-				}
-				.pagination {
-					right: $sliderDivider;
-					li a {
-						display: block;
-						padding: 2px 8px 2px 8px;
-						text-align: center;
-					}
-				}
-			} // END article .slider	
-
-			// content area beneath slider (currently blank)
-			.entry-content { 
-				display: none;
-			} // END .entry-content
-
-			// sidebar (where content / meta for each portfolio piece lives)
-			#single-sidebar {
-				visibility: hidden; // js in gridlocked-custom.js will reveal
-				z-index: 99;
+			.caption, .pagination {
+				position: absolute;
+				top: -$articleVPad;
 				margin: 0;
-				width: auto;
-				//max-width: 325px;
+				padding: 0; 
+			}
+			.caption, .pagination li a {
+				font-size: 14px;
+				font-weight: bold;
+			}
+			.caption {
+				left: 0;
+			}
+			.pagination {
+				right: $sliderDivider;
+				li a {
+					display: block;
+					padding: 2px 8px 2px 8px;
+					text-align: center;
+				}
+			}
+		} // END article .slider	
+
+		// content area beneath slider (currently blank)
+		.entry-content { 
+			display: none;
+		} // END .entry-content
+
+		// sidebar (where content / meta for each portfolio piece lives)
+		#single-sidebar {
+			//visibility: hidden; // js in gridlocked-custom.js will reveal
+			z-index: 99;
+			margin: 0;
+			width: auto;
+			//max-width: 325px;
+			top: 0;
+			left: 0;
+			background: rgba(120,120,120,.1);
+			@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
+
+			header, .header {
+					
+				h1, .h1 {
+					font-size: $aa_h1_fontSize;
+					font-weight: bold;
+					letter-spacing: -.1ex;
+					line-height: 1.1;
+					margin-bottom: ($aa_h1_fontSize / 9);
+				}
+
+			} // END header, .header
+
+			ul { 
+				margin: 0; 
+				padding: 0; 
+			}
+			.seperator { margin: ($articleVPad / 4) 0; }
+			// since the pic in the middle is not elastic,
+			//	we'll have to use media query classes generated
+			//	by head.js to determine how much width we have available.
+			//------------------- specific width profiles ------------------
+			.lt-1280 & {
+				$ltWidth: 1280px;
+					
+			}
+			.lt-1024 &, .lt-1024.w-1000 &, .lt-1024.w-900 & {
+					
+				h1, .h1 {
+					$h1_fontSize: $aa_h1_fontSize - .2; 
+					font-size: $h1_fontSize;
+					margin-bottom: ($h1_fontSize / 9);
+				}
+				.caption, .link { font-size: .9em; line-height: 1.3em !important; }
+				.seperator { display: none; }
+
+			}
+			.lt-1024.w-800 &, .lt-768 & {
+				$ltWidth: 1024px;
+				// less than 1024 wide, the sidebar will drop below the image
+				clear: left;
 				top: 0;
 				left: 0;
-				background: rgba(120,120,120,.1);
-				@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
+				padding: ($articleVPad / 2) $articleHPad 0 $primaryHPad;
+				max-width: $folioImgWidth !important;
+				width: auto !important;
 
+				h1, .h1 {
+					$h1_fontSize: $aa_h1_fontSize - .4; 
+					font-size: $h1_fontSize;
+					margin-bottom: ($h1_fontSize / 9);
+				}
+				// no horizontal dividers, we're going to stack the description side-by-side
+				// with the meta ul's
+				.seperator { display: none; }
+				header, .header, footer, .footer {
+					float: left;
+				}
 				header, .header {
-					
-					h1, .h1 {
-						font-size: $aa_h1_fontSize;
-						font-weight: bold;
-						letter-spacing: -.1ex;
-						line-height: 1.1;
-						margin-bottom: ($aa_h1_fontSize / 9);
-					}
-
-				} // END header, .header
-
-				ul { 
-					margin: 0; 
-					padding: 0; 
+					width: 53%;
+					padding-right: 7%;
+					border-right: 1px solid rgba($aa_darkGray, .2);
 				}
-				.seperator { margin: ($articleVPad / 4) 0; }
-				// since the pic in the middle is not elastic,
-				//	we'll have to use media query classes generated
-				//	by head.js to determine how much width we have available.
-				//------------------- specific width profiles ------------------
-				.lt-1280 & {
-					$ltWidth: 1280px;
-					
+				footer, .footer { 
+					width: 38%;
+					padding-left: 1.9%; 
+					border-left: 1px solid rgba(255, 255, 255, .9);
 				}
-				.lt-1024 &, .lt-1024.w-1000 &, .lt-1024.w-900 & {
-					
-					h1, .h1 {
-						$h1_fontSize: $aa_h1_fontSize - .2; 
-						font-size: $h1_fontSize;
-						margin-bottom: ($h1_fontSize / 9);
-					}
-					.caption, .link { font-size: .9em; line-height: 1.3em !important; }
-					.seperator { display: none; }
 
-				}
-				.lt-1024.w-800 &, .lt-768 & {
-					$ltWidth: 1024px;
-					// less than 1024 wide, the sidebar will drop below the image
-					clear: left;
-					top: 0;
-					left: 0;
-					padding: ($articleVPad / 2) $articleHPad 0 $primaryHPad;
-					max-width: $folioImgWidth !important;
-					width: auto !important;
+			} // END .lt-1024
 
-					h1, .h1 {
-						$h1_fontSize: $aa_h1_fontSize - .4; 
-						font-size: $h1_fontSize;
-						margin-bottom: ($h1_fontSize / 9);
-					}
-					// no horizontal dividers, we're going to stack the description side-by-side
-					// with the meta ul's
-					.seperator { display: none; }
-					header, .header, footer, .footer {
-						float: left;
-					}
-					header, .header {
-						width: 53%;
-						padding-right: 7%;
-						border-right: 1px solid rgba($aa_darkGray, .2);
-					}
-					footer, .footer { 
-						width: 38%;
-						padding-left: 1.9%; 
-						border-left: 1px solid rgba(255, 255, 255, .9);
-					}
-
-				} // END .lt-1024
-
-				//--END-------------- specific width profiles ------------------
+			//--END-------------- specific width profiles ------------------
 				
-			} // END .single #single-sidebar
+		} // END .single #single-sidebar
 
-		} // END .single article (.hentry)
+		
 		
 	} // END .single #primary section & article
 
 } // END .single
 
 
+// Landscape phones and down
+  @media (max-width: 480px) { 
+	
+	} /* END @media (max-width: 480px) */
+ 
+  // Landscape phone to portrait tablet
+  @media (max-width: 768px) { 
+	
+	} /* END @media (max-width: 768px) */
+ 
+  // Portrait tablet to landscape and desktop
+  @media (min-width: 768px) and (max-width: 980px) { 
+	
+	} /* @media (min-width: 768px) and (max-width: 980px) */
+ 
+  // Large desktop
+  @media (min-width: 1200px) {
+	
+	} /* END Large desktop */
+
+
+// DEFAULT DESKTOP
+// ---------------
+
+@media (min-width: 980px) {
+
+
+}
 
 
 
@@ -414,13 +443,7 @@ $aa_footHeight: 35px;
 		}
 
 
-		// DEFAULT DESKTOP
-		// ---------------
-
-		@media (min-width: 980px) {
-
-
-		}
+		
 
 
 

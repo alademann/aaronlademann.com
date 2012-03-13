@@ -45,6 +45,12 @@ function is_folio_home(){
 register_nav_menus( array(
 	'primary' => __( 'Header Menu', 'gridlocked' ),
 	'secondary' => __( 'Footer Menu', 'gridlocked' ),
+	// portfolio category menus
+	'skills' => __( 'Skills DD', 'gridlocked' ),
+	'type' => __( 'WorkType DD', 'gridlocked' ),
+	'client' => __( 'Client DD', 'gridlocked' ),
+	'media' => __( 'MediaType DD', 'gridlocked' ),
+	'tools' => __( 'Tools DD', 'gridlocked' )
 ) ); 
 
 /*-----------------------------------------------------------------------------------*/

@@ -571,15 +571,15 @@ head.ready("jquery", function() {
 		// aaronl: custom (changed offset to 170
 		//var yOffset = 170;
 		var elemHeight = windowHeight - footerHeight - mastHeight;
-		var elemScrollHeight = $("#content").height() - footerHeight - mastHeight;
+		//var elemScrollHeight = $("#content").height() - footerHeight - mastHeight;
 		// prevent flicker
-		$(window).resize(function() {
-			if(elemScrollHeight > elemHeight) {
-				$("html").addClass("noscroll");
-			} else if(elemScrollHeight <= elemHeight) {
-				$("html").removeClass("noscroll");
-			}
-		});
+		//$(window).resize(function() {
+		//	if(elemScrollHeight > elemHeight) {
+		//		$("html").addClass("noscroll");
+		//	} else if(elemScrollHeight <= elemHeight) {
+		//		$("html").removeClass("noscroll");
+		//	}
+		//});
 		// apply 100% height
 		//$('#container, #content, #primary, .single #primary .hentry').css('min-height', elemHeight);
 		//$("#single-sidebar").css("min-height", elemHeight - 100);

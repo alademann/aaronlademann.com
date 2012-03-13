@@ -14,5 +14,5 @@
 	#wpadminbar { display: none !important; }
 }
 // prevent flickering on dynamic js resize
-html { overflow-x: hidden; }
+html { overflow-x: hidden !important; }
 .noscroll { overflow: hidden; overflow-y: hidden; } 
