@@ -16,10 +16,9 @@
 //@include fontawesome();
 @include webfont("helvetica-nueve/Extended/helveticaneueltstd63-md-ex-webfont","Helv63");
 /*------------------------ RESPONSIVE LAYOUT ------------------------*/
-@import "partials/bootstrap/bootstrap";
 //@import "partials/bootstrap/responsive";
 @import "partials/mobile/aa_responsive";
-//@import "partials/bootstrap/bootstrap"; // includes responsive media queries for layouts
+@import "partials/bootstrap/bootstrap";
 /*------------------------ THEME ------------------------*/
 @import "partials/theme-wp-gridlocked"; 
 @include wp_gridlocked_light();

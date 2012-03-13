@@ -55,7 +55,8 @@
     text-decoration: none;
   }
   // Website or project name
-  .brand {
+  h1 { margin-bottom: 0; line-height: 1; }
+	.brand {
     float: left;
     display: block;
     padding: 8px 20px 12px;

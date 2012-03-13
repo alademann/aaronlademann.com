@@ -2042,13 +2042,13 @@
 	.hentry .arrow { display: none; }
 
 	/*.hentry.hover { background-color: white; } */
-	.masoned .hentry {
+	#masonry-portfolio .hentry {
 		-moz-box-shadow: 0 0 6px rgba(0,0,0,0.2) inset;
 		-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.2) inset;
 		box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
 		border: 1px solid #fcfcfc;
 	}
-	.masoned .hentry .entry-meta { border-top: 1px solid rgba(100,100,100,0.1); }
+	#masonry-portfolio .hentry .entry-meta { border-top: 1px solid rgba(100,100,100,0.1); }
 	/*.masoned .hentry.hover {
 		-moz-box-shadow: 0 0 6px rgba(0,0,0,0.1);
 		-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.1);

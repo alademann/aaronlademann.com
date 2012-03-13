@@ -45,48 +45,20 @@
 	})();
 </script>
 <script src="<?php echo public_uri(); ?>/js/head.min.js"></script>
+<script src="<?php echo public_uri(); ?>/js/modernizr.dev.js" id="modernizr"></script>
 </head>
 <body class="<?php body_class(); ?>">
 <!-- navbar -->
 <?php include(custom_includes_dir() . "/portfolio/navbar-top.php"); ?>
 <!-- // navbar -->
 <!-- #container -->
-<section id="container" class="clearfix js-disabled">
-	<section class="tapestry">
-		<section class="mediaImg"></section>
-		<section class="mediaMeta"></section>
-	</section>
+<section id="container" class="container-fluid clearfix js-disabled">
 	<!-- #content -->
-	<section id="content">
-		<?php if(get_option('tz_widget_overlay') == 'true') : ?>
-    <!-- #widget-overlay-container -->
-    <section id="widget-overlay-container">   
-      <!-- #widget-overlay -->
-      <aside id="widget-overlay">      
-				<!-- #overlay-inner -->
-				<section id="overlay-inner" class="clearfix">     
-					<section class="column">
-					<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Overlay Column 1') ) ?>
-					</section>
-					<section class="column">
-					<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Overlay Column 2') ) ?>
-					</section>
-					<section class="column">
-					<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Overlay Column 3') ) ?>
-					</section>
-					<section class="column">
-					<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Overlay Column 4') ) ?>
-					</section>          
-				</section>
-				<!--// #overlay-inner -->
-      </aside>
-			<!--// #widget-overlay -->          
-      <nav id="overlay-open"><a href="#"><?php _e('Open Widget Area', 'framework'); ?></a></nav>   
-    </section>
-		<!--// #widget-overlay-container -->
-    <?php endif; ?>
+	<section id="content" class="row-fluid">
+		<?php include(custom_includes_dir() . "/wp/widget-overlay.php"); ?>
+
 		<?php if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') AND !is_single() ){ ?>
     <!-- SIDEBAR -->        
-    <?php get_sidebar(); ?>
+
     <!--// SIDEBAR -->
 		<?php } ?>

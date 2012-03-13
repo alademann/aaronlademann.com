@@ -278,7 +278,7 @@ head.ready("jquery", function() {
 	/*-----------------------------------------------------------------------------------*/
 
 	if($().masonry) {
-
+		console.info("masonry loaded");
 		// cache masonry wrap
 		var $wall = $('#masonry');
 
@@ -299,14 +299,24 @@ head.ready("jquery", function() {
 		var $port = $('#masonry-portfolio');
 
 		$port.masonry({
-			singleMode: true,
-			animate: true,
+			//singleMode: true,
+			//animate: true,
+			//animationOptions: {
+			//	duration: 500,
+			//	easing: 'easeInOutCirc',
+			//	queue: false
+			//},
+			//itemSelector: '.hentry',
+			itemSelector: '.hentry',
+			isAnimated: !Modernizr.csstransitions,
 			animationOptions: {
 				duration: 500,
 				easing: 'easeInOutCirc',
 				queue: false
-			},
-			itemSelector: '.hentry'
+			}
+			//columnWidth: function(containerWidth) {
+			//	return containerWidth / 5;
+			//}
 		});
 
 	}

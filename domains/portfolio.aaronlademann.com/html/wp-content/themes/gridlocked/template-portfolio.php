@@ -5,14 +5,14 @@ Template Name: Portfolio
 ?>
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
-<section id="primary" class="hfeed">
+<section id="primary" class="hfeed span12">
 <?php 
 	if(is_search()){
 		echo "<header><h1>Search Results for <mark>". get_search_query() ."</mark></h1><header>";
 	}
 ?>
 	<!--BEGIN #masonry-->
-	<section id="masonry-portfolio">
+	<section id="masonry-portfolio" class="masonry">
 	<?php
 			query_posts( array(
 				'post_type' => 'portfolio',
@@ -26,7 +26,7 @@ Template Name: Portfolio
 		if($home_feature == 'yes') : 
 	?>			
 		<!--BEGIN .hentry -->
-    <article class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">                
+    <article class="<?php post_class(); ?> box masonry-brick" id="post-<?php the_ID(); ?>">                
     <?php 
     $lightbox = get_post_meta(get_the_ID(), 'tz_portfolio_lightbox', TRUE); 
     $thumb = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 

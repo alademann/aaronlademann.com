@@ -167,8 +167,6 @@
 
 }
 
-
-
 // TABLETS AND BELOW
 // -----------------
 @media (max-width: 979px) {
@@ -179,12 +177,7 @@
   body {
     padding-top: 0;
   }
-  // Unfix the navbar
-  .navbar-fixed-top {
-    position: static;
-    margin-bottom: $baseLineHeight;
-  }
-  .navbar-fixed-top .navbar-inner {
+	.navbar-fixed-top .navbar-inner {
     padding: 5px;
   }
   .navbar .container {
@@ -331,5 +324,28 @@
   .thumbnails > li {
     margin-left: 30px;
   }
+
+}
+
+
+/* MOBILE DEVICES ONLY ----------- */
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+	
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+}
+
+/* iPhone 4+ ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
 
 }

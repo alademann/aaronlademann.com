@@ -94,6 +94,507 @@ html {
 }
 
 /*------------------------ RESPONSIVE LAYOUT ------------------------*/
+/* line 20, ../sass/partials/mobile/_aa_responsive.scss */
+#container, #content, #primary, #masonry-portfolio {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+
+/* line 30, ../sass/partials/mobile/_aa_responsive.scss */
+#container {
+  top: 50px;
+}
+
+/* line 38, ../sass/partials/mobile/_aa_responsive.scss */
+#sidebar {
+  position: fixed;
+  z-index: 500;
+  left: 0;
+  margin: 21px 0 0 0;
+  width: 190px;
+}
+/* line 45, ../sass/partials/mobile/_aa_responsive.scss */
+.chrome #sidebar, .safari #sidebar {
+  margin-top: 46px;
+}
+/* line 46, ../sass/partials/mobile/_aa_responsive.scss */
+#sidebar .widget {
+  position: relative;
+  width: 170px;
+  left: 20px;
+  top: -6px;
+}
+/* line 53, ../sass/partials/mobile/_aa_responsive.scss */
+#sidebar .entry-meta {
+  padding: 5px 15px;
+}
+/* line 56, ../sass/partials/mobile/_aa_responsive.scss */
+#sidebar #logo {
+  margin-left: 0;
+}
+/* line 59, ../sass/partials/mobile/_aa_responsive.scss */
+#sidebar #logo h1 {
+  display: block;
+  width: auto;
+  font-size: 11px;
+  text-align: center;
+  text-indent: 18px;
+}
+
+/* line 73, ../sass/partials/mobile/_aa_responsive.scss */
+.page-template-template-full-width-php #primary {
+  float: none;
+}
+/* line 75, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .breadcrumb {
+  height: 2.3em;
+  margin: 0 0 22px 25px;
+}
+/* line 79, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .breadcrumb, #primary .breadcrumb li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+/* line 85, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .breadcrumb li {
+  padding: 0 .5em 0 0;
+}
+/* line 87, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .breadcrumb li:first-child {
+  padding-left: 0;
+}
+/* line 89, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .breadcrumb li a {
+  display: block;
+  padding: 0 0 0 0;
+}
+/* line 92, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .breadcrumb li a:after {
+  color: #abafbf;
+  font-family: "FontAwesome";
+  content: "\f054";
+  margin-left: .5em;
+  text-decoration: none !important;
+}
+/* line 105, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .masonry,
+#primary .masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+}
+/* line 112, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .masonry {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+/* line 119, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+  -moz-transition-property: left, right, top;
+  -o-transition-property: left, right, top;
+  transition-property: left, right, top;
+}
+/* line 129, ../sass/partials/mobile/_aa_responsive.scss */
+#primary .masonry .masonry-brick {
+  min-width: 230px;
+  max-width: 230px;
+  min-height: 254px;
+  margin: 0 0 20px 25px;
+  padding: 0;
+}
+
+/* line 141, ../sass/partials/mobile/_aa_responsive.scss */
+.single {
+  position: relative;
+}
+/* line 144, ../sass/partials/mobile/_aa_responsive.scss */
+.single #content, .single #primary {
+  padding: 0;
+}
+/* line 146, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary {
+  /* no left sidebar on .single pages */
+  left: 0;
+}
+/* line 155, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary > header, .single #primary > .header,
+.single #primary .slider, .single #primary #single-sidebar {
+  padding: 0 40px;
+}
+/* line 158, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider {
+  padding-right: 20px;
+}
+/* line 161, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary #single-sidebar {
+  padding-left: 20px;
+}
+/* line 165, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary > header, .single #primary > .header {
+  width: auto;
+  padding-top: 20px;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  display: none;
+}
+/* line 172, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary > header nav, .single #primary > header .nav, .single #primary > .header nav, .single #primary > .header .nav {
+  float: left;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+/* line 180, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary article, .single #primary .hentry {
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  float: left;
+  position: relative;
+}
+/* line 189, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider, .single #primary .entry-content, .single #primary #single-sidebar {
+  float: left;
+  position: relative;
+  padding-top: 100px;
+}
+/* line 198, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider, .single #primary .slider .slides_container {
+  width: 550px;
+  min-height: 300px;
+}
+/* line 202, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider .caption, .single #primary .slider .pagination {
+  position: absolute;
+  top: -40px;
+  margin: 0;
+  padding: 0;
+}
+/* line 208, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider .caption, .single #primary .slider .pagination li a {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 212, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider .caption {
+  left: 0;
+}
+/* line 215, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider .pagination {
+  right: 20px;
+}
+/* line 217, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .slider .pagination li a {
+  display: block;
+  padding: 2px 8px 2px 8px;
+  text-align: center;
+}
+/* line 226, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary .entry-content {
+  display: none;
+}
+/* line 231, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary #single-sidebar {
+  z-index: 99;
+  margin: 0;
+  width: auto;
+  top: 0;
+  left: 0;
+  background: rgba(120, 120, 120, 0.1);
+  -moz-box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
+  -webkit-box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
+  -o-box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
+  box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
+}
+/* line 244, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary #single-sidebar header h1, .single #primary #single-sidebar header .h1, .single #primary #single-sidebar .header h1, .single #primary #single-sidebar .header .h1 {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -0.1ex;
+  line-height: 1.1;
+  margin-bottom: 0.222em;
+}
+/* line 254, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary #single-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 258, ../sass/partials/mobile/_aa_responsive.scss */
+.single #primary #single-sidebar .seperator {
+  margin: 10px 0;
+}
+/* line 269, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024 .single #primary #single-sidebar h1, .lt-1024 .single #primary #single-sidebar .h1, .lt-1024.w-1000 .single #primary #single-sidebar h1, .lt-1024.w-1000 .single #primary #single-sidebar .h1, .lt-1024.w-900 .single #primary #single-sidebar h1, .lt-1024.w-900 .single #primary #single-sidebar .h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.2em;
+}
+/* line 274, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024 .single #primary #single-sidebar .caption, .lt-1024 .single #primary #single-sidebar .link, .lt-1024.w-1000 .single #primary #single-sidebar .caption, .lt-1024.w-1000 .single #primary #single-sidebar .link, .lt-1024.w-900 .single #primary #single-sidebar .caption, .lt-1024.w-900 .single #primary #single-sidebar .link {
+  font-size: .9em;
+  line-height: 1.3em !important;
+}
+/* line 275, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024 .single #primary #single-sidebar .seperator, .lt-1024.w-1000 .single #primary #single-sidebar .seperator, .lt-1024.w-900 .single #primary #single-sidebar .seperator {
+  display: none;
+}
+/* line 278, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024.w-800 .single #primary #single-sidebar, .lt-768 .single #primary #single-sidebar {
+  clear: left;
+  top: 0;
+  left: 0;
+  padding: 20px 15px 0 40px;
+  max-width: 550px !important;
+  width: auto !important;
+}
+/* line 288, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024.w-800 .single #primary #single-sidebar h1, .lt-1024.w-800 .single #primary #single-sidebar .h1, .lt-768 .single #primary #single-sidebar h1, .lt-768 .single #primary #single-sidebar .h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.178em;
+}
+/* line 295, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024.w-800 .single #primary #single-sidebar .seperator, .lt-768 .single #primary #single-sidebar .seperator {
+  display: none;
+}
+/* line 296, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024.w-800 .single #primary #single-sidebar header, .lt-1024.w-800 .single #primary #single-sidebar .header, .lt-1024.w-800 .single #primary #single-sidebar footer, .lt-1024.w-800 .single #primary #single-sidebar .footer, .lt-768 .single #primary #single-sidebar header, .lt-768 .single #primary #single-sidebar .header, .lt-768 .single #primary #single-sidebar footer, .lt-768 .single #primary #single-sidebar .footer {
+  float: left;
+}
+/* line 299, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024.w-800 .single #primary #single-sidebar header, .lt-1024.w-800 .single #primary #single-sidebar .header, .lt-768 .single #primary #single-sidebar header, .lt-768 .single #primary #single-sidebar .header {
+  width: 53%;
+  padding-right: 7%;
+  border-right: 1px solid rgba(46, 49, 61, 0.2);
+}
+/* line 304, ../sass/partials/mobile/_aa_responsive.scss */
+.lt-1024.w-800 .single #primary #single-sidebar footer, .lt-1024.w-800 .single #primary #single-sidebar .footer, .lt-768 .single #primary #single-sidebar footer, .lt-768 .single #primary #single-sidebar .footer {
+  width: 38%;
+  padding-left: 1.9%;
+  border-left: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* END @media (max-width: 480px) */
+/* END @media (max-width: 768px) */
+/* @media (min-width: 768px) and (max-width: 980px) */
+/* END Large desktop */
+@media (max-width: 979px) {
+  /* dynamic portrait / landscape class switching
+     provided by /public/js/iOSfixedPosition.js */
+}
+@media (max-width: 480px) {
+  /* GLOBALLY HIDE FROM MOBILE */
+  /* line 380, ../sass/partials/mobile/_aa_responsive.scss */
+  #topNav, #footer .copyright {
+    display: none;
+  }
+
+  /* fix any static widths */
+  /* line 382, ../sass/partials/mobile/_aa_responsive.scss */
+  #masthead, #container, #content, #footer {
+    min-width: auto;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* line 388, ../sass/partials/mobile/_aa_responsive.scss */
+  #footer {
+    background-image: none;
+  }
+
+  /* line 392, ../sass/partials/mobile/_aa_responsive.scss */
+  .aafolio #footerNav {
+    right: auto;
+    left: 0;
+  }
+
+  /* line 396, ../sass/partials/mobile/_aa_responsive.scss */
+  #footer .nav ul {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 400, ../sass/partials/mobile/_aa_responsive.scss */
+  #footer .nav a {
+    padding: 7px 18px 3px 18px;
+  }
+
+  /* use the sidebar as our main nav */
+  /* line 404, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar {
+    position: absolute;
+    top: 0;
+    margin-top: 0 !important;
+    width: 100%;
+  }
+
+  /* line 410, ../sass/partials/mobile/_aa_responsive.scss */
+  .tax-skill-type #primary, .page.page-template-template-portfolio-php #primary {
+    margin-left: 0;
+  }
+
+  /*#logo a img { visibility: hidden; }  will be revealed via .js */
+  /* line 414, ../sass/partials/mobile/_aa_responsive.scss */
+  #container {
+    top: 0;
+  }
+
+  /* line 416, ../sass/partials/mobile/_aa_responsive.scss */
+  .archive #primary, .page.page-template-template-portfolio-php #primary,
+  .archive .hentry, .page.page-template-template-portfolio-php .hentry {
+    margin-left: 0 !important;
+  }
+
+  /* line 417, ../sass/partials/mobile/_aa_responsive.scss */
+  #primary, .single #primary, .page #primary {
+    margin-left: 0;
+    margin-top: 90px;
+  }
+
+  /* line 418, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar .widget {
+    float: left;
+    margin-top: -20px;
+  }
+
+  /* line 422, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar .widget-title {
+    display: none;
+  }
+
+  /* line 423, ../sass/partials/mobile/_aa_responsive.scss */
+  #filter {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    float: left;
+  }
+
+  /* line 429, ../sass/partials/mobile/_aa_responsive.scss */
+  #filter li {
+    display: block;
+    float: left;
+    padding: 2px 5px;
+  }
+
+  /* dynamic portrait / landscape class switching
+     provided by /public/js/iOSfixedPosition.js */
+}
+/*  iOS Media Queries */
+/* iPhone */
+/* iPad */
+/* iPad portrait */
+/* ---------------------------------------------- iPhone -------------------------------------- */
+/* iPhone v(4,4S) portrait */
+/* END iPhone v(4,4S) portrait */
+/* iPhone v(4/4S) landscape */
+/* END iPhone v(4/4S) landscape */
+/* iPhone v(*) portrait */
+@media all and (max-device-width: 480px) and (orientation: portrait) {
+  		/*#content {
+    		padding-left: 18px;
+  			padding-right: 18px;
+  		}*/
+}
+/* END iPhone v(*) portrait */
+/* iPhone v(*) landscape */
+@media all and (max-device-width: 480px) and (orientation: landscape) {
+  /* line 557, ../sass/partials/mobile/_aa_responsive.scss */
+  #content {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+
+  /* line 561, ../sass/partials/mobile/_aa_responsive.scss */
+  .single #content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* line 566, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar {
+    padding-left: 98px;
+  }
+
+  /* line 569, ../sass/partials/mobile/_aa_responsive.scss */
+  .single #sidebar {
+    padding-left: 18px;
+  }
+
+  /* line 571, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar #logo {
+    margin-left: 40px;
+  }
+
+  /* line 574, ../sass/partials/mobile/_aa_responsive.scss */
+  .single #sidebar #logo {
+    margin-left: 18px;
+  }
+}
+/* END iPhone v(*) landscape */
+/* ---------------------------------------------- iPad -------------------------------------- */
+/* iPad portrait */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* line 583, ../sass/partials/mobile/_aa_responsive.scss */
+  #content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* line 587, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar {
+    padding-left: 18px;
+  }
+
+  /* line 588, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar #logo {
+    margin-left: 18px;
+  }
+}
+/* END iPad portrait */
+/* iPad landscape */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* line 595, ../sass/partials/mobile/_aa_responsive.scss */
+  #content {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+
+  /* line 599, ../sass/partials/mobile/_aa_responsive.scss */
+  .single #content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* line 604, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar {
+    padding-left: 98px;
+  }
+
+  /* line 607, ../sass/partials/mobile/_aa_responsive.scss */
+  .single #sidebar {
+    padding-left: 18px;
+  }
+
+  /* line 609, ../sass/partials/mobile/_aa_responsive.scss */
+  #sidebar #logo {
+    margin-left: 40px;
+  }
+
+  /* line 612, ../sass/partials/mobile/_aa_responsive.scss */
+  .single #sidebar #logo {
+    margin-left: 18px;
+  }
+}
+/* END iPad landscape */
 /*
  * Bootstrap v2.0.1
  *
@@ -3596,6 +4097,11 @@ input[type="submit"].btn.small {
   text-decoration: none;
 }
 /* line 58, ../sass/partials/bootstrap/_navbar.scss */
+.navbar h1 {
+  margin-bottom: 0;
+  line-height: 1;
+}
+/* line 59, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .brand {
   float: left;
   display: block;
@@ -3604,28 +4110,28 @@ input[type="submit"].btn.small {
   line-height: 1;
   color: white;
 }
-/* line 69, ../sass/partials/bootstrap/_navbar.scss */
+/* line 70, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .navbar-text {
   margin-bottom: 0;
   line-height: 40px;
   color: #999999;
 }
-/* line 73, ../sass/partials/bootstrap/_navbar.scss */
+/* line 74, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .navbar-text a:hover {
   color: white;
   background-color: transparent;
 }
-/* line 80, ../sass/partials/bootstrap/_navbar.scss */
+/* line 81, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .btn,
 .navbar .btn-group {
   margin-top: 5px;
 }
-/* line 83, ../sass/partials/bootstrap/_navbar.scss */
+/* line 84, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .btn-group .btn {
   margin-top: 0;
 }
 
-/* line 89, ../sass/partials/bootstrap/_navbar.scss */
+/* line 90, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-form {
   margin-bottom: 0;
   *zoom: 1;
@@ -3639,44 +4145,44 @@ input[type="submit"].btn.small {
 .navbar-form:after {
   clear: both;
 }
-/* line 93, ../sass/partials/bootstrap/_navbar.scss */
+/* line 94, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-form input,
 .navbar-form select {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 0;
 }
-/* line 99, ../sass/partials/bootstrap/_navbar.scss */
+/* line 100, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-form .radio,
 .navbar-form .checkbox {
   margin-top: 5px;
 }
-/* line 104, ../sass/partials/bootstrap/_navbar.scss */
+/* line 105, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-form input[type="image"],
 .navbar-form input[type="checkbox"],
 .navbar-form input[type="radio"] {
   margin-top: 3px;
 }
-/* line 108, ../sass/partials/bootstrap/_navbar.scss */
+/* line 109, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-form .input-append,
 .navbar-form .input-prepend {
   margin-top: 6px;
   white-space: nowrap;
 }
-/* line 111, ../sass/partials/bootstrap/_navbar.scss */
+/* line 112, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-form .input-append input,
 .navbar-form .input-prepend input {
   margin-top: 0;
 }
 
-/* line 118, ../sass/partials/bootstrap/_navbar.scss */
+/* line 119, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search {
   position: relative;
   float: left;
   margin-top: 6px;
   margin-bottom: 0;
 }
-/* line 123, ../sass/partials/bootstrap/_navbar.scss */
+/* line 124, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search .search-query {
   padding: 4px 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3705,13 +4211,13 @@ input[type="submit"].btn.small {
 .navbar-search .search-query ::-webkit-input-placeholder {
   color: #eeeeee;
 }
-/* line 139, ../sass/partials/bootstrap/_navbar.scss */
+/* line 140, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search .search-query:hover {
   color: white;
   background-color: #999999;
   background-color: rgba(255, 255, 255, 0.5);
 }
-/* line 146, ../sass/partials/bootstrap/_navbar.scss */
+/* line 147, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search .search-query:focus, .navbar-search .search-query.focused {
   padding: 5px 10px;
   color: #333333;
@@ -3725,7 +4231,7 @@ input[type="submit"].btn.small {
   outline: 0;
 }
 
-/* line 162, ../sass/partials/bootstrap/_navbar.scss */
+/* line 163, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-fixed-top {
   position: fixed;
   top: 0;
@@ -3734,7 +4240,7 @@ input[type="submit"].btn.small {
   z-index: 1030;
 }
 
-/* line 169, ../sass/partials/bootstrap/_navbar.scss */
+/* line 170, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-fixed-top .navbar-inner {
   padding-left: 0;
   padding-right: 0;
@@ -3746,7 +4252,7 @@ input[type="submit"].btn.small {
   border-radius: 0;
 }
 
-/* line 179, ../sass/partials/bootstrap/_navbar.scss */
+/* line 180, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav {
   position: relative;
   left: 0;
@@ -3755,18 +4261,18 @@ input[type="submit"].btn.small {
   margin: 0 10px 0 0;
 }
 
-/* line 186, ../sass/partials/bootstrap/_navbar.scss */
+/* line 187, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right {
   float: right;
 }
 
-/* line 189, ../sass/partials/bootstrap/_navbar.scss */
+/* line 190, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav > li {
   display: block;
   float: left;
 }
 
-/* line 195, ../sass/partials/bootstrap/_navbar.scss */
+/* line 196, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav > li > a {
   float: none;
   padding: 10px 10px 11px;
@@ -3776,14 +4282,14 @@ input[type="submit"].btn.small {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 204, ../sass/partials/bootstrap/_navbar.scss */
+/* line 205, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav > li > a:hover {
   background-color: black;
   color: white !important;
   text-decoration: none;
 }
 
-/* line 212, ../sass/partials/bootstrap/_navbar.scss */
+/* line 213, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover {
   color: white;
@@ -3791,7 +4297,7 @@ input[type="submit"].btn.small {
   background-color: black;
 }
 
-/* line 220, ../sass/partials/bootstrap/_navbar.scss */
+/* line 221, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   width: 1px;
@@ -3801,13 +4307,13 @@ input[type="submit"].btn.small {
   border-right: 1px solid #333333;
 }
 
-/* line 230, ../sass/partials/bootstrap/_navbar.scss */
+/* line 231, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right {
   margin-left: 10px;
   margin-right: 0;
 }
 
-/* line 241, ../sass/partials/bootstrap/_navbar.scss */
+/* line 242, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu {
   margin-top: 1px;
   -moz-border-radius-bottomleft: 4px;
@@ -3823,7 +4329,7 @@ input[type="submit"].btn.small {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 246, ../sass/partials/bootstrap/_navbar.scss */
+/* line 247, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu:before {
   content: '';
   display: inline-block;
@@ -3835,7 +4341,7 @@ input[type="submit"].btn.small {
   top: -7px;
   left: 9px;
 }
-/* line 257, ../sass/partials/bootstrap/_navbar.scss */
+/* line 258, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu:after {
   content: '';
   display: inline-block;
@@ -3847,29 +4353,29 @@ input[type="submit"].btn.small {
   left: 10px;
 }
 
-/* line 275, ../sass/partials/bootstrap/_navbar.scss */
+/* line 276, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle {
   color: #999999;
 }
-/* line 279, ../sass/partials/bootstrap/_navbar.scss */
+/* line 280, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle .caret {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
   opacity: 100;
   border-top-color: #595959;
 }
-/* line 287, ../sass/partials/bootstrap/_navbar.scss */
+/* line 288, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle:hover {
   color: white;
 }
-/* line 290, ../sass/partials/bootstrap/_navbar.scss */
+/* line 291, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle:hover .caret {
   border-top-color: #d9d9d9;
 }
-/* line 301, ../sass/partials/bootstrap/_navbar.scss */
+/* line 302, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle {
   color: #cccccc;
 }
-/* line 305, ../sass/partials/bootstrap/_navbar.scss */
+/* line 306, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle .caret {
   border-top-color: #595959;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
@@ -3880,26 +4386,26 @@ input[type="submit"].btn.small {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 313, ../sass/partials/bootstrap/_navbar.scss */
+/* line 314, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle:hover {
   color: white;
 }
-/* line 316, ../sass/partials/bootstrap/_navbar.scss */
+/* line 317, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle:hover .caret {
   border-top-color: #d9d9d9;
 }
 
-/* line 330, ../sass/partials/bootstrap/_navbar.scss */
+/* line 331, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu {
   left: auto;
   right: 0;
 }
-/* line 333, ../sass/partials/bootstrap/_navbar.scss */
+/* line 334, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:before {
   left: auto;
   right: 12px;
 }
-/* line 337, ../sass/partials/bootstrap/_navbar.scss */
+/* line 338, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:after {
   left: auto;
   right: 13px;
@@ -5378,68 +5884,62 @@ a.thumbnail:hover {
   }
 }
 @media (max-width: 979px) {
-  /* line 179, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 177, ../sass/partials/bootstrap/_responsive.scss */
   body {
     padding-top: 0;
   }
 
-  /* line 183, ../sass/partials/bootstrap/_responsive.scss */
-  .navbar-fixed-top {
-    position: static;
-    margin-bottom: 18px;
-  }
-
-  /* line 187, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 180, ../sass/partials/bootstrap/_responsive.scss */
   .navbar-fixed-top .navbar-inner {
     padding: 5px;
   }
 
-  /* line 190, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 183, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .container {
     width: auto;
     padding: 0;
   }
 
-  /* line 195, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 188, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .brand {
     padding-left: 10px;
     padding-right: 10px;
     margin: 0 0 0 -5px;
   }
 
-  /* line 201, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 194, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav-collapse {
     clear: left;
   }
 
-  /* line 205, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 198, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav {
     float: none;
     margin: 0 0 9px;
   }
 
-  /* line 209, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 202, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav > li {
     float: none;
   }
 
-  /* line 212, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 205, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav > li > a {
     margin-bottom: 2px;
   }
 
-  /* line 215, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 208, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav > .divider-vertical {
     display: none;
   }
 
-  /* line 218, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 211, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav .nav-header {
     color: #999999;
     text-shadow: none;
   }
 
-  /* line 224, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 217, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav > li > a,
   .navbar .dropdown-menu a {
     padding: 6px 15px;
@@ -5453,18 +5953,18 @@ a.thumbnail:hover {
     border-radius: 3px;
   }
 
-  /* line 230, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 223, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .dropdown-menu li + li a {
     margin-bottom: 2px;
   }
 
-  /* line 234, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 227, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav > li > a:hover,
   .navbar .dropdown-menu a:hover {
     background-color: #222222;
   }
 
-  /* line 238, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 231, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .dropdown-menu {
     position: static;
     top: auto;
@@ -5487,7 +5987,7 @@ a.thumbnail:hover {
     box-shadow: none;
   }
 
-  /* line 255, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 248, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav .dropdown > .dropdown-toggle .caret {
     -moz-transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
@@ -5495,7 +5995,7 @@ a.thumbnail:hover {
     -ms-transform: rotate(270deg);
     transform: rotate(270deg);
   }
-  /* line 256, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 249, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav .dropdown.open > .dropdown-toggle .caret {
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
@@ -5504,18 +6004,18 @@ a.thumbnail:hover {
     transform: rotate(360deg);
   }
 
-  /* line 261, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 254, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .dropdown-menu:before,
   .navbar .dropdown-menu:after {
     display: none;
   }
 
-  /* line 264, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 257, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .dropdown-menu .divider {
     display: none;
   }
 
-  /* line 269, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 262, ../sass/partials/bootstrap/_responsive.scss */
   .navbar-form,
   .navbar-search {
     float: none;
@@ -5529,31 +6029,31 @@ a.thumbnail:hover {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 279, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 272, ../sass/partials/bootstrap/_responsive.scss */
   .navbar .nav.pull-right {
     float: none;
     margin-left: 0;
   }
 
-  /* line 284, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 277, ../sass/partials/bootstrap/_responsive.scss */
   .navbar-static .navbar-inner {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  /* line 289, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 282, ../sass/partials/bootstrap/_responsive.scss */
   .btn-navbar {
     display: block;
   }
 
-  /* line 294, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 287, ../sass/partials/bootstrap/_responsive.scss */
   .nav-collapse {
     overflow: hidden;
     height: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 306, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 299, ../sass/partials/bootstrap/_responsive.scss */
   .nav-collapse.collapse {
     height: auto !important;
   }
@@ -5845,511 +6345,20 @@ a.thumbnail:hover {
     width: 1160px;
   }
 
-  /* line 328, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 321, ../sass/partials/bootstrap/_responsive.scss */
   .thumbnails {
     margin-left: -30px;
   }
 
-  /* line 331, ../sass/partials/bootstrap/_responsive.scss */
+  /* line 324, ../sass/partials/bootstrap/_responsive.scss */
   .thumbnails > li {
     margin-left: 30px;
   }
 }
-/* line 19, ../sass/partials/mobile/_aa_responsive.scss */
-#container, #content, #primary, #masonry, .masoned {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  float: left;
-  list-style: none;
-}
-
-/* line 29, ../sass/partials/mobile/_aa_responsive.scss */
-#container {
-  top: 80px;
-}
-
-/* line 33, ../sass/partials/mobile/_aa_responsive.scss */
-#content {
-  padding: 40px 0 0 0;
-}
-
-/* line 37, ../sass/partials/mobile/_aa_responsive.scss */
-#sidebar {
-  position: fixed;
-  z-index: 500;
-  left: 0;
-  margin: 21px 0 0 0;
-  width: 190px;
-}
-/* line 44, ../sass/partials/mobile/_aa_responsive.scss */
-.chrome #sidebar, .safari #sidebar {
-  margin-top: 46px;
-}
-/* line 45, ../sass/partials/mobile/_aa_responsive.scss */
-#sidebar .widget {
-  position: relative;
-  width: 170px;
-  left: 20px;
-  top: -6px;
-}
-/* line 52, ../sass/partials/mobile/_aa_responsive.scss */
-#sidebar .entry-meta {
-  padding: 5px 15px;
-}
-/* line 55, ../sass/partials/mobile/_aa_responsive.scss */
-#sidebar #logo {
-  margin-left: 0;
-}
-/* line 58, ../sass/partials/mobile/_aa_responsive.scss */
-#sidebar #logo h1 {
-  display: block;
-  width: auto;
-  font-size: 11px;
-  text-align: center;
-  text-indent: 18px;
-}
-
-/* line 68, ../sass/partials/mobile/_aa_responsive.scss */
-#primary {
-  padding: 0 40px 0 0;
-  left: 205px;
-}
-/* line 72, ../sass/partials/mobile/_aa_responsive.scss */
-.page-template-template-full-width-php #primary {
-  float: none;
-}
-/* line 74, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .breadcrumb {
-  height: 2.3em;
-  margin: 0 0 22px 25px;
-}
-/* line 78, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .breadcrumb, #primary .breadcrumb li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  float: left;
-}
-/* line 84, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .breadcrumb li {
-  padding: 0 .5em 0 0;
-}
-/* line 86, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .breadcrumb li:first-child {
-  padding-left: 0;
-}
-/* line 88, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .breadcrumb li a {
-  display: block;
-  padding: 0 0 0 0;
-}
-/* line 91, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .breadcrumb li a:after {
-  color: #abafbf;
-  font-family: "FontAwesome";
-  content: "\f054";
-  margin-left: .5em;
-  text-decoration: none !important;
-}
-/* line 102, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .masoned {
-  width: 100%;
-}
-/* line 105, ../sass/partials/mobile/_aa_responsive.scss */
-#primary .masoned article, #primary .masoned .hentry {
-  min-width: 230px;
-  min-height: 254px;
-  margin: 0 0 20px 25px;
-  padding: 0;
-}
-
-/* line 116, ../sass/partials/mobile/_aa_responsive.scss */
-.single {
-  position: relative;
-}
-/* line 119, ../sass/partials/mobile/_aa_responsive.scss */
-.single #content, .single #primary {
-  padding: 0;
-}
-/* line 121, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary {
-  /* no left sidebar on .single pages */
-  left: 0;
-}
-/* line 130, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary > header, .single #primary > .header,
-.single #primary .slider, .single #primary #single-sidebar {
-  padding: 0 40px;
-}
-/* line 133, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider {
-  padding-right: 20px;
-}
-/* line 136, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary #single-sidebar {
-  padding-left: 20px;
-}
-/* line 140, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary > header, .single #primary > .header {
-  width: auto;
-  padding-top: 20px;
-  height: 40px;
-  line-height: 40px;
-  position: absolute;
-  display: none;
-}
-/* line 147, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary > header nav, .single #primary > header .nav, .single #primary > .header nav, .single #primary > .header .nav {
-  float: left;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-/* line 155, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary article, .single #primary .hentry {
-  width: 100%;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  float: left;
-  position: relative;
-}
-/* line 164, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider, .single #primary .entry-content, .single #primary #single-sidebar {
-  float: left;
-  position: relative;
-  padding-top: 100px;
-}
-/* line 173, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider, .single #primary .slider .slides_container {
-  width: 550px;
-  min-height: 300px;
-}
-/* line 177, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider .caption, .single #primary .slider .pagination {
-  position: absolute;
-  top: -40px;
-  margin: 0;
-  padding: 0;
-}
-/* line 183, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider .caption, .single #primary .slider .pagination li a {
-  font-size: 14px;
-  font-weight: bold;
-}
-/* line 187, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider .caption {
-  left: 0;
-}
-/* line 190, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider .pagination {
-  right: 20px;
-}
-/* line 192, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .slider .pagination li a {
-  display: block;
-  padding: 2px 8px 2px 8px;
-  text-align: center;
-}
-/* line 201, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary .entry-content {
-  display: none;
-}
-/* line 206, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary #single-sidebar {
-  z-index: 99;
-  margin: 0;
-  width: auto;
-  top: 0;
-  left: 0;
-  background: rgba(120, 120, 120, 0.1);
-  -moz-box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
-  -webkit-box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
-  -o-box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
-  box-shadow: inset 3px 0 8px 0 rgba(120, 120, 120, 0.6);
-}
-/* line 219, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary #single-sidebar header h1, .single #primary #single-sidebar header .h1, .single #primary #single-sidebar .header h1, .single #primary #single-sidebar .header .h1 {
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: -0.1ex;
-  line-height: 1.1;
-  margin-bottom: 0.222em;
-}
-/* line 229, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary #single-sidebar ul {
-  margin: 0;
-  padding: 0;
-}
-/* line 233, ../sass/partials/mobile/_aa_responsive.scss */
-.single #primary #single-sidebar .seperator {
-  margin: 10px 0;
-}
-/* line 244, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024 .single #primary #single-sidebar h1, .lt-1024 .single #primary #single-sidebar .h1, .lt-1024.w-1000 .single #primary #single-sidebar h1, .lt-1024.w-1000 .single #primary #single-sidebar .h1, .lt-1024.w-900 .single #primary #single-sidebar h1, .lt-1024.w-900 .single #primary #single-sidebar .h1 {
-  font-size: 1.8em;
-  margin-bottom: 0.2em;
-}
-/* line 249, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024 .single #primary #single-sidebar .caption, .lt-1024 .single #primary #single-sidebar .link, .lt-1024.w-1000 .single #primary #single-sidebar .caption, .lt-1024.w-1000 .single #primary #single-sidebar .link, .lt-1024.w-900 .single #primary #single-sidebar .caption, .lt-1024.w-900 .single #primary #single-sidebar .link {
-  font-size: .9em;
-  line-height: 1.3em !important;
-}
-/* line 250, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024 .single #primary #single-sidebar .seperator, .lt-1024.w-1000 .single #primary #single-sidebar .seperator, .lt-1024.w-900 .single #primary #single-sidebar .seperator {
-  display: none;
-}
-/* line 253, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024.w-800 .single #primary #single-sidebar, .lt-768 .single #primary #single-sidebar {
-  clear: left;
-  top: 0;
-  left: 0;
-  padding: 20px 15px 0 40px;
-  max-width: 550px !important;
-  width: auto !important;
-}
-/* line 263, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024.w-800 .single #primary #single-sidebar h1, .lt-1024.w-800 .single #primary #single-sidebar .h1, .lt-768 .single #primary #single-sidebar h1, .lt-768 .single #primary #single-sidebar .h1 {
-  font-size: 1.6em;
-  margin-bottom: 0.178em;
-}
-/* line 270, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024.w-800 .single #primary #single-sidebar .seperator, .lt-768 .single #primary #single-sidebar .seperator {
-  display: none;
-}
-/* line 271, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024.w-800 .single #primary #single-sidebar header, .lt-1024.w-800 .single #primary #single-sidebar .header, .lt-1024.w-800 .single #primary #single-sidebar footer, .lt-1024.w-800 .single #primary #single-sidebar .footer, .lt-768 .single #primary #single-sidebar header, .lt-768 .single #primary #single-sidebar .header, .lt-768 .single #primary #single-sidebar footer, .lt-768 .single #primary #single-sidebar .footer {
-  float: left;
-}
-/* line 274, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024.w-800 .single #primary #single-sidebar header, .lt-1024.w-800 .single #primary #single-sidebar .header, .lt-768 .single #primary #single-sidebar header, .lt-768 .single #primary #single-sidebar .header {
-  width: 53%;
-  padding-right: 7%;
-  border-right: 1px solid rgba(46, 49, 61, 0.2);
-}
-/* line 279, ../sass/partials/mobile/_aa_responsive.scss */
-.lt-1024.w-800 .single #primary #single-sidebar footer, .lt-1024.w-800 .single #primary #single-sidebar .footer, .lt-768 .single #primary #single-sidebar footer, .lt-768 .single #primary #single-sidebar .footer {
-  width: 38%;
-  padding-left: 1.9%;
-  border-left: 1px solid rgba(255, 255, 255, 0.9);
-}
-
-/* END @media (max-width: 480px) */
-/* END @media (max-width: 768px) */
-/* @media (min-width: 768px) and (max-width: 980px) */
-/* END Large desktop */
-@media (max-width: 979px) {
-  /* dynamic portrait / landscape class switching
-     provided by /public/js/iOSfixedPosition.js */
-}
-@media (max-width: 480px) {
-  /* GLOBALLY HIDE FROM MOBILE */
-  /* line 355, ../sass/partials/mobile/_aa_responsive.scss */
-  #topNav, #footer .copyright {
-    display: none;
-  }
-
-  /* fix any static widths */
-  /* line 357, ../sass/partials/mobile/_aa_responsive.scss */
-  #masthead, #container, #content, #footer {
-    min-width: auto;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* line 363, ../sass/partials/mobile/_aa_responsive.scss */
-  #footer {
-    background-image: none;
-  }
-
-  /* line 367, ../sass/partials/mobile/_aa_responsive.scss */
-  .aafolio #footerNav {
-    right: auto;
-    left: 0;
-  }
-
-  /* line 371, ../sass/partials/mobile/_aa_responsive.scss */
-  #footer .nav ul {
-    float: left !important;
-    width: 100% !important;
-  }
-
-  /* line 375, ../sass/partials/mobile/_aa_responsive.scss */
-  #footer .nav a {
-    padding: 7px 18px 3px 18px;
-  }
-
-  /* use the sidebar as our main nav */
-  /* line 379, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar {
-    position: absolute;
-    top: 0;
-    margin-top: 0 !important;
-    width: 100%;
-  }
-
-  /* line 385, ../sass/partials/mobile/_aa_responsive.scss */
-  .tax-skill-type #primary, .page.page-template-template-portfolio-php #primary {
-    margin-left: 0;
-  }
-
-  /*#logo a img { visibility: hidden; }  will be revealed via .js */
-  /* line 389, ../sass/partials/mobile/_aa_responsive.scss */
-  #container {
-    top: 0;
-  }
-
-  /* line 391, ../sass/partials/mobile/_aa_responsive.scss */
-  .archive #primary, .page.page-template-template-portfolio-php #primary,
-  .archive .hentry, .page.page-template-template-portfolio-php .hentry {
-    margin-left: 0 !important;
-  }
-
-  /* line 392, ../sass/partials/mobile/_aa_responsive.scss */
-  #primary, .single #primary, .page #primary {
-    margin-left: 0;
-    margin-top: 90px;
-  }
-
-  /* line 393, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar .widget {
-    float: left;
-    margin-top: -20px;
-  }
-
-  /* line 397, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar .widget-title {
-    display: none;
-  }
-
-  /* line 398, ../sass/partials/mobile/_aa_responsive.scss */
-  #filter {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100%;
-    float: left;
-  }
-
-  /* line 404, ../sass/partials/mobile/_aa_responsive.scss */
-  #filter li {
-    display: block;
-    float: left;
-    padding: 2px 5px;
-  }
-
-  /* dynamic portrait / landscape class switching
-     provided by /public/js/iOSfixedPosition.js */
-}
-/*  iOS Media Queries */
-/* iPhone */
-/* iPad */
-/* iPad portrait */
-/* ---------------------------------------------- iPhone -------------------------------------- */
-/* iPhone v(4,4S) portrait */
-/* END iPhone v(4,4S) portrait */
-/* iPhone v(4/4S) landscape */
-/* END iPhone v(4/4S) landscape */
-/* iPhone v(*) portrait */
-@media all and (max-device-width: 480px) and (orientation: portrait) {
-  		/*#content {
-    		padding-left: 18px;
-  			padding-right: 18px;
-  		}*/
-}
-/* END iPhone v(*) portrait */
-/* iPhone v(*) landscape */
-@media all and (max-device-width: 480px) and (orientation: landscape) {
-  /* line 532, ../sass/partials/mobile/_aa_responsive.scss */
-  #content {
-    padding-left: 98px;
-    padding-right: 98px;
-  }
-
-  /* line 536, ../sass/partials/mobile/_aa_responsive.scss */
-  .single #content {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  /* line 541, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar {
-    padding-left: 98px;
-  }
-
-  /* line 544, ../sass/partials/mobile/_aa_responsive.scss */
-  .single #sidebar {
-    padding-left: 18px;
-  }
-
-  /* line 546, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar #logo {
-    margin-left: 40px;
-  }
-
-  /* line 549, ../sass/partials/mobile/_aa_responsive.scss */
-  .single #sidebar #logo {
-    margin-left: 18px;
-  }
-}
-/* END iPhone v(*) landscape */
-/* ---------------------------------------------- iPad -------------------------------------- */
-/* iPad portrait */
-@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* line 558, ../sass/partials/mobile/_aa_responsive.scss */
-  #content {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  /* line 562, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar {
-    padding-left: 18px;
-  }
-
-  /* line 563, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar #logo {
-    margin-left: 18px;
-  }
-}
-/* END iPad portrait */
-/* iPad landscape */
-@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  /* line 570, ../sass/partials/mobile/_aa_responsive.scss */
-  #content {
-    padding-left: 98px;
-    padding-right: 98px;
-  }
-
-  /* line 574, ../sass/partials/mobile/_aa_responsive.scss */
-  .single #content {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  /* line 579, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar {
-    padding-left: 98px;
-  }
-
-  /* line 582, ../sass/partials/mobile/_aa_responsive.scss */
-  .single #sidebar {
-    padding-left: 18px;
-  }
-
-  /* line 584, ../sass/partials/mobile/_aa_responsive.scss */
-  #sidebar #logo {
-    margin-left: 40px;
-  }
-
-  /* line 587, ../sass/partials/mobile/_aa_responsive.scss */
-  .single #sidebar #logo {
-    margin-left: 18px;
-  }
-}
-/* END iPad landscape */
+/* MOBILE DEVICES ONLY ----------- */
+/* iPads (portrait and landscape) ----------- */
+/* Smartphones (portrait and landscape) ----------- */
+/* iPhone 4+ ----------- */
 /*------------------------ THEME ------------------------*/
 /*-----------------------------------------------------------------------------------
 
@@ -9303,7 +9312,7 @@ textarea,
 
 /*.hentry.hover { background-color: white; } */
 /* line 2045, ../sass/partials/_theme-wp-gridlocked.scss */
-.masoned .hentry {
+#masonry-portfolio .hentry {
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
@@ -9311,7 +9320,7 @@ textarea,
 }
 
 /* line 2051, ../sass/partials/_theme-wp-gridlocked.scss */
-.masoned .hentry .entry-meta {
+#masonry-portfolio .hentry .entry-meta {
   border-top: 1px solid rgba(100, 100, 100, 0.1);
 }
 
@@ -9682,13 +9691,13 @@ body, body * {
   z-index: 900;
   position: fixed;
   bottom: 0;
-  height: 35px;
+  height: 0;
   font-size: 11px;
 }
 /* line 96, ../sass/partials/_theme-aa-template.scss */
 #footer #copyright {
   color: #abafbf;
-  line-height: 35px;
+  line-height: 0;
 }
 
 /* line 104, ../sass/partials/_theme-aa-template.scss */
@@ -10934,7 +10943,7 @@ body, body * {
   display: none !important;
 }
 
-/* line 37, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .archive h1 {
   display: none !important;
 }

@@ -1,7 +1,7 @@
 ﻿//------ ALL DIMENSIONS
 // global
-$aa_mastHeight: 80px;
-$aa_footHeight: 35px;
+$aa_mastHeight: 50px;
+$aa_footHeight: 0;
 	// portfolio
 	$primaryHPad: 40px;
 	$primaryVPad: 40px;
@@ -16,13 +16,14 @@ $aa_footHeight: 35px;
 	// dynamic single page media sizes
 	$folioImgWidth: $aa_media_widthMed;
 
-#container, #content, #primary, #masonry, .masoned {
+
+#container, #content, #primary, #masonry-portfolio {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	width: 100%;
-	height: 100%;
-	float: left;
+	//width: 100%;
+	//height: 100%;
+	//float: left;
 	list-style: none;
 }
 
@@ -31,7 +32,7 @@ $aa_footHeight: 35px;
 } // END #container
 
 #content {
-	padding: $primaryVPad 0 0 0; // vertical spacing
+	//padding: $primaryVPad 0 0 0; // vertical spacing
 } // END #content
 
 #sidebar {
@@ -66,8 +67,8 @@ $aa_footHeight: 35px;
 } // END #sidebar
 
 #primary {
-	padding: 0 $primaryHPad 0 0;
-	left: ($sidebarWidth + ($primaryHPad - $masonryHPad));
+	//padding: 0 $primaryHPad 0 0;
+	//left: ($sidebarWidth + ($primaryHPad - $masonryHPad));
 
 	.page-template-template-full-width-php & { float: none; }
 
@@ -99,11 +100,35 @@ $aa_footHeight: 35px;
 		}
 	} // END .breadcrumb
 
-	.masoned {
-		width: 100%;
 
-		article, .hentry {
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+	.masonry {
+		//width: 100%;
+
+		.masonry-brick {
 			@include min-width($aa_media_widthThumb);
+			max-width: $aa_media_widthThumb;
 			@include min-height($aa_media_heightThumb + 84);
 			margin: 0 0 $masonryVPad $masonryHPad;
 			padding: 0;
@@ -587,4 +612,3 @@ $aa_footHeight: 35px;
 			.single #sidebar #logo { margin-left: 18px; }
 
 	} /* END iPad landscape */
-

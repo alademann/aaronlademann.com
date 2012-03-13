@@ -1,5 +1,5 @@
 <!--BEGIN #sidebar .aside-->
-<aside id="sidebar" class="aside">
+<aside id="sidebar" class="aside span3">
 	<?php if(!is_single()) : ?>
 	<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Portfolio Sidebar') ) :?> 
   <section class="widget">

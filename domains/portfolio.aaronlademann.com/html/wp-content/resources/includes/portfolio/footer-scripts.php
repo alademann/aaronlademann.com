@@ -6,6 +6,7 @@
 
 			head.js(
 				{ bootstrapcollapse: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-collapse.js" }
+				,{ masonry: "<?php echo public_uri(); ?>/js/jquery/jquery.masonry.min.js" }
 				,{ bootstrapbutton: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-button.js" }
 				,{ bootstrapdropdown: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-dropdown.js" }
 				,{ jqueryuicustom: "<?php echo public_uri(); ?>/js/jquery/jquery-ui-1.8.5.custom.min.js" }
@@ -62,14 +63,15 @@
 <?php } ?>
 <?php if(!is_singular()) { ?>
 <script id="notsingles">
-	head.js(
-			{ slidesjs: "<?php echo public_uri(); ?>/js/jquery/slides.min.jquery.js" }
-		,{ masonry: "<?php echo public_uri(); ?>/js/jquery/jquery.masonry.min.js" }
-		,{ fancybox: "<?php echo public_uri(); ?>/js/jquery/jquery.fancybox-1.3.4.pack.js" }
-		,{ jqueryeasing: "<?php echo public_uri(); ?>/js/jquery/jquery.easing.1.3.js" }
-		,{ jPlayer: "<?php echo public_uri(); ?>/js/jquery/jquery.jplayer.min.js" }
-	, function() {
-		// all done
+	head.ready("jquery", function(){
+		head.js(
+				{ slidesjs: "<?php echo public_uri(); ?>/js/jquery/slides.min.jquery.js" }
+			,{ fancybox: "<?php echo public_uri(); ?>/js/jquery/jquery.fancybox-1.3.4.pack.js" }
+			,{ jqueryeasing: "<?php echo public_uri(); ?>/js/jquery/jquery.easing.1.3.js" }
+			,{ jPlayer: "<?php echo public_uri(); ?>/js/jquery/jquery.jplayer.min.js" }
+		, function() {
+			// all done
+		});
 	});
 </script>
 <?php } ?>
