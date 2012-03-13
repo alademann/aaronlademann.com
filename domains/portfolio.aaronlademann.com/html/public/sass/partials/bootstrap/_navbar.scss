@@ -196,14 +196,14 @@
   float: none;
   padding: 10px 10px 11px;
   line-height: 19px;
-  color: $navbarLinkColor;
+  color: $navbarLinkColor !important;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
 // Hover
 .navbar .nav > li > a:hover {
   background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
-  color: $navbarLinkColorHover;
+  color: $navbarLinkColorHover !important;
   text-decoration: none;
 }
 
@@ -212,8 +212,8 @@
 .navbar .nav .active > a:hover {
   color: $navbarLinkColorHover;
   text-decoration: none;
-  background-color: $navbarBackground;
-  background-color: rgba(0,0,0,.5);
+  background-color: $navbarLinkBackgroundHover;
+  //background-color: rgba(0,0,0,.5);
 }
 
 // Dividers (basically a vertical hr)
@@ -240,7 +240,9 @@
 // Menu position and menu carets
 .navbar .dropdown-menu {
   margin-top: 1px;
-  @include border-radius(4px);
+	@include border-bottom-left-radius(4px);
+	@include border-bottom-right-radius(4px);
+  //@include border-radius(4px);
   &:before {
     content: '';
     display: inline-block;
@@ -265,9 +267,15 @@
 }
 
 // Dropdown toggle caret
-.navbar .nav .dropdown-toggle .caret,
-.navbar .nav .open.dropdown .caret {
-  border-top-color: $white;
+.navbar .nav .dropdown-toggle,
+.navbar .nav .open.dropdown {
+	
+	.caret {
+		border-top-color: darken($navbarLinkColor,20%);
+	}
+	&:hover .caret {
+		border-top-color: darken($navbarLinkColorHover,10%);
+	}
 }
 .navbar .nav .active .caret {
   @include opacity(100);
@@ -277,12 +285,21 @@
 .navbar .nav .open > .dropdown-toggle,
 .navbar .nav .active > .dropdown-toggle,
 .navbar .nav .open.active > .dropdown-toggle {
-  background-color: transparent;
+	color: darken($navbarLinkColorHover,10%);
+	
+	.caret {
+		border-top-color: darken($navbarLinkColorHover,20%);
+	}
+
 }
 
 // Dropdown link on hover
 .navbar .nav .active > .dropdown-toggle:hover {
-  color: $white;
+  color: $navbarLinkColorHover;
+	
+	.caret {
+		border-top-color: darken($navbarLinkColorHover,10%);			
+	}
 }
 
 // Right aligned menus need alt position

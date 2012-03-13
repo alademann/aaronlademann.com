@@ -240,7 +240,7 @@
     top: auto;
     left: auto;
     float: none;
-    display: block;
+    //display: block; this shouldn't be here in order to facilitate expand and collapse functionality.
     max-width: none;
     margin: 0 15px;
     padding: 0;

@@ -1,5 +1,31 @@
 ﻿/* TEMPLATE */
 body, body * { -webkit-font-smoothing: antialiased; }
+
+.navbar-fixed-top .brand {
+  //float: right;
+	padding: 0 5px 0 70px;
+	line-height: 36px;
+	height: 40px;
+	font-size: 20px;
+	font-family: "Helv63";
+	color: #000;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
+	text-transform: lowercase;
+	background: url("/public/images/aa-symbol_button.png") left top no-repeat;
+  //-webkit-transition: all .2s linear;
+  //-moz-transition: all .2s linear;
+  //transition: all .2s linear;
+
+	&:hover {
+		background-position: left bottom;
+		color: #ddd !important;
+		text-shadow: 0 3px 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.525);
+		text-decoration: none !important;
+	}
+
+}
+
+/*
 #masthead, #masthead #mastlogo, #footer { position: absolute; left: 0; width: 100%; }
 #masthead { 
 	@include background-image(linear-gradient($aa_darkGray, $aa_darkerGray 50%, $aa_darkestGray));		
@@ -16,9 +42,9 @@ body, body * { -webkit-font-smoothing: antialiased; }
 	}
 
 	&, #topNav, #topNav ul, #topNav li, #topNav li a { top: 0; height: $aa_mastHeight; } 
-
+*/
 	/* topNav */
-	#topNav { 
+/*	#topNav { 
 		position: absolute; 
 		width: auto; 
 		right: 0; 
@@ -53,6 +79,7 @@ body, body * { -webkit-font-smoothing: antialiased; }
 		
 	
 } // END #masthead
+*/
 
 #footer {
 	@include background-image(linear-gradient($aa_darkestGray, $aa_darkGray)); 
@@ -78,33 +105,33 @@ body, body * { -webkit-font-smoothing: antialiased; }
 	.widget-title { margin: 10px 0 4px 0; font-weight: bold; }
 	.widget-title.first { margin-top: 0; }
 
-	a, .aafolio .link { color: #08c; }
-	.link { cursor: pointer !important; }
-	a,input { outline: 0 none !important; }
-	a:link, a:visited, a:active { text-decoration: none; }
-	a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * { text-decoration: underline; color: #09f; }
+	//a, .aafolio .link { color: #08c; }
+	//.link { cursor: pointer !important; }
+	//a,input { outline: 0 none !important; }
+	//a:link, a:visited, a:active { text-decoration: none; }
+	//a:hover, .link:hover, .aafolio .link.hover, .aafolio .link.hover * { text-decoration: underline; color: #09f; }
 
-	/* top and bottom nav (global nav attr) */
-	.nav ul, .nav li, .nav li a { width: auto; }
-	.nav ul, .nav li { margin: 0; padding: 0; list-style-type: none; list-style-image: none; border: 0; outline: 0; }
-	.nav ul { overflow: hidden; float: right; }
-	.nav li { float: left; }
-	.nav li a { display: block; color: #949494; text-transform: uppercase; }
-	.nav li a:hover, .nav .current_page_item, .nav .current-menu-item a, .nav .active a { color: #fff !important; text-decoration: none; background-color: #171920 !important; }
+	///* top and bottom nav (global nav attr) */
+	//.nav ul, .nav li, .nav li a { width: auto; }
+	//.nav ul, .nav li { margin: 0; padding: 0; list-style-type: none; list-style-image: none; border: 0; outline: 0; }
+	//.nav ul { overflow: hidden; float: right; }
+	//.nav li { float: left; }
+	//.nav li a { display: block; color: #949494; text-transform: uppercase; }
+	//.nav li a:hover, .nav .current_page_item, .nav .current-menu-item a, .nav .active a { color: #fff !important; text-decoration: none; background-color: #171920 !important; }
 	
 	/* footernav */
-	#footerNav {
-	position: absolute;
-	right: 25px;
-	bottom: 0;
-	width: auto;
-	height: 35px;
-	}
-	#footerNav a { display: block; height: 25px; width: auto; padding: 7px 15px 3px 15px; }
-	.aafolio #footerNav { right: 100px; }
+	//#footerNav {
+	//position: absolute;
+	//right: 25px;
+	//bottom: 0;
+	//width: auto;
+	//height: 35px;
+	//}
+	//#footerNav a { display: block; height: 25px; width: auto; padding: 7px 15px 3px 15px; }
+	//.aafolio #footerNav { right: 100px; }
 
 	/* SUBNAV */
 
-	#topNav .subnav a { line-height: 30px; padding: 0 20px; background: 0 none; }
-	#topNav .subnav a:hover, #topNav .subnav .current-menu-item, #topNav .subnav .current-menu-item a { color: #08c !important; }
-	#topNav .subnav ul, #topNav .subnav li, #topNav .subnav ul li a { height: auto; }
+	//#topNav .subnav a { line-height: 30px; padding: 0 20px; background: 0 none; }
+	//#topNav .subnav a:hover, #topNav .subnav .current-menu-item, #topNav .subnav .current-menu-item a { color: #08c !important; }
+	//#topNav .subnav ul, #topNav .subnav li, #topNav .subnav ul li a { height: auto; }

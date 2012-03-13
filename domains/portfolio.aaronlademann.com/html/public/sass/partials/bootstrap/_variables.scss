@@ -2,8 +2,6 @@
 // Variables to customize the look and feel of Bootstrap
 // -----------------------------------------------------
 
-
-
 // GLOBAL VALUES
 // --------------------------------------------------
 
@@ -68,7 +66,7 @@ $hrBorder:              $grayLighter;
 $navbarHeight:                    40px !default;
 $navbarBackground:                $grayDarker !default;
 $navbarBackgroundHighlight:       $grayDark !default;
-$navbarLinkBackgroundHover:       transparent;
+$navbarLinkBackgroundHover:       darken($navbarBackground,50%);
 
 $navbarText:                      $grayLight !default;
 $navbarLinkColor:                 $grayLight !default;
