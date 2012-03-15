@@ -10,6 +10,7 @@ javascripts_dir = "public/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
+	output_style = :nested
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
  relative_assets = true
@@ -23,3 +24,18 @@ javascripts_dir = "public/js"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass includes/sass scss && rm -rf sass && mv scss sass
+
+module Sass::Script::Functions
+  def hex(decimal)
+    Sass::Script::String.new("%02x" % decimal)
+  end
+
+	def ie_hex_str(color)
+    assert_type color, :Color
+    alpha = (color.alpha * 255).round
+    alphastr = alpha.to_s(16).rjust(2, '0')
+    Sass::Script::String.new("##{alphastr}#{color.send(:hex_str)[1..-1]}".upcase)
+  end      
+  declare :ie_hex_str, [:color]
+
+end
