@@ -1,0 +1,83 @@
+﻿<?php 
+					
+	$post_count = 0; 
+
+	$empty = 'data-empty="'.__('No more posts available.', 'framework').'" ';
+					
+	$src = 'data-src="'.get_template_directory_uri().'/includes/get-posts.php" ';
+					
+	$offset = 'data-offset="'.get_option('posts_per_page').'" ';
+					
+	$catQ = 0;
+	$cat = '';
+	if(is_category())
+		$catQ = get_query_var('cat');
+		$cat = 'data-category="'.$catQ.'" '; 
+					
+	$authorQ = 0;
+	$author = '';
+	if(is_author())
+		$authorQ = get_query_var('author');
+		$author = 'data-author="'.$authorQ.'" '; 
+					
+	$tagQ = '';
+	$tag = '';
+	if(is_tag())
+		$tagQ = get_query_var('tag');
+		$tag = 'data-tag="'.$tagQ.'" '; 
+						
+	$dateQ = '';
+	$date = '';
+	if(is_archive())
+		$dateQ = get_query_var('monthnum');
+		$date = 'data-date="'.$dateQ.'" '; 
+						
+	$searchQ = '';
+	$search = '';
+	if(is_search())
+		$searchQ = get_query_var('s');
+		$search = 'data-search="'.$searchQ.'" '; 
+					
+	// The Query
+	$the_query = new WP_Query( array(
+			'post_type' => $postType,
+			'posts_per_page' => -1,
+			'cat' => $catQ,
+			'author' => $authorQ,
+			'tag' => $tagQ,
+			'monthnum' => $dateQ,
+			's' => $searchQ
+		)
+	);
+					
+	// The Loop
+	while ( $the_query->have_posts() ) : $the_query->the_post();
+		$post_count++;
+	endwhile;
+					
+	// Reset Post Data
+	wp_reset_postdata();
+					
+	$post_count = $post_count - get_option('posts_per_page');
+					
+	if($post_count <= 0) 
+		$post_count = 0;
+
+
+	// paginate
+  if ( get_query_var('paged') ) {
+          $paged = get_query_var('paged');
+  } elseif ( get_query_var('page') ) {
+          $paged = get_query_var('page');
+  } else {
+          $paged = 1;
+  }
+
+  query_posts( array( 'post_type' => $postType, 'posts_per_page' => get_option('posts_per_page'), 'paged' => $paged ) );
+ 
+  
+
+
+
+					
+?>

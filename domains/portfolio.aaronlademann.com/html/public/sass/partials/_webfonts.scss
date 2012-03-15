@@ -10,7 +10,25 @@
 	);
 }
 
-@mixin fontawesome(){
+@mixin helveticaNeue{
+	/* New Helvetica Web Fonts */
+	$fontname_prefix: "helveticaneueltstd";
+	$std: "helvetica-nueve/Standard/" + $fontname_prefix;
+	$cn: "helvetica-nueve/Condensed/" + $fontname_prefix;
+	$ex: "helvetica-nueve/Extended/" + $fontname_prefix;
+
+	@include webfont($std + "35-th-webfont", "Helv35");
+	@include webfont($std + "55-roman-webfont", "Helv55");
+	@include webfont($std + "65-md-webfont", "Helv65");
+	@include webfont($std + "75-bd-webfont", "Helv75");
+	@include webfont($std + "85-hv-webfont", "Helv85");
+	@include webfont($std + "95-blk-webfont", "Helv95");
+	// extended medium (for navbar .brand lettering)
+	@include webfont($ex + "63-md-ex-webfont","Helv63");
+}
+
+
+@mixin fontawesome{
 
 @include webfont("fontawesome/fontawesome-webfont","FontAwesome");
 
@@ -35,7 +53,7 @@ li[class*=" icon-"] {
     ------------------------------------------------------- */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-    font-family: FontAwesome;
+    font-family: "FontAwesome" !important;
     font-weight: normal;
     font-style: normal;
     display: inline-block;
@@ -245,8 +263,7 @@ li[class*=" icon-"] {
 
 }
 
-/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-    readers do not read off random characters that represent icons */
+
 $icon-glass: "\f000"; 
 $icon-music: "\f001"; 
 $icon-search: "\f002"; 

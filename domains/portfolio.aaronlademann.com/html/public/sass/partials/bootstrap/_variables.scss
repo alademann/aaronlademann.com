@@ -8,14 +8,19 @@
 // Links
 $linkColor:             #08c !default;
 $linkColorHover:        darken($linkColor, 15) !default;
+$likeItColor:						#f56559;
 
 // Grays
 $black:                 #000 !default;
 $grayDarker:            #222 !default;
 $grayDark:              #333 !default;
+$gray4:									#444 !default;
 $gray:                  #555 !default;
+$gray6:									#666 !default;
+$grayMedium:						#777 !default;
 $grayLight:             #999 !default;
 $grayLighter:           #eee !default;
+$almostWhite:						#fcfcfc !default;
 $white:                 #fff !default;
 
 // Accent colors

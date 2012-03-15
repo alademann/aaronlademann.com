@@ -27,7 +27,7 @@
 // Float them, remove border radius, then re-add to first and last elements
 .btn-group .btn {
   position: relative;
-  float: left;
+  @include float(left);
   margin-left: -1px;
   @include border-radius(0);
 }

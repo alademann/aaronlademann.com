@@ -23,7 +23,7 @@
 // Navbar button for toggling navbar items in responsive layouts
 .btn-navbar {
   display: none;
-  float: right;
+  @include float(right);
   padding: 7px 10px;
   margin-left: 5px;
   margin-right: 5px;
@@ -57,7 +57,7 @@
   // Website or project name
   h1 { margin-bottom: 0; line-height: 1; }
 	.brand {
-    float: left;
+    @include float(left);
     display: block;
     padding: 8px 20px 12px;
     //margin-left: -20px; // negative indent to left-align the text down the page
@@ -118,7 +118,7 @@
 // Navbar search
 .navbar-search {
   position: relative;
-  float: left;
+  @include float(left);
   margin-top: 6px;
   margin-bottom: 0;
   .search-query {
@@ -181,15 +181,15 @@
   position: relative;
   left: 0;
   display: block;
-  float: left;
+  @include float(left);
   margin: 0 10px 0 0;
 }
 .navbar .nav.pull-right {
-  float: right; // redeclare due to specificity
+  @include float(right); // redeclare due to specificity
 }
 .navbar .nav > li {
   display: block;
-  float: left;
+  @include float(left);
 }
 
 // Links

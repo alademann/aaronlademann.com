@@ -26,10 +26,11 @@
 			);
 			
 ?>
- 
+
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
-<?php
+	<?php
 	// The following determines what the post format is and shows the correct file accordingly
 	$format = get_post_format();
 	get_template_part( 'includes/'.$format );

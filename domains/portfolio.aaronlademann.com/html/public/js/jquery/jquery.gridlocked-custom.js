@@ -1,7 +1,19 @@
 var $ = jQuery.noConflict();
 var isFirstLoad = true;
 var currPage = window.location.pathname;
+
+// global vars to store the selector to prevent breakage
+$masonryWrapperClass = ".masonry";
+$masonryBoxClass = ".masonry-brick"; 
 //console.info(currPage);
+
+
+/*-----------------------------------------------------------------------------------
+
+ 	Custom JS - All front-end $
+	(GRIDLOCK THEME CUSTOMIZATIONS BY AARON LADEMANN)
+ 
+-----------------------------------------------------------------------------------*/
 
 function caption_as_url(caption) {
 	// strip whitespace
@@ -11,6 +23,10 @@ function caption_as_url(caption) {
 	return caption_as_url;
 	//console.info(caption_as_url);
 } // caption_as_url()
+
+/*-----------------------------------------------------------------------------------*/
+/*	Track Lightbox Opens
+/*-----------------------------------------------------------------------------------*/
 
 function trackLightBoxStuff(pglinks,arr) {
 
@@ -108,6 +124,10 @@ window.addEventListener('DOMNodeInserted', function(event) {
 	} // END if ($(thisLoaded).is( lightboxGalleryDiv ))
 }, false);     // end addEventListener
 
+/*-----------------------------------------------------------------------------------*/
+/*	MISC SCRIPTS (Custom)
+/*-----------------------------------------------------------------------------------*/
+
 head.ready("jquery", function() {
 
 
@@ -123,12 +143,11 @@ head.ready("jquery", function() {
 	} // END if(sidebar);
 
 	// disable right click on all portfolio images
-	$('#masonry-portfolio img, .lightbox img, .fancybox-img').live('contextmenu', function(e) {
+	$($masonryWrapperClass + ' img, .lightbox img, .fancybox-img').live('contextmenu', function(e) {
 		return false;
 	});
 
-	// make the hentry boxes have the same width as the thumbnail
-	var hentries = $("#masonry-portfolio").find(".hentry");
+	var hentries = $($masonryWrapperClass).find($masonryBoxClass);
 	$.each(hentries, function() {
 
 		//------------------------------ track "likes" in google analytics
@@ -154,37 +173,68 @@ head.ready("jquery", function() {
 
 		//------------------------------ thumbnail hover effects
 
-		var thumbnail = $(".post-thumb > a > img", this);
+		//var thumbnail = $(".post-thumb > a > img", this);
+		cssTransitions = $("html.csstransitions");
+		cssTransitions = cssTransitions.length;
+		//console.info(cssTransitions);
 
+		bindMasonryHover($(this));
+
+	}); // END .each(hentries)
+
+	function bindMasonryHover(elem) {
 		// activate a hover in / hover out function for each entry
-		$(this).hover(function() {
+		$(elem).hover(function() {
 			// hover in
 			$(this).addClass("hover");
-			//var thumbnail = $(".post-thumb > a > img", this);
-			$(this).stop(true, true).animate({
-				//backgroundColor: "#ffffff",
-				backgroundColor: "rgba(255,255,255,1.0)",
-				boxShadow: "0 0 0 rgba(0,0,0,0.2) inset"
-			}, { queue: true, duration: 600 }, function() {
-				// animation complete
+			var permalinkAnchor = $(this).find("a.permalink");
+			var permalink = permalinkAnchor.attr("href");
+			$(this).bind("click", function() {
+				window.location = permalink;
 			});
+
+			permalinkAnchor.click(function() {
+				$(elem).unbind("click");
+			});
+			//var thumbnail = $(".post-thumb > a > img", this);
+
+			if(!cssTransitions) {
+				// if css transitions arent available...
+				$(this).stop(true, true).animate({
+					backgroundColor: "rgba(255,255,255,0.9)",
+					boxShadow: "0 2px 0 rgba(255, 255, 255, 1.0)"
+				}).find("> .wellOverlay").stop(true, true).animate({
+					boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.3) inset"
+				}, { queue: true, duration: 700 }, function() {
+					// animation complete
+				});
+
+			} // end if(!Modernizr.csstransitions)
+
 
 		}, function() {
 			// hover out
 			$(this).removeClass("hover");
 			//var thumbnail = $(".post-thumb > a > img", this);
-			$(this).stop(true, true).animate({
-				//backgroundColor: "#f2f2f2",
-				backgroundColor: "rgba(242,242,242,0.5)",
-				boxShadow: "0 0 6px rgba(0,0,0,0.2) inset"
-			}, { queue: true, duration: 600 }, function() {
-				// animation complete
-			});
 
-		}
-		);
+			$(this).unbind("click");
 
-	}); // END .each(hentries)
+			if(!cssTransitions) {
+				// if css transitions arent available...
+
+				$(this).stop(true, true).animate({
+					backgroundColor: "rgba(204,204,204,0.2)",
+					boxShadow: "0 2px 0 rgba(255, 255, 255, 0.7)"
+				}).find("> .wellOverlay").stop(true, true).animate({
+					boxShadow: "0 1px 7px 0 rgba(0, 0, 0, 0.4) inset"
+				}, { queue: true, duration: 700 }, function() {
+					// animation complete
+				});
+
+			} // end if(!Modernizr.csstransitions)
+
+		}); // end .masonry-box hover
+	}
 
 	//------------------------------ track navigation items that go elsewhere
 	var navBtns = $(".nav").find("a");
@@ -215,11 +265,12 @@ head.ready("jquery", function() {
 
 		}); //end .bind("click");
 
-	}); // END .each(navBtns)
+	}); // END .each(navBtns)	
 
-});
+});             // END head.ready
 
 /* END AARONS CUSTOM STUFF */
+
 
 /*-----------------------------------------------------------------------------------
 
@@ -238,8 +289,11 @@ $('#container').removeClass('js-disabled');
 /*	Let's get ready!
 /*-----------------------------------------------------------------------------------*/
 
-head.ready("jquery", function() {
+head.ready(function() {
 
+	// trigger the stuff tht needs to happen immediately.
+	contentHeight();
+	//loadMoreWidth();
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Widget Overlay Stuff
@@ -278,48 +332,113 @@ head.ready("jquery", function() {
 	/*-----------------------------------------------------------------------------------*/
 
 	if($().masonry) {
-		console.info("masonry loaded");
+
+		var infscrPageview = 1;
+		//console.info("masonry loaded");
 		// cache masonry wrap
-		var $wall = $('#masonry');
+		//		var $wall = $($masonryWrapperClass);
 
-		$wall.masonry({
-			columnWidth: 380,
-			animate: true,
-			animationOptions: {
-				duration: 500,
-				easing: 'easeInOutCirc',
-				queue: false
-			},
-			itemSelector: '.hentry'
-		}, function() {
-			$('#load-more-link').fadeIn(200);
-		});
+		//		$wall.masonry({
+		//			columnWidth: 380,
+		//			animate: true,
+		//			animationOptions: {
+		//				duration: 500,
+		//				easing: 'easeInOutCirc',
+		//				queue: false
+		//			},
+		//			itemSelector: $masonryBoxClass
+		//		}, function() {
+		//			$('#load-more-link').fadeIn(200);
+		//		});
 
 		// cache masonry wrap
-		var $port = $('#masonry-portfolio');
+		var $wall = $($masonryWrapperClass);
+		var $masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
 
-		$port.masonry({
-			//singleMode: true,
-			//animate: true,
-			//animationOptions: {
-			//	duration: 500,
-			//	easing: 'easeInOutCirc',
-			//	queue: false
-			//},
-			//itemSelector: '.hentry',
-			itemSelector: '.hentry',
-			isAnimated: !Modernizr.csstransitions,
-			animationOptions: {
-				duration: 500,
-				easing: 'easeInOutCirc',
-				queue: false
-			}
-			//columnWidth: function(containerWidth) {
-			//	return containerWidth / 5;
-			//}
-		});
+		$masonryThumbs.imagesLoaded(function() {
 
-	}
+			console.info("hello images");
+
+			$wall.masonry({
+				itemSelector: $masonryBoxClass,
+				isAnimated: !Modernizr.csstransitions, // only use js for animations if csstransitions are not supported by the visitor's browser
+				animationOptions: {
+					duration: 500,
+					easing: 'easeInOutCirc',
+					queue: false
+				}
+			});
+
+			$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
+			$('body').animate({
+				left: '0'
+			}, 300, function() {
+				// document height should be set now
+				scroll_forever();
+			});
+			
+
+		}); // END $wall.imagesLoaded()
+
+
+		function scroll_forever() {
+
+
+			// usage:
+			// $(elem).infinitescroll(options,[callback]);
+			$container = $($masonryWrapperClass);
+			// infinitescroll() is called on the element that surrounds 
+			// the items you will be loading more of
+			$container.infinitescroll({
+				navSelector: ".navigation",
+				nextSelector: ".nav-next a",
+				itemSelector: $masonryBoxClass,
+				loadingText: 'Loading more items',
+				loadingMsgRevealSpeed: 0,
+				bufferPx: 80,
+				extraScrollPx: 0,
+				donetext: 'No more items to load',
+				debug: false,
+				animate: false,
+				loadingImg: "/public/images/loading.gif"
+
+			}, function(newElements) {
+
+				// hide new items while they are loading
+				var $newElems = $(newElements).css({ opacity: 0 });
+				// ensure that images load before adding to masonry layout
+				$newElems.imagesLoaded(function() {
+					
+					// bind hover effects
+					$newElems.hover(function() {
+						$(this).addClass("hover");
+					}, function() {
+						$(this).removeClass("hover");
+					})
+
+					// show elems now they're ready
+					$newElems.animate({ opacity: 1 });
+					$container.masonry('appended', $newElems);
+
+					// since each time this triggers is technically a new page of content...
+					infscrPageview++;
+					_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
+
+					contentHeight();
+
+				});
+
+			});
+			// END INFINITE SCROLL
+		}
+
+		// unbind typical infinite scroll trigger
+		
+
+	} // END if(masonry)
+
+
+
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Load More Post Functions
@@ -387,7 +506,7 @@ head.ready("jquery", function() {
 				}, function() {
 
 					// create $ object
-					$boxes = $('#new-posts .hentry');
+					$boxes = $('#new-posts ' + $masonryBoxClass);
 
 					if($().masonry) {
 						$wall.append($boxes).masonry({ appendedContent: $boxes }, function() {
@@ -422,7 +541,7 @@ head.ready("jquery", function() {
 	tz_loadMore();
 
 	$(window).resize(function() {
-		//isFirstLoad = false;
+		//		//isFirstLoad = false;
 		loadMoreWidth();
 		contentHeight();
 	});
@@ -430,7 +549,7 @@ head.ready("jquery", function() {
 	function loadMoreWidth() {
 
 		var loadMoreLink = $('#load-more-link a');
-		var masonryWrap = $('#masonry').width();
+		var masonryWrap = $($masonryWrapperClass).width();
 
 		if(masonryWrap > 380 && masonryWrap < 760) {
 			animateWidth(loadMoreLink, 340);
@@ -457,7 +576,7 @@ head.ready("jquery", function() {
 	}
 
 
-	loadMoreWidth();
+
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	PrettyPhoto Lightbox
@@ -506,64 +625,59 @@ head.ready("jquery", function() {
 	/*	Back to Top
 	/*-----------------------------------------------------------------------------------*/
 
-	var topLink = $('#back-to-top');
+	//	var topLink = $('#back-to-top');
 
-	function tz_backToTop(topLink) {
+	//	function tz_backToTop(topLink) {
 
-		if($(window).scrollTop() > 0) {
-			//console.info($(window).scrollTop());
-			topLink.stop().fadeIn(200);
-		} else {
-			topLink.stop().fadeOut(200);
-		}
-	}
+	//		if($(window).scrollTop() > 0) {
+	//			//console.info($(window).scrollTop());
+	//			topLink.stop().fadeIn(200);
+	//		} else {
+	//			topLink.stop().fadeOut(200);
+	//		}
+	//	}
 
-	$(window).scroll(function() {
-		tz_backToTop(topLink);
-	});
+	//	$(window).scroll(function() {
+	//		tz_backToTop(topLink);
+	//	});
 
-	// aaronl: custom (was pointing to the anchor link)
-	$(topLink).click(function() {
-		$('html, body').stop().animate({ scrollTop: 0 }, 500);
-		return false;
-	});
+	//	// aaronl: custom (was pointing to the anchor link)
+	//	$(topLink).click(function() {
+	//		$('html, body').stop().animate({ scrollTop: 0 }, 500);
+	//		return false;
+	//	});
 
 	// aaronl: custom (since i'm removing the anchor link, i need to set up a hover system for the wrapper div)			
-	head.ready("jquery", function() {
-		var colorIn;
-		var colorOut;
-		var hovClass;
-		if($.support.opacity) {
-			colorIn = 'rgba(0, 0, 0, .1)';
-			colorOut = 'rgba(0, 0, 0, 0)';
-			hovClass = 'hover';
-		} else {
-			colorIn = '#d3d7d8';
-			colorOut = 'transparent';
-			hovClass = 'ieHover';
-		}
-
-		// firefox seems to be making the browser itself change opacity
-		// the plugin i'm using here may be pretty buggy.
-		$('#back-to-top, .insetBox > li:not([class*="current"]) > a').hover(
-			function() {
-				$(this).addClass(hovClass);
-				$(this).stop().animate({ backgroundColor: colorIn });
-			},
-			function() {
-				$(this).removeClass(hovClass);
-				$(this).stop().animate({ backgroundColor: colorOut });
-			}
-		);
-
-	});
-
-	//	head.ready(function() {
-	//		if(isFirstLoad) {
-	//			$("html").addClass("noscroll");
+	//	head.ready("jquery", function() {
+	//		var colorIn;
+	//		var colorOut;
+	//		var hovClass;
+	//		if($.support.opacity) {
+	//			colorIn = 'rgba(0, 0, 0, .1)';
+	//			colorOut = 'rgba(0, 0, 0, 0)';
+	//			hovClass = 'hover';
+	//		} else {
+	//			colorIn = '#d3d7d8';
+	//			colorOut = 'transparent';
+	//			hovClass = 'ieHover';
 	//		}
-	//		contentHeight();
+
+	//		// firefox seems to be making the browser itself change opacity
+	//		// the plugin i'm using here may be pretty buggy.
+	//		$('#back-to-top, .insetBox > li:not([class*="current"]) > a').hover(
+	//			function() {
+	//				$(this).addClass(hovClass);
+	//				$(this).stop().animate({ backgroundColor: colorIn });
+	//			},
+	//			function() {
+	//				$(this).removeClass(hovClass);
+	//				$(this).stop().animate({ backgroundColor: colorOut });
+	//			}
+	//		);
+
 	//	});
+
+
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Add title attributes
@@ -580,7 +694,7 @@ head.ready("jquery", function() {
 
 		// aaronl: custom (changed offset to 170
 		//var yOffset = 170;
-		var elemHeight = windowHeight - footerHeight - mastHeight;
+		var elemHeight = windowHeight - mastHeight;
 		//var elemScrollHeight = $("#content").height() - footerHeight - mastHeight;
 		// prevent flicker
 		//$(window).resize(function() {
@@ -737,4 +851,5 @@ head.ready("jquery", function() {
 
 	tz_likeInit();
 
-});
+});               // END head.ready()
+

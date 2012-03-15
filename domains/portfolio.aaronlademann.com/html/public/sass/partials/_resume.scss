@@ -217,7 +217,7 @@
 			background: transparent;
 			background: rgba(155,155,155,.1);
 			display: block;
-			float: right;
+			@include float(right);
 			border-radius: 3px;
 			-webkit-border-radius: 3px;
 			-moz-border-radius: 3px;
@@ -232,7 +232,7 @@
 		& #pdf a {
 			background: transparent url(/public/images/icons/pdf_28.png) 2px top no-repeat;
 			display: block;
-			float: right;
+			@include float(right);
 			padding: 0 12px 0 38px;
 			text-decoration: none;  
 			line-height: 28px;
@@ -302,12 +302,12 @@
 		}
 
 		& .talent, & .third {
-			float: left;
+			@include float(left);
 			width: 31%;
 			margin-right: 3%;
 		}
 		& .half {
-			float: left;
+			@include float(left);
 			width: 48%;
 			margin-right: 3%;
 		}

@@ -16,3 +16,25 @@
 // prevent flickering on dynamic js resize
 html { overflow-x: hidden !important; }
 .noscroll { overflow: hidden; overflow-y: hidden; } 
+
+@mixin rgba_bg($color, $alpha){
+	$rgba: rgba($color, $alpha);
+	background-color: transparent;
+	background-color: $rgba;
+	@if $legacy-support-for-ie {
+		$ie-hex-str: ie-hex-str($rgba);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+		zoom: 1;
+	}
+}
+  	
+
+
+/* elements that javascript will reveal */
+.js {
+	
+	.lightbox {	
+		.caption, img { visibility: hidden; }
+	}
+}
+/* END elements that javascript will reveal */

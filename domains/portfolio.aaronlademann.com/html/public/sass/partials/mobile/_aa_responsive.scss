@@ -1,140 +1,131 @@
-﻿//------ ALL DIMENSIONS
-// global
-$aa_mastHeight: 50px;
-$aa_footHeight: 0;
-	// portfolio
-	$primaryHPad: 40px;
-	$primaryVPad: 40px;
-	$sidebarWidth: 190px;
-	// grid
-	$masonryHPad: 25px;
-	$masonryVPad: 20px;
-	// single
-	$articleHPad: 15px;
-	$articleVPad: 40px;
-
-	// dynamic single page media sizes
-	$folioImgWidth: $aa_media_widthMed;
-
-
-#container, #content, #primary, #masonry-portfolio {
+﻿#container, #content, #primary, .masonry {
 	margin: 0;
 	padding: 0;
-	position: relative;
-	//width: 100%;
-	//height: 100%;
-	//float: left;
+	position: relative; // MUST remain here for masonry to work.
 	list-style: none;
 }
 
 #container {
-	top: $aa_mastHeight;
+	top: $masonryHPad; // same vertical spacing as horizontal
+	height: $aa_mastHeight; // this determines the height of the mast
+	line-height: ($aa_mastHeight - 4);
 } // END #container
 
-#content {
-	//padding: $primaryVPad 0 0 0; // vertical spacing
-} // END #content
-
-#sidebar {
-	position: fixed;
-	z-index: 500;
-	left: 0;
-	margin: 21px 0 0 0;
-	width: $sidebarWidth;
-
-	.chrome &, .safari & { margin-top: 46px; }
-	.widget {
-		$widgetIndent: 20px;
-		position: relative;
-		width: $sidebarWidth - $widgetIndent;
-		left: $widgetIndent;
-		top: -6px;
-	} // END #sidebar .widget
-	.entry-meta { 
-		padding: 5px 15px;
+.navbar-fixed-top {
+	
+	.brand {
+		line-height: 36px;
+		height: 40px;
 	}
-	#logo { 
-		margin-left: 0; 
+}
 
-		h1 {
-			display: block;
-			width: auto;
-			font-size: 11px;
-			text-align: center;
-			text-indent: 18px;
-		}
-	} // END #sidebar #logo
-} // END #sidebar
-
+// #primary wraps around .masonry, and is within a row-fluid
 #primary {
 	//padding: 0 $primaryHPad 0 0;
 	//left: ($sidebarWidth + ($primaryHPad - $masonryHPad));
 
 	.page-template-template-full-width-php & { float: none; }
 
-	.breadcrumb {
-		height: 2.3em;
-		margin: 0 0 22px 25px;
-
-		&, li {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			float: left;
-		}
-		li {
-			padding: 0 .5em 0 0;
-			&:first-child { padding-left: 0; }
-
-			a { 
-				display: block;
-				padding: 0 0 0 0;
-				&:after {
-					color: lighten($aa_darkGray, 50%);
-					font-family: "FontAwesome";
-					content: $icon-chevron-right;
-					margin-left: .5em;
-					text-decoration: none !important;
-				}
-			}
-		}
-	} // END .breadcrumb
-
-
-.masonry,
-.masonry .masonry-brick {
-  -webkit-transition-duration: 0.7s;
-     -moz-transition-duration: 0.7s;
-       -o-transition-duration: 0.7s;
-          transition-duration: 0.7s;
-}
+//	.breadcrumb {
+//		height: 2.3em;
+//		margin: 0 0 22px 25px;
+//
+//		&, li {
+//			list-style-type: none;
+//			padding: 0;
+//			margin: 0;
+//			@include float(left);
+//		}
+//		li {
+//			padding: 0 .5em 0 0;
+//			&:first-child { padding-left: 0; }
+//
+//			a { 
+//				display: block;
+//				padding: 0 0 0 0;
+//				&:after {
+//					color: lighten($gray, 50%);
+//					font-family: "FontAwesome";
+//					content: $icon-chevron-right;
+//					margin-left: .5em;
+//					text-decoration: none !important;
+//				}
+//			}
+//		}
+//	} // END .breadcrumb
 
 .masonry {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
+	// progressively reveal this so the animations don't look wierd
+	// only if browser handles javascript.
+	// initial hide
 
-.masonry .masonry-brick {
-  -webkit-transition-property: left, right, top;
-     -moz-transition-property: left, right, top;
-       -o-transition-property: left, right, top;
-          transition-property: left, right, top;
-}
+		.js.opacity & {
+			// browser supports opacity
+			@include transparent;
+			// reveal
+			&.transReady {
+				@include opacity(1.0); 
+			}
+		} // end opacity
+		.js.no-opacity & {
+			// no opacity support
+			display: none;
+			// reveal
+			&.transReady {
+				display: block;
+			}
+		} // end no opacity
 
-	.masonry {
-		//width: 100%;
+		// enable css transitions
+		&.transReady {
+			@include transition-property("height, width, opacity");
+		} // end css transitions
+	
+	// END progressive revealing of .masonry opacity
 
-		.masonry-brick {
+	&, .masonry-brick, .masonry-brick .wellOverlay {
+		@include transition-duration(0.7s);
+	}
+	.masonry-brick {
+		margin: 0 0 $masonryVPad $masonryHPad;
+
+		&, .wellOverlay{
+			@include transition-property(all);
+			//@include transition-property("left, right, top");
 			@include min-width($aa_media_widthThumb);
 			max-width: $aa_media_widthThumb;
 			@include min-height($aa_media_heightThumb + 84);
-			margin: 0 0 $masonryVPad $masonryHPad;
+			max-height: ($aa_media_heightThumb + 84);
 			padding: 0;
-		} // END article (.hentry)
+		}
 
-	} // END .masoned
+		.wellOverlay { 
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+
+		.wellOverlay, figcaption, footer, .footer {
+			cursor: pointer;
+		}
+
+		figcaption, .figcaption, footer, .footer {
+			position: absolute;
+			z-index: 1;
+		}
+		footer, .footer {
+			bottom: 0;
+			left: 0;
+			width: 96%;
+			padding: 0 2%;
+		}
+
+	}
+
+} // END .masonry
+
+
 
 } // END #primary
 
@@ -170,7 +161,7 @@ $aa_footHeight: 0;
 			position: absolute;
 			display: none;
 			nav, .nav {
-				float: left;
+				@include float(left);
 				position: relative;
 				left: 0;
 				top: 0;
@@ -181,13 +172,13 @@ $aa_footHeight: 0;
 			width: 100%;
 			margin: 0 0 0 0;
 			padding: 0 0 0 0;
-			float: left;
+			@include float(left);
 			position: relative;
 		} // END .single article (.hentry)
 
 		// sections within the article
 		.slider, .entry-content, #single-sidebar {
-			float: left;
+			@include float(left);
 			position: relative;
 			padding-top: ($articleVPad + (($primaryVPad/2) + $primaryVPad));
 		}
@@ -294,12 +285,12 @@ $aa_footHeight: 0;
 				// with the meta ul's
 				.seperator { display: none; }
 				header, .header, footer, .footer {
-					float: left;
+					@include float(left);
 				}
 				header, .header {
 					width: 53%;
 					padding-right: 7%;
-					border-right: 1px solid rgba($aa_darkGray, .2);
+					border-right: 1px solid rgba($gray, .2);
 				}
 				footer, .footer { 
 					width: 38%;
@@ -320,295 +311,109 @@ $aa_footHeight: 0;
 } // END .single
 
 
-// Landscape phones and down
-  @media (max-width: 480px) { 
+/* MEDIA QUERIES ----------------------------------------------------- */
+	/* ALL DEVICES ----------------------------------------------------- */
+
+	// UP TO LANDSCAPE PHONE
+	// ---------------------
+		@media (max-width : 480px) { 
 	
-	} /* END @media (max-width: 480px) */
+		} /* UP TO LANDSCAPE PHONE */
  
-  // Landscape phone to portrait tablet
-  @media (max-width: 768px) { 
+	// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+	// --------------------------------------------------
+		@media (max-width : 768px) { 
 	
-	} /* END @media (max-width: 768px) */
+		} /* END LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET */
  
-  // Portrait tablet to landscape and desktop
-  @media (min-width: 768px) and (max-width: 980px) { 
+	// PORTRAIT TABLET TO DEFAULT DESKTOP
+	// ----------------------------------
+		@media (min-width : 768px) and (max-width : 979px) { 
 	
-	} /* @media (min-width: 768px) and (max-width: 980px) */
- 
-  // Large desktop
-  @media (min-width: 1200px) {
+		} /* END PORTRAIT TABLET TO DEFAULT DESKTOP */
+
+	// LANDSCAPE TABLETS AND BELOW
+	// -----------------
+		@media (max-width : 979px) {
+
+		} /* END LANDSCAPE TABLETS AND BELOW */
+
+	// DEFAULT DESKTOP
+	// ---------------
+		@media (min-width : 980px) {
+
+
+		} /* END DEFAULT DESKTOP */
+
+	// LARGE DESKTOP & UP
+	// ------------------
+		@media (min-width : 1200px) {
 	
-	} /* END Large desktop */
+		} /* END LARGE DESKTOP & UP */
 
-
-// DEFAULT DESKTOP
-// ---------------
-
-@media (min-width: 980px) {
-
-
-}
-
-
-
-
-// ALL MOBILE DEVICES
-// -----------------
-@media (max-width: 979px) {
+	/* END ALL DEVICES ------------------------------------------------- */
+		
+	// iPads
+	// ------------------
+		@media only screen 
+		and (min-device-width : 768px)
+		and (max-device-width : 1024px) {
 	
+		} /* END iPads */
+
+	// iPhones
+	// ------------------
+		@media only screen
+		and (min-device-width : 320px)
+		and (max-device-width : 480px) {
+
+		} /* END iPhones */
+
+	// Apple Retina Displays (iPhone 4+, iPad 3+)
+	// ------------------
+		@media
+		only screen and (-webkit-min-device-pixel-ratio : 1.5),
+		only screen and (min-device-pixel-ratio : 1.5) {
+
+		} /* END Apple Retina Displays */
+
+	/* MOBILE DEVICES -------------------------------------------------- */
+
+	/* END MOBILE DEVICES ---------------------------------------------- */
+/* END MEDIA QUERIES ----------------------------------------------------- */
+
+
+@mixin old_sidebar_styles {
 	
-
-	/* dynamic portrait / landscape class switching
-	   provided by /public/js/iOSfixedPosition.js */
-
-	.portrait {
-
-	} // END .portrait
-
-	.landscape {
-
-	} // END .landscape
-  
-}
-
-// UP TO LANDSCAPE PHONE
-// ---------------------
-
-@media (max-width: 480px) {
-
-	/* GLOBALLY HIDE FROM MOBILE */
-	#topNav, #footer .copyright { display: none; }
-	/* fix any static widths */
-	#masthead, #container, #content, #footer {
-		min-width: auto;
-		width: 100%;
-		padding-left: 0;
-		padding-right: 0;
-	}
-	#footer {
-			background-image: none;
-	}
-
-	.aafolio #footerNav {
-			right: auto;
-			left: 0;
-	}
-	#footer .nav ul { 
-			float: left !important; 
-			width: 100% !important;
-	}
-	#footer .nav a {
-		padding: 7px 18px 3px 18px;
-	}
-	/* use the sidebar as our main nav */
 	#sidebar {
-			position: absolute;
-			top: 0;
-			margin-top: 0 !important;
-			width: 100%;
-	}
-	.tax-skill-type #primary, .page.page-template-template-portfolio-php #primary {
-			margin-left: 0;
-	}
-	/*#logo a img { visibility: hidden; }  will be revealed via .js */
-	#container { top: 0; }
-	.archive #primary, .page.page-template-template-portfolio-php #primary,
-	.archive .hentry, .page.page-template-template-portfolio-php .hentry { margin-left: 0 !important;}
-	#primary, .single #primary, .page #primary { margin-left: 0; margin-top: 90px; }
-	#sidebar .widget {
-			float: left;
-			margin-top: -20px;
-	}
-	#sidebar .widget-title { display: none; }
-	#filter {
-			padding: 0 !important;
-			margin: 0 !important;
-			width: 100%;
-			float: left;
-	}
-	#filter li {
-			display: block;
-			float: left;
-			padding: 2px 5px;
-	}
-	
+		position: fixed;
+		z-index: 500;
+		left: 0;
+		margin: 21px 0 0 0;
+		width: $sidebarWidth;
 
-	/* dynamic portrait / landscape class switching
-	   provided by /public/js/iOSfixedPosition.js */
+		.chrome &, .safari & { margin-top: 46px; }
+		.widget {
+			$widgetIndent: 20px;
+			position: relative;
+			width: $sidebarWidth - $widgetIndent;
+			left: $widgetIndent;
+			top: -6px;
+		} // END #sidebar .widget
+		.entry-meta { 
+			padding: 5px 15px;
+		}
+		#logo { 
+			margin-left: 0; 
 
-	.portrait {
-
-	} // END .portrait
-
-	.landscape {
-
-	} // END .landscape
+			h1 {
+				display: block;
+				width: auto;
+				font-size: 11px;
+				text-align: center;
+				text-indent: 18px;
+			}
+		} // END #sidebar #logo
+	} // END #sidebar
 
 }
-
-
-@mixin larger_mobile_sizes() {
-
-		// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
-		// --------------------------------------------------
-
-		@media (max-width: 767px) {
-		
-
-		}
-
-
-
-		// PORTRAIT TABLET TO DEFAULT DESKTOP
-		// ----------------------------------
-
-		@media (min-width: 768px) and (max-width: 979px) {
-
-
-		}
-
-
-		
-
-
-
-		// LARGE DESKTOP & UP
-		// ------------------
-
-		@media (min-width: 1200px) {
-		
-			// from old aa-template.scss
-			//#masthead, #contentWrap, #footer { min-width: 990px; }
-		
-		}
-
-	}
-
-
-
-	/*  iOS Media Queries */
-
-	// from base.css
-	/* iPhone */
-		@media screen and (max-device-width: 480px) { 
-			//html { -webkit-text-size-adjust: none; } 
-			//#footer { display: none; }
-		}
-		/* iPad */
-		@media screen and (min-device-width: 481px) and (max-device-width: 1024px) { 
-			//html { -webkit-text-size-adjust: none; } 
-			//#footer { display: none; }
-			//#masthead, #contentWrap, #footer { min-width: 1002px; }
-		}
-		/* iPad portrait */
-		@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) { 
-			//#masthead, #contentWrap { min-width: 768px; width: 768px; }
-			//#topNav { width: auto; right: 0; }
-			//#topNav li a { padding: 0 15px; }
-			//#masthead #mastlogo { width: 294px; height: 52px; left: 25px; top: 15px; margin-right: 20px; }
-			//.content, #hero, hr.contentDivider { width: 752px; }
-			//.content { padding: 0 8px; left: 0; margin-left: 0; }
-			//hr.contentDivider { background-position: -137px top; }
-			//#hero .feature {
-			//	width: 567px;
-			//	height: 386px;
-			//	left: 0;
-			//}
-			//#hero .callout {
-			//	width: 185px;
-			//	height: auto;
-			//	left: 567px;
-			//}
-			//#masthead h1, #masthead h2 { display: none; }
-			//.callout .large { font-size: 13px; line-height: 21px; }
-			//.grid3col .column.project { width: 100%; margin-left: 0; margin-right: 0; clear: both; }
-			//.project h4 { font-size: 24px; margin-top: 10px; margin-bottom: 5px; }
-			//.project small { font-size: 16px; line-height: 26px; }
-		}
-		// END base.css
-
-	/* ---------------------------------------------- iPhone -------------------------------------- */
-
-	/* iPhone v(4,4S) portrait */
-	@media all and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  
-	} /* END iPhone v(4,4S) portrait */
-
-	/* iPhone v(4/4S) landscape */
-	@media all and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  
-	} /* END iPhone v(4/4S) landscape */
-
-	/* iPhone v(*) portrait */
-	@media all and (max-device-width: 480px) and (orientation: portrait)  {
-  
-		/*#content {
-  		padding-left: 18px;
-			padding-right: 18px;
-		}*/
-		//#sidebar { padding-left: 18px; }
-		//#sidebar #logo { margin-left: 18px; }
-
-	} /* END iPhone v(*) portrait */
-
-	/* iPhone v(*) landscape */
-	@media all and (max-device-width: 480px) and (orientation: landscape)  {
-
-		#content {
-			padding-left: 98px;
-			padding-right: 98px;
-		}
-			.single #content {
-				padding-left: 18px;
-				padding-right: 18px;
-			}
-
-		#sidebar {
-			padding-left: 98px;
-		}
-			.single #sidebar { padding-left: 18px; }
-
-		#sidebar #logo {
-			margin-left: 40px;
-		}
-			.single #sidebar #logo { margin-left: 18px; }
-
-	} /* END iPhone v(*) landscape */
-
-	/* ---------------------------------------------- iPad -------------------------------------- */
-
-	/* iPad portrait */
-	@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-
-		#content {
-  		padding-left: 18px;
-			padding-right: 18px;
-		}
-		#sidebar { padding-left: 18px; }
-		#sidebar #logo { margin-left: 18px; }
-
-	} /* END iPad portrait */
-
-	/* iPad landscape */
-	@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
-		#content {
-			padding-left: 98px;
-			padding-right: 98px;
-		}
-			.single #content {
-				padding-left: 18px;
-				padding-right: 18px;
-			}
-
-		#sidebar {
-			padding-left: 98px;
-		}
-			.single #sidebar { padding-left: 18px; }
-
-		#sidebar #logo {
-			margin-left: 40px;
-		}
-			.single #sidebar #logo { margin-left: 18px; }
-
-	} /* END iPad landscape */

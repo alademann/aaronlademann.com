@@ -13,6 +13,10 @@ function custom_includes_dir(){
 	return include_php("/wp-content/resources/includes");
 }
 
+function gridlocked_includes_dir(){
+	return include_php("/wp-content/themes/gridlocked/includes");
+}
+
 function is_ios($browserAsString){
 
   if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
@@ -136,6 +140,7 @@ if ( function_exists('register_sidebar') ) {
 /*-----------------------------------------------------------------------------------*/
 
 $formats = array( 
+			//'standard',
 			'aside', 
 			'gallery', 
 			'link', 
@@ -196,10 +201,43 @@ function tz_excerpt_more($excerpt) {
 return str_replace('[...]', '...', $excerpt); }
 add_filter('wp_trim_excerpt', 'tz_excerpt_more');
 
+/*-----------------------------------------------------------------------------------*/
+/*	AJAX STUFF
+/*-----------------------------------------------------------------------------------*/
+wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+// if both logged in and not logged in users can send this AJAX request,
+// add both of these actions, otherwise add only the appropriate one
+add_action( 'wp_ajax_nopriv_myajax-submit', 'myajax_submit' );
+add_action( 'wp_ajax_myajax-submit', 'myajax_submit' );
+ 
+function myajax_submit() {
+    // get the submitted parameters
+    $type			=			htmlspecialchars(trim($_POST['post_type']));
+		$offset 	= 		htmlspecialchars(trim($_POST['offset']));
+		$cat 			= 		htmlspecialchars(trim($_POST['category']));
+		$author 	= 		htmlspecialchars(trim($_POST['author']));
+		$tag 			= 		htmlspecialchars(trim($_POST['tag']));
+		$date 		= 		htmlspecialchars(trim($_POST['date']));
+		$search 	= 		htmlspecialchars(trim($_POST['searchQ']));
+ 
+    // generate the response
+    $response = json_encode( array( 'success' => true ) );
+ 
+    // response output
+    header( "Content-Type: application/json" );
+    echo $response;
+ 
+    // IMPORTANT: don't forget to "exit"
+    exit;
+}
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Register and load common JS
 /*-----------------------------------------------------------------------------------*/
+
+
 
 function tz_register_js(){
 	if(!is_admin()){
@@ -267,9 +305,9 @@ add_action('wp_print_scripts', 'tz_contact_js');
 /* Load scripts for single pages
 /*-----------------------------------------------------------------------------------*/
 
-/* REPLACED WITH head.js calls in FOOTER.PHP
+
 function tz_single_scripts() {
-	
+	/* REPLACED WITH head.js calls in FOOTER.PHP
 	if(is_singular()) 
 		
 		wp_register_script('easing', get_template_directory_uri().'/js/jquery.easing.1.3.js', 'jquery', '1.0', TRUE);
@@ -294,17 +332,19 @@ function tz_single_scripts() {
 		wp_register_script('jPlayer', get_template_directory_uri().'/js/jquery.jplayer.min.js', 'jquery', '1.0', TRUE);
 		wp_enqueue_script( 'jPlayer' );
 		
-	
+	*/
 }
 add_action('wp_print_scripts', 'tz_single_scripts');
-*/
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Scripts for blog pages
 /*-----------------------------------------------------------------------------------*/
 
-/* REPLACED WITH head.js calls in FOOTER.PHP
+
 function tz_non_singular_scripts() {
+
+/* REPLACED WITH head.js calls in FOOTER.PHP
 	if(!is_singular())
 	
 		wp_register_script('slidesjs', get_template_directory_uri().'/js/slides.min.jquery.js', 'jquery', '1.0', TRUE);
@@ -320,10 +360,10 @@ function tz_non_singular_scripts() {
 		wp_enqueue_script( 'easing' );
 		//wp_enqueue_script( 'masonry' );
 
-		
+	*/	
 }
 add_action('wp_print_scripts', 'tz_non_singular_scripts');
-*/
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Load stylesheets if needed

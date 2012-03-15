@@ -2,271 +2,271 @@
 <web-workbench>
   <file name="ie.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="noscript.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_base.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_resume.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_theme-aa-base.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_theme-aa-template.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_theme-wp-gridlocked.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_vars.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_webfonts.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_accordion.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_alerts.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_bootstrap.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_breadcrumbs.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_button-groups.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_buttons.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_carousel.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_close.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_code.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_component-animations.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_dropdowns.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_forms.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_grid.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_hero-unit.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_labels.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_layouts.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_mixins.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_modals.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_navbar.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_navs.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_pager.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_pagination.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_popovers.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_print.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_progress-bars.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_reset.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_responsive.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_scaffolding.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_sprites.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_tables.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_thumbnails.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_tooltip.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_type.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_utilities.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_variables.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="_wells.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
@@ -278,19 +278,31 @@
   </file>
   <file name="_aa_responsive.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="print.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
   <file name="screen.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_fancybox.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_wp-plugins.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>

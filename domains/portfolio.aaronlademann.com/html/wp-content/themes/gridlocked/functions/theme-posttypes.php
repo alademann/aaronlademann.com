@@ -1,5 +1,9 @@
 <?php
 
+// SET THIS TO FALSE UNLESS YOU ARE CHANGING SOMETHING INVOLVING
+// THE PERMALINK STRUCTURE FOR CUSTOM POST TYPES.
+$flush_rewrite = FALSE;
+
 /*-----------------------------------------------------------------------------------
 
 	Add Portfolio Post Type
@@ -31,10 +35,11 @@ function tz_create_post_type_portfolio()
 		'show_ui' => true, 
 		'query_var' => true,
 		'capability_type' => 'post',
+		'has_archive' => true,
 		'hierarchical' => true,
 		'menu_position' => null,
 		'rewrite' => true,
-		"rewrite" => array('slug' => 'portfolio', 'hierarchical' => true), 
+		"rewrite" => array('slug' => 'portfolio'), 
 		'supports' => array('title','editor','thumbnail','custom-fields','excerpt','comments','revisions','page-attributes','post-formats')
 	  ); 
 	  
@@ -140,9 +145,28 @@ function tz_portfolio_custom_columns($column){
         }  
 }  
 
-add_action( 'init', 'tz_create_post_type_portfolio' );
-add_action( 'init', 'tz_build_taxonomies', 0 );
-//add_filter("manage_edit-portfolio_columns", "tz_portfolio_edit_columns");  
-//add_action("manage_posts_custom_column",  "tz_portfolio_custom_columns");  
+add_action( 'init', 'cpt_init' );
+function cpt_init(){
+	add_action( 'init', 'tz_create_post_type_portfolio' );
+	add_action( 'init', 'tz_build_taxonomies', 0 );
+}
+
+function my_rewrite_flush() 
+{
+    // First, we "add" the custom post type via the above written function.
+    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
+    // They are only referenced in the post_type column with a post entry, 
+    // when you add a post of this CPT.
+    cpt_init();
+
+    // ATTENTION: This is *only* done during plugin activation hook in this example!
+    // You should *NEVER EVER* do this on every page load!!
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'my_rewrite_flush' );
+
+if($flush_rewrite){
+	flush_rewrite_rules();
+}
 
 ?>

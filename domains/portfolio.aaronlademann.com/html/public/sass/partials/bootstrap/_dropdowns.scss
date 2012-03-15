@@ -45,7 +45,7 @@
   top: 100%;
   left: 0;
   z-index: $zindexDropdown;
-  float: left;
+  @include float(left);
   display: none; // none by default, but block on "open" of the menu
   min-width: 160px;
   _width: 160px;
