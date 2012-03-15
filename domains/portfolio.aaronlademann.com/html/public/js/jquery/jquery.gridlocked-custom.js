@@ -182,6 +182,12 @@ head.ready("jquery", function() {
 
 	}); // END .each(hentries)
 
+	function bindPermalink(pl,here) {
+		$(pl).bind("click", function() {
+			window.location = here;
+		});
+	}
+
 	function bindMasonryHover(elem) {
 		// activate a hover in / hover out function for each entry
 		$(elem).hover(function() {
@@ -189,12 +195,18 @@ head.ready("jquery", function() {
 			$(this).addClass("hover");
 			var permalinkAnchor = $(this).find("a.permalink");
 			var permalink = permalinkAnchor.attr("href");
-			$(this).bind("click", function() {
-				window.location = permalink;
-			});
+			bindPermalink($(this),permalink);
+
+			
 
 			permalinkAnchor.click(function() {
 				$(elem).unbind("click");
+			});
+
+			var likeItAnchor = $(this).find(".likeThis");
+			likeItAnchor.click(function() {
+				$(elem).unbind("click");
+				bindPermalink(elem,permalink);
 			});
 			//var thumbnail = $(".post-thumb > a > img", this);
 
@@ -267,7 +279,7 @@ head.ready("jquery", function() {
 
 	}); // END .each(navBtns)	
 
-});             // END head.ready
+});                  // END head.ready
 
 /* END AARONS CUSTOM STUFF */
 
