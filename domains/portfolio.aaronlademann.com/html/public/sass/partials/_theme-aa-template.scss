@@ -30,6 +30,14 @@ body {
 			border-top-style: solid;
 			border-top-width: 1px;
 		}
+		img {
+			border-bottom-style: solid;
+			border-bottom-width: 1px;
+		}
+		figcaption, .figcaption {
+			width: 100%;
+			padding-bottom: 3px; // to fill up the space given
+		}
 
 		.arrow { display: none; }
 	}
@@ -72,10 +80,25 @@ a[rel="external"], a.external, a[target="blank"],
 }
 #resume .folio_link .icon { display: none; } // already placing the icon directly after using :after.
 
+.entry-header, .entry-meta {
+	
+	li {
+		list-style: none;
+	}
+}
+.masonry-brick .entry-meta, .footer .entry-meta {
+	.icon {
+		margin-right: 4px;
+
+		&:before { 
+			font-size: 1.3em; 
+		}
+	}
+}
 // specific icons
 .like-count, .published, .comment-count, .folio_link .icon, a .overlay {
 	.icon:before { 
-		font-family: "FontAwesome"; color: lighten($textColor,15%); 
+		font-family: "FontAwesome"; 
 	}
 	&:hover .icon, .icon:hover {
 		color: $linkColorHover;
@@ -90,8 +113,8 @@ a[rel="external"], a.external, a[target="blank"],
 	}
 	a.active, a:hover {
 		
-		&:before, &.icon:before, .icon:before {
-			color: $likeItColor;
+		&, &:before, &.icon:before, .icon:before {
+			color: $likeItColor !important;
 		}
 	}
 }
@@ -109,9 +132,9 @@ a .overlay .icon:before { content: $icon-search; }
 
 
 @mixin aa_light {
-	
+	$light_bgcolor: #eeeeee;
 	body {
-		background-color: #eeeeee;
+		background-color: $light_bgcolor;
 		background-image: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png");
 	}
 
@@ -135,7 +158,10 @@ a .overlay .icon:before { content: $icon-search; }
 
 	} // END .navbar-fixed-top .brand
 
-	.comment-body p, #load-more-link a, .hentry, .masonry-brick { color: $grayLight; }
+	.comment-body p, #load-more-link a, .hentry, 
+	.masonry-brick, .masonry-brick .entry-meta a,
+	.folio_link .icon, 
+	.masonry-brick .entry-meta .icon:before { color: lighten($gray,10%); }
 
 	.masonry {
 	
@@ -156,9 +182,28 @@ a .overlay .icon:before { content: $icon-search; }
 				@include box-shadow($inset_shadow);
 			}
 
+				img {
+					border-bottom-color: lighten($entryMeta_border,50%);
+					@include box-shadow(0 3px 6px 0 rgba(0, 0, 0, 0.15));
+				}
+				figcaption, .figcaption {
+					@include rgba_bg(#000000, 0.05);
+						.entry-title {
+				
+							a {
+								color: $textColor;
+							}
+						}
+				}
+				.post-thumb {
+					@include rgba_bg(#000000, 0.05); // just incase the thumbnail image isn't the same size as its container...
+				}
 				footer, .footer {
+					@include rgba_bg(#000000, 0.05);
 					border-top-color: $entryMeta_border;
 				}
+				
+
 
 			// HOVER
 			&.hover {
@@ -167,16 +212,25 @@ a .overlay .icon:before { content: $icon-search; }
 				.wellOverlay{
 					@include box-shadow($inset_shadow_hover);
 				}
+				figcaption, .figcaption {
+					
+					.entry-title a, .entry-title a:hover {
+						color: $linkColor;
+					}
+				}
 			} // END .masonry-brick.hover
 			
 
 			// no rgba support
 			.no-rgba & {
 
+					img {
+						border-bottom-color: ie-hex-str(lighten($entryMeta_border,50%));	
+					}
 					footer, .footer {
 						border-top-color: ie-hex-str($entryMeta_border);	
 					}
-
+					
 			}
 
 		}

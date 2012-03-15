@@ -1378,6 +1378,7 @@
 
 	.entry-meta a { display: block; }
 	.entry-meta li.terms a { display: inline; }
+
 	.published { @include float(left); }
 
 	.published .icon {
@@ -1385,9 +1386,11 @@
 		width: 14px;
 		height: 14px;
 		@include float(left);
-		margin: 3px 5px 0 0;
+		//margin: 3px 5px 0 0;
 	}
-	.published:hover { color: #66696D; }
+	.published:hover { 
+	//color: #66696D; 
+	}
 	.published a:hover .icon, .published:hover .icon { background-position: -14px -47px; }
 
 	.comment-count { display: none; }
@@ -1397,7 +1400,7 @@
 		width: 15px;
 		height: 11px;
 		@include float(left);
-		margin: 4px 5px 0 0;
+		//margin: 4px 5px 0 0;
 	}
 
 	.comment-count a:hover .icon { background-position: -16px -7px; }
@@ -1407,7 +1410,7 @@
 		width: 13px;
 		height: 11px;
 		@include float(left);
-		margin: 4px 5px 0 0;
+		//margin: 4px 5px 0 0;
 	}
 
 	.like-count a:hover .icon,
@@ -1417,7 +1420,7 @@
 	.edit-post,
 	.comment-count {
 		@include float(right);
-		margin: 0 0 0 10px;
+		//margin: 0 0 0 10px;
 	}
 
 	.arrow {

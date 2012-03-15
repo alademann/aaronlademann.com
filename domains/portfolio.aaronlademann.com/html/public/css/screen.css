@@ -7632,68 +7632,60 @@ a:hover.button.black {
 .entry-meta li.terms a {
   display: inline; }
 
-/* line 1381, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1382, ../sass/partials/_theme-wp-gridlocked.scss */
 .published {
   display: inline;
   float: left; }
 
-/* line 1383, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1384, ../sass/partials/_theme-wp-gridlocked.scss */
 .published .icon {
   background-position: 0 -47px;
   width: 14px;
   height: 14px;
   display: inline;
-  float: left;
-  margin: 3px 5px 0 0; }
+  float: left; }
 
-/* line 1390, ../sass/partials/_theme-wp-gridlocked.scss */
-.published:hover {
-  color: #66696D; }
-
-/* line 1391, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1394, ../sass/partials/_theme-wp-gridlocked.scss */
 .published a:hover .icon, .published:hover .icon {
   background-position: -14px -47px; }
 
-/* line 1393, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1396, ../sass/partials/_theme-wp-gridlocked.scss */
 .comment-count {
   display: none; }
 
-/* line 1395, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1398, ../sass/partials/_theme-wp-gridlocked.scss */
 .comment-count .icon {
   background-position: 0 -7px;
   width: 15px;
   height: 11px;
   display: inline;
-  float: left;
-  margin: 4px 5px 0 0; }
+  float: left; }
 
-/* line 1403, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1406, ../sass/partials/_theme-wp-gridlocked.scss */
 .comment-count a:hover .icon {
   background-position: -16px -7px; }
 
-/* line 1405, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1408, ../sass/partials/_theme-wp-gridlocked.scss */
 .like-count .icon {
   background-position: 0 -19px;
   width: 13px;
   height: 11px;
   display: inline;
-  float: left;
-  margin: 4px 5px 0 0; }
+  float: left; }
 
-/* line 1414, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1417, ../sass/partials/_theme-wp-gridlocked.scss */
 .like-count a:hover .icon,
 .like-count a.active .icon {
   background-position: -15px -19px; }
 
-/* line 1418, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1421, ../sass/partials/_theme-wp-gridlocked.scss */
 .like-count,
 .edit-post,
 .comment-count {
   display: inline;
-  float: right;
-  margin: 0 0 0 10px; }
+  float: right; }
 
-/* line 1423, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1426, ../sass/partials/_theme-wp-gridlocked.scss */
 .arrow {
   background-position: 0 -141px;
   width: 22px;
@@ -7702,11 +7694,11 @@ a:hover.button.black {
   top: 0;
   z-index: 30; }
 
-/* line 1431, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1434, ../sass/partials/_theme-wp-gridlocked.scss */
 .hentry.hover .arrow {
   background-position: 0 -164px; }
 
-/* line 1433, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1436, ../sass/partials/_theme-wp-gridlocked.scss */
 a .overlay {
   position: absolute;
   z-index: 20;
@@ -7716,11 +7708,11 @@ a .overlay {
   left: 0;
   cursor: pointer; }
 
-/* line 1444, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1447, ../sass/partials/_theme-wp-gridlocked.scss */
 .js-disabled a:hover .overlay {
   display: block; }
 
-/* line 1448, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1451, ../sass/partials/_theme-wp-gridlocked.scss */
 a .overlay .icon {
   position: absolute;
   background-position: 0 -62px;
@@ -7731,14 +7723,14 @@ a .overlay .icon {
   left: 48%;
   z-index: 40; }
 
-/* line 1459, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1462, ../sass/partials/_theme-wp-gridlocked.scss */
 .post-thumb a {
   display: block;
   position: relative;
   /* so that even an image that is not 170px being used as a thumbnail will not throw off the grid view */
   min-height: 170px; }
 
-/* line 1466, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1469, ../sass/partials/_theme-wp-gridlocked.scss */
 .post-thumb a,
 .post-thumb a img {
   display: inline;
@@ -7747,51 +7739,51 @@ a .overlay .icon {
   width: auto; }
 
 /* Aside ------------------------------*/
-/* line 1475, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1478, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-aside {
   padding: 20px 15px;
   width: 330px; }
 
-/* line 1480, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1483, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-aside {
   padding: 20px 15px 0 15px;
   width: 510px; }
 
 /* Gallery ------------------------------*/
-/* line 1487, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1490, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery .slider {
   width: 360px;
   height: 270px; }
 
-/* line 1492, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1495, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-gallery .slider {
   width: 550px;
   height: auto; }
 
-/* line 1497, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1500, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery .slides_container {
   width: 360px;
   height: 270px; }
 
-/* line 1502, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1505, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-gallery .slides_container {
   width: 550px;
   height: auto; }
 
-/* line 1507, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1510, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery ul.pagination {
   right: 0;
   margin: 25px 15px 0 0;
   padding: 0;
   position: absolute; }
 
-/* line 1514, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1517, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery ul.pagination li {
   display: inline;
   float: left;
   margin: 0 0 0 3px; }
 
-/* line 1519, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1522, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery ul.pagination li a {
   display: block;
   background-position: 0 -32px;
@@ -7799,33 +7791,33 @@ a .overlay .icon {
   height: 6px;
   text-indent: -9999px; }
 
-/* line 1528, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1531, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery ul.pagination li.current a,
 .format-gallery ul.pagination li a:hover {
   background-position: -7px -32px; }
 
-/* line 1532, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1535, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery .entry-title {
   padding: 20px 15px 10px 15px; }
 
-/* line 1534, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1537, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery .entry-content {
   padding: 0 15px;
   font-size: 11px; }
 
-/* line 1539, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1542, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-gallery .entry-content {
   font-size: 12px; }
 
-/* line 1541, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1544, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery .entry-meta {
   padding: 0 15px 20px 15px; }
 
-/* line 1543, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1546, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-gallery .arrow {
   margin: 262px 0 0 327px; }
 
-/* line 1545, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1548, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-gallery .arrow {
   margin: -14px 15px 0 0;
   position: relative;
@@ -7836,11 +7828,11 @@ a .overlay .icon {
   z-index: 500; }
 
 /* Link ------------------------------*/
-/* line 1556, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1559, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-link .entry-title {
   padding: 20px 15px; }
 
-/* line 1558, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1561, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-link .arrow {
   margin: -8px 15px 0 0;
   position: relative;
@@ -7849,12 +7841,12 @@ a .overlay .icon {
   top: auto;
   z-index: 500; }
 
-/* line 1566, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1569, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-link .entry-title a {
   padding: 0 0 0 10px;
   margin: 0 0 0 10px; }
 
-/* line 1571, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1574, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-link .entry-title .icon {
   background-position: 0 -95px;
   width: 15px;
@@ -7863,65 +7855,65 @@ a .overlay .icon {
   float: left;
   margin: 1px 0 0 0; }
 
-/* line 1579, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1582, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-link .entry-content {
   padding: 20px 15px 0 15px;
   font-size: 11px; }
 
-/* line 1584, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1587, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-link .entry-content {
   font-size: 12px; }
 
-/* line 1586, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1589, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-link .entry-meta {
   padding: 0 15px 20px 15px; }
 
 /* Image ------------------------------*/
-/* line 1590, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1593, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-image .entry-title {
   padding: 20px 15px 10px 15px; }
 
-/* line 1592, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1595, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-image .entry-content {
   padding: 0 15px;
   font-size: 11px; }
 
-/* line 1597, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1600, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-image .entry-content {
   font-size: 12px; }
 
-/* line 1599, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1602, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-image .entry-meta {
   padding: 0 15px 20px 15px; }
 
-/* line 1601, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1604, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-image .post-thumb a {
   margin: 0 0 6px 0; }
 
-/* line 1603, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1606, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-image .arrow {
   position: relative;
   display: inline;
   float: right;
   top: auto; }
 
-/* line 1609, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1612, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-image .arrow {
   margin: -14px 17px 0 0; }
 
 /* Quote ------------------------------*/
-/* line 1613, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1616, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-quote .quote-wrap {
   padding: 20px 15px; }
 
-/* line 1615, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1618, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-quote blockquote {
   padding: 0 0 0 10px;
   margin: 0 0 0 26px;
   font-size: 14px;
   line-height: 19px; }
 
-/* line 1622, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1625, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-quote .arrow {
   margin: -8px 15px 0 0;
   position: relative;
@@ -7930,7 +7922,7 @@ a .overlay .icon {
   top: auto;
   z-index: 500; }
 
-/* line 1630, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1633, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-quote .quote-wrap .icon {
   width: 16px;
   height: 12px;
@@ -7938,56 +7930,56 @@ a .overlay .icon {
   float: left;
   margin: 3px 0 0 0; }
 
-/* line 1637, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1640, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-quote .entry-content {
   padding: 20px 15px 0 15px;
   font-size: 11px; }
 
-/* line 1642, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1645, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-quote .entry-content {
   font-size: 12px; }
 
-/* line 1644, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1647, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-quote .entry-meta {
   padding: 0 15px 20px 15px; }
 
 /* Audio ------------------------------*/
-/* line 1648, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1651, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-audio .entry-title {
   padding: 20px 15px 10px 15px; }
 
-/* line 1650, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1653, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-audio .entry-content {
   padding: 0 15px;
   font-size: 11px; }
 
-/* line 1655, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1658, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-audio .entry-content {
   font-size: 12px; }
 
-/* line 1657, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1660, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-audio .entry-meta {
   padding: 0 15px 20px 15px; }
 
 /* Video ------------------------------*/
-/* line 1661, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1664, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-video .entry-title {
   padding: 20px 15px 10px 15px; }
 
-/* line 1663, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1666, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-video .entry-content {
   padding: 0 15px;
   font-size: 11px; }
 
-/* line 1668, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1671, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .format-video .entry-content {
   font-size: 12px; }
 
-/* line 1670, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1673, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-video .entry-meta {
   padding: 0 15px 20px 15px; }
 
-/* line 1673, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1676, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-audio,
 .jp-video {
   font-size: 1em;
@@ -7995,27 +7987,27 @@ a .overlay .icon {
   color: #fff;
   line-height: 1.6; }
 
-/* line 1681, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1684, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-audio,
 .jp-video {
   width: 360px; }
 
-/* line 1684, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1687, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .jp-audio,
 .single .jp-video {
   width: 550px; }
 
-/* line 1687, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1690, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-video-play,
 .jp-jplayer.jp-jplayer-video {
   width: 360px; }
 
-/* line 1690, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1693, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .jp-video-play,
 .single .jp-jplayer.jp-jplayer-video {
   width: 550px; }
 
-/* line 1692, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1695, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-interface {
   position: relative;
   width: 100%;
@@ -8025,27 +8017,27 @@ a .overlay .icon {
   -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4); }
 
-/* line 1702, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1705, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-type-single .jp-interface {
   height: 30px; }
 
-/* line 1704, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1707, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-interface ul.jp-controls {
   list-style-type: none;
   padding: 0;
   margin: 0; }
 
-/* line 1710, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1713, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-interface ul.jp-controls li {
   display: inline; }
 
-/* line 1712, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1715, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-interface ul.jp-controls a {
   position: absolute;
   overflow: hidden;
   text-indent: -9999px; }
 
-/* line 1719, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1722, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-play,
 a.jp-pause {
   width: 33px;
@@ -8053,30 +8045,30 @@ a.jp-pause {
   z-index: 1;
   outline: none; }
 
-/* line 1727, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1730, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-type-single a.jp-play,
 .jp-type-single a.jp-pause {
   top: 0;
   left: 0; }
 
-/* line 1732, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1735, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-play {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") 0 0 no-repeat; }
 
-/* line 1734, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1737, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-play:hover {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -33px 0 no-repeat; }
 
-/* line 1736, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1739, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-pause {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") 0 -30px no-repeat;
   display: none; }
 
-/* line 1741, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1744, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-pause:hover {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -33px -30px no-repeat; }
 
-/* line 1743, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1746, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-progress-container {
   position: absolute;
   top: 0;
@@ -8085,23 +8077,23 @@ a.jp-pause:hover {
   height: 6px;
   padding: 12px 10px; }
 
-/* line 1752, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1755, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-progress {
   position: absolute;
   overflow: hidden; }
 
-/* line 1757, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1760, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-type-single .jp-progress {
   width: 223px;
   height: 7px;
   padding: 1px;
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") 0 -192px repeat-x; }
 
-/* line 1764, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1767, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .jp-type-single .jp-progress {
   width: 411px; }
 
-/* line 1766, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1769, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-seek-bar {
   width: 0px;
   height: 5px;
@@ -8111,7 +8103,7 @@ a.jp-pause:hover {
   -moz-border-radius: 1px;
   border-radius: 1px; }
 
-/* line 1776, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1779, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-play-bar {
   width: 0px;
   height: 5px;
@@ -8125,7 +8117,7 @@ a.jp-pause:hover {
 	background: url("pbar-ani.gif");
 }
 */
-/* line 1791, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1794, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-volume-bar-container {
   position: absolute;
   top: 0;
@@ -8134,11 +8126,11 @@ a.jp-pause:hover {
   height: 6px;
   padding: 12px 10px; }
 
-/* line 1800, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1803, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .jp-volume-bar-container {
   left: 470px; }
 
-/* line 1802, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1805, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-volume-bar {
   position: relative;
   overflow: hidden;
@@ -8147,12 +8139,12 @@ a.jp-pause:hover {
   height: 9px;
   cursor: pointer; }
 
-/* line 1811, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1814, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-type-single .jp-volume-bar {
   top: 0;
   left: 18px; }
 
-/* line 1816, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1819, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-volume-bar-value {
   width: 0px;
   height: 5px;
@@ -8162,7 +8154,7 @@ a.jp-pause:hover {
   -moz-border-radius: 1px;
   border-radius: 1px; }
 
-/* line 1827, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1830, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-mute,
 a.jp-unmute {
   width: 17px;
@@ -8170,19 +8162,19 @@ a.jp-unmute {
   z-index: 1;
   outline: none; }
 
-/* line 1835, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1838, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-type-single a.jp-mute,
 .jp-type-single a.jp-unmute {
   top: 9px;
   left: 290px; }
 
-/* line 1841, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1844, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .jp-type-single a.jp-mute,
 .single .jp-type-single a.jp-unmute {
   top: 9px;
   left: 478px; }
 
-/* line 1847, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1850, ../sass/partials/_theme-wp-gridlocked.scss */
 .seperator-first,
 .seperator-second {
   background: url("/wp-content/themes/gridlocked/images/seperator.png") no-repeat left;
@@ -8191,58 +8183,58 @@ a.jp-unmute {
   position: absolute;
   left: 32px; }
 
-/* line 1855, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1858, ../sass/partials/_theme-wp-gridlocked.scss */
 .seperator-second {
   left: 279px; }
 
-/* line 1857, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1860, ../sass/partials/_theme-wp-gridlocked.scss */
 .single .seperator-second {
   left: 468px; }
 
-/* line 1859, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1862, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-mute {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -10px -68px no-repeat; }
 
-/* line 1861, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1864, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-mute:hover {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -43px -68px no-repeat; }
 
-/* line 1863, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1866, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-unmute {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -10px -98px no-repeat;
   display: none; }
 
-/* line 1868, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1871, ../sass/partials/_theme-wp-gridlocked.scss */
 a.jp-unmute:hover {
   background: url("/wp-content/themes/gridlocked/images/jplayer-black-and-yellow.png") -43px -98px no-repeat; }
 
-/* line 1870, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1873, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-jplayer {
   width: 0px;
   height: 0px; }
 
-/* line 1875, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1878, ../sass/partials/_theme-wp-gridlocked.scss */
 .jp-jplayer {
   background-color: #292a2b; }
 
 /* Standard ------------------------------*/
-/* line 1880, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1883, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-standard .entry-title {
   padding: 10px 15px 7px 15px;
   /*margin: 0 0 20px 0;*/
   font-size: 12px; }
 
-/* line 1886, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1889, ../sass/partials/_theme-wp-gridlocked.scss */
 .format-standard .entry-meta {
   font-size: 11px;
   margin: 0;
   padding: 5px 15px; }
 
-/* line 1892, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1895, ../sass/partials/_theme-wp-gridlocked.scss */
 #new-posts {
   display: none; }
 
-/* line 1895, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1898, ../sass/partials/_theme-wp-gridlocked.scss */
 #fancybox-close {
   width: 21px !important;
   height: 21px !important;
@@ -8250,15 +8242,15 @@ a.jp-unmute:hover {
   right: 8px !important;
   background: url('../images/lightbox/lightbox_cross.gif?1331686640') no-repeat left top !important; }
 
-/* line 1903, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1906, ../sass/partials/_theme-wp-gridlocked.scss */
 .iphone #content {
   padding-bottom: 0 !important; }
 
-/* line 1907, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 1910, ../sass/partials/_theme-wp-gridlocked.scss */
 .entry-title {
   min-height: 34px !important; }
 
-/* line 2318, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 2321, ../sass/partials/_theme-wp-gridlocked.scss */
 .clear {
   clear: both;
   display: block;
@@ -8267,7 +8259,7 @@ a.jp-unmute:hover {
   line-height: 0;
   width: 100%; }
 
-/* line 2319, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 2322, ../sass/partials/_theme-wp-gridlocked.scss */
 .clearfix:after {
   content: ".";
   display: block;
@@ -8275,17 +8267,17 @@ a.jp-unmute:hover {
   clear: both;
   visibility: hidden; }
 
-/* line 2320, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 2323, ../sass/partials/_theme-wp-gridlocked.scss */
 .clearfix {
   display: inline-block; }
 
 /* Hide from IE Mac \*/
-/* line 2322, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 2325, ../sass/partials/_theme-wp-gridlocked.scss */
 .clearfix {
   display: block; }
 
 /* End hide from IE Mac */
-/* line 2324, ../sass/partials/_theme-wp-gridlocked.scss */
+/* line 2327, ../sass/partials/_theme-wp-gridlocked.scss */
 .none {
   display: none; }
 
@@ -8328,11 +8320,19 @@ body {
 .masonry .masonry-brick footer, .masonry .masonry-brick .footer {
   border-top-style: solid;
   border-top-width: 1px; }
-/* line 34, ../sass/partials/_theme-aa-template.scss */
+/* line 33, ../sass/partials/_theme-aa-template.scss */
+.masonry .masonry-brick img {
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+/* line 37, ../sass/partials/_theme-aa-template.scss */
+.masonry .masonry-brick figcaption, .masonry .masonry-brick .figcaption {
+  width: 100%;
+  padding-bottom: 3px; }
+/* line 42, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick .arrow {
   display: none; }
 
-/* line 38, ../sass/partials/_theme-aa-template.scss */
+/* line 46, ../sass/partials/_theme-aa-template.scss */
 #footer {
   display: none;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIyMjIyMiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzU1NTU1NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -8347,86 +8347,99 @@ body {
   bottom: 0;
   height: 0;
   font-size: 11px; }
-  /* line 47, ../sass/partials/_theme-aa-template.scss */
+  /* line 55, ../sass/partials/_theme-aa-template.scss */
   #footer #copyright {
     color: #d4d4d4;
     line-height: 0; }
 
-/* line 62, ../sass/partials/_theme-aa-template.scss */
+/* line 70, ../sass/partials/_theme-aa-template.scss */
 a[rel="external"]:after, a.external:after, a[target="blank"]:after,
 #resume .folio_link:after {
   font-family: "FontAwesome";
   content: "\f08e";
   color: #8c8c8c;
   margin-left: 4px; }
-/* line 68, ../sass/partials/_theme-aa-template.scss */
+/* line 76, ../sass/partials/_theme-aa-template.scss */
 a[rel="external"]:hover:after, a.external:hover:after, a[target="blank"]:hover:after,
 #resume .folio_link:hover:after {
   color: #005580;
   text-decoration: none !important; }
 
-/* line 73, ../sass/partials/_theme-aa-template.scss */
+/* line 81, ../sass/partials/_theme-aa-template.scss */
 #resume .folio_link .icon {
   display: none; }
 
-/* line 77, ../sass/partials/_theme-aa-template.scss */
+/* line 85, ../sass/partials/_theme-aa-template.scss */
+.entry-header li, .entry-meta li {
+  list-style: none; }
+
+/* line 90, ../sass/partials/_theme-aa-template.scss */
+.masonry-brick .entry-meta .icon, .footer .entry-meta .icon {
+  margin-right: 4px; }
+  /* line 93, ../sass/partials/_theme-aa-template.scss */
+  .masonry-brick .entry-meta .icon:before, .footer .entry-meta .icon:before {
+    font-size: 1.3em; }
+
+/* line 100, ../sass/partials/_theme-aa-template.scss */
 .like-count .icon:before, .published .icon:before, .comment-count .icon:before, .folio_link .icon .icon:before, a .overlay .icon:before {
-  font-family: "FontAwesome";
-  color: #595959; }
-/* line 80, ../sass/partials/_theme-aa-template.scss */
+  font-family: "FontAwesome"; }
+/* line 103, ../sass/partials/_theme-aa-template.scss */
 .like-count:hover .icon, .like-count .icon:hover, .published:hover .icon, .published .icon:hover, .comment-count:hover .icon, .comment-count .icon:hover, .folio_link .icon:hover .icon, .folio_link .icon .icon:hover, a .overlay:hover .icon, a .overlay .icon:hover {
   color: #005580;
   text-decoration: none !important; }
 
-/* line 85, ../sass/partials/_theme-aa-template.scss */
+/* line 108, ../sass/partials/_theme-aa-template.scss */
 .arrow {
   font-family: "FontAwesome"; }
 
-/* line 88, ../sass/partials/_theme-aa-template.scss */
+/* line 111, ../sass/partials/_theme-aa-template.scss */
 .like-count .icon:before {
   content: "\f004"; }
-/* line 93, ../sass/partials/_theme-aa-template.scss */
-.like-count a.active:before, .like-count a.active.icon:before, .like-count a.active .icon:before, .like-count a:hover:before, .like-count a:hover.icon:before, .like-count a:hover .icon:before {
-  color: #f56559; }
+/* line 116, ../sass/partials/_theme-aa-template.scss */
+.like-count a.active, .like-count a.active:before, .like-count a.active.icon:before, .like-count a.active .icon:before, .like-count a:hover, .like-count a:hover:before, .like-count a:hover.icon:before, .like-count a:hover .icon:before {
+  color: #f56559 !important; }
 
-/* line 98, ../sass/partials/_theme-aa-template.scss */
+/* line 121, ../sass/partials/_theme-aa-template.scss */
 .published .icon:before {
   content: "\f073"; }
 
-/* line 99, ../sass/partials/_theme-aa-template.scss */
+/* line 122, ../sass/partials/_theme-aa-template.scss */
 .comment-count .icon:before {
   content: "\f086"; }
 
-/* line 100, ../sass/partials/_theme-aa-template.scss */
+/* line 123, ../sass/partials/_theme-aa-template.scss */
 a .overlay .icon:before {
   content: "\f002"; }
 
-/* line 102, ../sass/partials/_theme-aa-template.scss */
+/* line 125, ../sass/partials/_theme-aa-template.scss */
 .line {
   border-width: 1px 0;
   border-style: solid none; }
 
-/* line 113, ../sass/partials/_theme-aa-template.scss */
+/* line 136, ../sass/partials/_theme-aa-template.scss */
 body {
   background-color: #eeeeee;
   background-image: url('../images/gridlocked/light/bg_pattern_gray_leather_subtler.png?1331686640'); }
 
-/* line 118, ../sass/partials/_theme-aa-template.scss */
+/* line 141, ../sass/partials/_theme-aa-template.scss */
 .navbar-fixed-top .brand {
   color: #000;
   background: url('../images/aa-symbol_button.png?1331686640') left top no-repeat;
   text-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(255, 255, 255, 0.125) 0 0 30px; }
-  /* line 126, ../sass/partials/_theme-aa-template.scss */
+  /* line 149, ../sass/partials/_theme-aa-template.scss */
   .navbar-fixed-top .brand:hover {
     background-position: left bottom;
     color: #ddd !important;
     text-shadow: rgba(0, 0, 0, 0.5) 0 3px 0, rgba(0, 0, 0, 0.525) 0 0 30px; }
 
-/* line 138, ../sass/partials/_theme-aa-template.scss */
-.comment-body p, #load-more-link a, .hentry, .masonry-brick {
-  color: #999999; }
+/* line 164, ../sass/partials/_theme-aa-template.scss */
+.comment-body p, #load-more-link a, .hentry,
+.masonry-brick, .masonry-brick .entry-meta a,
+.folio_link .icon,
+.masonry-brick .entry-meta .icon:before {
+  color: #6e6e6e; }
 
-/* line 142, ../sass/partials/_theme-aa-template.scss */
+/* line 168, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick {
   background-color: transparent;
   background-color: rgba(204, 204, 204, 0.2);
@@ -8436,16 +8449,42 @@ body {
   -webkit-box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
   -o-box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7); }
-  /* line 155, ../sass/partials/_theme-aa-template.scss */
+  /* line 181, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick .wellOverlay {
     -moz-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
     -webkit-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
     -o-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
     box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset; }
-  /* line 159, ../sass/partials/_theme-aa-template.scss */
+  /* line 185, ../sass/partials/_theme-aa-template.scss */
+  .masonry .masonry-brick img {
+    border-bottom-color: rgba(228, 228, 228, 0.1);
+    -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15); }
+  /* line 189, ../sass/partials/_theme-aa-template.scss */
+  .masonry .masonry-brick figcaption, .masonry .masonry-brick .figcaption {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.05);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0D000000,endColorstr=#0D000000);
+    zoom: 1; }
+    /* line 193, ../sass/partials/_theme-aa-template.scss */
+    .masonry .masonry-brick figcaption .entry-title a, .masonry .masonry-brick .figcaption .entry-title a {
+      color: #333333; }
+  /* line 198, ../sass/partials/_theme-aa-template.scss */
+  .masonry .masonry-brick .post-thumb {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.05);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0D000000,endColorstr=#0D000000);
+    zoom: 1; }
+  /* line 201, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick footer, .masonry .masonry-brick .footer {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.05);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0D000000,endColorstr=#0D000000);
+    zoom: 1;
     border-top-color: rgba(100, 100, 100, 0.1); }
-  /* line 164, ../sass/partials/_theme-aa-template.scss */
+  /* line 209, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick.hover {
     background-color: transparent;
     background-color: rgba(255, 255, 255, 0.9);
@@ -8455,18 +8494,24 @@ body {
     -webkit-box-shadow: 0 2px 0 white;
     -o-box-shadow: 0 2px 0 white;
     box-shadow: 0 2px 0 white; }
-    /* line 167, ../sass/partials/_theme-aa-template.scss */
+    /* line 212, ../sass/partials/_theme-aa-template.scss */
     .masonry .masonry-brick.hover .wellOverlay {
       -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
       -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
       -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset; }
-  /* line 176, ../sass/partials/_theme-aa-template.scss */
+    /* line 217, ../sass/partials/_theme-aa-template.scss */
+    .masonry .masonry-brick.hover figcaption .entry-title a, .masonry .masonry-brick.hover figcaption .entry-title a:hover, .masonry .masonry-brick.hover .figcaption .entry-title a, .masonry .masonry-brick.hover .figcaption .entry-title a:hover {
+      color: #0088cc; }
+  /* line 227, ../sass/partials/_theme-aa-template.scss */
+  .no-rgba .masonry .masonry-brick img {
+    border-bottom-color: #1AE4E4E4; }
+  /* line 230, ../sass/partials/_theme-aa-template.scss */
   .no-rgba .masonry .masonry-brick footer, .no-rgba .masonry .masonry-brick .footer {
     border-top-color: #1A646464; }
 
 /* Infinite Scroll loader */
-/* line 187, ../sass/partials/_theme-aa-template.scss */
+/* line 241, ../sass/partials/_theme-aa-template.scss */
 #infscr-loading {
   text-align: center;
   z-index: 100;
@@ -8482,7 +8527,7 @@ body {
   -moz-border-radius: 10px;
   border-radius: 10px; }
 
-/* line 204, ../sass/partials/_theme-aa-template.scss */
+/* line 258, ../sass/partials/_theme-aa-template.scss */
 .slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
   -moz-box-shadow: 0px 0px 5px #333333;
   -webkit-box-shadow: 0px 0px 5px #333333;
@@ -8492,29 +8537,29 @@ body {
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
 
-/* line 212, ../sass/partials/_theme-aa-template.scss */
+/* line 266, ../sass/partials/_theme-aa-template.scss */
 .single .hentry {
   background-color: transparent; }
 
-/* line 214, ../sass/partials/_theme-aa-template.scss */
+/* line 268, ../sass/partials/_theme-aa-template.scss */
 #tagline {
   color: #777777; }
 
-/* line 221, ../sass/partials/_theme-aa-template.scss */
+/* line 275, ../sass/partials/_theme-aa-template.scss */
 .rgba .overlay {
   background-color: transparent;
   background-color: rgba(34, 34, 34, 0.8);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC222222,endColorstr=#CC222222);
   zoom: 1; }
-/* line 225, ../sass/partials/_theme-aa-template.scss */
+/* line 279, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .overlay {
   background: transparent url('../images/gridlocked/light/bg_pattern_gray_leather_subtler.png?1331686640') left top repeat; }
 
-/* line 232, ../sass/partials/_theme-aa-template.scss */
+/* line 286, ../sass/partials/_theme-aa-template.scss */
 .rgba .line {
   border-bottom-color: rgba(0, 0, 0, 0.1);
   border-top-color: rgba(255, 255, 255, 0.4); }
-/* line 236, ../sass/partials/_theme-aa-template.scss */
+/* line 290, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .line {
   border-bottom-color: #1A000000;
   border-top-color: #66FFFFFF; }
@@ -9485,7 +9530,7 @@ body {
   display: none !important; }
 
 /* line 40, ../sass/screen.scss */
-.comment-count {
+.comment-count, .edit-post {
   display: none !important; }
 
 /* line 41, ../sass/screen.scss */
