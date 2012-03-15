@@ -9487,3 +9487,7 @@ body {
 /* line 40, ../sass/screen.scss */
 .comment-count {
   display: none !important; }
+
+/* line 41, ../sass/screen.scss */
+.breadcrumb {
+  display: none !important; }

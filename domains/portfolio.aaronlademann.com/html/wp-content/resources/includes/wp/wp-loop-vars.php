@@ -1,4 +1,5 @@
-﻿<?php 
+﻿<?php include(custom_includes_dir() . "/wp/wp-loop-vars_taxonomy.php"); ?>
+<?php 
 					
 	$post_count = 0; 
 
@@ -37,18 +38,38 @@
 	if(is_search())
 		$searchQ = get_query_var('s');
 		$search = 'data-search="'.$searchQ.'" '; 
-					
+
+
+
 	// The Query
-	$the_query = new WP_Query( array(
-			'post_type' => $postType,
-			'posts_per_page' => -1,
-			'cat' => $catQ,
-			'author' => $authorQ,
-			'tag' => $tagQ,
-			'monthnum' => $dateQ,
-			's' => $searchQ
-		)
-	);
+	if($base_slug != $curr_slug){
+
+		$the_query = new WP_Query( array(
+				'post_type' => 'portfolio',
+				$taxType => $curr_slug,
+				'posts_per_page' => -1,
+				//'cat' => $catQ,
+				//'author' => $authorQ,
+				//'tag' => $tagQ,
+				//'monthnum' => $dateQ,
+				//'s' => $searchQ
+			)
+		);
+
+	} else {
+		
+		$the_query = new WP_Query( array(
+				'post_type' => 'portfolio',
+				'posts_per_page' => -1,
+				//'cat' => $catQ,
+				//'author' => $authorQ,
+				//'tag' => $tagQ,
+				//'monthnum' => $dateQ,
+				//'s' => $searchQ
+			)
+		);	
+
+	}
 					
 	// The Loop
 	while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -66,14 +87,36 @@
 
 	// paginate
   if ( get_query_var('paged') ) {
-          $paged = get_query_var('paged');
+		$paged = get_query_var('paged');
   } elseif ( get_query_var('page') ) {
-          $paged = get_query_var('page');
+    $paged = get_query_var('page');
   } else {
-          $paged = 1;
+		$paged = 1;
   }
 
-  query_posts( array( 'post_type' => $postType, 'posts_per_page' => get_option('posts_per_page'), 'paged' => $paged ) );
+  
+
+		// The Query
+	if($base_slug != $curr_slug){
+		// taxonomy page
+		query_posts( array( 
+			'post_type' => 'portfolio',
+			$taxType => $curr_slug,
+			'posts_per_page' => get_option('posts_per_page'), 
+			'paged' => $paged 
+			) 
+		);
+
+	} else {
+		// not a taxonomy page
+		query_posts( array( 
+			'post_type' => 'portfolio',
+			'posts_per_page' => get_option('posts_per_page'), 
+			'paged' => $paged 
+			) 
+		);
+
+	}
  
   
 

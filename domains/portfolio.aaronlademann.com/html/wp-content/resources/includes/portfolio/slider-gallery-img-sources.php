@@ -97,7 +97,7 @@
 		}
 									
 		head.ready(function(){
-									
+			var $ = jQuery.noConflict();					
 			var win_width = $(window).width();
 			var large_image_size;
 			if(win_width > 1024) {
