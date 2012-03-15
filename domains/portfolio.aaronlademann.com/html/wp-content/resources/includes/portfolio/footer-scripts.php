@@ -7,6 +7,7 @@
 			head.js(
 				{ bootstrapcollapse: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-collapse.js" }
 				,{ masonry: "<?php echo public_uri(); ?>/js/jquery/jquery.masonry.min.js" }
+				,{ masonry: "<?php echo public_uri(); ?>/js/jquery/jquery.imagesloaded.js" }
 				,{ bootstrapbutton: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-button.js" }
 				,{ bootstrapdropdown: "<?php echo public_uri(); ?>/js/bootstrap/bootstrap-dropdown.js" }
 				,{ jqueryuicustom: "<?php echo public_uri(); ?>/js/jquery/jquery-ui-1.8.5.custom.min.js" }
@@ -14,11 +15,22 @@
 				,{ jqueryanimatecolors: "<?php echo public_uri(); ?>/js/jquery/jquery.animate-colors.js" }
 				,{ jquerycookie: "<?php echo public_uri(); ?>/js/jquery/carhartl-jquery-cookie/jquery.cookie.js" }
 				,{ tzshortcodes: "<?php echo public_uri(); ?>/js/jquery/jquery.shortcodes.js" }
-				,{ tzcustom: "<?php echo public_uri(); ?>/js/jquery/jquery.gridlocked-custom.js" }
 			, function() {
-				// all done
+				
+				head.ready(function(){
+					head.js({ tzcustom: "<?php echo public_uri(); ?>/js/jquery/jquery.gridlocked-custom.js" });
+				});
+
 			});
 
+		}); // end head.ready("jquery");
+
+		head.ready("masonry", function(){
+			head.js(
+				{ infinitescroll: "<?php echo public_uri(); ?>/js/jquery/infinite-scroll/jquery.infinitescroll.min.js" }
+				, function(){
+					// done with infinitescroll
+				});
 		});
 
 	});
