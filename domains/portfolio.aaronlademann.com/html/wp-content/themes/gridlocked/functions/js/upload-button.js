@@ -13,7 +13,7 @@ function getParameterByName(name)
 jQuery(document).ready(function() {
 
 	// grab the post id so the images don't all get attached to post 1
-	var media_upload_uri = 'media-upload.php?post_id=1&amp;type=image&amp;TB_iframe=true';
+	var media_upload_uri = 'media-upload.php?post_id=' + parseInt(getParameterByName('post')) + '&amp;type=image&amp;TB_iframe=true';
 
 	jQuery('#tz_portfolio_thumb_button').click(function() {
 
