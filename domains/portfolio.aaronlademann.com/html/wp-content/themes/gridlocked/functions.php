@@ -161,6 +161,7 @@ add_post_type_support( 'post', 'post-formats' );
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
+	//add_image_size( 'thumb_sm', 50, 50, true );
 	//add_image_size( 'large', 680, '', true ); // Large thumbnails
 	//add_image_size( 'medium', 250, '', true ); // Medium thumbnails
 	//add_image_size( 'small', 125, '', true ); // Small thumbnails

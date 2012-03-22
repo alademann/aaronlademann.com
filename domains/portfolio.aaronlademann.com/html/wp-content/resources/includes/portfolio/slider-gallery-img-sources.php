@@ -128,6 +128,12 @@
 		});
 </script>
 <?php 
+	function get_mimetype($uri){
+		$length = strlen($uri);
+		$period_pos = strrpos($uri,".");
+
+		$mime = substr($uri,$period_pos,($length-$period_pos));
+	}
 	function get_rawsrc($uri){
 		$length = strlen($uri);
 		$period_pos = strrpos($uri,".");
@@ -143,22 +149,19 @@
 
 	} // END get_rawsrc
 	function get_fullsize($uri){
-		$length = strlen($uri);
-		$period_pos = strrpos($uri,".");
 			
-		$mime = substr($uri,$period_pos,($length-$period_pos));
+		$mime = get_mimetype($uri);	
 		$raw_src = get_rawsrc($uri);
 			
 		return $raw_src . $mime;		
 
 	} // END get_fullsize
 	function get_thumbsize($uri){
-		$length = strlen($uri);
-		$period_pos = strrpos($uri,".");
 
-		$mime = substr($uri,$period_pos,($length-$period_pos));
+		$mime = get_mimetype($uri);	
 		$raw_src = get_rawsrc($uri);
 
 		return $raw_src . "-thumb_sm" . $mime;
 	}
+	
 ?>

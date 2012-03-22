@@ -110,9 +110,16 @@
   			<ul class="entry-header clearfix">
   				<li class="like-count">
   					<?php tz_printLikes(get_the_ID()); ?>
+						<span class="line vert"></span>
   				</li>
+					<li class="published">
+						<span class="icon"></span>
+						<?php echo the_date('F j, Y'); ?>
+					</li>
   				<?php if($caption != '') : ?>
-  				<li class="caption"><strong class="black"><?php echo the_date('F j, Y'); ?></strong><br /> <?php echo $caption; ?> </li>
+  				<li class="caption">
+						<?php echo $caption; ?>
+					</li>
   				<?php endif; ?>
   				<?php if($link != '') : ?>
   				<li class="link"><a target="_blank" href="<?php echo $link; ?>"><span class="icon"></span><?php _e('View Project', 'framework'); ?></a></li>

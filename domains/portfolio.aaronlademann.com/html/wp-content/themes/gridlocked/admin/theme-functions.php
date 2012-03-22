@@ -161,6 +161,7 @@ function tz_gallery($postid){
 					effect: 'fade',
 					play: 8000,
 					pause: 1000,
+					autoHeight: true,
 					hoverPause: true<?php if(!is_singular()): ?>,
 					crossfade: true<?php endif; ?>
 				});
