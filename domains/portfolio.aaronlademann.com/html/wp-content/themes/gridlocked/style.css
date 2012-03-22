@@ -51,7 +51,7 @@
 	body,
 	input,
 	textarea,
-	button { font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	button { font: 12px/20px Geneva, Helvetica, Arial, sans-serif; }
 
 	.hidden { display: none; }
 
@@ -124,6 +124,10 @@
 				
 	}
 
+	.ie .slider a img {
+		width: auto !important;
+		height: auto !important;
+	}
 
 	.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
 		-webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.50);
