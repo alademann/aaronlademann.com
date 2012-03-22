@@ -110,7 +110,7 @@ window.addEventListener('DOMNodeInserted', function(event) {
 			var lightboxTitleArray = new Array();
 
 			var i = 0;
-			var lightBoxImage = $(".single #primary").find(".lightbox img");
+			var lightBoxImage = $(".single #primary").find(".slides_control figure img");
 			$.each(lightBoxImage, function() {
 				lightboxTitleArray[i] = $(this).attr("alt");
 				//console.info("lightboxTitleArray[" + i + "] = " + lightboxTitleArray[i]);
