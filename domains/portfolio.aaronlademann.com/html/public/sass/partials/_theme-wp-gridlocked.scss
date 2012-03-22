@@ -163,12 +163,7 @@
 
 	#footer { clear: both; }
 
-	.line {  
-		position: relative;
-		@include float(left);
-		width: 100%;
-		left: 0;
-	}
+	
 
 
 	/*-----------------------------------------------------------------------------------*/
@@ -919,59 +914,7 @@
 	/*.hentry * { cursor: default; }*/
 	.hentry a, .hentry a * { cursor: pointer; }
 
-	/* pages that only have one image need this */
-	.single-portfolio .slides_control div { position: absolute; }
-
-	.single-portfolio  ul.pagination li {
-		@include float(left);
-		margin: 0 0 0 3px;
-	}
-
-	.single-portfolio  ul.pagination li a {
-		display: block;	
-		width: auto;
-		height: auto;
-		background-image: none !important;
-		background-color: #66696d;
-		color: #d2d6db;
-		text-decoration: none !important;
-		text-shadow: 1px 1px 0 #333 !important;
-		@include border-radius(2px, 2px);
-	}
-
-	.single-portfolio  ul.pagination li.current a,
-	.single-portfolio  ul.pagination li a:hover { background-color: #08f; color: white; }
-
-	.single-portfolio .entry-title { padding: 20px 15px 10px 15px; }
-
-	.single-portfolio .entry-content { 
-		padding: 0 15px; 
-		font-size: 11px;
-	}
-
-	.single-portfolio .entry-content { font-size: 12px; }
-	.single-portfolio .entry-meta { padding: 0 15px 20px 15px; }
-
-	.single .entry-header .like-count {
-		position: relative;
-		/*text-shadow: 0 0 0 none !important;*/
-		line-height: 1.7 !important;
-		/* .js will reveal it */
-		visibility: hidden;
-	}
-
-	.single-portfolio .hentry .arrow {
-		margin: -14px 15px 0 0;
-		position: relative;
-		@include float(right);
-		top: auto;
-		z-index: 500;
-		display: none;
-	}
-
-	.single-portfolio .caption a { display: inline; }
-
-	li.caption { font-size: 12px;line-height: 1.6 !important; }
+	
 
 	.link { margin: 15px 0 0 0; }
 
@@ -1379,42 +1322,44 @@
 	.entry-meta a { display: block; }
 	.entry-meta li.terms a { display: inline; }
 
-	.published { @include float(left); }
+	.published, .comment-count, .like-count { 
+		
+		&, a, .icon {
+			@include float(left); 
+		}
+	}
 
 	.published .icon {
-		background-position: 0 -47px;
+		//background-position: 0 -47px;
 		width: 14px;
 		height: 14px;
-		@include float(left);
 		//margin: 3px 5px 0 0;
 	}
 	.published:hover { 
 	//color: #66696D; 
 	}
-	.published a:hover .icon, .published:hover .icon { background-position: -14px -47px; }
+	//.published a:hover .icon, .published:hover .icon { background-position: -14px -47px; }
 
 	.comment-count { display: none; }
 
 	.comment-count .icon {
-		background-position: 0 -7px;
+		//background-position: 0 -7px;
 		width: 15px;
 		height: 11px;
-		@include float(left);
 		//margin: 4px 5px 0 0;
 	}
 
-	.comment-count a:hover .icon { background-position: -16px -7px; }
+	//.comment-count a:hover .icon { background-position: -16px -7px; }
 
 	.like-count .icon {
-		background-position: 0 -19px;
+		//background-position: 0 -19px;
 		width: 13px;
 		height: 11px;
-		@include float(left);
 		//margin: 4px 5px 0 0;
 	}
 
-	.like-count a:hover .icon,
-	.like-count a.active .icon { background-position: -15px -19px; }
+//	.like-count a:hover .icon,
+//	.like-count a.active .icon { background-position: -15px -19px; }
 
 	.like-count,
 	.edit-post,

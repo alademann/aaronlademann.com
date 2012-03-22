@@ -86,17 +86,12 @@ a[rel="external"], a.external, a[target="blank"],
 		list-style: none;
 	}
 }
-.masonry-brick .entry-meta, .footer .entry-meta {
-	.icon {
-		margin-right: 4px;
 
-		&:before { 
-			font-size: 1.3em; 
-		}
-	}
-}
 // specific icons
-.like-count, .published, .comment-count, .folio_link .icon, a .overlay {
+.like-count, .published, .comment-count, .folio_link .icon {
+	a, a span {
+		display: block;
+	}
 	.icon:before { 
 		font-family: "FontAwesome"; 
 	}
@@ -108,6 +103,9 @@ a[rel="external"], a.external, a[target="blank"],
 .arrow { font-family: "FontAwesome"; }
 
 .like-count {	
+	@include min-width(2.3em);
+	width: auto;
+
 	.icon:before {
 		content: $icon-heart; 
 	}
@@ -125,6 +123,11 @@ a .overlay .icon:before { content: $icon-search; }
 .line { 
 	border-width: 1px 0;
 	border-style: solid none; 
+
+	&.vert {
+		border-width: 0 1px;
+		border-style: none solid;
+	}
 }
 //	.entry-meta ul, .entry-meta ul ul, .entry-meta ul ul ul, .entry-meta ul ul ul ul, .entry-meta ul ul ul ul ul { clear: left; }
 //	.widget-title { margin: 10px 0 4px 0; font-weight: bold; }
@@ -136,6 +139,14 @@ a .overlay .icon:before { content: $icon-search; }
 	body {
 		background-color: $light_bgcolor;
 		background-image: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png");
+	}
+
+	.pagination.thumbs {
+		@include gradient-vertical($navbarBackground, $navbarBackgroundHighlight);
+		@include border-corner-radius(bottom, left, 4px);
+		@include border-corner-radius(bottom, right, 4px);
+		$shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+		@include box-shadow($shadow);
 	}
 
 	.navbar-fixed-top .brand {
@@ -160,8 +171,11 @@ a .overlay .icon:before { content: $icon-search; }
 
 	.comment-body p, #load-more-link a, .hentry, 
 	.masonry-brick, .masonry-brick .entry-meta a,
-	.folio_link .icon, 
-	.masonry-brick .entry-meta .icon:before { color: lighten($gray,10%); }
+	.folio_link .icon, .like-count, .like-count a, .like-count .icon, .like-count .icon:before,
+	.masonry-brick .entry-meta .icon:before, .published .icon, .published .icon:before { color: lighten($gray,10%); }
+
+	.like-count .icon, .like-count .icon:before, 
+	.single .published .icon, .single .published .icon:before { color: lighten($gray,30%) !important; }
 
 	.masonry {
 	
@@ -286,10 +300,20 @@ a .overlay .icon:before { content: $icon-search; }
 		.rgba & {
 			border-bottom-color: rgba(0,0,0,.1); 
 			border-top-color: rgba(255,255,255,.4);
+
+			&.vert {
+				border-right-color: rgba(0,0,0,.1); 
+				border-left-color: rgba(255,255,255,.4);
+			}
 		}
 		.no-rgba & {
 			border-bottom-color: ie-hex-str(rgba(0,0,0,.1)); 
 			border-top-color: ie-hex-str(rgba(255,255,255,.4));
+
+			&.vert {
+				border-right-color: ie-hex-str(rgba(0,0,0,.1)); 
+				border-left-color: ie-hex-str(rgba(255,255,255,.4));
+			}
 		}
 	}
 

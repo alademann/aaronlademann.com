@@ -17,12 +17,23 @@
 		line-height: 36px;
 		height: 40px;
 	}
+} // END .navbar-fixed-top
+
+.line {  
+	position: relative;
+	@include float(left);
+	width: 100%;
+	left: 0;
+	
+	&.vert {
+		width: 0;
+		padding: 0;
+		margin: 0 1em;
+	}
 }
 
 // #primary wraps around .masonry, and is within a row-fluid
 #primary {
-	//padding: 0 $primaryHPad 0 0;
-	//left: ($sidebarWidth + ($primaryHPad - $masonryHPad));
 
 	.page-template-template-full-width-php & { float: none; }
 
@@ -54,10 +65,23 @@
 //		}
 //	} // END .breadcrumb
 
-.masonry {
+	.masonry-brick .entry-meta, .footer .entry-meta, .like-count, .published {
+		.icon {
+			margin-right: 4px;
+
+			& + span {
+				float: left;
+			}
+			&:before { 
+				font-size: 1.3em; 
+			}
+
+		} // END .icon
+	}
+
+	.masonry {
 	// progressively reveal this so the animations don't look wierd
 	// only if browser handles javascript.
-	// initial hide
 
 		.js.opacity & {
 			// browser supports opacity
@@ -83,54 +107,48 @@
 	
 	// END progressive revealing of .masonry opacity
 
-	&, .masonry-brick, .masonry-brick .wellOverlay {
-		@include transition-duration(0.7s);
-	}
-	.masonry-brick {
-		margin: 0 0 $masonryVPad $masonryHPad;
+		&, .masonry-brick, .masonry-brick .wellOverlay {
+			@include transition-duration(0.7s);
+		}
+		.masonry-brick {
+			margin: 0 0 $masonryVPad $masonryHPad;
 
-		&, .wellOverlay{
-			@include transition-property(all);
-			//@include transition-property("left, right, top");
-			@include min-width($aa_media_widthThumb);
-			max-width: $aa_media_widthThumb;
-			@include min-height($aa_media_heightThumb + 84);
-			max-height: ($aa_media_heightThumb + 84);
-			padding: 0;
+			&, .wellOverlay{
+				@include transition-property(all);
+				//@include transition-property("left, right, top");
+				@include min-width($aa_media_widthThumb);
+				max-width: $aa_media_widthThumb;
+				@include min-height($aa_media_heightThumb + 84);
+				max-height: ($aa_media_heightThumb + 84);
+				padding: 0;
+			}
+
+			.wellOverlay { 
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+
+			.wellOverlay, figcaption, footer, .footer {
+				cursor: pointer;
+			}
+
+			figcaption, .figcaption, footer, .footer {
+				position: absolute;
+				z-index: 1;
+			}
+			footer, .footer {
+				bottom: 0;
+				left: 0;
+				width: 96.4%;
+				padding: 0 2%;
+				overflow: hidden;
+			}
+
 		}
 
-		.wellOverlay { 
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 0;
-		}
-
-		.wellOverlay, figcaption, footer, .footer {
-			cursor: pointer;
-		}
-
-		figcaption, .figcaption, footer, .footer {
-			position: absolute;
-			z-index: 1;
-		}
-		footer, .footer {
-			bottom: 0;
-			left: 0;
-			width: 96%;
-			padding: 0 2%;
-		}
-
-	}
-
-} // END .masonry
-
-	/* adaptive images */
-	img, object, .wp-caption { 
-		max-width: 100% !important; 
-		width: 100% !important; 
-		height: auto !important;
-	}
+	} // END .masonry
 
 } // END #primary
 
@@ -138,41 +156,53 @@
 
 	#container, #content, #primary { padding: 0; position: inherit; }
 
-	/* 100% height fix */
-	#single-sidebar { 
-		@include stretch-y($aa_mastHeight,0); 
-		left: auto;
-		right: 0;
-
-		& > div, & > header, & > footer, & > span, & > ul, & > p {
-			width: auto;
-			padding: 1.4em;
-		}
-	}
-
 	// primary section & article
 	#primary {
 		/* no left sidebar on .single pages */
 		$primaryHpad_single: 5%;
 		$sliderDivider: ($primaryHPad / 2); // space between image and caption / meta 
-		//left: 0;
-		//padding: 0 $primaryHpad_single;
-		//width: (100% - ($primaryHpad_single * 2));
 
-		& > header, & > .header,
-		.slider, #single-sidebar {
-			//padding: 0 $primaryHPad;
-		} 
-		.slider {
-			position: relative; // so that the thumbnail pagination can be easily positioned
+		/* jQuery "slides" thumbnail pagination */
+		.pagination.thumbs {
+			
+			position: absolute;
+			left: auto;
+			top: -($baseLineHeight - 4);
+			height: $aa_media_widthThumbSm;
+			margin: 0;
+			padding: 10px 12px 20px 10px;
 
-			.slideStage { padding: 0 3.3em; } // give the portfolio item some breathing room...
-			//padding-right: $sliderDivider;
-		}
-		#single-sidebar {
-			//padding-left: $sliderDivider;
-		}
+			li {
+				@include float(left);
+				margin: 0 0 0 3px;
 
+				// css transitions
+				&, a, a > img {
+					@include transition-property(all);
+					@include transition-duration(0.7s);
+				}
+
+				a {
+					@include opacity(0.25);
+					padding: .3em;
+					display: block;	
+					width: $aa_media_widthThumbSm;
+					height: $aa_media_widthThumbSm;
+					background: transparent none;
+					text-decoration: none;
+					//@include border-radius(2px, 2px);
+					border: 0 none;
+				} // END .single .pagination li a
+
+				&.current a {
+					@include opacity(1.0);
+				}
+
+			} // END .single .pagination li
+
+		} // END .single .pagination
+
+		// primary .single page header that spans the entire top area below mast
 		& > header, & > .header {
 			//width: auto;
 			padding-top: $primaryVPad / 2;
@@ -188,54 +218,36 @@
 			}
 		}
 
-		article, .hentry {
-			//width: 100%;
-			//margin: 0 0 0 0;
-			//padding: 0 0 0 0;
-			//@include float(left);
-			//position: relative;
-		} // END .single article (.hentry)
-
-		// sections within the article
-		.slider, .entry-content, #single-sidebar {
-			//@include float(left);
-			//position: relative;
-			//padding-top: ($articleVPad + (($primaryVPad/2) + $primaryVPad));
-		}
 		// slider image area
 		.slider {
-			//background: rgba(100,100,100,.5);
+			position: relative; // so that the thumbnail pagination can be easily positioned
+			&, .slides_container { @include min-height(300px); }
+			
+			// give the portfolio item some breathing room...
+			.slideStage { 
+				padding: 0 3.3em; 
 
-			&, .slides_container {
-				//width: $folioImgWidth;
-				//width: 100%;
-				@include min-height(300px);
-
-				.slides_control, .slides_control figure, .slides_control .figure {
-					width: 100% !important;
+				.prev, .next {
+					display: none;
 				}
-			}
-			.caption, .pagination {
-				position: absolute;
-				top: -$articleVPad;
-				margin: 0;
-				padding: 0; 
-			}
-			.caption, .pagination li a {
+			} 
+			
+			.slides_control, .slides_control figure, .slides_control .figure { width: 100% !important; } // adaptive image sizing
+
+			/* jQuery "slider" captions */
+			.caption { 
+				//position: absolute;
+				//top: -$articleVPad;
+				//left: 0;
+				//margin: 0;
+				//padding: 0; 
 				font-size: 14px;
 				font-weight: bold;
-			}
-			.caption {
-				left: 0;
-			}
-			.pagination {
-				right: $sliderDivider;
-				li a {
-					display: block;
-					padding: 2px 8px 2px 8px;
-					text-align: center;
-				}
-			}
+				line-height: 1.6 !important; 
+
+				a { display: inline; }
+
+			} // END .slider .caption
 		} // END article .slider	
 
 		// content area beneath slider (currently blank)
@@ -245,16 +257,31 @@
 
 		// sidebar (where content / meta for each portfolio piece lives)
 		#single-sidebar {
-			//visibility: hidden; // js in gridlocked-custom.js will reveal
 			z-index: 99;
-			//margin: 0;
-			//width: auto;
-			//max-width: 325px;
-			//top: 0;
-			//left: 0;
 			background: rgba(120,120,120,.1);
 			@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
+			@include stretch-y($aa_mastHeight,0); 
+			// the stretch-y compass method above creates absolute position... 
+			// so we need to align it how we want our fluid layout to respond when screen size changes.
+			left: auto;
+			right: 0;
 
+			& > div, & > header, & > footer, & > span, & > ul, & > p {
+				width: auto;
+				padding: 0 1.4em;
+			}
+			& > header, & > .header {
+				padding-top: 1.4em;
+			}
+			& > footer, & > .footer {
+				padding-bottom: 1.4em;
+			}
+
+			// formatting for any <ul> elem in the #single sidebar
+			ul { margin: 0; padding: 0; }
+			.seperator { margin: ($articleVPad / 4) 0; }
+
+			// header is where the_content() and the_title() live on .single posts.
 			header, .header {
 					
 				h1, .h1 {
@@ -265,76 +292,61 @@
 					margin-bottom: ($aa_h1_fontSize / 9);
 				}
 
-			} // END header, .header
-
-			ul { 
-				margin: 0; 
-				padding: 0; 
-			}
-			.seperator { margin: ($articleVPad / 4) 0; }
-			// since the pic in the middle is not elastic,
-			//	we'll have to use media query classes generated
-			//	by head.js to determine how much width we have available.
-			//------------------- specific width profiles ------------------
-			.lt-1280 & {
-				$ltWidth: 1280px;
+				ul.entry-header {
 					
-			}
-			.lt-1024 &, .lt-1024.w-1000 &, .lt-1024.w-900 & {
-					
-				h1, .h1 {
-					$h1_fontSize: $aa_h1_fontSize - .2; 
-					font-size: $h1_fontSize;
-					margin-bottom: ($h1_fontSize / 9);
-				}
-				.caption, .link { font-size: .9em; line-height: 1.3em !important; }
-				.seperator { display: none; }
+					.like-count, .published {
+						float: left;
+						position: relative;
+
+						&, span {
+							line-height: 2em;
+
+							.icon {
+								margin-right: 6px; // separate text from icon
+							}
+						}
+						
+						.js & {
+							// .js will reveal it
+							//visibility: hidden;
+						}
+					} // END #single-sidebar > .like-count, .published
+
+					// vertical divider between two <li> elems floating next to one another
+					.line.vert {
+						height: 2em;
+						@include opacity(.5);
+					}
+
+					.caption {
+						// the_content()
+						clear: both;
+						padding: 1em 0;
+					} // end #single-sidebar .caption
+
+				} // END .single #single-sidebar header ul.entry-header
+			} // END .single #single-sidebar header, .header	
+
+			// footer is where the bulleted taxonomy lists live on .single posts.
+			footer, .footer {
 
 			}
-			.lt-1024.w-800 &, .lt-768 & {
-				$ltWidth: 1024px;
-				// less than 1024 wide, the sidebar will drop below the image
-				//clear: left;
-				//top: 0;
-				//left: 0;
-				//padding: ($articleVPad / 2) $articleHPad 0 $primaryHPad;
-				//max-width: $folioImgWidth !important;
-				//width: auto !important;
 
-				h1, .h1 {
-					$h1_fontSize: $aa_h1_fontSize - .4; 
-					font-size: $h1_fontSize;
-					margin-bottom: ($h1_fontSize / 9);
-				}
-				// no horizontal dividers, we're going to stack the description side-by-side
-				// with the meta ul's
-				//.seperator { display: none; }
-				header, .header, footer, .footer {
-					//@include float(left);
-				}
-				header, .header {
-					//width: 53%;
-					//padding-right: 7%;
-					//border-right: 1px solid rgba($gray, .2);
-				}
-				footer, .footer { 
-					//width: 38%;
-					//padding-left: 1.9%; 
-					//border-left: 1px solid rgba(255, 255, 255, .9);
-				}
-
-			} // END .lt-1024
-
-			//--END-------------- specific width profiles ------------------
-				
 		} // END .single #single-sidebar
-
-		
-		
 	} // END .single #primary section & article
-
 } // END .single
 
+
+/* adaptive images */
+.single #primary, .masonry article, .masonry .article {
+	// images within these containers, we want to scale to the size of their containers.
+	img, object, .wp-caption { 
+		max-width: 100% !important; 
+		width: 100% !important; 
+		height: auto !important;
+	}
+
+}
 
 /* MEDIA QUERIES ----------------------------------------------------- */
 	/* ALL DEVICES ----------------------------------------------------- */
@@ -347,33 +359,132 @@
  
 	// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
 	// --------------------------------------------------
-		@media (max-width : 768px) { 
-	
+		@media (max-width : 767px) { 
+			
+			.single {
+				
+				#primary {
+
+					#single-sidebar {
+					
+						z-index: 99;
+						background: rgba(120,120,120,.1);
+						@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
+						//@include stretch-y($aa_mastHeight,0); 
+						position: relative;
+						// the stretch-y compass method above creates absolute position... 
+						// so we need to align it how we want our fluid layout to respond when screen size changes.
+						left: auto;
+						right: 0;
+
+	//					& > div, & > header, & > footer, & > span, & > ul, & > p {
+	//						width: auto;
+	//						padding: 0 1.4em;
+	//					}
+	//					& > header, & > .header {
+	//						padding-top: 1.4em;
+	//					}
+	//					& > footer, & > .footer {
+	//						padding-bottom: 1.4em;
+	//					}
+	//
+	//					// formatting for any <ul> elem in the #single sidebar
+	//					ul { margin: 0; padding: 0; }
+	//					.seperator { margin: ($articleVPad / 4) 0; }
+	//
+	//					// header is where the_content() and the_title() live on .single posts.
+	//					header, .header {
+	//					
+	//						h1, .h1 {
+	//							font-size: $aa_h1_fontSize;
+	//							font-weight: bold;
+	//							letter-spacing: -.1ex;
+	//							line-height: 1.1;
+	//							margin-bottom: ($aa_h1_fontSize / 9);
+	//						}
+	//
+	//						ul.entry-header {
+	//					
+	//							.like-count, .published {
+	//								float: left;
+	//								position: relative;
+	//
+	//								&, span {
+	//									line-height: 2em;
+	//
+	//									.icon {
+	//										margin-right: 6px; // separate text from icon
+	//									}
+	//								}
+	//						
+	//								.js & {
+	//									// .js will reveal it
+	//									//visibility: hidden;
+	//								}
+	//							} // END #single-sidebar > .like-count, .published
+	//
+	//							// vertical divider between two <li> elems floating next to one another
+	//							.line.vert {
+	//								height: 2em;
+	//								@include opacity(.5);
+	//							}
+	//
+	//							.caption {
+	//								// the_content()
+	//								clear: both;
+	//								padding: 1em 0;
+	//							} // end #single-sidebar .caption
+	//
+	//						} // END .single #single-sidebar header ul.entry-header
+	//					} // END .single #single-sidebar header, .header	
+	//
+	//					// footer is where the bulleted taxonomy lists live on .single posts.
+	//					footer, .footer {
+	//
+	//					}
+
+						header, .header {
+						
+							h1 {
+								$h1_fontSize: $aa_h1_fontSize - .2; 
+								font-size: $h1_fontSize;
+								margin-bottom: ($h1_fontSize / 9);
+							} // END .single #single-sidebar header h1
+						} // END .single #single-sidebar header
+					} // END .single #single-sidebar
+
+				} // END #primary
+			} // END .single
+
+		//////////////////////////////////////////////////////////////
 		} /* END LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET */
  
 	// PORTRAIT TABLET TO DEFAULT DESKTOP
 	// ----------------------------------
 		@media (min-width : 768px) and (max-width : 979px) { 
-	
+		
+		//////////////////////////////////////////////////////////////
 		} /* END PORTRAIT TABLET TO DEFAULT DESKTOP */
 
 	// LANDSCAPE TABLETS AND BELOW
 	// -----------------
 		@media (max-width : 979px) {
 
+		//////////////////////////////////////////////////////////////
 		} /* END LANDSCAPE TABLETS AND BELOW */
 
 	// DEFAULT DESKTOP
 	// ---------------
 		@media (min-width : 980px) {
 
-
+		//////////////////////////////////////////////////////////////
 		} /* END DEFAULT DESKTOP */
 
 	// LARGE DESKTOP & UP
 	// ------------------
 		@media (min-width : 1200px) {
 	
+		//////////////////////////////////////////////////////////////
 		} /* END LARGE DESKTOP & UP */
 
 	/* END ALL DEVICES ------------------------------------------------- */
@@ -384,6 +495,7 @@
 		and (min-device-width : 768px)
 		and (max-device-width : 1024px) {
 	
+		//////////////////////////////////////////////////////////////
 		} /* END iPads */
 
 	// iPhones
@@ -392,6 +504,7 @@
 		and (min-device-width : 320px)
 		and (max-device-width : 480px) {
 
+		//////////////////////////////////////////////////////////////
 		} /* END iPhones */
 
 	// Apple Retina Displays (iPhone 4+, iPad 3+)
@@ -400,6 +513,7 @@
 		only screen and (-webkit-min-device-pixel-ratio : 1.5),
 		only screen and (min-device-pixel-ratio : 1.5) {
 
+		//////////////////////////////////////////////////////////////
 		} /* END Apple Retina Displays */
 
 	/* MOBILE DEVICES -------------------------------------------------- */
