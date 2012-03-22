@@ -51,7 +51,7 @@
 	body,
 	input,
 	textarea,
-	button { font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	button { font: 12px/20px Geneva, Helvetica, Arial, sans-serif; }
 
 	.hidden { display: none; }
 
