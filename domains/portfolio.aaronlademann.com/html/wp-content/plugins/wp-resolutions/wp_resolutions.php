@@ -19,7 +19,7 @@ array(	"name" => "Watch paths",
 		"desc" => "Enter the paths that you want Resolutions to watch. Put each path on a new line (separate paths with a return.)",
 		"id" => $shortname . "_include_paths",
 		"type" => "textarea",
-		"std" => "/wp-content/uploads/"),
+		"std" => "/wp-content/portfolio-media/"),
 
 array(  "type" => "close")
 
@@ -77,7 +77,7 @@ function wprxr_add_page()
 // Set up the plugin when it is activated
 function wprxr_activate()
 {
-	add_option('wprxr_include_paths', '/wp-content/uploads/');
+	add_option('wprxr_include_paths', '/wp-content/portfolio-media/');
 	
 	$new_htaccess = wprxr_htaccess();
 

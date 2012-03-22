@@ -22,7 +22,6 @@
 
 // Navbar button for toggling navbar items in responsive layouts
 .btn-navbar {
-  display: none;
   @include float(right);
   padding: 7px 10px;
   margin-left: 5px;
@@ -30,6 +29,7 @@
   @include buttonBackground($navbarBackgroundHighlight, $navbarBackground);
   $shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
   @include box-shadow($shadow);
+	display: none;
 }
 .btn-navbar .icon-bar {
   display: block;

@@ -155,16 +155,14 @@ function tz_gallery($postid){
 					// aaronl: custom
 					//bigTarget: true, 
 					// aaronl: custom
-					//generateNextPrev: true, 
+					generateNextPrev: true, 
 					preloadImage: jQuery("#slider-<?php echo $postid; ?>").attr('data-loader'), 
-					generatePagination: true,
+					generatePagination: false,
 					effect: 'fade',
 					play: 8000,
-					pause: 8000,
+					pause: 1000,
 					hoverPause: true<?php if(!is_singular()): ?>,
-					crossfade: true<?php endif; ?><?php if(is_singular()): ?>,
-					autoHeight: true<?php endif; ?>
-					
+					crossfade: true<?php endif; ?>
 				});
 			});
 

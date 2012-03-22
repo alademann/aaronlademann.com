@@ -155,15 +155,16 @@
 // ----------------------------------
 
 @media (min-width: 768px) and (max-width: 979px) {
+	$mediaGridColOffset: 18px;
 
   // Fixed grid
-  @include gridSystem-generate(12, 42px, 20px);
+  @include gridSystem-generate($gridColumns, $gridColumnWidth - $mediaGridColOffset, $gridGutterWidth);
 
   // Fluid grid
-  @include fluidGridSystem-generate(12, 5.801104972%, 2.762430939%);
+  @include fluidGridSystem-generate($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
 
   // Input grid
-  @include inputGridSystem-generate(12, 42px, 20px);
+  @include inputGridSystem-generate($gridColumns, $gridColumnWidth - $mediaGridColOffset, $gridGutterWidth);
 
 }
 
@@ -307,15 +308,15 @@
 // ------------------
 
 @media (min-width: 1200px) {
-
+	$mediaGridOffset: 10px;
   // Fixed grid
-  @include gridSystem-generate(12, 70px, 30px);
+  @include gridSystem-generate($gridColumns, $gridColumnWidth + $mediaGridOffset, $gridGutterWidth + $mediaGridOffset);
 
   // Fluid grid
-  @include fluidGridSystem-generate(12, 5.982905983%, 2.564102564%);
+  @include fluidGridSystem-generate($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
 
   // Input grid
-  @include inputGridSystem-generate(12, 70px, 30px);
+  @include inputGridSystem-generate($gridColumns, $gridColumnWidth + $mediaGridOffset, $gridGutterWidth + $mediaGridOffset);
 
   // Thumbnails
   .thumbnails {

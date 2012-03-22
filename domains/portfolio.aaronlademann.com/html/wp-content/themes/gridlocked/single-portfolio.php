@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
-<section id="primary" class="hfeed">
+<section id="primary" class="hfeed span12">
 	<header>
 <?php if ( function_exists('yoast_breadcrumb') ) { ?>
 	<!-- BEGIN .breadcrumb navigation -->
@@ -9,27 +9,22 @@
 		</nav>
 	<!-- END .breadcrumb navigation --> 
 <?php } ?>
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<!--BEGIN .single-page-navigation -->
 		<nav class="navigation single-page-navigation clearfix">
 			<section class="nav-previous">
 				<?php next_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
 			</section>
-			<!--<section class="portfolio-link">
-				<a href="<?php echo get_permalink( get_option('tz_portfolio_page') ); ?>"> <span class="icon"><?php _e('Back to Portfolio', 'framework'); ?></span></a> 
-			</section>-->
 			<section class="nav-next">
 				<?php previous_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
 			</section>					
 		</nav>
 		<!--END .single-page-navigation -->
 	</header>
-	<?php include(custom_includes_dir() . "/portfolio/slider-gallery.php"); ?>
- 
 	<!--BEGIN .hentry -->
-  <article class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
-  <?php if($image1 != '') : ?>
+  <article class="<?php post_class(); ?> row-fluid" id="post-<?php the_ID(); ?>">
+		<?php include(custom_includes_dir() . "/portfolio/slider-gallery.php"); ?>
+	<?php if($image1 != '') : ?>
   <!-- its an image gallery -->
 		<?php if($image8 != '' || $image2 == '') : 
 		// if there is only 1, or there are 8 or more images... don't display the caption.
@@ -37,139 +32,18 @@
 		<style type="text/css">.lightbox .caption { visibility: hidden !important; display: none !important; }</style>
 		<?php endif; ?>
 
-		<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-sources.php"); ?>
+		<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-sources.php"); ?>	
 
 		<?php tz_gallery(get_the_ID()); ?>
-		<?php if($image2 != '') : ?>
-		<div class="arrow"></div>
-		<?php else: ?>
-		<div class="arrow noslider"></div>
-		<?php endif; ?>
 
     <!--BEGIN .slider -->
-    <section id="slider-<?php the_ID(); ?>" class="slider" data-loader="<?php echo  get_template_directory_uri(); ?>/images/<?php if(get_option('tz_alt_stylesheet') == 'dark.css'):?>dark<?php else: ?>light<?php endif; ?>/ajax-loader.gif">
-      <section class="slides_container clearfix">
-        <?php if($image1 != '') : ?>
-      	<figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image1_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image1_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image1_h; ?>" width="<?php echo $image1_w; ?>" src="<?php echo $image1; ?>" alt="<?php echo $image1_caption; ?>" class="<?php echo $image1_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image2 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image2_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image2_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image2_h; ?>" width="<?php echo $image2_w; ?>" src="<?php echo $image2; ?>" alt="<?php echo $image2_caption; ?>" class="<?php echo $image2_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image3 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image3_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image3_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image3_h; ?>" width="<?php echo $image3_w; ?>" src="<?php echo $image3; ?>" alt="<?php echo $image3_caption; ?>" class="<?php echo $image3_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image4 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image4_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image4_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image4_h; ?>" width="<?php echo $image4_w; ?>" src="<?php echo $image4; ?>" alt="<?php echo $image4_caption; ?>" class="<?php echo $image4_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image5 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image5_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image5_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image5_h; ?>" width="<?php echo $image5_w; ?>" src="<?php echo $image5; ?>" alt="<?php echo $image5_caption; ?>" class="<?php echo $image5_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-				<?php if($image6 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image6_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image6_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image6_h; ?>" width="<?php echo $image6_w; ?>" src="<?php echo $image6; ?>" alt="<?php echo $image6_caption; ?>" class="<?php echo $image6_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image7 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image7_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image7_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image7_h; ?>" width="<?php echo $image7_w; ?>" src="<?php echo $image7; ?>" alt="<?php echo $image7_caption; ?>" class="<?php echo $image7_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image8 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image8_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image8_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image8_h; ?>" width="<?php echo $image8_w; ?>" src="<?php echo $image8; ?>" alt="<?php echo $image8_caption; ?>" class="<?php echo $image8_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image9 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image9_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image9_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image9_h; ?>" width="<?php echo $image9_w; ?>" src="<?php echo $image9; ?>" alt="<?php echo $image9_caption; ?>" class="<?php echo $image9_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-        <?php if($image10 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image10_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image10_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image10_h; ?>" width="<?php echo $image10_w; ?>" src="<?php echo $image10; ?>" alt="<?php echo $image10_caption; ?>" class="<?php echo $image10_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-				<?php if($image11 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image11_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image11_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image11_h; ?>" width="<?php echo $image11_w; ?>" src="<?php echo $image11; ?>" alt="<?php echo $image11_caption; ?>" class="<?php echo $image11_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-				<?php if($image12 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image12_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image12_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image12_h; ?>" width="<?php echo $image12_w; ?>" src="<?php echo $image12; ?>" alt="<?php echo $image12_caption; ?>" class="<?php echo $image12_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-				<?php if($image13 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image13_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image13_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image13_h; ?>" width="<?php echo $image13_w; ?>" src="<?php echo $image13; ?>" alt="<?php echo $image13_caption; ?>" class="<?php echo $image13_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-				<?php if($image14 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image14_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image14_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image14_h; ?>" width="<?php echo $image14_w; ?>" src="<?php echo $image14; ?>" alt="<?php echo $image14_caption; ?>" class="<?php echo $image14_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-				<?php if($image15 != '') : ?>
-        <figure>
-      		<a class="lightbox" title="Click to view full-size <?php echo $image15_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
-      			<figcaption><strong class="caption"><?php echo $image15_caption; ?></strong></figcaption>
-      			<img height="<?php echo $image15_h; ?>" width="<?php echo $image15_w; ?>" src="<?php echo $image15; ?>" alt="<?php echo $image15_caption; ?>" class="<?php echo $image15_mime; ?>" />
-      		</a>
-      	</figure>
-        <?php endif; ?>
-      </section>
+    <section id="slider-<?php the_ID(); ?>" class="slider span8" data-loader="<?php echo  get_template_directory_uri(); ?>/images/<?php if(get_option('tz_alt_stylesheet') == 'dark.css'):?>dark<?php else: ?>light<?php endif; ?>/ajax-loader.gif">
+			<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?> 
+			<section class="slideStage">
+				<section class="slides_container clearfix">
+					<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-markup.php"); ?>  
+				</section>
+			</section>
     </section>
 		<!--END .slider -->
 	<?php else: ?>
@@ -220,22 +94,8 @@
   <?php endif; ?>
   <!-- END IF(image or video) -->
   
-		<!--BEGIN .entry-content -->
-		<?php
-			$simple_style = '';
-			$item_content = get_the_content();
-			if($image2 == ''){
-				if($item_content == ''){
-					$simple_style = 'min-height: 1px !important; margin-top: -22px !important;';
-				}
-			}
-		?>	 
-		<section class="entry-content" style="<?php echo $simple_style; ?>">
-  	
-		</section>
-		<!--END .entry-content -->
 		<!--BEGIN #single-sidebar-->
-  	<section id="single-sidebar">
+  	<section id="single-sidebar" class="span4">
   		<?php 
   			if(get_the_content() != ''){
   				$caption = get_the_content(); 

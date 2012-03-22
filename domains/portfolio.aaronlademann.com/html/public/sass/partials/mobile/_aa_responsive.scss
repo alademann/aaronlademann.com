@@ -125,36 +125,56 @@
 
 } // END .masonry
 
-
+	/* adaptive images */
+	img, object, .wp-caption { 
+		max-width: 100% !important; 
+		width: 100% !important; 
+		height: auto !important;
+	}
 
 } // END #primary
 
 .single {
-	position: relative;
 
-	#content, #primary { padding: 0; }
+	#container, #content, #primary { padding: 0; position: inherit; }
+
+	/* 100% height fix */
+	#single-sidebar { 
+		@include stretch-y($aa_mastHeight,0); 
+		left: auto;
+		right: 0;
+
+		& > div, & > header, & > footer, & > span, & > ul, & > p {
+			width: auto;
+			padding: 1.4em;
+		}
+	}
+
 	// primary section & article
 	#primary {
 		/* no left sidebar on .single pages */
 		$primaryHpad_single: 5%;
 		$sliderDivider: ($primaryHPad / 2); // space between image and caption / meta 
-		left: 0;
+		//left: 0;
 		//padding: 0 $primaryHpad_single;
 		//width: (100% - ($primaryHpad_single * 2));
 
 		& > header, & > .header,
 		.slider, #single-sidebar {
-			padding: 0 $primaryHPad;
+			//padding: 0 $primaryHPad;
 		} 
 		.slider {
-			padding-right: $sliderDivider;
+			position: relative; // so that the thumbnail pagination can be easily positioned
+
+			.slideStage { padding: 0 3.3em; } // give the portfolio item some breathing room...
+			//padding-right: $sliderDivider;
 		}
 		#single-sidebar {
-			padding-left: $sliderDivider;
+			//padding-left: $sliderDivider;
 		}
 
 		& > header, & > .header {
-			width: auto;
+			//width: auto;
 			padding-top: $primaryVPad / 2;
 			height: $primaryVPad;
 			line-height: $primaryVPad;
@@ -169,26 +189,31 @@
 		}
 
 		article, .hentry {
-			width: 100%;
-			margin: 0 0 0 0;
-			padding: 0 0 0 0;
-			@include float(left);
-			position: relative;
+			//width: 100%;
+			//margin: 0 0 0 0;
+			//padding: 0 0 0 0;
+			//@include float(left);
+			//position: relative;
 		} // END .single article (.hentry)
 
 		// sections within the article
 		.slider, .entry-content, #single-sidebar {
-			@include float(left);
-			position: relative;
-			padding-top: ($articleVPad + (($primaryVPad/2) + $primaryVPad));
+			//@include float(left);
+			//position: relative;
+			//padding-top: ($articleVPad + (($primaryVPad/2) + $primaryVPad));
 		}
 		// slider image area
 		.slider {
 			//background: rgba(100,100,100,.5);
 
 			&, .slides_container {
-				width: $folioImgWidth;
+				//width: $folioImgWidth;
+				//width: 100%;
 				@include min-height(300px);
+
+				.slides_control, .slides_control figure, .slides_control .figure {
+					width: 100% !important;
+				}
 			}
 			.caption, .pagination {
 				position: absolute;
@@ -222,11 +247,11 @@
 		#single-sidebar {
 			//visibility: hidden; // js in gridlocked-custom.js will reveal
 			z-index: 99;
-			margin: 0;
-			width: auto;
+			//margin: 0;
+			//width: auto;
 			//max-width: 325px;
-			top: 0;
-			left: 0;
+			//top: 0;
+			//left: 0;
 			background: rgba(120,120,120,.1);
 			@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
 
@@ -269,12 +294,12 @@
 			.lt-1024.w-800 &, .lt-768 & {
 				$ltWidth: 1024px;
 				// less than 1024 wide, the sidebar will drop below the image
-				clear: left;
-				top: 0;
-				left: 0;
-				padding: ($articleVPad / 2) $articleHPad 0 $primaryHPad;
-				max-width: $folioImgWidth !important;
-				width: auto !important;
+				//clear: left;
+				//top: 0;
+				//left: 0;
+				//padding: ($articleVPad / 2) $articleHPad 0 $primaryHPad;
+				//max-width: $folioImgWidth !important;
+				//width: auto !important;
 
 				h1, .h1 {
 					$h1_fontSize: $aa_h1_fontSize - .4; 
@@ -283,19 +308,19 @@
 				}
 				// no horizontal dividers, we're going to stack the description side-by-side
 				// with the meta ul's
-				.seperator { display: none; }
+				//.seperator { display: none; }
 				header, .header, footer, .footer {
-					@include float(left);
+					//@include float(left);
 				}
 				header, .header {
-					width: 53%;
-					padding-right: 7%;
-					border-right: 1px solid rgba($gray, .2);
+					//width: 53%;
+					//padding-right: 7%;
+					//border-right: 1px solid rgba($gray, .2);
 				}
 				footer, .footer { 
-					width: 38%;
-					padding-left: 1.9%; 
-					border-left: 1px solid rgba(255, 255, 255, .9);
+					//width: 38%;
+					//padding-left: 1.9%; 
+					//border-left: 1px solid rgba(255, 255, 255, .9);
 				}
 
 			} // END .lt-1024

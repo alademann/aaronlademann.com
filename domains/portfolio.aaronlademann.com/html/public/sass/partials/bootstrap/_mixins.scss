@@ -192,7 +192,7 @@
 } 
 @mixin fluidGridSystem-gridColumn($fluidGridGutterWidth) {
   @include float(left);
-  margin-left: $fluidGridGutterWidth;
+  margin-left: $fluidGridGutterWidth - ($fluidGridGutterWidth / 2);
 }
 // Take these values and mixins, and make 'em do their thang
 @mixin fluidGridSystem-generate($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth) {      
