@@ -9,106 +9,76 @@
 							if($image1 != ''){
 								$image1_caption = image_meta($image1,'caption', 'medium');
 								$image1_mime = image_meta($image1,'mime', 'medium');
-								$image1_h = image_meta($image1,'height', 'medium');
-								$image1_w = image_meta($image1,'width', 'medium');
 							}
             $image2 = get_post_meta(get_the_ID(), 'tz_portfolio_image2', TRUE); 
 							if($image2 != ''){
 								$image2_caption = image_meta($image2,'caption', 'full'); 
 								$image2_mime = image_meta($image2,'mime', 'medium');
-								$image2_h = image_meta($image2,'height', 'medium');
-								$image2_w = image_meta($image2,'width', 'medium');
 							}
             $image3 = get_post_meta(get_the_ID(), 'tz_portfolio_image3', TRUE); 
 							if($image3 != ''){
 								$image3_caption = image_meta($image3,'caption', 'full');
 								$image3_mime = image_meta($image3,'mime', 'medium');
-								$image3_h = image_meta($image3,'height', 'medium');
-								$image3_w = image_meta($image3,'width', 'medium');
 							}
             $image4 = get_post_meta(get_the_ID(), 'tz_portfolio_image4', TRUE); 
 							if($image4 != ''){
 								$image4_caption = image_meta($image4,'caption', 'full');
 								$image4_mime = image_meta($image4,'mime', 'medium');
-								$image4_h = image_meta($image4,'height', 'medium');
-								$image4_w = image_meta($image4,'width', 'medium');
 							}
             $image5 = get_post_meta(get_the_ID(), 'tz_portfolio_image5', TRUE);
 							if($image5 != ''){
 								$image5_caption = image_meta($image5,'caption', 'full'); 
 								$image5_mime = image_meta($image5,'mime', 'medium');
-								$image5_h = image_meta($image5,'height', 'medium');
-								$image5_w = image_meta($image5,'width', 'medium');
 							}
             $image6 = get_post_meta(get_the_ID(), 'tz_portfolio_image6', TRUE); 
 							if($image6 != ''){
 								$image6_caption = image_meta($image6,'caption', 'full');
 								$image6_mime = image_meta($image6,'mime', 'medium');
-								$image6_h = image_meta($image6,'height', 'medium');
-								$image6_w = image_meta($image6,'width', 'medium');
 							}
             $image7 = get_post_meta(get_the_ID(), 'tz_portfolio_image7', TRUE); 
 							if($image7 != ''){
 								$image7_caption = image_meta($image7,'caption', 'full'); 
 								$image7_mime = image_meta($image7,'mime', 'medium');
-								$image7_h = image_meta($image7,'height', 'medium');
-								$image7_w = image_meta($image7,'width', 'medium');
 							}
             $image8 = get_post_meta(get_the_ID(), 'tz_portfolio_image8', TRUE); 
 							if($image8 != ''){
 								$image8_caption = image_meta($image8,'caption', 'full');
 								$image8_mime = image_meta($image8,'mime', 'medium');
-								$image8_h = image_meta($image8,'height', 'medium');
-								$image8_w = image_meta($image8,'width', 'medium');
 							}
             $image9 = get_post_meta(get_the_ID(), 'tz_portfolio_image9', TRUE); 
 							if($image9 != ''){
 								$image9_caption = image_meta($image9,'caption', 'full');
 								$image9_mime = image_meta($image9,'mime', 'medium');
-								$image9_h = image_meta($image9,'height', 'medium');
-								$image9_w = image_meta($image9,'width', 'medium');
 							}
             $image10 = get_post_meta(get_the_ID(), 'tz_portfolio_image10', TRUE);
 							if($image10 != ''){
 								$image10_caption = image_meta($image10,'caption', 'full'); 
 								$image10_mime = image_meta($image10,'mime', 'medium');
-								$image10_h = image_meta($image10,'height', 'medium');
-								$image10_w = image_meta($image10,'width', 'medium');
 							}
 						$image11 = get_post_meta(get_the_ID(), 'tz_portfolio_image11', TRUE);
 							if($image11 != ''){
 								$image11_caption = image_meta($image11,'caption', 'full'); 
 								$image11_mime = image_meta($image11,'mime', 'medium');
-								$image11_h = image_meta($image11,'height', 'medium');
-								$image11_w = image_meta($image11,'width', 'medium');
 							}
 						$image12 = get_post_meta(get_the_ID(), 'tz_portfolio_image12', TRUE);
 							if($image12 != ''){
 								$image12_caption = image_meta($image12,'caption', 'full'); 
 								$image12_mime = image_meta($image12,'mime', 'medium');
-								$image12_h = image_meta($image12,'height', 'medium');
-								$image12_w = image_meta($image12,'width', 'medium');
 							}
 						$image13 = get_post_meta(get_the_ID(), 'tz_portfolio_image13', TRUE);
 							if($image13 != ''){
 								$image13_caption = image_meta($image13,'caption', 'full'); 
 								$image13_mime = image_meta($image13,'mime', 'medium');
-								$image13_h = image_meta($image13,'height', 'medium');
-								$image13_w = image_meta($image13,'width', 'medium');
 							}
 						$image14 = get_post_meta(get_the_ID(), 'tz_portfolio_image14', TRUE);
 							if($image14 != ''){
 								$image14_caption = image_meta($image14,'caption', 'full'); 
 								$image14_mime = image_meta($image14,'mime', 'medium');
-								$image14_h = image_meta($image14,'height', 'medium');
-								$image14_w = image_meta($image14,'width', 'medium');
 							}
 						$image15 = get_post_meta(get_the_ID(), 'tz_portfolio_image15', TRUE);
 							if($image15 != ''){
 								$image15_caption = image_meta($image15,'caption', 'full'); 
 								$image15_mime = image_meta($image15,'mime', 'medium');
-								$image15_h = image_meta($image15,'height', 'medium');
-								$image15_w = image_meta($image15,'width', 'medium');
 							}
 
             $embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
@@ -280,67 +250,67 @@
                     <?php if($image1 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image1_caption; ?>" href="#1" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image1_caption; ?></strong> 
-											<img height="<?php echo $image1_h; ?>" width="<?php echo $image1_w; ?>" src="<?php echo $image1; ?>" alt="<?php echo $image1_caption; ?>" class="<?php echo $image1_mime; ?>" />
+											<img src="<?php echo $image1; ?>" alt="<?php echo $image1_caption; ?>" class="<?php echo $image1_mime; ?>" />
 										</a></div>   
                     <?php endif; ?>
                     <?php if($image2 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image2_caption; ?>" href="#2" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image2_caption; ?></strong> 
-											<img height="<?php echo $image2_h; ?>" width="<?php echo $image2_w; ?>" src="<?php echo $image2; ?>" alt="<?php echo $image2_caption; ?>" class="<?php echo $image2_mime; ?>" />
+											<img src="<?php echo $image2; ?>" alt="<?php echo $image2_caption; ?>" class="<?php echo $image2_mime; ?>" />
 										</a></div> 
                     <?php endif; ?>
                     <?php if($image3 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image3_caption; ?>" href="#3" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image3_caption; ?></strong> 
-											<img height="<?php echo $image3_h; ?>" width="<?php echo $image3_w; ?>" src="<?php echo $image3; ?>" alt="<?php echo $image3_caption; ?>" class="<?php echo $image3_mime; ?>" />
+											<img src="<?php echo $image3; ?>" alt="<?php echo $image3_caption; ?>" class="<?php echo $image3_mime; ?>" />
 										</a></div> 
                     <?php endif; ?>
                     <?php if($image4 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image4_caption; ?>" href="#4" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image4_caption; ?></strong> 
-											<img height="<?php echo $image4_h; ?>" width="<?php echo $image4_w; ?>" src="<?php echo $image4; ?>" alt="<?php echo $image4_caption; ?>" class="<?php echo $image4_mime; ?>" />
+											<img src="<?php echo $image4; ?>" alt="<?php echo $image4_caption; ?>" class="<?php echo $image4_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                     <?php if($image5 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image5_caption; ?>" href="#5" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image5_caption; ?></strong> 
-											<img height="<?php echo $image5_h; ?>" width="<?php echo $image5_w; ?>" src="<?php echo $image5; ?>" alt="<?php echo $image5_caption; ?>" class="<?php echo $image5_mime; ?>" />
+											<img src="<?php echo $image5; ?>" alt="<?php echo $image5_caption; ?>" class="<?php echo $image5_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
 										<?php if($image6 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image6_caption; ?>" href="#6" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image6_caption; ?></strong> 
-											<img height="<?php echo $image6_h; ?>" width="<?php echo $image6_w; ?>" src="<?php echo $image6; ?>" alt="<?php echo $image6_caption; ?>" class="<?php echo $image6_mime; ?>" />
+											<img src="<?php echo $image6; ?>" alt="<?php echo $image6_caption; ?>" class="<?php echo $image6_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                     <?php if($image7 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image7_caption; ?>" href="#7" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image7_caption; ?></strong> 
-											<img height="<?php echo $image7_h; ?>" width="<?php echo $image7_w; ?>" src="<?php echo $image7; ?>" alt="<?php echo $image7_caption; ?>" class="<?php echo $image7_mime; ?>" />
+											<img src="<?php echo $image7; ?>" alt="<?php echo $image7_caption; ?>" class="<?php echo $image7_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                     <?php if($image8 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image8_caption; ?>" href="#8" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image8_caption; ?></strong> 
-											<img height="<?php echo $image8_h; ?>" width="<?php echo $image8_w; ?>" src="<?php echo $image8; ?>" alt="<?php echo $image8_caption; ?>" class="<?php echo $image8_mime; ?>" />
+											<img src="<?php echo $image8; ?>" alt="<?php echo $image8_caption; ?>" class="<?php echo $image8_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                     <?php if($image9 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image9_caption; ?>" href="#9" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image9_caption; ?></strong> 
-											<img height="<?php echo $image9_h; ?>" width="<?php echo $image9_w; ?>" src="<?php echo $image9; ?>" alt="<?php echo $image9_caption; ?>" class="<?php echo $image9_mime; ?>" />
+											<img src="<?php echo $image9; ?>" alt="<?php echo $image9_caption; ?>" class="<?php echo $image9_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                     <?php if($image10 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image10_caption; ?>" href="#10" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image10_caption; ?></strong> 
-											<img height="<?php echo $image10_h; ?>" width="<?php echo $image10_w; ?>" src="<?php echo $image10; ?>" alt="<?php echo $image10_caption; ?>" class="<?php echo $image10_mime; ?>" />
+											<img src="<?php echo $image10; ?>" alt="<?php echo $image10_caption; ?>" class="<?php echo $image10_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
 										<?php if($image11 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image11_caption; ?>" href="#11" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image11_caption; ?></strong> 
-											<img height="<?php echo $image11_h; ?>" width="<?php echo $image11_w; ?>" src="<?php echo $image11; ?>" alt="<?php echo $image11_caption; ?>" class="<?php echo $image11_mime; ?>" />
+											<img src="<?php echo $image11; ?>" alt="<?php echo $image11_caption; ?>" class="<?php echo $image11_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
 										<?php if($image12 != '') : ?>
@@ -352,7 +322,7 @@
 										<?php if($image13 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image13_caption; ?>" href="#13" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image13_caption; ?></strong> 
-											<img height="<?php echo $image13_h; ?>" width="<?php echo $image13_w; ?>" src="<?php echo $image13; ?>" alt="<?php echo $image13_caption; ?>" class="<?php echo $image13_mime; ?>" />
+											<img src="<?php echo $image13; ?>" alt="<?php echo $image13_caption; ?>" class="<?php echo $image13_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
 										<?php if($image14 != '') : ?>
@@ -364,7 +334,7 @@
 										<?php if($image15 != '') : ?>
                     <div><a class="lightbox" title="Click to view full-size <?php echo $image15_caption; ?>" href="#15" rel="gallery_<?php the_ID(); ?>">
 											<strong class="caption"><?php echo $image15_caption; ?></strong> 
-											<img height="<?php echo $image15_h; ?>" width="<?php echo $image15_w; ?>" src="<?php echo $image15; ?>" alt="<?php echo $image15_caption; ?>" class="<?php echo $image15_mime; ?>" />
+											<img src="<?php echo $image15; ?>" alt="<?php echo $image15_caption; ?>" class="<?php echo $image15_mime; ?>" />
 										</a></div>
                     <?php endif; ?>
                   </div>
