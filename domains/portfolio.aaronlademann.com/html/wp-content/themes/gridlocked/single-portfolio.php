@@ -29,7 +29,7 @@
   		?>
   		<!--BEGIN .entry-meta .entry-header-->
   		<header>
-  			<h1><?php the_title(); ?></h1>					
+  			<h1 class="entryTitle"><?php the_title(); ?></h1>					
   			<ul class="entry-header clearfix">
   				<li class="like-count">
   					<?php tz_printLikes(get_the_ID()); ?>

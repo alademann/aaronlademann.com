@@ -25,7 +25,6 @@ head.ready(function() {
 
 	// trigger this stuff on window resize
 	$(window).smartresize(function() {
-		loadMoreWidth();
 		contentHeight();
 	});
 
@@ -39,7 +38,6 @@ head.ready(function() {
 	disableRightClick($masonryWrapperClass + ' img, .lightbox img, .fancybox-img'); // disable right click on all portfolio images
 
 	tz_widgetOverlay();
-	tz_loadMore(); // TODO: remove (infinite scroll takes care of this)
 	tz_overlay();
 	tz_navTitles();
 	tz_fancybox();
@@ -290,8 +288,6 @@ function tz_likeInit() {
 				return false;
 			}
 			var classes = $(this).addClass("active");
-			//var id = $(this).attr("id");
-			//id = id.split("like-");
 
 			// set the cookies here instead of in the php file since php cannot get the expiration set correctly.
 			$.cookie("like_" + id[1], id[1], { expires: 7300, path: '/', domain: '.aaronlademann.com' });
@@ -312,14 +308,14 @@ function tz_likeInit() {
 
 } // END tz_likeInit()
 
-function tz_whoLikes($post_id, $likes) {
+function tz_whoLikes($post, $likes, $post_id) {
 
 	var page_type = $("body").attr("class");
 	page_type = page_type.split(" ");
-	if(page_type[0] = "single") {
-		$what = $("#single-sidebar h1").text();
+	if(page_type[0] == "single") {
+		$what = $("h1.entryTitle").text();
 	} else {
-		$what = $("#post-" + $post_id).find(".entry-title").text();
+		$what = $(".box[id$=" + $post_id + "]").find(".entry-title > a").text();
 	}
 
 
@@ -355,20 +351,24 @@ function tz_whoLikes($post_id, $likes) {
 
 function tz_reloadLikes(who, postID) {
 
-	var text = $("#" + who).html();
+	var item = $("#" + who);
+	var text = item.html();
 	var patt = /(\d)+/;
 
 	var num = patt.exec(text);
 	num[0]++;
 	text = text.replace(patt, num[0]);
-	var updated_title = tz_whoLikes(postID, num[0]);
-	$("#" + who).attr("title", updated_title);
-	$("#" + who).html('<span class="count">' + text + '</span>');
+	var updated_title = tz_whoLikes(item, num[0], postID);
+	item.attr("title", updated_title);
+	item.html('<span class="count">' + text + '</span>');
 
 	// is it active?
 	if($.cookie("like_" + postID)) {
-		$("#" + who).addClass("active").css("visibility", "visible");
+		item.addClass("active");
 	}
+
+	// reveal it no matter what
+	item.css("visibility", "visible");
 
 } // END tz_reloadLikes()
 
@@ -632,135 +632,6 @@ function tz_widgetOverlay() {
 	});
 
 } // END tz_widgetOverlay()
-
-/*-----------------------------------------------------------------------------------*/
-/*	Load More Post Functions
-/*-----------------------------------------------------------------------------------*/
-
-var loadMoreLink = $('#load-more-link a');
-
-var offset = parseInt(loadMoreLink.attr('data-offset'));
-var cat = parseInt(loadMoreLink.attr('data-category'));
-var author = parseInt(loadMoreLink.attr('data-author'));
-var tag = loadMoreLink.attr('data-tag');
-var date = loadMoreLink.attr('data-date');
-var searchQ = loadMoreLink.attr('data-search');
-
-if(!cat)
-	cat = 0;
-
-if(!author)
-	author = 0;
-
-if(!tag)
-	tag = '';
-
-if(!date)
-	date = 0;
-
-if(!searchQ)
-	searchQ = '';
-
-function tz_loadMore() {
-
-	var off = false;
-
-	var currentCount = parseInt($('#post-count').text());
-
-	if(currentCount == 0) {
-		loadMoreLink.text(loadMoreLink.attr('data-empty'));
-		off = true;
-	}
-
-	loadMoreLink.click(function(e) {
-		var newCount = currentCount - $(this).attr('data-offset');
-
-		e.preventDefault();
-
-		//console.log(offset);
-
-		if(off != true) {
-
-			$(this).unbind("click");
-
-			$('#post-count').html('<img src="' + $('#post-count').attr('data-src') + '" alt="Loading..." />');
-			$('#remaining').html('');
-
-
-			$('#new-posts').load($(this).attr('data-src'), {
-
-				offset: offset,
-				category: cat,
-				author: author,
-				tag: tag,
-				date: date,
-				searchQ: searchQ
-
-			}, function() {
-
-				// create $ object
-				$boxes = $('#new-posts ' + $masonryBoxClass);
-
-				if($().masonry) {
-					$wall.append($boxes).masonry({ appendedContent: $boxes }, function() {
-
-						tz_fancybox();
-						tz_overlay();
-						tz_likeInit();
-
-						if(newCount > 0) {
-							$('#load-more-link a').find('#post-count').text(newCount);
-							$('#remaining').text(' ' + $('#remaining').attr('data-text'));
-						} else {
-							$('#load-more-link a').text($('#load-more-link a').attr('data-empty'));
-							off = true;
-						}
-
-						$('#load-more-link a').bind("click", tz_loadMore());
-
-					});
-				}
-
-				offset = offset + parseInt($('#load-more-link a').attr('data-offset'));
-			});
-		}
-
-		//return false;
-
-	});
-
-} // END tz_loadMore()
-
-function loadMoreWidth() {
-
-	var loadMoreLink = $('#load-more-link a');
-	var masonryWrap = $($masonryWrapperClass).width();
-
-	if(masonryWrap > 380 && masonryWrap < 760) {
-		animateWidth(loadMoreLink, 340);
-
-	} else if(masonryWrap > 760 && masonryWrap < 1140) {
-		animateWidth(loadMoreLink, 720);
-
-	} else if(masonryWrap > 1140 && masonryWrap < 1520) {
-		animateWidth(loadMoreLink, 1100);
-
-	} else if(masonryWrap > 1520 && masonryWrap < 1900) {
-		animateWidth(loadMoreLink, 1480);
-
-	} else if(masonryWrap > 1900 && masonryWrap < 2280) {
-		animateWidth(loadMoreLink, 1860);
-
-	} else if(masonryWrap > 2280 && masonryWrap < 2660) {
-		animateWidth(loadMoreLink, 2240);
-	}
-
-} // END loadMoreWidth()
-
-function animateWidth(elem, size) {
-	elem.stop().animate({ width: size }, 200);
-} // END animateWidth()
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	FancyBox Lightbox
