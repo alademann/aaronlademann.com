@@ -141,11 +141,18 @@ a .overlay .icon:before { content: $icon-search; }
 	}
 
 	.pagination.thumbs {
-		@include gradient-vertical($navbarBackground, $navbarBackgroundHighlight);
+		//@include gradient-vertical($navbarBackground, $navbarBackgroundHighlight);
 		@include border-corner-radius(bottom, left, 4px);
 		@include border-corner-radius(bottom, right, 4px);
-		$shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
-		@include box-shadow($shadow);
+		//$shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+		//@include box-shadow($shadow);
+		background: $aa_wellBgColor;
+		@include single-box-shadow($aa_wellInsetShadowColor, 0, 0, 6px, 2px, inset );
+	}
+
+	#single-sidebar {
+		background: $aa_wellBgColor;
+		@include single-box-shadow($aa_wellInsetShadowColor, 3px, 0, 8px, 0, inset );
 	}
 
 	.navbar-fixed-top .brand {

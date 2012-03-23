@@ -8,7 +8,7 @@
 	<!--BEGIN .hentry -->
   <article class="<?php post_class(); ?> row-fluid" id="post-<?php the_ID(); ?>">
 		<?php include(custom_includes_dir() . "/portfolio/slider-gallery.php"); ?>
-    <section id="slider-<?php the_ID(); ?>" class="slider span8">
+    <section id="slider-<?php the_ID(); ?>" class="slider span8 vert">
 			<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?> 
 			<section class="slideStage">
 				<section class="slides_container clearfix">

@@ -162,45 +162,6 @@
 		$primaryHpad_single: 5%;
 		$sliderDivider: ($primaryHPad / 2); // space between image and caption / meta 
 
-		/* jQuery "slides" thumbnail pagination */
-		.pagination.thumbs {
-			
-			position: relative;
-			left: auto;
-			top: -44px;
-			height: $aa_media_widthThumbSm;
-			margin: 0;
-			padding: 10px 12px 20px 10px;
-
-			li {
-				@include float(left);
-				margin: 0 0 0 3px;
-
-				// css transitions
-				&, a, a > img {
-					@include transition-property(all);
-					@include transition-duration(0.7s);
-				}
-
-				a {
-					@include opacity(0.25);
-					padding: .3em;
-					display: block;	
-					width: $aa_media_widthThumbSm;
-					height: $aa_media_widthThumbSm;
-					background: transparent none;
-					text-decoration: none;
-					//@include border-radius(2px, 2px);
-					border: 0 none;
-				} // END .single .pagination li a
-
-				&.current a {
-					@include opacity(1.0);
-				}
-
-			} // END .single .pagination li
-
-		} // END .single .pagination
 
 		// primary .single page header that spans the entire top area below mast
 		& > header, & > .header {
@@ -221,16 +182,76 @@
 		// slider image area
 		.slider {
 			position: relative; // so that the thumbnail pagination can be easily positioned
+
 			&, .slides_container { @include min-height(300px); }
-			
+
+			/* jQuery "slides" thumbnail pagination */
+			.pagination.thumbs {
+				margin: 0;
+				padding: 10px 12px 20px 10px;
+				position: relative;
+				left: auto;
+				top: -44px;
+				@include min-height($aa_media_widthThumbSm);
+				height: auto;
+				width: auto;
+
+				li {
+					@include float(left);
+					margin: 0 0 0 3px;
+
+					// css transitions
+					&, a, a > img {
+						@include transition-property(all);
+						@include transition-duration(0.7s);
+					}
+
+					a {
+						@include opacity(0.25);
+						padding: .3em;
+						display: block;	
+						width: $aa_media_widthThumbSm;
+						height: $aa_media_widthThumbSm;
+						background: transparent none;
+						text-decoration: none;
+						//@include border-radius(2px, 2px);
+						border: 0 none;
+					} // END .single .pagination li a
+
+					&.current a {
+						@include opacity(1.0);
+					}
+
+				} // END .single .pagination li
+
+			} // END .single .pagination
+
 			// give the portfolio item some breathing room...
+			$stagePad: 3.3em;
+
 			.slideStage { 
-				padding: 0 3.3em; 
+				padding: 0 $stagePad; 
 
 				.prev, .next {
 					display: none;
 				}
 			} 
+
+			// vertical layout when there is a lot of screen width to work with
+			// TODO: dynamically add/remove the .vert class based on the responsive conditions in the browser.
+			&.vert {
+				.pagination.thumbs {
+					@include stretch-y($aa_mastHeight,0); 
+					width: $aa_media_widthThumbSm;
+					left: -($stagePad / 1.5);
+					top: 0;
+					z-index: 99;
+				}
+				
+				.slideStage {
+					padding: 0 $stagePad 0 ($stagePad * 2);
+				}
+			}
 			
 			.slides_control, .slides_control .lightbox { width: 100% !important; } // adaptive image sizing
 			.slides_control { height: auto !important; }
@@ -238,11 +259,6 @@
 
 			/* jQuery "slider" captions */
 			.caption { 
-				//position: absolute;
-				//top: -$articleVPad;
-				//left: 0;
-				//margin: 0;
-				//padding: 0; 
 				font-size: 14px;
 				font-weight: bold;
 				line-height: 1.6 !important; 
@@ -260,8 +276,6 @@
 		// sidebar (where content / meta for each portfolio piece lives)
 		#single-sidebar {
 			z-index: 99;
-			background: rgba(120,120,120,.03);
-			@include single-box-shadow(rgba(120,120,120,.2), 3px, 0, 8px, 0, inset );
 			@include stretch-y($aa_mastHeight,0); 
 			// the stretch-y compass method above creates absolute position... 
 			// so we need to align it how we want our fluid layout to respond when screen size changes.

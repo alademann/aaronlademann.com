@@ -56,6 +56,8 @@
 			crossfade: true<?php endif; ?>
 		});
 
+		jQuery(".pagination.thumbs").css("visibility","visible");
+
 	});
 
 </script>
