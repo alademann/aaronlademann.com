@@ -33,10 +33,9 @@ AddType text/x-component .htc
 
 # BEGIN REQUIRED FOR WEBFONTS
 
-	AddType font/ttf .ttf
-	AddType font/eot .eot
-	AddType font/otf .otf
-	AddType font/woff .woff
+	AddType application/vnd.ms-fontobject .eot
+	AddType application/octet-stream .otf .ttf
+	AddType application/x-font-woff .woff
 
 	<FilesMatch "\.(ttf|otf|eot|woff)$">
 		<IfModule mod_headers.c>
