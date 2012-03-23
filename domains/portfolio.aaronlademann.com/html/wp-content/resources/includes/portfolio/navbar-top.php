@@ -1,4 +1,4 @@
-﻿<header id="masthead" class="navbar navbar-fixed-top">
+<header id="masthead" class="navbar navbar-fixed-top">
 	<section class="navbar-inner">
 		<section class="container-fluid">
 		<!-- TOP NAV -->

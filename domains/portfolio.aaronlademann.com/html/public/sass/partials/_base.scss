@@ -33,8 +33,15 @@ html { overflow-x: hidden !important; }
 /* elements that javascript will reveal */
 .js {
 	
-	.lightbox {	
+	.single .like-count { visibility: hidden; }
+
+	.slider figure, .slider .figure {	
 		.caption, img { visibility: hidden; }
 	}
+	.slides_container > img { 
+		// loading indicator... show immediately
+		visibility: visible !important;
+	}
+
 }
 /* END elements that javascript will reveal */

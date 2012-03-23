@@ -1,4 +1,4 @@
-﻿<section class="ready" id="new-posts"></section>
+<section class="ready" id="new-posts"></section>
 
 	<!--BEGIN #load-more-link-->
   <section id="load-more-link">

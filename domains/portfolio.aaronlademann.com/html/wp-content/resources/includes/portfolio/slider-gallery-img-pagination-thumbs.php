@@ -1,4 +1,4 @@
-﻿<ul class="pagination thumbs">
+<ul class="pagination thumbs">
 <?php
 	$args = array( 'post_type' => 'attachment', 'orderby' => 'menu_order', 'order' => 'ASC', 'post_mime_type' => 'image' ,'post_status' => null, 'numberposts' => null, 'post_parent' => $post->ID );
 

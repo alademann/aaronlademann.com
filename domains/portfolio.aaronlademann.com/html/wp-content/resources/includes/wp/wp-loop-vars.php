@@ -1,4 +1,4 @@
-﻿<?php include(custom_includes_dir() . "/wp/wp-loop-vars_taxonomy.php"); ?>
+<?php include(custom_includes_dir() . "/wp/wp-loop-vars_taxonomy.php"); ?>
 <?php 
 					
 	$post_count = 0; 

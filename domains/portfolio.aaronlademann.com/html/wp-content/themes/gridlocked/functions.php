@@ -19,7 +19,7 @@ function gridlocked_includes_dir(){
 
 function is_ios($browserAsString){
 
-  if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/")) { 
+  if (strstr($browserAsString, " Mobile/")) { 
 		return true;
 	} else {
 		return false;

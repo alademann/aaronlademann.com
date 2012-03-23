@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
 	$base_slug = "portfolio"; // configure this based on what the home dir of the wordpress portfolio system is
 

@@ -1,43 +1,14 @@
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
 <section id="primary" class="hfeed span12">
-	<header>
-<?php if ( function_exists('yoast_breadcrumb') ) { ?>
-	<!-- BEGIN .breadcrumb navigation -->
-		<nav id="crumbpaths">
-			<?php	yoast_breadcrumb('<ul class="breadcrumb"><li>','</li></ul>'); ?>
-		</nav>
-	<!-- END .breadcrumb navigation --> 
-<?php } ?>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<!--BEGIN .single-page-navigation -->
-		<nav class="navigation single-page-navigation clearfix">
-			<section class="nav-previous">
-				<?php next_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
-			</section>
-			<section class="nav-next">
-				<?php previous_post_link(__('%link', 'framework'), '<span class="arrow">%title</span>') ?>
-			</section>					
-		</nav>
-		<!--END .single-page-navigation -->
-	</header>
+	
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+	<!--<php include(custom_includes_dir() . "/portfolio/single-header.php"); ?>  -->
 	<!--BEGIN .hentry -->
   <article class="<?php post_class(); ?> row-fluid" id="post-<?php the_ID(); ?>">
 		<?php include(custom_includes_dir() . "/portfolio/slider-gallery.php"); ?>
-	<?php if($image1 != '') : ?>
-  <!-- its an image gallery -->
-		<?php if($image8 != '' || $image2 == '') : 
-		// if there is only 1, or there are 8 or more images... don't display the caption.
-		?>
-		<style type="text/css">.lightbox .caption { visibility: hidden !important; display: none !important; }</style>
-		<?php endif; ?>
-
-		<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-sources.php"); ?>	
-
-		<?php tz_gallery(get_the_ID()); ?>
-
-    <!--BEGIN .slider -->
-    <section id="slider-<?php the_ID(); ?>" class="slider span8" data-loader="<?php echo  get_template_directory_uri(); ?>/images/<?php if(get_option('tz_alt_stylesheet') == 'dark.css'):?>dark<?php else: ?>light<?php endif; ?>/ajax-loader.gif">
+    <section id="slider-<?php the_ID(); ?>" class="slider span8">
 			<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?> 
 			<section class="slideStage">
 				<section class="slides_container clearfix">
@@ -45,55 +16,7 @@
 				</section>
 			</section>
     </section>
-		<!--END .slider -->
-	<?php else: ?>
-	<!-- its a video gallery -->
-	<?php $embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE); ?>
-  <?php if($embed == '') : ?>
-  <?php tz_video(get_the_ID()); ?>
-  <?php $heightSingle = get_post_meta(get_the_ID(), 'tz_video_height_single', TRUE); ?>
-		<style type="text/css">.single .jp-video-play, .single div.jp-jplayer.jp-jplayer-video { height: <?php echo $heightSingle; ?>px; }</style>
-		<!-- BEGIN jquery_jplayer -->
-		<div id="jquery_jplayer_<?php the_ID(); ?>" class="jp-jplayer jp-jplayer-video"></div>
-		<div class="jp-video-container">
-			<div class="jp-video">
-				<div class="jp-type-single">
-					<div id="jp_interface_<?php the_ID(); ?>" class="jp-interface">
-						<ul class="jp-controls">
-							<li>
-								<div class="seperator-first"></div>
-							</li>
-							<li>
-								<div class="seperator-second"></div>
-							</li>
-							<li><a href="#" class="jp-play" tabindex="1">play</a></li>
-							<li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
-							<li><a href="#" class="jp-mute" tabindex="1">mute</a></li>
-							<li><a href="#" class="jp-unmute" tabindex="1">unmute</a></li>
-						</ul>
-						<div class="jp-progress-container">
-							<div class="jp-progress">
-								<div class="jp-seek-bar">
-									<div class="jp-play-bar"></div>
-								</div>
-							</div>
-						</div>
-						<div class="jp-volume-bar-container">
-							<div class="jp-volume-bar">
-								<div class="jp-volume-bar-value"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>	
-		</div>
-		<!-- END jquery_jplayer -->
-  <?php else: ?>
-		<?php echo stripslashes(htmlspecialchars_decode($embed)); ?>
-  <?php endif; ?>          
-  <?php endif; ?>
-  <!-- END IF(image or video) -->
-  
+
 		<!--BEGIN #single-sidebar-->
   	<section id="single-sidebar" class="span4">
   		<?php 

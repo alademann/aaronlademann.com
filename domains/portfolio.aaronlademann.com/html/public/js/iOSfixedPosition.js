@@ -44,17 +44,35 @@ function updateOrientation() {
 		updateFixedPosition("#footer",offset);
 		
 }
-        
-head.ready("jquery", function(){
-	
-	var isSingle = $("body").hasClass("single");
-	if(isSingle){
-		
-	} else {
-		var logoElem = $("#logo img");
-		$(logoElem).attr("src","http://portfolio.aaronlademann.com/wp-content/themes/gridlocked/images/logo-aa_spackled_ios.png");
-		$(logoElem).css("visibility","visible");
+
+head.ready("jquery", function() {
+
+	aarons_customStuff();
+
+	// Sniff for orientation property
+	if(typeof window.orientation !== "undefined") {
+
+		// Remove scroll class on orientation change
+		window.addEventListener("orientationchange", function() {
+			updateIOSux();
+		}, false);
+
 	}
+
+	// onload
+	updateIOSux();
+});
+
+function aarons_customStuff() {
+	
+//	var isSingle = $("body").hasClass("single");
+//	if(isSingle){
+//		
+//	} else {
+//		var logoElem = $("#logo img");
+//		$(logoElem).attr("src","http://portfolio.aaronlademann.com/wp-content/themes/gridlocked/images/logo-aa_spackled_ios.png");
+//		$(logoElem).css("visibility","visible");
+//	}
 	
 	$(window).bind('scroll', function() {
 		updateIOSux();
@@ -63,24 +81,23 @@ head.ready("jquery", function(){
 		updateIOSux();																		
 	});
 	
-	document.body.addEventListener("touchstart", function(e) {
-		$("#footer").css("visibility","hidden");
-	}, false);
+//	document.body.addEventListener("touchstart", function(e) {
+//		$("#footer").css("visibility","hidden");
+//	}, false);
+//	
+//	document.body.addEventListener("touchend", function(e) {
+//		$("#footer").css("visibility","visible");
+	//	}, false);	
 	
-	document.body.addEventListener("touchend", function(e) {
-		$("#footer").css("visibility","visible");
-	}, false);	
-	
-	// Sniff for orientation property
-	if (typeof window.orientation !== "undefined") {
-			
-			// Remove scroll class on orientation change
-			window.addEventListener("orientationchange", function() {
-					updateIOSux();
+	// keep the zoom levels under control when switching orientations
+	if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+		var viewportmeta = document.querySelector('meta[name="viewport"]');
+		if (viewportmeta) {
+			viewportmeta.content = 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0';
+			document.body.addEventListener('gesturestart', function() {
+				viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
 			}, false);
-			
+		}
 	}
-	
-	// onload
-	updateIOSux();													 
-});
+
+}

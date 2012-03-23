@@ -369,7 +369,7 @@ head.ready(function() {
 
 		$masonryThumbs.imagesLoaded(function() {
 
-			console.info("hello images");
+			//console.info("hello images");
 
 			$wall.masonry({
 				itemSelector: $masonryBoxClass,
@@ -388,7 +388,7 @@ head.ready(function() {
 				// document height should be set now
 				scroll_forever();
 			});
-			
+
 
 		}); // END $wall.imagesLoaded()
 
@@ -420,7 +420,7 @@ head.ready(function() {
 				var $newElems = $(newElements).css({ opacity: 0 });
 				// ensure that images load before adding to masonry layout
 				$newElems.imagesLoaded(function() {
-					
+
 					// bind hover effects
 					$newElems.hover(function() {
 						$(this).addClass("hover");
@@ -445,7 +445,7 @@ head.ready(function() {
 		}
 
 		// unbind typical infinite scroll trigger
-		
+
 
 	} // END if(masonry)
 
@@ -552,7 +552,7 @@ head.ready(function() {
 
 	tz_loadMore();
 
-	$(window).resize(function() {
+	$(window).smartresize(function() {
 		//		//isFirstLoad = false;
 		loadMoreWidth();
 		contentHeight();
@@ -634,64 +634,6 @@ head.ready(function() {
 	tz_overlay();
 
 	/*-----------------------------------------------------------------------------------*/
-	/*	Back to Top
-	/*-----------------------------------------------------------------------------------*/
-
-	//	var topLink = $('#back-to-top');
-
-	//	function tz_backToTop(topLink) {
-
-	//		if($(window).scrollTop() > 0) {
-	//			//console.info($(window).scrollTop());
-	//			topLink.stop().fadeIn(200);
-	//		} else {
-	//			topLink.stop().fadeOut(200);
-	//		}
-	//	}
-
-	//	$(window).scroll(function() {
-	//		tz_backToTop(topLink);
-	//	});
-
-	//	// aaronl: custom (was pointing to the anchor link)
-	//	$(topLink).click(function() {
-	//		$('html, body').stop().animate({ scrollTop: 0 }, 500);
-	//		return false;
-	//	});
-
-	// aaronl: custom (since i'm removing the anchor link, i need to set up a hover system for the wrapper div)			
-	//	head.ready("jquery", function() {
-	//		var colorIn;
-	//		var colorOut;
-	//		var hovClass;
-	//		if($.support.opacity) {
-	//			colorIn = 'rgba(0, 0, 0, .1)';
-	//			colorOut = 'rgba(0, 0, 0, 0)';
-	//			hovClass = 'hover';
-	//		} else {
-	//			colorIn = '#d3d7d8';
-	//			colorOut = 'transparent';
-	//			hovClass = 'ieHover';
-	//		}
-
-	//		// firefox seems to be making the browser itself change opacity
-	//		// the plugin i'm using here may be pretty buggy.
-	//		$('#back-to-top, .insetBox > li:not([class*="current"]) > a').hover(
-	//			function() {
-	//				$(this).addClass(hovClass);
-	//				$(this).stop().animate({ backgroundColor: colorIn });
-	//			},
-	//			function() {
-	//				$(this).removeClass(hovClass);
-	//				$(this).stop().animate({ backgroundColor: colorOut });
-	//			}
-	//		);
-
-	//	});
-
-
-
-	/*-----------------------------------------------------------------------------------*/
 	/*	Add title attributes
 	/*-----------------------------------------------------------------------------------*/
 
@@ -709,7 +651,7 @@ head.ready(function() {
 		var elemHeight = windowHeight - mastHeight;
 		//var elemScrollHeight = $("#content").height() - footerHeight - mastHeight;
 		// prevent flicker
-		//$(window).resize(function() {
+		//$(window).smartresize(function() {
 		//	if(elemScrollHeight > elemHeight) {
 		//		$("html").addClass("noscroll");
 		//	} else if(elemScrollHeight <= elemHeight) {
@@ -719,7 +661,12 @@ head.ready(function() {
 		// apply 100% height
 		//$('#container, #content, #primary, .single #primary .hentry').css('min-height', elemHeight);
 		//$("#single-sidebar").css("min-height", elemHeight - 100);
-		$("#container").css("min-height", elemHeight);
+		$("#container").css("min-height", elemHeight - 50);
+		$(".single .lightbox img").css({
+			//maxHeight: elemHeight - 130,
+			maxHeight: elemHeight - 184,
+			height: "auto"
+		});
 
 		//contentWidth();
 	}
@@ -863,5 +810,5 @@ head.ready(function() {
 
 	tz_likeInit();
 
-});               // END head.ready()
+});                // END head.ready()
 

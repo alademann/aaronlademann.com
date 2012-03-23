@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	$args = array( 'post_type' => 'attachment', 'orderby' => 'menu_order', 'order' => 'ASC', 'post_mime_type' => 'image' ,'post_status' => null, 'numberposts' => null, 'post_parent' => $post->ID );
 
@@ -12,5 +12,10 @@
 			$caption = $attachment->post_excerpt;
 			$description = $image->post_content;
 ?>
-	<figure><img src="<?php echo $img_src; ?>" alt="<?php echo $caption; ?>" class="<?php echo $mime; ?>"><figcaption class="caption"><p><?php echo $caption; ?></p></figcaption></figure>
+	<figure class="lightbox">
+		<img src="<?php echo $img_src; ?>" alt="<?php echo $caption; ?>" class="<?php echo $mime; ?>" />
+		<figcaption class="caption">
+			<p><?php echo $caption; ?></p>
+		</figcaption>
+	</figure>
 <?php } } ?>

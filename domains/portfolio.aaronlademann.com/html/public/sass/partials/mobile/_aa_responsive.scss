@@ -6,8 +6,8 @@
 }
 
 #container {
-	top: $masonryHPad; // same vertical spacing as horizontal
-	height: $aa_mastHeight; // this determines the height of the mast
+	$clearTheMasthead: ($baseLineHeight + $aa_mastHeight);
+	margin-top: $clearTheMasthead + $masonryHPad;
 	line-height: ($aa_mastHeight - 4);
 } // END #container
 
@@ -165,9 +165,9 @@
 		/* jQuery "slides" thumbnail pagination */
 		.pagination.thumbs {
 			
-			position: absolute;
+			position: relative;
 			left: auto;
-			top: -($baseLineHeight - 4);
+			top: -44px;
 			height: $aa_media_widthThumbSm;
 			margin: 0;
 			padding: 10px 12px 20px 10px;
@@ -232,7 +232,9 @@
 				}
 			} 
 			
-			.slides_control, .slides_control figure, .slides_control .figure { width: 100% !important; } // adaptive image sizing
+			.slides_control, .slides_control .lightbox { width: 100% !important; } // adaptive image sizing
+			.slides_control { height: auto !important; }
+			.slides_control .lightbox { position: relative !important; } // override slides.js (wants to make this absolute really really bad)
 
 			/* jQuery "slider" captions */
 			.caption { 
@@ -258,8 +260,8 @@
 		// sidebar (where content / meta for each portfolio piece lives)
 		#single-sidebar {
 			z-index: 99;
-			background: rgba(120,120,120,.1);
-			@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
+			background: rgba(120,120,120,.03);
+			@include single-box-shadow(rgba(120,120,120,.2), 3px, 0, 8px, 0, inset );
 			@include stretch-y($aa_mastHeight,0); 
 			// the stretch-y compass method above creates absolute position... 
 			// so we need to align it how we want our fluid layout to respond when screen size changes.
@@ -343,7 +345,18 @@
 	img, object, .wp-caption { 
 		max-width: 100% !important; 
 		width: 100% !important; 
-		height: auto !important;
+		//height: 100% !important;
+		//max-height: 100% !important;
+	}
+
+	.js & {
+		// js is enabled
+		.lightbox > img {
+			max-width: auto !important;
+			width: auto !important;
+			// height attr is set automatically to not get chopped off by the browser window
+			// done by js in gridlocked-custom.js
+		}
 	}
 
 }

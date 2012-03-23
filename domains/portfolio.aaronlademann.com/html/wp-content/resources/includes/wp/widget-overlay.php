@@ -1,4 +1,4 @@
-﻿<?php if(get_option('tz_widget_overlay') == 'true') : ?>
+<?php if(get_option('tz_widget_overlay') == 'true') : ?>
     <!-- #widget-overlay-container -->
     <section id="widget-overlay-container" style="display: none;">   
       <!-- #widget-overlay -->

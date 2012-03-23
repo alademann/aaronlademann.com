@@ -8,12 +8,12 @@
 
 <title><?php wp_title(''); ?></title>
 
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/screen.css">
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
 <?php if(is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
-<!-- iOS Device -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 <?php } ?>
 <!--[if IE]>
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/ie.css" />
