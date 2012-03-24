@@ -34,6 +34,14 @@ function is_folio_home(){
 	 return true;
 	}
 }
+
+// add querystring to any page to test device classes added to <body> tags
+	$deviceTesting = $_GET['test'];
+	if($deviceTesting){
+		$deviceClass = $deviceTesting;
+	} else {
+		$deviceClass = "";
+	}
 /*-----------------------------------------------------------------------------------
 
 	Here we have all the custom functions for the theme

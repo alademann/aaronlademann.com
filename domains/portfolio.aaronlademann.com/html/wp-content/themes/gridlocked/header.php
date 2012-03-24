@@ -9,12 +9,11 @@
 <title><?php wp_title(''); ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-
+<?php if(is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<?php } ?>
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/screen.css">
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
-<?php if(is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-<?php } ?>
 <!--[if IE]>
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/ie.css" />
 <![endif]-->
@@ -44,10 +43,10 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 </script>
-<script src="<?php echo public_uri(); ?>/js/head.min.js"></script>
-<script src="<?php echo public_uri(); ?>/js/modernizr.dev.js" id="modernizr"></script>
+<script src="<?php echo public_uri(); ?>/js/head.min.js" id="headjs"></script>
+<script src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
 </head>
-<body class="<?php body_class(); ?>">
+<body class="<?php body_class(); ?> <?php echo $deviceClass; ?>">
 <!-- navbar -->
 <?php include(custom_includes_dir() . "/portfolio/navbar-top.php"); ?>
 <!-- // navbar -->
