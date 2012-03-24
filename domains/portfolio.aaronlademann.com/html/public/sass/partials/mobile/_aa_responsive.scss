@@ -102,19 +102,20 @@
 
 		// enable css transitions
 		&.transReady {
-			@include transition-property("height, width, opacity");
+			@extend .tp_scale;
+			@extend .tp_alpha;
 		} // end css transitions
 	
 	// END progressive revealing of .masonry opacity
 
 		&, .masonry-brick, .masonry-brick .wellOverlay {
-			@include transition-duration(0.7s);
+			@extend .trans;
 		}
 		.masonry-brick {
 			margin: 0 0 $masonryVPad $masonryHPad;
 
 			&, .wellOverlay{
-				@include transition-property(all);
+				@extend .tp_all;
 				//@include transition-property("left, right, top");
 				@include min-width($aa_media_widthThumb);
 				max-width: $aa_media_widthThumb;
@@ -199,15 +200,18 @@
 				li {
 					@include float(left);
 					margin: 0 0 0 3px;
+					@include opacity(0.25);
+					&.opaque {
+						@extend .opaque;
+					}
 
 					// css transitions
 					&, a, a > img {
-						@include transition-property(all);
-						@include transition-duration(0.7s);
+						@extend .trans;
+						@extend .tp_all;
 					}
 
 					a {
-						@include opacity(0.25);
 						padding: .3em;
 						display: block;	
 						width: $aa_media_widthThumbSm;
@@ -218,16 +222,13 @@
 						border: 0 none;
 					} // END .single .pagination li a
 
-					&.current a {
-						@include opacity(1.0);
-					}
-
 				} // END .single .pagination li
 
 			} // END .single .pagination
 
 			// give the portfolio item some breathing room...
 			$stagePad: 3.3em;
+			$stagePadNum: 3.3;
 
 			.slideStage { 
 				padding: 0 $stagePad; 
@@ -240,18 +241,29 @@
 			// vertical layout when there is a lot of screen width to work with
 			// TODO: dynamically add/remove the .vert class based on the responsive conditions in the browser.
 			&.vert {
+				$paginationHpad: 10px;
+				$paginationWidth: $aa_media_widthThumbSm + $paginationHpad;
+
 				.pagination.thumbs {
-					@include stretch-y($aa_mastHeight,0); 
-					width: $aa_media_widthThumbSm;
-					left: -($stagePad / 1.5);
+					width: $paginationWidth;
+					padding: $paginationHpad;
+					height: auto;
+					left: 0;
 					top: 0;
 					z-index: 99;
+					@include float(left);
+					li {
+						margin: 2px 0;
+					}
 				}
 				
 				.slideStage {
-					padding: 0 $stagePad 0 ($stagePad * 2);
+					$convertedEmPadding: emtopx($stagePadNum,$baseFontSize);
+					position: relative;
+					padding-left: $paginationWidth + ($paginationHpad * 2) + $convertedEmPadding; // move it over the "total" width created by a 60px width and side padding
+
 				}
-			}
+			} // END .slider.vert
 			
 			.slides_control, .slides_control .lightbox { width: 100% !important; } // adaptive image sizing
 			.slides_control { height: auto !important; }
@@ -350,6 +362,26 @@
 
 		} // END .single #single-sidebar
 	} // END .single #primary section & article
+
+	&.iphone {
+
+		.slider {
+			&, .slides_container { min-height: 1px !important; }
+			.pagination.thumbs, .pagination.thumbs li, .pagination.thumbs li a, .pagination .thumbs li a img { display: none !important; }
+			.slideStage { padding: 0 !important; }
+			.lightbox img {
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
+				max-height: auto !important;
+			}
+			.lightbox .caption { padding: 0 3%; }
+		}
+		#container { min-height: 1px !important; }
+		#single-sidebar { top: 0; }
+
+	} // END iPhone Media Declarations
+
 } // END .single
 
 
@@ -530,7 +562,7 @@
 		@media only screen
 		and (min-device-width : 320px)
 		and (max-device-width : 480px) {
-
+			
 		//////////////////////////////////////////////////////////////
 		} /* END iPhones */
 

@@ -14,6 +14,10 @@ $masonryWrapperClass = ".masonry";
 $masonryBoxClass = ".masonry-brick";
 // detect whether or not browser can handle css animations / transitions
 $cssTransitions = $("html.csstransitions").length;
+$cssFadeShowClass = "opaque";
+// is it a single page?
+$isSinglePage = $("body.single").length;
+$isIphone = $("body").hasClass("iphone");
 
 /*--------------------------------------------------------------------------------------------------------
 
@@ -22,29 +26,36 @@ $cssTransitions = $("html.csstransitions").length;
 ----------------------------------------------------------------------------------------------------------*/
 
 head.ready(function() {
+	tz_likeInit(); // check cookies for like-it action
 
 	// trigger this stuff on window resize
 	$(window).smartresize(function() {
 		contentHeight();
+		//		contentWidth();
 	});
 
 	contentHeight(); // dynamic content height
-	tz_likeInit(); // check cookies for like-it action
-	
-	if( $().masonry ) {
+	//	contentWidth();
+
+	if($().masonry) {
 		masonTheLayout();
 	} // END if(masonry)
 
+	if($isSinglePage) {
+		// functions that should ONLY trigger on .single pages
+		initiateSlides();
+	} else {
+		// functions that should NOT trigger on .single pages
+		sidebarParentNavs();
+	}
+
 	disableRightClick($masonryWrapperClass + ' img, .lightbox img, .fancybox-img'); // disable right click on all portfolio images
 
-	tz_widgetOverlay();
-	tz_overlay();
-	tz_navTitles();
-	tz_fancybox();
-	lightboxDOMlistener()
-	sidebarParentNavs();
+	tz_widgetOverlay(); // TODO - only trigger this if the widget overlay function is enabled in WP
+	tz_navTitles(); // TODO - figure out what this does ;)
 
-}); // END head.ready()
+
+});      // END head.ready()
 
 /*-----------------------------------------------------------------------------------*/
 /*	We're ready!
@@ -71,11 +82,17 @@ function contentHeight() {
 
 	var elemHeight = windowHeight - mastHeight;
 	$("#container").css("min-height", elemHeight - 50);
-	$(".single .lightbox img").css({
+	
+	if(!$isIphone) {
+		$(".single .lightbox img").css({
 		//maxHeight: elemHeight - 130,
-		maxHeight: elemHeight - 184,
-		height: "auto"
-	});
+			maxHeight: elemHeight - 184,
+			height: "auto"
+		});	
+	} else {
+		$("body").addClass("foundiOS");
+	} // END if(!isIphone)
+	
 
 	//contentWidth();
 
@@ -108,6 +125,43 @@ function contentWidth() {
 	} // END if($(slider))
 
 } // END contentWidth()
+
+/*-----------------------------------------------------------------------------------*/
+/*	SLIDESHOW INITIATION (single page only)
+/*-----------------------------------------------------------------------------------*/
+function initiateSlides() {
+	
+	$(".slider").slides({
+		preloadImage: '/public/images/loading_light.gif', 
+		preload: true,
+		generateNextPrev: true, 
+		generatePagination: false,
+		effect: 'fade',
+		fadeEasing: 'easeOutQuad',
+		slideSpeed: 700,
+		currentClass: $cssFadeShowClass,
+		play: 8000,
+		pause: 1000,
+		autoHeight: false,
+		hoverPause: true
+	});
+
+	var lboxes = $(".slider").find(".lightbox");
+	var howMany = lboxes.length;
+//	console.info("there are " + howMany + " lightboxes");
+	$.each(lboxes, function(i) {
+		//console.info("found a lightbox... it's number " + i);
+		$(".caption, img", this).addClass($cssFadeShowClass); ;
+		if(i == (howMany - 1)) {
+			// done iterating
+			//console.info("we've reached the end, jim");
+			if(!$isIphone) {
+				$(".pagination.thumbs").addClass($cssFadeShowClass);
+			} // END if(!isIphone);
+		}
+	});  // END .each(lboxes)
+
+} // END initiateSlides()
 
 /*-----------------------------------------------------------------------------------*/
 /*	hentry mouseover / mouseout effects
@@ -363,12 +417,12 @@ function tz_reloadLikes(who, postID) {
 	item.html('<span class="count">' + text + '</span>');
 
 	// is it active?
+	// if so, add the active class for coloration
 	if($.cookie("like_" + postID)) {
 		item.addClass("active");
 	}
-
 	// reveal it no matter what
-	item.css("visibility", "visible");
+		item.addClass($cssFadeShowClass);;
 
 } // END tz_reloadLikes()
 
@@ -398,43 +452,6 @@ function tz_navTitles() {
 
 } // END tz_navTitles()
 
-function lightboxDOMlistener() {
-	
-	// store all the image titles in a single lightbox in an array
-	window.addEventListener('DOMNodeInserted', function(event) {
-		var thisLoaded = event.target.id;
-		//console.info(event.target.id);
-		var lightboxGalleryLink = 'fancybox-right';
-		//console.log(thisLoaded);
-		if(thisLoaded == lightboxGalleryLink) {
-			//console.warn("found the lightbox gallery");
-
-			$('body').animate({
-				top: 0
-			}, 500, function() {
-				// Animation complete.
-				var paginationLinks = $(".single #primary").find(".pagination");
-				var lightboxTitleArray = new Array();
-
-				var i = 0;
-				var lightBoxImage = $(".single #primary").find(".slides_control figure img");
-				$.each(lightBoxImage, function() {
-					lightboxTitleArray[i] = $(this).attr("alt");
-					//console.info("lightboxTitleArray[" + i + "] = " + lightboxTitleArray[i]);
-					i++;
-				});
-
-				trackLightBoxStuff(paginationLinks, lightboxTitleArray);
-
-			});
-
-		} // END if ($(thisLoaded).is( lightboxGalleryDiv ))
-	}, false);
-
-	// end addEventListener('DOMNodeInserted')
-
-}
-
 /*-----------------------------------------------------------------------------------*/
 /*	add 2nd level of parent categories in sidebar nav
 /*-----------------------------------------------------------------------------------*/
@@ -462,6 +479,36 @@ function disableRightClick(disableOnThis) {
 	});
 
 } // END disableRightClick(disableOnThis)
+
+/*-----------------------------------------------------------------------------------*/
+/*	prevent HTML version of resume from being printed, redirect to pdf instead
+/*-----------------------------------------------------------------------------------*/
+function redirect_CtrlP() {
+
+	try{
+		$(document).bind("keydown", "ctrl+p", function(event){
+			event.preventDefault();
+			_gaq.push(["_trackPageview", "/resume/pdf-download"]);
+			window.location = $("#resume #pdf > a").attr("href");
+		});
+	} catch(err){
+		//error - didn't work, go ahead and do the default action.
+		_gaq.push(["_trackPageview", "/resume/print"]);
+		return true;
+	}
+	try{
+		jQuery(document).bind("keydown", "ctrl+shift+p", function(event){
+			event.preventDefault();
+			_gaq.push(["_trackPageview", "/resume/pdf-download"]);
+			window.location = jQuery("#resume #pdf > a").attr("href");
+		});
+	} catch(err){
+		//error - didn't work, go ahead and do the default action.
+		_gaq.push(["_trackPageview", "/resume/print"]);
+		return true;
+	}
+
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	track "likes" in google analytics as events

@@ -27,23 +27,87 @@ html { overflow-x: hidden !important; }
 		zoom: 1;
 	}
 }
-  	
 
-
-/* elements that javascript will reveal */
+/* elements that DEPEND on JAVASCRIPT to appear in context */
 .js {
 	
-	.single .like-count { visibility: hidden; }
+	// DEFAULT CSS TRANSITION CLASSES
+	&.csstransitions {
+		// use @extend to add these properties elsewhere for consistency.
+		.trans {
+			@include transition-duration(.7s);
+		}
 
-	.single .pagination.thumbs { visibility: hidden; }
+		// extension classes for various PROPERTIES
+		&.tp_alpha {
+			@include transition-property("opacity");	
+		}
+		&.tp_shadow {
+			@include transition-property("box-shadow, text-shadow");
+		}
+		&.tp_scale {
+			@include transition-property("height, min-height, max-height, width, min-width, max-width, font-size, line-height");
+		}	
+		&.tp_position {
+			@include transition-property("top, right, bottom, left, margin, padding, vertical-aligns");
+		}
+		&.tp_bg {
+			@include transition-property("background");
+		}
+		&.tp_color {
+			@include transition-property("color, border-color, outline-color, background-color, background-image, opacity");
+		}
+		&.border {
+			@include transition-property("border");
+		}
+		&.tp_all {
+			@include transition-property("all");
+		}
 
-	.slider figure, .slider .figure {	
-		.caption, img { visibility: hidden; }
+		// extension classes for various TIMING FUNCTIONS
+		&.tt_ease {
+			@include transition-timing-function("ease");
+		}
+		&.tt_linear {
+			@include transition-timing-function("linear");
+		}
+		&.tt_easeIn {
+			@include transition-timing-function("ease-in");
+		}
+		&.tt_easeOut {
+			@include transition-timing-function("ease-out");
+		}
+		&.tt_easeInOut {
+			@include transition-timing-function("ease-in-out");
+		}
+
+	} // END html.csstransitions
+
+	.opaque {
+		@extend .trans;
+		@include opacity(1.0);
 	}
-	.slides_container > img { 
-		// loading indicator... show immediately
-		visibility: visible !important;
-	}
 
-}
+	.single {
+		
+		// we'll "fade" these in using .js
+		.like-count > a, .pagination.thumbs, .slides_container > img,
+		.slider .lightbox img, .slider .lightbox .caption {
+			@extend .trans;
+			@extend .tt_linear;
+			@extend .tp_alpha;
+			@include opacity(0);
+			&.opaque {
+				@extend .opaque;
+			}
+		}
+
+		// loading indicator... show immediately... and visible class for other items
+		.slides_container > img {
+			@extend .opaque;
+		}
+
+	} // END .single
+
+} // END .js
 /* END elements that javascript will reveal */

@@ -46,3 +46,12 @@ $aa_wellBgColor: rgba(120,120,120,.03);
 $aa_wellInsetShadowColor: rgba(120,120,120,.2);
 
 $experimental-support-for-svg: true;
+
+// Convert px to em
+@function pxtoem($target, $container){
+  @return ($target/$container)+0em;
+}
+// Convert em to px
+@function emtopx($target, $container){
+	@return ($target*$container)+0px;
+}

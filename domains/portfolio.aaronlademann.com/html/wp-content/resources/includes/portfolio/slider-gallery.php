@@ -1,12 +1,12 @@
 <?php 
 	function get_mimetype($uri){
 		$length = strlen($uri);
-		$period_pos = strrpos($uri,".");
+		$period_pos = strrpos($uri,".") + 1;
 
-		$mime = substr($uri,$period_pos,($length-$period_pos));
+		return substr($uri,$period_pos,($length-$period_pos));
 	}
 	function get_rawsrc($uri){
-		$length = strlen($uri);
+
 		$period_pos = strrpos($uri,".");
 			
 		$is_medium = strrpos($uri,"-med");
@@ -24,7 +24,7 @@
 		$mime = get_mimetype($uri);	
 		$raw_src = get_rawsrc($uri);
 			
-		return $raw_src . $mime;		
+		return $raw_src . "." . $mime;		
 
 	} // END get_fullsize
 	function get_thumbsize($uri){
@@ -32,32 +32,7 @@
 		$mime = get_mimetype($uri);	
 		$raw_src = get_rawsrc($uri);
 
-		return $raw_src . "-thumb_sm" . $mime;
+		return $raw_src . "-thumb_sm." . $mime;
 	}
 	
 ?>
-
-<script type="text/javascript">
-	head.ready(function(){
-
-		jQuery(".slider").slides({
-			preload: true, 
-			// aaronl: custom
-			//bigTarget: true, 
-			// aaronl: custom
-			generateNextPrev: true, 
-			preloadImage: '<?php echo public_uri(); ?>/images/loading_light.gif', 
-			generatePagination: false,
-			effect: 'fade',
-			play: 8000,
-			pause: 1000,
-			autoHeight: false,
-			hoverPause: true<?php if(!is_singular()): ?>,
-			crossfade: true<?php endif; ?>
-		});
-
-		jQuery(".pagination.thumbs").css("visibility","visible");
-
-	});
-
-</script>

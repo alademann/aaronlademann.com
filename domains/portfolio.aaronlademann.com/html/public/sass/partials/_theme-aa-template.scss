@@ -9,9 +9,9 @@ body {
 	font-family: "Helv63";
 	text-transform: lowercase;
 	@include transition-duration(.2s);
-	@include transition-timing-function(linear);
-	@include transition-property(color);
-	@include transition-property(text-shadow);
+	@extend .tt_linear;
+	@extend .tp_color;
+	@extend .tp_shadow;
 
 	&:hover {
 		text-decoration: none !important;
@@ -141,13 +141,16 @@ a .overlay .icon:before { content: $icon-search; }
 	}
 
 	.pagination.thumbs {
-		//@include gradient-vertical($navbarBackground, $navbarBackgroundHighlight);
 		@include border-corner-radius(bottom, left, 4px);
 		@include border-corner-radius(bottom, right, 4px);
-		//$shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
-		//@include box-shadow($shadow);
 		background: $aa_wellBgColor;
 		@include single-box-shadow($aa_wellInsetShadowColor, 0, 0, 6px, 2px, inset );
+
+		.slider.vert & {
+			@include border-corner-radius(bottom, left, 0);
+			@include border-corner-radius(top, right, 4px);
+			@include border-corner-radius(bottom, right, 4px);
+		}
 	}
 
 	#single-sidebar {

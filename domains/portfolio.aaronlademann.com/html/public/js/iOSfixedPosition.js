@@ -14,40 +14,54 @@ function updateIOSux() {
 
 function updateOrientation() {
 		var orientation = window.orientation;
-		var offset;
+		
 		switch (orientation) {
-				
 				// If we're horizontal
 				case 90:
 				case -90:
-				
-				// Set orient to landscape
-				document.body.setAttribute("orient", "landscape");
-				$('body').addClass("landscape");
-				$('body').removeClass("portrait");
-				offset = 0;
-				
-				break;  
+					orientLandscape();
+					break;  
 				
 				// If we're vertical
 				default:
-				
-				// Set orient to portrait
-				document.body.setAttribute("orient", "portrait");
-				$('body').addClass("portrait");
-				$('body').removeClass("landscape");
-				offset = 0;
-				
-				break;
+					orientPortrait();
+					break;
 		}
 		
-		updateFixedPosition("#footer",offset);
-		
 }
+
+function orientLandscape() {
+	var offset;
+	// Set orient to landscape
+	document.body.setAttribute("orient", "landscape");
+	orientLandscape();
+	$('body').addClass("landscape");
+	$('body').removeClass("portrait");
+	offset = 0;
+
+	// contextual thumbnail nav on .single portfolio pages
+	thumbnailNav("landscape", offset);
+
+} // END orientLandscape()
+
+function orientPortrait() {
+	var offset;
+	// Set orient to portrait
+	document.body.setAttribute("orient", "portrait");
+	$('body').addClass("portrait");
+	$('body').removeClass("landscape");
+	offset = 0;
+
+	// contextual thumbnail nav on .single portfolio pages
+	thumbnailNav("portrait", offset);
+
+} // END orientVertical()
 
 head.ready("jquery", function() {
 
 	aarons_customStuff();
+
+	//$(".pagination").hide();
 
 	// Sniff for orientation property
 	if(typeof window.orientation !== "undefined") {
@@ -62,6 +76,31 @@ head.ready("jquery", function() {
 	// onload
 	updateIOSux();
 });
+
+function thumbnailNav(orientation, offset) {
+
+	var correctPageType = $("body.single").length;
+	if(correctPageType) {
+
+		var slider = $(".slider");
+		var vertSlider = $(".slider.vert").length; // check if the vert class is already applied
+		var container = $(".slider .pagination.thumbs");
+		
+		if(vertSlider) {
+			if(orientation == "portrait") {
+				slider.removeClass("vert");
+			} // END if(portrait)
+		} else {
+			if(orientation == "landscape") {
+				slider.addClass("vert");
+			}
+		}// END if(vertSlider)
+		
+
+	} // END if(correctPageType)
+	
+
+} // END thumbnailNav
 
 function aarons_customStuff() {
 	
