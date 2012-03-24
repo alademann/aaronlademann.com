@@ -44,7 +44,7 @@
 	})();
 </script>
 <script src="<?php echo public_uri(); ?>/js/head.min.js" id="headjs"></script>
-<script src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
+<script src="<?php echo public_uri(); ?>/js/modernizr.dev.js" id="modernizr"></script>
 </head>
 <body class="<?php body_class(); ?> <?php echo $deviceClass; ?>">
 <!-- navbar -->

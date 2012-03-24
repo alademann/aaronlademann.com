@@ -756,101 +756,115 @@ html {
   overflow: hidden;
   overflow-y: hidden; }
 
-/* elements that DEPEND on JAVASCRIPT to appear in context */
-/* line 37, ../sass/partials/_base.scss */
-.js.csstransitions .trans, .js.csstransitions .opaque, .js.csstransitions .single .like-count > a.opaque, .js.csstransitions .single .pagination.thumbs.opaque, .js.csstransitions .single .slides_container > img.opaque,
-.js.csstransitions .single .slider .lightbox img.opaque, .js.csstransitions .single .slider .lightbox .caption.opaque, .js.csstransitions .single .slides_container > img, .js.csstransitions .single #primary .slider .pagination.thumbs li.opaque, .single #primary .slider .pagination.thumbs .js.csstransitions li.opaque, .js.csstransitions .single .like-count > a, .js.csstransitions .single .pagination.thumbs,
-.js.csstransitions .single .slider .lightbox img, .js.csstransitions .single .slider .lightbox .caption, .js.csstransitions #primary .masonry, #primary .js.csstransitions .masonry, .js.csstransitions #primary .masonry .masonry-brick, #primary .masonry .js.csstransitions .masonry-brick, .js.csstransitions #primary .masonry .masonry-brick .wellOverlay, #primary .masonry .masonry-brick .js.csstransitions .wellOverlay, .js.csstransitions .single #primary .slider .pagination.thumbs li, .single #primary .slider .pagination.thumbs .js.csstransitions li, .js.csstransitions .single #primary .slider .pagination.thumbs li a, .single #primary .slider .pagination.thumbs li .js.csstransitions a, .js.csstransitions .single #primary .slider .pagination.thumbs li a > img, .single #primary .slider .pagination.thumbs li .js.csstransitions a > img {
+/* line 34, ../sass/partials/_base.scss */
+.trans, .js .opaque, .js .single .like-count > a.opaque, .js .single .pagination.thumbs.opaque, .js .single .slides_container > img.opaque,
+.js .single .slider .lightbox img.opaque, .js .single .slider .lightbox .caption.opaque, .js .single .slides_container > img, .js .single #primary .slider .pagination.thumbs li.opaque, .single #primary .slider .pagination.thumbs .js li.opaque, .js .single .like-count > a, .js .single .pagination.thumbs,
+.js .single .slider .lightbox img, .js .single .slider .lightbox .caption, #primary .masonry, #primary .masonry .masonry-brick, #primary .masonry .masonry-brick .wellOverlay, .single #primary .slider .pagination.thumbs li, .single #primary .slider .pagination.thumbs li a, .single #primary .slider .pagination.thumbs li a > img {
   -moz-transition-duration: 0.7s;
   -webkit-transition-duration: 0.7s;
   -o-transition-duration: 0.7s;
   transition-duration: 0.7s; }
-/* line 42, ../sass/partials/_base.scss */
-.js.csstransitions.tp_alpha, .js .single .like-count > a.js.csstransitions, .js .single .js.csstransitions.pagination.thumbs, .js .single .slides_container > img.js.csstransitions,
-.js .single .slider .lightbox img.js.csstransitions, .js .single .slider .lightbox .js.csstransitions.caption, #primary .js.csstransitions.masonry.transReady {
+
+/* line 39, ../sass/partials/_base.scss */
+.tp_alpha, .js .single .like-count > a, .js .single .pagination.thumbs, .js .single .slides_container > img,
+.js .single .slider .lightbox img, .js .single .slider .lightbox .caption, #primary .masonry.transReady {
   -moz-transition-property: opacity;
   -webkit-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity; }
-/* line 45, ../sass/partials/_base.scss */
-.js.csstransitions.tp_shadow, .navbar-fixed-top .js.csstransitions.brand {
+
+/* line 42, ../sass/partials/_base.scss */
+.tp_shadow, .navbar-fixed-top .brand {
   -moz-transition-property: box-shadow, text-shadow;
   -webkit-transition-property: box-shadow, text-shadow;
   -o-transition-property: box-shadow, text-shadow;
   transition-property: box-shadow, text-shadow; }
-/* line 48, ../sass/partials/_base.scss */
-.js.csstransitions.tp_scale, #primary .js.csstransitions.masonry.transReady {
+
+/* line 45, ../sass/partials/_base.scss */
+.tp_scale, #primary .masonry.transReady {
   -moz-transition-property: height, min-height, max-height, width, min-width, max-width, font-size, line-height;
   -webkit-transition-property: height, min-height, max-height, width, min-width, max-width, font-size, line-height;
   -o-transition-property: height, min-height, max-height, width, min-width, max-width, font-size, line-height;
   transition-property: height, min-height, max-height, width, min-width, max-width, font-size, line-height; }
-/* line 51, ../sass/partials/_base.scss */
-.js.csstransitions.tp_position {
+
+/* line 48, ../sass/partials/_base.scss */
+.tp_position {
   -moz-transition-property: top, right, bottom, left, margin, padding, vertical-aligns;
   -webkit-transition-property: top, right, bottom, left, margin, padding, vertical-aligns;
   -o-transition-property: top, right, bottom, left, margin, padding, vertical-aligns;
   transition-property: top, right, bottom, left, margin, padding, vertical-aligns; }
-/* line 54, ../sass/partials/_base.scss */
-.js.csstransitions.tp_bg {
+
+/* line 51, ../sass/partials/_base.scss */
+.tp_bg {
   -moz-transition-property: background;
   -webkit-transition-property: background;
   -o-transition-property: background;
   transition-property: background; }
-/* line 57, ../sass/partials/_base.scss */
-.js.csstransitions.tp_color, .navbar-fixed-top .js.csstransitions.brand {
+
+/* line 54, ../sass/partials/_base.scss */
+.tp_color, .navbar-fixed-top .brand {
   -moz-transition-property: color, border-color, outline-color, background-color, background-image, opacity;
   -webkit-transition-property: color, border-color, outline-color, background-color, background-image, opacity;
   -o-transition-property: color, border-color, outline-color, background-color, background-image, opacity;
   transition-property: color, border-color, outline-color, background-color, background-image, opacity; }
-/* line 60, ../sass/partials/_base.scss */
-.js.csstransitions.border {
+
+/* line 57, ../sass/partials/_base.scss */
+.border {
   -moz-transition-property: border;
   -webkit-transition-property: border;
   -o-transition-property: border;
   transition-property: border; }
-/* line 63, ../sass/partials/_base.scss */
-.js.csstransitions.tp_all, #primary .masonry .js.csstransitions.masonry-brick, #primary .masonry .masonry-brick .js.csstransitions.wellOverlay, .single #primary .slider .pagination.thumbs li.js.csstransitions, .single #primary .slider .pagination.thumbs li a.js.csstransitions, .single #primary .slider .pagination.thumbs li a > img.js.csstransitions {
+
+/* line 60, ../sass/partials/_base.scss */
+.tp_all, #primary .masonry .masonry-brick, #primary .masonry .masonry-brick .wellOverlay, .single #primary .slider .pagination.thumbs li, .single #primary .slider .pagination.thumbs li a, .single #primary .slider .pagination.thumbs li a > img {
   -moz-transition-property: all;
   -webkit-transition-property: all;
   -o-transition-property: all;
   transition-property: all; }
-/* line 68, ../sass/partials/_base.scss */
-.js.csstransitions.tt_ease {
+
+/* line 65, ../sass/partials/_base.scss */
+.tt_ease {
   -moz-transition-timing-function: ease;
   -webkit-transition-timing-function: ease;
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
-/* line 71, ../sass/partials/_base.scss */
-.js.csstransitions.tt_linear, .js .single .like-count > a.js.csstransitions, .js .single .js.csstransitions.pagination.thumbs, .js .single .slides_container > img.js.csstransitions,
-.js .single .slider .lightbox img.js.csstransitions, .js .single .slider .lightbox .js.csstransitions.caption, .navbar-fixed-top .js.csstransitions.brand {
+
+/* line 68, ../sass/partials/_base.scss */
+.tt_linear, .js .single .like-count > a, .js .single .pagination.thumbs, .js .single .slides_container > img,
+.js .single .slider .lightbox img, .js .single .slider .lightbox .caption, .navbar-fixed-top .brand {
   -moz-transition-timing-function: linear;
   -webkit-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear; }
-/* line 74, ../sass/partials/_base.scss */
-.js.csstransitions.tt_easeIn {
+
+/* line 71, ../sass/partials/_base.scss */
+.tt_easeIn {
   -moz-transition-timing-function: ease-in;
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in; }
-/* line 77, ../sass/partials/_base.scss */
-.js.csstransitions.tt_easeOut {
+
+/* line 74, ../sass/partials/_base.scss */
+.tt_easeOut {
   -moz-transition-timing-function: ease-out;
   -webkit-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out; }
-/* line 80, ../sass/partials/_base.scss */
-.js.csstransitions.tt_easeInOut {
+
+/* line 77, ../sass/partials/_base.scss */
+.tt_easeInOut {
   -moz-transition-timing-function: ease-in-out;
   -webkit-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out; }
-/* line 86, ../sass/partials/_base.scss */
+
+/* elements that DEPEND on JAVASCRIPT to appear in context */
+/* line 84, ../sass/partials/_base.scss */
 .js .opaque, .js .single .like-count > a.opaque, .js .single .pagination.thumbs.opaque, .js .single .slides_container > img.opaque,
 .js .single .slider .lightbox img.opaque, .js .single .slider .lightbox .caption.opaque, .js .single .slides_container > img, .js .single #primary .slider .pagination.thumbs li.opaque, .single #primary .slider .pagination.thumbs .js li.opaque {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
-/* line 95, ../sass/partials/_base.scss */
+/* line 93, ../sass/partials/_base.scss */
 .js .single .like-count > a, .js .single .pagination.thumbs, .js .single .slides_container > img,
 .js .single .slider .lightbox img, .js .single .slider .lightbox .caption {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
