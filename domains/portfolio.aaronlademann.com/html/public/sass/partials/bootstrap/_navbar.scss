@@ -210,8 +210,12 @@
 
 // Active nav items
 .navbar .nav .active > a,
-.navbar .nav .active > a:hover {
-  color: $navbarLinkColorHover;
+.navbar .nav .active > a:hover,
+.navbar .nav .current-menu-item > a,
+.navbar .nav .current-menu-item > a:hover,
+.navbar .nav .current-page-item > a,
+.navbar .nav .current-page-item > a:hover {
+  color: $navbarLinkColorHover !important;
   text-decoration: none;
   background-color: $navbarLinkBackgroundHover;
   //background-color: rgba(0,0,0,.5);

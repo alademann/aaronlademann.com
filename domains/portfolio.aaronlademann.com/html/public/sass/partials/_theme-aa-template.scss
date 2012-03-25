@@ -1,6 +1,6 @@
 ﻿/*---------------- aaronlademann.com TEMPLATE ----------------*/
 .navbar-fixed-top .brand {
-	padding: 0 5px 0 70px;
+	padding: 0 ($gridGutterWidth * 1.5) 0 0;
 	font-size: 20px;
 	font-family: "Helv63";
 	text-transform: lowercase;
@@ -152,8 +152,11 @@ a .overlay .icon:before { content: $icon-search; }
 	}
 
 	.navbar-fixed-top .brand {
+		$brand_bgImg: "aa-symbol_button.png";
 		color: #000;
-		background: image-url("aa-symbol_button.png") left top no-repeat;
+		background: image-url($brand_bgImg) left top no-repeat;
+		// we want the left padding to give enough room for the image above
+		padding-left: image-width($brand_bgImg);
 		@include text-shadow(
 			rgba(white, 0.1) 0 1px 0, 
 			rgba(white, 0.125) 0 0 30px
