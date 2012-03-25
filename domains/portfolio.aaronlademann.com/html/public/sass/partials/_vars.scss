@@ -47,6 +47,16 @@ $aa_wellInsetShadowColor: rgba(120,120,120,.2);
 
 $experimental-support-for-svg: true;
 
+@mixin aa_body_light {
+	$light_bgcolor: #eeeeee;
+	body {
+		background-position: left top !important;
+		background-repeat: repeat !important;
+		background-color: $light_bgcolor !important;
+		background-image: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png") !important;
+	}
+}
+
 // Convert px to em
 @function pxtoem($target, $container){
   @return ($target/$container)+0em;

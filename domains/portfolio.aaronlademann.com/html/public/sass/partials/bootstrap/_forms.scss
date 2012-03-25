@@ -79,6 +79,8 @@ select,
   height: auto;
 }
 
+input[type="text"], textarea, select { background-color: $white !important; }
+
 // Inputs within a label
 label input,
 label textarea,
@@ -88,15 +90,14 @@ label select {
 
 // Mini reset for unique input types
 input[type="image"],
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"], label.checkbox
+input[type="radio"], label.radio {
   width: auto;
   height: auto;
   padding: 0;
   margin: 3px 0;
   *margin-top: 0; /* IE7 */
   line-height: normal;
-  cursor: pointer;
   @include border-radius(0); // Nuke border-radius for IE9 only
   border: 0 \9; /* IE9 and down */
 }
@@ -121,6 +122,14 @@ input[type=reset],
 input[type=submit] {
   width: auto;
   height: auto;
+}
+input[type="image"],
+input[type="checkbox"], label.checkbox,
+input[type="radio"], label.radio,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	cursor: pointer;
 }
 
 // Set the height of select and file controls to match text inputs

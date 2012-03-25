@@ -1,8 +1,4 @@
 ﻿/*---------------- aaronlademann.com TEMPLATE ----------------*/
-body {
-	background-position: left top;
-	background-repeat: repeat;
-}
 .navbar-fixed-top .brand {
 	padding: 0 5px 0 70px;
 	font-size: 20px;
@@ -134,11 +130,8 @@ a .overlay .icon:before { content: $icon-search; }
 
 
 @mixin aa_light {
-	$light_bgcolor: #eeeeee;
-	body {
-		background-color: $light_bgcolor;
-		background-image: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png");
-	}
+	
+	@include aa_body_light;
 
 	.pagination.thumbs {
 		@include border-corner-radius(bottom, left, 4px);
