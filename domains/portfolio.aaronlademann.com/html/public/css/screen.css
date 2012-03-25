@@ -1059,6 +1059,11 @@ html {
 }
 
 /* END elements that javascript will reveal */
+/* line 113, ../sass/partials/_base.scss */
+.bold, .strong, .bold *, .strong * {
+  font-weight: bold !important;
+}
+
 /*
  * Bootstrap v2.0.1
  *
@@ -4787,15 +4792,19 @@ input[type="submit"].btn.small {
   text-decoration: none;
 }
 
-/* line 213, ../sass/partials/bootstrap/_navbar.scss */
+/* line 217, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .active > a,
-.navbar .nav .active > a:hover {
-  color: white;
+.navbar .nav .active > a:hover,
+.navbar .nav .current-menu-item > a,
+.navbar .nav .current-menu-item > a:hover,
+.navbar .nav .current-page-item > a,
+.navbar .nav .current-page-item > a:hover {
+  color: white !important;
   text-decoration: none;
   background-color: black;
 }
 
-/* line 221, ../sass/partials/bootstrap/_navbar.scss */
+/* line 225, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   width: 1px;
@@ -4805,13 +4814,13 @@ input[type="submit"].btn.small {
   border-right: 1px solid #333333;
 }
 
-/* line 231, ../sass/partials/bootstrap/_navbar.scss */
+/* line 235, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right {
   margin-left: 10px;
   margin-right: 0;
 }
 
-/* line 242, ../sass/partials/bootstrap/_navbar.scss */
+/* line 246, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu {
   margin-top: 1px;
   -moz-border-radius-bottomleft: 4px;
@@ -4827,7 +4836,7 @@ input[type="submit"].btn.small {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 247, ../sass/partials/bootstrap/_navbar.scss */
+/* line 251, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu:before {
   content: '';
   display: inline-block;
@@ -4839,7 +4848,7 @@ input[type="submit"].btn.small {
   top: -7px;
   left: 9px;
 }
-/* line 258, ../sass/partials/bootstrap/_navbar.scss */
+/* line 262, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu:after {
   content: '';
   display: inline-block;
@@ -4851,29 +4860,29 @@ input[type="submit"].btn.small {
   left: 10px;
 }
 
-/* line 276, ../sass/partials/bootstrap/_navbar.scss */
+/* line 280, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle {
   color: #999999;
 }
-/* line 280, ../sass/partials/bootstrap/_navbar.scss */
+/* line 284, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle .caret {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
   opacity: 100;
   border-top-color: #595959;
 }
-/* line 288, ../sass/partials/bootstrap/_navbar.scss */
+/* line 292, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle:hover {
   color: white;
 }
-/* line 291, ../sass/partials/bootstrap/_navbar.scss */
+/* line 295, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle:hover .caret {
   border-top-color: #d9d9d9;
 }
-/* line 302, ../sass/partials/bootstrap/_navbar.scss */
+/* line 306, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle {
   color: #cccccc;
 }
-/* line 306, ../sass/partials/bootstrap/_navbar.scss */
+/* line 310, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle .caret {
   border-top-color: #595959;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
@@ -4884,26 +4893,26 @@ input[type="submit"].btn.small {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 314, ../sass/partials/bootstrap/_navbar.scss */
+/* line 318, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle:hover {
   color: white;
 }
-/* line 317, ../sass/partials/bootstrap/_navbar.scss */
+/* line 321, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle:hover .caret {
   border-top-color: #d9d9d9;
 }
 
-/* line 331, ../sass/partials/bootstrap/_navbar.scss */
+/* line 335, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu {
   left: auto;
   right: 0;
 }
-/* line 334, ../sass/partials/bootstrap/_navbar.scss */
+/* line 338, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:before {
   left: auto;
   right: 12px;
 }
-/* line 338, ../sass/partials/bootstrap/_navbar.scss */
+/* line 342, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:after {
   left: auto;
   right: 13px;
@@ -9907,7 +9916,7 @@ a.jp-unmute:hover {
 /*---------------- aaronlademann.com TEMPLATE ----------------*/
 /* line 2, ../sass/partials/_theme-aa-template.scss */
 .navbar-fixed-top .brand {
-  padding: 0 5px 0 70px;
+  padding: 0 30px 0 0;
   font-size: 20px;
   font-family: "Helv63";
   text-transform: lowercase;
@@ -10110,16 +10119,17 @@ body {
 .navbar-fixed-top .brand {
   color: #000;
   background: url('../images/aa-symbol_button.png?1332459562') left top no-repeat;
+  padding-left: 70px;
   text-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(255, 255, 255, 0.125) 0 0 30px;
 }
-/* line 162, ../sass/partials/_theme-aa-template.scss */
+/* line 165, ../sass/partials/_theme-aa-template.scss */
 .navbar-fixed-top .brand:hover {
   background-position: left bottom;
   color: #ddd !important;
   text-shadow: rgba(0, 0, 0, 0.5) 0 3px 0, rgba(0, 0, 0, 0.525) 0 0 30px;
 }
 
-/* line 177, ../sass/partials/_theme-aa-template.scss */
+/* line 180, ../sass/partials/_theme-aa-template.scss */
 .comment-body p, #load-more-link a, .hentry,
 .masonry-brick, .masonry-brick .entry-meta a,
 .folio_link .icon, .like-count, .like-count a, .like-count .icon, .like-count .icon:before,
@@ -10127,13 +10137,13 @@ body {
   color: #6e6e6e;
 }
 
-/* line 180, ../sass/partials/_theme-aa-template.scss */
+/* line 183, ../sass/partials/_theme-aa-template.scss */
 .like-count .icon, .like-count .icon:before,
 .single .published .icon, .single .published .icon:before {
   color: #a2a2a2 !important;
 }
 
-/* line 184, ../sass/partials/_theme-aa-template.scss */
+/* line 187, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick {
   background-color: transparent;
   background-color: rgba(204, 204, 204, 0.2);
@@ -10144,21 +10154,21 @@ body {
   -o-box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
 }
-/* line 197, ../sass/partials/_theme-aa-template.scss */
+/* line 200, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick .wellOverlay {
   -moz-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
   -webkit-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
   -o-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
 }
-/* line 201, ../sass/partials/_theme-aa-template.scss */
+/* line 204, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick figcaption, .masonry .masonry-brick .figcaption, .masonry .masonry-brick .post-thumb, .masonry .masonry-brick footer, .masonry .masonry-brick .footer {
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.05);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0D000000,endColorstr=#0D000000);
   zoom: 1;
 }
-/* line 205, ../sass/partials/_theme-aa-template.scss */
+/* line 208, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick img {
   border-bottom-color: rgba(228, 228, 228, 0.1);
   -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
@@ -10166,15 +10176,15 @@ body {
   -o-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 213, ../sass/partials/_theme-aa-template.scss */
+/* line 216, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick figcaption .entry-title a, .masonry .masonry-brick .figcaption .entry-title a {
   color: #333333;
 }
-/* line 218, ../sass/partials/_theme-aa-template.scss */
+/* line 221, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick footer, .masonry .masonry-brick .footer {
   border-top-color: rgba(100, 100, 100, 0.1);
 }
-/* line 223, ../sass/partials/_theme-aa-template.scss */
+/* line 226, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick.hover {
   background-color: transparent;
   background-color: rgba(255, 255, 255, 0.9);
@@ -10185,47 +10195,47 @@ body {
   -o-box-shadow: 0 2px 0 white;
   box-shadow: 0 2px 0 white;
 }
-/* line 226, ../sass/partials/_theme-aa-template.scss */
+/* line 229, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick.hover .wellOverlay {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
   -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
 }
-/* line 231, ../sass/partials/_theme-aa-template.scss */
+/* line 234, ../sass/partials/_theme-aa-template.scss */
 .masonry .masonry-brick.hover figcaption .entry-title a, .masonry .masonry-brick.hover figcaption .entry-title a:hover, .masonry .masonry-brick.hover .figcaption .entry-title a, .masonry .masonry-brick.hover .figcaption .entry-title a:hover {
   color: #0088cc;
 }
-/* line 241, ../sass/partials/_theme-aa-template.scss */
+/* line 244, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .masonry .masonry-brick img {
   border-bottom-color: #1AE4E4E4;
 }
-/* line 244, ../sass/partials/_theme-aa-template.scss */
+/* line 247, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .masonry .masonry-brick footer, .no-rgba .masonry .masonry-brick .footer {
   border-top-color: #1A646464;
 }
 @media (max-width: 480px), (max-width: 500px) {
-  /* line 252, ../sass/partials/_theme-aa-template.scss */
+  /* line 255, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick figcaption, .masonry .masonry-brick .figcaption {
     background-color: transparent;
     background-color: rgba(44, 44, 44, 0.55);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8C2C2C2C,endColorstr=#8C2C2C2C);
     zoom: 1;
   }
-  /* line 256, ../sass/partials/_theme-aa-template.scss */
+  /* line 259, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick figcaption .entry-title a, .masonry .masonry-brick .figcaption .entry-title a {
     color: white;
     font-size: 1.4em;
     font-weight: bold;
   }
-  /* line 266, ../sass/partials/_theme-aa-template.scss */
+  /* line 269, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick.hover figcaption, .masonry .masonry-brick.hover .figcaption {
     background-color: transparent;
     background-color: rgba(44, 44, 44, 0.85);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D92C2C2C,endColorstr=#D92C2C2C);
     zoom: 1;
   }
-  /* line 268, ../sass/partials/_theme-aa-template.scss */
+  /* line 271, ../sass/partials/_theme-aa-template.scss */
   .masonry .masonry-brick.hover figcaption .entry-title a, .masonry .masonry-brick.hover figcaption .entry-title a:hover, .masonry .masonry-brick.hover .figcaption .entry-title a, .masonry .masonry-brick.hover .figcaption .entry-title a:hover {
     text-decoration: none !important;
     color: white;
@@ -10233,7 +10243,7 @@ body {
 }
 
 /* Infinite Scroll loader */
-/* line 284, ../sass/partials/_theme-aa-template.scss */
+/* line 287, ../sass/partials/_theme-aa-template.scss */
 #infscr-loading {
   text-align: center;
   z-index: 100;
@@ -10250,7 +10260,7 @@ body {
   border-radius: 10px;
 }
 
-/* line 301, ../sass/partials/_theme-aa-template.scss */
+/* line 304, ../sass/partials/_theme-aa-template.scss */
 .slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
   -moz-box-shadow: 0px 0px 5px #333333;
   -webkit-box-shadow: 0px 0px 5px #333333;
@@ -10261,44 +10271,44 @@ body {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/* line 309, ../sass/partials/_theme-aa-template.scss */
+/* line 312, ../sass/partials/_theme-aa-template.scss */
 .single .hentry {
   background-color: transparent;
 }
 
-/* line 311, ../sass/partials/_theme-aa-template.scss */
+/* line 314, ../sass/partials/_theme-aa-template.scss */
 #tagline {
   color: #777777;
 }
 
-/* line 318, ../sass/partials/_theme-aa-template.scss */
+/* line 321, ../sass/partials/_theme-aa-template.scss */
 .rgba .overlay {
   background-color: transparent;
   background-color: rgba(34, 34, 34, 0.8);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC222222,endColorstr=#CC222222);
   zoom: 1;
 }
-/* line 322, ../sass/partials/_theme-aa-template.scss */
+/* line 325, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .overlay {
   background: transparent url('../images/gridlocked/light/bg_pattern_gray_leather_subtler.png?1332459562') left top repeat;
 }
 
-/* line 329, ../sass/partials/_theme-aa-template.scss */
+/* line 332, ../sass/partials/_theme-aa-template.scss */
 .rgba .line {
   border-bottom-color: rgba(0, 0, 0, 0.1);
   border-top-color: rgba(255, 255, 255, 0.4);
 }
-/* line 333, ../sass/partials/_theme-aa-template.scss */
+/* line 336, ../sass/partials/_theme-aa-template.scss */
 .rgba .line.vert {
   border-right-color: rgba(0, 0, 0, 0.1);
   border-left-color: rgba(255, 255, 255, 0.4);
 }
-/* line 338, ../sass/partials/_theme-aa-template.scss */
+/* line 341, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .line {
   border-bottom-color: #1A000000;
   border-top-color: #66FFFFFF;
 }
-/* line 342, ../sass/partials/_theme-aa-template.scss */
+/* line 345, ../sass/partials/_theme-aa-template.scss */
 .no-rgba .line.vert {
   border-right-color: #1A000000;
   border-left-color: #66FFFFFF;
