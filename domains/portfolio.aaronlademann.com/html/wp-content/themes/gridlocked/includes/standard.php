@@ -1,8 +1,17 @@
 <!--BEGIN .masonry-brick -->
-<article class="<?php post_class(); ?> box masonry-brick" id="post-<?php the_ID(); ?>">                
+<article class="<?php post_class(); ?> box masonry-brick" id="post-<?php the_ID(); ?>">    
+           
 <?php 
 $lightbox = get_post_meta(get_the_ID(), 'tz_portfolio_lightbox', TRUE); 
-$thumb = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 
+$thumbSrc = get_post_meta(get_the_ID(), 'tz_portfolio_thumb', TRUE); 
+$isIphone = is_iphone($_SERVER['HTTP_USER_AGENT']);
+if($isIphone || $deviceClass == "iphone") :
+	$thumb = get_iosThumb($thumbSrc);
+else:
+	$thumb = $thumbSrc; 				
+endif; 
+
+$iPhoneThumb = get_post_meta(get_the_ID(), 'iOS-thumb', TRUE);
 $embed = get_post_meta(get_the_ID(), 'tz_portfolio_embed_code', TRUE);
 $image  = get_post_meta(get_the_ID(), 'tz_portfolio_image', TRUE); 
 $folio_summary  = get_post_meta(get_the_ID(),'tz_portfolio_caption', TRUE); 

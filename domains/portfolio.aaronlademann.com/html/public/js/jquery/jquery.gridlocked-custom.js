@@ -34,6 +34,15 @@ head.ready(function() {
 		//		contentWidth();
 	});
 
+	window.addEventListener("orientationchange", function() { // switching between landscape and horizontal
+		updateOrientation();
+		
+		if($().masonry) {
+			masonTheLayout();
+		} // END if(masonry)
+		
+	}, false);
+
 	contentHeight(); // dynamic content height
 	//	contentWidth();
 
@@ -55,7 +64,7 @@ head.ready(function() {
 	tz_navTitles(); // TODO - figure out what this does ;)
 
 
-});      // END head.ready()
+});         // END head.ready()
 
 /*-----------------------------------------------------------------------------------*/
 /*	We're ready!
@@ -69,6 +78,54 @@ $('#container').removeClass('js-disabled');
  	********************* FUNCTIONS *********************
  
 ----------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*	MOBILE DEVICE ORIENTATION FUNCTIONS
+/*-----------------------------------------------------------------------------------*/
+function updateOrientation() {
+		var orientation = window.orientation;
+		
+		switch (orientation) {
+				// If we're horizontal
+				case 90:
+				case -90:
+					orientLandscape();
+					break;  
+				
+				// If we're vertical
+				default:
+					orientPortrait();
+					break;
+		}
+		
+}
+
+function orientLandscape() {
+	var offset;
+	// Set orient to landscape
+	document.body.setAttribute("orient", "landscape");
+	orientLandscape();
+	$('body').addClass("landscape");
+	$('body').removeClass("portrait");
+	offset = 0;
+
+	// contextual thumbnail nav on .single portfolio pages
+	thumbnailNav("landscape", offset);
+
+} // END orientLandscape()
+
+function orientPortrait() {
+	var offset;
+	// Set orient to portrait
+	document.body.setAttribute("orient", "portrait");
+	$('body').addClass("portrait");
+	$('body').removeClass("landscape");
+	offset = 0;
+
+	// contextual thumbnail nav on .single portfolio pages
+	thumbnailNav("portrait", offset);
+
+} // END orientVertical()
 
 /*-----------------------------------------------------------------------------------*/
 /*	DYNAMIC HEIGHT / WIDTH FUNCTIONS
@@ -262,12 +319,12 @@ function masonTheLayout() {
 			nextSelector: ".nav-next a",
 			itemSelector: $masonryBoxClass,
 			loadingText: 'Loading more items',
-			loadingMsgRevealSpeed: 0,
-			bufferPx: 80,
-			extraScrollPx: 0,
+			loadingMsgRevealSpeed: 700,
+			bufferPx: 180,
+			extraScrollPx: 40,
 			donetext: 'No more items to load',
 			debug: false,
-			animate: false,
+			animate: true,
 			loadingImg: "/public/images/loading.gif"
 
 		}, function(newElements) {
@@ -285,14 +342,15 @@ function masonTheLayout() {
 				})
 
 				// show elems now they're ready
-				$newElems.animate({ opacity: 1 });
 				$container.masonry('appended', $newElems);
+				contentHeight();
+				$newElems.animate({ opacity: 1 });
 
 				// since each time this triggers is technically a new page of content...
 				infscrPageview++;
 				_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
 
-				contentHeight();
+				
 
 			});
 

@@ -5,6 +5,7 @@ Template Name: Portfolio Items
 $postType = 'portfolio';
 ?>
 <?php get_header(); ?>
+<?php include(custom_includes_dir() . "/portfolio/get-image-sizes.php"); ?> 
 <!--BEGIN #primary .hfeed-->
 <section id="primary" class="hfeed span12">
 

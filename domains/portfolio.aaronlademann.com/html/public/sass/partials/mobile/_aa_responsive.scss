@@ -37,34 +37,6 @@
 
 	.page-template-template-full-width-php & { float: none; }
 
-//	.breadcrumb {
-//		height: 2.3em;
-//		margin: 0 0 22px 25px;
-//
-//		&, li {
-//			list-style-type: none;
-//			padding: 0;
-//			margin: 0;
-//			@include float(left);
-//		}
-//		li {
-//			padding: 0 .5em 0 0;
-//			&:first-child { padding-left: 0; }
-//
-//			a { 
-//				display: block;
-//				padding: 0 0 0 0;
-//				&:after {
-//					color: lighten($gray, 50%);
-//					font-family: "FontAwesome";
-//					content: $icon-chevron-right;
-//					margin-left: .5em;
-//					text-decoration: none !important;
-//				}
-//			}
-//		}
-//	} // END .breadcrumb
-
 	.masonry-brick .entry-meta, .footer .entry-meta, .like-count, .published {
 		.icon {
 			margin-right: 4px;
@@ -147,7 +119,34 @@
 				overflow: hidden;
 			}
 
-		}
+			@media (max-width: 480px), (max-width: 500px) { // 508 is where two columns of gridlock no longer fits
+
+				margin-left: 0;
+
+				.post-thumb > a, .post-thumb > a > img {
+					min-width: 100%;
+					max-width: 100%;
+				}
+				&, .wellOverlay {
+					width: 100%;
+					min-width: 100%;
+					max-width: 100%;
+					max-height: ($aa_media_heightMobileThumb + 84);
+				}
+				.wellOverlay {
+					@include stretch-y;
+				}
+				figcaption, .figcaption {
+					@extend .trans;
+					@extend .tp_all;
+					bottom: 0;
+					z-index: 10;
+				}
+				footer, .footer { display: none; }
+
+			} // END iPhone / mobile Media Declarations
+
+		} // END .masonry-brick
 
 	} // END .masonry
 
@@ -363,7 +362,7 @@
 		} // END .single #single-sidebar
 	} // END .single #primary section & article
 
-	&.iphone {
+	@media (max-width: 480px), (max-width: 500px) { // 508 is where two cols of gridlock no longer fit
 
 		.slider {
 			&, .slides_container { min-height: 1px !important; }
@@ -380,7 +379,7 @@
 		#container { min-height: 1px !important; }
 		#single-sidebar { top: 0; }
 
-	} // END iPhone Media Declarations
+	} // END iPhone / mobile Media Declarations
 
 } // END .single
 
@@ -435,72 +434,6 @@
 						// so we need to align it how we want our fluid layout to respond when screen size changes.
 						left: auto;
 						right: 0;
-
-	//					& > div, & > header, & > footer, & > span, & > ul, & > p {
-	//						width: auto;
-	//						padding: 0 1.4em;
-	//					}
-	//					& > header, & > .header {
-	//						padding-top: 1.4em;
-	//					}
-	//					& > footer, & > .footer {
-	//						padding-bottom: 1.4em;
-	//					}
-	//
-	//					// formatting for any <ul> elem in the #single sidebar
-	//					ul { margin: 0; padding: 0; }
-	//					.seperator { margin: ($articleVPad / 4) 0; }
-	//
-	//					// header is where the_content() and the_title() live on .single posts.
-	//					header, .header {
-	//					
-	//						h1, .h1 {
-	//							font-size: $aa_h1_fontSize;
-	//							font-weight: bold;
-	//							letter-spacing: -.1ex;
-	//							line-height: 1.1;
-	//							margin-bottom: ($aa_h1_fontSize / 9);
-	//						}
-	//
-	//						ul.entry-header {
-	//					
-	//							.like-count, .published {
-	//								float: left;
-	//								position: relative;
-	//
-	//								&, span {
-	//									line-height: 2em;
-	//
-	//									.icon {
-	//										margin-right: 6px; // separate text from icon
-	//									}
-	//								}
-	//						
-	//								.js & {
-	//									// .js will reveal it
-	//									//visibility: hidden;
-	//								}
-	//							} // END #single-sidebar > .like-count, .published
-	//
-	//							// vertical divider between two <li> elems floating next to one another
-	//							.line.vert {
-	//								height: 2em;
-	//								@include opacity(.5);
-	//							}
-	//
-	//							.caption {
-	//								// the_content()
-	//								clear: both;
-	//								padding: 1em 0;
-	//							} // end #single-sidebar .caption
-	//
-	//						} // END .single #single-sidebar header ul.entry-header
-	//					} // END .single #single-sidebar header, .header	
-	//
-	//					// footer is where the bulleted taxonomy lists live on .single posts.
-	//					footer, .footer {
-	//
-	//					}
 
 						header, .header {
 						

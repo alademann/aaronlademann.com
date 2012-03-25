@@ -198,12 +198,16 @@ a .overlay .icon:before { content: $icon-search; }
 				@include box-shadow($inset_shadow);
 			}
 
+				figcaption, .figcaption, .post-thumb, footer, .footer {
+					@include rgba_bg(#000000, 0.05);
+				}
+
 				img {
 					border-bottom-color: lighten($entryMeta_border,50%);
 					@include box-shadow(0 3px 6px 0 rgba(0, 0, 0, 0.15));
 				}
 				figcaption, .figcaption {
-					@include rgba_bg(#000000, 0.05);
+					
 						.entry-title {
 				
 							a {
@@ -211,16 +215,10 @@ a .overlay .icon:before { content: $icon-search; }
 							}
 						}
 				}
-				.post-thumb {
-					@include rgba_bg(#000000, 0.05); // just incase the thumbnail image isn't the same size as its container...
-				}
 				footer, .footer {
-					@include rgba_bg(#000000, 0.05);
 					border-top-color: $entryMeta_border;
 				}
 				
-
-
 			// HOVER
 			&.hover {
 				@include rgba_bg(#ffffff, 0.9);
@@ -249,7 +247,36 @@ a .overlay .icon:before { content: $icon-search; }
 					
 			}
 
-		}
+			@media (max-width: 480px), (max-width: 500px) { // 508 is where two cols of gridlock no longer fit
+			
+				figcaption, .figcaption {
+					// in mobile layouts, the caption overlaps the image itself...
+					@include rgba_bg(#2c2c2c, 0.55);
+
+					.entry-title a {
+						color: $white;
+						font-size: 1.4em;
+						font-weight: bold;
+					}
+
+				}
+
+				&.hover {
+					
+					figcaption, .figcaption {
+						@include rgba_bg(#2c2c2c, 0.85);
+						.entry-title a, .entry-title a:hover {
+							text-decoration: none !important;
+							color: $white;
+						}
+					}
+
+				}
+
+			} // END mobile media query for .masonry-brick items
+
+		} // END .masonry-brick
+
 	} // END .masonry
 
 

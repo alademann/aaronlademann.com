@@ -26,6 +26,24 @@ function is_ios($browserAsString){
 	}
 	
 }
+function is_iphone($browserAsString){
+	
+	if (strstr($browserAsString, "iPhone")) { 
+		return true;
+	} else {
+		return false;
+	}
+
+}
+function is_ipad($browserAsString){
+	
+	if (strstr($browserAsString, "iPad")) { 
+		return true;
+	} else {
+		return false;
+	}
+
+}
 function is_folio_home(){
 	$home_page = home_url() . "/";
 	$protocol = ($_SERVER['HTTPS'] ? "https" : "http") . "://";
@@ -169,6 +187,7 @@ add_post_type_support( 'post', 'post-formats' );
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 50, 50, true ); // Normal post thumbnails
+	//add_image_size( 'iOS-thumb', 480, 355, true );
 	//add_image_size( 'thumb_sm', 50, 50, true );
 	//add_image_size( 'large', 680, '', true ); // Large thumbnails
 	//add_image_size( 'medium', 250, '', true ); // Medium thumbnails
