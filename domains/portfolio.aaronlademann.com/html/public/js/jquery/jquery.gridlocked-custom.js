@@ -314,47 +314,54 @@ function masonTheLayout() {
 		$container = $($masonryWrapperClass);
 		// infinitescroll() is called on the element that surrounds 
 		// the items you will be loading more of
-		$container.infinitescroll({
-			navSelector: ".navigation",
-			nextSelector: ".nav-next a",
-			itemSelector: $masonryBoxClass,
-			loadingText: 'Loading more items',
-			loadingMsgRevealSpeed: 700,
-			bufferPx: 180,
-			extraScrollPx: 40,
-			donetext: 'No more items to load',
-			debug: false,
-			animate: true,
-			loadingImg: "/public/images/loading.gif"
+		try {
+		
+			$container.infinitescroll({
+				navSelector: ".navigation",
+				nextSelector: ".nav-next a",
+				itemSelector: $masonryBoxClass,
+				loadingText: 'Loading more items',
+				loadingMsgRevealSpeed: 700,
+				bufferPx: 180,
+				extraScrollPx: 40,
+				donetext: 'No more items to load',
+				debug: false,
+				animate: true,
+				loadingImg: "/public/images/loading.gif"
 
-		}, function(newElements) {
+			}, function(newElements) {
 
-			// hide new items while they are loading
-			var $newElems = $(newElements).css({ opacity: 0 });
-			// ensure that images load before adding to masonry layout
-			$newElems.imagesLoaded(function() {
+				// hide new items while they are loading
+				var $newElems = $(newElements).css({ opacity: 0 });
+				// ensure that images load before adding to masonry layout
+				$newElems.imagesLoaded(function() {
 
-				// bind hover effects
-				$newElems.hover(function() {
-					$(this).addClass("hover");
-				}, function() {
-					$(this).removeClass("hover");
-				})
+					// bind hover effects
+					$newElems.hover(function() {
+						$(this).addClass("hover");
+					}, function() {
+						$(this).removeClass("hover");
+					})
 
-				// show elems now they're ready
-				$container.masonry('appended', $newElems);
-				contentHeight();
-				$newElems.animate({ opacity: 1 });
+					// show elems now they're ready
+					$container.masonry('appended', $newElems);
+					contentHeight();
+					$newElems.animate({ opacity: 1 });
 
-				// since each time this triggers is technically a new page of content...
-				infscrPageview++;
-				_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
+					// since each time this triggers is technically a new page of content...
+					infscrPageview++;
+					_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
 
 				
 
-			});
+				});
 
-		});
+			});
+			
+		} catch (e) {
+			
+		}
+		
 		// END INFINITE SCROLL
 
 	} // END scroll_forever()
