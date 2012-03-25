@@ -473,7 +473,7 @@ function tz_list_pings($comment, $args, $depth) {
 
 function tz_custom_login_logo() {
     echo '<style type="text/css">
-        h1 a { background-image:url('.get_template_directory_uri().'/images/custom-login-logo.png) !important; }
+        h1 a { background-image:url("/public/images/aa-logo_portfolio-login.png") !important; }
     </style>';
 }
 function tz_wp_login_url() {

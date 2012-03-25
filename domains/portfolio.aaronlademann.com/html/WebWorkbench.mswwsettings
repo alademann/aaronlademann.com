@@ -306,4 +306,10 @@
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
+  <file name="wp-login.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
 </web-workbench>

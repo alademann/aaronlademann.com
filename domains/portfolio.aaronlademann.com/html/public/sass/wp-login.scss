@@ -1,0 +1,61 @@
+﻿/*------------------------ COMPASS FRAMEWORK IMPORTS ------------------------*/
+@import "compass";
+@import "compass/support";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+@import "compass/layout";
+@import "compass/reset";
+//@include global-reset;
+
+/*------------------------ UTILITIES ------------------------*/
+@import "partials/webfonts";
+@include webfont("chunkfive/Chunkfive-webfont","ChunkFiveWeb");
+@include fontawesome; 
+@include helveticaNeue;
+@include webfont("monaco/monaco-webfont","MonacoWebfont");
+
+/*------------------------ BASE ------------------------*/
+@import "partials/base";
+@import "partials/bootstrap/bootstrap"; // bootstrap responsive is included here.
+@import "partials/vars";
+@include aa_body_light;
+
+body.login {
+	
+	h1 {
+		margin: 0;
+		padding: 20px 0;
+
+		&, a {
+			text-indent: -999em;
+		}
+		a {
+			display: block;
+			padding: 0;
+			min-width: image-width("aa-logo_portfolio-login.png");
+			width: auto;
+			height: image-height("aa-logo_portfolio-login.png");
+			background-repeat: no-repeat;
+			background-position: center top;
+		} 
+
+		@media (max-width: 480px) {
+			padding: 0 0 10px 0;
+			
+			a {
+				background-position: -5px top;
+			}
+		}
+
+	}
+
+
+	form.form-vertical {
+		input[type="text"], input[type="password"] {
+			width: 96%;
+			padding-left: 2%;
+			padding-right: 2%;
+		}
+	}
+}
