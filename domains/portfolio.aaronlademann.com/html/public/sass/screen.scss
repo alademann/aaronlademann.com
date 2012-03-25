@@ -36,6 +36,5 @@
 /*------------------------ OVERRIDES ------------------------*/
 @include hide_wp_adminbar();
 // tempmorary quick fixes
-.archive h1 { display: none !important; }
 .comment-count, .edit-post { display: none !important; }
 .breadcrumb { display: none !important; } 

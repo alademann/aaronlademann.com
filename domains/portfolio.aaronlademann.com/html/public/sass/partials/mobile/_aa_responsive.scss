@@ -6,8 +6,8 @@
 }
 
 #container {
-	$clearTheMasthead: ($baseLineHeight + $aa_mastHeight);
-	margin-top: $clearTheMasthead + $masonryHPad;
+	$clearTheMasthead: ($aa_mastHeight + $masonryHPad);
+	margin-top: $clearTheMasthead;
 	line-height: ($aa_mastHeight - 4);
 } // END #container
 
@@ -37,120 +37,139 @@
 
 	.page-template-template-full-width-php & { float: none; }
 
-	.masonry-brick .entry-meta, .footer .entry-meta, .like-count, .published {
-		.icon {
-			margin-right: 4px;
+	.archive & {
+		// archive pages
+		header {
+			padding: 0 $masonryHPad $masonryHPad $masonryHPad;
 
-			& + span {
-				float: left;
-			}
-			&:before { 
-				font-size: 1.3em; 
-			}
+			h1 {
+				
+				font-size: $aa_h1_fontSize;
+				font-weight: bold;
+				letter-spacing: -.1ex;
+				line-height: 1.1;
+				margin-bottom: ($aa_h1_fontSize / 9);
+			} // END .archive header h1
 
-		} // END .icon
-	}
+		} // END .archive header
 
-	.masonry {
-	// progressively reveal this so the animations don't look wierd
-	// only if browser handles javascript.
-
-		.js.opacity & {
-			// browser supports opacity
-			@include transparent;
-			// reveal
-			&.transReady {
-				@include opacity(1.0); 
-			}
-		} // end opacity
-		.js.no-opacity & {
-			// no opacity support
-			display: none;
-			// reveal
-			&.transReady {
-				display: block;
-			}
-		} // end no opacity
-
-		// enable css transitions
-		&.transReady {
-			@extend .tp_scale;
-			@extend .tp_alpha;
-		} // end css transitions
-	
-	// END progressive revealing of .masonry opacity
-
-		&, .masonry-brick, .masonry-brick .wellOverlay {
-			@extend .trans;
-		}
-		.masonry-brick {
-			margin: 0 0 $masonryVPad $masonryHPad;
-
-			&, .wellOverlay{
-				@extend .tp_all;
-				//@include transition-property("left, right, top");
-				@include min-width($aa_media_widthThumb);
-				max-width: $aa_media_widthThumb;
-				@include min-height($aa_media_heightThumb + 84);
-				max-height: ($aa_media_heightThumb + 84);
-				padding: 0;
-			}
-
-			.wellOverlay { 
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 0;
-			}
-
-			.wellOverlay, figcaption, footer, .footer {
-				cursor: pointer;
-			}
-
-			figcaption, .figcaption, footer, .footer {
-				position: absolute;
-				z-index: 1;
-			}
-			footer, .footer {
-				bottom: 0;
-				left: 0;
-				width: 96.4%;
-				padding: 0 2%;
-				overflow: hidden;
-			}
-
-			@media (max-width: 480px), (max-width: 500px) { // 508 is where two columns of gridlock no longer fits
-
-				margin-left: 0;
-
-				.post-thumb > a, .post-thumb > a > img {
-					min-width: 100%;
-					max-width: 100%;
-				}
-				&, .wellOverlay {
-					width: 100%;
-					min-width: 100%;
-					max-width: 100%;
-					max-height: ($aa_media_heightMobileThumb + 84);
-				}
-				.wellOverlay {
-					@include stretch-y;
-				}
-				figcaption, .figcaption {
-					@extend .trans;
-					@extend .tp_all;
-					bottom: 0;
-					z-index: 10;
-				}
-				footer, .footer { display: none; }
-
-			} // END iPhone / mobile Media Declarations
-
-		} // END .masonry-brick
-
-	} // END .masonry
+	} // END .archive #primary
 
 } // END #primary
+
+.masonry-brick .entry-meta, .footer .entry-meta, .like-count, .published {
+	.icon {
+		margin-right: 4px;
+
+		& + span {
+			float: left;
+		}
+		&:before { 
+			font-size: 1.3em; 
+		}
+
+	} // END .icon
+}
+
+.masonry {
+// progressively reveal this so the animations don't look wierd
+// only if browser handles javascript.
+
+	.js.opacity & {
+		// browser supports opacity
+		@include transparent;
+		// reveal
+		&.transReady {
+			@include opacity(1.0); 
+		}
+	} // end opacity
+	.js.no-opacity & {
+		// no opacity support
+		display: none;
+		// reveal
+		&.transReady {
+			display: block;
+		}
+	} // end no opacity
+
+	// enable css transitions
+	&.transReady {
+		@extend .tp_scale;
+		@extend .tp_alpha;
+	} // end css transitions
+	
+// END progressive revealing of .masonry opacity
+
+	&, .masonry-brick, .masonry-brick .wellOverlay {
+		@extend .trans;
+	}
+	.masonry-brick {
+		margin: 0 0 $masonryVPad $masonryHPad;
+
+		&, .wellOverlay{
+			@extend .tp_all;
+			//@include transition-property("left, right, top");
+			@include min-width($aa_media_widthThumb);
+			max-width: $aa_media_widthThumb;
+			@include min-height($aa_media_heightThumb + 84);
+			max-height: ($aa_media_heightThumb + 84);
+			padding: 0;
+		}
+
+		.wellOverlay { 
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+
+		.wellOverlay, figcaption, footer, .footer {
+			cursor: pointer;
+		}
+
+		figcaption, .figcaption, footer, .footer {
+			position: absolute;
+			z-index: 1;
+		}
+		footer, .footer {
+			bottom: 0;
+			left: 0;
+			width: 96.4%;
+			padding: 0 2%;
+			overflow: hidden;
+		}
+
+		@media (max-width: 480px), (max-width: 500px) { // 508 is where two columns of gridlock no longer fits
+
+			margin-left: 0;
+
+			.post-thumb > a, .post-thumb > a > img {
+				min-width: 100%;
+				max-width: 100%;
+			}
+			&, .wellOverlay {
+				width: 100%;
+				min-width: 100%;
+				max-width: 100%;
+				max-height: ($aa_media_heightMobileThumb + 84);
+			}
+			.wellOverlay {
+				@include stretch-y;
+			}
+			figcaption, .figcaption {
+				@extend .trans;
+				@extend .tp_all;
+				bottom: 0;
+				z-index: 10;
+			}
+			footer, .footer { display: none; }
+
+		} // END iPhone / mobile Media Declarations
+
+	} // END .masonry-brick
+
+} // END .masonry
+
 
 .single {
 
@@ -177,190 +196,192 @@
 				left: 0;
 				top: 0;
 			}
+		} // END #primary header
+
+	} // END #primary
+
+	// slider image area
+	.slider {
+		position: relative; // so that the thumbnail pagination can be easily positioned
+
+		&, .slides_container { @include min-height(300px); }
+
+		/* jQuery "slides" thumbnail pagination */
+		.pagination.thumbs {
+			margin: 0;
+			padding: 10px 12px 20px 10px;
+			position: relative;
+			left: auto;
+			top: -44px;
+			@include min-height($aa_media_widthThumbSm);
+			height: auto;
+			width: auto;
+
+			li {
+				@include float(left);
+				margin: 0 0 0 3px;
+				@include opacity(0.25);
+				&.opaque {
+					@extend .opaque;
+				}
+
+				// css transitions
+				&, a, a > img {
+					@extend .trans;
+					@extend .tp_all;
+				}
+
+				a {
+					padding: .3em;
+					display: block;	
+					width: $aa_media_widthThumbSm;
+					height: $aa_media_widthThumbSm;
+					background: transparent none;
+					text-decoration: none;
+					//@include border-radius(2px, 2px);
+					border: 0 none;
+				} // END .single .pagination li a
+
+			} // END .single .pagination li
+
+		} // END .single .pagination
+
+		// give the portfolio item some breathing room...
+		$stagePad: 3.3em;
+		$stagePadNum: 3.3;
+
+		.slideStage { 
+			padding: 0 $stagePad; 
+
+			.prev, .next {
+				display: none;
+			}
+		} 
+
+		// vertical layout when there is a lot of screen width to work with
+		// TODO: dynamically add/remove the .vert class based on the responsive conditions in the browser.
+		&.vert {
+			$paginationHpad: 10px;
+			$paginationWidth: $aa_media_widthThumbSm + $paginationHpad;
+
+			.pagination.thumbs {
+				width: $paginationWidth;
+				padding: $paginationHpad;
+				height: auto;
+				left: 0;
+				top: 0;
+				z-index: 99;
+				@include float(left);
+				li {
+					margin: 2px 0;
+				}
+			}
+				
+			.slideStage {
+				$convertedEmPadding: emtopx($stagePadNum,$baseFontSize);
+				position: relative;
+				padding-left: $paginationWidth + ($paginationHpad * 2) + $convertedEmPadding; // move it over the "total" width created by a 60px width and side padding
+
+			}
+		} // END .slider.vert
+			
+		.slides_control, .slides_control .lightbox { width: 100% !important; } // adaptive image sizing
+		.slides_control { height: auto !important; }
+		.slides_control .lightbox { position: relative !important; } // override slides.js (wants to make this absolute really really bad)
+
+		/* jQuery "slider" captions */
+		.caption { 
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 1.6 !important; 
+
+			a { display: inline; }
+
+		} // END .slider .caption
+	} // END article .slider	
+
+	// content area beneath slider (currently blank)
+	.entry-content { 
+		display: none;
+	} // END .entry-content
+
+	// sidebar (where content / meta for each portfolio piece lives)
+	#single-sidebar {
+		z-index: 99;
+		@include stretch-y($aa_mastHeight,0); 
+		// the stretch-y compass method above creates absolute position... 
+		// so we need to align it how we want our fluid layout to respond when screen size changes.
+		left: auto;
+		right: 0;
+
+		& > div, & > header, & > footer, & > span, & > ul, & > p {
+			width: auto;
+			padding: 0 1.4em;
+		}
+		& > header, & > .header {
+			padding-top: 1.4em;
+		}
+		& > footer, & > .footer {
+			padding-bottom: 1.4em;
 		}
 
-		// slider image area
-		.slider {
-			position: relative; // so that the thumbnail pagination can be easily positioned
+		// formatting for any <ul> elem in the #single sidebar
+		ul { margin: 0; padding: 0; }
+		.seperator { margin: ($articleVPad / 4) 0; }
 
-			&, .slides_container { @include min-height(300px); }
-
-			/* jQuery "slides" thumbnail pagination */
-			.pagination.thumbs {
-				margin: 0;
-				padding: 10px 12px 20px 10px;
-				position: relative;
-				left: auto;
-				top: -44px;
-				@include min-height($aa_media_widthThumbSm);
-				height: auto;
-				width: auto;
-
-				li {
-					@include float(left);
-					margin: 0 0 0 3px;
-					@include opacity(0.25);
-					&.opaque {
-						@extend .opaque;
-					}
-
-					// css transitions
-					&, a, a > img {
-						@extend .trans;
-						@extend .tp_all;
-					}
-
-					a {
-						padding: .3em;
-						display: block;	
-						width: $aa_media_widthThumbSm;
-						height: $aa_media_widthThumbSm;
-						background: transparent none;
-						text-decoration: none;
-						//@include border-radius(2px, 2px);
-						border: 0 none;
-					} // END .single .pagination li a
-
-				} // END .single .pagination li
-
-			} // END .single .pagination
-
-			// give the portfolio item some breathing room...
-			$stagePad: 3.3em;
-			$stagePadNum: 3.3;
-
-			.slideStage { 
-				padding: 0 $stagePad; 
-
-				.prev, .next {
-					display: none;
-				}
-			} 
-
-			// vertical layout when there is a lot of screen width to work with
-			// TODO: dynamically add/remove the .vert class based on the responsive conditions in the browser.
-			&.vert {
-				$paginationHpad: 10px;
-				$paginationWidth: $aa_media_widthThumbSm + $paginationHpad;
-
-				.pagination.thumbs {
-					width: $paginationWidth;
-					padding: $paginationHpad;
-					height: auto;
-					left: 0;
-					top: 0;
-					z-index: 99;
-					@include float(left);
-					li {
-						margin: 2px 0;
-					}
-				}
-				
-				.slideStage {
-					$convertedEmPadding: emtopx($stagePadNum,$baseFontSize);
-					position: relative;
-					padding-left: $paginationWidth + ($paginationHpad * 2) + $convertedEmPadding; // move it over the "total" width created by a 60px width and side padding
-
-				}
-			} // END .slider.vert
-			
-			.slides_control, .slides_control .lightbox { width: 100% !important; } // adaptive image sizing
-			.slides_control { height: auto !important; }
-			.slides_control .lightbox { position: relative !important; } // override slides.js (wants to make this absolute really really bad)
-
-			/* jQuery "slider" captions */
-			.caption { 
-				font-size: 14px;
+		// header is where the_content() and the_title() live on .single posts.
+		header, .header {
+					
+			h1, .h1 {
+				font-size: $aa_h1_fontSize;
 				font-weight: bold;
-				line-height: 1.6 !important; 
-
-				a { display: inline; }
-
-			} // END .slider .caption
-		} // END article .slider	
-
-		// content area beneath slider (currently blank)
-		.entry-content { 
-			display: none;
-		} // END .entry-content
-
-		// sidebar (where content / meta for each portfolio piece lives)
-		#single-sidebar {
-			z-index: 99;
-			@include stretch-y($aa_mastHeight,0); 
-			// the stretch-y compass method above creates absolute position... 
-			// so we need to align it how we want our fluid layout to respond when screen size changes.
-			left: auto;
-			right: 0;
-
-			& > div, & > header, & > footer, & > span, & > ul, & > p {
-				width: auto;
-				padding: 0 1.4em;
-			}
-			& > header, & > .header {
-				padding-top: 1.4em;
-			}
-			& > footer, & > .footer {
-				padding-bottom: 1.4em;
+				letter-spacing: -.1ex;
+				line-height: 1.1;
+				margin-bottom: ($aa_h1_fontSize / 9);
 			}
 
-			// formatting for any <ul> elem in the #single sidebar
-			ul { margin: 0; padding: 0; }
-			.seperator { margin: ($articleVPad / 4) 0; }
-
-			// header is where the_content() and the_title() live on .single posts.
-			header, .header {
+			ul.entry-header {
 					
-				h1, .h1 {
-					font-size: $aa_h1_fontSize;
-					font-weight: bold;
-					letter-spacing: -.1ex;
-					line-height: 1.1;
-					margin-bottom: ($aa_h1_fontSize / 9);
+				.like-count, .published {
+					float: left;
+					position: relative;
+
+					&, span {
+						line-height: 2em;
+
+						.icon {
+							margin-right: 6px; // separate text from icon
+						}
+					}
+						
+					.js & {
+						// .js will reveal it
+						//visibility: hidden;
+					}
+				} // END #single-sidebar > .like-count, .published
+
+				// vertical divider between two <li> elems floating next to one another
+				.line.vert {
+					height: 2em;
+					@include opacity(.5);
 				}
 
-				ul.entry-header {
-					
-					.like-count, .published {
-						float: left;
-						position: relative;
+				.caption {
+					// the_content()
+					clear: both;
+					padding: 1em 0;
+				} // end #single-sidebar .caption
 
-						&, span {
-							line-height: 2em;
+			} // END .single #single-sidebar header ul.entry-header
+		} // END .single #single-sidebar header, .header	
 
-							.icon {
-								margin-right: 6px; // separate text from icon
-							}
-						}
-						
-						.js & {
-							// .js will reveal it
-							//visibility: hidden;
-						}
-					} // END #single-sidebar > .like-count, .published
+		// footer is where the bulleted taxonomy lists live on .single posts.
+		footer, .footer {
 
-					// vertical divider between two <li> elems floating next to one another
-					.line.vert {
-						height: 2em;
-						@include opacity(.5);
-					}
+		}
 
-					.caption {
-						// the_content()
-						clear: both;
-						padding: 1em 0;
-					} // end #single-sidebar .caption
+	} // END .single #single-sidebar
 
-				} // END .single #single-sidebar header ul.entry-header
-			} // END .single #single-sidebar header, .header	
-
-			// footer is where the bulleted taxonomy lists live on .single posts.
-			footer, .footer {
-
-			}
-
-		} // END .single #single-sidebar
-	} // END .single #primary section & article
 
 	@media (max-width: 480px), (max-width: 500px) { // 508 is where two cols of gridlock no longer fit
 
