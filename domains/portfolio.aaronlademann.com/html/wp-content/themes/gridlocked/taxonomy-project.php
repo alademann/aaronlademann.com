@@ -3,6 +3,7 @@
 	$taxType = 'project';
 ?>
 <?php get_header(); ?>
+<?php include(custom_includes_dir() . "/portfolio/get-image-sizes.php"); ?> 
 <!--BEGIN #primary .hfeed-->
 <section id="primary" class="hfeed span12">
 <?php if ( function_exists('yoast_breadcrumb') ) { ?>
