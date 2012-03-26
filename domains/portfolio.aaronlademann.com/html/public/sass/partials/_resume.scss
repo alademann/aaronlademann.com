@@ -32,6 +32,7 @@
 			font-weight: normal;
 			letter-spacing: -1px;
 			margin-bottom: .4em;
+			line-height: normal;
 		}
 
 		& h2, & .h2, & h3, & .h3, & h4, & .h4 {
@@ -130,13 +131,15 @@
 			padding: 10px 80px;
 		}
 
+		ul, dl, dd { margin-left: 0; list-style: none; }
+
 		& .yui-gf, & #hd, & .job, & li {
 			border-bottom: 1px solid rgba(178,178,178,0.6);
 			-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
 			-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
 			box-shadow: 0 1px 0 rgba(255,255,255,0.8);
 		}
-		& .job li {
+		& .job li, & .skillset li, & .toolbox li {
 			border-bottom: 1px solid rgba(178,178,178,0.3);
 			-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
 			-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
@@ -234,6 +237,7 @@
 			display: block;
 			@include float(right);
 			padding: 0 12px 0 38px;
+			margin-left: 0;
 			text-decoration: none;  
 			line-height: 28px;
 			font-weight: bold;
