@@ -1,10 +1,10 @@
 @import "theme-aa-base";
 @include yui_core();
 
-@include webfont("DroidSerifRegular","/public/fonts/droidserif/DroidSerif-Regular-webfont");
-@include webfont("DroidSerifItalic","/public/fonts/droidserif/DroidSerif-Italic-webfont");
-@include webfont("DroidSerifBold","/public/fonts/droidserif/DroidSerif-Bold-webfont");
-@include webfont("DroidSerifBoldItalic","/public/fonts/droidserif/DroidSerif-BoldItalic-webfont");
+@include webfont("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
+@include webfont("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
+@include webfont("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
+@include webfont("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
 
 @media screen {
 
@@ -230,7 +230,7 @@
 		
 
 		& #pdf a {
-			background: transparent url(/public/images/icons/pdf_28.png) 2px top no-repeat;
+			background: transparent url('/public/images/icons/pdf_28.png') 2px top no-repeat;
 			display: block;
 			@include float(right);
 			padding: 0 12px 0 38px;
@@ -347,10 +347,10 @@
 
 	} // END #resume
 
-	.mozilla {
-		#contentWrap { top: 50px; }
-		#resume #pdf { top: -80px; }
-	}
+	//.mozilla {
+		//#contentWrap { top: 50px; }
+		//#resume #pdf { top: -80px; }
+	//}
 
 
 

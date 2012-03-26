@@ -71,16 +71,12 @@
 <?php if( is_page_template('template-resume.php') ){ ?>	
 <script id="resumeScripts"> 
 	
-	head.ready("jquery", function(){
-		var $ = jQuery.noConflict();
+	head.ready("gridlockedcustom", function(){
+		//var $ = jQuery.noConflict();
 
 		head.js({ jqueryhotkeys: "<?php echo $jQueryScriptDir; ?>jquery.hotkeys.js" }, 
 			function(){
 				redirect_CtrlP();
-			});
-		head.js({ jquerylettering: "<?php echo $jQueryScriptDir; ?>lettering.min.js" }, 
-			function() {
-				$("#name").lettering('words'); 
 			});
 
 	}); // END head.ready(jquery)
