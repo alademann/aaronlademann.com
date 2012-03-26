@@ -9,7 +9,7 @@
 <?php include(custom_includes_dir() . "/portfolio/archive-header.php"); ?>
 	
 	<!--BEGIN #masonry-->
-	<section id="masonry-portfolio" class="masonry">
+	<section id="masonry-portfolio"class="masonry clearfix">
 	<?php include(custom_includes_dir() . "/wp/wp-loop-vars.php"); ?>
 	<?php if ( have_posts() ) : $count = 0; while ( have_posts() ) : the_post(); $count++; ?>	
 
