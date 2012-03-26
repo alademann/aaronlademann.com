@@ -10,7 +10,7 @@ $postType = 'portfolio';
 <section id="primary" class="hfeed span12">
 
 	<!--BEGIN #masonry-->
-	<section id="masonry-portfolio" class="masonry">
+	<section id="masonry-portfolio" class="masonry clearfix">
 	<?php include(custom_includes_dir() . "/wp/wp-loop-vars.php"); ?>
 
 	<?php if ( have_posts() ) : $count = 0; while ( have_posts() ) : the_post(); $count++; ?>	
@@ -29,7 +29,7 @@ $postType = 'portfolio';
   </section>
   <!--END #masonry-->
 
-	<footer id="index-navigation" class="hidden clearfix navigation page-navigation">
+	<footer id="index-navigation" class="hidden navigation page-navigation">
 		<nav>
 			<ul class="pager">
 				<li class="nav-next">

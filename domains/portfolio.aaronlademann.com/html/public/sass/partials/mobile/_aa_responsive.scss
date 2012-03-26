@@ -74,7 +74,7 @@
 .masonry {
 // progressively reveal this so the animations don't look wierd
 // only if browser handles javascript.
-
+	clear: both;
 	.js.opacity & {
 		// browser supports opacity
 		@include transparent;
@@ -97,6 +97,11 @@
 		@extend .tp_scale;
 		@extend .tp_alpha;
 	} // end css transitions
+
+	// disable transitions on container
+	&.infinite-scroll {
+		@include transition-property(none);
+	}
 	
 // END progressive revealing of .masonry opacity
 
@@ -105,10 +110,16 @@
 	}
 	.masonry-brick {
 		margin: 0 0 $masonryVPad $masonryHPad;
+		float: left;
+		position: absolute;
+		top: 100%; // so it animates from the bottom;
+		@include transition-property("left, right, top");
+		
+		&.hover, &.hover .wellOverlay {
+			@extend .tp_all;
+		}
 
 		&, .wellOverlay{
-			@extend .tp_all;
-			//@include transition-property("left, right, top");
 			@include min-width($aa_media_widthThumb);
 			max-width: $aa_media_widthThumb;
 			@include min-height($aa_media_heightThumb + 84);

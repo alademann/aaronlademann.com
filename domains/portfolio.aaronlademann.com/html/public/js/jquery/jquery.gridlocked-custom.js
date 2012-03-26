@@ -299,14 +299,16 @@ function masonTheLayout() {
 		});
 
 		$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
+		// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
 		$('body').animate({
 			left: '0'
 		}, 300, function() {
-			// document height should be set now
+
 			scroll_forever();
+
 		});
 
-	}); // END $wall.imagesLoaded()
+	});       // END $wall.imagesLoaded()
 
 
 	function scroll_forever() {
@@ -315,7 +317,7 @@ function masonTheLayout() {
 		// infinitescroll() is called on the element that surrounds 
 		// the items you will be loading more of
 		try {
-		
+
 			$container.infinitescroll({
 				navSelector: ".navigation",
 				nextSelector: ".nav-next a",
@@ -326,33 +328,33 @@ function masonTheLayout() {
 				extraScrollPx: 40,
 				donetext: 'No more items to load',
 				debug: false,
-				animate: true,
+				animate: false,
 				loadingImg: "/public/images/loading.gif"
 
 			}, function(newElements) {
 
+				$container.addClass("infinite-scroll");
 				// hide new items while they are loading
-				var $newElems = $(newElements).css({ opacity: 0 });
+				var $newElems = $(newElements);
+				//$newElems.css({ opacity: 0 });
 				// ensure that images load before adding to masonry layout
 				$newElems.imagesLoaded(function() {
 
+					// show elems now they're ready
+					$container.masonry('appended', $newElems, true);
+					contentHeight();
+					//$newElems.animate({ opacity: 1 });
 					// bind hover effects
 					$newElems.hover(function() {
 						$(this).addClass("hover");
 					}, function() {
 						$(this).removeClass("hover");
 					})
-
-					// show elems now they're ready
-					$container.masonry('appended', $newElems);
-					contentHeight();
-					$newElems.animate({ opacity: 1 });
-
 					// since each time this triggers is technically a new page of content...
 					infscrPageview++;
 					_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
 
-				
+
 
 				});
 
