@@ -342,14 +342,11 @@ function masonTheLayout() {
 
 					// show elems now they're ready
 					$container.masonry('appended', $newElems, true);
+					tz_likeInit();
 					contentHeight();
 					//$newElems.animate({ opacity: 1 });
 					// bind hover effects
-					$newElems.hover(function() {
-						$(this).addClass("hover");
-					}, function() {
-						$(this).removeClass("hover");
-					})
+					masonBrickBindings($newElems);
 					// since each time this triggers is technically a new page of content...
 					infscrPageview++;
 					_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
@@ -367,9 +364,15 @@ function masonTheLayout() {
 		// END INFINITE SCROLL
 
 	} // END scroll_forever()
-		
+
+	masonBrickBindings($($masonryWrapperClass).find($masonryBoxClass));
+
+} // END masonTheLayout()
+
+function masonBrickBindings(elems) {
+	
 	// HENTRY EFFECTS
-	var hentries = $($masonryWrapperClass).find($masonryBoxClass);
+	var hentries = elems;
 	$.each(hentries, function() {
 		// track masonry portfolio box "likes"
 		ga_trackLikes();
@@ -383,8 +386,7 @@ function masonTheLayout() {
 	}); // END .each(hentries)
 	// END HENTRY EFFECTS
 
-} // END masonTheLayout()
-
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	"Like" Scripts
