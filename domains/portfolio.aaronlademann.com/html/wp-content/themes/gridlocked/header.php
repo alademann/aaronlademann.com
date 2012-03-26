@@ -7,7 +7,7 @@
 <meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?> Aaron Lademann. All Rights Reserved.">
 
 <title><?php wp_title(''); ?></title>
-<?php if( !is_page_template('template-resume.php') { ?>
+<?php if( !is_page_template('template-resume.php') ) { ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <?php if(is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
 <meta name="apple-mobile-web-app-capable" content="yes" />

@@ -1,6 +1,6 @@
 <?php 
 	$postType = 'portfolio';
-	$taxType = 'type';
+	$taxType = 'portfolio-type';
 ?>
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->

@@ -1,6 +1,6 @@
 <?php 
 	$postType = 'portfolio';
-	$taxType = 'client';
+	$taxType = 'project';
 ?>
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
