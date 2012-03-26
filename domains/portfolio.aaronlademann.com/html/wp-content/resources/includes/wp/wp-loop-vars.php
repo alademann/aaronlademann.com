@@ -96,7 +96,17 @@
 		$paged = 1;
   }
 
-  
+
+	$option_posts_per_page = get_option( 'posts_per_page' );
+  function my_option_posts_per_page() {
+			global $option_posts_per_page;
+			if ( is_tax( 'skill-type') || is_tax( 'portfolio-type') || is_tax( 'media-type') || is_tax( 'project') || is_tax( 'tools-used') ) {
+					$paged = 0;
+					return -1;
+			} else {
+					return $option_posts_per_page;
+			}
+	}
 
 		// The Query
 	if($base_slug != $curr_slug){
@@ -104,7 +114,21 @@
 		query_posts( array( 
 			'post_type' => 'portfolio',
 			$taxType => $curr_slug,
-			'posts_per_page' => get_option('posts_per_page'), 
+			'posts_per_page' => my_option_posts_per_page(), 
+			'paged' => $paged,
+			//'cat' => $catQ,
+			//'author' => $authorQ,
+			//'tag' => $tagQ,
+			//'monthnum' => $dateQ,
+			's' => $searchQ
+			) 
+		);
+
+	} else if(is_search()) {
+		// search page
+		query_posts( array( 
+			'post_type' => 'portfolio',
+			'posts_per_page' => my_option_posts_per_page(), 
 			'paged' => $paged,
 			//'cat' => $catQ,
 			//'author' => $authorQ,
@@ -115,10 +139,10 @@
 		);
 
 	} else {
-		// not a taxonomy page
+		
 		query_posts( array( 
 			'post_type' => 'portfolio',
-			'posts_per_page' => get_option('posts_per_page'), 
+			'posts_per_page' => my_option_posts_per_page(), 
 			'paged' => $paged,
 			//'cat' => $catQ,
 			//'author' => $authorQ,
