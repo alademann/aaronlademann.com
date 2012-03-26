@@ -52,7 +52,7 @@
 				//'author' => $authorQ,
 				//'tag' => $tagQ,
 				//'monthnum' => $dateQ,
-				//'s' => $searchQ
+				's' => $searchQ
 			)
 		);
 
@@ -65,7 +65,7 @@
 				//'author' => $authorQ,
 				//'tag' => $tagQ,
 				//'monthnum' => $dateQ,
-				//'s' => $searchQ
+				's' => $searchQ
 			)
 		);	
 
@@ -76,6 +76,8 @@
 		$post_count++;
 	endwhile;
 					
+		$total_results = $post_count;
+
 	// Reset Post Data
 	wp_reset_postdata();
 					
@@ -103,7 +105,12 @@
 			'post_type' => 'portfolio',
 			$taxType => $curr_slug,
 			'posts_per_page' => get_option('posts_per_page'), 
-			'paged' => $paged 
+			'paged' => $paged,
+			//'cat' => $catQ,
+			//'author' => $authorQ,
+			//'tag' => $tagQ,
+			//'monthnum' => $dateQ,
+			's' => $searchQ
 			) 
 		);
 
@@ -112,7 +119,12 @@
 		query_posts( array( 
 			'post_type' => 'portfolio',
 			'posts_per_page' => get_option('posts_per_page'), 
-			'paged' => $paged 
+			'paged' => $paged,
+			//'cat' => $catQ,
+			//'author' => $authorQ,
+			//'tag' => $tagQ,
+			//'monthnum' => $dateQ,
+			's' => $searchQ
 			) 
 		);
 

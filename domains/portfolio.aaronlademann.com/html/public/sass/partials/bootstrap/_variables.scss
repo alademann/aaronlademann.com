@@ -35,7 +35,7 @@ $purple:                #7a43b6 !default;
 
 // Typography
 $baseFontSize:          13px !default;
-$baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$baseFontFamily:        ("Helvetica Neue", Helvetica, Arial, sans-serif) !default;
 $baseLineHeight:        18px !default;
 $textColor:             $grayDark !default;
 

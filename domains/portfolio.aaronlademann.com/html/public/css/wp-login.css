@@ -1736,19 +1736,14 @@ select,
   height: auto;
 }
 
-/* line 82, ../sass/partials/bootstrap/_forms.scss */
-input[type="text"], textarea, select {
-  background-color: white !important;
-}
-
-/* line 87, ../sass/partials/bootstrap/_forms.scss */
+/* line 85, ../sass/partials/bootstrap/_forms.scss */
 label input,
 label textarea,
 label select {
   display: block;
 }
 
-/* line 94, ../sass/partials/bootstrap/_forms.scss */
+/* line 92, ../sass/partials/bootstrap/_forms.scss */
 input[type="image"],
 input[type="checkbox"], label.checkbox
 input[type="radio"], label.radio {
@@ -1769,12 +1764,12 @@ input[type="radio"], label.radio {
   /* IE9 and down */
 }
 
-/* line 104, ../sass/partials/bootstrap/_forms.scss */
+/* line 102, ../sass/partials/bootstrap/_forms.scss */
 input[type="image"] {
   border: 0;
 }
 
-/* line 109, ../sass/partials/bootstrap/_forms.scss */
+/* line 107, ../sass/partials/bootstrap/_forms.scss */
 input[type="file"] {
   width: auto;
   padding: initial;
@@ -1788,7 +1783,7 @@ input[type="file"] {
   box-shadow: none;
 }
 
-/* line 122, ../sass/partials/bootstrap/_forms.scss */
+/* line 120, ../sass/partials/bootstrap/_forms.scss */
 input[type=button],
 input[type=reset],
 input[type=submit] {
@@ -1796,7 +1791,7 @@ input[type=submit] {
   height: auto;
 }
 
-/* line 131, ../sass/partials/bootstrap/_forms.scss */
+/* line 129, ../sass/partials/bootstrap/_forms.scss */
 input[type="image"],
 input[type="checkbox"], label.checkbox,
 input[type="radio"], label.radio,
@@ -1806,7 +1801,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-/* line 137, ../sass/partials/bootstrap/_forms.scss */
+/* line 135, ../sass/partials/bootstrap/_forms.scss */
 select,
 input[type="file"] {
   height: 28px;
@@ -1816,24 +1811,24 @@ input[type="file"] {
   line-height: 28px;
 }
 
-/* line 144, ../sass/partials/bootstrap/_forms.scss */
+/* line 142, ../sass/partials/bootstrap/_forms.scss */
 input[type="file"] {
   line-height: 18px \9;
 }
 
-/* line 149, ../sass/partials/bootstrap/_forms.scss */
+/* line 147, ../sass/partials/bootstrap/_forms.scss */
 select {
   width: 220px;
   background-color: white;
 }
 
-/* line 156, ../sass/partials/bootstrap/_forms.scss */
+/* line 154, ../sass/partials/bootstrap/_forms.scss */
 select[multiple],
 select[size] {
   height: auto;
 }
 
-/* line 161, ../sass/partials/bootstrap/_forms.scss */
+/* line 159, ../sass/partials/bootstrap/_forms.scss */
 input[type="image"] {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -1841,23 +1836,23 @@ input[type="image"] {
   box-shadow: none;
 }
 
-/* line 166, ../sass/partials/bootstrap/_forms.scss */
+/* line 164, ../sass/partials/bootstrap/_forms.scss */
 textarea {
   height: auto;
 }
 
-/* line 171, ../sass/partials/bootstrap/_forms.scss */
+/* line 169, ../sass/partials/bootstrap/_forms.scss */
 input[type="hidden"] {
   display: none;
 }
 
-/* line 183, ../sass/partials/bootstrap/_forms.scss */
+/* line 181, ../sass/partials/bootstrap/_forms.scss */
 .radio,
 .checkbox {
   padding-left: 18px;
 }
 
-/* line 187, ../sass/partials/bootstrap/_forms.scss */
+/* line 185, ../sass/partials/bootstrap/_forms.scss */
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   display: inline;
@@ -1865,13 +1860,13 @@ input[type="hidden"] {
   margin-left: -18px;
 }
 
-/* line 194, ../sass/partials/bootstrap/_forms.scss */
+/* line 192, ../sass/partials/bootstrap/_forms.scss */
 .controls > .radio:first-child,
 .controls > .checkbox:first-child {
   padding-top: 5px;
 }
 
-/* line 201, ../sass/partials/bootstrap/_forms.scss */
+/* line 199, ../sass/partials/bootstrap/_forms.scss */
 .radio.inline,
 .checkbox.inline {
   display: inline-block;
@@ -1879,13 +1874,13 @@ input[type="hidden"] {
   vertical-align: middle;
 }
 
-/* line 207, ../sass/partials/bootstrap/_forms.scss */
+/* line 205, ../sass/partials/bootstrap/_forms.scss */
 .radio.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline {
   margin-left: 10px;
 }
 
-/* line 217, ../sass/partials/bootstrap/_forms.scss */
+/* line 215, ../sass/partials/bootstrap/_forms.scss */
 input,
 textarea {
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1898,7 +1893,7 @@ textarea {
   transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 
-/* line 223, ../sass/partials/bootstrap/_forms.scss */
+/* line 221, ../sass/partials/bootstrap/_forms.scss */
 input:focus,
 textarea:focus {
   border-color: rgba(82, 168, 236, 0.8);
@@ -1911,7 +1906,7 @@ textarea:focus {
   /* IE6-8 */
 }
 
-/* line 233, ../sass/partials/bootstrap/_forms.scss */
+/* line 231, ../sass/partials/bootstrap/_forms.scss */
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
@@ -1925,37 +1920,37 @@ select:focus {
   outline-offset: -2px;
 }
 
-/* line 244, ../sass/partials/bootstrap/_forms.scss */
+/* line 242, ../sass/partials/bootstrap/_forms.scss */
 .input-mini {
   width: 60px;
 }
 
-/* line 245, ../sass/partials/bootstrap/_forms.scss */
+/* line 243, ../sass/partials/bootstrap/_forms.scss */
 .input-small {
   width: 90px;
 }
 
-/* line 246, ../sass/partials/bootstrap/_forms.scss */
+/* line 244, ../sass/partials/bootstrap/_forms.scss */
 .input-medium {
   width: 150px;
 }
 
-/* line 247, ../sass/partials/bootstrap/_forms.scss */
+/* line 245, ../sass/partials/bootstrap/_forms.scss */
 .input-large {
   width: 210px;
 }
 
-/* line 248, ../sass/partials/bootstrap/_forms.scss */
+/* line 246, ../sass/partials/bootstrap/_forms.scss */
 .input-xlarge {
   width: 270px;
 }
 
-/* line 249, ../sass/partials/bootstrap/_forms.scss */
+/* line 247, ../sass/partials/bootstrap/_forms.scss */
 .input-xxlarge {
   width: 530px;
 }
 
-/* line 255, ../sass/partials/bootstrap/_forms.scss */
+/* line 253, ../sass/partials/bootstrap/_forms.scss */
 input[class*="span"],
 select[class*="span"],
 textarea[class*="span"],
@@ -2037,7 +2032,7 @@ textarea.span12,
   width: 930px;
 }
 
-/* line 279, ../sass/partials/bootstrap/_forms.scss */
+/* line 277, ../sass/partials/bootstrap/_forms.scss */
 input[disabled],
 select[disabled],
 textarea[disabled],
@@ -2121,14 +2116,14 @@ textarea[readonly] {
   border-color: #468847;
 }
 
-/* line 308, ../sass/partials/bootstrap/_forms.scss */
+/* line 306, ../sass/partials/bootstrap/_forms.scss */
 input:focus:required:invalid,
 textarea:focus:required:invalid,
 select:focus:required:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 311, ../sass/partials/bootstrap/_forms.scss */
+/* line 309, ../sass/partials/bootstrap/_forms.scss */
 input:focus:required:invalid:focus,
 textarea:focus:required:invalid:focus,
 select:focus:required:invalid:focus {
@@ -2139,7 +2134,7 @@ select:focus:required:invalid:focus {
   box-shadow: 0 0 6px #f8b9b7;
 }
 
-/* line 322, ../sass/partials/bootstrap/_forms.scss */
+/* line 320, ../sass/partials/bootstrap/_forms.scss */
 .form-actions {
   padding: 17px 20px 18px;
   margin-top: 18px;
@@ -2148,7 +2143,7 @@ select:focus:required:invalid:focus {
   border-top: 1px solid #ddd;
 }
 
-/* line 331, ../sass/partials/bootstrap/_forms.scss */
+/* line 329, ../sass/partials/bootstrap/_forms.scss */
 .uneditable-input {
   display: block;
   background-color: white;
@@ -2170,7 +2165,7 @@ select:focus:required:invalid:focus {
   color: #999999;
 }
 
-/* line 347, ../sass/partials/bootstrap/_forms.scss */
+/* line 345, ../sass/partials/bootstrap/_forms.scss */
 .help-block {
   display: block;
   margin-top: 5px;
@@ -2178,7 +2173,7 @@ select:focus:required:invalid:focus {
   color: #999999;
 }
 
-/* line 354, ../sass/partials/bootstrap/_forms.scss */
+/* line 352, ../sass/partials/bootstrap/_forms.scss */
 .help-inline {
   display: inline-block;
   *display: inline;
@@ -2189,7 +2184,7 @@ select:focus:required:invalid:focus {
   padding-left: 5px;
 }
 
-/* line 369, ../sass/partials/bootstrap/_forms.scss */
+/* line 367, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend,
 .input-append {
   margin-bottom: 5px;
@@ -2207,7 +2202,7 @@ select:focus:required:invalid:focus {
 .input-append:after {
   clear: both;
 }
-/* line 373, ../sass/partials/bootstrap/_forms.scss */
+/* line 371, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend input, .input-prepend .uneditable-input,
 .input-append input,
 .input-append .uneditable-input {
@@ -2218,19 +2213,19 @@ select:focus:required:invalid:focus {
   -khtml-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 375, ../sass/partials/bootstrap/_forms.scss */
+/* line 373, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend input:focus, .input-prepend .uneditable-input:focus,
 .input-append input:focus,
 .input-append .uneditable-input:focus {
   position: relative;
   z-index: 2;
 }
-/* line 380, ../sass/partials/bootstrap/_forms.scss */
+/* line 378, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend .uneditable-input,
 .input-append .uneditable-input {
   border-left-color: #ccc;
 }
-/* line 383, ../sass/partials/bootstrap/_forms.scss */
+/* line 381, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend .add-on,
 .input-append .add-on {
   display: inline;
@@ -2255,20 +2250,20 @@ select:focus:required:invalid:focus {
   -khtml-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 400, ../sass/partials/bootstrap/_forms.scss */
+/* line 398, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend .active,
 .input-append .active {
   background-color: #a9dba9;
   border-color: #46a546;
 }
 
-/* line 406, ../sass/partials/bootstrap/_forms.scss */
+/* line 404, ../sass/partials/bootstrap/_forms.scss */
 .input-prepend .add-on {
   *margin-top: 1px;
   /* IE6-7 */
 }
 
-/* line 412, ../sass/partials/bootstrap/_forms.scss */
+/* line 410, ../sass/partials/bootstrap/_forms.scss */
 .input-append input, .input-append .uneditable-input {
   display: inline;
   float: left;
@@ -2279,12 +2274,12 @@ select:focus:required:invalid:focus {
   -khtml-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 416, ../sass/partials/bootstrap/_forms.scss */
+/* line 414, ../sass/partials/bootstrap/_forms.scss */
 .input-append .uneditable-input {
   border-left-color: #eee;
   border-right-color: #ccc;
 }
-/* line 420, ../sass/partials/bootstrap/_forms.scss */
+/* line 418, ../sass/partials/bootstrap/_forms.scss */
 .input-append .add-on {
   margin-right: 0;
   margin-left: -1px;
@@ -2295,16 +2290,16 @@ select:focus:required:invalid:focus {
   -khtml-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 425, ../sass/partials/bootstrap/_forms.scss */
+/* line 423, ../sass/partials/bootstrap/_forms.scss */
 .input-append input:first-child {
   *margin-left: -160px;
 }
-/* line 430, ../sass/partials/bootstrap/_forms.scss */
+/* line 428, ../sass/partials/bootstrap/_forms.scss */
 .input-append input:first-child + .add-on {
   *margin-left: -21px;
 }
 
-/* line 441, ../sass/partials/bootstrap/_forms.scss */
+/* line 439, ../sass/partials/bootstrap/_forms.scss */
 .search-query {
   padding-left: 14px;
   padding-right: 14px;
@@ -2317,7 +2312,7 @@ select:focus:required:invalid:focus {
   border-radius: 14px;
 }
 
-/* line 463, ../sass/partials/bootstrap/_forms.scss */
+/* line 461, ../sass/partials/bootstrap/_forms.scss */
 .form-search input, .form-search textarea, .form-search select, .form-search .help-inline, .form-search .uneditable-input,
 .form-inline input,
 .form-inline textarea,
@@ -2332,14 +2327,14 @@ select:focus:required:invalid:focus {
   display: inline-block;
   margin-bottom: 0;
 }
-/* line 468, ../sass/partials/bootstrap/_forms.scss */
+/* line 466, ../sass/partials/bootstrap/_forms.scss */
 .form-search .hide,
 .form-inline .hide,
 .form-horizontal .hide {
   display: none;
 }
 
-/* line 477, ../sass/partials/bootstrap/_forms.scss */
+/* line 475, ../sass/partials/bootstrap/_forms.scss */
 .form-search label,
 .form-inline label,
 .form-search .input-append,
@@ -2349,7 +2344,7 @@ select:focus:required:invalid:focus {
   display: inline-block;
 }
 
-/* line 484, ../sass/partials/bootstrap/_forms.scss */
+/* line 482, ../sass/partials/bootstrap/_forms.scss */
 .form-search .input-append .add-on,
 .form-inline .input-prepend .add-on,
 .form-search .input-append .add-on,
@@ -2357,7 +2352,7 @@ select:focus:required:invalid:focus {
   vertical-align: middle;
 }
 
-/* line 491, ../sass/partials/bootstrap/_forms.scss */
+/* line 489, ../sass/partials/bootstrap/_forms.scss */
 .form-search .radio,
 .form-inline .radio,
 .form-search .checkbox,
@@ -2366,18 +2361,18 @@ select:focus:required:invalid:focus {
   vertical-align: middle;
 }
 
-/* line 497, ../sass/partials/bootstrap/_forms.scss */
+/* line 495, ../sass/partials/bootstrap/_forms.scss */
 .control-group {
   margin-bottom: 9px;
 }
 
-/* line 502, ../sass/partials/bootstrap/_forms.scss */
+/* line 500, ../sass/partials/bootstrap/_forms.scss */
 legend + .control-group {
   margin-top: 18px;
   -webkit-margin-top-collapse: separate;
 }
 
-/* line 512, ../sass/partials/bootstrap/_forms.scss */
+/* line 510, ../sass/partials/bootstrap/_forms.scss */
 .form-horizontal .control-group {
   margin-bottom: 18px;
   *zoom: 1;
@@ -2391,7 +2386,7 @@ legend + .control-group {
 .form-horizontal .control-group:after {
   clear: both;
 }
-/* line 517, ../sass/partials/bootstrap/_forms.scss */
+/* line 515, ../sass/partials/bootstrap/_forms.scss */
 .form-horizontal .control-group > label {
   display: inline;
   float: left;
@@ -2399,11 +2394,11 @@ legend + .control-group {
   padding-top: 5px;
   text-align: right;
 }
-/* line 524, ../sass/partials/bootstrap/_forms.scss */
+/* line 522, ../sass/partials/bootstrap/_forms.scss */
 .form-horizontal .controls {
   margin-left: 160px;
 }
-/* line 528, ../sass/partials/bootstrap/_forms.scss */
+/* line 526, ../sass/partials/bootstrap/_forms.scss */
 .form-horizontal .form-actions {
   padding-left: 160px;
 }
@@ -4635,8 +4630,9 @@ input[type="submit"].btn.small {
   float: left;
   margin-top: 6px;
   margin-bottom: 0;
+  padding: 0 10px;
 }
-/* line 124, ../sass/partials/bootstrap/_navbar.scss */
+/* line 125, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search .search-query {
   padding: 4px 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4665,16 +4661,16 @@ input[type="submit"].btn.small {
 .navbar-search .search-query ::-webkit-input-placeholder {
   color: #eeeeee;
 }
-/* line 140, ../sass/partials/bootstrap/_navbar.scss */
+/* line 141, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search .search-query:hover {
-  color: white;
-  background-color: #999999;
-  background-color: rgba(255, 255, 255, 0.5);
+  color: white !important;
+  background-color: black;
+  background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 147, ../sass/partials/bootstrap/_navbar.scss */
+/* line 148, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-search .search-query:focus, .navbar-search .search-query.focused {
   padding: 5px 10px;
-  color: #333333;
+  color: #333333 !important;
   text-shadow: 0 1px 0 white;
   background-color: white;
   border: 0;
@@ -4685,7 +4681,7 @@ input[type="submit"].btn.small {
   outline: 0;
 }
 
-/* line 163, ../sass/partials/bootstrap/_navbar.scss */
+/* line 164, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-fixed-top {
   position: fixed;
   top: 0;
@@ -4694,7 +4690,7 @@ input[type="submit"].btn.small {
   z-index: 1030;
 }
 
-/* line 170, ../sass/partials/bootstrap/_navbar.scss */
+/* line 171, ../sass/partials/bootstrap/_navbar.scss */
 .navbar-fixed-top .navbar-inner {
   padding-left: 0;
   padding-right: 0;
@@ -4706,30 +4702,31 @@ input[type="submit"].btn.small {
   border-radius: 0;
 }
 
-/* line 180, ../sass/partials/bootstrap/_navbar.scss */
+/* line 183, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav {
   position: relative;
   left: 0;
   display: block;
   display: inline;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 0 0 0 10px;
 }
-
-/* line 187, ../sass/partials/bootstrap/_navbar.scss */
+/* line 190, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav + .nav, .navbar .nav:first-child {
+  margin: 0 0 0 0;
+}
+/* line 192, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right {
   display: inline;
   float: right;
 }
-
-/* line 190, ../sass/partials/bootstrap/_navbar.scss */
+/* line 195, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav > li {
   display: block;
   display: inline;
   float: left;
 }
-
-/* line 196, ../sass/partials/bootstrap/_navbar.scss */
+/* line 201, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav > li > a {
   float: none;
   padding: 10px 10px 11px;
@@ -4738,27 +4735,19 @@ input[type="submit"].btn.small {
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
-
-/* line 205, ../sass/partials/bootstrap/_navbar.scss */
+/* line 210, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav > li > a:hover {
   background-color: black;
   color: white !important;
   text-decoration: none;
 }
-
-/* line 217, ../sass/partials/bootstrap/_navbar.scss */
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover,
-.navbar .nav .current-menu-item > a,
-.navbar .nav .current-menu-item > a:hover,
-.navbar .nav .current-page-item > a,
-.navbar .nav .current-page-item > a:hover {
+/* line 222, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav .active > a, .navbar .nav .active > a:hover, .navbar .nav .current-menu-item > a, .navbar .nav .current-menu-item > a:hover, .navbar .nav .current-page-item > a, .navbar .nav .current-page-item > a:hover {
   color: white !important;
   text-decoration: none;
   background-color: black;
 }
-
-/* line 225, ../sass/partials/bootstrap/_navbar.scss */
+/* line 230, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   width: 1px;
@@ -4767,14 +4756,30 @@ input[type="submit"].btn.small {
   background-color: #222222;
   border-right: 1px solid #333333;
 }
-
-/* line 235, ../sass/partials/bootstrap/_navbar.scss */
+/* line 242, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav > li.strong a, .navbar .nav > li.bold a, .navbar .nav > li.big a, .navbar .nav > li.divider a, .navbar .nav#primary-nav > li a {
+  padding: 10px 16px 11px;
+  -moz-box-shadow: 1px 0 0 0 #222222 inset, 1px 0 0 0 #222222;
+  -webkit-box-shadow: 1px 0 0 0 #222222 inset, 1px 0 0 0 #222222;
+  -o-box-shadow: 1px 0 0 0 #222222 inset, 1px 0 0 0 #222222;
+  box-shadow: 1px 0 0 0 #222222 inset, 1px 0 0 0 #222222;
+  border-left: 1px solid #333333;
+}
+/* line 250, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav > li.strong:last-child a, .navbar .nav > li.bold:last-child a, .navbar .nav > li.big:last-child a, .navbar .nav > li.divider:last-child a, .navbar .nav#primary-nav > li:last-child a {
+  border-right: 1px solid #333333;
+}
+/* line 258, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .nav > li.big a, .navbar .nav#primary-nav > li a {
+  font-weight: bold;
+  font-size: 15px;
+}
+/* line 265, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right {
   margin-left: 10px;
   margin-right: 0;
 }
-
-/* line 246, ../sass/partials/bootstrap/_navbar.scss */
+/* line 276, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu {
   margin-top: 1px;
   -moz-border-radius-bottomleft: 4px;
@@ -4790,7 +4795,7 @@ input[type="submit"].btn.small {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 251, ../sass/partials/bootstrap/_navbar.scss */
+/* line 281, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu:before {
   content: '';
   display: inline-block;
@@ -4802,7 +4807,7 @@ input[type="submit"].btn.small {
   top: -7px;
   left: 9px;
 }
-/* line 262, ../sass/partials/bootstrap/_navbar.scss */
+/* line 292, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .dropdown-menu:after {
   content: '';
   display: inline-block;
@@ -4813,30 +4818,33 @@ input[type="submit"].btn.small {
   top: -6px;
   left: 10px;
 }
-
-/* line 280, ../sass/partials/bootstrap/_navbar.scss */
+/* line 304, ../sass/partials/bootstrap/_navbar.scss */
+.navbar .dropdown-menu#seperated-nav li.divider:last-child {
+  display: none;
+}
+/* line 318, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle {
   color: #999999;
 }
-/* line 284, ../sass/partials/bootstrap/_navbar.scss */
+/* line 322, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle .caret {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
   opacity: 100;
   border-top-color: #595959;
 }
-/* line 292, ../sass/partials/bootstrap/_navbar.scss */
+/* line 330, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle:hover {
   color: white;
 }
-/* line 295, ../sass/partials/bootstrap/_navbar.scss */
+/* line 333, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown > .dropdown-toggle:hover .caret {
   border-top-color: #d9d9d9;
 }
-/* line 306, ../sass/partials/bootstrap/_navbar.scss */
+/* line 344, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle {
   color: #cccccc;
 }
-/* line 310, ../sass/partials/bootstrap/_navbar.scss */
+/* line 348, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle .caret {
   border-top-color: #595959;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
@@ -4847,26 +4855,25 @@ input[type="submit"].btn.small {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 318, ../sass/partials/bootstrap/_navbar.scss */
+/* line 356, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle:hover {
   color: white;
 }
-/* line 321, ../sass/partials/bootstrap/_navbar.scss */
+/* line 359, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav .dropdown.open > .dropdown-toggle:hover .caret {
   border-top-color: #d9d9d9;
 }
-
-/* line 335, ../sass/partials/bootstrap/_navbar.scss */
+/* line 373, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu {
   left: auto;
   right: 0;
 }
-/* line 338, ../sass/partials/bootstrap/_navbar.scss */
+/* line 376, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:before {
   left: auto;
   right: 12px;
 }
-/* line 342, ../sass/partials/bootstrap/_navbar.scss */
+/* line 380, ../sass/partials/bootstrap/_navbar.scss */
 .navbar .nav.pull-right .dropdown-menu:after {
   left: auto;
   right: 13px;
@@ -5480,7 +5487,6 @@ a.thumbnail:hover {
 /* line 5, ../sass/partials/bootstrap/_labels.scss */
 .label {
   padding: 2px 4px 3px;
-  font-size: 11.05px;
   font-weight: bold;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);

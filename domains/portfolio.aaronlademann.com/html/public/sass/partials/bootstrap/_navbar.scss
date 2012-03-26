@@ -121,6 +121,7 @@
   @include float(left);
   margin-top: 6px;
   margin-bottom: 0;
+	padding: 0 10px;
   .search-query {
     padding: 4px 9px;
     @include font-sans-serif(13px, normal, 1);
@@ -138,15 +139,15 @@
     
     // Hover states
     &:hover {
-      color: $white;
-      background-color: $grayLight;
-      background-color: rgba(255,255,255,.5);
+      color: $white !important;
+      background-color: darken(#666,50%);
+      background-color: rgba(255,255,255,.1);
     }
     // Focus states (we use .focused since IE7-8 and down doesn't support :focus)
     &:focus,
     &.focused {
       padding: 5px 10px;
-      color: $grayDark;
+      color: $grayDark !important;
       text-shadow: 0 1px 0 $white;
       background-color: $white;
       border: 0;
@@ -177,107 +178,144 @@
 // NAVIGATION
 // ----------
 
-.navbar .nav {
-  position: relative;
-  left: 0;
-  display: block;
-  @include float(left);
-  margin: 0 10px 0 0;
-}
-.navbar .nav.pull-right {
-  @include float(right); // redeclare due to specificity
-}
-.navbar .nav > li {
-  display: block;
-  @include float(left);
-}
+.navbar {
 
-// Links
-.navbar .nav > li > a {
-  float: none;
-  padding: 10px 10px 11px;
-  line-height: 19px;
-  color: $navbarLinkColor !important;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-}
-// Hover
-.navbar .nav > li > a:hover {
-  background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
-  color: $navbarLinkColorHover !important;
-  text-decoration: none;
-}
+	.nav {
+		position: relative;
+		left: 0;
+		display: block;
+		@include float(left);
+		margin: 0 0 0 10px;
 
-// Active nav items
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover,
-.navbar .nav .current-menu-item > a,
-.navbar .nav .current-menu-item > a:hover,
-.navbar .nav .current-page-item > a,
-.navbar .nav .current-page-item > a:hover {
-  color: $navbarLinkColorHover !important;
-  text-decoration: none;
-  background-color: $navbarLinkBackgroundHover;
-  //background-color: rgba(0,0,0,.5);
-}
+		&+ .nav, &:first-child { margin: 0 0 0 0; }
+	}
+	.nav.pull-right {
+		@include float(right); // redeclare due to specificity
+	}
+	.nav > li {
+		display: block;
+		@include float(left);
+	}
 
-// Dividers (basically a vertical hr)
-.navbar .divider-vertical {
-  height: $navbarHeight;
-  width: 1px;
-  margin: 0 9px;
-  overflow: hidden;
-  background-color: $navbarBackground;
-  border-right: 1px solid $navbarBackgroundHighlight;
-}
+	// Links
+	.nav > li > a {
+		float: none;
+		padding: 10px 10px 11px;
+		line-height: 19px;
+		color: $navbarLinkColor !important;
+		text-decoration: none;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+	}
+	// Hover
+	.nav > li > a:hover {
+		background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
+		color: $navbarLinkColorHover !important;
+		text-decoration: none;
+	}
 
-// Secondary (floated right) nav in topbar
-.navbar .nav.pull-right {
-  margin-left: 10px;
-  margin-right: 0;
-}
+	// Active nav items
+	.nav .active > a,
+	.nav .active > a:hover,
+	.nav .current-menu-item > a,
+	.nav .current-menu-item > a:hover,
+	.nav .current-page-item > a,
+	.nav .current-page-item > a:hover {
+		color: $navbarLinkColorHover !important;
+		text-decoration: none;
+		background-color: $navbarLinkBackgroundHover;
+		//background-color: rgba(0,0,0,.5);
+	}
+
+	// Dividers (basically a vertical hr)
+	.divider-vertical {
+		height: $navbarHeight;
+		width: 1px;
+		margin: 0 9px;
+		overflow: hidden;
+		background-color: $navbarBackground;
+		border-right: 1px solid $navbarBackgroundHighlight;
+	}
+
+	.nav > li.strong, .nav > li.bold,
+	.nav > li.big, .nav > li.divider,
+	.nav#primary-nav > li {
+		a {
+			padding: 10px 16px 11px;
+			// simulate the look 'n feel of .divider-vertical
+			@include box-shadow(1px 0 0 0 $navbarBackground inset, 1px 0 0 0 $navbarBackground);
+			border-left: 1px solid $navbarBackgroundHighlight;
+		}
+		// right border on the last <li> in the nav
+		&:last-child {
+			a {
+				border-right: 1px solid $navbarBackgroundHighlight;
+			}
+		}
+	}
+
+	.nav > li.big, .nav#primary-nav > li  {
+		
+		a {
+			font-weight: bold;
+			font-size: $baseFontSize + 2;
+		}
+	}
+
+	// Secondary (floated right) nav in topbar
+	.nav.pull-right {
+		margin-left: 10px;
+		margin-right: 0;
+	}
 
 
 
-// Dropdown menus
-// --------------
+	// Dropdown menus
+	// --------------
 
-// Menu position and menu carets
-.navbar .dropdown-menu {
-  margin-top: 1px;
-	@include border-bottom-left-radius(4px);
-	@include border-bottom-right-radius(4px);
-  //@include border-radius(4px);
-  &:before {
-    content: '';
-    display: inline-block;
-    border-left:   7px solid transparent;
-    border-right:  7px solid transparent;
-    border-bottom: 7px solid #ccc;
-    border-bottom-color: rgba(0,0,0,.2);
-    position: absolute;
-    top: -7px;
-    left: 9px;
-  }
-  &:after {
-    content: '';
-    display: inline-block;
-    border-left:   6px solid transparent;
-    border-right:  6px solid transparent;
-    border-bottom: 6px solid $white;
-    position: absolute;
-    top: -6px;
-    left: 10px;
-  }
-}
+	// Menu position and menu carets
+	.dropdown-menu {
+		margin-top: 1px;
+		@include border-bottom-left-radius(4px);
+		@include border-bottom-right-radius(4px);
+		//@include border-radius(4px);
+		&:before {
+			content: '';
+			display: inline-block;
+			border-left:   7px solid transparent;
+			border-right:  7px solid transparent;
+			border-bottom: 7px solid #ccc;
+			border-bottom-color: rgba(0,0,0,.2);
+			position: absolute;
+			top: -7px;
+			left: 9px;
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			border-left:   6px solid transparent;
+			border-right:  6px solid transparent;
+			border-bottom: 6px solid $white;
+			position: absolute;
+			top: -6px;
+			left: 10px;
+		}
 
-// Dropdown toggle caret
-$caretInactive: darken($navbarLinkColor,25%);
-$caretActive: darken($navbarLinkColorHover,15%);
-.navbar .nav .dropdown {
+		&#seperated-nav {
+			li.divider:last-child {
+				display: none;
+			}
+		}
+
+	}
+
+	// Dropdown toggle caret
+	$caretInactive: darken($navbarLinkColor,25%);
+	$caretActive: darken($navbarLinkColorHover,15%);
+		
+	.nav .dropdown {
 	// .dropdown outer li
 
-	& > .dropdown-toggle {
+		& > .dropdown-toggle {
 		// .dropdown anchor link
 		color: $navbarLinkColor;
 
@@ -331,16 +369,18 @@ $caretActive: darken($navbarLinkColorHover,15%);
 } // END .dropdown outer li
 
 
-// Right aligned menus need alt position
-.navbar .nav.pull-right .dropdown-menu {
-  left: auto;
-  right: 0;
-  &:before {
-    left: auto;
-    right: 12px;
-  }
-  &:after {
-    left: auto;
-    right: 13px;
-  }
-}
+	// Right aligned menus need alt position
+	.nav.pull-right .dropdown-menu {
+		left: auto;
+		right: 0;
+		&:before {
+			left: auto;
+			right: 12px;
+		}
+		&:after {
+			left: auto;
+			right: 13px;
+		}
+	}
+
+} // END .navbar

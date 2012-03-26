@@ -36,24 +36,20 @@
 #primary {
 
 	.page-template-template-full-width-php & { float: none; }
+	
+	header {
+		padding: 0 $masonryHPad $masonryHPad $masonryHPad;
 
-	.archive & {
-		// archive pages
-		header {
-			padding: 0 $masonryHPad $masonryHPad $masonryHPad;
-
-			h1 {
+		h1 {
 				
-				font-size: $aa_h1_fontSize;
-				font-weight: bold;
-				letter-spacing: -.1ex;
-				line-height: 1.1;
-				margin-bottom: ($aa_h1_fontSize / 9);
-			} // END .archive header h1
+			font-size: $aa_h1_fontSize;
+			font-weight: bold;
+			letter-spacing: -.1ex;
+			line-height: 1.1;
+			margin-bottom: ($aa_h1_fontSize / 9);
+		} // END #primary header h1
 
-		} // END .archive header
-
-	} // END .archive #primary
+	} // END #primary header
 
 } // END #primary
 

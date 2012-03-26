@@ -73,9 +73,11 @@ function is_folio_home(){
  * This theme uses wp_nav_menu() in two locations.
  */
 register_nav_menus( array(
-	'primary' => __( 'Header Menu', 'gridlocked' ),
-	'secondary' => __( 'Footer Menu', 'gridlocked' ),
-	// portfolio category menus
+	'primary' => __( 'Header Main Menu', 'gridlocked' ),
+	'secondary' => __( 'Header Misc', 'gridlocked' ),
+	'browseTaxonomy' => __( 'Taxonomies', 'gridlocked' ),
+	'tertiary' => __( 'Footer Menu', 'gridlocked' ),
+	// portfolio category / taxonomy menus
 	'skills' => __( 'Skills DD', 'gridlocked' ),
 	'type' => __( 'WorkType DD', 'gridlocked' ),
 	'client' => __( 'Client DD', 'gridlocked' ),
