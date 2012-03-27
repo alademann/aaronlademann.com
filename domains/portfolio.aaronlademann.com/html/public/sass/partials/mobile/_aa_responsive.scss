@@ -1,4 +1,13 @@
-﻿#container, #content, #primary, .masonry {
+﻿// make sure block items that are within a span12 are padded
+.row-fluid > .span12 > * {
+	padding: 0 $fluidGridGutterWidth;
+	width: 100% - ($fluidGridGutterWidth * 2);
+	&[class^="span"] {
+		// this is another grid elment, no padding
+		padding: 0;
+	}
+}
+#container, #content, #primary, .masonry {
 	margin: 0;
 	padding: 0;
 	position: relative; // MUST remain here for masonry to work.
@@ -8,7 +17,7 @@
 #container {
 	$clearTheMasthead: ($aa_mastHeight + $masonryHPad);
 	margin-top: $clearTheMasthead;
-	line-height: ($aa_mastHeight - 4);
+	//line-height: ($aa_mastHeight - 4);
 } // END #container
 
 .navbar-fixed-top {

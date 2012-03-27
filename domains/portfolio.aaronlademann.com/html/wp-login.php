@@ -68,9 +68,6 @@ function login_header($title = 'Log In', $message = '', $wp_error = '') {
 
 <title><?php bloginfo('name'); ?> &rsaquo; <?php echo $title; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
-<?php if(is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<?php } ?>
 
 <?php
 	//wp_admin_css( 'wp-admin', true );

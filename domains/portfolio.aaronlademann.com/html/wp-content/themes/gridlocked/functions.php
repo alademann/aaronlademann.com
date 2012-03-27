@@ -1,4 +1,40 @@
 <?php 
+// Use this to ensure that the costly call in its standard form never needs to be repeated:
+function getBrowser($key = false){
+    static $browser;//No accident can arise from depending on an unset variable.
+    if(!isset($browser)){
+				//echo "setting browser now... only once";
+        $browser = get_browser($_SERVER['HTTP_USER_AGENT'], true);
+    }
+
+		if($key){
+			// return the value of the key
+			return $browser[$key];
+		} else {
+			// return the whole array
+			return $browser;
+		}
+}
+if(!isset($testQuery)){
+	$testQuery = $_GET['test'];
+}
+
+function is_mobile(){
+	return $testQuery == 'mobile' ? true : getBrowser('ismobiledevice');
+}
+function is_ios(){
+	$checkios = preg_match("/" . getBrowser('browser') . "/", "^iP(hone|ad|od)");
+	return $testQuery == 'ios' ? true : $checkios;
+}
+function is_iphone(){
+	$checkiphone = strstr(getBrowser('browser'), "iPhone");
+	return $testQuery == 'iphone' ? true : $checkiphone;
+}
+function is_ipad(){
+	$checkiphone = strstr(getBrowser('browser'), "iPad");
+	return $testQuery == 'ipad' ? true : $checkipad;
+}
+
 
 // echo the public directory where all the dynamic sass, template images, etc... are compiled
 function public_uri(){
@@ -16,34 +52,6 @@ function custom_includes_dir(){
 function gridlocked_includes_dir(){
 	return include_php("/wp-content/themes/gridlocked/includes");
 }
-
-function is_ios($browserAsString){
-
-  if (strstr($browserAsString, " Mobile/")) { 
-		return true;
-	} else {
-		return false;
-	}
-	
-}
-function is_iphone($browserAsString){
-	
-	if (strstr($browserAsString, "iPhone")) { 
-		return true;
-	} else {
-		return false;
-	}
-
-}
-function is_ipad($browserAsString){
-	
-	if (strstr($browserAsString, "iPad")) { 
-		return true;
-	} else {
-		return false;
-	}
-
-}
 function is_folio_home(){
 	$home_page = home_url() . "/";
 	$protocol = ($_SERVER['HTTPS'] ? "https" : "http") . "://";
@@ -54,11 +62,12 @@ function is_folio_home(){
 }
 
 // add querystring to any page to test device classes added to <body> tags
-	$deviceTesting = $_GET['test'];
+	$deviceTesting = $_GET['deviceClass'];
 	if($deviceTesting){
-		$deviceClass = $deviceTesting;
+		$deviceClass = $deviceTesting . getBrowser('platform');
 	} else {
-		$deviceClass = "";
+		// no matter what, i'd like to add OS to the body classes
+		$deviceClass = getBrowser('platform');
 	}
 /*-----------------------------------------------------------------------------------
 

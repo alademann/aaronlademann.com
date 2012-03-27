@@ -1,7 +1,7 @@
 <?php if (!is_admin()) { 
 	$jQueryScriptDir		= public_uri() . "/js/jquery/";
 	$bootstrapScriptDir = public_uri() . "/js/bootstrap/";
-	$isIOS = is_ios($_SERVER['HTTP_USER_AGENT']);
+	$isIOS = is_ios();
 ?>
 <script id="nomatterwhat">
 	head.js({ jquery: "/wp-includes/js/jquery/jquery.js" }, function(){
@@ -62,8 +62,8 @@
 	head.ready(function(){
 
 		head.js({ gridlockedcustom: "<?php echo $jQueryScriptDir; ?>jquery.gridlocked-custom.js" });
-		<?php if($isIOS) { ?>
-		head.js({ iOS:							"<?php echo public_uri(); ?>/js/iOSfixedPosition.js"				 });
+		<?php if(is_mobile()) { ?>
+		head.js({ mobile:							"<?php echo public_uri(); ?>/js/iOSfixedPosition.js"				 });
 		<?php } ?>
 
 	}); // END head.ready

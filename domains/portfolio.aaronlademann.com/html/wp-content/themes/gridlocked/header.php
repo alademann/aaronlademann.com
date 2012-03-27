@@ -53,7 +53,7 @@
 	<!-- #content -->
 	<section id="content" class="row-fluid">
 		<?php include(custom_includes_dir() . "/wp/widget-overlay.php"); ?>
-
+		<?php include(custom_includes_dir() . "/php/debug.php"); ?>
 		<?php if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') AND !is_single() ){ ?>
     <!-- SIDEBAR -->        
 

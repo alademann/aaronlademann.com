@@ -9,8 +9,8 @@
   <article class="<?php post_class(); ?> row-fluid" id="post-<?php the_ID(); ?>">
 		<?php include(custom_includes_dir() . "/portfolio/get-image-sizes.php"); ?>
     <section id="slider-<?php the_ID(); ?>" class="slider span8 vert">
-			<?php if(!is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
-			<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?> 
+			<?php if(!is_mobile() && !is_iPad()) { ?>
+				<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?> 
 			<?php } ?>
 			<section class="slideStage">
 				<section class="slides_container clearfix">
