@@ -17,8 +17,8 @@
 
 /*------------------------ BASE ------------------------*/
 @import "partials/base";
-@import "partials/bootstrap/bootstrap"; // bootstrap responsive is included here.
 @import "partials/vars";
+@import "partials/bootstrap/bootstrap"; // bootstrap responsive is included here.
 @import "partials/mobile/aa_responsive";
 /*------------------------ THEME ------------------------*/
 @import "partials/theme-wp-gridlocked"; 
