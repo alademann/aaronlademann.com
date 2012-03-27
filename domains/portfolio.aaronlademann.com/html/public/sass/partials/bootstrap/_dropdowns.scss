@@ -1,6 +1,10 @@
 // DROPDOWN MENUS
 // --------------
 
+summary::-webkit-details-marker {
+	display: none;
+}
+
 // Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
 .dropdown {
   position: relative;
@@ -26,9 +30,18 @@
   border-left:  4px solid transparent;
   border-right: 4px solid transparent;
   border-top:   4px solid $black;
-  @include opacity(30);
-  content: "\2193";
 }
+.caret, summary:before {
+	@include opacity(30);
+  content: "\2193";
+	font-family: $baseFontFamily;
+}
+summary:before {
+	content: "";
+	visibility: hidden;
+}
+summary:hover { cursor: pointer; }
+
 .dropdown .caret {
 	$caretSpacing: 2px;
   margin-top: 8px;
@@ -36,7 +49,8 @@
 	.navbar & { margin-left: ($caretSpacing * 2); }
 }
 .dropdown:hover .caret,
-.open.dropdown .caret {
+.open.dropdown .caret,
+details[open] summary:before, summary:hover:before {
   @include opacity(100);
 }
 // The dropdown menu (ul)
