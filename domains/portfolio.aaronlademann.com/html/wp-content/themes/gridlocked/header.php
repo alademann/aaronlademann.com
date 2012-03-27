@@ -9,9 +9,6 @@
 <title><?php wp_title(''); ?></title>
 <?php if( !is_page_template('template-resume.php') ) { ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<?php if(is_ios($_SERVER['HTTP_USER_AGENT'])) { ?>
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<?php } ?>
 <?php } ?>
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/screen.css">
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
