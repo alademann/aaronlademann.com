@@ -132,7 +132,8 @@ function add_multiplecontent_box() {
 		//add editor
 		$fieldName = str_replace(' ','-',$editorName);
 		
-		echo '<p><strong>'.ucfirst($editorName).'</strong></p>';
+		echo '<details style="margin-bottom: 6px;" closed>';
+		echo '<summary><strong>'.ucfirst($editorName).'</strong></summary>';
 		echo '<input type="hidden" name="multiplecontent_box-'.$i.'" value="'.$fieldName.'" />';
 		
 		global $current_user;
@@ -142,7 +143,7 @@ function add_multiplecontent_box() {
 		
 		wp_editor( get_post_meta($post->ID, '_ot_multiplecontent_box-'.$fieldName , true), 'multiplecontent_box-'.$fieldName, $settings = array() );
 		
-		echo '<p>&nbsp;</p>';
+		echo '</details>';
 	}
 	
 	if($editors == 0) {
