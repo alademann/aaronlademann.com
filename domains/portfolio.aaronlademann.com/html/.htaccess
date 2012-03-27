@@ -45,6 +45,20 @@ AddType text/x-component .htc
 
 # END REQUIRED FOR WEBFONTS
 
+# REDIRECTS
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+
+# Redirect search query for resume automatically
+RewriteCond %{QUERY_STRING} s=resume
+RewriteRule (.*) resume/?src=search&q=resume [R=302,NC,L]
+
+# Redirect search query for photography automatically
+RewriteCond %{QUERY_STRING} s=photography
+RewriteRule (.*) http://photos.aaronlademann.com [R=302,NC,L]
+</IfModule>
+# END Aaron's Redirects
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
