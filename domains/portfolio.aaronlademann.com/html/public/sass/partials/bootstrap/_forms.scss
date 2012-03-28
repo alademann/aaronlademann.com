@@ -8,7 +8,7 @@
 
 // Make all forms have space below them
 form {
-  margin: 0 0 $baseLineHeight;
+  margin: 0 0 1em;
 }
 
 fieldset {
@@ -65,10 +65,10 @@ select,
 .uneditable-input {
   display: inline-block;
   width: 210px;
-  height: $baseLineHeight;
+  height: 1em;
   padding: 4px;
   margin-bottom: 9px;
-  font-size: $baseFontSize;
+  font-size: 1em;
   line-height: $baseLineHeight;
   color: $gray;
   border: 1px solid #ccc;
@@ -321,9 +321,9 @@ select:focus:required:invalid {
 // ------------
 
 .form-actions {
-  padding: ($baseLineHeight - 1) 20px $baseLineHeight;
-  margin-top: $baseLineHeight;
-  margin-bottom: $baseLineHeight;
+  padding: ($baseLineHeight - 1) 20px 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
 }
@@ -386,7 +386,7 @@ select:focus:required:invalid {
     display: block;
     width: auto;
     min-width: 16px;
-    height: $baseLineHeight;
+    height: 1em;
     margin-right: -1px;
     padding: 4px 5px;
     font-weight: normal;
@@ -501,7 +501,7 @@ select:focus:required:invalid {
 
 // Legend collapses margin, so next element is responsible for spacing
 legend + .control-group {
-  margin-top: $baseLineHeight;
+  margin-top: 1em;
   -webkit-margin-top-collapse: separate;
 }
 
@@ -511,7 +511,7 @@ legend + .control-group {
 .form-horizontal {
   // Increase spacing between groups
   .control-group {
-    margin-bottom: $baseLineHeight;
+    margin-bottom: 1em;
     @include clearfix();
   }
   // Float the labels left

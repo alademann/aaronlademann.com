@@ -1,4 +1,8 @@
-﻿// make sure block items that are within a span12 are padded 
+﻿// em font size base
+body > * {
+	font-size: 1em;
+}
+// make sure block items that are within a span12 are padded 
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
@@ -335,7 +339,7 @@
 
 		/* jQuery "slider" captions */
 		.caption { 
-			font-size: 14px;
+			font-size: 1.077em;
 			font-weight: bold;
 			line-height: 1.6 !important; 
 
@@ -455,7 +459,7 @@
 		// footer is where the bulleted taxonomy lists live on .single posts.
 		footer, .footer {
 			.terms li { 
-				font-size: .85em;
+				font-size: 0.846em;
 				line-height: normal;
 				.widget-title {
 					font-size: 1.1em;
@@ -647,7 +651,7 @@
 			h1 {
 				display: block;
 				width: auto;
-				font-size: 11px;
+				font-size: 0.846em;
 				text-align: center;
 				text-indent: 18px;
 			}

@@ -25,7 +25,7 @@ pre {
   display: block;
   padding: ($baseLineHeight - 1) / 2;
   margin: 0 0 $baseLineHeight / 2;
-  font-size: 12px;
+  font-size: 0.923em;
   line-height: $baseLineHeight;
   background-color: #f5f5f5;
   border: 1px solid #ccc; // fallback for IE7-8
@@ -38,7 +38,7 @@ pre {
 
   // Make prettyprint styles more spaced out for readability
   &.prettyprint {
-    margin-bottom: $baseLineHeight;
+    margin-bottom: 1em;
   }
 
   // Account for some code outputs that place code tags in pre tags

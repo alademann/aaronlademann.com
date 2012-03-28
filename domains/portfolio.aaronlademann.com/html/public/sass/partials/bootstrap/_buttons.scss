@@ -10,7 +10,7 @@
   display: inline-block;
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
-  font-size: $baseFontSize;
+  font-size: 1em;
   line-height: $baseLineHeight;
   color: $grayDark;
   text-align: center;
@@ -74,7 +74,7 @@
 // Large
 .btn-large {
   padding: 9px 14px;
-  font-size: $baseFontSize + 2px;
+  font-size: 1.154em;
   line-height: normal;
   @include border-radius(5px);
 }
@@ -85,8 +85,8 @@
 // Small
 .btn-small {
   padding: 5px 9px;
-  font-size: $baseFontSize - 2px;
-  line-height: $baseLineHeight - 2px;
+  font-size: (1- .154)em;
+  line-height: (1.385 - .154)em;
 }
 .btn-small [class^="icon-"] {
   margin-top: -1px;
@@ -95,8 +95,8 @@
 // Mini
 .btn-mini {
   padding: 2px 6px;
-  font-size: $baseFontSize - 2px;
-  line-height: $baseLineHeight - 4px;
+  font-size: (1- .154)em;
+  line-height: (1.385 - .308)em;
 }
 
 

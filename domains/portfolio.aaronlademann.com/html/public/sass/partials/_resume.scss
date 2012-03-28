@@ -72,7 +72,7 @@
 
 				#pdf {
 					padding: 4px;
-					margin: -$fluidGridGutterWidth 0 ($fluidGridGutterWidth * 3) 0;
+					//margin: -$fluidGridGutterWidth 0 ($fluidGridGutterWidth * 3) 0;
 					@include border-radius(3px);
 					@include rgba_bg(#9b9b9b, 0.1);
 					@include float(right);
@@ -133,7 +133,7 @@
 
 		.job li, .skillset li, .toolbox li {
 			padding: 0 .9em;
-			font-size: .9em;
+			font-size: 0.923em;
 			line-height: pxtoem("24px", $baseFontSize);
 		}
 		
@@ -142,7 +142,7 @@
 
 		#ft {
 			&, p {
-				font-size: .9em;
+				font-size: 0.923em;
 				padding: 1em 0 5em 0;
 				margin: 0;
 				text-align: center;
@@ -179,18 +179,15 @@
 		.enlarge {
 			font-size: 1.12em;
 			line-height: 1.5em;
-
-			#profile & { 
-				em, dt, dd {
-					display: inline;
-				}
-				em, dt {
-					@extend .serif;
-					color: black;
-					font-style: normal;
-				}
-			} // END #profile .enlarge styles
 		} // END .enlarge
+
+		#profile .enlarge em, #profile .enlarge dt { 
+			@extend .serif; 
+			color: $black;
+			font-style: normal;
+		}
+		
+		#profile .enlarge em, #profile .enlarge dt, #profile .enlarge dd { display: inline !important; }	
 
 		
 
