@@ -1,4 +1,4 @@
-﻿/*---------------- aaronlademann.com TEMPLATE ----------------*/
+/*---------------- aaronlademann.com TEMPLATE ----------------*/ 
 .navbar-fixed-top .brand {
 	padding: 0 ($gridGutterWidth * 1.5) 0 0;
 	font-size: 20px;
@@ -130,7 +130,7 @@ a .overlay .icon:before { content: $icon-search; }
 
 
 @mixin aa_light {
-	
+
 	@include aa_body_light;
 
 	.pagination.thumbs {
@@ -330,21 +330,21 @@ a .overlay .icon:before { content: $icon-search; }
 
 	.line { 
 		.rgba & {
-			border-bottom-color: rgba(0,0,0,.1); 
-			border-top-color: rgba(255,255,255,.4);
+			border-bottom-color: $chiselDark; 
+			border-top-color: $chiselLight;
 
 			&.vert {
-				border-right-color: rgba(0,0,0,.1); 
-				border-left-color: rgba(255,255,255,.4);
+				border-right-color: $chiselDark; 
+				border-left-color: $chiselLight;
 			}
 		}
 		.no-rgba & {
-			border-bottom-color: ie-hex-str(rgba(0,0,0,.1)); 
-			border-top-color: ie-hex-str(rgba(255,255,255,.4));
+			border-bottom-color: ie-hex-str($chiselDark); 
+			border-top-color: ie-hex-str($chiselLight);
 
 			&.vert {
-				border-right-color: ie-hex-str(rgba(0,0,0,.1)); 
-				border-left-color: ie-hex-str(rgba(255,255,255,.4));
+				border-right-color: ie-hex-str($chiselDark); 
+				border-left-color: ie-hex-str($chiselLight);
 			}
 		}
 	}

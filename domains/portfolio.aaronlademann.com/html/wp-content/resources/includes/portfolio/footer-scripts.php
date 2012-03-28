@@ -22,6 +22,7 @@
 				,{ bootstrapcollapse:		"<?php echo $bootstrapScriptDir; ?>bootstrap-collapse.js"				}
 				,{ bootstrapbutton:			"<?php echo $bootstrapScriptDir; ?>bootstrap-button.js"					}
 				,{ bootstrapdropdown:		"<?php echo $bootstrapScriptDir; ?>bootstrap-dropdown.js"				}
+				,{ bootstrapalerts:		"<?php echo $bootstrapScriptDir; ?>bootstrap-alert.js"						}
 				
 
 			, function() {

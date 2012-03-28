@@ -34,7 +34,10 @@ function is_ipad(){
 	$checkiphone = strstr(getBrowser('browser'), "iPad");
 	return $testQuery == 'ipad' ? true : $checkipad;
 }
-
+// open or close the <details> html5 elem based on whether or not its a mobile device
+function initDetails(){
+	return is_mobile() ? "closed" : "open";
+}
 
 // echo the public directory where all the dynamic sass, template images, etc... are compiled
 function public_uri(){

@@ -2,7 +2,7 @@
 <aside class="span12">
 	<section class="inner">
 		<section class="alert alert-info debug-alert">
-			<a class="close" data-dismiss="debug-alert">x</a>
+			<a class="close" data-dismiss="alert">x</a>
 			<h4 class='alert-heading'>Page Debug Info</h4>
 			<?php
 			if(!isset($checkBrowser)){

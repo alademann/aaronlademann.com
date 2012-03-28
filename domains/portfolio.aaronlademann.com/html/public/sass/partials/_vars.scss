@@ -1,6 +1,8 @@
-﻿$legacy-support-for-ie: true;
+﻿$legacy-support-for-ie: true; 
 $legacy-support-for-ie6: false;
 $support-for-original-webkit-gradients: false;
+$experimental-support-for-svg: true;
+
 
 $aa_mastHeight: 40px;
 $aa_footHeight: 0;
@@ -43,18 +45,22 @@ $default-text-shadow-v-offset: 1px;
 $default-text-shadow-blur: 0;
 // END compass/css3/text-shadow
 
-$aa_wellBgColor: rgba(120,120,120,.03);
-$aa_wellInsetShadowColor: rgba(120,120,120,.2);
+$wellCornerRadius: 4px;
 
-$experimental-support-for-svg: true;
+// COLORS
+$aa_wellBgColor: rgba(120,120,120,.03);
+$aa_wellInsetShadowColor: rgba(120,120,120,.3);
+$chiselDark: rgba(0,0,0,.1);
+$chiselLight: rgba(255,255,255,.4);
+$body_bgcolor: #eeeeee;
+$body_bgImg: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png");
 
 @mixin aa_body_light {
-	$light_bgcolor: #eeeeee;
 	body {
 		background-position: left top !important;
 		background-repeat: repeat !important;
-		background-color: $light_bgcolor !important;
-		background-image: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png") !important;
+		background-color: $body_bgcolor !important;
+		background-image: $body_bgImg !important;
 	}
 }
 

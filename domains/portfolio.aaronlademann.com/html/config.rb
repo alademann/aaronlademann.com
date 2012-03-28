@@ -4,6 +4,7 @@ require "rgbapng"
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "public/css"
+fonts_dir = "public/fonts"
 sass_dir = "public/sass"
 images_dir = "public/images"
 javascripts_dir = "public/js"

@@ -1,23 +1,48 @@
-// WELLS
+// WELLS 
 // -----
+$wellEdgeHighlight: rgba(255, 255, 255, 0.7);
+$aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
 
 .well {
   min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  //background-color: #f5f5f5;
-	@include rgba_bg(#646464, 0.15);
-  //border: 1px solid #eee;
-  //border: 1px solid rgba(0,0,0,.05);
-  @include border-radius(4px);
+  margin-bottom: 2%;
+	@include border-radius($wellCornerRadius);
+  background: $aa_wellBgColor;
   @include box-shadow(
-		rgba(255, 255, 255, 0.7) 0 1px 0, // highlight edge 
-		rgba(0, 0, 0, 0.4) 0 1px 7px 0px inset // inner shadow
+		$wellEdgeHighlight 0 1px 0 0, // highlight edge 
+		$aa_wellInsetShadowColor 0 1px 7px 0 inset // inner shadow
 	);
-  
+
+	// padding depending on if its inside a grid system
+	padding: $gridGutterWidth;
+	
+	&[class*='span'], &[class*='fluid'] {
+		padding: 0;
+
+		.inner {
+			display: block;
+			padding: $gridGutterWidth;
+		}
+	}
+
 	blockquote {
     border-color: #ddd;
     border-color: rgba(0,0,0,.15);
   }
 } // END .well
 
+.inverse-well {
+	@include box-shadow(
+			$wellEdgeHighlight -1px -1px 0 0 inset, // highlight edge 
+		$aa_wellInsetShadowColor 1px 1px 2px 0 inset,
+		$aa_wellInsetShadowColor 0 1px 7px 0 // inner shadow
+	);
+}
+.inverse-well-stacked {
+	@include box-shadow(
+		$wellEdgeHighlight 0 -1px 0 0 inset, // highlight edge 
+		$aa_wellInsetShadowHalf -1px 0 2px 0 inset,
+		$aa_wellInsetShadowHalf 1px 1px 2px 0 inset,
+		$aa_wellInsetShadowColor 0 1px 7px 0 // inner shadow
+	)
+}

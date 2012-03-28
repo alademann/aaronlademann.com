@@ -36,6 +36,9 @@ AddType text/x-component .htc
 	AddType application/vnd.ms-fontobject .eot
 	AddType application/octet-stream .otf .ttf
 	AddType application/x-font-woff .woff
+	AddType image/svg+xml svg svgz
+
+	AddEncoding gzip svgz
 
 	<FilesMatch "\.(ttf|otf|eot|woff)$">
 		<IfModule mod_headers.c>

@@ -26,7 +26,17 @@ $isIphone = $("body").hasClass("iphone");
 ----------------------------------------------------------------------------------------------------------*/
 
 head.ready(function() {
+	var $alerts = $("#container").find(".alert");
+	if($alerts.length) {
+		try {
+			// the class used here has to match the data-dismiss attribute of the close <a> tag.
+			$(".alert").alert(); // Enable bootstrap alerts		
+		} catch(e) { }
+	} // END if alerts
+
 	tz_likeInit(); // check cookies for like-it action
+
+	html5elems_init();
 
 	// trigger this stuff on window resize
 	$(window).smartresize(function() {
@@ -36,11 +46,11 @@ head.ready(function() {
 
 	window.addEventListener("orientationchange", function() { // switching between landscape and horizontal
 		updateOrientation();
-		
+
 		if($().masonry) {
 			masonTheLayout();
 		} // END if(masonry)
-		
+
 	}, false);
 
 	contentHeight(); // dynamic content height
@@ -64,7 +74,7 @@ head.ready(function() {
 	tz_navTitles(); // TODO - figure out what this does ;)
 
 
-});         // END head.ready()
+});            // END head.ready()
 
 /*-----------------------------------------------------------------------------------*/
 /*	We're ready!
@@ -78,6 +88,26 @@ $('#container').removeClass('js-disabled');
  	********************* FUNCTIONS *********************
  
 ----------------------------------------------------------------------------------------------------------*/
+
+function html5elems_init() {
+	console.info("firing html5elems_init()");
+	// give details area the same effect as input:focus when the summary elem is hovered
+	var $details_elems = $("#container").find("details");
+	if($details_elems.length) {
+		$.each($details_elems, function() {
+			console.info("found <details id=" + $(this).attr("id") + ">");
+			var summHeader = $("> summary", this);
+			console.info("found summary: " + summHeader.text());
+			$(summHeader).bind("mouseover", function() {
+				$(this).closest("details").addClass("hover");
+			});
+			$(summHeader).bind("mouseout", function() {
+				$(this).closest("details").removeClass("hover");
+			});
+		});
+	} // END if($details_elems
+		
+} // END html5elems_init();
 
 /*-----------------------------------------------------------------------------------*/
 /*	MOBILE DEVICE ORIENTATION FUNCTIONS

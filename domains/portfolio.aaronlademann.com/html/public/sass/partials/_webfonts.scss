@@ -2,10 +2,13 @@
 
 @mixin webfont($font_dir,$font_name){
 	$font_path: $webfont_global_dir + $font_dir;
-	@include font-face(
-		$font_name
+	$woff: $font_path + ".woff";
+	$ttf: $font_path + ".ttf";
+	$svg: $font_path + ".svg#" + $font_name;
+	$eot: $font_path + ".eot";
+	@include font-face($font_name
 		, font-files(
-					$font_path + ".woff", woff, $font_path + ".ttf", truetype, $font_path + ".svg#" + $font_name, svg
+					$woff, woff, $ttf, truetype, $svg, svg
 			),	$font_path + ".eot"
 	);
 }

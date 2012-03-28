@@ -1,8 +1,45 @@
-// DROPDOWN MENUS
+// DROPDOWN MENUS 
 // --------------
 
 summary::-webkit-details-marker {
 	display: none;
+}
+
+// give details area the same effect as input:focus when the summary elem is hovered
+details, details.well, #bd details.well {
+	@extend .trans;
+	@extend .tp_all;
+	//@extend .tt_easeInOut;
+
+	&.hover {
+		@include input_focus();
+	}
+	summary {
+		
+		&:hover, &:hover:before {
+			//color: $linkColorHover;
+		}
+	}
+}
+
+details.well, #bd details.well {
+	overflow: hidden;
+	summary.h2 { 
+		.inner {
+			// cover up the inner shadow of the well
+			background: $body_bgcolor $body_bgImg left top repeat;
+			@extend .inverse-well;
+			@include border-corner-radius(bottom, right, $wellCornerRadius);
+		}
+		// when the summary stacks atop the description
+			@media (max-width: 767px) { 
+				.inner {
+					@extend .inverse-well-stacked;
+					@include border-corner-radius(bottom, right, 0);
+				}
+				line-height: normal;
+			} // END @media
+	}
 }
 
 // Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
@@ -36,6 +73,7 @@ summary::-webkit-details-marker {
   content: "\2193";
 	font-family: $baseFontFamily;
 }
+summary { cursor: pointer; }
 summary:before {
 	content: "";
 	visibility: hidden;

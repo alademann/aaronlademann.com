@@ -1,4 +1,4 @@
-﻿// make sure block items that are within a span12 are padded
+// make sure block items that are within a span12 are padded 
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
