@@ -94,12 +94,19 @@
 	}
 
 	#fancybox-close {
+		
+		width: 21px !important;
+		height: 21px !important;
+		top: 10px !important;
+		right: 8px !important;
+		background: image-url("lightbox/lightbox_cross.gif") no-repeat left top !important;
+
 		position: absolute;
-		top: -15px;
-		right: -15px;
-		width: 30px;
-		height: 30px;
-		background: transparent image-url('fancybox/fancybox.png') -40px 0px;
+		//top: -15px;
+		//right: -15px;
+		//width: 30px;
+		//height: 30px;
+		//background: transparent image-url('fancybox/fancybox.png') -40px 0px;
 		cursor: pointer;
 		z-index: 1103;
 		display: none;

@@ -1,4 +1,4 @@
-/*---------------- aaronlademann.com TEMPLATE ----------------*/ 
+﻿/*---------------- aaronlademann.com TEMPLATE ----------------*/ 
 .navbar-fixed-top .brand {
 	padding: 0 ($gridGutterWidth * 1.5) 0 0;
 	font-size: 20px;
@@ -15,24 +15,56 @@
 
 }
 
-.masonry {
-	
-	.masonry-brick {
-		//border-style: solid;
-		//border-width: 1px;
+.entry-meta, .entry-header {
+	// likes, published, comments, edit, etc...
+	&, li { margin: 0; list-style: none; }
+}
 
-		footer, .footer {
-			border-top-style: solid;
-			border-top-width: 1px;
+.masonry {
+
+	.masonry-brick {
+
+		&, a, a * {
+			// keep the cursor as a pointer no matter what within .masonry-brick
+			cursor: pointer;
 		}
+
+		$brickCaptionHPad: 15px;
+
 		img {
 			border-bottom-style: solid;
 			border-bottom-width: 1px;
 		}
 		figcaption, .figcaption {
 			width: 100%;
+			@include min-height(51px); // leaves 1px gap before footer creating "chisel" effect
 			padding-bottom: 3px; // to fill up the space given
-		}
+
+			h2, .h2, .entry-title {
+				line-height: normal;
+				font-weight: bold;
+				font-size: 14px;
+				border: none;
+				margin: 0;
+				padding: ($brickCaptionHPad - 5) $brickCaptionHPad ($brickCaptionHPad - 8) $brickCaptionHPad;
+
+				a {
+					&:hover {
+						text-decoration: none;
+					}
+				} // END .entry-title a
+			} // END figcaption .entry-title
+		} // END figcaption
+
+		footer, .footer {
+			border-top-style: solid;
+			border-top-width: 1px;
+			
+			.entry-meta {
+				font-size: .85em;
+				padding: ($brickCaptionHPad - 10) $brickCaptionHPad;
+			}
+		} // END .masonry-brick footer
 
 		.arrow { display: none; }
 	}
@@ -75,17 +107,12 @@ a[rel="external"], a.external, a[target="blank"],
 }
 #resume .folio_link .icon { display: none; } // already placing the icon directly after using :after.
 
-.entry-header, .entry-meta {
-	
-	li {
-		list-style: none;
-	}
-}
-
 // specific icons
+
 .like-count, .published, .comment-count, .folio_link .icon {
-	a, a span {
+	&, a, a span, .icon {
 		display: block;
+		@include float(left); 
 	}
 	.icon:before { 
 		font-family: "FontAwesome"; 
@@ -99,11 +126,18 @@ a[rel="external"], a.external, a[target="blank"],
 
 .like-count {	
 	@include min-width(2.3em);
+	@include float(right);
 	width: auto;
 
-	.icon:before {
-		content: $icon-heart; 
-	}
+	.icon {
+		width: 13px;
+		height: 11px;
+
+		&:before {
+			content: $icon-heart; 
+		}
+	} // END .like-count .icon
+
 	a.active, a:hover {
 		
 		&, &:before, &.icon:before, .icon:before {
@@ -111,9 +145,56 @@ a[rel="external"], a.external, a[target="blank"],
 		}
 	}
 }
-.published .icon:before { content: $icon-calendar; }
-.comment-count .icon:before { content: $icon-comments; }
-a .overlay .icon:before { content: $icon-search; }
+
+.published { 
+	
+	.icon {
+		width: 14px;
+		height: 14px;
+		
+		&:before { 
+			content: $icon-calendar; 
+		}
+	} // END .published .icon
+}
+
+.comment-count {	
+	display: none; // don't want comments enabled right now.
+	.icon { 
+		width: 15px;
+		height: 11px;
+		
+		&:before {  
+			content: $icon-comments; 
+		}
+	} // END .comment-count .icon
+}
+
+.overlay {
+	$anchorOverlayZindex: 20;
+	position: absolute;
+	z-index: $anchorOverlayZindex;
+	width: 100%;
+	height: 100%;
+	display: none;
+	left: 0;
+	cursor: pointer;
+
+	.icon {
+		position: absolute;
+		display: block;
+		width: 22px;
+		height: 22px;
+		top: 48%;
+		left: 48%;
+		z-index: $anchorOverlayZindex + 1;
+
+		&:before {
+			content: $icon-search;
+		}
+	}
+
+} // END a.overlay
 
 .line { 
 	border-width: 1px 0;
@@ -149,7 +230,14 @@ a .overlay .icon:before { content: $icon-search; }
 	#single-sidebar {
 		background: $aa_wellBgColor;
 		@include single-box-shadow($aa_wellInsetShadowColor, 3px, 0, 8px, 0, inset );
-	}
+
+		li ul.children li a::before,
+		h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+			color: $gray;
+			font-weight: normal;
+		}
+
+	} // END #single-sidebar
 
 	.navbar-fixed-top .brand {
 		$brand_bgImg: "aa-symbol_button.png";
@@ -177,7 +265,9 @@ a .overlay .icon:before { content: $icon-search; }
 	.comment-body p, #load-more-link a, .hentry, 
 	.masonry-brick, .masonry-brick .entry-meta a,
 	.folio_link .icon, .like-count, .like-count a, .like-count .icon, .like-count .icon:before,
-	.masonry-brick .entry-meta .icon:before, .published .icon, .published .icon:before { color: lighten($gray,10%); }
+	.masonry-brick .entry-meta .icon:before, .published .icon, .published .icon:before { 
+		color: lighten($gray,10%); 
+	}
 
 	.like-count .icon, .like-count .icon:before, 
 	.single .published .icon, .single .published .icon:before { color: lighten($gray,30%) !important; }
@@ -200,7 +290,13 @@ a .overlay .icon:before { content: $icon-search; }
 			.wellOverlay {
 				@include box-shadow($inset_shadow);
 			}
-
+				
+				// we want the figure (image) itself to be brighter than the caption area 
+				// even if the thumbnail is a png with a transparent bg.
+				figure, .figure {
+					@include rgba_bg(#ffffff, 0.35);
+				}
+				// caption area below figure
 				figcaption, .figcaption, .post-thumb, footer, .footer {
 					@include rgba_bg(#000000, 0.05);
 				}

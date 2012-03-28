@@ -1,12 +1,21 @@
-// make sure block items that are within a span12 are padded 
+﻿// make sure block items that are within a span12 are padded 
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
-	&[class^="span"] {
+	&[class^="span"], &[class*=row-fluid] {
 		// this is another grid elment, no padding
 		padding: 0;
+		width: 100%;
 	}
 }
+
+.entry-content {
+	padding: 0 $gridGutterWidth ($gridGutterWidth + 10) $gridGutterWidth; 
+	.container-fluid & {
+		padding: 0 0 $fluidGridGutterWidth 0;
+	}
+}
+
 #container, #content, #primary, .masonry {
 	margin: 0;
 	padding: 0;
@@ -40,6 +49,11 @@
 		margin: 0 1em;
 	}
 }
+
+.entry-meta a { display: block; }
+.entry-meta li.terms a { display: inline; }
+.emptyResults p { margin: 0 0 9px 0; line-height: normal; }
+.entry-meta a:hover { text-decoration: none !important; }
 
 // #primary wraps around .masonry, and is within a row-fluid
 #primary {
@@ -120,6 +134,20 @@
 		top: 100%; // so it animates from the bottom;
 		@include transition-property("left, right, top");
 		
+		.post-thumb a {
+			display: block;
+			position: relative;
+			/* so that even an image that is not 170px being used as a thumbnail will not throw off the grid view */
+			min-height: $aa_media_heightThumb;
+		}
+
+		.post-thumb a,
+		.post-thumb a img { 
+			@include float(left);
+			display: block;
+			width: auto;
+		}
+
 		&.hover, &.hover .wellOverlay {
 			@extend .tp_all;
 		}
@@ -323,6 +351,7 @@
 
 	// sidebar (where content / meta for each portfolio piece lives)
 	#single-sidebar {
+		$sidebarPad: 1.4em;
 		z-index: 99;
 		@include stretch-y($aa_mastHeight,0); 
 		// the stretch-y compass method above creates absolute position... 
@@ -332,17 +361,49 @@
 
 		& > div, & > header, & > footer, & > span, & > ul, & > p {
 			width: auto;
-			padding: 0 1.4em;
+			padding: 0 $sidebarPad;
 		}
 		& > header, & > .header {
-			padding-top: 1.4em;
+			padding-top: $sidebarPad;
 		}
 		& > footer, & > .footer {
-			padding-bottom: 1.4em;
+			padding-bottom: $sidebarPad;
 		}
 
 		// formatting for any <ul> elem in the #single sidebar
-		ul { margin: 0; padding: 0; }
+		ul, li { margin: 0; padding: 0; }
+		li {
+			@include float(left);
+
+			&.link {
+				margin-top: $sidebarPad;
+				line-height: 1.7;
+				font-weight: bold;
+			}
+
+			&.terms {
+				&, li { clear: both; }
+				.cat-item { font-weight: bold; }
+				.cat-item .children li { padding-left: 10px;font-weight: normal; }
+			} // END #single-sidebar li.terms
+
+			a {
+				&:before {
+					//font-family: "FontAwesome";
+					//font-size: 1.4em;
+					//margin-right: 5px;
+					//color: $gray;
+					//content: $icon-chevron-right;
+				}
+				&:hover { text-decoration: none !important; }
+			} // END #sigle-sidebar li a
+			&:first-child a {
+				&:before {
+					content: "";
+				}
+			}
+
+		} // END #single-sidebar li
 		.seperator { margin: ($articleVPad / 4) 0; }
 
 		// header is where the_content() and the_title() live on .single posts.
@@ -385,7 +446,7 @@
 				.caption {
 					// the_content()
 					clear: both;
-					padding: 1em 0;
+					padding: $sidebarPad 0;
 				} // end #single-sidebar .caption
 
 			} // END .single #single-sidebar header ul.entry-header
@@ -393,8 +454,17 @@
 
 		// footer is where the bulleted taxonomy lists live on .single posts.
 		footer, .footer {
+			.terms li { 
+				font-size: .85em;
+				line-height: normal;
+				.widget-title {
+					font-size: 1.1em;
+					margin-top: ($sidebarPad - 0.9em);
+					line-height: normal;
+				}
+			}
 
-		}
+		} // END .single #single-sidebar footer
 
 	} // END .single #single-sidebar
 

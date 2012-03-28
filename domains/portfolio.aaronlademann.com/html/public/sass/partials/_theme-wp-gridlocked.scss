@@ -82,29 +82,29 @@
 
 
 
-	.page-template-template-full-width-php .hentry {
-		width: auto !important;
-		margin: 0 0 70px 0;
-		padding: 0 0 15px 0;
-		float: none;
-	}
-
-	.widget
-	.children,
-	.entry-content ol ol,
-	.entry-content ol ul,
-	.entry-content ul ul,
-	.comment-body ol ol,
-	.comment-body ol ul,
-	.comment-body ul ul,
-	.widget ul ul { margin-bottom: 0; }
-
-	.entry-content h1,
-	.entry-content h2,
-	.entry-content h3,
-	.entry-content h4,
-	.entry-content h5,
-	.entry-content h6 { margin: 0 0 20px 0; }
+//	.page-template-template-full-width-php .hentry {
+//		width: auto !important;
+//		margin: 0 0 70px 0;
+//		padding: 0 0 15px 0;
+//		float: none;
+//	}
+//
+//	.widget
+//	.children,
+//	.entry-content ol ol,
+//	.entry-content ol ul,
+//	.entry-content ul ul,
+//	.comment-body ol ol,
+//	.comment-body ol ul,
+//	.comment-body ul ul,
+//	.widget ul ul { margin-bottom: 0; }
+//
+//	.entry-content h1,
+//	.entry-content h2,
+//	.entry-content h3,
+//	.entry-content h4,
+//	.entry-content h5,
+//	.entry-content h6 { margin: 0 0 20px 0; }
 
 //	
 //	h1,	h2,	h3,	h4,	h5,	h6 {
@@ -147,24 +147,23 @@
 //		line-height: 16px;
 //	}
 
-	.page-title {
-		font-size: 14px;
-		font-weight: bold;
-	}
+//	.page-title {
+//		font-size: 14px;
+//		font-weight: bold;
+//	}
+//
+//	.entry-title,
+//	.entry-title a {
+//		font-size: 12px;
+//		line-height: 16px;
+//		margin: 0;
+//		letter-spacing: normal !important;
+//	}
+//
+//	.layout-2cl #sidebar { @include float(left); }
 
-	.entry-title,
-	.entry-title a {
-		font-size: 12px;
-		line-height: 16px;
-		margin: 0;
-		letter-spacing: normal !important;
-	}
 
-	.layout-2cl #sidebar { @include float(left); }
-
-	#footer { clear: both; }
-
-	
+@mixin gridlocked-widgetOverlay {	
 
 
 	/*-----------------------------------------------------------------------------------*/
@@ -226,6 +225,10 @@
 	#overlay-open a.close { background-position: -41px 0; }
 
 	#overlay-open a:hover.close { background-position: -41px -41px; }
+
+} // END mixin widget overlay
+
+@mixin gridlocked-sidebar-menu {
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	3.	Sidebar Styles
@@ -327,7 +330,6 @@
 		margin: 15px 0 0 0;
 	}
 
-
 	/*-----------------------------------------------------------------------------------*/
 	/*	4.	Navigation & Menus
 	/*-----------------------------------------------------------------------------------*/
@@ -362,113 +364,114 @@
 
 	.tax-project #sidebar .widget li.project li, .tax-tools-used #sidebar .widget li.tools-used li { display: none; }
 
+} // END mixin sidebar-menu
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	5.	Main Content Styles
 	/*-----------------------------------------------------------------------------------*/
 
-	address { font-style: italic; }
+//	address { font-style: italic; }
+//
+//	abbr[title],
+//	acronym[title],
+//	dfn[title] {
+//		cursor: help;
+//		border-bottom: 1px dotted #666;
+//	}
+//
+//	blockquote {
+//		font-family: Georgia, "Times New Roman", Times, serif;
+//		font-style: italic;
+//		margin: 30px;
+//		padding-left: 15px;
+//	}
+//
+//	strong { font-weight: bold; }
+//
+//	em,
+//	dfn,
+//	cite { font-style: italic; }
+//
+//	dfn { font-weight: bold; }
+//
+//	sub, sup { font-size: .8em;position: relative;left: auto; }
+//	sup {
+//		top: -2px;
+//		vertical-align: top;
+//	}
+//
+//	sub {
+//		top: 2px;
+//		vertical-align: bottom;
+//	}
+//
+//	small { font-size: 11px; }
+//
+//	del { text-decoration: line-through; }
+//
+//	ins { text-decoration: underline; }
+//
+//	code,
+//	pre { line-height: 18px; }
+//
+//	var,
+//	kbd,
+//	samp,
+//	code,
+//	pre {
+//		font: 12px/18px Consolas, "Andale Mono", Courier, "Courier New", monospace;
+//	}
+//
+//	kbd { font-weight: bold; }
+//
+//	samp,
+//	var { font-style: italic; }
+//
+//	pre {
+//		white-space: pre;
+//		overflow: auto;
+//		padding: 0 10px;
+//		clear: both;
+//		line-height: 19px;
+//		margin: 30px 0;
+//	}
+//
+//	code { padding: 3px; }
+//
+//	ul,
+//	ol,
+//	dl { margin-left: 30px; }
+//
+//	table {
+//		border: 1px solid #ccc;
+//		border-width: 1px;
+//		line-height: 18px;
+//		margin: 0 0 22px 0;
+//		text-align: left;
+//		padding: 0 5px;
+//	}
+//
+//	table .even { background: #ddd; }
+//
+//	caption { text-align: left; }
+//
+//	tr { border-bottom: 1px solid #ccc; }
+//
+//	th,
+//	td {
+//		padding: 5px;
+//		vertical-align: middle;
+//		text-align: center;
+//	}
+//
+//	.entry-content { line-height: 18px; }
 
-	abbr[title],
-	acronym[title],
-	dfn[title] {
-		cursor: help;
-		border-bottom: 1px dotted #666;
-	}
-
-	blockquote {
-		font-family: Georgia, "Times New Roman", Times, serif;
-		font-style: italic;
-		margin: 30px;
-		padding-left: 15px;
-	}
-
-	strong { font-weight: bold; }
-
-	em,
-	dfn,
-	cite { font-style: italic; }
-
-	dfn { font-weight: bold; }
-
-	sub, sup { font-size: .8em;position: relative;left: auto; }
-	sup {
-		top: -2px;
-		vertical-align: top;
-	}
-
-	sub {
-		top: 2px;
-		vertical-align: bottom;
-	}
-
-	small { font-size: 11px; }
-
-	del { text-decoration: line-through; }
-
-	ins { text-decoration: underline; }
-
-	code,
-	pre { line-height: 18px; }
-
-	var,
-	kbd,
-	samp,
-	code,
-	pre {
-		font: 12px/18px Consolas, "Andale Mono", Courier, "Courier New", monospace;
-	}
-
-	kbd { font-weight: bold; }
-
-	samp,
-	var { font-style: italic; }
-
-	pre {
-		white-space: pre;
-		overflow: auto;
-		padding: 0 10px;
-		clear: both;
-		line-height: 19px;
-		margin: 30px 0;
-	}
-
-	code { padding: 3px; }
-
-	ul,
-	ol,
-	dl { margin-left: 30px; }
-
-	table {
-		border: 1px solid #ccc;
-		border-width: 1px;
-		line-height: 18px;
-		margin: 0 0 22px 0;
-		text-align: left;
-		padding: 0 5px;
-	}
-
-	table .even { background: #ddd; }
-
-	caption { text-align: left; }
-
-	tr { border-bottom: 1px solid #ccc; }
-
-	th,
-	td {
-		padding: 5px;
-		vertical-align: middle;
-		text-align: center;
-	}
-
-	.entry-content { line-height: 18px; }
-
-	#overlay-inner a:hover,
-	.comment-body p a:hover,
-	.entry-content a:hover{ 
-		padding: 1px 3px; 
-		margin: -1px -3px; 
-	}
+//	#overlay-inner a:hover,
+//	.comment-body p a:hover,
+//	.entry-content a:hover{ 
+//		padding: 1px 3px; 
+//		margin: -1px -3px; 
+//	}
 
 	img.alignleft {
 		@include float(left);
@@ -537,47 +540,24 @@
 	.gallery-columns-8 { width: 12%; }
 	.gallery-columns-9 { width: 11%; }
 
-	input,
-	textarea,
-	button { border: none; }
-
-	input,
-	textarea { padding: 5px; }
-
-	button {
-		padding: 2px 10px;
-		cursor: pointer;
-	}
+//	input,
+//	textarea,
+//	button { border: none; }
+//
+//	input,
+//	textarea { padding: 5px; }
+//
+//	button {
+//		padding: 2px 10px;
+//		cursor: pointer;
+//	}
 
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	6.	Post Content Styles
 	/*-----------------------------------------------------------------------------------*/
 
-	#single-sidebar li {
-		float: none;
-		margin: 0;
-		line-height: 1.4;
-	}
-
-	#single-sidebar li.link {
-		margin-top: 10px;
-		line-height: 1.7;
-		font-weight: bold;
-	} 
-
-	#single-sidebar li a:hover { text-decoration: none !important; }
-
-	#single-sidebar li.terms li.cat-item { font-weight: bold; }
-	#single-sidebar li.terms li.cat-item ul.children li { padding-left: 10px;font-weight: normal; }
-	#single-sidebar li ul.children li a::before {
-		font-size: 1.4em;
-		margin-right: 5px;
-		color: Grey;
-		content: "➥";
-	}
-
-	.entry-meta a:hover { text-decoration: none !important; }
+@mixin gridlocked-author {
 
 	.author-bio {
 		padding: 20px;
@@ -597,10 +577,9 @@
 
 	.author-description { margin-left: 60px; }
 
-	.entry-content ul { list-style-type: disc; }
+} // END mixin author
 
-	.entry-content ol { list-style-type: decimal; }
-
+@mixin gridlocked-comments {
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	7.	Comments
@@ -723,7 +702,9 @@
 
 	.comment-body ol { list-style-type: decimal; }
 
+} // END mixin comments
 
+@mixin gridlocked-singlePage-pagination {
 	/*-----------------------------------------------------------------------------------*/
 	/*	8.	Pagination
 	/*-----------------------------------------------------------------------------------*/
@@ -772,10 +753,13 @@
 	.single-page-navigation .nav-next a .arrow { background-position: 0 -113px; }
 	.single-page-navigation .nav-next a:hover .arrow { background-position: -10px -113px; }
 
+} // END mixin gridlocked-singlePage-pagination 
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	9.	Footer Styles
 	/*-----------------------------------------------------------------------------------*/
 
+@mixin gridlocked-footer {
 	#footer {
 		position: relative;
 		z-index: 1000;
@@ -788,29 +772,14 @@
 
 	.credit { @include float(right); }
 
+} // END mixin footer
+
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	10.	Page Templates
 	/*-----------------------------------------------------------------------------------*/
 
-	/* Archive ------------------------------*/
-
-	.archive-lists .children { margin-bottom: 0; }
-
-	/* Page ------------------------------*/
-
-	.page .entry-title { 
-		padding: 20px;
-		margin: 0 0 20px 0;
-		font-size: 14px;
-	}
-
-	.page .entry-content { 
-		padding: 0 20px 30px 20px; 
-	}
-	.page .container-fluid .entry-content {
-		padding: 0 0 30px 0;
-	}
+@mixin gridlocked-contactform {
 
 	/* Contact ------------------------------*/
 
@@ -838,6 +807,8 @@
 	.contactform li button { @include float(left); }
 
 	label.error { color: red; }
+
+} // END mixin contact form
 
 	/* Home ------------------------------*/
 
@@ -879,35 +850,8 @@
 
 	#load-more-link a span#post-count img { margin: 1px 0 0 0; }
 
+@mixin gridlocked-portfolio {
 	/* Portfolio ------------------------------*/
-
-	.archive .hentry,
-	.page.page-template-template-portfolio-php .hentry {
-		overflow: hidden;
-		@include float(left);
-	}
-
-	.archive .hentry .arrow,
-	.page.page-template-template-portfolio-php .hentry .arrow {
-		top: 162px; // should be thumbnail height - height of arrow img
-		right: 15px;
-	}
-
-	/* so the custom image caption will show */
-	.slides_container { overflow: visible !important; }
-
-	.archive a .overlay .icon,
-	.page.page-template-template-portfolio-php a .overlay .icon {
-		left: 46%;
-	}
-
-	.archive .entry-title,
-	.page.page-template-template-portfolio-php .entry-title {
-		font-size: 12px;
-		border: none;
-		margin: 0;
-		padding: 10px 15px 7px 15px
-	}
 
 	.archive .entry-excerpt,
 	.page.page-template-template-portfolio-php .entry-excerpt {
@@ -916,11 +860,6 @@
 		line-height: 16px;
 	}
 	.entry-excerpt p { margin-bottom: 0; }
-
-	/*.hentry * { cursor: default; }*/
-	.hentry a, .hentry a * { cursor: pointer; }
-
-	
 
 	.link { margin: 15px 0 0 0; }
 
@@ -952,6 +891,9 @@
 		background-position: -12px -128px;
 	}
 
+} // END mixin portfolio
+
+@mixin gridlocked-standard-widgets {
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	11.	Widgets
@@ -987,12 +929,15 @@
 	.widget_search form,
 	.widget_search fieldset { margin: 0; }
 
+} // END mixin standard widgets
+
 	/* Calander Widget ------------------------------*/
 
 	.widget_calendar caption { margin-bottom: 5px; }
 
 	.widget_calendar table { width: 100% }
 
+@mixin gridlocked-twitter-widget {
 	/* Twitter Widget ------------------------------*/
 
 	.tz_tweet_widget ul {
@@ -1007,6 +952,9 @@
 
 	.tz_tweet_widget ul li:first-child { padding-top: 0; }
 
+} // END gridlocked-twitter-widget
+
+@mixin gridlocked-flickr-widget {
 	/* Flickr Widget ------------------------------*/
 
 	.tz_flickr_widget { 
@@ -1034,6 +982,8 @@
 	}
 
 	.flickr_badge_image img:hover { background: #4a4d4e; }
+
+} // END mixin flickr widget
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	12.	Shortcode Styles
@@ -1074,6 +1024,8 @@
 		margin-right: 0!important;
 		clear: right;
 	}
+
+@mixin gridlocked-buttons {
 
 	/* Buttons ------------------------------*/
 
@@ -1205,44 +1157,50 @@
 	a.button.large.black { background-image: url("/wp-content/themes/gridlocked/images/shortcodes/buttons/button_black_large.png"); }
 	a:hover.button.black { border: 1px solid #2c2c2c; }
 
-//	/* Alerts ------------------------------*/
-//
-//	.alert {
-//			padding: 12px 5% 12px 5%;
-//			font-family: Georgia, "Times New Roman", Times, serif;
-//			font-style: italic;
-//			text-align: center;
-//			margin: 0 0 20px 0;
-//	}
-//
-//	.alert.white {
-//			background: #fff;
-//			border-top: 1px solid #e4e4e4;
-//			border-bottom: 1px solid #e4e4e4;
-//			color: #444444;
-//	}
-//
-//	.alert.red {
-//			background: #FFD7D8;
-//			border-top: 1px solid #f9bac7;
-//			border-bottom: 1px solid #f9bac7;
-//			color: #d54c4c;
-//	}
-//
-//	.alert.orange {
-//			background: #FFCBA8;
-//			border-top: 1px solid #efd1b1;
-//			border-bottom: 1px solid #efd1b1;
-//			color: #cc6600;
-//	}
-//
-//	.alert.green {
-//			background: #D5FFCA;
-//			border-top: 1px solid #cadba7;
-//			border-bottom: 1px solid #cadba7;
-//			color: #5f8b33;
-//	}
+} // END mixin buttons
 
+@mixin gridlocked-alerts {
+	/* Alerts ------------------------------*/
+
+	.alert {
+			padding: 12px 5% 12px 5%;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-style: italic;
+			text-align: center;
+			margin: 0 0 20px 0;
+	}
+
+	.alert.white {
+			background: #fff;
+			border-top: 1px solid #e4e4e4;
+			border-bottom: 1px solid #e4e4e4;
+			color: #444444;
+	}
+
+	.alert.red {
+			background: #FFD7D8;
+			border-top: 1px solid #f9bac7;
+			border-bottom: 1px solid #f9bac7;
+			color: #d54c4c;
+	}
+
+	.alert.orange {
+			background: #FFCBA8;
+			border-top: 1px solid #efd1b1;
+			border-bottom: 1px solid #efd1b1;
+			color: #cc6600;
+	}
+
+	.alert.green {
+			background: #D5FFCA;
+			border-top: 1px solid #cadba7;
+			border-bottom: 1px solid #cadba7;
+			color: #5f8b33;
+	}
+
+} // END mixin alerts
+
+@mixin gridlocked-tabs {
 	/* Tabs ------------------------------*/
 
 	.ui-tabs .ui-tabs-hide {
@@ -1288,6 +1246,9 @@
 		padding: 10px;
 	}
 
+} // END mixin tabs
+
+@mixin gridlocked-toggle{
 	/* Toggle ------------------------------*/
 
 	.toggle {
@@ -1316,113 +1277,15 @@
 
 	.toggle .ui-state-active .ui-icon { background: url("/wp-content/themes/gridlocked/images/shortcodes/toggles/toggle-open.png") no-repeat }
 
+} // END mixin toggle
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	12.	Post Formats
 	/*-----------------------------------------------------------------------------------*/
 
 	/* All ------------------------------*/
 
-	.entry-content p { margin: 0 0 18px 0; }
-	.emptyResults p { margin: 0 0 9px 0;line-height: normal; }
-
-	.entry-meta a { display: block; }
-	.entry-meta li.terms a { display: inline; }
-
-	.published, .comment-count, .like-count { 
-		
-		&, a, .icon {
-			@include float(left); 
-		}
-	}
-
-	.published .icon {
-		//background-position: 0 -47px;
-		width: 14px;
-		height: 14px;
-		//margin: 3px 5px 0 0;
-	}
-	.published:hover { 
-	//color: #66696D; 
-	}
-	//.published a:hover .icon, .published:hover .icon { background-position: -14px -47px; }
-
-	.comment-count { display: none; }
-
-	.comment-count .icon {
-		//background-position: 0 -7px;
-		width: 15px;
-		height: 11px;
-		//margin: 4px 5px 0 0;
-	}
-
-	//.comment-count a:hover .icon { background-position: -16px -7px; }
-
-	.like-count .icon {
-		//background-position: 0 -19px;
-		width: 13px;
-		height: 11px;
-		//margin: 4px 5px 0 0;
-	}
-
-//	.like-count a:hover .icon,
-//	.like-count a.active .icon { background-position: -15px -19px; }
-
-	.like-count,
-	.edit-post,
-	.comment-count {
-		@include float(right);
-		//margin: 0 0 0 10px;
-	}
-
-	.arrow {
-		background-position: 0 -141px;
-		width: 22px; 
-		height: 11px;
-		position: absolute;
-		top: 0;
-		z-index: 30; 
-	}
-	.hentry.hover .arrow { background-position: 0 -164px; }
-
-	a .overlay {
-		position: absolute;
-		z-index: 20;
-		width: 100%;
-		height: 100%;
-		display: none;
-		left: 0;
-		cursor: pointer;
-	}
-
-
-	.js-disabled a:hover .overlay {
-		display: block;
-	}
-
-	a .overlay .icon {
-		position: absolute;
-		background-position: 0 -62px;
-		width: 22px;
-		height: 22px;
-		display: block;
-		top: 48%;
-		left: 48%;
-		z-index: 40;
-	}
-
-	.post-thumb a {
-		display: block;
-		position: relative;
-		/* so that even an image that is not 170px being used as a thumbnail will not throw off the grid view */
-		min-height: 170px;
-	}
-	.post-thumb a,
-	.post-thumb a img { 
-		@include float(left);
-		display: block;
-		width: auto;
-	}
-
+@mixin gridlocked-format-aside {
 
 	/* Aside ------------------------------*/
 
@@ -1435,6 +1298,10 @@
 		padding: 20px 15px 0 15px;
 		width: 510px;
 	}
+
+} // END mixin format-aside
+
+@mixin gridlocked-formats-gallery {
 
 	/* Gallery ------------------------------*/
 
@@ -1505,7 +1372,11 @@
 		z-index: 500;
 	}
 
+} // END mixin gallery
+
 	/* Link ------------------------------*/
+
+@mixin gridlocked-formats-link {
 
 	.format-link .entry-title { padding: 20px 15px; }
 
@@ -1539,7 +1410,11 @@
 
 	.format-link .entry-meta { padding: 0 15px 20px 15px; }
 
+} // END mixin format-link
+
 	/* Image ------------------------------*/
+
+@mixin gridlocked-formats-image {
 
 	.format-image .entry-title { padding: 20px 15px 10px 15px; }
 
@@ -1562,8 +1437,11 @@
 
 	.format-image .arrow { margin: -14px 17px 0 0; }
 
+} // END mixin format-image
+
 	/* Quote ------------------------------*/
 
+@mixin gridlocked-formats-quote {
 	.format-quote .quote-wrap { padding: 20px 15px; }
 
 	.format-quote blockquote {
@@ -1597,8 +1475,11 @@
 
 	.format-quote .entry-meta { padding: 0 15px 20px 15px; }
 
+} // END mixin format-quote
+
 	/* Audio ------------------------------*/
 
+@mixin gridlocked-formats-audio {
 	.format-audio .entry-title { padding: 20px 15px 10px 15px; }
 
 	.format-audio .entry-content { 
@@ -1610,6 +1491,9 @@
 
 	.format-audio .entry-meta { padding: 0 15px 20px 15px; }
 
+} // END mixin formats-audio
+
+@mixin gridlocked-jplayer{
 	/* Video ------------------------------*/
 
 	.format-video .entry-title { padding: 20px 15px 10px 15px; }
@@ -1828,8 +1712,11 @@
 
 	.jp-jplayer { background-color: #292a2b; }
 
+} // END mixin jplayer
 
 	/* Standard ------------------------------*/
+
+@mixin gridlocked-formats-standard {
 
 	.format-standard .entry-title { 
 		padding: 10px 15px 7px 15px;
@@ -1843,431 +1730,9 @@
 		padding: 5px 15px;
 	}
 
-	#new-posts { display: none; }
+} // END mixin formats-standard
 
-
-	#fancybox-close {
-		width: 21px !important;
-		height: 21px !important;
-		top: 10px !important;
-		right: 8px !important;
-		background: image-url("lightbox/lightbox_cross.gif") no-repeat left top !important;
-	}
-
-	.iphone #content {
-			padding-bottom: 0 !important;
-	}
-
-	.entry-title { min-height: 34px !important; }
-
-	
-@mixin wp_gridlocked_light() {
-
-	/*==========================================================================================
-	
-	Light CSS File
-	This file contains styles related to the colour scheme of the theme
-
-	==========================================================================================*/
-
-	/* aaronl: custom gray leather bg */
-	//body { background: #eeeeee image-url('gridlocked/light/bg_pattern_gray_leather_subtler.png'); }
-//
-//	#content p, #content li, #content blockquote, #content em, #content i { text-shadow: 1px 0 0 #f5f5f5; }
-//	#content h1 { text-shadow: 1px 1px 0 white; }
-//	#content h2, #content h3, #content h4, #content h5, #content h6, #content strong, #content a { text-shadow: 1px 0 0 white; }
-//
-//	pre { background: image-url("gridlocked/light/pre_bg.png"); }
-//
-//	blockquote,
-//	#comments,
-//	#respond-title,
-//	#footer a,
-//	#load-more-link a span,
-//	#load-more-link a:hover span { color: #66696d; }
-//
-//	#comments span,
-//	#respond-title span {
-//		color: #81858a;
-//	}
-//
-//	#footer a {
-//		color: #66696d;
-//	}
-//
-//	#commentform span,
-//	#single-sidebar a {
-//		color: #575757;
-//	}
-//	.entry-meta a,
-//	.comment-meta a {
-//		color: #b3b7bc;
-//	}
-//
-//	.comment-meta a:hover,
-//	.entry-meta a:hover {
-//		color: #66696d;
-//	}
-//
-//	#submit,
-//	input,
-//	textarea,
-//	.tabs ul.nav li a,
-//	body,
-//	a, .caption { color: #686a6c;}
-//
-//	.single a .caption, .single a.caption, .single #single-sidebar .caption a { color: #08f; }
-//	.single #single-sidebar .caption a:hover, a:hover { color: #0099ff !important; }
-//	.single a:hover .caption, .single a.caption:hover, .single #single-sidebar .caption a:hover { text-decoration: underline !important; }
-
-	
-
-//	#footer a:hover,
-//	.tabs ul.nav li.ui-tabs-selected a,
-//	.tabs ul.nav li a:hover,
-//	#submit:hover,
-//	#single-sidebar a:hover,
-//	#footer a:hover,
-//	#load-more-link a:hover,
-//	a:hover { color: #000; }
-//
-//	.comment-body p a,
-//	.comment-author a:hover,
-//	.entry-content a,
-//	.entry-title a:hover {
-//		color: #3a3c3d;
-//	}
-//
-//	.widget-title { color: #7e7e7e; }
-//
-//	.single h1 { color: black; }
-//
-//	#sidebar {
-//		#logo {
-//			$sidebarLogoHeight: 42px;
-//			h1 {
-//				color: #555;
-//				height: $sidebarLogoHeight;
-//				padding: ($sidebarLogoHeight - 10) 0 0 0;
-//				// background image is defined dynamically inline in sidebar.php
-//				background-repeat: no-repeat;
-//				background-position: left top;
-//			}
-//		}
-//	}
-
-//	.entry-content h2,
-//	.entry-content h3,
-//	.entry-content h4,
-//	.entry-content h5,
-//	.entry-content h6,
-//	.page.page-template-template-portfolio-php .entry-title,
-//	.entry-title,
-//	.entry-title a { color: $gray4; }
-
-//	.format-link .entry-title a,
-//	.format-quote blockquote {
-//		color: #f1f1f1;
-//	}
-//
-//	.contactform input,
-//	.contactform textarea { color: #96999D; }
-//
-//	.format-link .entry-title a:hover { color: #fff; }
-//
-//	.comment-body,
-//	input,
-//	textarea,
-//	#load-more-link a,
-//	.hentry {
-//		background: #f2f2f2;
-//		background: rgba(242,242,242,0.5);
-//	}
-	
-
-//	/*.hentry.hover { background-color: white; } */
-//	#masonry-portfolio .hentry {
-//		-moz-box-shadow: 0 0 6px rgba(0,0,0,0.2) inset;
-//		-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.2) inset;
-//		box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
-//		
-//	}
-//	#masonry-portfolio .hentry .entry-meta { border-top: 1px solid rgba(100,100,100,0.1); }
-//	/*.masoned .hentry.hover {
-//		-moz-box-shadow: 0 0 6px rgba(0,0,0,0.1);
-//		-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.1);
-//		box-shadow: 0 0 6px rgba(0,0,0,0.1);
-//		border: 1px solid #fcfcfc;	
-//	}*/
-
-
-	
-
-//	.comment-body p, #load-more-link a, .hentry, .masonry-brick { color: $grayLight; }
-
-	.format-quote .quote-wrap .icon{ background: url(/public/images/gridlocked/light/quote.png) no-repeat; }
-
-
-//	.portfolio-link a .icon,
-//	.link a span.icon,
-//	a .overlay .icon,
-//	.format-link .entry-title .icon,
-//	.arrow, .folio_link .icon,
-//	.format-gallery  ul.pagination li a,
-//	.single-portfolio  ul.pagination li a,
-//	.like-count .icon,
-//	.comment-count .icon,
-//	.published .icon { background-image: url(/public/images/gridlocked/light/sprite2.png);background-repeat: no-repeat; }
-//
-//	#resume .folio_link .icon { width: 8px;height: 8px;margin-right: 4px;position: relative;top: -1px; display: inline-block; }
-//	#resume .folio_link .icon.right { margin-right: 0;margin-left: 4px; }
-//	#resume .folio_link .icon { background-position: 0 -119px; }
-//	#resume .folio_link:hover .icon { background-position: -9px -119px; }
-//
-//
-//	.arrow.noslider { background-image: none !important; }
-
-//	#commentform small,
-//	#single-sidebar .like-count a.active,
-//	#single-sidebar .like-count a:hover,
-//	.like-count a.active,
-//	.like-count a:hover { color: #f56559; }
-//
-//	.contactform #submit span.icon,
-//	.format-quote .quote-wrap,
-//	.format-link .entry-title { background-color: #2d2e2f; }
-//
-//	.toggle h4 { background-color: #f1f1f1; border-bottom: 1px solid #fff; }
-//
-//	.contactform input,
-//	.contactform textarea {
-//		background-color: #efefef;
-//	}
-//
-//	.tabs .tab,
-//	.tabs ul.nav li.ui-tabs-selected a {
-//		background: #f1f1f1;
-//		color: #96999D;
-//	}
-//
-//	.toggle-inner { background: #fff; }
-//
-//	.tabs ul.nav li a { background-color: #fff; }
-//
-//	.comment-author,
-//	.comment-author a { color: #66696d; }
-//
-//	.comment .avatar { border-right: 1px solid #dddddd; }
-//
-//	blockquote,
-//	.format-link .entry-title a { border-left: 1px solid #4d4f51; }
-
-//	.overlay { background: url(/public/images/gridlocked/light/overlay.png) repeat; }
-
-//	/*.format-standard .entry-title,
-//	.page .entry-title { border-bottom: 1px solid #f3f3f3; }*/
-
-	
-
-//	.single-page-navigation a,
-//	#submit span.icon,
-//	#back-to-top .icon {
-//		background-color: #66696d;
-//	}
-//
-//	.contactform #submit:hover span.icon, .comment-body p a:hover, #submit:hover span.icon, .single-page-navigation a:hover, #back-to-top.hover .icon, .entry-content a:hover, #overlay-inner a:hover { background-color: #ffedac; color: #3a3c3d; }
-//
-//	/* custom "inset box" style links and effects (requires .js effects in jquery.custom.js */
-//	#back-to-top.hover, 
-//	.insetBox a:hover,
-//	.insetBox .hover {
-//		-webkit-box-shadow: inset -1px 1px 1px rgba(70, 70, 70, 0.20); 
-//			-moz-box-shadow: inset -1px 1px 1px rgba(70, 70, 70, 0.20); 
-//				box-shadow: inset -1px 1px 1px rgba(70, 70, 70, 0.20); 
-//	}
-//
-//	.current-cat>a, .current-cat-parent>a, .current-cat-grandparent>a,
-//	.current-page>a,
-//	.current-menu-item>a { background-color: #ffedac; color: #3a3c3d; }
-//
-//	/* firefox 5 doesn't like my animated bg color */
-//	.gecko #back-to-top.hover, 
-//	.gecko .insetBox a:hover,
-//	.gecko .insetBox .hover {
-//		background-image: image-url('gridlocked/light/rgba_black_10pct.png');
-//	}
-//	/* ie just sucks all around. */
-//	#back-to-top.ieHover, 
-//	.insetBox a:hover {
-//		background-color: #ced2d3; 
-//	}
-//	.ie #back-to-top { background-color: Transparent; }
-//	.gecko .insetBox .current-menu-item a:hover, 
-//	.gecko .insetBox .current-cat a:hover,
-//	.ie .insetBox #back-to-top.ieHover,
-//	.ie .insetBox a.ieHover, .ie .insetBox .ieHover {
-//		background-image: none !important;
-//	}
-//	.insetBox .current-menu-item a:hover, 
-//	.insetBox .current-cat a:hover { background-color: #ffedac; }
-//	#back-to-top.hover, .insetBox.link.hover *, 
-//	.insetBox a:hover,
-//	.insetBox .hover {
-//		text-decoration: none !important; 
-//		color: #333 !important;   
-//	}
-//
-//	.black { color: black !important; }
-
-} // end wp_gridlocked_light
-
-@mixin wp_gridlocked_dark() {
-	/*==========================================================================================
-	
-	Dark CSS File
-	This file contains styles related to the colour scheme of the theme
-
-	==========================================================================================*/
-
-	body { background: url(../images/dark/body_bg.gif) repeat fixed; }
-
-	pre { background: url(../images/dark/pre_bg.png); }
-
-	blockquote,
-	.comment-meta,
-	.comment-meta a,
-	#commentform span,
-	#comments span,
-	#respond-title span,
-	.entry-meta a,
-	#footer a,
-	#load-more-link a span,
-	#load-more-link a:hover span { color: #81858a; }
-
-	#submit,
-	input,
-	textarea,
-	.tabs ul.nav li a,
-	#single-sidebar a,
-	#tagline,
-	body,
-	a { color: #b3b7bc;}
-
-	.tabs ul.nav li.ui-tabs-selected a,
-	.tabs ul.nav li a:hover,
-	.comment-body p a,
-	.comment-author a:hover,
-	#submit:hover,
-	#single-sidebar a:hover,
-	#footer a:hover,
-	#load-more-link a:hover,
-	.entry-title a:hover,
-	.entry-content a,
-	a:hover { color: #f0f3f7; }
-
-	.widget-title { color: #8d9094; }
-
-	.entry-content h1,
-	.entry-content h2,
-	.entry-content h3,
-	.entry-content h4,
-	.entry-content h5,
-	.entry-content h6,
-	.page.page-template-template-portfolio-php .entry-title,
-	.format-quote blockquote,
-	.entry-title,
-	.entry-title a { color: #d2d6db; }
-
-	.contactform #submit:hover span.icon,
-	.comment-body p a:hover,
-	#submit:hover span.icon,
-	.single-page-navigation a:hover,
-	#back-to-top a:hover .icon,
-	.entry-content a:hover,
-	#overlay-inner a:hover,
-	.current-cat a,
-	.current-page a,
-	.current-menu-item a { background-color: #feea36; }
-
-	#commentform small { color: #feea36; }
-
-	.comment-body p a:hover,
-	.entry-content a:hover,
-	#overlay-inner a:hover,
-	.current-cat a,
-	.current-cat a:hover,
-	.current-page a,
-	.current-page a:hover,
-	.current-menu-item a,
-	.current-menu-item a:hover { color: #3a3c3d; }
-
-
-	.comment-body,
-	#submit span.icon,
-	input,
-	textarea,
-	.single-page-navigation a,
-	#back-to-top a .icon,
-	#load-more-link a,
-	.hentry { background-color: #3a3c3d; }
-
-	.comment-body p,
-	#load-more-link a,
-	.hentry { color: #a8acb1; }
-
-	.format-quote .quote-wrap .icon{ background: url(../images/dark/quote.png) no-repeat; }
-
-
-	#single-sidebar .portfolio-link a .icon,
-	#single-sidebar .link a span.icon,
-	a .overlay .icon,
-	.format-link .entry-title .icon,
-	.arrow,
-	.format-gallery  ul.pagination li a,
-	.single-portfolio  ul.pagination li a,
-	.like-count .icon,
-	.comment-count .icon,
-	.published .icon { background-image: url(../images/dark/sprite.png); }
-
-	#single-sidebar .like-count a.active,
-	#single-sidebar .like-count a:hover,
-	.like-count a.active,
-	.like-count a:hover { color: #f56559; }
-
-	.toggle h4,
-	.toggle-inner,
-	.tabs .tab,
-	.tabs ul.nav li.ui-tabs-selected a,
-	.contactform #submit span.icon,
-	.contactform input,
-	.contactform textarea,
-	.format-quote .quote-wrap,
-	.format-link .entry-title { background-color: #2d2e2f; }
-
-	.tabs ul.nav li a {
-		background-color: #313233;
-	}
-
-	.comment-author,
-	.comment-author a { color: #d2d6db; }
-
-	.comment .avatar { border-right: 1px solid #4d4f51; }
-
-	blockquote,
-	.format-link .entry-title a { border-left: 1px solid #4d4f51; }
-
-	.overlay { background: url(../images/dark/overlay.png) repeat; }
-
-	.toggle h4,
-	.format-standard .entry-title,
-	.page .entry-title { border-bottom: 1px solid #444648; }
-
-	#bg-line { background: url(../images/dark/line.png) no-repeat; }
-
-	.line { border-bottom: 1px solid #66696d; }
-} // end wp_gridlocked_dark
-
-@mixin gridlocked_clearfix() {
+@mixin gridlocked-clearfix {
 	// From gridlocked theme
 	.clear { clear: both; display: block;	font-size: 0;	height: 0; line-height: 0; width:100%; }
 	.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } 

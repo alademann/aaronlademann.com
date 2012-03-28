@@ -23,7 +23,8 @@
 /*------------------------ THEME ------------------------*/
 @import "partials/theme-wp-gridlocked"; 
 //@include wp_gridlocked_light();
-@include gridlocked_clearfix();
+@include gridlocked-clearfix;
+@include gridlocked-comments;
 // TODO - get rid of these or combine them.
 @import "partials/theme-aa-template";
 @include aa_light;
