@@ -113,7 +113,7 @@
 	}
 
 	#fancybox-error {
-		color: #444;
+		color: $gray4;
 		font: normal 12px/20px Arial;
 		padding: 14px;
 		margin: 0;
@@ -269,7 +269,7 @@
 	.fancybox-title-inside {
 		padding-bottom: 10px;
 		text-align: center;
-		color: #333;
+		color: $grayDark;
 		background: #fff;
 		position: relative;
 	}

@@ -1,6 +1,6 @@
 // WELLS 
 // -----
-$wellEdgeHighlight: rgba(255, 255, 255, 0.7);
+$wellEdgeHighlight: rgba($white, 0.7);
 $aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
 
 .well {
@@ -27,7 +27,7 @@ $aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
 
 	blockquote {
     border-color: #ddd;
-    border-color: rgba(0,0,0,.15);
+    border-color: rgba($black,.15);
   }
 } // END .well
 

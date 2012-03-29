@@ -27,15 +27,15 @@
   width: 280px;
   overflow: hidden;
   background: $black; // has to be full background declaration for IE fallback
-  background: rgba(0,0,0,.8);
+  background: rgba($black,.8);
   @include border-radius(6px);
-  @include box-shadow(0 3px 7px rgba(0,0,0,0.3));
+  @include box-shadow(0 3px 7px rgba($black,0.3));
 }
 .popover-title {
   padding: 9px 15px;
   line-height: 1;
   background-color: #f5f5f5;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid $grayLighter;
   @include border-radius(3px 3px 0 0);
 }
 .popover-content {

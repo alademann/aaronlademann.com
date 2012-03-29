@@ -40,13 +40,6 @@ $textColor:             $grayDark !default;
 $textEmphasis:					darken($textColor, 30) !important;
 
 // Typography
-$baseFontSansSerif:			("Helvetica Neue", Helvetica, Arial, sans-serif) !default;
-$baseFontSerif:					(Georgia, "Times New Roman", Times, serif) !default;
-$baseFontMonospace:			(Consolas, Menlo, Monaco, "Courier New", monospace) !default; 
-$baseFontCursive:				("Apple Chancery", "Zapf Chancery", "Monotype Corsiva", cursive) !default;
-
-// SET OUR TEMPLATE BASE
-
 $baseFontSizeInt:				13 !default;
 $goldenRule:						1.385;
 
@@ -134,7 +127,8 @@ $fluidGridGutterWidth:    2.837102564% !default;
 // MIGRATED FROM old _vars.scss
 // TODO: integrate and organize
 
-$aa_mastHeight: 40px;
+$aa_mastHeightInt: 40;
+$aa_mastHeight: $aa_mastHeightInt+0px;
 $aa_footHeight: 0;
 // portfolio
 $primaryHPad: 40px;
@@ -148,8 +142,7 @@ $articleHPad: 15px;
 $articleVPad: 40px;
 
 // headings
-$aa_h1_fontSize: 2em;
-$aa_h2_fontSize: 1.9em; 
+$aa_h1_fontSize: pxtoem($baseH1Size);
 
 // media sizes
 $aa_media_widthMax:			1920px;
@@ -180,8 +173,8 @@ $wellCornerRadius: 4px;
 // COLORS
 $aa_wellBgColor: rgba(120,120,120,.03);
 $aa_wellInsetShadowColor: rgba(120,120,120,.3);
-$chiselDark: rgba(0,0,0,.1);
-$chiselLight: rgba(255,255,255,.4);
+$chiselDark: rgba($black,.1);
+$chiselLight: rgba($white,.4);
 $body_bgcolor: #eeeeee;
 $body_bgImg: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png");
 

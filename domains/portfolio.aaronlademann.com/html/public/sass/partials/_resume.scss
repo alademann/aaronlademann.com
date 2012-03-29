@@ -73,10 +73,10 @@
 					@include rgba_bg(#9b9b9b, 0.1);
 					@include float(right);
 					.rgba & {
-						@include box-shadow(0 0 4px 0 rgba(0,0,0,0.2) inset);
+						@include box-shadow(0 0 4px 0 rgba($black,0.2) inset);
 					} 
 					.no-rgba & {
-						@include box-shadow(0 0 4px 0 ie-hex-str(rgba(0,0,0,0.2)) inset);
+						@include box-shadow(0 0 4px 0 ie-hex-str(rgba($black,0.2)) inset);
 					}
 					
 					a {
@@ -121,7 +121,7 @@
 			}
 		}
 		#ft {
-			border-top: 1px solid rgba(255,255,255,0.8);
+			border-top: 1px solid rgba($white,0.8);
 			font-size: 92%;
 			padding: 1em 0pt 5em;
 			text-align: center;

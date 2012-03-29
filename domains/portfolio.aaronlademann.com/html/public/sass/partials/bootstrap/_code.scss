@@ -5,7 +5,7 @@
 // Inline and block code styles
 code,
 pre {
-  padding: 0 pxtoem(3) pxtoem(2);
+  padding: 0 3px 2px;
   @include font-monospace( ($baseFontSize - 1), $baseLineHeight, normal );
   color: $grayDark;
   @include border-radius(3px);
@@ -13,7 +13,7 @@ pre {
 
 // Inline code
 code {
-  padding: pxtoem(3) pxtoem(4);
+  padding: 3px 4px;
   color: $hotPink;
   background-color: $almostWhite;
   border: 1px solid darken($grayLighter,5);
@@ -28,7 +28,7 @@ pre {
   line-height: $baseLineHeight;
   background-color: #f5f5f5;
   border: 1px solid #ccc; // fallback for IE7-8
-  border: 1px solid rgba(0,0,0,.15);
+  border: 1px solid rgba($black,.15);
   @include border-radius(4px);
   white-space: pre;
   white-space: pre-wrap;

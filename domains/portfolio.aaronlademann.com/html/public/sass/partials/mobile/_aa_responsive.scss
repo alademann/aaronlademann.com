@@ -6,7 +6,7 @@ body > * {
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
-	&[class^="span"], &[class*=row-fluid] {
+	&[class^="span"], &[class*=row-fluid], &.masonry {
 		// this is another grid elment, no padding
 		padding: 0;
 		width: 100%;
@@ -38,6 +38,7 @@ body > * {
 	.brand {
 		line-height: 36px;
 		height: 40px;
+
 	}
 } // END .navbar-fixed-top
 
@@ -69,11 +70,11 @@ body > * {
 
 		h1 {
 				
-			font-size: $aa_h1_fontSize;
+			font-size: pxtoem($baseH1Size - 4);
 			font-weight: bold;
 			letter-spacing: -.1ex;
-			line-height: 1.1;
-			margin-bottom: ($aa_h1_fontSize / 9);
+			line-height: 1.1em;
+			//margin-bottom: ($aa_h1_fontSize / 9);
 		} // END #primary header h1
 
 	} // END #primary header
@@ -132,12 +133,18 @@ body > * {
 		@extend .trans;
 	}
 	.masonry-brick {
+
 		margin: 0 0 $masonryVPad $masonryHPad;
 		float: left;
 		position: absolute;
 		top: 100%; // so it animates from the bottom;
 		@include transition-property("left, right, top");
 		
+		.post-thumb {
+			padding: 0;
+			margin: 0;
+		}
+
 		.post-thumb a {
 			display: block;
 			position: relative;
@@ -182,8 +189,8 @@ body > * {
 		footer, .footer {
 			bottom: 0;
 			left: 0;
-			width: 96.4%;
-			padding: 0 2%;
+			width: 100%;
+			padding: 0;
 			overflow: hidden;
 		}
 
@@ -326,7 +333,7 @@ body > * {
 			}
 				
 			.slideStage {
-				$convertedEmPadding: emtopx($stagePadNum,$baseFontSize);
+				$convertedEmPadding: emtopx($stagePadNum);
 				position: relative;
 				padding-left: $paginationWidth + ($paginationHpad * 2) + $convertedEmPadding; // move it over the "total" width created by a 60px width and side padding
 
@@ -414,7 +421,7 @@ body > * {
 		header, .header {
 					
 			h1, .h1 {
-				font-size: $aa_h1_fontSize;
+				//font-size: $aa_h1_fontSize;
 				font-weight: bold;
 				letter-spacing: -.1ex;
 				line-height: 1.1;

@@ -1,9 +1,14 @@
 ﻿/*---------------- aaronlademann.com TEMPLATE ----------------*/ 
+$helvFlavor: ex;
+$helvWeight: 600;
+@include helvetica_fonts($helvFlavor, $helvWeight); // helvetica extended medium
+
 .navbar-fixed-top .brand {
-	padding: 0 ($gridGutterWidth * 1.5) 0 0;
-	font-size: 1.538em;
-	font-family: "Helv63";
+	
+	@include helveticaNeue($helvFlavor, $helvWeight);
+	font-size: pxtoem(20);
 	text-transform: lowercase;
+	padding: 0 ($gridGutterWidth * 1.5) 0 0;
 	@include transition-duration(.2s);
 	@extend .tt_linear;
 	@extend .tp_color;
@@ -14,6 +19,8 @@
 	}
 
 }
+
+.navbar-fixed-top h1 .brand { font-size: pxtoem(20,$baseH1Size); }
 
 .entry-meta, .entry-header {
 	// likes, published, comments, edit, etc...
@@ -38,12 +45,12 @@
 		figcaption, .figcaption {
 			width: 100%;
 			@include min-height(51px); // leaves 1px gap before footer creating "chisel" effect
-			padding-bottom: 3px; // to fill up the space given
+			padding-bottom: 5px; // to fill up the space given
 
 			h2, .h2, .entry-title {
 				line-height: normal;
 				font-weight: bold;
-				font-size: 1.077em;
+				font-size: pxtoem(14);
 				border: none;
 				margin: 0;
 				padding: ($brickCaptionHPad - 5) $brickCaptionHPad ($brickCaptionHPad - 8) $brickCaptionHPad;
@@ -61,7 +68,7 @@
 			border-top-width: 1px;
 			
 			.entry-meta {
-				font-size: 0.846em;
+				font-size: pxtoem(11);
 				padding: ($brickCaptionHPad - 10) $brickCaptionHPad;
 			}
 		} // END .masonry-brick footer
@@ -77,7 +84,7 @@
 	position: fixed;
 	bottom: 0;
 	height: $aa_footHeight;
-	font-size: 0.846em; // TODO: convert to ems
+	font-size: 0.846em;
 
 	#copyright {
 		color: lighten($gray, 50%);
@@ -253,7 +260,7 @@ a[rel="external"], a.external, a[target="blank"],
 		&:hover {
 			background-position: left bottom;
 			color: #ddd !important;
-			//text-shadow: 0 3px 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.525);
+			//text-shadow: 0 3px 0 rgba($black, 0.5), 0 0 30px rgba($black, 0.525);
 			@include text-shadow(
 				rgba(black, 0.5) 0 3px 0, 
 				rgba(black, 0.525) 0 0 30px
@@ -277,11 +284,11 @@ a[rel="external"], a.external, a[target="blank"],
 		.masonry-brick {
 			$entryMeta_border: rgba(100, 100, 100, 0.1);
 			// create "well" effect
-			$inset_shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4) inset;
-			$edge_shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+			$inset_shadow: 0 1px 7px 0 rgba($black, 0.4) inset;
+			$edge_shadow: 0 2px 0 rgba($white, 0.7);
 
-			$inset_shadow_hover: 0 1px 3px 0 rgba(0, 0, 0, 0.3) inset;
-			$edge_shadow_hover: 0 2px 0 rgba(255, 255, 255, 1.0); 
+			$inset_shadow_hover: 0 1px 3px 0 rgba($black, 0.3) inset;
+			$edge_shadow_hover: 0 2px 0 rgba($white, 1.0); 
 
 			//border-color: transparent;
 
@@ -297,13 +304,13 @@ a[rel="external"], a.external, a[target="blank"],
 					@include rgba_bg(#ffffff, 0.35);
 				}
 				// caption area below figure
-				figcaption, .figcaption, .post-thumb, footer, .footer {
+				figcaption, .figcaption, footer, .footer {
 					@include rgba_bg(#000000, 0.05);
 				}
 
 				img {
 					border-bottom-color: lighten($entryMeta_border,50%);
-					@include box-shadow(0 3px 6px 0 rgba(0, 0, 0, 0.15));
+					@include box-shadow(0 3px 6px 0 rgba($black, 0.15));
 				}
 				figcaption, .figcaption {
 					
@@ -399,9 +406,9 @@ a[rel="external"], a.external, a[target="blank"],
 
 	.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
 		@include single-box-shadow();
-		-webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.50);
-			 -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
-    			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.50);
+		-webkit-box-shadow: 1px 1px rgba($black, 0.50);
+			 -moz-box-shadow: 0 1px 1px rgba($black, 0.50);
+    			box-shadow: 0 1px 1px rgba($black, 0.50);
 	}
 
 
