@@ -6,7 +6,7 @@ body > * {
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
-	&[class^="span"], &[class*=row-fluid], &.masonry {
+	&[class^="span"], &.masonry {
 		// this is another grid elment, no padding
 		padding: 0;
 		width: 100%;

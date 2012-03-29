@@ -8,6 +8,17 @@
 
 @media screen {
 
+.page-template-template-resume-php #container {
+	// don't want the resume #container to be 100% width even on a really large screen... need to keep readability in mind.
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	.lt-ie7 & {
+		width: 980px;
+		text-align: center;
+	}
+}
+
 	#resume {
 		
 		// RESET & BASE GLOBALS
@@ -53,10 +64,11 @@
 					text-indent: -999em;
 				}
 			}
-			#headline {
+
+			#headline, .contact-info {
 				letter-spacing: 1px;
 			}
-			h2, h3, h4, .h2, .h3, .h4 { text-transform: uppercase; }
+			
 
 			.contact-info { 
 				margin-top: 0;

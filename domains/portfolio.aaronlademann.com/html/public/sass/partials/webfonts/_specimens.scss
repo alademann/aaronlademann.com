@@ -35,6 +35,8 @@ $webfont_global_dir: "/public/fonts/";
 	html.domloaded & {
 		visibility: visible;
 		font-family: $font_name, $fallback_family;
+		font-weight: normal;
+		font-style: normal;
 	}
 
 
