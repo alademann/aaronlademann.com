@@ -1,9 +1,0 @@
-/* IE ONLY */
-/* line 2, ../sass/ie.scss */
-#primary {
-  /* adaptive images - IE7 and below */
-}
-/* line 5, ../sass/ie.scss */
-#primary img, #primary object, #primary .wp-caption {
-  *width: 100%;
-}

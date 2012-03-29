@@ -5,6 +5,7 @@
 *.crc
 *.version
 *.DS_Store
+domains/portfolio.aaronlademann.com/html/public/css/*
 domains/aaronlademann.com/_ReSharper.aaronlademann.com/*
 domains/portfolio.aaronlademann.com/html/portfolio-media/*
 domains/aaronlademann.com/aaronlademann.com.suo
