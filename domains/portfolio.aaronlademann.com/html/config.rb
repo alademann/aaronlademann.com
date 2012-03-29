@@ -12,7 +12,7 @@ javascripts_dir = "public/js"
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 # use $ compass compile -e production --force to produce compressed css files for production.
-	output_style = (environment == :production) ? :compressed : :expanded	
+	output_style = (environment == :production) ? :compact : :expanded	
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
  relative_assets = true
@@ -36,10 +36,9 @@ module Sass::Script::Functions
 
 	def ie_hex_str(color)
     assert_type color, :Color
-    alpha = (color.alpha * 255).round
-    alphastr = alpha.to_s(16).rjust(2, '0')
-    Sass::Script::String.new("##{alphastr}#{color.send(:hex_str)[1..-1]}".upcase)
-  end      
+    alpha = (color.alpha * 255).round.to_s(16).rjust(2, '0')
+		Sass::Script::String.new("##{alpha}#{color.send(:hex_str)[1..-1]}".upcase)	
+	end     
   declare :ie_hex_str, [:color]
 
 end

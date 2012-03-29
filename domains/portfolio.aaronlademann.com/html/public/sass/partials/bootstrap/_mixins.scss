@@ -77,6 +77,24 @@
 @mixin square($size: 5px) {
   @include size($size, $size);
 }
+@mixin headingSize-generate($size, $lineheight, $increment){
+	
+	$headingBasis: $size;
+
+	@for $i from 1 through 6 {
+		h#{$i} { 
+			font-size: pxtoem($headingBasis); 
+			line-height: pxtoem($headingBasis * $lineheight); 
+			small {
+				font-size: pxtoem($headingBasis - ($headingBasis / $increment));
+			}
+		}
+		.h#{$i} { @extend h#{$i}; }
+		// next time it loops through, heading basis will be the next smallest.
+		$headingBasis: $headingBasis - ($headingBasis / $increment);
+	}
+
+} // END @mixin headingSize-generate
 
 // Placeholder text
 // -------------------------
@@ -102,27 +120,104 @@
 
 // FONTS
 // --------------------------------------------------
+@mixin aa_portfolio_webfonts {
+	
+	// LOCAL WEBFONTS
+	// load these global webfonts no matter what so they're ready when called as mixin
+	@include webfont_src("chunkfive/Chunkfive-webfont", ChunkFiveWeb);
+	@include webfont_src("droidserif/DroidSerif-Italic-webfont", "DroidSerifItalic");
+	@include webfont_src("droidsans/DroidSans", "DroidSans");
+	@include webfont_src("droidsans/DroidSansBold", "DroidSansBold");
+
+	// optional webfonts (uncomment to include)
+	//@include webfont_src("droidserif/DroidSerif-Regular-webfont", "DroidSerifRegular");
+	//@include webfont_src("droidserif/DroidSerif-Bold-webfont", "DroidSerifBold"); 
+	//@include webfont_src("droidserif/DroidSerif-BoldItalic-webfont", "DroidSerifBoldItalic");
+	//@include webfont_src("crete-round/CreteRound-Regular", "CreteRound");
+	//@include webfont_src("crete-round/CreteRound-Italic", "CreteRoundItalic");
+	//@include helvetica_fonts; // uncomment if you want to use helvetica.
+
+}
+
+// MIXINS TO USE WITHIN INDIVIDUAL ELEM STYLES
+// -------------------------
+
+@mixin chunkfive						{ @include webfont(ChunkFiveWeb, serif);					}
+@mixin fontawesome					{ @include webfont(FontAwesome, monospace);				}
+@mixin droid-sans						{ @include webfont('DroidSans', sans-serif);			}
+@mixin droid-sans-bold			{ @include webfont('DroidSansBold', sans-serif);	}
+@mixin droid-serif-italic		{ @include webfont('DroidSerifItalic', serif);		}
+@mixin helveticaNeue($variant: std, $weight: 500){
+	/* New Helvetica Web Fonts */
+	// DEPENDS ON @mixin helveticaNeue_src
+	
+	//$std: "helvetica-nueve/Standard/" + $fontname_prefix;
+	//$cn: "helvetica-nueve/Condensed/" + $fontname_prefix;
+	//$ex: "helvetica-nueve/Extended/" + $fontname_prefix;
+
+	font-weight: $weight;
+
+	@if $variant == std {
+		@if $weight == "300" {
+			@include webfont("Helv35", sans-serif);
+		}
+		@if $weight == "500" {
+			@include webfont("Helv55", sans-serif);
+		}
+		@if $weight == "600" {
+			@include webfont("Helv65", sans-serif);
+		}
+		@if $weight == "700" {
+			@include webfont("Helv75", sans-serif);
+		}
+		@if $weight == "800" {
+			@include webfont("Helv85", sans-serif);
+		}
+		@if $weight == "900" {
+			@include webfont("Helv95", sans-serif);
+		}
+	} // END standard variant
+
+	@if $variant == ex {
+		@if $weight == "600" {
+		// extended medium (for navbar .brand lettering
+			@include webfont("Helv63", sans-serif);
+		}
+	} // END extended variant
+
+	// TODO: add condensed and italic variants to this mixin
+
+}
 
 // Font Stacks
-@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+
+@mixin font-shorthand($size: $baseFontSize, $lineHeight: $baseLineHeight, $weight: normal, $style: normal, $kerning: 0, $transform: none) {
   font-size: $size;
+	line-height: $lineHeight;
+	@if $weight != normal {
   font-weight: $weight;
-  line-height: $lineHeight;
+	}
+	@if $style != normal {
+	font-style: $style;
+	}
+	@if $kerning != 0 {
+	letter-spacing: $kerning;
+	}
+	@if $transform != none {
+	text-transform: $transform;
+	}
 }
-@mixin font-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  @include font-shorthand($size, $weight, $lineHeight);
+@mixin font-serif($size: $baseFontSize, $lineHeight: $baseLineHeight, $weight: normal, $style: normal, $kerning: 0, $transform: none) {
+  font-family: $baseFontSerif;
+  @include font-shorthand($size, $lineHeight, $weight, $style, $kerning, $transform);
 }
-@mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+@mixin font-sans-serif($size: $baseFontSize, $lineHeight: $baseLineHeight, $weight: normal, $style: normal, $kerning: 0, $transform: none) {
   font-family: $baseFontFamily;
-  @include font-shorthand($size, $weight, $lineHeight);
+  @include font-shorthand($size, $lineHeight, $weight, $style, $kerning, $transform);
 }
-@mixin font-family-monospace {
-  font-family: "MonacoWebfont";
-}
-@mixin font-monospace($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
-  @include font-family-monospace;
-  @include font-shorthand($size, $weight, $lineHeight);
+@mixin font-monospace($size: $baseFontSize, $lineHeight: $baseLineHeight, $weight: normal, $style: normal, $kerning: 0, $transform: none) {
+  font-family: $baseFontMonospace;
+  @include font-shorthand($size, $lineHeight, $weight, $style, $kerning, $transform);
 }
 
 

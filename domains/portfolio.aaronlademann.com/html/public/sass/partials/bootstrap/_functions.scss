@@ -1,0 +1,19 @@
+// Convert px to em
+@function pxtoem($target, $container: $baseFontSizeInt){
+  @return ($target/$container)+0em;
+}
+// Convert em to px
+@function emtopx($target, $container: $baseFontSizeInt){
+	@return ($target*$container)+0px;
+}
+
+@mixin rgba_bg($color, $alpha){
+	$rgba: rgba($color, $alpha);
+	background-color: transparent;
+	background-color: $rgba;
+	@if $legacy-support-for-ie {
+		$ie-hex-str: ie-hex-str($rgba);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+		@include has-layout;
+	}
+}

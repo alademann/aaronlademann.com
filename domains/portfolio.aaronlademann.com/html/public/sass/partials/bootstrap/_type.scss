@@ -26,7 +26,7 @@ p {
 // HEADINGS
 // --------
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 { 
   margin: 0;
   font-weight: bold;
   color: $grayDark;
@@ -36,51 +36,12 @@ h1, h2, h3, h4, h5, h6 {
     color: $grayLight;
   }
 }
-h1 {
-  font-size: 2.308em;
-  line-height: $baseLineHeight * 2;
-  small {
-    font-size: 1.385em;
-  }
-}
-h2 {
-  font-size: 1.846em;
-  line-height: $baseLineHeight * 2;
-  small {
-    font-size: 1.385em;
-  }
-}
-h3 {
-  line-height: $baseLineHeight * 1.5;
-  font-size: 1.385em;
-  small {
-    font-size: 1.077em;
-  }
-}
-h4, h5, h6 {
-  line-height: $baseLineHeight;
-}
-h4 {
-  font-size: 1.077em;
-  small {
-    font-size: 0.923em;
-  }
-}
-h5 {
-  font-size: 0.923em;
-}
-h6 {
-  font-size: 0.846em;
-  color: $grayLight;
-  text-transform: uppercase;
-}
+h1 { letter-spacing: -1px; }
+h6 { text-transform: uppercase; }
+// this will generate all the key size and spacing characteristics of the h1-h6 elems
+@include headingSize-generate($baseH1Size, $headingRule, $headingIncrement);
 
-.h1 { @extend h1; }
-.h2 { @extend h2; }
-.h3 { @extend h3; }
-.h4 { @extend h4; }
-.h5 { @extend h5; }
-.h6 { @extend h6; }
+
 
 // Page header
 .page-header {
@@ -100,7 +61,7 @@ h6 {
 // Unordered and Ordered lists
 ul, ol {
   padding: 0;
-  margin: 0 0 ($baseLineHeight / 2) 25px;
+  margin: 0 0 ($baseLineHeight / 2) pxtoem(25);
 }
 ul ul,
 ul ol,
@@ -162,20 +123,20 @@ em {
 
 // Abbreviations and acronyms
 abbr {
-  font-size: 90%;
+  font-size: pxtoem(12);
   text-transform: uppercase;
-  border-bottom: 1px dotted #ddd;
+  border-bottom: 1px dotted $grayLighter;
   cursor: help;
 }
 
 // Blockquotes
 blockquote {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 pxtoem(15);
   margin: 0 0 1em;
   border-left: 5px solid $grayLighter;
   p {
     margin-bottom: 0;
-    @include font-shorthand(1.231em,300,$baseLineHeight * 1.25);
+    @include font-shorthand(1.231em, 300, $baseLineHeight * 1.25);
   }
   small {
     display: block;
@@ -190,7 +151,7 @@ blockquote {
   &.pull-right {
     @include float(right);
     padding-left: 0;
-    padding-right: 15px;
+    padding-right: pxtoem(15);
     border-left: 0;
     border-right: 5px solid $grayLighter;
     p,

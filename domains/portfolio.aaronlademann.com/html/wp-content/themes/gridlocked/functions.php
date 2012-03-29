@@ -1,5 +1,13 @@
 <?php 
-// Use this to ensure that the costly call in its standard form never needs to be repeated:
+// Use this to ensure that these costly calls in its standard form never needs to be repeated:
+function getHost(){
+	static $host;//No accident can arise from depending on an unset variable.
+	if(!isset($host)){
+		$host = $_SERVER['HTTP_HOST'];
+	}
+	return $host;
+} // END getHost()
+
 function getBrowser($key = false){
     static $browser;//No accident can arise from depending on an unset variable.
     if(!isset($browser)){

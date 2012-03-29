@@ -1,6 +1,8 @@
-﻿$webfont_global_dir: "/public/fonts/";
+// GLOBAL UTILITY MIXINS THAT MAKE THE WEBFONT WORLD GO ROUND
+// -------------------------
+$webfont_global_dir: "/public/fonts/";
 
-@mixin webfont($font_dir,$font_name){
+@mixin webfont_src($font_dir,$font_name){
 	$font_path: $webfont_global_dir + $font_dir;
 	$woff: $font_path + ".woff";
 	$ttf: $font_path + ".ttf";
@@ -13,28 +15,60 @@
 	);
 }
 
-@mixin helveticaNeue{
-	/* New Helvetica Web Fonts */
-	$fontname_prefix: "helveticaneueltstd";
-	$std: "helvetica-nueve/Standard/" + $fontname_prefix;
-	$cn: "helvetica-nueve/Condensed/" + $fontname_prefix;
-	$ex: "helvetica-nueve/Extended/" + $fontname_prefix;
+@mixin webfont($font_name, $font_type: $baseFontType){
+	// automatically add the show/hide stuff that works alongside
+	// google webfont loader to prevent flickering
+	
+	// fix flickering
+	visibility: hidden;
+	.ie.wf-loading &, .ie.wf-inactive &, .wf-active & {
+		visibility: visible;
+	}
 
-	@include webfont($std + "35-th-webfont", "Helv35");
-	@include webfont($std + "55-roman-webfont", "Helv55");
-	@include webfont($std + "65-md-webfont", "Helv65");
-	@include webfont($std + "75-bd-webfont", "Helv75");
-	@include webfont($std + "85-hv-webfont", "Helv85");
-	@include webfont($std + "95-blk-webfont", "Helv95");
-	// extended medium (for navbar .brand lettering)
-	@include webfont($ex + "63-md-ex-webfont","Helv63");
+	// grab the default non-webfont families from _variables.scss
+	$fallback_family: if($font_type == sans-serif, $baseFontSansSerif, if($font_type == serif, $baseFontSerif, if($font_type == monospace, $baseFontMonospace, if($font_type == cursive, $baseFontCursive, $baseFontFamily))));
+
+	// prevent unstyled text
+	.wf-loading &, .wf-inactive & {
+		font-family: $font_type;
+	}
+
+	// the real webfont loads
+	.wf-active & {
+		font-family: $font_name, $fallback_family;
+	}
+
+} // END @mixin webfont()
+
+// mixins to call within individual style rules
+
+
+
+// INDIVIDUAL FONT LOADS
+// -------------------------
+
+@mixin helvetica_fonts {
+// load helvetica
+	$helv_dir:		"helvetica-nueve";
+	$helv_dir_s:	$helv_dir + "/Standard/";
+	$helv_dir_e:	$helv_dir + "/Extended/";
+	$helv_prefix: "helveticaneueltstd";
+
+	@include webfont_src($helv_dir_s + $helv_prefix + "35-th-webfont", "Helv35");
+	@include webfont_src($helv_dir_s + $helv_prefix + "55-th-webfont", "Helv55");
+	@include webfont_src($helv_dir_s + $helv_prefix + "65-th-webfont", "Helv65");
+	@include webfont_src($helv_dir_s + $helv_prefix + "75-th-webfont", "Helv75");
+	@include webfont_src($helv_dir_s + $helv_prefix + "85-th-webfont", "Helv85");
+	@include webfont_src($helv_dir_s + $helv_prefix + "95-th-webfont", "Helv95");
+	@include webfont_src($helv_dir_e + $helv_prefix + "63-md-ex-webfont","Helv63");
+
 }
 
+// fontawesome classes
 
-@mixin fontawesome{
+@mixin fontawesome_boiler{
 
-@include webfont("fontawesome/fontawesome-webfont","FontAwesome");
-
+@include webfont_src("fontawesome/fontawesome-webfont", "FontAwesome");
 /* sprites.less reset */
 [class^="icon-"],
 [class*=" icon-"] {
@@ -264,8 +298,9 @@ li[class*=" icon-"] {
 .icon-upload-alt:before         { content: "\f093"; }
 .icon-lemon:before              { content: "\f094"; }
 
-}
 
+
+} // END fontawesome boiler
 
 $icon-glass: "\f000"; 
 $icon-music: "\f001"; 

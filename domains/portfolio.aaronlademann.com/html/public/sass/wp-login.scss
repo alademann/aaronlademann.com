@@ -1,24 +1,30 @@
-/*------------------------ COMPASS FRAMEWORK IMPORTS ------------------------*/   
+/*------------------------ COMPASS FRAMEWORK IMPORTS ------------------------*/  
 @import "compass";
 @import "compass/support";
 @import "compass/css3";
 @import "compass/typography";
 @import "compass/utilities";
 @import "compass/layout";
-@import "compass/reset";
+//@import "compass/reset";
 //@include global-reset;
 
-/*------------------------ UTILITIES ------------------------*/
-@import "partials/webfonts";
-@include webfont("chunkfive/Chunkfive-webfont","ChunkFiveWeb");
-@include fontawesome; 
-@include helveticaNeue;
-@include webfont("monaco/monaco-webfont","MonacoWebfont");
-
+/*------------------------ UTILITIES / WEBFONTS ------------------------*/
+@import "partials/webfonts/specimens"; // contains the mixins and vars necessary to load whatever is requested below
+// global webfont icons
+@include fontawesome_boiler;
 /*------------------------ BASE ------------------------*/
 @import "partials/base";
-@import "partials/vars";
 @import "partials/bootstrap/bootstrap"; // bootstrap responsive is included here.
+// what fonts do you want to embed in this sheet?
+//@include aa_portfolio_webfonts;
+@import "partials/mobile/aa_responsive"; 
+/*------------------------ THEME ------------------------*/
+@import "partials/theme-wp-gridlocked"; 
+//@include wp_gridlocked_light();
+@include gridlocked-clearfix;
+@include gridlocked-comments;
+// TODO - get rid of these or combine them.
+@import "partials/theme-aa-template";
 @include aa_body_light;
 
 body.login {
