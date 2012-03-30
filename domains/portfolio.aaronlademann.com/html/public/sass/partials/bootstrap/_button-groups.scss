@@ -77,14 +77,14 @@
   padding-right: 8px;
   $shadow: inset 1px 0 0 rgba($white,.125), inset 0 1px 0 rgba($white,.2), 0 1px 2px rgba($black,.05);
   @include box-shadow($shadow);
-	@include ie7-star-hack(padding-top, 5px);
-	@include ie7-star-hack(padding-bottom, 5px);
+	@include ie7(padding-top, 5px);
+	@include ie7(padding-bottom, 5px);
 }
 
 .btn-group.open {
   // IE7's z-index only goes to the nearest positioned ancestor, which would
   // make the menu appear below buttons that appeared later on the page
-	@include ie7-star-hack(z-index, $zindexDropdown);
+	@include ie7(z-index, $zindexDropdown);
 
   // Reposition menu on open and round all corners
   .dropdown-menu {

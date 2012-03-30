@@ -110,13 +110,11 @@ details[open] summary:before, summary:hover:before {
   border-style: solid;
   border-width: 1px;
   @include border-radius(0 0 5px 5px);
-  @include box-shadow(0 5px 10px rgba($black,.2));
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
-  
+  @include box-shadow(0 5px 10px rgba($black, 0.2));
+	@include background-clip(padding-box);
+	@include ie7(border-right-width, 2px);
+	@include ie7(border-bottom-width, 2px);
+   
   // Allow for dropdowns to go bottom up (aka, dropup-menu)
   &.bottom-up {
     top: auto;
@@ -136,8 +134,9 @@ details[open] summary:before, summary:hover:before {
     // to IE7 to keep the 1px left/right space in other browsers.
     // It is unclear where IE is getting the extra space that we need
     // to negative-margin away, but so it goes.
-    *width: 100%;
-    *margin: -5px 0 5px;
+		@include ie7(width, 2px);
+		@include ie7(width, 100%);
+		@include ie7(margin, -5px 0 5px);
   }
 
   // Links within the dropdown menu
@@ -165,12 +164,13 @@ details[open] summary:before, summary:hover:before {
 .dropdown.open {
   // IE7's z-index only goes to the nearest positioned ancestor, which would
   // make the menu appear below buttons that appeared later on the page
-  *z-index: $zindexDropdown;
+  @include ie7(z-index, $zindexDropdown);
 
   .dropdown-toggle {
     color: $white;
-    background: #ccc;
-    background: rgba($black,.3);
+		@include rgba_bg($black, 0.3);
+    //background: #ccc;
+    //background: rgba($black,.3);
   }
   .dropdown-menu {
     display: block;

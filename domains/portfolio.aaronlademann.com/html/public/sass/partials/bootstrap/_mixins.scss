@@ -10,7 +10,8 @@
 // --------
 // For clearing floats like a boss h5bp.com/q
 @mixin clearfix() {
-  *zoom: 1;
+	@include ie7(zoom, 1);
+  //*zoom: 1;
   &:before,
   &:after {
     display: table;
@@ -39,16 +40,21 @@
   margin-right: auto;
 }
 
-// IE7 inline-block
+
+// IE7 star-hack
 // ----------------
-@mixin ie7-inline-block() {
-  *display: inline; /* IE7 inline-block hack */
-  *zoom: 1;
-}
-@mixin ie7-star-hack($property, $value){
+@mixin ie7($property, $value){
 	@if $legacy-support-for-ie7 {
 		*#{$property}: #{$value};
 	}
+}
+
+
+// IE7 inline-block
+// ----------------
+@mixin ie7-inline-block() {
+	@include ie7(display, inline);
+	@include ie7(zoom, 1);
 }
 
 // IE7 likes to collapse whitespace on either side of the inline-block elements.
@@ -58,18 +64,18 @@
 // mean that space between those elements will be .6em (~2 space characters) in IE7,
 // instead of the 1 space in other browsers.
 @mixin ie7-restore-left-whitespace() {
-  *margin-left: .3em;
+  @include ie7(margin-left, .3em);
 
   &:first-child {
-    *margin-left: 0;
+    @include ie7(margin-left, 0);
   }
 }
 
 @mixin ie7-restore-right-whitespace() {
-  *margin-right: .3em;
+  @include ie7(margin-right, .3em);
 
   &:last-child {
-    *margin-left: 0;
+    @include ie7(margin-left, 0);
   }
 }
 
