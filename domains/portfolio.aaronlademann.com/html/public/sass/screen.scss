@@ -5,8 +5,8 @@
 @import "compass/typography";
 @import "compass/utilities";
 @import "compass/layout";
-//@import "compass/reset";
-//@include global-reset;
+@import "compass/reset";
+@include global-reset;
 
 /*------------------------ UTILITIES / WEBFONTS ------------------------*/
 @import "partials/webfonts/specimens"; // contains the mixins and vars necessary to load whatever is requested below

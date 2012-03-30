@@ -1,10 +1,10 @@
 @import "theme-aa-base";
 @include yui_core();
 
-@include webfont("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
-@include webfont("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
-@include webfont("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
-@include webfont("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
+@include webfont_src("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
+@include webfont_src("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
+@include webfont_src("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
+@include webfont_src("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
 
 @media screen {
 
@@ -14,7 +14,7 @@
 
 		p, & {
 			color: #333;
-			font-size: 1.01em;
+			//font-size: 1.01em;
 			line-height: 1.5em;
 			font-family: 'Lucida Sans Unicode' , Helvetica, Arial, Sans-Serif;
 		}
@@ -48,6 +48,7 @@
 		}
 		& h2, & .h2, & .job h3.h2 {
 			font-size: 1.5em;
+			line-height: 1.692em;
 			clear: both;
 		}
 		& .first h2, & .first .h2, & h3, & .h3, & p.h3 & .serif, & em.serif {
