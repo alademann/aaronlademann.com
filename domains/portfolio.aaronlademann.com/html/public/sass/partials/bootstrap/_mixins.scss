@@ -371,7 +371,7 @@
     border-color: $borderColor;
     &:focus {
       border-color: darken($borderColor, 10%);
-      @include box-shadow(0 0 6px lighten($borderColor, 20%));
+      @include tb_box-shadow(0 0 6px lighten($borderColor, 20%));
     }
   }
   // Give a small background color for input-prepend/-append
@@ -387,123 +387,194 @@
 
 // CSS3 PROPERTIES
 // --------------------------------------------------
-// I'm not including these because I don't want them to conflict
-// with the compass/css3 imports that i feel are more regularly updated and suppported.
 
-//// Border Radius
-//@mixin border-radius($radius: 5px) {
-//  -webkit-border-radius: $radius;
-//     -moz-border-radius: $radius;
-//          border-radius: $radius;
-//}
-//
-//// Drop shadows
-//@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
-//  -webkit-box-shadow: $shadow;
-//     -moz-box-shadow: $shadow;
-//          box-shadow: $shadow;
-//}
-//
-//// Transitions
-//@mixin transition($transition) {
-//  -webkit-transition: $transition;
-//     -moz-transition: $transition;
-//      -ms-transition: $transition;
-//       -o-transition: $transition;
-//          transition: $transition;
-//}
-//
-//// Transformations
-//@mixin rotate($degrees: 5deg) {
-//  -webkit-transform: rotate($degrees);
-//     -moz-transform: rotate($degrees);
-//      -ms-transform: rotate($degrees);
-//       -o-transform: rotate($degrees);
-//          transform: rotate($degrees);
-//}
-//@mixin scale($ratio) {
-//  -webkit-transform: scale($ratio);
-//     -moz-transform: scale($ratio);
-//      -ms-transform: scale($ratio);
-//       -o-transform: scale($ratio);
-//          transform: scale($ratio);
-//}
-//@mixin translate($x: 0, $y: 0) {
-//  -webkit-transform: translate($x, $y);
-//     -moz-transform: translate($x, $y);
-//      -ms-transform: translate($x, $y);
-//       -o-transform: translate($x, $y);
-//          transform: translate($x, $y);
-//}
-//@mixin skew($x: 0, $y: 0) {
-//  -webkit-transform: translate($x, $y);
-//     -moz-transform: translate($x, $y);
-//      -ms-transform: translate($x, $y);
-//       -o-transform: translate($x, $y);
-//          transform: translate($x, $y);
-//}
-//@mixin translate3d($x: 0, $y: 0, $z: 0) {
-//  -webkit-transform: translate($x, $y, $z);
-//     -moz-transform: translate($x, $y, $z);
-//      -ms-transform: translate($x, $y, $z);
-//       -o-transform: translate($x, $y, $z);
-//          transform: translate($x, $y, $z);
-//}
-//
-//// Background clipping
-//// Heads up: FF 3.6 and under need padding instead of padding-box
-//@mixin background-clip($clip) {
-//  -webkit-background-clip: $clip;
-//     -moz-background-clip: $clip;
-//          background-clip: $clip;
-//}
-//
-//// Background sizing
-//@mixin background-size($size){
-//  -webkit-background-size: $size;
-//     -moz-background-size: $size;
-//       -o-background-size: $size;
-//          background-size: $size;
-//}
-//
-//
-//// Box sizing
-//@mixin box-sizing($boxmodel) {
-//  -webkit-box-sizing: $boxmodel;
-//     -moz-box-sizing: $boxmodel;
-//          box-sizing: $boxmodel;
-//}
-//
-//// User select
-//// For selecting text on the page
-//@mixin user-select($select) {
-//  -webkit-user-select: $select;
-//     -moz-user-select: $select;
-//       -o-user-select: $select;
-//          user-select: $select;
-//}
-//
-//// Resize anything
-//@mixin resizable($direction: both) {
-//  resize: $direction; // Options: horizontal, vertical, both
-//  overflow: auto; // Safari fix
-//}
-//
-//// CSS3 Content Columns
-//@mixin content-columns($columnCount, $columnGap: $gridColumnGutter) {
-//  -webkit-column-count: $columnCount;
-//     -moz-column-count: $columnCount;
-//          column-count: $columnCount;
-//  -webkit-column-gap: $columnGap;
-//     -moz-column-gap: $columnGap;
-//          column-gap: $columnGap;
-//}
-//
-//// Opacity
-//@mixin opacity($opacity: 100) {
-//  opacity: $opacity / 100;
-//   filter: alpha(opacity=$opacity);
-//}
+// I'm prefixing these because I don't want them to conflict
+// with the compass/css3 imports that i feel are more regularly updated and suppported.
+// I am also simply redirecting them to their compass counterparts (if they exist) since they are much more robust.
+
+// Border Radius
+@mixin tb_border-radius($radius: $default-border-radius) {
+	@if not $compass_css3 {
+		-webkit-border-radius: $radius;
+			 -moz-border-radius: $radius;
+						border-radius: $radius;
+		@if $warn_if_compass_not_default { @debug "not using compass css3, using bootstrap tb_ mixins"; }
+	} 
+	@else {
+		@include border-radius($radius); // compass equivalent
+	}	
+
+}
+
+// Drop shadows
+@mixin tb_box-shadow($shadow: $default-box-shadow, $shadow2: false, $shadow3: false, $shadow4: false, $shadow5: false, $shadow6: false, $shadow7: false, $shadow8: false, $shadow9: false, $shadow10: false) {
+	@if not $compass_css3 {
+		-webkit-box-shadow: $shadow;
+			 -moz-box-shadow: $shadow;
+						box-shadow: $shadow;
+	} 
+	@else {
+		$shadow: compact($shadow, $shadow2, $shadow3, $shadow4, $shadow5, $shadow6, $shadow7, $shadow8, $shadow9, $shadow10);
+		@include box-shadow($shadow); // compass equivalent
+	}
+}
+
+// Transitions
+@mixin tb_transition($transition: $default-transition) {
+	@if not $compass_css3 {
+		-webkit-transition: $transition;
+			 -moz-transition: $transition;
+				-ms-transition: $transition;
+				 -o-transition: $transition;
+						transition: $transition;
+	} 
+	@else {
+		@include transition($transition);
+	}
+}
+
+// Transformations
+@mixin tb_rotate($degrees: 5deg) {
+	@if not $compass_css3 {
+		-webkit-transform: rotate($degrees);
+			 -moz-transform: rotate($degrees);
+				-ms-transform: rotate($degrees);
+				 -o-transform: rotate($degrees);
+						transform: rotate($degrees);
+	}
+	@else {
+		@include rotate($degrees);
+	}
+}
+@mixin tb_scale($ratio) {
+	@if not $compass_css3 {
+  -webkit-transform: scale($ratio);
+     -moz-transform: scale($ratio);
+      -ms-transform: scale($ratio);
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+	}
+	@else {
+		@include scale($ratio);
+	}
+}
+@mixin tb_translate($x: 0, $y: 0) {
+	@if not $compass_css3 {
+		-webkit-transform: translate($x, $y);
+			 -moz-transform: translate($x, $y);
+				-ms-transform: translate($x, $y);
+				 -o-transform: translate($x, $y);
+						transform: translate($x, $y);
+	}
+	@else {
+		@include translate($x, $y);
+	}
+}
+@mixin tb_skew($x: $default-skew-x, $y: $default-skew-y) {
+	@if not $compass_css3 {
+		-webkit-transform: skew($x, $y);
+			 -moz-transform: skew($x, $y);
+				-ms-transform: skew($x, $y);
+				 -o-transform: skew($x, $y);
+						transform: skew($x, $y);
+	}
+	@else {
+		@include skew($x, $y);
+	}
+}
+@mixin tb_translate3d($x: $default-translate-x, $y: $default-translate-y, $z: $default-translate-z) {
+	@if not $compass_css3 {
+		-webkit-transform: translate($x, $y, $z);
+			 -moz-transform: translate($x, $y, $z);
+				-ms-transform: translate($x, $y, $z);
+				 -o-transform: translate($x, $y, $z);
+						transform: translate($x, $y, $z);
+	}
+	@else {
+		@include translate3d($x, $y, $z);
+	}
+}
+
+// Background clipping
+// Heads up: FF 3.6 and under need padding instead of padding-box
+@mixin tb_background-clip($clip) {
+	@if not $compass_css3 {
+  -webkit-background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
+	}
+	@else {
+		@include background-clip($clip);
+	}
+}
+
+// Background sizing
+@mixin tb_background-size($size){
+	@if not $compass_css3 {
+		-webkit-background-size: $size;
+			 -moz-background-size: $size;
+				 -o-background-size: $size;
+						background-size: $size;
+	}
+	@else {
+		@include background-size($size);
+	}
+}
+
+
+// Box sizing
+@mixin tb_box-sizing($boxmodel) {
+	@if not $compass_css3 {
+		-webkit-box-sizing: $boxmodel;
+			 -moz-box-sizing: $boxmodel;
+						box-sizing: $boxmodel;
+	}
+	@else {
+		@include box-sizing($boxmodel);
+	}
+}
+
+// User select
+// For selecting text on the page
+@mixin tb_user-select($select) {
+	@if not $compass_css3 {
+		-webkit-user-select: $select;
+			 -moz-user-select: $select;
+				 -o-user-select: $select;
+						user-select: $select;
+	}
+	@else {
+		@include user-select($select);
+	}
+}
+
+// Resize anything
+@mixin resizable($direction: both) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// CSS3 Content Columns
+@mixin content-columns($columnCount: $gridColumns, $columnGap: $gridColumnGutter) {
+	@if not $compass_css3 {
+		-webkit-column-count: $columnCount;
+			 -moz-column-count: $columnCount;
+						column-count: $columnCount;
+		-webkit-column-gap: $columnGap;
+			 -moz-column-gap: $columnGap;
+						column-gap: $columnGap;
+	}
+	@else {
+		@include column-count($columnCount);
+		@include column-gap($columnGap);
+	}
+}
+
+// Opacity
+@mixin opacity($opacity: 100) {
+  opacity: $opacity / 100;
+   filter: alpha(opacity=$opacity);
+}
 
 
 
@@ -516,83 +587,80 @@
 }
 @mixin translucent-border($color: $white, $alpha: 1) {
   border-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
-  @include background-clip(padding-box);
+  @include tb_background-clip(padding-box);
 }
 
 
 
 // Gradients
-@mixin gradient-horizontal($startColor: #555, $endColor: $grayDark) {
-  background-color: $endColor;
-  background-image: -moz-linear-gradient(left, $startColor, $endColor); // FF 3.6+
-  background-image: -ms-linear-gradient(left, $startColor, $endColor); // IE10
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
-  background-image: -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+
-  background-image: -o-linear-gradient(left, $startColor, $endColor); // Opera 11.10
-  background-image: linear-gradient(left, $startColor, $endColor); // Le standard
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1), $startColor, $endColor; // IE9 and down
+@mixin gradient-horizontal($startColor: $gray, $endColor: $grayDark) {
+	background-color: mix($startColor, $endColor, 60%); // fallback just in case all hell breaks loose
+	// this takes care of all the browser specific garbage for us except for IE.
+	@include background-image(linear-gradient(left, $startColor, $endColor));
+	// lt-ie9
+  @include filter-gradient($startColor, $endColor, horizontal);
+	@if $experimental-support-for-svg {
+		background-repeat: repeat-x; // Silly Opera
+	}
 }
-@mixin gradient-vertical($startColor: #555, $endColor: $grayDark) {
-  background-color: mix($startColor, $endColor, 60%);
-  background-image: -moz-linear-gradient(top, $startColor, $endColor); // FF 3.6+
-  background-image: -ms-linear-gradient(top, $startColor, $endColor); // IE10
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
-  background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
-  background-image: -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
-  background-image: linear-gradient(top, $startColor, $endColor); // The standard
-  background-repeat: repeat-x;
- filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0),$startColor,$endColor; // IE9 and down
+@mixin gradient-vertical($startColor: $gray, $endColor: $grayDark) {
+	background-color: mix($startColor, $endColor, 60%); // fallback just in case all hell breaks loose
+	// this takes care of all the browser specific garbage for us except for IE.
+	@include background-image(linear-gradient($startColor, $endColor));
+	// lt-ie9
+  @include filter-gradient($startColor, $endColor, vertical);
+	@if $experimental-support-for-svg {
+		background-repeat: repeat-y; // Silly Opera
+	}
 }
-@mixin gradient-directional($startColor: #555, $endColor: $grayDark, $deg: 45deg) {
-  background-color: $endColor;
-  background-repeat: repeat-x;
-  background-image: -moz-linear-gradient($deg, $startColor, $endColor); // FF 3.6+
-  background-image: -ms-linear-gradient($deg, $startColor, $endColor); // IE10
-  background-image: -webkit-linear-gradient($deg, $startColor, $endColor); // Safari 5.1+, Chrome 10+
-  background-image: -o-linear-gradient($deg, $startColor, $endColor); // Opera 11.10
-  background-image: linear-gradient($deg, $startColor, $endColor); // The standard
+@mixin gradient-directional($startColor: $gray, $endColor: $grayDark, $angle: left bottom) {
+	background-color: $endColor; // fallback just in case all hell breaks loose
+	// this takes care of all the browser specific garbage for us except for IE.
+	@include background-image(linear-gradient($angle, $startColor, $endColor));
+	// no ie support for directional except using svg (taken care of in above @include)
+	@if $experimental-support-for-svg {
+		background-repeat: no-repeat; // Silly Opera
+	}
 }
-@mixin gradient-vertical-three-colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f) {
-  background-color: mix($midColor, $endColor, 80%);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor));
-  background-image: -webkit-linear-gradient($startColor, $midColor $colorStop, $endColor);
-  background-image: -moz-linear-gradient(top, $startColor, $midColor $colorStop, $endColor);
-  background-image: -ms-linear-gradient($startColor, $midColor $colorStop, $endColor);
-  background-image: -o-linear-gradient($startColor, $midColor $colorStop, $endColor);
-  background-image: linear-gradient($startColor, $midColor $colorStop, $endColor);
-  background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0), $startColor, $endColor; // IE9 and down, gets no color-stop at all the proper fallback
+@mixin gradient-vertical-three-colors($startColor: $teal, $midColor: $purple, $colorStop: 50%, $endColor: $pink) {
+  background-color: mix($midColor, $endColor, 80%); // fallback just in case all hell breaks loose
+	// this takes care of all the browser specific garbage for us except for IE.
+	@include background-image(linear-gradient($startColor, $midColor $colorStop, $endColor));
+	// lt-ie9
+  @include filter-gradient($startColor, $endColor, vertical); // can't do 3 colors in ie5-8
+	@if $experimental-support-for-svg {
+		background-repeat: repeat-y; // Silly Opera
+	}
 }
-@mixin gradient-radial($centerColor: #555, $outsideColor: $grayDark)  {
-  background-color: $outerColor;
-  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($centerColor), to($outsideColor));
-  background-image: -webkit-radial-gradient(circle, $centerColor, $outsideColor);
-  background-image: -moz-radial-gradient(circle, $centerColor, $outsideColor);
-  background-image: -ms-radial-gradient(circle, $centerColor, $outsideColor);
-  background-repeat: no-repeat;
-  // Opera cannot do radial gradients yet
+@mixin gradient-radial($centerColor: $gray, $outsideColor: $grayDark)  {
+  background-color: $outsideColor; // fallback just in case all hell breaks loose
+	// this takes care of all the browser specific garbage for us except for IE.
+	@include background-image(radial-gradient(center center, $centerColor, $outsideColor));
+	// no ie support for radial except using svg (taken care of in above @include)
+  @if $experimental-support-for-svg {
+		background-repeat: no-repeat; // Silly Opera
+	}
 }
-@mixin gradient-striped($color,$angle: -45deg) {
-    background-color: $color;
-    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba($white,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba($white,.15)), color-stop(.75, rgba($white,.15)), color-stop(.75, transparent), to(transparent));
-    background-image: -webkit-linear-gradient($angle, rgba($white,.15) 25%, transparent 25%, transparent 50%, rgba($white,.15) 50%, rgba($white,.15) 75%, transparent 75%, transparent);
-    background-image: -moz-linear-gradient($angle, rgba($white,.15) 25%, transparent 25%, transparent 50%, rgba($white,.15) 50%, rgba($white,.15) 75%, transparent 75%, transparent);
-    background-image: -ms-linear-gradient($angle, rgba($white,.15) 25%, transparent 25%, transparent 50%, rgba($white,.15) 50%, rgba($white,.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient($angle, rgba($white,.15) 25%, transparent 25%, transparent 50%, rgba($white,.15) 50%, rgba($white,.15) 75%, transparent 75%, transparent);
-    //background-image: linear-gradient($angle, rgba($white,.15) 25%, transparent 25%, transparent 50%, rgba($white,.15) 50%, rgba($white,.15) 75%, transparent 75%, transparent);
-  }
+@mixin gradient-striped($color, $angle: left top) {
+  background-color: $color;
+	$tint: rgba($white, 0.15);
+	// this takes care of all the browser specific garbage for us.
+	@include background-image(linear-gradient($angle, $tint 25%, transparent 25%, transparent 50%, $tint 50%, transparent 75%, transparent));
+}
 
 // Gradient Bar Colors for buttons and alerts
 @mixin gradientBar($primaryColor, $secondaryColor) {
   @include gradient-vertical($primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba($black,.1) rgba($black,.1) fade-in(rgba($black,.1), 0.15);
+  border-color: rgba($black, 0.1) rgba($black, 0.1) fade-in(rgba($black, 0.1), 0.15);
 }
 
 // Reset filters for IE
 @mixin reset-filter() {
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	@if $legacy-support-for-ie {
+		// should never add a filter: property to a stylesheet that is not rendering in IE
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	}
 }
 
 // Mixin for generating button backgrounds

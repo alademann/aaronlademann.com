@@ -109,9 +109,9 @@ details[open] summary:before, summary:hover:before {
   border-color: rgba($black,.2);
   border-style: solid;
   border-width: 1px;
-  @include border-radius(0 0 5px 5px);
-  @include box-shadow(0 5px 10px rgba($black, 0.2));
-	@include background-clip(padding-box);
+  @include tb_border-radius(0 0 5px 5px);
+  @include tb_box-shadow(0 5px 10px rgba($black, 0.2));
+	@include tb_background-clip(padding-box);
 	@include ie7(border-right-width, 2px);
 	@include ie7(border-bottom-width, 2px);
    
@@ -180,5 +180,5 @@ details[open] summary:before, summary:hover:before {
 // Typeahead
 .typeahead {
   margin-top: 2px; // give it some space to breathe
-  @include border-radius(4px);
+  @include tb_border-radius(4px);
 }

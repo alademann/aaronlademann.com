@@ -2,6 +2,16 @@
 // Variables to customize the look and feel of Bootstrap
 // -----------------------------------------------------
 
+$warn_if_compass_not_default: false; // set this to true if you want to be warned when compass is not default
+// if you are importing compass stuff... mark here what you've imported, otherwise - mark it false
+$compass: true;
+$compass_support: true;
+$compass_css3: true;
+$compass_typography: true;
+$compass_util: true;
+$compass_layout: true;
+$compass_reset: true;
+
 // GLOBAL VALUES
 // --------------------------------------------------
 
@@ -26,6 +36,7 @@ $white:                 #fff !default;
 // Accent colors
 $blue:                  #049cdb !default;
 $blueDark:              #0064cd !default;
+$teal:									#00b3ee !default;
 $green:                 #46a546 !default;
 $red:                   #9d261d !default;
 $yellow:                #ffc40d !default;
@@ -167,6 +178,32 @@ $default-text-shadow-h-offset: 1px;
 $default-text-shadow-v-offset: 1px;
 $default-text-shadow-blur: 0;
 // END compass/css3/text-shadow
+// compass defaults
+$default-box-shadow-inset: false;
+$default-box-shadow-h-offset: 0;
+$default-box-shadow-v-offset: 1px;
+$default-box-shadow-blur: 3px;
+$default-box-shadow-spread: 0;
+$default-box-shadow-color: rgba($black, 0.25);
+$default-box-shadow: -compass-space-list(compact(if($default-box-shadow-inset, inset, false), $default-box-shadow-h-offset, $default-box-shadow-v-offset, $default-box-shadow-blur, $default-box-shadow-spread, $default-box-shadow-color));
+
+$default-transition-property: all;
+$default-transition-duration: 1s;
+$default-transition-function: false;
+$default-transition-delay: false;
+$default-transition: -compass-space-list(compact($default-transition-property, $default-transition-duration, $default-transition-function, $default-transition-delay));
+
+$default-border-radius: 5px;
+
+$default-translate-x: 0;
+$default-translate-y: 0;
+$default-translate-z: 0;
+
+$default-skew-x: 0;
+$default-skew-y: 0;
+
+// END COMPASS DEFAULT VARS
+
 
 $wellCornerRadius: 4px;
 

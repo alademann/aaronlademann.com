@@ -72,7 +72,7 @@ select,
   line-height: $baseLineHeight;
   color: $gray;
   border: 1px solid #ccc;
-  @include border-radius(3px);
+  @include tb_border-radius(3px);
 }
 .uneditable-textarea {
   width: auto;
@@ -97,7 +97,7 @@ input[type="radio"], label.radio {
   *margin-top: 0; /* IE7 */
   line-height: normal;
 
-  @include border-radius(0); // Nuke border-radius for IE9 only
+  @include tb_border-radius(0); // Nuke border-radius for IE9 only
   border: 0 \9; /* IE9 and down */
 }
 input[type="image"] {
@@ -112,7 +112,7 @@ input[type="file"] {
   border: initial;
   background-color: $white;
   background-color: initial;
-  @include box-shadow(none);
+  @include tb_box-shadow(none);
 }
 
 // Help out input buttons
@@ -158,7 +158,7 @@ select[size] {
 
 // Remove shadow from image inputs
 input[type="image"] {
-  @include box-shadow(none);
+  @include tb_box-shadow(none);
 }
 
 // Make textarea height behave
@@ -213,16 +213,16 @@ input[type="hidden"] {
 // -----------
 @mixin input_focus {
   $shadow: inset 0 1px 1px rgba($black,.075), 0 0 8px rgba(82,168,236,.6);
-  @include box-shadow($shadow);
+  @include tb_box-shadow($shadow);
   outline: 0;
   outline: thin dotted \9; /* IE6-8 */	
 }
 
 input,
 textarea {
-  @include box-shadow(inset 0 1px 1px rgba($black,.075));
+  @include tb_box-shadow(inset 0 1px 1px rgba($black,.075));
   $transition: border linear .2s, box-shadow linear .2s;
-  @include transition($transition);
+  @include tb_transition($transition);
 }
 input:focus,
 textarea:focus {
@@ -233,7 +233,7 @@ input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 select:focus {
-  @include box-shadow(none); // override for file inputs
+  @include tb_box-shadow(none); // override for file inputs
   @include tab-focus();
 }
 
@@ -312,7 +312,7 @@ select:focus:required:invalid {
   border-color: #ee5f5b;
   &:focus {
     border-color: darken(#ee5f5b, 10%);
-    @include box-shadow(0 0 6px lighten(#ee5f5b, 20%));    
+    @include tb_box-shadow(0 0 6px lighten(#ee5f5b, 20%));    
   }
 }
 
@@ -334,7 +334,7 @@ select:focus:required:invalid {
   display: block;
   background-color: $white;
   border-color: $grayLighter;
-  @include box-shadow(inset 0 1px 2px rgba($black,.025));
+  @include tb_box-shadow(inset 0 1px 2px rgba($black,.025));
   cursor: not-allowed;
 }
 
@@ -372,7 +372,7 @@ select:focus:required:invalid {
   @include clearfix(); // Clear the float to prevent wrapping
   input,
   .uneditable-input {
-    @include border-radius(0 3px 3px 0);
+    @include tb_border-radius(0 3px 3px 0);
     &:focus {
       position: relative;
       z-index: 2;
@@ -396,7 +396,7 @@ select:focus:required:invalid {
     text-shadow: 0 1px 0 $white;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
-    @include border-radius(3px 0 0 3px);
+    @include tb_border-radius(3px 0 0 3px);
   }
   .active {
     background-color: lighten($green, 30);
@@ -412,7 +412,7 @@ select:focus:required:invalid {
   input,
   .uneditable-input {
     @include float(left);
-    @include border-radius(3px 0 0 3px);
+    @include tb_border-radius(3px 0 0 3px);
   }
   .uneditable-input {
     border-left-color: $grayLighter;
@@ -421,7 +421,7 @@ select:focus:required:invalid {
   .add-on {
     margin-right: 0;
     margin-left: -1px;
-    @include border-radius(0 3px 3px 0);
+    @include tb_border-radius(0 3px 3px 0);
   }
   input:first-child {
     // In IE7, having a hasLayout container (from clearfix's zoom:1) can make the first input
@@ -443,7 +443,7 @@ select:focus:required:invalid {
   padding-left: 14px;
   padding-right: 14px;
   margin-bottom: 0; // remove the default margin on all inputs
-  @include border-radius(14px);
+  @include tb_border-radius(14px);
 }
 
 

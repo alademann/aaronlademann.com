@@ -1,16 +1,8 @@
-/*------------------------ COMPASS FRAMEWORK IMPORTS ------------------------*/  
+/*------------------------ COMPASS FRAMEWORK IMPORTS ------------------------*/
 @import "compass";
-	$compass: true;
 @import "compass/support";
-	$compass_support: true;
 @import "compass/css3";
-	$compass_css3: true;
 @import "compass/typography";
-	$compass_typography: true;
 @import "compass/utilities";
-	$compass_util: true;
 @import "compass/layout";
-	$compass_layout: true;
 @import "compass/reset";
-@include global-reset;
-	$compass_reset: true;

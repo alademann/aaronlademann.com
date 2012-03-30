@@ -104,7 +104,7 @@ body > * {
 		@include transparent;
 		// reveal
 		&.transReady {
-			@include opacity(1.0); 
+			@include opacity(100); 
 		}
 	} // end opacity
 	.js.no-opacity & {
