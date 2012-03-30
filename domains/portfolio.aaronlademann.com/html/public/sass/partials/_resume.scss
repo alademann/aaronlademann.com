@@ -8,141 +8,169 @@
 
 @media screen {
 
-.page-template-template-resume-php #container {
-	// don't want the resume #container to be 100% width even on a really large screen... need to keep readability in mind.
-	max-width: 980px;
-	margin-left: auto;
-	margin-right: auto;
-	.lt-ie7 & {
-		width: 980px;
-		text-align: center;
-	}
-}
-
 	#resume {
 		
-		// RESET & BASE GLOBALS
-		dl, dd, ul, ol, li { list-style: none; padding-left: 0; margin-left: 0;}
-		&> header, &> section, &> footer { padding: $fluidGridGutterWidth; }
-		.row-fluid > [class^="span"] {
-			p {
-				padding-right: 3em;
-			}
-			
-			:last-child p {
-				padding-right: 0;
-			}
-		}
-		.serif { @include droid-serif-italic; }
-		a { 
-			color: $textColor; 
-			:hover {
-				text-decoration: none;
-				color: $linkColorHover;
-			}
-		}
-		.job a { color: $linkColor; 
-			:hover { color: $linkColorHover; }
-		}
-		// END RESET
+		#contentWrap & { top: 30px; }
 
-		#hd {
-			margin: 0 0 1.8em;
-			padding-bottom: 1.5em;
+		p, & {
+			color: #333;
+			font-size: 1.01em;
+			line-height: 1.5em;
+			font-family: 'Lucida Sans Unicode' , Helvetica, Arial, Sans-Serif;
+		}
+
+		& h1, & .h1, & h2, & .h2, & h3, & .h3, & p.h3, & h4, & .h4 {
+			padding: 0;
+			padding-right: 0 !important;
+			margin: 0;
+			@include single-text-shadow;
+		}
+
+		& #hd h1 {
+			font-family: 'ChunkFiveWeb' ,Arial,Helvetica,sans-serif;
+			font-size: 3.9em;
+			font-weight: normal;
+			letter-spacing: -1px;
+			margin-bottom: .4em;
+			line-height: normal;
+		}
+
+		& h2, & .h2, & h3, & .h3, & h4, & .h4 {
+			font-family: Arial, Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold !important;
+			font-style: normal;
+			letter-spacing: normal;
+			color: #111;
+		}
+		& .contact-info .h3 {
+			font-weight: normal !important;
+		}
+		& h2, & .h2, & .job h3.h2 {
+			font-size: 1.5em;
+			clear: both;
+		}
+		& .first h2, & .first .h2, & h3, & .h3, & p.h3 & .serif, & em.serif {
+			font-family: 'DroidSerifItalic' ,Georgia,Times,Serif;
+			text-transform: none;
+			font-weight: normal !important;
+			font-style: normal !important;
+		}
+		& .first h2, & .first .h2 {
+			font-size: 1.5em;
+			color: #111;
+		}
+
+		& dt.h2 {
+			padding-top: 1em;
+		}
+		& dt.h2:first-child {
+			padding-top: 0;
+		}
+
+		& #hd h3, & #hd .h3 {
+			font-family: inherit;
+			text-transform: none;
+		}
+
+		& h3, & .h3 {
+			font-size: 1.2em;
+			margin-top: .2em;
+		}
+		& .job h3, & .job .h3 {
+			font-size: 1.12em;
+		}
+		& h4, & .h4 {
+			font-size: 1.12em;
+			clear: both;
+		}
+
+
+		& p {
+			padding-right: 3em;
+		}
+		& .last p, & p.last {
+			padding-right: 0;
+		}
+
+		& p.enlarge {
+			font-size: 1.12em;
+			line-height: 1.5em;
+		}
+
+		& p.enlarge em {
+			color: #000000;
+			font-style: normal;
+		}
+
+
+		& .msg {
+			background: none repeat scroll 0% 0% #222222;
+			padding: 10px;
 			position: relative;
-
-			h1 {
-				@include chunkfive;
-				font-size: 3.9em;
-				letter-spacing: -1px;
-				//margin-bottom: .4em;
-				line-height: normal;
-
-				.meta {
-					// part of h1 containing the stuff bots want to see
-					position: absolute;
-					text-indent: -999em;
-				}
-			}
-
-			#headline, .contact-info {
-				letter-spacing: 1px;
-			}
-			
-
-			.contact-info { 
-				margin-top: 0;
-				text-align: right;
-
-				h3, .h3 {	
-					font-weight: normal !important; 
-				}
-
-				&> section {
-					// this holds the other contact info (not the pdf button)
-					margin-top: pxtoem($baseH1Size);
-				}
-
-				// .contact-info > aside
-				#pdf {
-					padding: 4px;
-					position: absolute;
-					top: 0;
-					right: $fluidGridGutterWidth;
-					//margin: -$fluidGridGutterWidth 0 ($fluidGridGutterWidth * 3) 0;
-					@include border-radius(3px);
-					@include rgba_bg($grayLight, 0.1);
-					//@include float(right);
-					.rgba & {
-						@include box-shadow(0 0 4px 0 rgba($black,0.2) inset);
-					} 
-					.no-rgba & {
-						@include box-shadow(0 0 4px 0 ie-hex-str(rgba($black,0.2)) inset);
-					}
-					
-					a {
-						$pdfIcon: 'icons/pdf_28.png';
-						$iconW: image-width($pdfIcon);
-						$iconH: image-height($pdfIcon) / 2;
-						background: transparent image-url($pdfIcon) 2px top no-repeat;
-						display: block;
-						//@include float(right);
-						padding: 0 12px 0 ($iconW + 10);
-						margin-left: 0;
-						height: $iconH;
-						font-weight: bold;
-						text-decoration: none;  
-
-						&:hover {
-							background-position: 2px bottom;
-						}
-					} // END #pdf a
-
-				} // END #pdf
-
-			} // END .contact-info
-		} // END #hd
-
-
-		// horizontal line separators
-		#hd, #bd, #bd > details, .job, li {
-			border-bottom: 1px solid $chiselLight;
-			@include box-shadow(0 1px 0 0 $chiselDark);
-			
-			&.well {
-				// if one or more of these elems also has .well as a class
-				// we want the well appearance to override
-				@extend .well;
-			}
 		}
-		#bd > details, .job, li {
-			:last-child {
-				border-bottom: 0 none;
-				@include box-shadow(none);
-			}
+
+		& .msg h1 {
+			color: #FFFFFF;
 		}
-		#ft {
-			border-top: 1px solid rgba($white,0.8);
+
+		& .msg a {
+			background: none repeat scroll 0% 0% #408814;
+			color: white;
+			margin-left: 20px;
+			padding: 4px 8px;
+			text-decoration: none;
+		}
+
+		& .msg a:hover {
+			background: none repeat scroll 0% 0% #266400;
+		}
+
+		& #inner {
+			margin: 0pt auto;
+			padding: 10px 80px;
+		}
+
+		ul, dl, dd { margin-left: 0; list-style: none; }
+
+		& .yui-gf, & #hd, & .job, & li {
+			border-bottom: 1px solid rgba(178,178,178,0.6);
+			-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+			-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+			box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+		}
+		& .job li, & .skillset li, & .toolbox li {
+			border-bottom: 1px solid rgba(178,178,178,0.3);
+			-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
+			-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
+			box-shadow: 0 1px 0 rgba(255,255,255,0.4);
+			padding: 0 10px;
+			font-size: .9em;
+		}
+		& .job li:last-child, & .job:last-child, & li:last-child {
+			border-bottom: 0 none;
+			box-shadow: none;
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+		& .job dd.intro { margin-top: -1em; }
+		& .job .folio_link { position: relative;top: -1em; }
+
+		& #ft {
+			border-top: 1px solid rgba(255,255,255,0.8);
+			padding: 2em 0;
+		}
+		& #bd {
+			border-bottom: 1px solid rgba(178,178,178,0.6);
+		}
+
+
+		& .yui-gf {
+			margin-bottom: 2em;
+			padding-bottom: 2em;
+		}
+
+		& #ft {
 			font-size: 92%;
 			padding: 1em 0pt 5em;
 			text-align: center;
@@ -206,6 +234,7 @@
 		
 		#profile .enlarge em, #profile .enlarge dt, #profile .enlarge dd { display: inline !important; }	
 
+			margin-left: 0;
 		
 
 		
