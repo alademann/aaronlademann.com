@@ -96,6 +96,7 @@ input[type="radio"], label.radio {
   margin: 3px 0;
   *margin-top: 0; /* IE7 */
   line-height: normal;
+
   @include border-radius(0); // Nuke border-radius for IE9 only
   border: 0 \9; /* IE9 and down */
 }

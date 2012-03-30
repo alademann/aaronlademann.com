@@ -7,6 +7,18 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+ 
+// NOTE: If you fork from alademann's branch of this bootstrap, many of the 
+// alterations rely on some mixins from these compass includes.
+// I have them commented out here because I include them in my screen.scss file - and bootstrap is
+// a partial that i bring in.  if you are using boostrap as a primary source css file, you must include these here.
+//    @import "compass";
+//    @import "compass/support";
+//    @import "compass/css3";
+//    @import "compass/typography";
+//    @import "compass/utilities";
+//    @import "compass/layout";
+//    @import "compass/reset";
 
 // Core variables and mixins
 @import "variables"; // Modify this for custom colors, font-sizes, etc
@@ -14,7 +26,7 @@
 @import "mixins";
 
 // CSS Reset
-@import "reset";
+//@import "reset"; // I opt to use the compass reset import
 
 // Grid system and page structure
 @import "scaffolding";
@@ -63,4 +75,4 @@
 @import "utilities"; // Has to be last to override when necessary
 
 // Responsive Layouts
-@import "responsive";
+@import "responsive"; // again - i opt to have responsive be a part of my compiles no matter what - not as a separate .css compile that can be included by choice. responsive and bootstrap are partials in my system.

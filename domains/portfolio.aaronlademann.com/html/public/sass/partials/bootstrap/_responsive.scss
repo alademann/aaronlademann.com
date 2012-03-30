@@ -15,7 +15,7 @@
 
 // REPEAT VARIABLES & MIXINS
 // -------------------------
-// Required since we compile the responsive stuff separately
+// I don't import responsive separately since I want ALL layouts to be responsive, not just the ones that include the responsive.css file.
 
 //@import "variables"; // Modify this for custom colors, font-sizes, etc
 //@import "mixins";

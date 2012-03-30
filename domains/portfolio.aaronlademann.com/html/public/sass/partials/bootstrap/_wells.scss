@@ -7,7 +7,7 @@ $aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
   min-height: 20px;
   margin-bottom: 2%;
 	@include border-radius($wellCornerRadius);
-  background: $aa_wellBgColor;
+  background: $aa_wellBgColor; // custom mixin that takes care of non-rgba backgrounds, too
   @include box-shadow(
 		$wellEdgeHighlight 0 1px 0 0, // highlight edge 
 		$aa_wellInsetShadowColor 0 1px 7px 0 inset // inner shadow

@@ -372,6 +372,130 @@
   }
 }
 
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+// I'm not including these because I don't want them to conflict
+// with the compass/css3 imports that i feel are more regularly updated and suppported.
+
+//// Border Radius
+//@mixin border-radius($radius: 5px) {
+//  -webkit-border-radius: $radius;
+//     -moz-border-radius: $radius;
+//          border-radius: $radius;
+//}
+//
+//// Drop shadows
+//@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+//  -webkit-box-shadow: $shadow;
+//     -moz-box-shadow: $shadow;
+//          box-shadow: $shadow;
+//}
+//
+//// Transitions
+//@mixin transition($transition) {
+//  -webkit-transition: $transition;
+//     -moz-transition: $transition;
+//      -ms-transition: $transition;
+//       -o-transition: $transition;
+//          transition: $transition;
+//}
+//
+//// Transformations
+//@mixin rotate($degrees: 5deg) {
+//  -webkit-transform: rotate($degrees);
+//     -moz-transform: rotate($degrees);
+//      -ms-transform: rotate($degrees);
+//       -o-transform: rotate($degrees);
+//          transform: rotate($degrees);
+//}
+//@mixin scale($ratio) {
+//  -webkit-transform: scale($ratio);
+//     -moz-transform: scale($ratio);
+//      -ms-transform: scale($ratio);
+//       -o-transform: scale($ratio);
+//          transform: scale($ratio);
+//}
+//@mixin translate($x: 0, $y: 0) {
+//  -webkit-transform: translate($x, $y);
+//     -moz-transform: translate($x, $y);
+//      -ms-transform: translate($x, $y);
+//       -o-transform: translate($x, $y);
+//          transform: translate($x, $y);
+//}
+//@mixin skew($x: 0, $y: 0) {
+//  -webkit-transform: translate($x, $y);
+//     -moz-transform: translate($x, $y);
+//      -ms-transform: translate($x, $y);
+//       -o-transform: translate($x, $y);
+//          transform: translate($x, $y);
+//}
+//@mixin translate3d($x: 0, $y: 0, $z: 0) {
+//  -webkit-transform: translate($x, $y, $z);
+//     -moz-transform: translate($x, $y, $z);
+//      -ms-transform: translate($x, $y, $z);
+//       -o-transform: translate($x, $y, $z);
+//          transform: translate($x, $y, $z);
+//}
+//
+//// Background clipping
+//// Heads up: FF 3.6 and under need padding instead of padding-box
+//@mixin background-clip($clip) {
+//  -webkit-background-clip: $clip;
+//     -moz-background-clip: $clip;
+//          background-clip: $clip;
+//}
+//
+//// Background sizing
+//@mixin background-size($size){
+//  -webkit-background-size: $size;
+//     -moz-background-size: $size;
+//       -o-background-size: $size;
+//          background-size: $size;
+//}
+//
+//
+//// Box sizing
+//@mixin box-sizing($boxmodel) {
+//  -webkit-box-sizing: $boxmodel;
+//     -moz-box-sizing: $boxmodel;
+//          box-sizing: $boxmodel;
+//}
+//
+//// User select
+//// For selecting text on the page
+//@mixin user-select($select) {
+//  -webkit-user-select: $select;
+//     -moz-user-select: $select;
+//       -o-user-select: $select;
+//          user-select: $select;
+//}
+//
+//// Resize anything
+//@mixin resizable($direction: both) {
+//  resize: $direction; // Options: horizontal, vertical, both
+//  overflow: auto; // Safari fix
+//}
+//
+//// CSS3 Content Columns
+//@mixin content-columns($columnCount, $columnGap: $gridColumnGutter) {
+//  -webkit-column-count: $columnCount;
+//     -moz-column-count: $columnCount;
+//          column-count: $columnCount;
+//  -webkit-column-gap: $columnGap;
+//     -moz-column-gap: $columnGap;
+//          column-gap: $columnGap;
+//}
+//
+//// Opacity
+//@mixin opacity($opacity: 100) {
+//  opacity: $opacity / 100;
+//   filter: alpha(opacity=$opacity);
+//}
+
+
+
 // BACKGROUNDS
 // --------------------------------------------------
 
