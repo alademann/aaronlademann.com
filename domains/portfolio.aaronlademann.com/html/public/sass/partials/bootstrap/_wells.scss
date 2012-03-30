@@ -6,7 +6,7 @@
   padding: 19px;
   margin-bottom: 20px;
   //background-color: #f5f5f5;
-	@include rgba_bg(#646464, 0.15);
+  @include rgba_bg(#646464, 0.15); // custom mixin that takes care of non-rgba backgrounds, too
   //border: 1px solid #eee;
   //border: 1px solid rgba(0,0,0,.05);
   @include border-radius(4px);
