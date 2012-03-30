@@ -3,10 +3,9 @@
 // HOW THE STYLES ARE COMPILED
 //----------------------------------------
 
-// this stylesheet is compiled with IE8 in mind
+// this stylesheet is compiled with IE6 in mind
+$legacy-support-for-ie: true;
 $legacy-support-for-ie6: true;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: false;
 
 $experimental-support-for-microsoft: true;
 $experimental-support-for-svg: true;

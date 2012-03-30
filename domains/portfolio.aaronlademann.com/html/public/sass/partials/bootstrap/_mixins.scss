@@ -45,6 +45,11 @@
   *display: inline; /* IE7 inline-block hack */
   *zoom: 1;
 }
+@mixin ie7-star-hack($property, $value){
+	@if $legacy-support-for-ie7 {
+		*#{$property}: #{$value};
+	}
+}
 
 // IE7 likes to collapse whitespace on either side of the inline-block elements.
 // Ems because we're attempting to match the width of a space character. Left

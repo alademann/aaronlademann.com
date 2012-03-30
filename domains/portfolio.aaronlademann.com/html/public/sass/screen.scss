@@ -5,6 +5,7 @@
 
 // this stylesheet is compiled with modern browsers in mind
 // LOAD ONLY INTO NON-IE BROWSERS
+$default-has-layout-approach: block;
 $legacy-support-for-ie: false;
 $experimental-support-for-microsoft: false;
 
