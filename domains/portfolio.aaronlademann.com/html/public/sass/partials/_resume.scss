@@ -55,7 +55,7 @@
 				@include chunkfive;
 				font-size: 3.9em;
 				letter-spacing: -1px;
-				margin-bottom: .4em;
+				//margin-bottom: .4em;
 				line-height: normal;
 
 				.meta {
@@ -78,12 +78,21 @@
 					font-weight: normal !important; 
 				}
 
+				&> section {
+					// this holds the other contact info (not the pdf button)
+					margin-top: pxtoem($baseH1Size);
+				}
+
+				// .contact-info > aside
 				#pdf {
 					padding: 4px;
+					position: absolute;
+					top: 0;
+					right: $fluidGridGutterWidth;
 					//margin: -$fluidGridGutterWidth 0 ($fluidGridGutterWidth * 3) 0;
 					@include border-radius(3px);
-					@include rgba_bg(#9b9b9b, 0.1);
-					@include float(right);
+					@include rgba_bg($grayLight, 0.1);
+					//@include float(right);
 					.rgba & {
 						@include box-shadow(0 0 4px 0 rgba($black,0.2) inset);
 					} 
