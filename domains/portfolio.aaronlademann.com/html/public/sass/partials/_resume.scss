@@ -1,10 +1,10 @@
-//@import "theme-aa-base"; 
-//@include yui_core();
+@import "theme-aa-base";
+@include yui_core();
 
-//@include webfont_src("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
-//@include webfont_src("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
-//@include webfont_src("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
-//@include webfont_src("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
+@include webfont("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
+@include webfont("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
+@include webfont("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
+@include webfont("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
 
 @media screen {
 
@@ -176,127 +176,186 @@
 			text-align: center;
 		}
 
-		.job li, .skillset li, .toolbox li {
-			padding: 0 .9em;
-			font-size: 0.923em;
-			line-height: pxtoem("24px", $baseFontSize);
+		& #ft p {
+			margin-bottom: 0pt;
+			text-align: center;
 		}
+
+		& a { color: #333333; }
+		& .job a { color: #0088cc; }
+		& a:hover {
+			text-decoration: none;
+		}
+
+		& li {
+			line-height: 24px;
+		}
+
+		& .contact-info {
+			margin-top: 0pt;
+			position: absolute;
+			top: 26px;
+			right: 0;
+			text-align: right;
+		}
+
+		& #hd {
+			margin: 0 0 1.8em;
+			padding-bottom: 1.5em;
+			position: relative;
+		}
+
+		& #hd h2, & #hd .h2 {
+			font-size: 132%;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		& #hd h3, & #hd .h3 {
+			/*margin-bottom: .6em;*/
+		}
+
+		& #pdf {
+			padding: 4px;
+			background: transparent;
+			background: rgba(155,155,155,.1);
+			display: block;
+			@include float(right);
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			box-shadow: inset 0 0 4px rgba(0,0,0,.2);
+			position: absolute;
+			top: -$aa_mastHeight; 
+			right: 0;
+		}
+
 		
-		//.job .intro { margin-top: -1em; }
-		//.job .folio_link { position: relative;top: -1em; }
 
-		#ft {
-			&, p {
-				font-size: 0.923em;
-				padding: 1em 0 5em 0;
-				margin: 0;
-				text-align: center;
-			}
-		}
-
-
-		summary.h2 {
-			// details section title
-			cursor: pointer;
-			color: $almostBlack;
-		}
-//		#bd > details.well {
-//			overflow: hidden; // so the inverse-well effect will get "clipped" making it appear flush to the body
-//			summary.h2 { 
-//				.inner {
-//					// cover up the inner shadow of the well
-//					background: $body_bgcolor $body_bgImg left top repeat;
-//					@extend .inverse-well;
-//					@include border-corner-radius(bottom, right, $wellCornerRadius);
-//				}
-//				// when the summary stacks atop the description
-//					@media (max-width: 767px) { 
-//						.inner {
-//							@extend .inverse-well-stacked;
-//							@include border-corner-radius(bottom, right, 0);
-//						}
-//						line-height: normal;
-//					} // END @media
-//			}
-//		} // END details.well
-
-
-		.enlarge {
-			font-size: 1.12em;
-			line-height: 1.5em;
-		} // END .enlarge
-
-		#profile .enlarge em, #profile .enlarge dt { 
-			@extend .serif; 
-			color: $black;
-			font-style: normal;
-		}
-		
-		#profile .enlarge em, #profile .enlarge dt, #profile .enlarge dd { display: inline !important; }	
-
+		& #pdf a {
+			background: transparent url('/public/images/icons/pdf_28.png') 2px top no-repeat;
+			display: block;
+			@include float(right);
+			padding: 0 12px 0 38px;
 			margin-left: 0;
-		
+			text-decoration: none;  
+			line-height: 28px;
+			font-weight: bold;
+		}
 
-		
+		& #pdf a:hover {
+			background-position: 2px bottom;
+		}
 
-//		.job {
-//			margin-bottom: 2em;
-//			padding-bottom: 1em;
-//			padding-top: 4px;
-//			position: relative;
-//		}
-//		.job h2, .job .h2 {
-//			margin-bottom: .5em;
-//		}
-//		.job .h3 {
-//			margin-bottom: 2em;
-//		}
-//		.job .h3 strong {
-//			letter-spacing: -1px;
-//		}
-//		.job p {
-//			margin: 0.75em 0pt 1.25em;
-//		}
-//		.job p:last-child {
-//			margin-bottom: 2.75em;
-//		}
-//		.job p.h2, .job p.h3, .job p.h4 {
-//			margin: 0 0 1em 0;
-//		}
-//
-//		.last {
-//			border: medium none;
-//			border-bottom: 0pt none;
-//			-moz-box-shadow: 0 0 0 transparent;
-//			-webkit-box-shadow: 0 0 0 transparent;
-//			box-shadow: 0 0 0 transparent;
-//		}
-//
-//		.skills-list {
-//		}
-//
-//		.skills-list ul {
-//			margin: 0pt;
-//		}
-//
-//		.skills-list li {
-//			margin: 3px 0pt;
-//			padding: 3px 0pt;
-//		}
-//
-//		.skills-list li span {
-//			display: block;
-//			font-size: 152%;
-//			margin-bottom: -2px;
-//			padding: 0pt;
-//		}
-//
-//		.talent h2, .talent .h2, .third h2, .third .h2, .half h2, .half .h2 {
-//			font-size: 1.4em;
-//			margin-bottom: 6px;
-//		}
+		& .job {
+			margin-bottom: 2em;
+			padding-bottom: 1em;
+			padding-top: 4px;
+			position: relative;
+		}
+
+		& .job h4.timeperiod, & .job .h4.timeperiod {
+			position: absolute;
+			right: 0pt;
+			top: 0.35em;
+		}
+		& .job h2, & .job .h2 {
+			margin-bottom: .5em;
+		}
+		& .job .h3 {
+			margin-bottom: 2em;
+		}
+		& .job .h3 strong {
+			letter-spacing: -1px;
+		}
+		& .job p {
+			margin: 0.75em 0pt 1.25em;
+		}
+		& .job p:last-child {
+			margin-bottom: 2.75em;
+		}
+		& .job p.h2, & .job p.h3, & .job p.h4 {
+			margin: 0 0 1em 0;
+		}
+
+		& .last {
+			border: medium none;
+			border-bottom: 0pt none;
+			-moz-box-shadow: 0 0 0 transparent;
+			-webkit-box-shadow: 0 0 0 transparent;
+			box-shadow: 0 0 0 transparent;
+		}
+
+		& .skills-list {
+		}
+
+		& .skills-list ul {
+			margin: 0pt;
+		}
+
+		& .skills-list li {
+			margin: 3px 0pt;
+			padding: 3px 0pt;
+		}
+
+		& .skills-list li span {
+			display: block;
+			font-size: 152%;
+			margin-bottom: -2px;
+			padding: 0pt;
+		}
+
+		& .talent, & .third {
+			@include float(left);
+			width: 31%;
+			margin-right: 3%;
+		}
+		& .half {
+			@include float(left);
+			width: 48%;
+			margin-right: 3%;
+		}
+		& dl.half {
+			width: 46%;
+			margin-right: 8%;
+		}
+		& .half.last, & .half:last-child, & .talent.last, & .talent:last-child, & .third.last, & .third:last-child {
+			margin-right: 0 !important;
+		}
+
+		& .talent p, & .talent li, & .third li, & .half p, & .half li {
+			padding-right: 1em;
+		}
+
+		& .talent h2, & .talent .h2, & .third h2, & .third .h2, & .half h2, & .half .h2 {
+			font-size: 1.4em;
+			margin-bottom: 6px;
+		}
+
+		& #srt-ttab {
+			margin-bottom: 100px;
+			text-align: center;
+		}
+
+		& #srt-ttab img.last {
+			margin-top: 20px;
+		}
+
+		& .yui-gf .yui-u {
+			width: 80.2%;
+		}
+
+		& .yui-gf .first {
+			width: 12.3%;
+		}
 
 	} // END #resume
+
+	//.mozilla {
+		//#contentWrap { top: 50px; }
+		//#resume #pdf { top: -80px; }
+	//}
+
 
 
 } // END @media screen
