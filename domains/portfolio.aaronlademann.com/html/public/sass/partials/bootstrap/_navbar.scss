@@ -95,7 +95,7 @@
   @include clearfix();
   input,
   select {
-    display: inline-block;
+    @include inline-block;
     margin-top: 5px;
     margin-bottom: 0;
   }
@@ -285,7 +285,7 @@
 			//@include border-radius(4px); // don't want the top two corners to be rounded since they sit flush against the bottom edge of the navbar
 			&:before {
 				content: '';
-				display: inline-block;
+				@include inline-block;
 				border-left:   7px solid transparent;
 				border-right:  7px solid transparent;
 				border-bottom: 7px solid #ccc;
@@ -296,7 +296,7 @@
 			}
 			&:after {
 				content: '';
-				display: inline-block;
+				@include inline-block;
 				border-left:   6px solid transparent;
 				border-right:  6px solid transparent;
 				border-bottom: 6px solid $white;

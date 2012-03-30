@@ -1032,19 +1032,15 @@
 	a.button,
 	a:hover.button {
 		height: 20px;
-		display: inline-block;
+		@include inline-block;
 		margin: 0 5px 20px 5px;
 		text-decoration: none;
 		font-weight: bold;
 		font-size: 0.923em;
 		line-height: 12px;
 		padding: 8px 10px 0 10px;
-		-webkit-border-radius: 3px;
-			 -moz-border-radius: 3px;
-	   			border-radius: 3px;
-		-webkit-box-shadow:0 1px 1px rgba($black, 0.08);
-			 -moz-box-shadow:0 1px 1px rgba($black, 0.08);
-    			box-shadow:0 1px 1px rgba($black, 0.08);
+		@include border-radius(3px);
+		@include box-shadow(0 1px 1px 0 rgba($black, 0.08));
 	}
 
 	a.button.large {
@@ -1736,7 +1732,7 @@
 	// From gridlocked theme
 	.clear { clear: both; display: block;	font-size: 0;	height: 0; line-height: 0; width:100%; }
 	.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } 
-	.clearfix { display: inline-block; } 
+	.clearfix { @include inline-block; } 
 	/* Hide from IE Mac \*/ 
 	.clearfix { display: block; } 
 	/* End hide from IE Mac */ 

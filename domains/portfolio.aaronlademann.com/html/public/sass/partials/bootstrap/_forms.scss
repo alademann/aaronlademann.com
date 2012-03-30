@@ -63,7 +63,7 @@ input,
 textarea,
 select,
 .uneditable-input {
-  display: inline-block;
+  @include inline-block;
   width: 210px;
   height: 1em;
   padding: 4px;
@@ -198,7 +198,7 @@ input[type="hidden"] {
 // TODO v3: Convert .inline to .control-inline
 .radio.inline,
 .checkbox.inline {
-  display: inline-block;
+  @include inline-block;
   margin-bottom: 0;
   vertical-align: middle;
 }
@@ -354,8 +354,7 @@ select:focus:required:invalid {
 }
 
 .help-inline {
-  display: inline-block;
-  @include ie7-inline-block();
+  @include inline-block;
   margin-bottom: 9px;
   vertical-align: middle;
   padding-left: 5px;
@@ -463,7 +462,7 @@ select:focus:required:invalid {
   select,
   .help-inline,
   .uneditable-input {
-    display: inline-block;
+    @include inline-block;
     margin-bottom: 0;
   }
   // Re-hide hidden elements due to specifity
@@ -477,7 +476,7 @@ select:focus:required:invalid {
 .form-inline .input-append,
 .form-search .input-prepend,
 .form-inline .input-prepend {
-  display: inline-block;
+  @include inline-block;
 }
 // Make the prepend and append add-on vertical-align: middle;
 .form-search .input-append .add-on,

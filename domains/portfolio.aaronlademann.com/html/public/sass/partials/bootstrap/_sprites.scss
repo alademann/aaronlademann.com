@@ -16,7 +16,7 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
-  display: inline-block;
+  @include inline-block;
   width: 14px;
   height: 14px;
   line-height: 14px;

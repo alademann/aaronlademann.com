@@ -19,8 +19,7 @@
   margin-top: $baseLineHeight / 2;
   margin-bottom: $baseLineHeight / 2;
   .btn-group {
-    display: inline-block;
-    @include ie7-inline-block();
+    @include inline-block;
   }
 }
 
@@ -34,40 +33,24 @@
 // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
 .btn-group .btn:first-child {
   margin-left: 0;
-     -webkit-border-top-left-radius: 4px;
-         -moz-border-radius-topleft: 4px;
-             border-top-left-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-      -moz-border-radius-bottomleft: 4px;
-          border-bottom-left-radius: 4px;
+	@include border-corner-radius(top, left, 4px);
+	@include border-corner-radius(bottom, left, 4px);
 }
 .btn-group .btn:last-child,
 .btn-group .dropdown-toggle {
-     -webkit-border-top-right-radius: 4px;
-         -moz-border-radius-topright: 4px;
-             border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-      -moz-border-radius-bottomright: 4px;
-          border-bottom-right-radius: 4px;
+	@include border-corner-radius(top, right, 4px);
+	@include border-corner-radius(bottom, right, 4px);
 }
 // Reset corners for large buttons
 .btn-group .btn.large:first-child {
   margin-left: 0;
-     -webkit-border-top-left-radius: 6px;
-         -moz-border-radius-topleft: 6px;
-             border-top-left-radius: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-      -moz-border-radius-bottomleft: 6px;
-          border-bottom-left-radius: 6px;
+  @include border-corner-radius(top, left, 6px);
+	@include border-corner-radius(bottom, left, 6px);
 }
 .btn-group .btn.large:last-child,
 .btn-group .large.dropdown-toggle {
-     -webkit-border-top-right-radius: 6px;
-         -moz-border-radius-topright: 6px;
-             border-top-right-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-      -moz-border-radius-bottomright: 6px;
-          border-bottom-right-radius: 6px;
+	@include border-corner-radius(top, right, 6px);
+	@include border-corner-radius(bottom, right, 6px);
 }
 
 // On hover/focus/active, bring the proper btn to front
@@ -94,14 +77,14 @@
   padding-right: 8px;
   $shadow: inset 1px 0 0 rgba($white,.125), inset 0 1px 0 rgba($white,.2), 0 1px 2px rgba($black,.05);
   @include box-shadow($shadow);
-  *padding-top: 5px;
-  *padding-bottom: 5px;
+	@include ie7-star-hack(padding-top, 5px);
+	@include ie7-star-hack(padding-bottom, 5px);
 }
 
 .btn-group.open {
   // IE7's z-index only goes to the nearest positioned ancestor, which would
   // make the menu appear below buttons that appeared later on the page
-  *z-index: $zindexDropdown;
+	@include ie7-star-hack(z-index, $zindexDropdown);
 
   // Reposition menu on open and round all corners
   .dropdown-menu {

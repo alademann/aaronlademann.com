@@ -117,13 +117,13 @@ li[class*=" icon-"] {
     font-family: "FontAwesome" !important;
     font-weight: normal;
     font-style: normal;
-    display: inline-block;
+    @include inline-block;
     text-decoration: inherit;
 }
 
 a [class^="icon-"],
 a [class*=" icon-"] {
-    display: inline-block;
+    @include inline-block;
     text-decoration: inherit;
 }
 
@@ -144,7 +144,7 @@ a [class*=" icon-"] {
 li {
     [class^="icon-"],
     [class*=" icon-"] {
-        display: inline-block;
+        @include inline-block;
         width: 1.25em;
         text-align: center;
     }

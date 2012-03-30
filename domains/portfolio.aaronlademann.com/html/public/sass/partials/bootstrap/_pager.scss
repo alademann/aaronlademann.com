@@ -12,7 +12,7 @@
   display: inline;
 }
 .pager a {
-  display: inline-block;
+  @include inline-block;
   padding: 5px 14px;
   background-color: #fff;
   border: 1px solid #ddd;
