@@ -1,31 +1,17 @@
-/*------------------------ COMPASS FRAMEWORK IMPORTS ------------------------*/  
-@import "compass";
-@import "compass/support";
-@import "compass/css3";
-@import "compass/typography";
-@import "compass/utilities";
-@import "compass/layout";
-//@import "compass/reset";
-//@include global-reset;
+//----------------------------------------
+// SET COMPILE OPTIONS HERE TO DETERMINE
+// HOW THE STYLES ARE COMPILED
+//----------------------------------------
 
-/*------------------------ UTILITIES / WEBFONTS ------------------------*/
-@import "partials/webfonts/specimens"; // contains the mixins and vars necessary to load whatever is requested below
-// global webfont icons
-@include fontawesome_boiler;
-/*------------------------ BASE ------------------------*/
-@import "partials/base";
-@import "partials/bootstrap/bootstrap"; // bootstrap responsive is included here.
-// what fonts do you want to embed in this sheet?
-//@include aa_portfolio_webfonts;
-@import "partials/mobile/aa_responsive"; 
-/*------------------------ THEME ------------------------*/
-@import "partials/theme-wp-gridlocked"; 
-//@include wp_gridlocked_light();
-@include gridlocked-clearfix;
-@include gridlocked-comments;
-// TODO - get rid of these or combine them.
-@import "partials/theme-aa-template";
-@include aa_body_light;
+// this stylesheet is compiled with modern browsers in mind
+// LOAD ONLY INTO NON-IE BROWSERS
+$legacy-support-for-ie: false;
+$experimental-support-for-microsoft: false;
+
+//----------------------------------------
+// DO NOT MODIFY
+@import "partials/global/0-global";
+//----------------------------------------
 
 body.login {
 	

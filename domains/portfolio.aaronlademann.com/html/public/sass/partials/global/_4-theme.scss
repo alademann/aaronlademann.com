@@ -1,0 +1,22 @@
+/*------------------------ THEME ------------------------*/
+// what fonts do you want to embed in this sheet?
+@include aa_portfolio_webfonts;
+@import "partials/mobile/aa_responsive"; 
+@import "partials/theme-wp-gridlocked"; 
+//@include wp_gridlocked_light();
+@include gridlocked-clearfix;
+@include gridlocked-comments;
+// TODO - get rid of these or combine them.
+@import "partials/theme-aa-template";
+@include aa_light;
+/*------------------------ PAGES ------------------------*/
+@import "partials/resume";
+/*------------------------ PLUGINS ------------------------*/
+@import "partials/wp-plugins";
+@include fancybox;
+
+/*------------------------ OVERRIDES ------------------------*/
+@include hide_wp_adminbar();
+// tempmorary quick fixes
+.comment-count, .edit-post { display: none !important; }
+.breadcrumb { display: none !important; } 
