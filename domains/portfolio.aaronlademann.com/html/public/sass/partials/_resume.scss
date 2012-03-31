@@ -1,362 +1,273 @@
-@import "theme-aa-base";
-@include yui_core();
+//@import "theme-aa-base"; 
+//@include yui_core();
 
-@include webfont_src("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
-@include webfont_src("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
-@include webfont_src("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
-@include webfont_src("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
+//@include webfont_src("droidserif/DroidSerif-Regular-webfont","DroidSerifRegular");
+//@include webfont_src("droidserif/DroidSerif-Italic-webfont","DroidSerifItalic");
+//@include webfont_src("droidserif/DroidSerif-Bold-webfont","DroidSerifBold"); 
+//@include webfont_src("droidserif/DroidSerif-BoldItalic-webfont","DroidSerifBoldItalic");
 
 @media screen { 
 
+.page-template-template-resume-php #container {
+	// don't want the resume #container to be 100% width even on a really large screen... need to keep readability in mind.
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	.lt-ie7 & {
+		width: 980px;
+		text-align: center;
+	}
+}
+
 	#resume {
 		
-		#contentWrap & { top: 30px; }
+		// RESET & BASE GLOBALS
+		dl, dd, ul, ol, li { list-style: none; padding-left: 0; margin-left: 0;}
+		&> header, &> section, &> footer { padding: $fluidGridGutterWidth; }
+		.row-fluid > [class^="span"] {
+			p {
+				padding-right: 3em;
+			}
+			
+			:last-child p {
+				padding-right: 0;
+			}
+		}
+		.serif { @include droid-serif-italic; }
+		a { 
+			color: $textColor; 
+			:hover {
+				text-decoration: none;
+				color: $linkColorHover;
+			}
+		}
+		.job a { color: $linkColor; 
+			:hover { color: $linkColorHover; }
+		}
+		// END RESET
 
-		p, & {
-			color: #333;
-			//font-size: 1.01em;
-			line-height: 1.5em;
-			font-family: 'Lucida Sans Unicode' , Helvetica, Arial, Sans-Serif;
-		}
-
-		& h1, & .h1, & h2, & .h2, & h3, & .h3, & p.h3, & h4, & .h4 {
-			padding: 0;
-			padding-right: 0 !important;
-			margin: 0;
-			@include single-text-shadow;
-		}
-
-		& #hd h1 {
-			font-family: 'ChunkFiveWeb' ,Arial,Helvetica,sans-serif;
-			font-size: 3.9em;
-			font-weight: normal;
-			letter-spacing: -1px;
-			margin-bottom: .4em;
-			line-height: normal;
-		}
-
-		& h2, & .h2, & h3, & .h3, & h4, & .h4 {
-			font-family: Arial, Helvetica, sans-serif;
-			text-transform: uppercase;
-			font-weight: bold !important;
-			font-style: normal;
-			letter-spacing: normal;
-			color: #111;
-		}
-		& .contact-info .h3 {
-			font-weight: normal !important;
-		}
-		& h2, & .h2, & .job h3.h2 {
-			font-size: 1.5em;
-			line-height: 1.692em;
-			clear: both;
-		}
-		& .first h2, & .first .h2, & h3, & .h3, & p.h3 & .serif, & em.serif {
-			font-family: 'DroidSerifItalic' ,Georgia,Times,Serif;
-			text-transform: none;
-			font-weight: normal !important;
-			font-style: normal !important;
-		}
-		& .first h2, & .first .h2 {
-			font-size: 1.5em;
-			color: #111;
-		}
-
-		& dt.h2 {
-			padding-top: 1em;
-		}
-		& dt.h2:first-child {
-			padding-top: 0;
-		}
-
-		& #hd h3, & #hd .h3 {
-			font-family: inherit;
-			text-transform: none;
-		}
-
-		& h3, & .h3 {
-			font-size: 1.2em;
-			margin-top: .2em;
-		}
-		& .job h3, & .job .h3 {
-			font-size: 1.12em;
-		}
-		& h4, & .h4 {
-			font-size: 1.12em;
-			clear: both;
-		}
-
-
-		& p {
-			padding-right: 3em;
-		}
-		& .last p, & p.last {
-			padding-right: 0;
-		}
-
-		& p.enlarge {
-			font-size: 1.12em;
-			line-height: 1.5em;
-		}
-
-		& p.enlarge em {
-			color: #000000;
-			font-style: normal;
-		}
-
-
-		& .msg {
-			background: none repeat scroll 0% 0% #222222;
-			padding: 10px;
+		#hd {
+			margin: 0 0 1.8em;
+			padding-bottom: 1.5em;
 			position: relative;
-		}
 
-		& .msg h1 {
-			color: #FFFFFF;
-		}
+			h1 {
+				@include chunkfive;
+				font-size: 3.9em;
+				letter-spacing: -1px;
+				//margin-bottom: .4em;
+				line-height: normal;
 
-		& .msg a {
-			background: none repeat scroll 0% 0% #408814;
-			color: white;
-			margin-left: 20px;
-			padding: 4px 8px;
-			text-decoration: none;
-		}
+				.meta {
+					// part of h1 containing the stuff bots want to see
+					position: absolute;
+					text-indent: -999em;
+				}
+			}
 
-		& .msg a:hover {
-			background: none repeat scroll 0% 0% #266400;
-		}
+			#headline, .contact-info {
+				letter-spacing: 1px;
+			}
+			
 
-		& #inner {
-			margin: 0pt auto;
-			padding: 10px 80px;
-		}
+			.contact-info { 
+				margin-top: 0;
+				text-align: right;
 
-		ul, dl, dd { margin-left: 0; list-style: none; }
+				h3, .h3 {	
+					font-weight: normal !important; 
+				}
 
-		& .yui-gf, & #hd, & .job, & li {
-			border-bottom: 1px solid rgba(178,178,178,0.6);
-			-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
-			-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
-			box-shadow: 0 1px 0 rgba(255,255,255,0.8);
-		}
-		& .job li, & .skillset li, & .toolbox li {
-			border-bottom: 1px solid rgba(178,178,178,0.3);
-			-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
-			-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
-			box-shadow: 0 1px 0 rgba(255,255,255,0.4);
-			padding: 0 10px;
-			font-size: .9em;
-		}
-		& .job li:last-child, & .job:last-child, & li:last-child {
-			border-bottom: 0 none;
-			box-shadow: none;
-			-moz-box-shadow: none;
-			-webkit-box-shadow: none;
-		}
-		& .job dd.intro { margin-top: -1em; }
-		& .job .folio_link { position: relative;top: -1em; }
+				&> section {
+					// this holds the other contact info (not the pdf button)
+					margin-top: pxtoem($baseH1Size);
+				}
 
-		& #ft {
-			border-top: 1px solid rgba(255,255,255,0.8);
-			padding: 2em 0;
-		}
-		& #bd {
-			border-bottom: 1px solid rgba(178,178,178,0.6);
-		}
+				// .contact-info > aside
+				#pdf {
+					padding: 4px;
+					position: absolute;
+					top: 0;
+					right: $fluidGridGutterWidth;
+					//margin: -$fluidGridGutterWidth 0 ($fluidGridGutterWidth * 3) 0;
+					@include border-radius(3px);
+					@include rgba_bg($grayLight, 0.1);
+					//@include float(right);
+					.rgba & {
+						@include box-shadow(0 0 4px 0 rgba($black,0.2) inset);
+					} 
+					.no-rgba & {
+						@include box-shadow(0 0 4px 0 ie-hex-str(rgba($black,0.2)) inset);
+					}
+					
+					a {
+						$pdfIcon: 'icons/pdf_28.png';
+						$iconW: image-width($pdfIcon);
+						$iconH: image-height($pdfIcon) / 2;
+						background: transparent image-url($pdfIcon) 2px top no-repeat;
+						display: block;
+						//@include float(right);
+						padding: 0 12px 0 ($iconW + 10);
+						margin-left: 0;
+						height: $iconH;
+						font-weight: bold;
+						text-decoration: none;  
+
+						&:hover {
+							background-position: 2px bottom;
+						}
+					} // END #pdf a
+
+				} // END #pdf
+
+			} // END .contact-info
+		} // END #hd
 
 
-		& .yui-gf {
-			margin-bottom: 2em;
-			padding-bottom: 2em;
+		// horizontal line separators
+		#hd, #bd, #bd > details, .job, li {
+			border-bottom: 1px solid $chiselLight;
+			@include box-shadow(0 1px 0 0 $chiselDark);
+			
+			&.well {
+				// if one or more of these elems also has .well as a class
+				// we want the well appearance to override
+				@extend .well;
+			}
 		}
-
-		& #ft {
+		#bd > details, .job, li {
+			:last-child {
+				border-bottom: 0 none;
+				@include box-shadow(none);
+			}
+		}
+		#ft {
+			border-top: 1px solid rgba($white,0.8);
 			font-size: 92%;
 			padding: 1em 0pt 5em;
 			text-align: center;
 		}
 
-		& #ft p {
-			margin-bottom: 0pt;
-			text-align: center;
+		.job li, .skillset li, .toolbox li {
+			padding: 0 .9em;
+			font-size: 0.923em;
+			line-height: pxtoem("24px", $baseFontSize);
+		}
+		
+		//.job .intro { margin-top: -1em; }
+		//.job .folio_link { position: relative;top: -1em; }
+
+		#ft {
+			&, p {
+				font-size: 0.923em;
+				padding: 1em 0 5em 0;
+				margin: 0;
+				text-align: center;
+			}
 		}
 
-		& a { color: #333333; }
-		& .job a { color: #0088cc; }
-		& a:hover {
-			text-decoration: none;
-		}
 
-		& li {
-			line-height: 24px;
+		summary.h2 {
+			// details section title
+			cursor: pointer;
+			color: $almostBlack;
 		}
+//		#bd > details.well {
+//			overflow: hidden; // so the inverse-well effect will get "clipped" making it appear flush to the body
+//			summary.h2 { 
+//				.inner {
+//					// cover up the inner shadow of the well
+//					background: $body_bgcolor $body_bgImg left top repeat;
+//					@extend .inverse-well;
+//					@include border-corner-radius(bottom, right, $wellCornerRadius);
+//				}
+//				// when the summary stacks atop the description
+//					@media (max-width: 767px) { 
+//						.inner {
+//							@extend .inverse-well-stacked;
+//							@include border-corner-radius(bottom, right, 0);
+//						}
+//						line-height: normal;
+//					} // END @media
+//			}
+//		} // END details.well
 
-		& .contact-info {
-			margin-top: 0pt;
-			position: absolute;
-			top: 26px;
-			right: 0;
-			text-align: right;
-		}
 
-		& #hd {
-			margin: 0 0 1.8em;
-			padding-bottom: 1.5em;
-			position: relative;
-		}
+		.enlarge {
+			font-size: 1.12em;
+			line-height: 1.5em;
+		} // END .enlarge
 
-		& #hd h2, & #hd .h2 {
-			font-size: 132%;
-			letter-spacing: 1px;
-			text-transform: uppercase;
+		#profile .enlarge em, #profile .enlarge dt { 
+			@extend .serif; 
+			color: $black;
+			font-style: normal;
 		}
-
-		& #hd h3, & #hd .h3 {
-			/*margin-bottom: .6em;*/
-		}
-
-		& #pdf {
-			padding: 4px;
-			background: transparent;
-			background: rgba(155,155,155,.1);
-			display: block;
-			@include float(right);
-			border-radius: 3px;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			box-shadow: inset 0 0 4px rgba(0,0,0,.2);
-			position: absolute;
-			top: -$navbarHeight; 
-			right: 0;
-		}
+		
+		#profile .enlarge em, #profile .enlarge dt, #profile .enlarge dd { display: inline !important; }	
 
 		
 
-		& #pdf a {
-			background: transparent url('/public/images/icons/pdf_28.png') 2px top no-repeat;
-			display: block;
-			@include float(right);
-			padding: 0 12px 0 38px;
-			margin-left: 0;
-			text-decoration: none;  
-			line-height: 28px;
-			font-weight: bold;
-		}
+		
 
-		& #pdf a:hover {
-			background-position: 2px bottom;
-		}
-
-		& .job {
-			margin-bottom: 2em;
-			padding-bottom: 1em;
-			padding-top: 4px;
-			position: relative;
-		}
-
-		& .job h4.timeperiod, & .job .h4.timeperiod {
-			position: absolute;
-			right: 0pt;
-			top: 0.35em;
-		}
-		& .job h2, & .job .h2 {
-			margin-bottom: .5em;
-		}
-		& .job .h3 {
-			margin-bottom: 2em;
-		}
-		& .job .h3 strong {
-			letter-spacing: -1px;
-		}
-		& .job p {
-			margin: 0.75em 0pt 1.25em;
-		}
-		& .job p:last-child {
-			margin-bottom: 2.75em;
-		}
-		& .job p.h2, & .job p.h3, & .job p.h4 {
-			margin: 0 0 1em 0;
-		}
-
-		& .last {
-			border: medium none;
-			border-bottom: 0pt none;
-			-moz-box-shadow: 0 0 0 transparent;
-			-webkit-box-shadow: 0 0 0 transparent;
-			box-shadow: 0 0 0 transparent;
-		}
-
-		& .skills-list {
-		}
-
-		& .skills-list ul {
-			margin: 0pt;
-		}
-
-		& .skills-list li {
-			margin: 3px 0pt;
-			padding: 3px 0pt;
-		}
-
-		& .skills-list li span {
-			display: block;
-			font-size: 152%;
-			margin-bottom: -2px;
-			padding: 0pt;
-		}
-
-		& .talent, & .third {
-			@include float(left);
-			width: 31%;
-			margin-right: 3%;
-		}
-		& .half {
-			@include float(left);
-			width: 48%;
-			margin-right: 3%;
-		}
-		& dl.half {
-			width: 46%;
-			margin-right: 8%;
-		}
-		& .half.last, & .half:last-child, & .talent.last, & .talent:last-child, & .third.last, & .third:last-child {
-			margin-right: 0 !important;
-		}
-
-		& .talent p, & .talent li, & .third li, & .half p, & .half li {
-			padding-right: 1em;
-		}
-
-		& .talent h2, & .talent .h2, & .third h2, & .third .h2, & .half h2, & .half .h2 {
-			font-size: 1.4em;
-			margin-bottom: 6px;
-		}
-
-		& #srt-ttab {
-			margin-bottom: 100px;
-			text-align: center;
-		}
-
-		& #srt-ttab img.last {
-			margin-top: 20px;
-		}
-
-		& .yui-gf .yui-u {
-			width: 80.2%;
-		}
-
-		& .yui-gf .first {
-			width: 12.3%;
-		}
+//		.job {
+//			margin-bottom: 2em;
+//			padding-bottom: 1em;
+//			padding-top: 4px;
+//			position: relative;
+//		}
+//		.job h2, .job .h2 {
+//			margin-bottom: .5em;
+//		}
+//		.job .h3 {
+//			margin-bottom: 2em;
+//		}
+//		.job .h3 strong {
+//			letter-spacing: -1px;
+//		}
+//		.job p {
+//			margin: 0.75em 0pt 1.25em;
+//		}
+//		.job p:last-child {
+//			margin-bottom: 2.75em;
+//		}
+//		.job p.h2, .job p.h3, .job p.h4 {
+//			margin: 0 0 1em 0;
+//		}
+//
+//		.last {
+//			border: medium none;
+//			border-bottom: 0pt none;
+//			-moz-box-shadow: 0 0 0 transparent;
+//			-webkit-box-shadow: 0 0 0 transparent;
+//			box-shadow: 0 0 0 transparent;
+//		}
+//
+//		.skills-list {
+//		}
+//
+//		.skills-list ul {
+//			margin: 0pt;
+//		}
+//
+//		.skills-list li {
+//			margin: 3px 0pt;
+//			padding: 3px 0pt;
+//		}
+//
+//		.skills-list li span {
+//			display: block;
+//			font-size: 152%;
+//			margin-bottom: -2px;
+//			padding: 0pt;
+//		}
+//
+//		.talent h2, .talent .h2, .third h2, .third .h2, .half h2, .half .h2 {
+//			font-size: 1.4em;
+//			margin-bottom: 6px;
+//		}
 
 	} // END #resume
-
-	//.mozilla {
-		//#contentWrap { top: 50px; }
-		//#resume #pdf { top: -80px; }
-	//}
-
 
 
 } // END @media screen
