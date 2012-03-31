@@ -27,7 +27,7 @@ details.well, #bd details.well {
 	summary.h2 { 
 		.inner {
 			// cover up the inner shadow of the well
-			background: $body_bgcolor $body_bgImg left top repeat;
+			background: $body-bgcolor $body-bg-img left top repeat;
 			@extend .inverse-well;
 			@include border-corner-radius(bottom, right, $wellCornerRadius);
 		}
@@ -48,7 +48,7 @@ details.well, #bd details.well {
 }
 .dropdown-toggle {
   // The caret makes the toggle a bit too tall in IE7
-  *margin-bottom: -3px;
+  @include ie7(margin-bottom, -3px);
 }
 .dropdown-toggle:active,
 .open .dropdown-toggle {
@@ -56,13 +56,13 @@ details.well, #bd details.well {
 }
 // Dropdown arrow/caret
 .caret {
-  display: inline-block;
+  @include inline-block;
   width: 0;
   height: 0;
   text-indent: -99999px;
   // IE7 won't do the border trick if there's a text indent, but it doesn't
   // do the content that text-indent is hiding, either, so we're ok.
-  *text-indent: 0;
+  @include ie7(text-indent, 0);
   vertical-align: top;
   border-left:  4px solid transparent;
   border-right: 4px solid transparent;
@@ -99,24 +99,21 @@ details[open] summary:before, summary:hover:before {
   z-index: $zindexDropdown;
   @include float(left);
   display: none; // none by default, but block on "open" of the menu
-  min-width: 160px;
-  _width: 160px;
+  @include min-width(160px);
   padding: 4px 0;
   margin: 0; // override default ul
   list-style: none;
   background-color: $white;
-  border-color: #ccc;
+  border-color: darken($grayLighterD, 5);
   border-color: rgba($black,.2);
   border-style: solid;
   border-width: 1px;
-  @include border-radius(0 0 5px 5px);
-  @include box-shadow(0 5px 10px rgba($black,.2));
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
-  
+  @include tb_border-radius(0 0 5px 5px);
+  @include tb_box-shadow(0 5px 10px rgba($black, 0.2));
+	@include tb_background-clip(padding-box);
+	@include ie7(border-right-width, 2px);
+	@include ie7(border-bottom-width, 2px);
+   
   // Allow for dropdowns to go bottom up (aka, dropup-menu)
   &.bottom-up {
     top: auto;
@@ -136,8 +133,9 @@ details[open] summary:before, summary:hover:before {
     // to IE7 to keep the 1px left/right space in other browsers.
     // It is unclear where IE is getting the extra space that we need
     // to negative-margin away, but so it goes.
-    *width: 100%;
-    *margin: -5px 0 5px;
+		@include ie7(width, 2px);
+		@include ie7(width, 100%);
+		@include ie7(margin, -5px 0 5px);
   }
 
   // Links within the dropdown menu
@@ -165,12 +163,13 @@ details[open] summary:before, summary:hover:before {
 .dropdown.open {
   // IE7's z-index only goes to the nearest positioned ancestor, which would
   // make the menu appear below buttons that appeared later on the page
-  *z-index: $zindexDropdown;
+  @include ie7(z-index, $zindexDropdown);
 
   .dropdown-toggle {
     color: $white;
-    background: #ccc;
-    background: rgba($black,.3);
+		@include rgba_bg($black, 0.3);
+    //background: darken($grayLighterD, 5);
+    //background: rgba($black,.3);
   }
   .dropdown-menu {
     display: block;
@@ -180,5 +179,5 @@ details[open] summary:before, summary:hover:before {
 // Typeahead
 .typeahead {
   margin-top: 2px; // give it some space to breathe
-  @include border-radius(4px);
+  @include tb_border-radius(4px);
 }

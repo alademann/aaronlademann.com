@@ -26,8 +26,12 @@ $webfont_global_dir: "/public/fonts/";
 	
 	// fix flickering
 	visibility: hidden;
-	// grab the default non-webfont families from _variables.scss
-	$fallback_family: if($font_type == sans-serif, $baseFontSansSerif, if($font_type == serif, $baseFontSerif, if($font_type == monospace, $baseFontMonospace, if($font_type == cursive, $baseFontCursive, $baseFontFamily))));
+
+	$fallback_family: $baseFontFamily;
+	@if($font_type == sans-serif) { $fallback_family: $baseFontSansSerif; }
+	@if($font_type == serif)			{ $fallback_family: $baseFontSerif; }
+	@if($font_type == monospace)	{ $fallback_family: $baseFontMonospace; }
+	@if($font_type == cursive)		{ $fallback_family: $baseFontCursive; }
 
 	font-family: $fallback_family;
 
@@ -113,13 +117,13 @@ li[class*=" icon-"] {
     font-family: "FontAwesome" !important;
     font-weight: normal;
     font-style: normal;
-    display: inline-block;
+    @include inline-block;
     text-decoration: inherit;
 }
 
 a [class^="icon-"],
 a [class*=" icon-"] {
-    display: inline-block;
+    @include inline-block;
     text-decoration: inherit;
 }
 
@@ -140,7 +144,7 @@ a [class*=" icon-"] {
 li {
     [class^="icon-"],
     [class*=" icon-"] {
-        display: inline-block;
+        @include inline-block;
         width: 1.25em;
         text-align: center;
     }

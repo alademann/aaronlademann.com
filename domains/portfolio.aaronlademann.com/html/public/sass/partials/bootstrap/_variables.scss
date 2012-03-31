@@ -2,6 +2,16 @@
 // Variables to customize the look and feel of Bootstrap
 // -----------------------------------------------------
 
+$warn_if_compass_not_default: false; // set this to true if you want to be warned when compass is not default
+// if you are importing compass stuff... mark here what you've imported, otherwise - mark it false
+$compass: true;
+$compass_support: true;
+$compass_css3: true;
+$compass_typography: true;
+$compass_util: true;
+$compass_layout: true;
+$compass_reset: true;
+
 // GLOBAL VALUES
 // --------------------------------------------------
 
@@ -9,23 +19,29 @@
 $linkColor:             #08c !default;
 $linkColorHover:        darken($linkColor, 20) !default;
 
-// Grays
-$black:                 #000 !default;
-$almostBlack:						#111 !default;
-$grayDarker:            #222 !default;
-$grayDark:              #333 !default;
-$gray4:									#444 !default;
-$gray:                  #555 !default;
-$gray6:									#666 !default;
-$grayMedium:						#777 !default;
-$grayLight:             #999 !default;
-$grayLighter:           #eee !default;
-$almostWhite:						#fcfcfc !default;
-$white:                 #fff !default;
+// contrast shades
+$black:                 #000 !default; // default is black
+$almostBlack:						#111 !default; // almostBlack
+$grayDarker:            #222 !default; // grayDarker
+$grayDark:              #333 !default; // grayDark
+$gray4:									#444 !default; // gray4
+$gray:                  #555 !default; // gray
+$gray6:									#666 !default; // gray8
+$grayMedium:						#777 !default; // grayMedium
+$grayLight:             #999 !default; // grayLight
+$grayLighterD:					#ddd !default; // grayLighterD
+$grayLighter:           #eee !default; // grayLighter
+$almostWhite:						#fcfcfc !default; // almostWhite
+$white:                 #fff !default; // white
+
+$body-bgcolor:					$grayLighter;
+$body-bg-img:						image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png"); 
 
 // Accent colors
 $blue:                  #049cdb !default;
 $blueDark:              #0064cd !default;
+$blueLight:							#52a8ec !default;  
+$teal:									#00b3ee !default;
 $green:                 #46a546 !default;
 $red:                   #9d261d !default;
 $yellow:                #ffc40d !default;
@@ -49,6 +65,7 @@ $baseFontType:					sans-serif !default;
 $baseFontFamily:        $baseFontSansSerif !default;
 
 $baseH1Size:						30 !default;
+$baseH1Size_px:					pxtoem($baseH1Size);
 $headingRule:						1.2;
 $headingIncrement:			5;
 
@@ -60,36 +77,31 @@ $primaryButtonBackground:    $linkColor !default;
 
 // COMPONENT VARIABLES
 // --------------------------------------------------
+$wellBgColor:							rgba($grayMedium, 0.03);
+$wellInsetShadowColor:		rgba($grayMedium, 0.3);
+$wellCornerRadius:				4px;
 
 // Z-index master list
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
-$zindexDropdown:        1000 !default;
-$zindexPopover:         1010 !default;
-$zindexTooltip:         1020 !default;
-$zindexFixedNavbar:     1030 !default;
-$zindexModalBackdrop:   1040 !default;
-$zindexModal:           1050 !default;
+$zindexDropdown:					1000 !default;
+$zindexPopover:						1010 !default;
+$zindexTooltip:						1020 !default;
+$zindexFixedNavbar:				1030 !default;
+$zindexModalBackdrop:			1040 !default;
+$zindexModal:							1050 !default;
 
 // Sprite icons path
 $iconSpritePath:          image-url("icons/glyphicons-halflings.png");
 $iconWhiteSpritePath:     image-url("icons/glyphicons-halflings-white.png");
 
 // Input placeholder text color
-$placeholderText:       $grayLight !default;
+$placeholderText:					$grayLight !default;
 
 // Hr border color
-$hrBorder:              $grayLighter;
-
-// Navbar
-$navbarHeight:                    40px !default;
-$navbarBackground:                $grayDarker !default;
-$navbarBackgroundHighlight:       $grayDark !default;
-$navbarLinkBackgroundHover:       darken($navbarBackground,50%);
-
-$navbarText:                      $grayLight !default;
-$navbarLinkColor:                 $grayLight !default;
-$navbarLinkColorHover:            $white !default;
+$hrBorder:								$grayLighter;
+$chisel-dark:							rgba($black, 0.1);
+$chisel-light:						rgba($white, 0.4);
 
 // Form states and alerts
 $warningText:             #c09853 !default;
@@ -108,7 +120,18 @@ $infoText:                #3a87ad !default;
 $infoBackground:          #d9edf7 !default;
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
 
+$page-footer-height: 0;
 
+// Navbar
+$navbarHeight_int:								40;
+$navbarHeight:                    $navbarHeight_int+0px !default;
+$navbarBackground:                $grayDarker !default;
+$navbarBackgroundHighlight:       $grayDark !default;
+$navbarLinkBackgroundHover:       darken($navbarBackground, 50%);
+
+$navbarText:                      $grayLight !default;
+$navbarLinkColor:                 $grayLight !default;
+$navbarLinkColorHover:            $white !default;
 
 // GRID
 // ----
@@ -122,67 +145,3 @@ $gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth 
 // Fluid grid
 $fluidGridColumnWidth:    5.732655983% !default;
 $fluidGridGutterWidth:    2.837102564% !default;
-
-
-// MIGRATED FROM old _vars.scss
-// TODO: integrate and organize
-
-$aa_mastHeightInt: 40;
-$aa_mastHeight: $aa_mastHeightInt+0px;
-$aa_footHeight: 0;
-// portfolio
-$primaryHPad: 40px;
-$primaryVPad: 40px;
-$sidebarWidth: 190px;
-// grid
-$masonryHPad: 25px;
-$masonryVPad: 20px;
-// single
-$articleHPad: 15px;
-$articleVPad: 40px;
-
-// headings
-$aa_h1_fontSize: pxtoem($baseH1Size);
-
-// media sizes
-$aa_media_widthMax:			1920px;
-$aa_media_widthLg:			1024px;
-$aa_media_widthMed:			550px;
-$aa_media_widthThumb:		230px;
-$aa_media_heightThumb:	170px;
-$aa_media_heightMobileThumb:	355px;
-$aa_media_widthThumbSm: 50px;
-
-$folioImgWidth: $aa_media_widthMed;
-
-// media filename suffixes
-$aa_mediaSuffix_medium: "-med";
-$aa_mediaSuffix_large:	"-lg";
-$aa_mediaSuffix_thumb:	"-thumb";
-$aa_mediaSuffix_small:	"-thumb_sm";
-
-// REQUIRES: @import "compass/css3/text-shadow"
-$default-text-shadow-color: #f2f2f2;
-$default-text-shadow-h-offset: 1px;
-$default-text-shadow-v-offset: 1px;
-$default-text-shadow-blur: 0;
-// END compass/css3/text-shadow
-
-$wellCornerRadius: 4px;
-
-// COLORS
-$aa_wellBgColor: rgba(120,120,120,.03);
-$aa_wellInsetShadowColor: rgba(120,120,120,.3);
-$chiselDark: rgba($black,.1);
-$chiselLight: rgba($white,.4);
-$body_bgcolor: #eeeeee;
-$body_bgImg: image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png");
-
-@mixin aa_body_light {
-	body {
-		background-position: left top !important;
-		background-repeat: repeat !important;
-		background-color: $body_bgcolor !important;
-		background-image: $body_bgImg !important;
-	}
-}

@@ -22,11 +22,21 @@
 
 // Core variables and mixins
 @import "variables"; // Modify this for custom colors, font-sizes, etc
-@import "functions";
+@import "functions"; // these are my own special functions that i want to keep out of the variables file.
 @import "mixins";
 
 // CSS Reset
-//@import "reset"; // I opt to use the compass reset import
+@import "reset"; // is only include if mixin bs_reset is included
+
+@mixin do_reset{
+	@if not $compass_reset  { // $compass_reset can be changed in _variables.scss partial
+		@include bs_reset; // compass reset not in place
+		@debug "compass reset not found, using bootstrap reset instead";
+	}
+} // END do_reset
+
+@include do_reset;
+
 
 // Grid system and page structure
 @import "scaffolding";

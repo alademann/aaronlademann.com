@@ -1,16 +1,16 @@
 // WELLS 
 // -----
 $wellEdgeHighlight: rgba($white, 0.7);
-$aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
+$wellInsetShadowHalf: rgba($grayMedium, 0.175);
 
 .well {
   min-height: 20px;
   margin-bottom: 2%;
-	@include border-radius($wellCornerRadius);
-  background: $aa_wellBgColor; // custom mixin that takes care of non-rgba backgrounds, too
-  @include box-shadow(
+	@include tb_border-radius($wellCornerRadius);
+  background: $wellBgColor; // custom mixin that takes care of non-rgba backgrounds, too
+  @include tb_box-shadow(
 		$wellEdgeHighlight 0 1px 0 0, // highlight edge 
-		$aa_wellInsetShadowColor 0 1px 7px 0 inset // inner shadow
+		$wellInsetShadowColor 0 1px 7px 0 inset // inner shadow
 	);
 
 	// padding depending on if its inside a grid system
@@ -26,23 +26,23 @@ $aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
 	}
 
 	blockquote {
-    border-color: #ddd;
+    border-color: $grayLighterD;
     border-color: rgba($black,.15);
   }
 } // END .well
 
 .inverse-well {
-	@include box-shadow(
+	@include tb_box-shadow(
 			$wellEdgeHighlight -1px -1px 0 0 inset, // highlight edge 
-		$aa_wellInsetShadowColor 1px 1px 2px 0 inset,
-		$aa_wellInsetShadowColor 0 1px 7px 0 // inner shadow
+		$wellInsetShadowColor 1px 1px 2px 0 inset,
+		$wellInsetShadowColor 0 1px 7px 0 // inner shadow
 	);
 }
 .inverse-well-stacked {
-	@include box-shadow(
+	@include tb_box-shadow(
 		$wellEdgeHighlight 0 -1px 0 0 inset, // highlight edge 
-		$aa_wellInsetShadowHalf -1px 0 2px 0 inset,
-		$aa_wellInsetShadowHalf 1px 1px 2px 0 inset,
-		$aa_wellInsetShadowColor 0 1px 7px 0 // inner shadow
+		$wellInsetShadowHalf -1px 0 2px 0 inset,
+		$wellInsetShadowHalf 1px 1px 2px 0 inset,
+		$wellInsetShadowColor 0 1px 7px 0 // inner shadow
 	)
 }

@@ -6,7 +6,7 @@ body > * {
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
-	&[class^="span"], &.masonry {
+	&[class^="span"], &.masonry, &.hentry {
 		// this is another grid elment, no padding
 		padding: 0;
 		width: 100%;
@@ -28,9 +28,9 @@ body > * {
 }
 
 #container {
-	$clearTheMasthead: ($aa_mastHeight + $masonryHPad);
+	$clearTheMasthead: ($navbarHeight + $wp_masonry-hpad);
 	margin-top: $clearTheMasthead;
-	//line-height: ($aa_mastHeight - 4);
+	//line-height: ($navbarHeight - 4);
 } // END #container
 
 .navbar-fixed-top {
@@ -66,7 +66,7 @@ body > * {
 	.page-template-template-full-width-php & { float: none; }
 	
 	header {
-		padding: 0 $masonryHPad $masonryHPad $masonryHPad;
+		padding: 0 $wp_masonry-hpad $wp_masonry-hpad $wp_masonry-hpad;
 
 		h1 {
 				
@@ -74,7 +74,7 @@ body > * {
 			font-weight: bold;
 			letter-spacing: -.1ex;
 			line-height: 1.1em;
-			//margin-bottom: ($aa_h1_fontSize / 9);
+			//margin-bottom: ($baseH1Size_px / 9);
 		} // END #primary header h1
 
 	} // END #primary header
@@ -104,7 +104,7 @@ body > * {
 		@include transparent;
 		// reveal
 		&.transReady {
-			@include opacity(1.0); 
+			@include opacity(100); 
 		}
 	} // end opacity
 	.js.no-opacity & {
@@ -134,7 +134,7 @@ body > * {
 	}
 	.masonry-brick {
 
-		margin: 0 0 $masonryVPad $masonryHPad;
+		margin: 0 0 $wp_masonry-vpad $wp_masonry-hpad;
 		float: left;
 		position: absolute;
 		top: 100%; // so it animates from the bottom;
@@ -149,7 +149,7 @@ body > * {
 			display: block;
 			position: relative;
 			/* so that even an image that is not 170px being used as a thumbnail will not throw off the grid view */
-			min-height: $aa_media_heightThumb;
+			min-height: $wp_media_heightThumb;
 		}
 
 		.post-thumb a,
@@ -164,10 +164,10 @@ body > * {
 		}
 
 		&, .wellOverlay{
-			@include min-width($aa_media_widthThumb);
-			max-width: $aa_media_widthThumb;
-			@include min-height($aa_media_heightThumb + 84);
-			max-height: ($aa_media_heightThumb + 84);
+			@include min-width($wp_media_widthThumb);
+			max-width: $wp_media_widthThumb;
+			@include min-height($wp_media_heightThumb + 84);
+			max-height: ($wp_media_heightThumb + 84);
 			padding: 0;
 		}
 
@@ -206,7 +206,7 @@ body > * {
 				width: 100%;
 				min-width: 100%;
 				max-width: 100%;
-				max-height: ($aa_media_heightMobileThumb + 84);
+				max-height: ($wp_media_heightMobileThumb + 84);
 			}
 			.wellOverlay {
 				@include stretch-y;
@@ -233,16 +233,16 @@ body > * {
 	// primary section & article
 	#primary {
 		/* no left sidebar on .single pages */
-		$primaryHpad_single: 5%;
-		$sliderDivider: ($primaryHPad / 2); // space between image and caption / meta 
+		$wp_primary-hpad_single: 5%;
+		$sliderDivider: ($wp_primary-hpad / 2); // space between image and caption / meta 
 
 
 		// primary .single page header that spans the entire top area below mast
 		& > header, & > .header {
 			//width: auto;
-			padding-top: $primaryVPad / 2;
-			height: $primaryVPad;
-			line-height: $primaryVPad;
+			padding-top: $wp_primary-vpad / 2;
+			height: $wp_primary-vpad;
+			line-height: $wp_primary-vpad;
 			position: absolute;
 			display: none;
 			nav, .nav {
@@ -268,7 +268,7 @@ body > * {
 			position: relative;
 			left: auto;
 			top: -44px;
-			@include min-height($aa_media_widthThumbSm);
+			@include min-height($wp_media_widthThumbSm);
 			height: auto;
 			width: auto;
 
@@ -289,8 +289,8 @@ body > * {
 				a {
 					padding: .3em;
 					display: block;	
-					width: $aa_media_widthThumbSm;
-					height: $aa_media_widthThumbSm;
+					width: $wp_media_widthThumbSm;
+					height: $wp_media_widthThumbSm;
 					background: transparent none;
 					text-decoration: none;
 					//@include border-radius(2px, 2px);
@@ -316,12 +316,12 @@ body > * {
 		// vertical layout when there is a lot of screen width to work with
 		// TODO: dynamically add/remove the .vert class based on the responsive conditions in the browser.
 		&.vert {
-			$paginationHpad: 10px;
-			$paginationWidth: $aa_media_widthThumbSm + $paginationHpad;
+			$pagination-hpad: 10px;
+			$paginationWidth: $wp_media_widthThumbSm + $pagination-hpad;
 
 			.pagination.thumbs {
 				width: $paginationWidth;
-				padding: $paginationHpad;
+				padding: $pagination-hpad;
 				height: auto;
 				left: 0;
 				top: 0;
@@ -335,7 +335,7 @@ body > * {
 			.slideStage {
 				$convertedEmPadding: emtopx($stagePadNum);
 				position: relative;
-				padding-left: $paginationWidth + ($paginationHpad * 2) + $convertedEmPadding; // move it over the "total" width created by a 60px width and side padding
+				padding-left: $paginationWidth + ($pagination-hpad * 2) + $convertedEmPadding; // move it over the "total" width created by a 60px width and side padding
 
 			}
 		} // END .slider.vert
@@ -362,9 +362,9 @@ body > * {
 
 	// sidebar (where content / meta for each portfolio piece lives)
 	#single-sidebar {
-		$sidebarPad: 1.4em;
+		$wp_sidebarPad: 1.4em;
 		z-index: 99;
-		@include stretch-y($aa_mastHeight,0); 
+		@include stretch-y($navbarHeight,0); 
 		// the stretch-y compass method above creates absolute position... 
 		// so we need to align it how we want our fluid layout to respond when screen size changes.
 		left: auto;
@@ -372,13 +372,13 @@ body > * {
 
 		& > div, & > header, & > footer, & > span, & > ul, & > p {
 			width: auto;
-			padding: 0 $sidebarPad;
+			padding: 0 $wp_sidebarPad;
 		}
 		& > header, & > .header {
-			padding-top: $sidebarPad;
+			padding-top: $wp_sidebarPad;
 		}
 		& > footer, & > .footer {
-			padding-bottom: $sidebarPad;
+			padding-bottom: $wp_sidebarPad;
 		}
 
 		// formatting for any <ul> elem in the #single sidebar
@@ -387,7 +387,7 @@ body > * {
 			@include float(left);
 
 			&.link {
-				margin-top: $sidebarPad;
+				margin-top: $wp_sidebarPad;
 				line-height: 1.7;
 				font-weight: bold;
 			}
@@ -415,17 +415,17 @@ body > * {
 			}
 
 		} // END #single-sidebar li
-		.seperator { margin: ($articleVPad / 4) 0; }
+		.seperator { margin: ($wp_article-vpad / 4) 0; }
 
 		// header is where the_content() and the_title() live on .single posts.
 		header, .header {
 					
 			h1, .h1 {
-				//font-size: $aa_h1_fontSize;
+				//font-size: $baseH1Size_px;
 				font-weight: bold;
 				letter-spacing: -.1ex;
 				line-height: 1.1;
-				margin-bottom: ($aa_h1_fontSize / 9);
+				margin-bottom: ($baseH1Size_px / 9);
 			}
 
 			ul.entry-header {
@@ -457,7 +457,7 @@ body > * {
 				.caption {
 					// the_content()
 					clear: both;
-					padding: $sidebarPad 0;
+					padding: $wp_sidebarPad 0;
 				} // end #single-sidebar .caption
 
 			} // END .single #single-sidebar header ul.entry-header
@@ -470,7 +470,7 @@ body > * {
 				line-height: normal;
 				.widget-title {
 					font-size: 1.1em;
-					margin-top: ($sidebarPad - 0.9em);
+					margin-top: ($wp_sidebarPad - 0.9em);
 					line-height: normal;
 				}
 			}
@@ -544,9 +544,9 @@ body > * {
 					#single-sidebar {
 					
 						z-index: 99;
-						background: rgba(120,120,120,.1);
-						@include single-box-shadow(rgba(120,120,120,.6), 3px, 0, 8px, 0, inset );
-						//@include stretch-y($aa_mastHeight,0); 
+						background: rgba($grayMedium,.1);
+						@include single-box-shadow(rgba($grayMedium,.6), 3px, 0, 8px, 0, inset );
+						//@include stretch-y($navbarHeight,0); 
 						position: relative;
 						// the stretch-y compass method above creates absolute position... 
 						// so we need to align it how we want our fluid layout to respond when screen size changes.
@@ -556,7 +556,7 @@ body > * {
 						header, .header {
 						
 							h1 {
-								$h1_fontSize: $aa_h1_fontSize - .2; 
+								$h1_fontSize: $baseH1Size_px - .2; 
 								font-size: $h1_fontSize;
 								margin-bottom: ($h1_fontSize / 9);
 							} // END .single #single-sidebar header h1
@@ -639,13 +639,13 @@ body > * {
 		z-index: 500;
 		left: 0;
 		margin: 21px 0 0 0;
-		width: $sidebarWidth;
+		width: $wp_sidebar-width;
 
 		.chrome &, .safari & { margin-top: 46px; }
 		.widget {
 			$widgetIndent: 20px;
 			position: relative;
-			width: $sidebarWidth - $widgetIndent;
+			width: $wp_sidebar-width - $widgetIndent;
 			left: $widgetIndent;
 			top: -6px;
 		} // END #sidebar .widget

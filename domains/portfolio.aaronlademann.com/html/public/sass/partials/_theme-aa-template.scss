@@ -36,7 +36,7 @@ $helvWeight: 600;
 			cursor: pointer;
 		}
 
-		$brickCaptionHPad: 15px;
+		$brickCaption-hpad: 15px;
 
 		img {
 			border-bottom-style: solid;
@@ -53,7 +53,7 @@ $helvWeight: 600;
 				font-size: pxtoem(14);
 				border: none;
 				margin: 0;
-				padding: ($brickCaptionHPad - 5) $brickCaptionHPad ($brickCaptionHPad - 8) $brickCaptionHPad;
+				padding: ($brickCaption-hpad - 5) $brickCaption-hpad ($brickCaption-hpad - 8) $brickCaption-hpad;
 
 				a {
 					&:hover {
@@ -69,7 +69,7 @@ $helvWeight: 600;
 			
 			.entry-meta {
 				font-size: pxtoem(11);
-				padding: ($brickCaptionHPad - 10) $brickCaptionHPad;
+				padding: ($brickCaption-hpad - 10) $brickCaption-hpad;
 			}
 		} // END .masonry-brick footer
 
@@ -83,12 +83,12 @@ $helvWeight: 600;
 	z-index: 900;
 	position: fixed;
 	bottom: 0;
-	height: $aa_footHeight;
+	height: $page-footer-height;
 	font-size: 0.846em;
 
 	#copyright {
 		color: lighten($gray, 50%);
-		line-height: $aa_footHeight; // center vertically
+		line-height: $page-footer-height; // center vertically
 	}
 
 } // END #footer
@@ -224,8 +224,8 @@ a[rel="external"], a.external, a[target="blank"],
 	.pagination.thumbs {
 		@include border-corner-radius(bottom, left, 4px);
 		@include border-corner-radius(bottom, right, 4px);
-		background: $aa_wellBgColor;
-		@include single-box-shadow($aa_wellInsetShadowColor, 0, 0, 6px, 2px, inset );
+		background: $wellBgColor;
+		@include single-box-shadow($wellInsetShadowColor, 0, 0, 6px, 2px, inset );
 
 		.slider.vert & {
 			@include border-corner-radius(bottom, left, 0);
@@ -235,8 +235,8 @@ a[rel="external"], a.external, a[target="blank"],
 	}
 
 	#single-sidebar {
-		background: $aa_wellBgColor;
-		@include single-box-shadow($aa_wellInsetShadowColor, 3px, 0, 8px, 0, inset );
+		background: $wellBgColor;
+		@include single-box-shadow($wellInsetShadowColor, 3px, 0, 8px, 0, inset );
 
 		li ul.children li a::before,
 		h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
@@ -259,7 +259,7 @@ a[rel="external"], a.external, a[target="blank"],
 
 		&:hover {
 			background-position: left bottom;
-			color: #ddd !important;
+			color: $grayLighterD !important;
 			//text-shadow: 0 3px 0 rgba($black, 0.5), 0 0 30px rgba($black, 0.525);
 			@include text-shadow(
 				rgba(black, 0.5) 0 3px 0, 
@@ -292,7 +292,7 @@ a[rel="external"], a.external, a[target="blank"],
 
 			//border-color: transparent;
 
-			@include rgba_bg(#cccccc, 0.2);
+			@include rgba_bg(darken($grayLighterD, 5), 0.2);
 			@include box-shadow($edge_shadow);
 			.wellOverlay {
 				@include box-shadow($inset_shadow);
@@ -301,11 +301,11 @@ a[rel="external"], a.external, a[target="blank"],
 				// we want the figure (image) itself to be brighter than the caption area 
 				// even if the thumbnail is a png with a transparent bg.
 				figure, .figure {
-					@include rgba_bg(#ffffff, 0.35);
+					@include rgba_bg($white, 0.35);
 				}
 				// caption area below figure
 				figcaption, .figcaption, footer, .footer {
-					@include rgba_bg(#000000, 0.05);
+					@include rgba_bg($black, 0.05);
 				}
 
 				img {
@@ -327,7 +327,7 @@ a[rel="external"], a.external, a[target="blank"],
 				
 			// HOVER
 			&.hover {
-				@include rgba_bg(#ffffff, 0.9);
+				@include rgba_bg($white, 0.9);
 				@include box-shadow($edge_shadow_hover);
 				.wellOverlay{
 					@include box-shadow($inset_shadow_hover);
@@ -345,7 +345,7 @@ a[rel="external"], a.external, a[target="blank"],
 			.no-rgba & {
 
 					img {
-						border-bottom-color: ie-hex-str(lighten($entryMeta_border,50%));	
+						border-bottom-color: ie-hex-str(lighten($entryMeta_border, 50%));	
 					}
 					footer, .footer {
 						border-top-color: ie-hex-str($entryMeta_border);	
@@ -357,7 +357,7 @@ a[rel="external"], a.external, a[target="blank"],
 			
 				figcaption, .figcaption {
 					// in mobile layouts, the caption overlaps the image itself...
-					@include rgba_bg(#2c2c2c, 0.55);
+					@include rgba_bg(lighten($grayDarker, 5), 0.55);
 
 					.entry-title a {
 						color: $white;
@@ -370,7 +370,7 @@ a[rel="external"], a.external, a[target="blank"],
 				&.hover {
 					
 					figcaption, .figcaption {
-						@include rgba_bg(#2c2c2c, 0.85);
+						@include rgba_bg(lighten($grayDarker, 5), 0.85);
 						.entry-title a, .entry-title a:hover {
 							text-decoration: none !important;
 							color: $white;
@@ -395,20 +395,15 @@ a[rel="external"], a.external, a[target="blank"],
 		bottom: 40px;
 		width: 200px;
 		padding: 10px;
-		background: #000; 
-		opacity: 0.8;
-		color: #FFF;
-		-webkit-border-radius: 10px;
-			 -moz-border-radius: 10px;
-						border-radius: 10px;
+		background: $black; 
+		@include opacity(80);
+		color: $white;
+		@include border-radius(10px);
 	}
 
 
 	.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
-		@include single-box-shadow();
-		-webkit-box-shadow: 1px 1px rgba($black, 0.50);
-			 -moz-box-shadow: 0 1px 1px rgba($black, 0.50);
-    			box-shadow: 0 1px 1px rgba($black, 0.50);
+		@include box-shadow(1px 1px rgba($black, 0.50));
 	}
 
 
@@ -433,21 +428,21 @@ a[rel="external"], a.external, a[target="blank"],
 
 	.line { 
 		.rgba & {
-			border-bottom-color: $chiselDark; 
-			border-top-color: $chiselLight;
+			border-bottom-color: $chisel-dark; 
+			border-top-color: $chisel-light;
 
 			&.vert {
-				border-right-color: $chiselDark; 
-				border-left-color: $chiselLight;
+				border-right-color: $chisel-dark; 
+				border-left-color: $chisel-light;
 			}
 		}
 		.no-rgba & {
-			border-bottom-color: ie-hex-str($chiselDark); 
-			border-top-color: ie-hex-str($chiselLight);
+			border-bottom-color: ie-hex-str($chisel-dark); 
+			border-top-color: ie-hex-str($chisel-light);
 
 			&.vert {
-				border-right-color: ie-hex-str($chiselDark); 
-				border-left-color: ie-hex-str($chiselLight);
+				border-right-color: ie-hex-str($chisel-dark); 
+				border-left-color: ie-hex-str($chisel-light);
 			}
 		}
 	}

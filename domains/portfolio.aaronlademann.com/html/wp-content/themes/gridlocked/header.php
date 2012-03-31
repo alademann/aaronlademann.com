@@ -10,12 +10,8 @@
 <?php if( !is_page_template('template-resume.php') ) { ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <?php } ?>
-<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/screen.css">
-<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
-<!--[if IE]>
-<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/ie.css" />
-<![endif]-->
-<noscript><link rel="stylesheet" href="<?php echo public_uri(); ?>/css/noscript.css"></noscript>
+
+<?php include(custom_includes_dir() . "/portfolio/stylesheets.php"); ?>
 
 <!-- RSS & Pingbacks -->
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> RSS Feed" href="<?php if (get_option('tz_feedburner')) { echo get_option('tz_feedburner'); } else { bloginfo( 'rss2_url' ); } ?>">

@@ -1,0 +1,9 @@
+//----------------------------------------
+// THESE WILL BE COMPILED BASED ON THE 
+// GLOBAL COMPASS OPTION(S) SET IN THE 
+// INDIVIDUAL .SCSS FILES (NOT PARTIALS)
+//----------------------------------------
+@import "1-compass";
+@import "2-webfonts";
+@import "3-bootstrap";
+@import "4-theme";
