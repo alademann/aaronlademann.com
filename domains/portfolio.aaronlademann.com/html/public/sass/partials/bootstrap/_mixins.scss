@@ -44,8 +44,16 @@
 // IE7 star-hack
 // ----------------
 @mixin ie7($property, $value){
-	@if $legacy-support-for-ie7 {
+	@if $legacy-support-for-ie7 or $legacy-support-for-ie6 {
 		*#{$property}: #{$value};
+	}
+}
+
+// IE9 escape-hack
+// ----------------
+@mixin ie9($property, $value){
+	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 or $legacy-support-for-ie9 {
+		#{$property}: #{$value} \9; /* IE9 and down */
 	}
 }
 
@@ -678,7 +686,7 @@
   // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
   &:active,
   &.active {
-    background-color: darken($endColor, 10%) #{"\9"};
+    @include ie9(background-color, darken($endColor, 10%));
   }
 }
 
