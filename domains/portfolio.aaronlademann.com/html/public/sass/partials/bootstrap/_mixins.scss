@@ -663,8 +663,8 @@
 }
 
 // Gradient Bar Colors for buttons and alerts
-@mixin gradientBar($primaryColor, $secondaryColor) {
-  @include gradient-vertical($primaryColor, $secondaryColor);
+@mixin gradientBar($wp_primaryColor, $secondaryColor) {
+  @include gradient-vertical($wp_primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
   border-color: rgba($black, 0.1) rgba($black, 0.1) fade-in(rgba($black, 0.1), 0.15);
 }

@@ -36,7 +36,7 @@ $helvWeight: 600;
 			cursor: pointer;
 		}
 
-		$brickCaptionHPad: 15px;
+		$brickCaption-hpad: 15px;
 
 		img {
 			border-bottom-style: solid;
@@ -53,7 +53,7 @@ $helvWeight: 600;
 				font-size: pxtoem(14);
 				border: none;
 				margin: 0;
-				padding: ($brickCaptionHPad - 5) $brickCaptionHPad ($brickCaptionHPad - 8) $brickCaptionHPad;
+				padding: ($brickCaption-hpad - 5) $brickCaption-hpad ($brickCaption-hpad - 8) $brickCaption-hpad;
 
 				a {
 					&:hover {
@@ -69,7 +69,7 @@ $helvWeight: 600;
 			
 			.entry-meta {
 				font-size: pxtoem(11);
-				padding: ($brickCaptionHPad - 10) $brickCaptionHPad;
+				padding: ($brickCaption-hpad - 10) $brickCaption-hpad;
 			}
 		} // END .masonry-brick footer
 
@@ -83,12 +83,12 @@ $helvWeight: 600;
 	z-index: 900;
 	position: fixed;
 	bottom: 0;
-	height: $aa_footHeight;
+	height: $page-footer-height;
 	font-size: 0.846em;
 
 	#copyright {
 		color: lighten($gray, 50%);
-		line-height: $aa_footHeight; // center vertically
+		line-height: $page-footer-height; // center vertically
 	}
 
 } // END #footer
@@ -224,8 +224,8 @@ a[rel="external"], a.external, a[target="blank"],
 	.pagination.thumbs {
 		@include border-corner-radius(bottom, left, 4px);
 		@include border-corner-radius(bottom, right, 4px);
-		background: $aa_wellBgColor;
-		@include single-box-shadow($aa_wellInsetShadowColor, 0, 0, 6px, 2px, inset );
+		background: $wellBgColor;
+		@include single-box-shadow($wellInsetShadowColor, 0, 0, 6px, 2px, inset );
 
 		.slider.vert & {
 			@include border-corner-radius(bottom, left, 0);
@@ -235,8 +235,8 @@ a[rel="external"], a.external, a[target="blank"],
 	}
 
 	#single-sidebar {
-		background: $aa_wellBgColor;
-		@include single-box-shadow($aa_wellInsetShadowColor, 3px, 0, 8px, 0, inset );
+		background: $wellBgColor;
+		@include single-box-shadow($wellInsetShadowColor, 3px, 0, 8px, 0, inset );
 
 		li ul.children li a::before,
 		h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
@@ -428,21 +428,21 @@ a[rel="external"], a.external, a[target="blank"],
 
 	.line { 
 		.rgba & {
-			border-bottom-color: $chiselDark; 
-			border-top-color: $chiselLight;
+			border-bottom-color: $chisel-dark; 
+			border-top-color: $chisel-light;
 
 			&.vert {
-				border-right-color: $chiselDark; 
-				border-left-color: $chiselLight;
+				border-right-color: $chisel-dark; 
+				border-left-color: $chisel-light;
 			}
 		}
 		.no-rgba & {
-			border-bottom-color: ie-hex-str($chiselDark); 
-			border-top-color: ie-hex-str($chiselLight);
+			border-bottom-color: ie-hex-str($chisel-dark); 
+			border-top-color: ie-hex-str($chisel-light);
 
 			&.vert {
-				border-right-color: ie-hex-str($chiselDark); 
-				border-left-color: ie-hex-str($chiselLight);
+				border-right-color: ie-hex-str($chisel-dark); 
+				border-left-color: ie-hex-str($chisel-light);
 			}
 		}
 	}

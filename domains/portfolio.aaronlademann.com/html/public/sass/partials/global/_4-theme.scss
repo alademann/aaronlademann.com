@@ -1,4 +1,46 @@
 /*------------------------ THEME ------------------------*/
+// TEMPLATE BG
+@mixin aa_body_light {
+	body {
+		background-position: left top !important;
+		background-repeat: repeat !important;
+		background-color: $body-bgcolor !important;
+		background-image: $body-bg-img !important;
+	}
+}
+
+/*------------------------ WP VARS ------------------------*/
+// WORDPRESS GRIDLOCKED PORTFOLIO STYLES
+
+// portfolio
+$wp_primary-hpad:							40px;
+$wp_primary-vpad:							40px;
+$wp_sidebar-width:						190px;
+// grid
+$wp_masonry-hpad:							25px;
+$wp_masonry-vpad:							20px;
+// single
+$wp_article-hpad:							15px;
+$wp_article-vpad:							40px;
+
+// media sizes
+$wp_media_widthMax:						1920px;
+$wp_media_widthLg:						1024px;
+$wp_media_widthMed:						550px;
+$wp_media_widthThumb:					230px;
+$wp_media_heightThumb:				170px;
+$wp_media_heightMobileThumb:	355px;
+$wp_media_widthThumbSm:				50px;
+
+$wp_folio-img-width:					$wp_media_widthMed;
+
+// media filename suffixes
+$wp_mediaSuffix_medium:				"-med";
+$wp_mediaSuffix_large:				"-lg";
+$wp_mediaSuffix_thumb:				"-thumb";
+$wp_mediaSuffix_small:				"-thumb_sm";
+
+/*------------------------ UTILITIES ------------------------*/
 // what fonts do you want to embed in this sheet?
 @include aa_portfolio_webfonts;
 @import "partials/mobile/aa_responsive"; 

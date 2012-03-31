@@ -120,8 +120,8 @@
 
 // Navbar search
 .navbar-search {
-	$queryVpad: 4;
-	$centeredLineHeight: $aa_mastHeightInt - ($queryVpad + 1);
+	$query-vpad: 4;
+	$centeredLineHeight: $navbarHeight_int - ($query-vpad + 1);
 
   position: relative;
   @include float(left);
@@ -130,7 +130,7 @@
 	// center vertically
 	line-height: pxtoem($centeredLineHeight);
   .search-query {
-    padding: $queryVpad+0px 9px;
+    padding: $query-vpad+0px 9px;
     @include font-sans-serif($baseFontSize, $baseLineHeight, normal);
     color: $white;
     color: rgba($white,.75);

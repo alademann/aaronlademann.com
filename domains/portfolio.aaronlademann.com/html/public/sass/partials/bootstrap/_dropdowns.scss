@@ -27,7 +27,7 @@ details.well, #bd details.well {
 	summary.h2 { 
 		.inner {
 			// cover up the inner shadow of the well
-			background: $body_bgcolor $body_bgImg left top repeat;
+			background: $body-bgcolor $body-bg-img left top repeat;
 			@extend .inverse-well;
 			@include border-corner-radius(bottom, right, $wellCornerRadius);
 		}
