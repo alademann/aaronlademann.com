@@ -4,10 +4,35 @@
 	$isIOS = is_ios();
 ?>
 <script id="nomatterwhat">
-	head.js({ jquery: "/wp-includes/js/jquery/jquery.js" }, function(){
-		
-		head.ready("jquery", function(){		
+	Modernizr.load([
+		{
+			load: '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js',
+			complete: function() {
+				if (!window.jQuery) {
+					// load local copy if google cdn is down
+					Modernizr.load('/public/js/jquery/jquery-latest.min.js');
+					console.warn("google CDN was down, had to load local jQuery resource");
+				} else {
+					load_therest();
+				}
+			} 
+
+		}]);
+	
+	function load_therest(){
+	if(window.jQuery){	
+		//head.ready("jquery", function(){		
 			// once jquery is loaded, load all the jquery plugins 'n schtuff
+			
+			head.js({ masonry:					"<?php echo $jQueryScriptDir; ?>jquery.masonry.min.js"				});
+			head.ready("masonry", function(){
+				// once masonry is loaded...
+
+				head.js({ infinitescroll: "<?php echo $jQueryScriptDir; ?>infinite-scroll/jquery.infinitescroll.min.js" });
+				head.js({ gridlockedcustom: "<?php echo $jQueryScriptDir; ?>jquery.gridlocked-custom.js"	});
+		
+			}); // END head.ready("masonry")
+			
 
 			head.js(
 				 { jqueryeasing:				"<?php echo $jQueryScriptDir; ?>jquery.easing.1.3.js"						}
@@ -16,8 +41,8 @@
 				,{ jqueryshadowanimate:	"<?php echo $jQueryScriptDir; ?>jquery.animate-shadow-min.js"		}
 				,{ jqueryanimatecolors: "<?php echo $jQueryScriptDir; ?>jquery.animate-colors.js"				}
 				,{ jquerycookie:				"<?php echo $jQueryScriptDir; ?>jquery.cookie.js"								}
-				,{ masonry:							"<?php echo $jQueryScriptDir; ?>jquery.masonry.min.js"					}
-				,{ imagesloaded:				"<?php echo $jQueryScriptDir; ?>jquery.imagesloaded.js"					}
+				
+				//,{ imagesloaded:				"<?php echo $jQueryScriptDir; ?>jquery.imagesloaded.js"					}
 				,{ tzshortcodes:				"<?php echo $jQueryScriptDir; ?>jquery.shortcodes.js"						}
 				,{ bootstrapcollapse:		"<?php echo $bootstrapScriptDir; ?>bootstrap-collapse.js"				}
 				,{ bootstrapbutton:			"<?php echo $bootstrapScriptDir; ?>bootstrap-button.js"					}
@@ -31,22 +56,18 @@
 
 			}); // END head.js (core)
 
-		}); // end head.ready("jquery");
+		//}); // end head.ready("jquery");
 
-		head.ready("masonry", function(){
-			// once masonry is loaded...
 
-			head.js({ infinitescroll: "<?php echo $jQueryScriptDir; ?>infinite-scroll/jquery.infinitescroll.min.js" });
-		
-		}); // END head.ready("masonry")
 
-	});
+	} // END if(window.jQuery)
+}
 </script>
 <!--[if (gte IE 6)&(lte IE 8)]>
 	<script id="selectivizr">
-		head.ready("jquery", function(){
+		if(window.jQuery){	
 			head.js({ selectivizr: "<?php echo public_uri(); ?>/js/selectivizr-min.js" });
-		});
+		}
 	</script>
 <![endif]-->
 <?php } ?>
@@ -59,16 +80,6 @@
 	}); // END head.ready("jquery")
 </script>
 <?php } ?>
-<script id="customizations">
-	head.ready(function(){
-
-		head.js({ gridlockedcustom: "<?php echo $jQueryScriptDir; ?>jquery.gridlocked-custom.js" });
-		<?php if(is_mobile()) { ?>
-		head.js({ mobile:							"<?php echo public_uri(); ?>/js/iOSfixedPosition.js"				 });
-		<?php } ?>
-
-	}); // END head.ready
-</script>
 <?php if( is_page_template('template-resume.php') ){ ?>	
 <script id="resumeScripts"> 
 	

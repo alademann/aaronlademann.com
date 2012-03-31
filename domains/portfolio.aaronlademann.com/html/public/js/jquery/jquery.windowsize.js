@@ -1,4 +1,4 @@
-﻿head.ready("jquery", function() {
+﻿if(window.jQuery) {
 	var $ = jQuery.noConflict();
 
 // fullHeight(elem,parentElem,aboveElem,belowElem);
@@ -39,4 +39,4 @@ function fullHeight(elem, parentElem, aboveElem, belowElem) {
 
 } // END function fullHeight()
 
-});
+}

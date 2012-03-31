@@ -14,10 +14,12 @@ $masonryWrapperClass = ".masonry";
 $masonryBoxClass = ".masonry-brick";
 // detect whether or not browser can handle css animations / transitions
 $cssTransitions = $("html.csstransitions").length;
+$useJStoAnimate = $cssTransitions > 0 ? false : true;
 $cssFadeShowClass = "opaque";
 // is it a single page?
 $isSinglePage = $("body.single").length;
 $isIphone = $("body").hasClass("iphone");
+$isIE = $("body").hasClass("ie");
 
 /*--------------------------------------------------------------------------------------------------------
 
@@ -25,7 +27,19 @@ $isIphone = $("body").hasClass("iphone");
  
 ----------------------------------------------------------------------------------------------------------*/
 
-head.ready(function() {
+if(window.jQuery) {
+	if($().masonry) {
+		masonTheLayout(); // LINE 315
+	} // END if(masonry)
+
+	if($isSinglePage) {
+		// functions that should ONLY trigger on .single pages
+		initiateSlides();
+	} else {
+		// functions that should NOT trigger on .single pages
+		sidebarParentNavs();
+	}
+
 	var $alerts = $("#container").find(".alert");
 	if($alerts.length) {
 		try {
@@ -56,25 +70,13 @@ head.ready(function() {
 	contentHeight(); // dynamic content height
 	//	contentWidth();
 
-	if($().masonry) {
-		masonTheLayout();
-	} // END if(masonry)
-
-	if($isSinglePage) {
-		// functions that should ONLY trigger on .single pages
-		initiateSlides();
-	} else {
-		// functions that should NOT trigger on .single pages
-		sidebarParentNavs();
-	}
-
 	disableRightClick($masonryWrapperClass + ' img, .lightbox img, .fancybox-img'); // disable right click on all portfolio images
 
 	tz_widgetOverlay(); // TODO - only trigger this if the widget overlay function is enabled in WP
 	tz_navTitles(); // TODO - figure out what this does ;)
 
 
-});            // END head.ready()
+}            // END head.ready()
 
 /*-----------------------------------------------------------------------------------*/
 /*	We're ready!
@@ -90,7 +92,7 @@ $('#container').removeClass('js-disabled');
 ----------------------------------------------------------------------------------------------------------*/
 
 function html5elems_init() {
-	console.info("firing html5elems_init()");
+	//console.info("firing html5elems_init()");
 	// give details area the same effect as input:focus when the summary elem is hovered
 	var $details_elems = $("#container").find("details");
 	if($details_elems.length) {
@@ -311,16 +313,21 @@ function hentryMouseOut(elem, hoverClass) {
 /*-----------------------------------------------------------------------------------*/
 
 function masonTheLayout() {
-
+	
 	var infscrPageview = 1;
 	var $wall = $($masonryWrapperClass);
+
+	// why isn't this working in IE???
+	console.info("should be adding class transReady to #" + $wall.attr("id"));
+	$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
+	
 	var $masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
-
+	
 	$masonryThumbs.imagesLoaded(function() {
-
+		
 		$wall.masonry({
 			itemSelector: $masonryBoxClass,
-			isAnimated: !Modernizr.csstransitions, // only use js for animations if csstransitions are not supported by the visitor's browser
+			isAnimated: $useJStoAnimate, // only use js for animations if csstransitions are not supported by the visitor's browser
 			animationOptions: {
 				duration: 500,
 				easing: 'easeInOutCirc',
@@ -328,7 +335,7 @@ function masonTheLayout() {
 			}
 		});
 
-		$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
+		
 		// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
 		$('body').animate({
 			left: '0'
