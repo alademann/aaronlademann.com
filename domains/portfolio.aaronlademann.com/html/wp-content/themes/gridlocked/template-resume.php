@@ -3,7 +3,7 @@
 Template Name: Resume
 */
 ?>
-
+ 
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <article id="resume" class="span12" itemscope itemtype="http://data-vocabulary.org/Person">
