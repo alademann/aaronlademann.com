@@ -11,7 +11,6 @@
 // For clearing floats like a boss h5bp.com/q
 @mixin clearfix() {
 	@include ie7(zoom, 1);
-  //*zoom: 1;
   &:before,
   &:after {
     display: table;
@@ -40,8 +39,15 @@
   margin-right: auto;
 }
 
+// IE6 underscore-hack
+// ----------------
+@mixin ie6($property, $value){
+	@if $legacy-support-for-ie6 {
+		_#{$property}: #{$value};
+	}
+}
 
-// IE7 star-hack
+// IE7 star-hack (IE7 and IE6)
 // ----------------
 @mixin ie7($property, $value){
 	@if $legacy-support-for-ie7 or $legacy-support-for-ie6 {
@@ -49,7 +55,7 @@
 	}
 }
 
-// IE9 escape-hack
+// IE9 escape-hack (IE9, IE8, IE7, IE6)
 // ----------------
 @mixin ie9($property, $value){
 	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 or $legacy-support-for-ie9 {
@@ -364,7 +370,7 @@
 // --------------------------------------------------
 
 // Mixin for form field states
-@mixin formFieldState($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
+@mixin formFieldState($textColor: #555, $borderColor: darken($grayLighterD, 5), $backgroundColor: #f5f5f5) {
   // Set the text color
   > label,
   .help-block,

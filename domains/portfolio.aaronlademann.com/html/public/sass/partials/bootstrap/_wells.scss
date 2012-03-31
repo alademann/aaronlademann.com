@@ -26,7 +26,7 @@ $aa_wellInsetShadowHalf: rgba(120, 120, 120, 0.175);
 	}
 
 	blockquote {
-    border-color: #ddd;
+    border-color: $grayLighterD;
     border-color: rgba($black,.15);
   }
 } // END .well

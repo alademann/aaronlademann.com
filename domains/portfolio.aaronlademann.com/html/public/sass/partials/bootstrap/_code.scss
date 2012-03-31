@@ -27,7 +27,7 @@ pre {
   font-size: 0.923em;
   line-height: $baseLineHeight;
   background-color: #f5f5f5;
-  border: 1px solid #ccc; // fallback for IE7-8
+  border: 1px solid darken($grayLighterD, 5); // fallback for IE7-8
   border: 1px solid rgba($black,.15);
   @include tb_border-radius(4px);
   white-space: pre;
