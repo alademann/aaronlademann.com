@@ -23,6 +23,10 @@ if(getBrowser(browser) == 'IE' && getBrowser(majorver) == 6) { ?>
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/screen.css">				
 <?php
 }?>
+<?php if(getBrowser(browser) == 'IE') { ?>
+<!-- Internet Explorer -->
+<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/ie.css">
+<?php } ?>
 
 <noscript><link rel="stylesheet" href="<?php echo public_uri(); ?>/css/noscript.css"></noscript>
 <link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
