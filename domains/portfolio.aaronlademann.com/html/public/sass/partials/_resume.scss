@@ -126,8 +126,8 @@
 
 		// horizontal line separators
 		#hd, #bd, #bd > details, .job, li {
-			border-bottom: 1px solid $chiselLight;
-			@include box-shadow(0 1px 0 0 $chiselDark);
+			border-bottom: 1px solid $chisel-light;
+			@include box-shadow(0 1px 0 0 $chisel-dark);
 			
 			&.well {
 				// if one or more of these elems also has .well as a class
