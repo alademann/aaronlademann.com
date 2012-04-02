@@ -36,7 +36,7 @@ $webfont_global_dir: "/public/fonts/";
 	font-family: $fallback_family;
 
 	// load the real font now
-	html.domloaded & {
+	html.js & { // .domloaded class no longer here because headmin.js doesn't load... TODO: FIX
 		visibility: visible;
 		font-family: $font_name, $fallback_family;
 		font-weight: normal;
