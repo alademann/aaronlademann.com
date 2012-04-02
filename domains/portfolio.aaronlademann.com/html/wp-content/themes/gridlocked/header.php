@@ -25,7 +25,7 @@
 	html { margin-top: 0 !important; }
 	* html body { margin-top: 0 !important; }
 </style>
-<script id="googleanalytics">
+<script id="googleanalytics" type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-3765006-1']);
 	_gaq.push(['_setDomainName', 'aaronlademann.com']);
@@ -37,8 +37,8 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 </script>
-<script src="<?php echo public_uri(); ?>/js/head.min.js" id="headjs"></script>
-<script src="<?php echo public_uri(); ?>/js/modernizr.dev.js" id="modernizr"></script>
+<script type="text/javascript" src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
+<script type="text/javascript" src="<?php echo public_uri(); ?>/js/head.load.min.js" id="headjs"></script>
 </head>
 <body class="<?php body_class(); ?> <?php echo $deviceClass; ?>">
 <!-- navbar -->
