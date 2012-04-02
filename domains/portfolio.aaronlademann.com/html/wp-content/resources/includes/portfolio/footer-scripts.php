@@ -45,6 +45,7 @@ function load_therest(){
 		//head.ready("jquery", function(){		
 			// once jquery is loaded, load all the jquery plugins 'n schtuff
 			
+			head.js({ jquerycookie:				"<?php echo $jQueryScriptDir; ?>jquery.cookie.js"						});
 			head.js({ masonry:					"<?php echo $jQueryScriptDir; ?>jquery.masonry.min.js"				});
 			head.ready("masonry", function(){
 				// once masonry is loaded...
@@ -69,9 +70,8 @@ function load_therest(){
 				,{ jquerysmartresize:		"<?php echo $jQueryScriptDir; ?>jquery.smartresize.js"					}
 				,{ jqueryshadowanimate:	"<?php echo $jQueryScriptDir; ?>jquery.animate-shadow-min.js"		}
 				,{ jqueryanimatecolors: "<?php echo $jQueryScriptDir; ?>jquery.animate-colors.js"				}
-				,{ jquerycookie:				"<?php echo $jQueryScriptDir; ?>jquery.cookie.js"								}
 				
-				//,{ imagesloaded:				"<?php echo $jQueryScriptDir; ?>jquery.imagesloaded.js"					}
+				,{ imagesloaded:				"<?php echo $jQueryScriptDir; ?>jquery.imagesloaded.js"					}
 				,{ tzshortcodes:				"<?php echo $jQueryScriptDir; ?>jquery.shortcodes.js"						}
 				,{ bootstrapcollapse:		"<?php echo $bootstrapScriptDir; ?>bootstrap-collapse.js"				}
 				,{ bootstrapbutton:			"<?php echo $bootstrapScriptDir; ?>bootstrap-button.js"					}

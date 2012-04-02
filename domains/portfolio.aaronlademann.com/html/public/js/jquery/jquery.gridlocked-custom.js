@@ -317,13 +317,15 @@ function masonTheLayout() {
 	var infscrPageview = 1;
 	var $wall = $($masonryWrapperClass);
 
+	//var iewall = $("body.ie").find("#" + $wall.attr("id"));
+	//$(iewall).animate({ opacity: 1 }, 0);
 	// why isn't this working in IE???
-	console.info("should be adding class transReady to #" + $wall.attr("id"));
+	//console.info("should be adding class transReady to #" + $wall.attr("id"));
 	$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
 	
 	var $masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
 
-	$masonryThumbs.imagesLoaded(function() {
+	//$masonryThumbs.imagesLoaded(function() {
 
 		$wall.masonry({
 			itemSelector: $masonryBoxClass,
@@ -345,7 +347,7 @@ function masonTheLayout() {
 
 		});
 
-	});        // END $wall.imagesLoaded()
+	//});        // END $wall.imagesLoaded()
 
 
 	function scroll_forever() {

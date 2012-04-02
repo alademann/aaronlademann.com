@@ -107,7 +107,7 @@ body > * {
 		// browser supports opacity
 		@include transparent;
 		// reveal
-		&.transReady, .scriptsuccess & {
+		&.transReady {
 			@include opacity(100); 
 		}
 	} // end opacity
@@ -116,10 +116,18 @@ body > * {
 		// no opacity support
 		display: none;
 		// reveal
-		&.transReady, .scriptsuccess & {
+		&.transReady {
 			display: block;
 		}
 	} // end no opacity
+
+	// fix for IE since the masonry elem never seems to get the transReady class added
+	.scriptsuccess.opacity .ie & {
+		@include opacity(100);
+	}	
+	.scriptsuccess.no-opacity .ie & {
+		display: block;
+	}		
 
 	// enable css transitions
 	&.transReady, .scriptsuccess & {

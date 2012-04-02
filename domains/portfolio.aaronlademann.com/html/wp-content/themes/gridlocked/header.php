@@ -38,7 +38,7 @@
 	})();
 </script>
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
-<script type="text/javascript" src="<?php echo public_uri(); ?>/js/head.load.min.js" id="headjs"></script>
+<script type="text/javascript" src="<?php echo public_uri(); ?>/js/head<?php if($is_winIE) { echo ".load"; } ?>.min.js" id="headjs"></script>
 </head>
 <body class="<?php body_class(); ?> <?php echo $deviceClass; ?>">
 <!-- navbar -->
