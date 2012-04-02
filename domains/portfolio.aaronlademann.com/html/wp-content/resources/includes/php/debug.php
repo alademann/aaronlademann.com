@@ -12,7 +12,7 @@
 				$checkOS = $_GET['os'];
 			}
 			if($checkBrowser) { 
-				echo "<strong>Browser: </strong>" . ($checkBrowser == 'all' ? implode(" ", getBrowser()) : getBrowser('browser')) . "<br />";
+				echo "<strong>Browser: </strong>" . ($checkBrowser == 'all' ? implode(" ", getBrowser()) : getBrowser('browser') . "<br /><strong>Version: </strong><strong>" . getBrowser("majorver")) . "</strong>." . getBrowser("minorver") . "<br />";
 			} 
 			if($checkOS) { 
 				echo "<strong>OS: </strong>" . getBrowser('platform') . "<br />";	

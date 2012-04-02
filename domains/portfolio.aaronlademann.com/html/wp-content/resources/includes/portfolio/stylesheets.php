@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
 <?php
 if(getBrowser(browser) == 'IE' && getBrowser(majorver) == 6) { ?>
 <!-- Internet Explorer 6 -->
@@ -29,4 +30,3 @@ if(getBrowser(browser) == 'IE' && getBrowser(majorver) == 6) { ?>
 <?php } ?>
 
 <noscript><link rel="stylesheet" href="<?php echo public_uri(); ?>/css/noscript.css"></noscript>
-<link rel="stylesheet" href="<?php echo public_uri(); ?>/css/print.css" media="print">
