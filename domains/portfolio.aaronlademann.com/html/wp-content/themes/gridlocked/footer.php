@@ -15,6 +15,12 @@
 <!-- HOOK FOOT -->
 <?php wp_footer(); ?>
 <!--// HOOK FOOT -->
+<script id="googleanalytics" type="text/javascript">
+	var _gaq=[['_setAccount','UA-3765006-1'],['_setDomainName','aaronlademann.com'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 <?php include(custom_includes_dir() . "/portfolio/footer-scripts.php"); ?>
 </body>
 </html>

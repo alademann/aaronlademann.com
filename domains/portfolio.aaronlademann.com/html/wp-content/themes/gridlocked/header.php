@@ -25,18 +25,6 @@
 	html { margin-top: 0 !important; }
 	* html body { margin-top: 0 !important; }
 </style>
-<script id="googleanalytics" type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-3765006-1']);
-	_gaq.push(['_setDomainName', 'aaronlademann.com']);
-	_gaq.push(['_trackPageview']);
-
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script>
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/head<?php if(!$is_winIE) { echo ".load"; } ?>.min.js" id="headjs"></script>
 </head>

@@ -40,7 +40,8 @@ function load_therest(){
 		// NO MATTER WHAT (MUST LOAD FIRST)
 		// -----------------------------------------------------------------------------------------------
 		head.js({ jquerycookie: "/public/js/jquery/jquery.cookie.js" }
-					 ,{ jqueryeasing: "/public/js/jquery/jquery.easing.1.3.js" }
+					 , { jqueryeasing: "/public/js/jquery/jquery.easing.1.3.js" }
+					 , { consoleSafe: "/public/js/console-safe.js" }
 		);
 		// END NO MATTER WHAT (MUST LOAD FIRST)
 		
@@ -82,11 +83,7 @@ function load_therest(){
 
 		// NO MATTER WHAT (MUST LOAD LAST)
 		// -----------------------------------------------------------------------------------------------
-		head.js({ bootstrapcollapse: "/public/js/bootstrap/bootstrap-collapse.js" }
-					, { bootstrapbutton: "/public/js/bootstrap/bootstrap-button.js" }
-					, { bootstrapdropdown: "/public/js/bootstrap/bootstrap-dropdown.js" }
-					, { bootstrapalerts: "/public/js/bootstrap/bootstrap-alert.js" }
-		);
+		head.js({ bootstrap: "/public/js/bootstrap/bootstrap.js" });
 		head.js({ gridlockedcustom: "/public/js/_custom-portfolio.js" });
 		head.ready("gridlockedcustom", function() {
 			
