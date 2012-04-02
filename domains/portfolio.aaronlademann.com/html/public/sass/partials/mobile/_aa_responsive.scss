@@ -99,7 +99,7 @@ body > * {
 // progressively reveal this so the animations don't look wierd
 // only if browser handles javascript.
 	clear: both;
-	.js.opacity & {
+	.opacity & {
 		// browser supports opacity
 		@include transparent;
 		// reveal
@@ -107,7 +107,8 @@ body > * {
 			@include opacity(100); 
 		}
 	} // end opacity
-	.js.no-opacity & {
+	
+	.no-opacity & {
 		// no opacity support
 		display: none;
 		// reveal
@@ -115,6 +116,15 @@ body > * {
 			display: block;
 		}
 	} // end no opacity
+
+	// fix ie delay by not using opacity at all for reveal
+	// ie never gets the class transReady added to it for some reason
+	.opacity .ie &, .no-opacity .ie &, 
+	.opacity.ie &, .no-opacity.ie &,
+	.no-js & {
+		@include opacity(100);
+		display: block;
+	}
 
 	// enable css transitions
 	&.transReady {
