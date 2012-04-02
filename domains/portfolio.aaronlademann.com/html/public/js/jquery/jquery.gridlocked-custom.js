@@ -322,9 +322,9 @@ function masonTheLayout() {
 	$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
 	
 	var $masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
-	
+
 	$masonryThumbs.imagesLoaded(function() {
-		
+
 		$wall.masonry({
 			itemSelector: $masonryBoxClass,
 			isAnimated: $useJStoAnimate, // only use js for animations if csstransitions are not supported by the visitor's browser
@@ -335,7 +335,7 @@ function masonTheLayout() {
 			}
 		});
 
-		
+
 		// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
 		$('body').animate({
 			left: '0'
@@ -345,7 +345,7 @@ function masonTheLayout() {
 
 		});
 
-	});       // END $wall.imagesLoaded()
+	});        // END $wall.imagesLoaded()
 
 
 	function scroll_forever() {
@@ -828,3 +828,6 @@ function tz_overlay() {
 	});
 
 } // END tz_overlay()
+
+// add a css class that indicates we successfully loaded this script
+$("html").addClass("scriptsuccess");
