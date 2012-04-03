@@ -28,6 +28,120 @@ $isIE = $("body").hasClass("ie");
 ----------------------------------------------------------------------------------------------------------*/
 
 if(window.jQuery) {
+
+	function launchRejectionModal() {
+		$("#jr_wrap").modal({
+			backdrop: 'static'
+		}); // use twitter bootstrap modal to pop open
+	}
+
+	$.reject(
+		options = {
+			onFail : launchRejectionModal,
+			reject : { // Rejection flags for specific browsers
+				all: false, // Covers Everything (Nothing blocked)
+				msie5: true, msie6: true, msie7: true,
+				firefox: true, // Covers FF 1-3
+				chrome: true, // Covers Chrome 1-4
+				safari1: true, safari2: true, safari3: true,
+				/*
+					* Possibilities are endless...
+					*
+					* // MSIE Flags (Global, 5-8)
+					* msie, msie5, msie6, msie7, msie8,
+					* // Firefox Flags (Global, 1-3)
+					* firefox, firefox1, firefox2, firefox3,
+					* // Konqueror Flags (Global, 1-3)
+					* konqueror, konqueror1, konqueror2, konqueror3,
+					* // Chrome Flags (Global, 1-4)
+					* chrome, chrome1, chrome2, chrome3, chrome4,
+					* // Safari Flags (Global, 1-4)
+					* safari, safari2, safari3, safari4,
+					* // Opera Flags (Global, 7-10)
+					* opera, opera7, opera8, opera9, opera10,
+					* // Rendering Engines (Gecko, Webkit, Trident, KHTML, Presto)
+					* gecko, webkit, trident, khtml, presto,
+					* // Operating Systems (Win, Mac, Linux, Solaris, iPhone)
+					* win, mac, linux, solaris, iphone,
+					* unknown // Unknown covers everything else
+					*/
+			},
+			display: [], // What browsers to display and their order (default set below)
+			browserInfo: { // Settings for which browsers to display
+				firefox: {
+					text: '<strong>Mozilla Firefox</strong> <br />Version 4+', // Text below the icon
+					url: 'http://www.mozilla.com/firefox/' // URL For icon/text link
+				},
+				safari: {
+					text: '<strong>Apple Safari</strong> <br />Version 4+',
+					url: 'http://www.apple.com/safari/download/'
+				},
+				opera: {
+					text: '<strong>Opera</strong> <br />Version 11+',
+					url: 'http://www.opera.com/download/',
+					allow: { all: false, opera: true }
+				},
+				chrome: {
+					text: '<strong>Google Chrome</strong> <br />Version 11+',
+					url: 'http://www.google.com/chrome/'
+				},
+				msie: {
+					text: '<strong>Internet Explorer</strong> <br />Version 9+',
+					url: 'http://www.microsoft.com/windows/Internet-explorer/',
+					allow: { all: false, msie: true } // certainly don't want to recommend IE unless the poor soul is already using it
+				},
+				gcf: {
+					text: 'Google Chrome Frame',
+					url: 'http://code.google.com/chrome/chromeframe/',
+					// This browser option will only be displayed for MSIE
+					allow: { all: false, msie: true }
+				}
+			},
+
+			// Header of pop-up window
+			header: 'Please upgrade your browser to browse Aaron&rsquo;s Portfolio.',
+			
+			// Paragraph 1
+			paragraph1: 'I built aaronlademann.com using the latest techniques and technologies, including HTML5, CSS3 and PHP5.' + 
+									'This makes the experience much faster and more enjoyable for everyone.  Unfortunately, ' + 
+									$.browser.className + ' ' + $.browser.version + '.' + $.browser.versionX + 
+									' doesn&rsquo;t support those technologies - or has known compatibility issues with them.',
+			// Paragraph 2
+			paragraph2: 'Download one of these great browsers and you&rsquo;ll be on your way.',
+			close: false, // Allow closing of window
+			// Message displayed below closing link
+			closeMessage: 'By closing this window you acknowledge that your experience '+
+							'on this website may be degraded',
+			closeLink: 'Close This Window', // Text for closing link
+			closeURL: '#', // Close URL
+			closeESC: true, // Allow closing of window with esc key
+
+			// If cookies should be used to remmember if the window was closed
+			// See cookieSettings for more options
+			closeCookie: false,
+			// Cookie settings are only used if closeCookie is true
+			cookieSettings: {
+				// Path for the cookie to be saved on
+				// Should be root domain in most cases
+				path: '/',
+				// Expiration Date (in seconds)
+				// 0 (default) means it ends with the current session
+				expires: 0
+			},
+
+			imagePath: '/public/images/icons/browsers/', // Path where images are located
+			overlayBgColor: '#000', // Background color for overlay
+			overlayOpacity: 0.8, // Background transparency (0-1)
+
+			// Fade in time on open ('slow','medium','fast' or integer in ms)
+			fadeInTime: 'fast',
+			// Fade out time on close ('slow','medium','fast' or integer in ms)
+			fadeOutTime: 'fast'
+		}
+			
+	);  // END jQuery.reject()
+	
+
 	if($().masonry) {
 		masonTheLayout(); // LINE 315
 	} // END if(masonry)
@@ -315,7 +429,7 @@ function hentryMouseOut(elem, hoverClass) {
 function masonTheLayout() {
 	
 	var infscrPageview = 1;
-	var $wall = $($masonryWrapperClass);
+	var $wall = $("#masonry-portfolio");
 
 	//var iewall = $("body.ie").find("#" + $wall.attr("id"));
 	//$(iewall).animate({ opacity: 1 }, 0);
@@ -337,27 +451,36 @@ function masonTheLayout() {
 			}
 		});
 
+		var infScrollNextSelector = $(".navigation .nav-next a").length;
 
-		// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
-		$('body').animate({
-			left: '0'
-		}, 300, function() {
+		if(infScrollNextSelector > 0){
+			// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
+			$('body').animate({
+				left: '0'
+			}, 300, function() {
 
-			scroll_forever();
+				try {
+					scroll_forever();
+				} catch(e) {
+					console.log("Error (line 346 of _custom-portfolio.js): " + e);
+				}
 
-		});
+
+			});
+		}
 
 	//});        // END $wall.imagesLoaded()
 
 
 	function scroll_forever() {
 
-		$container = $($masonryWrapperClass);
+		$containerID = "#" + $($masonryWrapperClass).attr("id");
+		$container = $($containerID);
 		// infinitescroll() is called on the element that surrounds 
 		// the items you will be loading more of
 		try {
 
-			$container.infinitescroll({
+			$("#masonry-portfolio").infinitescroll({
 				navSelector: ".navigation",
 				nextSelector: ".nav-next a",
 				itemSelector: $masonryBoxClass,
@@ -397,7 +520,7 @@ function masonTheLayout() {
 			});
 			
 		} catch (e) {
-			
+			console.log("Error (line 364 of _custom-portfolio.js): " + e);
 		}
 		
 		// END INFINITE SCROLL
