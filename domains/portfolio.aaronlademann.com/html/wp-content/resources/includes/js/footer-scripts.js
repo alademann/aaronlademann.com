@@ -24,6 +24,26 @@ function load_therest(){
 		var $ = jQuery.noConflict();
 		// -----------
 
+		function checkitout(el, cl) {
+			var $checkThis;
+			if (el == "b") {
+				$checkThis = $("body");
+			} else if (el == "h") {
+				$checkThis = $("html");
+			} else {
+				// something unexpected happened... don't know what i'm supposed to check.
+				try {
+					console.warn("ruh roh... checkitout() doesn't recognize " + el + " as a valid parameter. valid params are [h, b]");
+				}catch (e) {
+					// browser doesn't support console output.
+				}
+				return false;
+			}
+			// simple function that repeats the same .hasClass() test to set conditional vars in all_set()
+			//console.info("checkitout(" + el + ", ." + cl + ") = " + $checkThis.hasClass(cl));
+			return $checkThis.hasClass(cl) ? true : false;
+		} // END checkitout()
+
 		// CONDITIONAL VARS (use these to ONLY LOAD WHAT YOU NEED)
 		$isBrowserIE = checkitout("h", "ie");
 		$isBrowserIE6_8 = checkitout("h", "lt-ie9");
@@ -117,25 +137,7 @@ function load_therest(){
 		// CONDITIONAL VAR CHECKING HELPER
 		// -----------------------------------------------------------------------------------------------		
 
-		function checkitout(el, cl) {
-			var $checkThis;
-			if (el == "b") {
-				$checkThis = $("body");
-			} else if (el == "h") {
-				$checkThis = $("html");
-			} else {
-				// something unexpected happened... don't know what i'm supposed to check.
-				try {
-					console.warn("ruh roh... checkitout() doesn't recognize " + el + " as a valid parameter. valid params are [h, b]");
-				}catch (e) {
-					// browser doesn't support console output.
-				}
-				return false;
-			}
-			// simple function that repeats the same .hasClass() test to set conditional vars in all_set()
-			//console.info("checkitout(" + el + ", ." + cl + ") = " + $checkThis.hasClass(cl));
-			return $checkThis.hasClass(cl) ? true : false;
-		} // END checkitout()
+		
 
 	} // END if(window.jQuery)
 	
