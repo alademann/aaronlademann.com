@@ -585,9 +585,14 @@
 }
 
 // Opacity
-@mixin opacity($opacity: 100) {
-  opacity: $opacity / 100;
-   filter: alpha(opacity=$opacity);
+@mixin tb_opacity($opacity: 100) {
+	@if not $compass_css3 {
+		opacity: $opacity / 100;
+		filter: alpha(opacity=$opacity);
+	}
+	@else {
+		@include opacity($opacity);
+	}
 }
 
 

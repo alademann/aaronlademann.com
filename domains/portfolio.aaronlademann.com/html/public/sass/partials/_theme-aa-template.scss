@@ -63,7 +63,7 @@ $helvWeight: 600;
 			} // END figcaption .entry-title
 		} // END figcaption
 
-		footer, .footer {
+		footer {
 			border-top-style: solid;
 			border-top-width: 1px;
 			
@@ -304,7 +304,7 @@ a[rel="external"], a.external, a[target="blank"],
 					@include rgba_bg($white, 0.35);
 				}
 				// caption area below figure
-				figcaption, .figcaption, footer, .footer {
+				figcaption, .figcaption, footer {
 					@include rgba_bg($black, 0.05);
 				}
 
@@ -321,7 +321,7 @@ a[rel="external"], a.external, a[target="blank"],
 							}
 						}
 				}
-				footer, .footer {
+				footer {
 					border-top-color: $entryMeta_border;
 				}
 				
@@ -347,7 +347,7 @@ a[rel="external"], a.external, a[target="blank"],
 					img {
 						border-bottom-color: ie-hex-str(lighten($entryMeta_border, 50%));	
 					}
-					footer, .footer {
+					footer {
 						border-top-color: ie-hex-str($entryMeta_border);	
 					}
 					
@@ -391,25 +391,12 @@ a[rel="external"], a.external, a[target="blank"],
 	$loadingImgW: image-width($loadingImg);
 	$loadingImgH: image-height($loadingImg);
 
-	#infscr-loading { 
-		text-align: center;
-		z-index: 100;
-		position: fixed;
-		left: 40%;
-		bottom: 3em;
-		width: 12%;
-		padding: 2%;
-		max-width: 200px;
-		min-width: $loadingImgW;
-		background: $black; 
-		@include opacity(70);
+	#primary #infscr-loading { 
+		@include rgba_bg($black, 0.8);
 		color: $white;
-		@include border-radius(10px);
 
 		&> img {
-			@include opacity(80);
-			width: $loadingImgW;
-			height: $loadingImgH;
+			@include opacity(50);
 		}
 
 	}
@@ -417,6 +404,9 @@ a[rel="external"], a.external, a[target="blank"],
 
 	.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
 		@include box-shadow(1px 1px rgba($black, 0.50));
+		.no-rgba & {
+			@include box-shadow(1px 1px ie-hex-str(rgba($black, 0.50)));
+		}
 	}
 
 
@@ -427,16 +417,7 @@ a[rel="external"], a.external, a[target="blank"],
 	}
 
 	.overlay {
-		
-		// opacity supported.
-		.rgba & {
-			@include rgba_bg($grayDarker, 0.8);
-		}
-		// opacity not supported.
-		.no-rgba & {
-			background: transparent image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png") left top repeat;
-		}
-
+		@include rgba_bg($grayDarker, 0.8);
 	} // END .overlay
 
 	.line { 

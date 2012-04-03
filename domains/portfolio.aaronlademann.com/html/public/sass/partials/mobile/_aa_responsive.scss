@@ -81,7 +81,7 @@ body > * {
 
 } // END #primary
 
-.masonry-brick .entry-meta, .footer .entry-meta, .like-count, .published {
+.masonry-brick .entry-meta, footer .entry-meta, .like-count, .published {
 	.icon {
 		margin-right: 4px;
 
@@ -90,6 +90,7 @@ body > * {
 		}
 		&:before { 
 			font-size: 1.3em; 
+			@include ie9(font-size, 1.1em);
 		}
 
 	} // END .icon
@@ -191,15 +192,15 @@ body > * {
 			z-index: 0;
 		}
 
-		.wellOverlay, figcaption, footer, .footer {
+		.wellOverlay, figcaption, footer {
 			cursor: pointer;
 		}
 
-		figcaption, .figcaption, footer, .footer {
+		figcaption, .figcaption, footer {
 			position: absolute;
 			z-index: 1;
 		}
-		footer, .footer {
+		footer {
 			bottom: 0;
 			left: 0;
 			width: 100%;
@@ -230,7 +231,7 @@ body > * {
 				bottom: 0;
 				z-index: 10;
 			}
-			footer, .footer { display: none; }
+			footer { display: none; }
 
 		} // END iPhone / mobile Media Declarations
 
@@ -238,6 +239,30 @@ body > * {
 
 } // END .masonry
 
+/* Infinite Scroll loader */
+$loadingImg: "loading.gif";
+$loadingImgW: image-width($loadingImg);
+$loadingImgH: image-height($loadingImg);
+
+#primary #infscr-loading { 
+	text-align: center;
+	z-index: 100;
+	position: fixed;
+	left: 40%;
+	bottom: 3em;
+	width: 12%;
+	padding: 2%;
+	max-width: 200px;
+	min-width: $loadingImgW;
+	@include border-radius(10px);
+
+	&> img {
+		max-width: $loadingImgW !important;
+		width: $loadingImgW !important;
+		height: $loadingImgH !important;
+	}
+
+}
 
 .single {
 
@@ -251,7 +276,7 @@ body > * {
 
 
 		// primary .single page header that spans the entire top area below mast
-		& > header, & > .header {
+		& > header {
 			//width: auto;
 			padding-top: $wp_primary-vpad / 2;
 			height: $wp_primary-vpad;
@@ -362,7 +387,7 @@ body > * {
 
 		/* jQuery "slider" captions */
 		.caption { 
-			font-size: 1.077em;
+			font-size: pxtoem(14);
 			font-weight: bold;
 			line-height: 1.6 !important; 
 
@@ -378,7 +403,7 @@ body > * {
 
 	// sidebar (where content / meta for each portfolio piece lives)
 	#single-sidebar {
-		$wp_sidebarPad: 1.4em;
+		$wp_sidebarPad: pxtoem(18);
 		z-index: 99;
 		@include stretch-y($navbarHeight,0); 
 		// the stretch-y compass method above creates absolute position... 
@@ -390,10 +415,10 @@ body > * {
 			width: auto;
 			padding: 0 $wp_sidebarPad;
 		}
-		& > header, & > .header {
+		& > header {
 			padding-top: $wp_sidebarPad;
 		}
-		& > footer, & > .footer {
+		& > footer {
 			padding-bottom: $wp_sidebarPad;
 		}
 
@@ -415,13 +440,6 @@ body > * {
 			} // END #single-sidebar li.terms
 
 			a {
-				&:before {
-					//font-family: "FontAwesome";
-					//font-size: 1.4em;
-					//margin-right: 5px;
-					//color: $gray;
-					//content: $icon-chevron-right;
-				}
 				&:hover { text-decoration: none !important; }
 			} // END #sigle-sidebar li a
 			&:first-child a {
@@ -434,7 +452,7 @@ body > * {
 		.seperator { margin: ($wp_article-vpad / 4) 0; }
 
 		// header is where the_content() and the_title() live on .single posts.
-		header, .header {
+		header {
 					
 			h1, .h1 {
 				//font-size: $baseH1Size_px;
@@ -457,11 +475,7 @@ body > * {
 							margin-right: 6px; // separate text from icon
 						}
 					}
-						
-					.js & {
-						// .js will reveal it
-						//visibility: hidden;
-					}
+	
 				} // END #single-sidebar > .like-count, .published
 
 				// vertical divider between two <li> elems floating next to one another
@@ -480,7 +494,7 @@ body > * {
 		} // END .single #single-sidebar header, .header	
 
 		// footer is where the bulleted taxonomy lists live on .single posts.
-		footer, .footer {
+		footer {
 			.terms li { 
 				font-size: 0.846em;
 				line-height: normal;
@@ -519,7 +533,7 @@ body > * {
 
 
 /* adaptive images */
-.single #primary, #primary, .masonry article, .masonry .article {
+#primary, .masonry article {
 	// images within these containers, we want to scale to the size of their containers.
 	img, object, .wp-caption { 
 		max-width: 100% !important; 
@@ -569,7 +583,7 @@ body > * {
 						left: auto;
 						right: 0;
 
-						header, .header {
+						header {
 						
 							h1 {
 								$h1_fontSize: $baseH1Size_px - .2; 

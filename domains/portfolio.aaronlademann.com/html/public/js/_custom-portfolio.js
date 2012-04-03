@@ -12,6 +12,8 @@ var currPage = window.location.pathname;
 // GLOBAL VARS
 $masonryWrapperClass = ".masonry";
 $masonryBoxClass = ".masonry-brick";
+$wp_pageNavSelector = ".navigation";
+$wp_pageNavNext = ".nav-next a";
 // detect whether or not browser can handle css animations / transitions
 $cssTransitions = $("html.csstransitions").length;
 $useJStoAnimate = $cssTransitions > 0 ? false : true;
@@ -28,9 +30,30 @@ $isIE = $("body").hasClass("ie");
 ----------------------------------------------------------------------------------------------------------*/
 
 if(window.jQuery) {
+
+	function dependents(elems) {
+		if(elems == "all") {
+			elems = $($masonryWrapperClass).find($masonryBoxClass);
+		}
+		// these are all the actions that need to happen each time masonry happens, or more bricks appear, etc...
+		// placeing in a function for easy extensibility
+		tz_likeInit(); // check cookies for like-it action
+		disableRightClick($masonryWrapperClass + ' img, .lightbox img, .fancybox-img'); // disable right click on all portfolio images
+		html5elems_init();
+		contentHeight(); // dynamic content height
+		if($().masonry) {
+			masonBrickBindings(elems);
+		}
+	} // END dependents()
+
 	if($().masonry) {
-		masonTheLayout(); // LINE 315
-	} // END if(masonry)
+		masonTheLayout(); 
+	} else {
+		// initial call for dependents()
+		// must call separately if the page is not masoned
+		// if the page is masoned, dependents() is triggered from the masonTheLayout() function.
+		dependents("all");
+	}// END if(masonry)
 
 	if($isSinglePage) {
 		// functions that should ONLY trigger on .single pages
@@ -48,14 +71,9 @@ if(window.jQuery) {
 		} catch(e) { }
 	} // END if alerts
 
-	tz_likeInit(); // check cookies for like-it action
-
-	html5elems_init();
-
 	// trigger this stuff on window resize
 	$(window).smartresize(function() {
 		contentHeight();
-		//		contentWidth();
 	});
 
 	window.addEventListener("orientationchange", function() { // switching between landscape and horizontal
@@ -67,16 +85,11 @@ if(window.jQuery) {
 
 	}, false);
 
-	contentHeight(); // dynamic content height
-	//	contentWidth();
-
-	disableRightClick($masonryWrapperClass + ' img, .lightbox img, .fancybox-img'); // disable right click on all portfolio images
-
 	tz_widgetOverlay(); // TODO - only trigger this if the widget overlay function is enabled in WP
 	tz_navTitles(); // TODO - figure out what this does ;)
 
 
-}            // END head.ready()
+} // END head.ready()
 
 /*-----------------------------------------------------------------------------------*/
 /*	We're ready!
@@ -130,7 +143,7 @@ function updateOrientation() {
 					break;
 		}
 		
-}
+} // END updateOrientation
 
 function orientLandscape() {
 	var offset;
@@ -313,9 +326,11 @@ function hentryMouseOut(elem, hoverClass) {
 /*-----------------------------------------------------------------------------------*/
 
 function masonTheLayout() {
-	
+
 	var infscrPageview = 1;
 	var $wall = $($masonryWrapperClass);
+	
+	dependents("all"); // trigger all the separate actions / functions that need to accompany the masonry layout.
 
 	//var iewall = $("body.ie").find("#" + $wall.attr("id"));
 	//$(iewall).animate({ opacity: 1 }, 0);
@@ -337,15 +352,23 @@ function masonTheLayout() {
 			}
 		});
 
+		var infScrollNextSelector = $($wp_pageNavSelector + " " + $wp_pageNavNext).length;
+		// make sure there IS a "next page" link before attempting infinitescroll()
+		if(infScrollNextSelector > 0){
+			// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
+			$('body').animate({
+				left: '0'
+			}, 300, function() {
 
-		// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
-		$('body').animate({
-			left: '0'
-		}, 300, function() {
+				try {
+					scroll_forever();
+				} catch(e) {
+					console.log("Error (line 349 of _custom-portfolio.js): " + e);
+				}
 
-			scroll_forever();
 
-		});
+			});
+		} // END if(infScrollNextSelector > 0)
 
 	//});        // END $wall.imagesLoaded()
 
@@ -358,14 +381,14 @@ function masonTheLayout() {
 		try {
 
 			$container.infinitescroll({
-				navSelector: ".navigation",
-				nextSelector: ".nav-next a",
+				navSelector: $wp_pageNavSelector,
+				nextSelector: $wp_pageNavNext,
 				itemSelector: $masonryBoxClass,
-				loadingText: 'Loading more items',
-				loadingMsgRevealSpeed: 700,
+				loadingText: 'Loading more goodies',
+				loadingMsgRevealSpeed: 300,
 				bufferPx: 180,
 				extraScrollPx: 40,
-				donetext: 'No more items to load',
+				donetext: 'No more goodies here',
 				debug: false,
 				animate: false,
 				loadingImg: "/public/images/loading.gif"
@@ -381,11 +404,9 @@ function masonTheLayout() {
 
 					// show elems now they're ready
 					$container.masonry('appended', $newElems, true);
-					tz_likeInit();
-					contentHeight();
-					//$newElems.animate({ opacity: 1 });
-					// bind hover effects
-					masonBrickBindings($newElems);
+
+					dependents($newElems); // bind / trigger all the stuff that happens on new layout load
+
 					// since each time this triggers is technically a new page of content...
 					infscrPageview++;
 					_gaq.push(['_trackPageview', currPage + "/page/" + infscrPageview]);
@@ -397,14 +418,12 @@ function masonTheLayout() {
 			});
 			
 		} catch (e) {
-			
+			console.log("Error (line 364 of _custom-portfolio.js): " + e);
 		}
 		
 		// END INFINITE SCROLL
 
 	} // END scroll_forever()
-
-	masonBrickBindings($($masonryWrapperClass).find($masonryBoxClass));
 
 } // END masonTheLayout()
 

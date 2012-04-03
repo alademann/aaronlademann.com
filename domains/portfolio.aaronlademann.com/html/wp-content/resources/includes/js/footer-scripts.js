@@ -25,14 +25,14 @@ function load_therest(){
 		// -----------
 
 		// CONDITIONAL VARS (use these to ONLY LOAD WHAT YOU NEED)
-		$isBrowserIE = yepnope("h", "ie");
-		$isBrowserIE6_8 = yepnope("h", "lt-ie9");
-		$isIphone = yepnope("h", "iphone");
-		$isIphone = yepnope("h", "ipad");
-		$isCSSTransitions = yepnope("h", "csstransitions");
-		$wp_isPageTypeSingle = yepnope("b", "single");
-		$wp_isPageTypeResume = yepnope("b", "page-template-template-resume-php");
-		$wp_isUserLoggedIn = yepnope("b", "logged-in");
+		$isBrowserIE = checkitout("h", "ie");
+		$isBrowserIE6_8 = checkitout("h", "lt-ie9");
+		$isIphone = checkitout("h", "iphone");
+		$isIphone = checkitout("h", "ipad");
+		$isCSSTransitions = checkitout("h", "csstransitions");
+		$wp_isPageTypeSingle = checkitout("b", "single");
+		$wp_isPageTypeResume = checkitout("b", "page-template-template-resume-php");
+		$wp_isUserLoggedIn = checkitout("b", "logged-in");
 
 		
 		// once jquery is loaded, load all the jquery plugins 'n schtuff
@@ -117,7 +117,7 @@ function load_therest(){
 		// CONDITIONAL VAR CHECKING HELPER
 		// -----------------------------------------------------------------------------------------------		
 
-		function yepnope(el, cl) {
+		function checkitout(el, cl) {
 			var $checkThis;
 			if (el == "b") {
 				$checkThis = $("body");
@@ -126,16 +126,16 @@ function load_therest(){
 			} else {
 				// something unexpected happened... don't know what i'm supposed to check.
 				try {
-					console.warn("ruh roh... yepnope() doesn't recognize " + el + " as a valid parameter. valid params are [h, b]");
+					console.warn("ruh roh... checkitout() doesn't recognize " + el + " as a valid parameter. valid params are [h, b]");
 				}catch (e) {
 					// browser doesn't support console output.
 				}
 				return false;
 			}
 			// simple function that repeats the same .hasClass() test to set conditional vars in all_set()
-			//console.info("yepnope(" + el + ", ." + cl + ") = " + $checkThis.hasClass(cl));
+			//console.info("checkitout(" + el + ", ." + cl + ") = " + $checkThis.hasClass(cl));
 			return $checkThis.hasClass(cl) ? true : false;
-		} // END yepnope()
+		} // END checkitout()
 
 	} // END if(window.jQuery)
 	
