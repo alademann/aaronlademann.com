@@ -288,10 +288,6 @@ body > * {
 			li {
 				@include float(left);
 				margin: 0 0 0 3px;
-				@include opacity(0.25);
-				&.opaque {
-					@extend .opaque;
-				}
 
 				// css transitions
 				&, a, a > img {
@@ -308,7 +304,14 @@ body > * {
 					text-decoration: none;
 					//@include border-radius(2px, 2px);
 					border: 0 none;
+					@include opacity(25);
+					&:hover {
+						@extend .opaque;
+					}
 				} // END .single .pagination li a
+				&.opaque a {
+					@extend .opaque;
+				}
 
 			} // END .single .pagination li
 
@@ -464,7 +467,7 @@ body > * {
 				// vertical divider between two <li> elems floating next to one another
 				.line.vert {
 					height: 2em;
-					@include opacity(.5);
+					@include opacity(50);
 				}
 
 				.caption {
