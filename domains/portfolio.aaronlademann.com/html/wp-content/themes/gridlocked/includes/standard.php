@@ -44,11 +44,11 @@ $lightbox = FALSE;
 	<?php endif; ?>
   </figure>
 	<section class="wellOverlay">&nbsp;</section>
-  <figcaption>                  
+  <section class="figcaption">                  
 		<h2 class="entry-title"><a class="permalink" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-  </figcaption>
+  </section>
 	<footer>
 		<?php if(!is_singular()) : get_template_part('includes/post-meta'); endif; ?>
-  <footer>
+  </footer>
 </article>
 <!--END .masonry-brick-->
