@@ -396,4 +396,22 @@
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>
+  <file name="ie_lte8.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_screen.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="a_screen.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
 </web-workbench>

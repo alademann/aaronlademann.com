@@ -387,18 +387,31 @@ a[rel="external"], a.external, a[target="blank"],
 
 
 	/* Infinite Scroll loader */
+	$loadingImg: "loading.gif";
+	$loadingImgW: image-width($loadingImg);
+	$loadingImgH: image-height($loadingImg);
+
 	#infscr-loading { 
 		text-align: center;
 		z-index: 100;
 		position: fixed;
-		left: 45%;
-		bottom: 40px;
-		width: 200px;
-		padding: 10px;
+		left: 40%;
+		bottom: 3em;
+		width: 12%;
+		padding: 2%;
+		max-width: 200px;
+		min-width: $loadingImgW;
 		background: $black; 
-		@include opacity(80);
+		@include opacity(70);
 		color: $white;
 		@include border-radius(10px);
+
+		&> img {
+			@include opacity(80);
+			width: $loadingImgW;
+			height: $loadingImgH;
+		}
+
 	}
 
 

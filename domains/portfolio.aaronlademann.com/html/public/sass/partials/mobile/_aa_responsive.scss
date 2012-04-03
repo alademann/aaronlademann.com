@@ -519,7 +519,7 @@ body > * {
 
 
 /* adaptive images */
-.single #primary, .masonry article, .masonry .article {
+.single #primary, #primary, .masonry article, .masonry .article {
 	// images within these containers, we want to scale to the size of their containers.
 	img, object, .wp-caption { 
 		max-width: 100% !important; 
