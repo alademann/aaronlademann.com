@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name="author" content="Aaron Lademann">
-<meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?> Aaron Lademann. All Rights Reserved.">
 
 <title><?php wp_title(''); ?></title>
 <?php if( !is_page_template('template-resume.php') ) { ?>
