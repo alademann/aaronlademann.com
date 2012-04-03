@@ -43,6 +43,11 @@ function load_therest(){
 					 , { jqueryeasing: "/public/js/jquery/jquery.easing.1.3.js" }
 					 , { consoleSafe: "/public/js/console-safe.js" }
 		);
+		if($isBrowserIE) {
+			head.js({ jquerysmartresize: "/public/js/jquery/jquery.smartresize.js" } // loads with masonry on grid pages
+						,{ imagesloaded: "/public/js/jquery/jquery.imagesloaded.js" } // loads with masonry on grid pages
+			);
+		}
 		// END NO MATTER WHAT (MUST LOAD FIRST)
 		
 		// ANIMATION HELPERS (only if csstransitions aren't enabled)
