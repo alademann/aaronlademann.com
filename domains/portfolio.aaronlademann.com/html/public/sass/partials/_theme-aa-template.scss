@@ -129,7 +129,6 @@ a[rel="external"], a.external, a[target="blank"],
 		text-decoration: none !important;
 	}
 }
-.arrow { font-family: "FontAwesome"; }
 
 .like-count {	
 	@include min-width(2.3em);
@@ -225,7 +224,7 @@ a[rel="external"], a.external, a[target="blank"],
 		@include border-corner-radius(bottom, left, 4px);
 		@include border-corner-radius(bottom, right, 4px);
 		background: $wellBgColor;
-		@include single-box-shadow($wellInsetShadowColor, 0, 0, 6px, 2px, inset );
+		@include box-shadow(0 0 6px 2px $wellInsetShadowColor inset);
 
 		.slider.vert & {
 			@include border-corner-radius(bottom, left, 0);
@@ -236,7 +235,7 @@ a[rel="external"], a.external, a[target="blank"],
 
 	#single-sidebar {
 		background: $wellBgColor;
-		@include single-box-shadow($wellInsetShadowColor, 3px, 0, 8px, 0, inset );
+		@include box-shadow(3px 0 8px 0 $wellInsetShadowColor inset);
 
 		li ul.children li a::before,
 		h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
@@ -253,17 +252,17 @@ a[rel="external"], a.external, a[target="blank"],
 		// we want the left padding to give enough room for the image above
 		padding-left: image-width($brand_bgImg);
 		@include text-shadow(
-			rgba(white, 0.1) 0 1px 0, 
-			rgba(white, 0.125) 0 0 30px
+			rgba_ie($white, 0.1) 0 1px 0, 
+			rgba_ie($white, 0.125) 0 0 30px
 		); 
 
 		&:hover {
 			background-position: left bottom;
 			color: $grayLighterD !important;
-			//text-shadow: 0 3px 0 rgba($black, 0.5), 0 0 30px rgba($black, 0.525);
+			//text-shadow: 0 3px 0 rgba_ie($black, 0.5), 0 0 30px rgba_ie($black, 0.525);
 			@include text-shadow(
-				rgba(black, 0.5) 0 3px 0, 
-				rgba(black, 0.525) 0 0 30px
+				rgba_ie($black, 0.5) 0 3px 0, 
+				rgba_ie($black, 0.525) 0 0 30px
 			); 
 		}
 
@@ -282,13 +281,13 @@ a[rel="external"], a.external, a[target="blank"],
 	.masonry {
 	
 		.masonry-brick {
-			$entryMeta_border: rgba(100, 100, 100, 0.1);
+			$entryMeta_border: rgba_ie(rgb(100, 100, 100), 0.1);
 			// create "well" effect
-			$inset_shadow: 0 1px 7px 0 rgba($black, 0.4) inset;
-			$edge_shadow: 0 2px 0 rgba($white, 0.7);
+			$inset_shadow: 0 1px 7px 0 rgba_ie($black, 0.4) inset;
+			$edge_shadow: 0 2px 0 rgba_ie($white, 0.7);
 
-			$inset_shadow_hover: 0 1px 3px 0 rgba($black, 0.3) inset;
-			$edge_shadow_hover: 0 2px 0 rgba($white, 1.0); 
+			$inset_shadow_hover: 0 1px 3px 0 rgba_ie($black, 0.3) inset;
+			$edge_shadow_hover: 0 2px 0 rgba_ie($white, 1.0); 
 
 			//border-color: transparent;
 
@@ -310,7 +309,7 @@ a[rel="external"], a.external, a[target="blank"],
 
 				img {
 					border-bottom-color: lighten($entryMeta_border,50%);
-					@include box-shadow(0 3px 6px 0 rgba($black, 0.15));
+					@include box-shadow(0 3px 6px 0 rgba_ie($black, 0.15));
 				}
 				figcaption, .figcaption {
 					
@@ -339,19 +338,7 @@ a[rel="external"], a.external, a[target="blank"],
 					}
 				}
 			} // END .masonry-brick.hover
-			
 
-			// no rgba support
-			.no-rgba & {
-
-					img {
-						border-bottom-color: ie-hex-str(lighten($entryMeta_border, 50%));	
-					}
-					footer {
-						border-top-color: ie-hex-str($entryMeta_border);	
-					}
-					
-			}
 
 			@media (max-width: 480px), (max-width: 500px) { // 508 is where two cols of gridlock no longer fit
 			
@@ -403,10 +390,7 @@ a[rel="external"], a.external, a[target="blank"],
 
 
 	.slider a img.jpg, .slider a img.jpeg, .slider a img.tif, .slider a img.tiff {
-		@include box-shadow(1px 1px rgba($black, 0.50));
-		.no-rgba & {
-			@include box-shadow(1px 1px ie-hex-str(rgba($black, 0.50)));
-		}
+		@include box-shadow(1px 1px rgba_ie($black, 0.50));
 	}
 
 
@@ -421,24 +405,15 @@ a[rel="external"], a.external, a[target="blank"],
 	} // END .overlay
 
 	.line { 
-		.rgba & {
-			border-bottom-color: $chisel-dark; 
-			border-top-color: $chisel-light;
 
-			&.vert {
-				border-right-color: $chisel-dark; 
-				border-left-color: $chisel-light;
-			}
-		}
-		.no-rgba & {
-			border-bottom-color: ie-hex-str($chisel-dark); 
-			border-top-color: ie-hex-str($chisel-light);
+		border-bottom-color: $chisel-dark; 
+		border-top-color: $chisel-light;
 
-			&.vert {
-				border-right-color: ie-hex-str($chisel-dark); 
-				border-left-color: ie-hex-str($chisel-light);
-			}
+		&.vert {
+			border-right-color: $chisel-dark; 
+			border-left-color: $chisel-light;
 		}
+		
 	}
 
 } // END aa_light mixin

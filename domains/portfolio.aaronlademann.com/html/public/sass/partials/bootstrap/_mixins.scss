@@ -167,9 +167,9 @@
 // MIXINS TO USE WITHIN INDIVIDUAL ELEM STYLES
 // -------------------------
 
-@mixin chunkfive						{ @include webfont(ChunkFiveWeb, serif);					}
-@mixin fontawesome					{ @include webfont(FontAwesome, monospace);				}
-@mixin droid-sans						{ @include webfont('DroidSans', sans-serif);			}
+@mixin chunkfive			{ @include webfont(ChunkFiveWeb, serif);		}
+@mixin fontawesome			{ @include webfont(FontAwesome, monospace);		}
+@mixin droid-sans			{ @include webfont('DroidSans', sans-serif);		}
 @mixin droid-sans-bold			{ @include webfont('DroidSansBold', sans-serif);	}
 @mixin droid-serif-italic		{ @include webfont('DroidSerifItalic', serif);		}
 @mixin helveticaNeue($variant: std, $weight: 500){
@@ -370,7 +370,7 @@
 // --------------------------------------------------
 
 // Mixin for form field states
-@mixin formFieldState($textColor: #555, $borderColor: darken($grayLighterD, 5), $backgroundColor: #f5f5f5) {
+@mixin formFieldState($textColor: #555, $borderColor: darken($grayLighterD, 5), $backgroundColor: darken($almostWhite, 2%)) {
   // Set the text color
   > label,
   .help-block,
@@ -446,6 +446,64 @@
 		@include transition($transition);
 	}
 }
+
+// DEFAULT CSS TRANSITION CLASSES
+
+@mixin transition_extensions{
+	@if $compass_css3 {
+		
+		// use @extend to add these properties elsewhere for consistency.
+		.trans {
+			@include transition-duration(.7s);
+		}
+
+		// extension classes for various transition PROPERTIES
+		.tp_alpha {
+			@include transition-property("opacity");	
+		}
+		.tp_shadow {
+			@include transition-property("box-shadow, text-shadow");
+		}
+		.tp_scale {
+			@include transition-property("height, min-height, max-height, width, min-width, max-width, font-size, line-height");
+		}	
+		.tp_position {
+			@include transition-property("top, right, bottom, left, margin, padding, vertical-aligns");
+		}
+		.tp_bg {
+			@include transition-property("background");
+		}
+		.tp_color {
+			@include transition-property("color, border-color, outline-color, background-color, background-image, opacity");
+		}
+		.border {
+			@include transition-property("border");
+		}
+		.tp_all {
+			@include transition-property("all");
+		}
+
+		// extension classes for various transition TIMING FUNCTIONS
+		.tt_ease {
+			@include transition-timing-function("ease");
+		}
+		.tt_linear {
+			@include transition-timing-function("linear");
+		}
+		.tt_easeIn {
+			@include transition-timing-function("ease-in");
+		}
+		.tt_easeOut {
+			@include transition-timing-function("ease-out");
+		}
+		.tt_easeInOut {
+			@include transition-timing-function("ease-in-out");
+		}
+
+	} // END if $compass_css3
+} // END transition_extensions mixin
+// include by default
+@include transition_extensions;
 
 // Transformations
 @mixin tb_rotate($degrees: 5deg) {
@@ -600,9 +658,36 @@
 // BACKGROUNDS
 // --------------------------------------------------
 
+// automatically provide cross-browser compatible rgba bg colors
+@mixin rgba_bg($color, $alpha: opacity($color)){
+	$rgba: rgba($color, $alpha);
+	background-color: $rgba;
+	@if $compass_css3 {
+		@if $legacy-support-for-ie {
+			zoom: 1;
+			@if not (opacity($rgba) == 1) {
+				// color has transparency.
+				background-color: transparent;
+				$ie-hex-str: ie-hex-str($rgba);
+				$value: unquote("filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str})");
+				@if $legacy-support-for-ie8 {
+					-ms-filter: $value;
+				}
+				@if $legacy-support-for-ie7 or $legacy-support-for-ie6 {
+					filter: $value;
+				}
+			} 
+			@else {
+				// it isn't transparent anyway... just output a good ole hex color
+				background-color: rgb(red($color), green($color), blue($color));
+			}
+		}
+	} // END if($compass_css3)
+} // END @mixin rba_gb)
+
 // Add an alphatransparency value to any background or border color (via Elyse Holladay)
 @mixin translucent-background($color: $white, $alpha: 1) {
-    background-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
+  background-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
 }
 @mixin translucent-border($color: $white, $alpha: 1) {
   border-color: hsla(hue($color), saturation($color), lightness($color), $alpha);
@@ -662,7 +747,7 @@
 }
 @mixin gradient-striped($color, $angle: left top) {
   background-color: $color;
-	$tint: rgba($white, 0.15);
+	$tint: rgba_ie($white, 0.15);
 	// this takes care of all the browser specific garbage for us.
 	@include background-image(linear-gradient($angle, $tint 25%, transparent 25%, transparent 50%, $tint 50%, transparent 75%, transparent));
 }
@@ -671,7 +756,7 @@
 @mixin gradientBar($wp_primaryColor, $secondaryColor) {
   @include gradient-vertical($wp_primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba($black, 0.1) rgba($black, 0.1) fade-in(rgba($black, 0.1), 0.15);
+  border-color: rgba_ie($black, 0.1) rgba_ie($black, 0.1) fade-in(rgba_ie($black, 0.1), 0.15);
 }
 
 // Reset filters for IE

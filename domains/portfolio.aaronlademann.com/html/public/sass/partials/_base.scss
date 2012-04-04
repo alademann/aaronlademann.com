@@ -1,73 +1,10 @@
-﻿@mixin clearfix() {
-// For clearing floats like a boss h5bp.com/q
-	@include ie7(zoom, 1);
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-@mixin hide_wp_adminbar(){
+﻿@mixin hide_wp_adminbar(){
 	#wpadminbar { display: none !important; }
 }
 
 // prevent flickering on dynamic js resize
 html { overflow-x: hidden !important; }
 .noscroll { overflow: hidden; overflow-y: hidden; } 
-
-// DEFAULT CSS TRANSITION CLASSES
-
-// use @extend to add these properties elsewhere for consistency.
-.trans {
-	@include transition-duration(.7s);
-}
-
-// extension classes for various PROPERTIES
-.tp_alpha {
-	@include transition-property("opacity");	
-}
-.tp_shadow {
-	@include transition-property("box-shadow, text-shadow");
-}
-.tp_scale {
-	@include transition-property("height, min-height, max-height, width, min-width, max-width, font-size, line-height");
-}	
-.tp_position {
-	@include transition-property("top, right, bottom, left, margin, padding, vertical-aligns");
-}
-.tp_bg {
-	@include transition-property("background");
-}
-.tp_color {
-	@include transition-property("color, border-color, outline-color, background-color, background-image, opacity");
-}
-.border {
-	@include transition-property("border");
-}
-.tp_all {
-	@include transition-property("all");
-}
-
-// extension classes for various TIMING FUNCTIONS
-.tt_ease {
-	@include transition-timing-function("ease");
-}
-.tt_linear {
-	@include transition-timing-function("linear");
-}
-.tt_easeIn {
-	@include transition-timing-function("ease-in");
-}
-.tt_easeOut {
-	@include transition-timing-function("ease-out");
-}
-.tt_easeInOut {
-	@include transition-timing-function("ease-in-out");
-}
 
 /* elements that DEPEND on JAVASCRIPT to appear in context */
 .js {
@@ -99,6 +36,5 @@ html { overflow-x: hidden !important; }
 	} // END .single
 
 } // END .js
-/* END elements that javascript will reveal */
 
 .bold, .strong, .bold *, .strong * { font-weight: bold !important; }

@@ -97,7 +97,7 @@ input[type="radio"], label.radio {
   height: auto;
   padding: 0;
   margin: ($label-margin - 2) 0;
-	@include ie7(margin-top, 0);
+  @include ie7(margin-top, 0);
   line-height: normal;
 
   @include tb_border-radius(0); // Nuke border-radius for IE9 only
@@ -214,9 +214,9 @@ input[type="hidden"] {
 
 // FOCUS STATE
 // -----------
-$focus_blue: rgba($blueLight, 0.6);
+$focus_blue: rgba_ie($blueLight, 0.6);
 @mixin input_focus {
-  $shadow: inset 0 1px 1px rgba($black, 0.075), 0 0 8px rgba($blueLight, 0.6);
+  $shadow: inset 0 1px 1px rgba_ie($black, 0.075), 0 0 8px rgba_ie($blueLight, 0.6);
   @include tb_box-shadow($shadow);
   outline: 0;
 	@include ie9(outline, "thin dotted");
@@ -224,7 +224,7 @@ $focus_blue: rgba($blueLight, 0.6);
 
 input,
 textarea {
-  @include tb_box-shadow(inset 0 1px 1px rgba($black, 0.075));
+  @include tb_box-shadow(0 1px 1px rgba_ie($black, 0.075) inset);
   $transition: border linear .2s, box-shadow linear .2s;
   @include tb_transition($transition);
 }
@@ -338,7 +338,7 @@ select:focus:required:invalid {
   display: block;
   background-color: $white;
   border-color: $grayLighter;
-  @include tb_box-shadow(inset 0 1px 2px rgba($black, .025));
+  @include tb_box-shadow(0 1px 2px rgba_ie($black, .025) inset);
   cursor: not-allowed;
 }
 
@@ -430,10 +430,10 @@ select:focus:required:invalid {
   input:first-child {
     // In IE7, having a hasLayout container (from clearfix's zoom:1) can make the first input
     // inherit the sum of its ancestors' margins.
-		@include ie7(margin-left, -$controls-width); // TODO: why -160? variable that we can make dynamic???
+    @include ie7(margin-left, -$controls-width); // TODO: why -160? variable that we can make dynamic???
 
     &+.add-on {
-			@include ie7(margin-left, -21px);
+	@include ie7(margin-left, -21px);
     }
   }
 }
@@ -506,7 +506,7 @@ select:focus:required:invalid {
 // Legend collapses margin, so next element is responsible for spacing
 legend + .control-group {
   margin-top: 1em;
-	-webkit-margin-top-collapse: separate;
+  -webkit-margin-top-collapse: separate;
 }
 
 // Horizontal-specific styles

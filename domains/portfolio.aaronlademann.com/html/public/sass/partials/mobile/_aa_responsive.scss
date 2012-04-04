@@ -574,8 +574,8 @@ $loadingImgH: image-height($loadingImg);
 					#single-sidebar {
 					
 						z-index: 99;
-						background: rgba($grayMedium,.1);
-						@include single-box-shadow(rgba($grayMedium,.6), 3px, 0, 8px, 0, inset );
+						background: rgba_ie($grayMedium,.1);
+						@include single-box-shadow(rgba_ie($grayMedium,.6), 3px, 0, 8px, 0, inset );
 						//@include stretch-y($navbarHeight,0); 
 						position: relative;
 						// the stretch-y compass method above creates absolute position... 

@@ -4,8 +4,8 @@
 	body {
 		background-position: left top !important;
 		background-repeat: repeat !important;
-		background-color: $body-bgcolor !important;
-		background-image: $body-bg-img !important;
+		background-color: $bodyBgColor !important;
+		background-image: $bodyBgImg !important;
 	}
 }
 
@@ -41,6 +41,7 @@ $wp_mediaSuffix_thumb:				"-thumb";
 $wp_mediaSuffix_small:				"-thumb_sm";
 
 /*------------------------ UTILITIES ------------------------*/
+@import "partials/base";
 // what fonts do you want to embed in this sheet?
 @include aa_portfolio_webfonts;
 @import "partials/mobile/aa_responsive"; 

@@ -12,8 +12,20 @@ $compass_util: true;
 $compass_layout: true;
 $compass_reset: true;
 
+// local var only
+$bodyBgImg:	image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png"); 
+
 // GLOBAL VALUES
 // --------------------------------------------------
+@mixin rgbaok {
+	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+		$rgba: false;
+	}
+	@else {
+		$rgba: true;
+	}
+}
+@include rgbaok;
 
 // Links
 $linkColor:             #08c !default;
@@ -34,9 +46,6 @@ $grayLighter:           #eee !default; // grayLighter
 $almostWhite:						#fcfcfc !default; // almostWhite
 $white:                 #fff !default; // white
 
-$body-bgcolor:					$grayLighter;
-$body-bg-img:						image-url("gridlocked/light/bg_pattern_gray_leather_subtler.png"); 
-
 // Accent colors
 $blue:                  #049cdb !default;
 $blueDark:              #0064cd !default;
@@ -52,8 +61,13 @@ $purple:                #7a43b6 !default;
 $likeItColor:						#f56559 !default;
 
 // Primary elem colors
+$contrasted-dark-default: $black;
+$contrasted-light-default: $white;
+$contrasted-lightness-threshold: 30%;
+
 $textColor:             $grayDark !default;
 $textEmphasis:					darken($textColor, 30) !important;
+$bodyBgColor:						$grayLighter;
 
 // Typography
 $baseFontSizeInt:				13 !default;
@@ -77,9 +91,6 @@ $primaryButtonBackground:    $linkColor !default;
 
 // COMPONENT VARIABLES
 // --------------------------------------------------
-$wellBgColor:							rgba($grayMedium, 0.03);
-$wellInsetShadowColor:		rgba($grayMedium, 0.3);
-$wellCornerRadius:				4px;
 
 // Z-index master list
 // Used for a bird's eye view of components dependent on the z-axis
@@ -100,8 +111,8 @@ $placeholderText:					$grayLight !default;
 
 // Hr border color
 $hrBorder:								$grayLighter;
-$chisel-dark:							rgba($black, 0.1);
-$chisel-light:						rgba($white, 0.4);
+$chisel-dark:							rgba_ie($black, 0.1);
+$chisel-light:						rgba_ie($white, 0.4);
 
 // Form states and alerts
 $warningText:             #c09853 !default;
