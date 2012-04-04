@@ -24,3 +24,6 @@
 		@return rgba($color, $alpha);
 	}
 } // END @mixin rgba_ie
+
+$chisel-dark:							rgba($black, 0.1);
+$chisel-light:						rgba($white, 0.4);

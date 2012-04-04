@@ -370,7 +370,7 @@
 // --------------------------------------------------
 
 // Mixin for form field states
-@mixin formFieldState($textColor: #555, $borderColor: darken($grayLighterD, 5), $backgroundColor: darken($almostWhite, 2%)) {
+@mixin formFieldState($textColor: $gray, $borderColor: darken($grayLighterD, 5), $backgroundColor: darken($almostWhite, 2%)) {
   // Set the text color
   > label,
   .help-block,
