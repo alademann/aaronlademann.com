@@ -1,4 +1,5 @@
-﻿// em font size base
+﻿$clearTheMasthead: ($navbarHeight + $wp_masonry-hpad);
+// em font size base
 body > * {
 	font-size: 1em;
 }
@@ -28,7 +29,6 @@ body > * {
 }
 
 #container {
-	$clearTheMasthead: ($navbarHeight + $wp_masonry-hpad);
 	margin-top: $clearTheMasthead;
 	//line-height: ($navbarHeight - 4);
 } // END #container
@@ -62,7 +62,7 @@ body > * {
 
 // #primary wraps around .masonry, and is within a row-fluid
 #primary {
-
+	@include ie7(margin-top, $clearTheMasthead); // should match #content top margin (IE7 and IE6 doesn't care about #content)
 	.page-template-template-full-width-php & { float: none; }
 	
 	header {

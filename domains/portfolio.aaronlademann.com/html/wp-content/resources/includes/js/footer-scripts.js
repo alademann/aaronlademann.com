@@ -48,7 +48,7 @@ function load_therest(){
 		$isBrowserIE = checkitout("h", "ie");
 		$isBrowserIE6_8 = checkitout("h", "lt-ie9");
 		$isIphone = checkitout("h", "iphone");
-		$isIphone = checkitout("h", "ipad");
+		$isIpad = checkitout("h", "ipad");
 		$isCSSTransitions = checkitout("h", "csstransitions");
 		$wp_isPageTypeSingle = checkitout("b", "single");
 		$wp_isPageTypeResume = checkitout("b", "page-template-template-resume-php");

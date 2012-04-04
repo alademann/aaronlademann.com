@@ -16,6 +16,7 @@ $wp_pageNavSelector = ".navigation";
 $wp_pageNavNext = ".nav-next a";
 // detect whether or not browser can handle css animations / transitions
 $cssTransitions = $("html.csstransitions").length;
+$norgba = $("html.no-rgba").length;
 $useJStoAnimate = $cssTransitions > 0 ? false : true;
 $cssFadeShowClass = "opaque";
 // is it a single page?
@@ -72,18 +73,23 @@ if(window.jQuery) {
 	} // END if alerts
 
 	// trigger this stuff on window resize
-	$(window).smartresize(function() {
+	$(window).bind("smartresize", function(event) {
 		contentHeight();
 	});
 
-	window.addEventListener("orientationchange", function() { // switching between landscape and horizontal
-		updateOrientation();
+	if(!$isIE) {
+		
+		window.addEventListener("orientationchange", function() { // switching between landscape and horizontal
+			updateOrientation();
 
-		if($().masonry) {
-			masonTheLayout();
-		} // END if(masonry)
+			if($().masonry) {
+				masonTheLayout();
+			} // END if(masonry)
 
-	}, false);
+		}, false);
+
+	}
+	
 
 	tz_widgetOverlay(); // TODO - only trigger this if the widget overlay function is enabled in WP
 	tz_navTitles(); // TODO - figure out what this does ;)
@@ -285,7 +291,7 @@ function hentryMouseOver(elem, hoverClass) {
 		bindPermalink(elem, permalink);
 	});
 
-	if(!$cssTransitions) {
+	if(!$cssTransitions && !$norgba) {
 		// if css transitions arent available...
 		elem.stop(true, true).animate({
 			backgroundColor: "rgba(255,255,255,0.9)",
@@ -305,7 +311,7 @@ function hentryMouseOut(elem, hoverClass) {
 	elem.removeClass(hoverClass);
 	elem.unbind("click");
 
-	if(!$cssTransitions) {
+	if(!$cssTransitions && !$norgba) {
 		// if css transitions arent available...
 
 		elem.stop(true, true).animate({

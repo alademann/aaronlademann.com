@@ -668,12 +668,12 @@
 			@if not (opacity($rgba) == 1) {
 				// color has transparency.
 				background-color: transparent;
-				$ie-hex-str: ie-hex-str($rgba);
-				$value: unquote("filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str})");
-				@if $legacy-support-for-ie8 {
+				$ie-hex-str: ie_hex_str($rgba);
+				$value: unquote("progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#{$ie-hex-str}', endColorstr='#{$ie-hex-str}')");
+				@if $legacy-support-for-ie9 {
 					-ms-filter: $value;
 				}
-				@if $legacy-support-for-ie7 or $legacy-support-for-ie6 {
+				@if $legacy-support-for-ie8 or $legacy-support-for-ie7 or $legacy-support-for-ie6 {
 					filter: $value;
 				}
 			} 

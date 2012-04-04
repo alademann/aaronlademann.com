@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php if(getBrowser(browser) == 'IE' and getBrowser(majorver) == 8) { ?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><?php } ?>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name="author" content="Aaron Lademann">
 
@@ -21,7 +22,6 @@
 <!--// HOOK HEAD -->
 <style media="screen" id="stupidadminbar">
 	html { margin-top: 0 !important; }
-	* html body { margin-top: 0 !important; }
 </style>
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/head<?php if(!$is_winIE) { echo ".load"; } ?>.min.js" id="headjs"></script>
