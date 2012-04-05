@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------------------------------------
 
- 	jQuery gridlocked customization
+	jQuery gridlocked customization
 	(GRIDLOCK THEME CUSTOMIZATIONS BY AARON LADEMANN)
  
 -----------------------------------------------------------------------------------------------------------*/
@@ -26,13 +26,11 @@ $isIE = $("body").hasClass("ie");
 
 /*--------------------------------------------------------------------------------------------------------
 
- 	********************* HEAD.READY() *********************
+	********************* HEAD.READY() *********************
  
 ----------------------------------------------------------------------------------------------------------*/
 
-if(window.jQuery) {
-
-	function dependents(elems) {
+function dependents(elems) {
 		if(elems == "all") {
 			elems = $($masonryWrapperClass).find($masonryBoxClass);
 		}
@@ -45,7 +43,9 @@ if(window.jQuery) {
 		if($().masonry) {
 			masonBrickBindings(elems);
 		}
-	} // END dependents()
+} // END dependents()
+
+if(window.jQuery) {
 
 	if($().masonry) {
 		masonTheLayout(); 
@@ -98,7 +98,7 @@ if(window.jQuery) {
 } // END head.ready()
 
 /*-----------------------------------------------------------------------------------*/
-/*	We're ready!
+//	We're ready!
 /*-----------------------------------------------------------------------------------*/
 
 // Remove JavaScript fallback class
@@ -106,7 +106,7 @@ $('#container').removeClass('js-disabled');
 
 /*--------------------------------------------------------------------------------------------------------
 
- 	********************* FUNCTIONS *********************
+	********************* FUNCTIONS *********************
  
 ----------------------------------------------------------------------------------------------------------*/
 
@@ -131,7 +131,7 @@ function html5elems_init() {
 } // END html5elems_init();
 
 /*-----------------------------------------------------------------------------------*/
-/*	MOBILE DEVICE ORIENTATION FUNCTIONS
+//	MOBILE DEVICE ORIENTATION FUNCTIONS
 /*-----------------------------------------------------------------------------------*/
 function updateOrientation() {
 		var orientation = window.orientation;
@@ -179,16 +179,17 @@ function orientPortrait() {
 } // END orientVertical()
 
 /*-----------------------------------------------------------------------------------*/
-/*	DYNAMIC HEIGHT / WIDTH FUNCTIONS
+//	DYNAMIC HEIGHT / WIDTH FUNCTIONS
 /*-----------------------------------------------------------------------------------*/
 
 function contentHeight() {
 
-	var windowHeight = $(window).height();
-	var mastHeight = $("#masthead").height();
-	var footerHeight = $('#footer').height();
+	var windowHeight, mastHeight, footerHeight, elemHeight;
+	windowHeight = $(window).height();
+	mastHeight = $("#masthead").height();
+	footerHeight = $('#footer').height();
+	elemHeight = windowHeight - mastHeight;
 
-	var elemHeight = windowHeight - mastHeight;
 	$("#container").css("min-height", elemHeight - 50);
 	
 	if(!$isIphone) {
@@ -208,20 +209,21 @@ function contentHeight() {
 
 function contentWidth() {
 
-	var slider = $(".single .slider");
-	var sidebar = $(".single #single-sidebar");
-	var windowWidth = $(window).width();
-	var hSpacing = 40; // width of horizontal gaps
-	var hSpaces = 3; // number of horizontal gaps
-	var hPads = hSpacing * hSpaces;
+	var slider, sidebar, windowWidth, hSpacing, hSpaces, hPads, scrollBarWidth, newWidth, isNoScroll;
+	slider = $(".single .slider");
+	sidebar = $(".single #single-sidebar");
+	windowWidth = $(window).width();
+	hSpacing = 40; // width of horizontal gaps
+	hSpaces = 3; // number of horizontal gaps
+	hPads = hSpacing * hSpaces;
 	//console.info($(slider).width());
 	//console.info(windowWidth);
 	if($(slider).width() > 0) {
 		// single page, figure out the dynamic width of the 
 		// right sidebar as long as the window width isn't less than 1024
-		var scrollBarWidth = 16;
-		var newWidth = windowWidth - $(slider).width() - hPads - scrollBarWidth;
-		var isNoScroll = $("html.noscroll").attr("id");
+		scrollBarWidth = 16;
+		newWidth = windowWidth - $(slider).width() - hPads - scrollBarWidth;
+		isNoScroll = $("html.noscroll").attr("id");
 		//isNoScroll = $(isNoScroll).width();
 		if(isNoScroll != -1) {
 			newWidth = newWidth + scrollBarWidth;
@@ -235,7 +237,7 @@ function contentWidth() {
 } // END contentWidth()
 
 /*-----------------------------------------------------------------------------------*/
-/*	SLIDESHOW INITIATION (single page only)
+//	SLIDESHOW INITIATION (single page only)
 /*-----------------------------------------------------------------------------------*/
 function initiateSlides() {
 	
@@ -254,12 +256,13 @@ function initiateSlides() {
 		hoverPause: true
 	});
 
-	var lboxes = $(".slider").find(".lightbox");
-	var howMany = lboxes.length;
+	var lboxes, howMany;
+	lboxes = $(".slider").find(".lightbox");
+	howMany = lboxes.length;
 //	console.info("there are " + howMany + " lightboxes");
 	$.each(lboxes, function(i) {
 		//console.info("found a lightbox... it's number " + i);
-		$(".caption, img", this).addClass($cssFadeShowClass); ;
+		$(".caption, img", this).addClass($cssFadeShowClass);
 		if(i == (howMany - 1)) {
 			// done iterating
 			//console.info("we've reached the end, jim");
@@ -272,20 +275,21 @@ function initiateSlides() {
 } // END initiateSlides()
 
 /*-----------------------------------------------------------------------------------*/
-/*	hentry mouseover / mouseout effects
+//	hentry mouseover / mouseout effects
 /*-----------------------------------------------------------------------------------*/
 function hentryMouseOver(elem, hoverClass) {
 
 	elem.addClass(hoverClass);
-	var permalinkAnchor = elem.find("a.permalink");
-	var permalink = permalinkAnchor.attr("href");
+	var permalink, permalinkAnchor, likeItAnchor;
+	permalinkAnchor = elem.find("a.permalink");
+	permalink = permalinkAnchor.attr("href");
 	bindPermalink(elem, permalink);
 
 	permalinkAnchor.click(function() {
 		elem.unbind("click");
 	});
 
-	var likeItAnchor = elem.find(".likeThis");
+	likeItAnchor = elem.find(".likeThis");
 	likeItAnchor.click(function() {
 		elem.unbind("click");
 		bindPermalink(elem, permalink);
@@ -328,13 +332,14 @@ function hentryMouseOut(elem, hoverClass) {
 } // END hentryMouseOut(elem)
 
 /*-----------------------------------------------------------------------------------*/
-/*	Masonry Layout
+//	Masonry Layout
 /*-----------------------------------------------------------------------------------*/
 
 function masonTheLayout() {
 
-	var infscrPageview = 1;
-	var $wall = $($masonryWrapperClass);
+	var infscrPageview, $wall, $masonryThumbs, infScrollNextSelector;
+	infscrPageview = 1;
+	$wall = $($masonryWrapperClass);
 	
 	dependents("all"); // trigger all the separate actions / functions that need to accompany the masonry layout.
 
@@ -344,7 +349,7 @@ function masonTheLayout() {
 	//console.info("should be adding class transReady to #" + $wall.attr("id"));
 	$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
 	
-	var $masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
+	$masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
 
 	//$masonryThumbs.imagesLoaded(function() {
 
@@ -358,7 +363,7 @@ function masonTheLayout() {
 			}
 		});
 
-		var infScrollNextSelector = $($wp_pageNavSelector + " " + $wp_pageNavNext).length;
+		infScrollNextSelector = $($wp_pageNavSelector + " " + $wp_pageNavNext).length;
 		// make sure there IS a "next page" link before attempting infinitescroll()
 		if(infScrollNextSelector > 0){
 			// prevent accidental infinite scroll triggering on page reload by automatically scrolling the page to the top
@@ -453,7 +458,7 @@ function masonBrickBindings(elems) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	"Like" Scripts
+//	"Like" Scripts
 /*-----------------------------------------------------------------------------------*/
 
 function tz_likeInit() {
@@ -474,7 +479,7 @@ function tz_likeInit() {
 			if(classes[1] == "active") {
 				return false;
 			}
-			var classes = $(this).addClass("active");
+			classes = $(this).addClass("active");
 
 			// set the cookies here instead of in the php file since php cannot get the expiration set correctly.
 			$.cookie("like_" + id[1], id[1], { expires: 7300, path: '/', domain: '.aaronlademann.com' });
@@ -538,14 +543,15 @@ function tz_whoLikes($post, $likes, $post_id) {
 
 function tz_reloadLikes(who, postID) {
 
-	var item = $("#" + who);
-	var text = item.html();
-	var patt = /(\d)+/;
+	var item, text, patt, num, updated_title;
+	item = $("#" + who);
+	text = item.html();
+	patt = /(\d)+/;
 
-	var num = patt.exec(text);
+	num = patt.exec(text);
 	num[0]++;
 	text = text.replace(patt, num[0]);
-	var updated_title = tz_whoLikes(item, num[0], postID);
+	updated_title = tz_whoLikes(item, num[0], postID);
 	item.attr("title", updated_title);
 	item.html('<span class="count">' + text + '</span>');
 
@@ -555,7 +561,7 @@ function tz_reloadLikes(who, postID) {
 		item.addClass("active");
 	}
 	// reveal it no matter what
-		item.addClass($cssFadeShowClass);;
+		item.addClass($cssFadeShowClass);
 
 } // END tz_reloadLikes()
 
@@ -570,12 +576,12 @@ function bindPermalink(pl, here) {
 function caption_as_url(caption) {
 	
 	// strip whitespace
-	var caption_as_url = caption.replace(/ /g,"_");
+	var captionAsUrl = caption.replace(/ /g,"_");
 	// strip quotes
-	caption_as_url = caption_as_url.replace(/"([^"]*)"/g, "$1");
-	return caption_as_url;
+	captionAsUrl = captionAsUrl.replace(/"([^"]*)"/g, "$1");
+	return captionAsUrl;
 	//console.info(caption_as_url);
-		
+	
 } // END caption_as_url()
 
 function tz_navTitles() {
@@ -586,16 +592,17 @@ function tz_navTitles() {
 } // END tz_navTitles()
 
 /*-----------------------------------------------------------------------------------*/
-/*	add 2nd level of parent categories in sidebar nav
+//	add 2nd level of parent categories in sidebar nav
 /*-----------------------------------------------------------------------------------*/
 function sidebarParentNavs() {
 
-	var sidebar = $("#sidebar").attr("id");
+	var sidebar, nestedParentCat, nestedGrandParentCat;
+	sidebar = $("#sidebar").attr("id");
 	//console.info(sidebar);
-	if(sidebar = "sidebar") {
+	if(sidebar == "sidebar") {
 		//console.info("found the sidebar");
-		var nestedParentCat = $("#" + sidebar).find(".widget li>ul.children>li.current-cat-parent");
-		var nestedGrandParentCat = $(nestedParentCat).parent().parent();
+		nestedParentCat = $("#" + sidebar).find(".widget li>ul.children>li.current-cat-parent");
+		nestedGrandParentCat = $(nestedParentCat).parent().parent();
 		$(nestedGrandParentCat).addClass("current-cat-grandparent");
 
 	} // END if(sidebar);
@@ -603,7 +610,7 @@ function sidebarParentNavs() {
 } // END sidebarParentNavs()
 
 /*-----------------------------------------------------------------------------------*/
-/*	disable right click context menu to protect copyrighted images
+//	disable right click context menu to protect copyrighted images
 /*-----------------------------------------------------------------------------------*/
 function disableRightClick(disableOnThis) {
 
@@ -614,7 +621,7 @@ function disableRightClick(disableOnThis) {
 } // END disableRightClick(disableOnThis)
 
 /*-----------------------------------------------------------------------------------*/
-/*	prevent HTML version of resume from being printed, redirect to pdf instead
+//	prevent HTML version of resume from being printed, redirect to pdf instead
 /*-----------------------------------------------------------------------------------*/
 function redirect_CtrlP() {
 
@@ -624,7 +631,7 @@ function redirect_CtrlP() {
 			_gaq.push(["_trackPageview", "/resume/pdf-download"]);
 			window.location = $("#resume #pdf > a").attr("href");
 		});
-	} catch(err){
+	} catch(e1){
 		//error - didn't work, go ahead and do the default action.
 		_gaq.push(["_trackPageview", "/resume/print"]);
 		return true;
@@ -635,7 +642,7 @@ function redirect_CtrlP() {
 			_gaq.push(["_trackPageview", "/resume/pdf-download"]);
 			window.location = jQuery("#resume #pdf > a").attr("href");
 		});
-	} catch(err){
+	} catch(e2){
 		//error - didn't work, go ahead and do the default action.
 		_gaq.push(["_trackPageview", "/resume/print"]);
 		return true;
@@ -644,17 +651,20 @@ function redirect_CtrlP() {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	track "likes" in google analytics as events
+//	track "likes" in google analytics as events
 /*-----------------------------------------------------------------------------------*/
 function ga_trackLikes() {
 
 	//------------------------------ track "likes" in google analytics
-	var folioItemTitle = $(this).find(".entry-title").text();
+	var folioItemTitle, likeButton;
+	folioItemTitle = $(this).find(".entry-title").text();
 	//console.info(folioItemTitle);
-	var likeButton = $(this).find(".likeThis").not(".active");
+	likeButton = $(this).find(".likeThis").not(".active");
 	$.each(likeButton, function() {
-		var cssID = $(this).attr("id");
-		var folioItemID = cssID.substring(cssID.lastIndexOf("-") + 1);
+
+		var cssID, folioItemID;
+		cssID = $(this).attr("id");
+		folioItemID = cssID.substring(cssID.lastIndexOf("-") + 1);
 
 		$(this).live("click", function(e) {
 			// make sure right-clicks arent tracked
@@ -671,7 +681,7 @@ function ga_trackLikes() {
 } // END ga_trackLikes()
 
 /*-----------------------------------------------------------------------------------*/
-/*	track external navigation clicks in google analytics
+//	track external navigation clicks in google analytics
 /*-----------------------------------------------------------------------------------*/
 function ga_trackExternal() {
 
@@ -709,17 +719,18 @@ function ga_trackExternal() {
 
 
 /*-----------------------------------------------------------------------------------*/
-/*	Track Lightbox Opens
+//	Track Lightbox Opens
 /*-----------------------------------------------------------------------------------*/
 
 function trackLightBoxStuff(pglinks,arr) {
 
-	var lboxTitles = arr;
+	var lboxTitles, pageLinks, lightboxLink;
+	lboxTitles = arr;
 
 	//------------------------------ track pagination clicks in google analytics
 
 	$(pglinks).find("li.current > a").addClass("active");
-		var pageLinks = $(pglinks).find("li > a");
+		pageLinks = $(pglinks).find("li > a");
 		$.each(pageLinks, function() {
 
 			$(this).live('click', function(e) {
@@ -727,10 +738,11 @@ function trackLightBoxStuff(pglinks,arr) {
 
 					if($(this).attr("class") != "active") {
 
-						var pageIndex = $(this).attr("href");
+						var pageIndex, whichPage;
+						pageIndex = $(this).attr("href");
 						pageIndex = parseFloat(pageIndex.substring(pageIndex.lastIndexOf("#") + 1));
 						// this is the caption of the image they selected via the pagination nav
-						var whichPage = lboxTitles[pageIndex];
+						whichPage = lboxTitles[pageIndex];
 
 						//console.info("clicked " + whichPage);
 
@@ -758,13 +770,14 @@ function trackLightBoxStuff(pglinks,arr) {
 		});             // END .each(paginationLink)
 
 		//------------------------------ track lightbox views in google analytics
-		var lightboxLink = $(".single #primary").find("a.lightbox");
+		lightboxLink = $(".single #primary").find("a.lightbox");
 		$.each(lightboxLink, function() {
 
 			$(this).bind("click", function() {
 				
-				var imageCaption = $(this).find("> .caption").text();
-				var imageCaption_url = caption_as_url(imageCaption);
+				var imageCaption, imageCaption_url;
+				imageCaption = $(this).find("> .caption").text();
+				imageCaption_url = caption_as_url(imageCaption);
 
 				_gaq.push(['_trackEvent', 'portfolio', 'fullsize-view', currPage + "?img=" + imageCaption_url]);
 				
@@ -778,15 +791,16 @@ function trackLightBoxStuff(pglinks,arr) {
 } // END trackLightBoxStuff()
 
 /*-----------------------------------------------------------------------------------*/
-/*	Widget Overlay Stuff
+//	Widget Overlay Stuff
 /*-----------------------------------------------------------------------------------*/
 
 function tz_widgetOverlay() {
 
-	var widgetOverlay = $('#widget-overlay-container');
-	var widgetTrigger = $('#overlay-open a');
+	var widgetOverlay, widgetTrigger, widgetOverlayHeight;
+	widgetOverlay = $('#widget-overlay-container');
+	widgetTrigger = $('#overlay-open a');
 
-	var widgetOverlayHeight = widgetOverlay.height() + 3;
+	widgetOverlayHeight = widgetOverlay.height() + 3;
 
 	widgetOverlay.css({
 		marginTop: -widgetOverlayHeight,
@@ -814,7 +828,7 @@ function tz_widgetOverlay() {
 } // END tz_widgetOverlay()
 
 /*-----------------------------------------------------------------------------------*/
-/*	FancyBox Lightbox
+//	FancyBox Lightbox
 /*-----------------------------------------------------------------------------------*/
 
 function tz_fancybox() {
@@ -843,7 +857,7 @@ function tz_fancybox() {
 } // END tz_fancybox()
 
 /*-----------------------------------------------------------------------------------*/
-/*	Overlay Animation
+//	Overlay Animation
 /*-----------------------------------------------------------------------------------*/
 
 function tz_overlay() {
