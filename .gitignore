@@ -1,4 +1,5 @@
 *.suo 
+*.sln
 *.scssc
 */Thumbs.db
 *.dat
@@ -6,6 +7,7 @@
 *.version
 *.DS_Store
 domains/portfolio.aaronlademann.com/html/public/css/*
+domains/portfolio.aaronlademann.com/html/sandbox/*
 domains/aaronlademann.com/_ReSharper.aaronlademann.com/*
 domains/portfolio.aaronlademann.com/html/portfolio-media/*
 domains/aaronlademann.com/aaronlademann.com.suo

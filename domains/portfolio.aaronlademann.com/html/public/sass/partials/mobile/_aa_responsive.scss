@@ -101,7 +101,7 @@ body > * {
 // only if browser handles javascript.
 	clear: both;
 	// fallback incase all the stuff below fails to load
-	@include opacity(100);
+	@include opacity(1);
 	display: block;
 
 	.opacity & {
@@ -109,7 +109,7 @@ body > * {
 		@include transparent;
 		// reveal
 		&.transReady {
-			@include opacity(100); 
+			@include opacity(1); 
 		}
 	} // end opacity
 	
@@ -124,7 +124,7 @@ body > * {
 
 	// fix for IE since the masonry elem never seems to get the transReady class added
 	.scriptsuccess.opacity .ie & {
-		@include opacity(100);
+		@include opacity(1);
 	}	
 	.scriptsuccess.no-opacity .ie & {
 		display: block;
@@ -329,7 +329,7 @@ $loadingImgH: image-height($loadingImg);
 					text-decoration: none;
 					//@include border-radius(2px, 2px);
 					border: 0 none;
-					@include opacity(25);
+					@include opacity(.25);
 					&:hover {
 						@extend .opaque;
 					}

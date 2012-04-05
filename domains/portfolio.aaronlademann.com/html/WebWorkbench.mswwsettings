@@ -272,7 +272,7 @@
   </file>
   <file name="_jquery.fancybox-1.3.4.scss">
     <setting name="Compile">False</setting>
-    <setting name="Minify">True</setting>
+    <setting name="Minify">False</setting>
     <setting name="CompileStyle">Nested</setting>
     <setting name="DebugInfo">False</setting>
   </file>

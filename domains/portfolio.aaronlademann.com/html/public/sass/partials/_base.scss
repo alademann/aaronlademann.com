@@ -11,7 +11,7 @@ html { overflow-x: hidden !important; }
 	
 	.opaque {
 		@extend .trans;
-		@include opacity(100);
+		@include opacity(1);
 	}
 
 	.single {
