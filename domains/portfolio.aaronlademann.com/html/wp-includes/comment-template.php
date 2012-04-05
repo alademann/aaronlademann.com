@@ -988,7 +988,7 @@ function comments_popup_link( $zero = false, $one = false, $more = false, $css_c
 		return;
 	}
 
-	echo '<a rel="nofollow" href="';
+	echo '<a href="';
 	if ( $wpcommentsjavascript ) {
 		if ( empty( $wpcommentspopupfile ) )
 			$home = home_url();
