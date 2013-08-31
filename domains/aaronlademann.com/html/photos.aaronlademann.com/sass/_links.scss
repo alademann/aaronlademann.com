@@ -1,0 +1,67 @@
+#bodyWrapper { 
+    a { 
+        text-decoration: none !important;
+        border-bottom-color: white;
+        border-bottom-width: 1px;
+        
+        &, 
+        &:active, &:visited {
+            border-bottom-style: dotted;
+        }
+
+        &:hover {
+            border-bottom-style: solid;
+        }
+    }
+} // END #bodyWrapper
+
+// override link border situation
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.albumTitle a, .photo a, .photoLarge a, .img a, #lightBoxPhoto a, 
+.pageOn, #pageNavigation_top a, #photoNavTop a, #custom_footer a, .yui-button a,
+#breadCrumbTrail a { border-bottom: 0 none !important; }
+
+.pageOn, #pageNavigation_top a, #photoNavTop a, .albumTitle a:hover,
+.yui-button #buyButton-button { color: $hotGreen; font-weight: bold; }
+
+.pageOn, 
+#pageNavigation_top a:hover, 
+#photoNavTop a:hover { text-decoration: underline !important; }
+
+#breadCrumbTrail { 
+    color: #999; 
+    a {
+        color: white;
+        &:hover {
+            color: $hotGreen;
+        }
+    }
+}
+
+
+#custom_footer { 
+    * { font-size: 11px !important; }
+} // END #custom_footer
+
+// KEYWORD LINKS
+// -------------------------
+#photoKeywords { 
+    .title { 
+        color: #666; 
+        font-size: $fontSizeFooterNavLink !important; 
+    }
+    a, 
+    .keyword { 
+        border-bottom: 0 none !important; 
+        color: #ccc !important; 
+        font-size: $fontSizeFooterNavLink !important; 
+        display: inline-block; 
+        padding: 1px 3px;
+    }
+} // END #photoKeywords
+
+#photoKeywords a:hover, 
+#photoKeywords .keyword:hover, 
+#custom_footer a:hover, 
+.yui-button span button:hover, 
+.yui-button span button:focus { color: $hotGreen !important; }

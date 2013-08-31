@@ -1,0 +1,120 @@
+// THUMBNAILS
+// -------------------------
+.box, 
+.boxBottom, 
+.boxTop {
+    border: 0 none !important; 
+    border-top: 0 none !important; 
+    border-bottom: 0 none !important; 
+    background-image: none !important;
+    background-color: rgba($boxBgDark, 0.2) !important;
+    *background-color: $boxBgDark !important;
+}
+
+.boxBottom, 
+.boxTop { padding: 0 $boxPadX; }
+.boxBottom { padding-top: $boxMargin; }
+
+.box, 
+.albumNav, 
+#custom_footer .inner {
+    @include border-radius($boxBdRadius !important);
+    border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border: $boxBdWidth solid rgba($boxBgDark, 0.8) !important;
+    *border-color: $boxBgDark !important;
+}
+
+.boxTop, 
+.albumNav, 
+#custom_footer .inner, 
+.box .pageNav {
+    padding-top: .4em;
+    padding-bottom: .4em;
+    background-color: rgba($boxBgDark, 0.8) !important;
+    *background-color: $boxBgDark;
+}
+
+// need these dimensions so that even before the loading of the thumbnails occur, the layout grid is set.
+.miniBox { 
+    margin-bottom: $boxMargin !important; 
+    &, .photo { 
+        margin-bottom: 0; 
+        min-height: $thumbSizeMini;
+        height: $thumbSizeMini;
+        min-width: $thumbSizeMini;
+    }
+    .boxBottom & {
+        min-width: 244px !important;
+        max-width: 355px !important;
+        width: 244px !important;
+        overflow: visible;
+        position: relative;
+
+        &.albumLarge { width: 355px !important; }
+
+        #subcategoriesBox &,
+        #categoriesBox & {
+            min-width: 200px !important; 
+            width: 200px !important;
+        }
+    }
+} // END .miniBox
+
+.miniBox .photoLarge, 
+.boxBottom .albumLarge {
+    margin-bottom: 0;
+    min-height: $thumbSizeLarge;
+    height: $thumbSizeLarge;
+    min-width: $thumbSizeLarge;
+}
+// make a more graceful entrance for the thumbnails that smugmug FAILS at...
+.miniBox .photo, 
+.miniBox .photoLarge, 
+#thumbnails .photo div { 
+    background: $boxBgDark image-url('ajax-loader_green-transBlk.gif') 50% 50% no-repeat;
+}
+#ajaxPhotoBox #mainImage, 
+#lightBoxImage { 
+    background: $boxBgDark image-url('ajax-loader_lg_green-transBlk.gif') 50% 50% no-repeat !important; 
+}
+#ajaxPhotoBox #mainImageLink:hover #mainImage { background-color: #777 !important; }
+
+.emptyalbum_ti { 
+    background: transparent image-url('photos_thumbnail-coming-soon_100x100.png') no-repeat !important; 
+}
+
+
+// customize home page gallery
+// -------------------------
+#slideshowBox, 
+#slideshowBox .boxBottom, 
+#slideshowBox .boxTop { 
+    border: 0 none !important; 
+    border-top: 0 none !important; 
+    border-bottom: 0 none !important; 
+}
+#slideshowBox, 
+#slideshowBox .boxBottom {
+    background: transparent !important;
+}
+#slideshowBox { margin: 1.5em 0 4em 0; }
+
+// top and bottom (footer) navigation boxes
+// -------------------------
+.albumNav, 
+#custom_footer .inner { 
+    background-color: rgba($boxBgDark, $boxBgDarkAlpha) !important;
+    border: 1px solid rgba($boxBgDark, 0.8) !important;
+
+    *background-color: $boxBgDark;
+    *border: 1px solid $boxBgDark !important; 
+}
+
+// customize album navigation (top)
+// -------------------------
+.albumNav { 
+    border-top: 0 none !important; 
+    @include border-radius(0 !important);
+    margin-bottom: 20px;
+}

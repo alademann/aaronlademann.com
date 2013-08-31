@@ -1,0 +1,217 @@
+#photoNavTop { text-align: center; }
+// top and bottom nav (global nav attr)
+// -------------------------
+#custom_footer {
+    .nav { 
+        ul, 
+        li, 
+        li a { width: auto; }
+        
+        ul, 
+        li { margin: 0; padding: 0; list-style-type: none; list-style-image: none; border: 0; outline: 0; }
+
+        ul { overflow: hidden; float: right; }
+        li { float: left; }
+        li a { display: block; color: #949494; text-transform: uppercase; }
+        li a:hover, 
+        .current_page_item, 
+        .current-menu-item a, 
+        .active a { 
+            color: white !important; 
+            text-decoration: none; 
+            background-color: $boxBgDark; 
+            background-color: rgba($boxBgDark, .9) !important; 
+        }
+    } // END .nav
+} // END #custom_footer
+
+// footernav
+#footerNav {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    width: auto;
+}
+#footerNav a {
+    display: block; 
+    width: auto; 
+    padding: 0 15px;
+    color: #66696D;
+}
+#footerNav a:hover {
+    color: #a0e22e;
+    text-decoration: none;
+    border: 0 none !important;
+}
+
+// SEARCH
+// -------------------------
+#menu #searchBox {
+    margin-left: 10px;
+    padding-right: 16px;
+    position: relative;
+    top: 8px;
+}
+#menu #searchBox #searchWords {  
+    padding-left: 6px;
+    background-color: #759832;
+    border: 0 none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-bottom: 1px solid #9bca42;
+    border-right: 1px solid #9bca42;
+    border-top: 1px solid #698c27;
+    border-left: 1px solid #698c27;
+}
+// search results
+.searchResults #otherSearches, .searchResults #keywordResults, .searchResults #galleryResults { display: none; }
+.box .pageNav { border: 0 none !important; }
+
+// TEXT SUBNAVS (meta mostly)
+// -------------------------
+.nav#relatedKeywords, .nav#relatedKeywords .title { color: #999 !important; }
+.nav#relatedKeywords a { color: #bfbfbf; border-color: #bfbfbf; }
+.nav#relatedKeywords a:hover { color: white; }
+#relatedKeywords, #relatedKeywords a { font-size: .8em !important; }
+#relatedKeywords br { display: none; }
+#relatedKeywords .title { padding-left: 10px; }
+#relatedKeywords .title:first-child { padding-left: 0; }
+
+// TOP NAV DROPDOWN MENU
+// -------------------------
+div#menu a, #searchWords { font: normal 12px Trebuchet MS; }
+div#menu a.big { font-size: 16px; font-weight: bold !important; }
+div#menu {
+    float: left;
+    margin-top: -28px;
+    height:41px;
+    background: transparent url(http://aaronlademann.com/_includes/_nav/images/main-bg.png) left top repeat-x;
+}
+
+@-moz-document url-prefix() {
+    div#menu { margin-top: -8px; }
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+div#menu ul.menu {
+    padding-left: 11px;
+}
+
+div#menu li {
+    position: relative;
+    z-index: 9;
+    margin: 0;
+    padding: 0 5px 0 0;
+    display: block;
+    float: left;
+}
+div#menu li:hover>ul {
+    left: -2px;
+}
+
+div#menu a {
+    position: relative;
+    z-index: 10;
+    height: 41px;
+    display: block;
+    float: left;
+    line-height: 41px;
+    text-decoration: none;
+    border-bottom: 0 !important;
+}
+div#menu a:hover, div#menu a:hover span { color: #fff; }
+div#menu li.current a {}
+
+div#menu span {
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+}
+div#menu ul ul a.parent span {
+    background-position:95% 8px;
+    background-image: url(http://aaronlademann.com/_includes/_nav/images/item-pointer.gif);
+}
+div#menu ul ul a.parent:hover span {
+    background-image: url(http://aaronlademann.com/_includes/_nav/images/item-pointer-mover.gif);
+}
+
+/* menu::level1 */
+div#menu a {
+    padding: 0 10px 0 10px;
+    line-height: 30px;
+    color: #e5e5e5;
+}
+div#menu a.big { padding: 0 25px 0 25px; }
+div#menu span {
+    margin-top: 5px;
+}/**@replace#1*/
+div#menu li { background: url(http://aaronlademann.com/_includes/_nav/images/main-delimiter.png) 98% 4px no-repeat; }
+div#menu li.last { background: none; }
+
+/* menu::level2 */
+div#menu ul ul li { background: none; }
+div#menu ul ul {
+    position: absolute;
+    top: 38px;
+    left: -999em;
+    width: 163px;
+    padding: 5px 0 0 0;
+    background: rgb(45,45,45);
+    margin-top:1px;
+}
+div#menu ul ul a {
+    padding: 0 0 0 15px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 24px;
+    color: rgb(169,169,169);
+}
+div#menu ul ul span {
+    margin-top: 0;
+    padding-right: 15px;
+    _padding-right: 20px;
+    color: rgb(169,169,169);
+}
+div#menu ul ul a:hover span {
+    color: #fff;
+}
+div#menu ul ul li.last { background: none; }
+div#menu ul ul li {
+    width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul ul {
+    padding: 0;
+    margin: -38px 0 0 163px !important;
+    margin-left:172px;
+}
+
+/* colors */
+div#menu ul ul ul { background: rgb(41,41,41); }
+div#menu ul ul ul ul { background: rgb(38,38,38); }
+div#menu ul ul ul ul { background: rgb(35,35,35); }
+
+/* lava lamp */
+div#menu li.back {
+    background: url(http://aaronlademann.com/_includes/_nav/images/lava.png) no-repeat right -44px !important;
+    background-image: url(http://aaronlademann.com/_includes/_nav/images/lava.gif);
+    width: 13px;
+    height: 44px;
+    z-index: 8;
+    position: absolute;
+    margin: -1px 0 0 -5px;
+}
+div#menu li.back .left {
+    background: url(http://aaronlademann.com/_includes/_nav/images/lava.png) no-repeat top left !important;
+    background-image: url(http://aaronlademann.com/_includes/_nav/images/lava.gif);
+    height: 44px;
+    margin-right: 8px;
+}

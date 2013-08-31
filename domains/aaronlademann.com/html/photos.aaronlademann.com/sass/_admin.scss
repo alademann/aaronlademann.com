@@ -1,0 +1,35 @@
+// customize logged in styles 
+// (to make UI better for me)
+// -------------------------
+.loggedIn {
+    .miniBox { 
+        height: auto !important;
+
+        .description, 
+        .description a, 
+        .note {
+            font-size: 10px;
+            color: #777;
+            border-bottom: 0 none !important;
+        }
+        .description a, .note {
+            &:hover {
+                color: $hotGreen;
+            }
+        } 
+        .updated { display: none; }
+
+        // settings button
+        .photo .yui-button {
+            position: absolute;
+            left: 106px;
+            top: 85px;
+        }
+        .photoLarge .yui-button {
+            position: absolute;
+            left: 156px;
+            top: 134px;
+        }
+
+    } // END .miniBox
+} // END .loggedIn

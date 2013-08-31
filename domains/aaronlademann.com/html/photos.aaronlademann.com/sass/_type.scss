@@ -1,0 +1,41 @@
+// IMAGE REPLACED H1
+// -------------------------
+#header { 
+    color: $fontColorHeader; 
+    h1 {
+        &, a {
+            width: 292px !important; 
+            height: 37px !important; 
+        }
+        margin: 0 !important; 
+        padding: 0 !important; 
+        line-height: normal; 
+        float: left;
+
+        // image replaced site logo h1 > a
+        a {
+            text-indent: -999em !important;
+            text-decoration: none !important;
+            display: block;
+            background: transparent image-url('header-photos.aaronlademann.com.png') left bottom no-repeat;
+            position: relative;
+            bottom: -9px;
+            left: $boxPadX;
+        }
+    }
+} // END #header
+
+#header h1 {  }
+#header h1 a {
+
+}
+.galleryPage #header h1 a { left: .5em; }
+
+// HIDE H3 
+#breadCrumbTrail .title { 
+    color: $hotGreen; 
+    font-weight: bold; 
+}
+// HIDE H3
+h3.title, 
+#footerLogin { visibility: hidden; }

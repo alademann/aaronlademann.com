@@ -1,0 +1,55 @@
+// COLOR / IMAGES
+// -------------------------
+$bodyBg:                #313131;
+$boxBgDark:             #000;
+$boxBgDarkAlpha:        .6;
+
+// BG IMAGES STORED ON THE SMUGMUG SITE
+$bodyBgDarkSpackle:     "/photos/i-hRLRL2K/0/O/i-hRLRL2K.png"; // Other/My SmugMug Site Files/spackle_bg_base_dark.png 
+$bodyBgDarkDotted:      "/photos/i-QMHmPvz/0/O/i-QMHmPvz.png"; // Other/My SmugMug Site Files/bg_pattern_dark_dotted.png 
+$bodyBgBlackLeather:    "/photos/i-Gz623s3/0/O/i-Gz623s3.png"; // Other/My SmugMug Site Files/bg_pattern_dark_leather.png
+
+$footerBgImg:           "/photos/i-hRHszNq/0/O/i-hRHszNq.png"; // Other/My SmugMug Site Files/photos_cf_footer_bg2.png
+$footerBgImgShadowTopHeight: 14px;
+
+$imgBdColor:            $boxBgDark;
+$imgBdColorThumb:       #999;
+$imgBdWidthThumb:       1px;
+
+// TYPE
+// -------------------------
+$hotGreen:              #a0e22e;
+
+$fontColorHeader:       #aaa;
+
+$fontSizeFooterNavLink: 11px;
+$fontColorFooterDark:   #5b5b5b;
+
+
+// SIZE / STRUCTURE
+// -------------------------
+
+$dynamicWidthPadX:      3em;
+
+$boxBdWidth:            3px;
+$boxBdRadius:           10px;
+$boxPadX:               $dynamicWidthPadX - 1em;
+$boxMargin:             $boxPadX - .6em;
+
+
+$thumbSizeMini:         104px;
+$thumbSizeLarge:        $thumbSizeMini + 50;
+
+
+// LAYERING
+// -------------------------
+
+$zindexFooter:          900;
+
+
+// COMPONENTS
+// -------------------------
+
+// FOOTER
+$footerHeight: 63px;
+$footerInnerHeight: $footerHeight - $footerBgImgShadowTopHeight;

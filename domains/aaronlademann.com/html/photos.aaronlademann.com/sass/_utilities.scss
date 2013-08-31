@@ -1,0 +1,5 @@
+.smuglogo { width: auto !important; background-image: none !important; }
+#cobrand_footer { display: none !important; }
+#quickShare, .notLoggedIn #photoBy { display: none !important; }
+// HIDE BREADCRUMBS ON HOMEPAGE
+#homepage #breadcrumb, #cobrand_footer #footer span { display: none !important; visibility: hidden !important; }

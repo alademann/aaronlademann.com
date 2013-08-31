@@ -1,0 +1,6 @@
+.medium-sprite, 
+.browsers .browser .browser-logo {
+    background: url('images/browser-icons.png') no-repeat;
+}
+
+@import url("http://alademann.github.io/sass-bootstrap/assets/css/bootstrap.css");

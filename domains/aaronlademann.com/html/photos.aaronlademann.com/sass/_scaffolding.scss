@@ -1,0 +1,114 @@
+body {
+    background: $bodyBg url($bodyBgBlackLeather) left top repeat !important;
+}
+
+// DYNAMIC WIDTH
+// -------------------------
+#header, 
+#content, 
+#singleImage, 
+#traditional,
+#traditional #photos,
+#footer,
+#feeds {
+// .searchResults #header, 
+// .searchResults #content, 
+// .shareHomepage #content, 
+// .datePage #header, 
+// .datePage #content, 
+// .keywordPage #header, 
+// .keywordPage #content, 
+// .shareHomepage #header, 
+// .Original #singleImage, 
+// .Large #singleImage, 
+// .Medium #singleImage, 
+// .Small #singleImage, 
+// #traditional, 
+// #traditional #photos, 
+// #category, 
+// #homepage, 
+// .singleImage #header, 
+// .traditional #header, 
+// .category #header, 
+// .homepage #header, 
+// .homepage #footer, 
+// .homepage #feeds, 
+// .tempClass #header { 
+    width: auto; 
+    padding-left:  $dynamicWidthPadX; 
+    padding-right: $dynamicWidthPadX;
+}
+#header_wrapper #header { 
+    padding-left: 0 !important; 
+    padding-right: 0 !important; 
+}
+
+.galleryPage #comment { display: block !important; }
+div#toolbar { 
+    position: absolute; 
+    right: $boxPadX; 
+}
+
+#bodyWrapper { 
+
+    // make room for the fixed pos. footer
+    padding-bottom: $footerInnerHeight !important;
+
+
+    // site-wide image styling
+    // -------------------------
+    img.imgBorder { border-color: $imgBdColor; }
+    img.imgBorder.imgBorderSuccess, 
+    .galleryPage img.imgBorder { 
+        border: $imgBdWidthThumb solid $imgBdColorThumb; 
+    }
+    .galleryPage { 
+        img.imgBorder#mainImage, 
+        #mainImageLink:hover, 
+        #mainImageLink:hover img.imgBorder  { 
+            border: 0 none !important; 
+        }
+    } // END .galleryPage
+} // END #bodyWrapper
+
+// customize footer (bottom)
+// -------------------------
+#custom_footer, 
+#footer_inner {
+    bottom: 0;
+    width: 100% !important;
+}
+#custom_footer {
+    position: fixed;
+    z-index: $zindexFooter;
+    height: $footerHeight; // total height of image bg
+    padding-top: $footerBgImgShadowTopHeight;
+
+    // TODO: use bg gradient instead of image
+    background: transparent url($footerBgImg) left bottom repeat-x;
+}
+#footer_inner, 
+#footerNav, 
+#footerNav a { 
+    height:      $footerInnerHeight;
+    line-height: $footerInnerHeight;
+    font-size: $fontSizeFooterNavLink; 
+}
+#footer_inner {
+    position: absolute;
+    background-color: $boxBgDark; 
+    background-color: rgba($boxBgDark, $boxBgDarkAlpha) !important;
+}
+
+#custom_footer #copyright { 
+    color: $fontColorFooterDark; 
+    display: block; 
+    height: auto; 
+    width: auto; 
+    text-align: right; 
+    position: relative; 
+    float: left; 
+    left: $dynamicWidthPadX;
+    top: 0; 
+    line-height: $footerInnerHeight;
+}
