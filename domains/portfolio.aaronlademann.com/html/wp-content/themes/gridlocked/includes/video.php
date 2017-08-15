@@ -1,23 +1,23 @@
 				<!--BEGIN .hentry -->
-				<div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
-                    
-                    
-                    <?php 
-					
+				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+
+                    <?php
+
 					if(!is_singular()) {
-						$embed = get_post_meta(get_the_ID(), 'tz_video_embed', TRUE); 
+						$embed = get_post_meta(get_the_ID(), 'tz_video_embed', TRUE);
 					} else {
-						$embed = get_post_meta(get_the_ID(), 'tz_video_embed_single', TRUE); 
+						$embed = get_post_meta(get_the_ID(), 'tz_video_embed_single', TRUE);
 					}
-					
+
 					?>
-                    
+
                     <?php if($embed == '') : ?>
-                    
+
                     <?php tz_video(get_the_ID()); ?>
                     <?php $height = get_post_meta(get_the_ID(), 'tz_video_height', TRUE); ?>
                     <?php $heightSingle = get_post_meta(get_the_ID(), 'tz_video_height_single', TRUE); ?>
-                    
+
                     <style type="text/css">
 						.jp-video-play,
 						div.jp-jplayer.jp-jplayer-video {
@@ -28,9 +28,9 @@
 							height: <?php echo $heightSingle; ?>px;
 						}
 					</style>
-                    
+
                     <div id="jquery_jplayer_<?php the_ID(); ?>" class="jp-jplayer jp-jplayer-video"></div>
-                    
+
                     <div class="jp-video-container">
                         <div class="jp-video">
                             <div class="jp-type-single">
@@ -59,14 +59,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <?php else: ?>
-                    
+
                     <?php echo stripslashes(htmlspecialchars_decode($embed)); ?>
-                    
+
                     <?php endif; ?>
 
-				
+
                     <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'framework');?> <?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 					<!--BEGIN .entry-content -->
@@ -74,8 +74,8 @@
 						<?php the_content(''); ?>
 					<!--END .entry-content -->
 					</div>
-                    
+
                     <?php if(!is_singular()) : get_template_part('includes/post-meta'); endif; ?>
-                
-				<!--END .hentry-->  
+
+				<!--END .hentry-->
 				</div>

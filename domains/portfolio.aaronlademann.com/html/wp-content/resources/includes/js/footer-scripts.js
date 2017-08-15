@@ -11,10 +11,10 @@
 				} else {
 					load_therest();
 				}
-			} 
+			}
 
 		}]);
-	
+
 function load_therest(){
 
 	if(window.jQuery){
@@ -54,7 +54,7 @@ function load_therest(){
 		$wp_isPageTypeResume = checkitout("b", "page-template-template-resume-php");
 		$wp_isUserLoggedIn = checkitout("b", "logged-in");
 
-		
+
 		// once jquery is loaded, load all the jquery plugins 'n schtuff
 
 		// NO MATTER WHAT (MUST LOAD FIRST)
@@ -69,30 +69,30 @@ function load_therest(){
 			);
 		}
 		// END NO MATTER WHAT (MUST LOAD FIRST)
-		
+
 		// ANIMATION HELPERS (only if csstransitions aren't enabled)
 		// -----------------------------------------------------------------------------------------------
 		if(!$isCSSTransitions) {
-			
+
 			head.js({ jqueryshadowanimate: "/public/js/jquery/jquery.animate-shadow-min.js" }
 						 ,{ jqueryanimatecolors: "/public/js/jquery/jquery.animate-colors.js" }
 			);
-			
+
 		}
 		// END ANIMATION HELPERS
 
 		// GRID PAGES ONLY (NO SINGLE PAGES)
 		// -----------------------------------------------------------------------------------------------
 		if(!$wp_isPageTypeSingle) {
-			
+
 			head.js({ masonry: "/public/js/jquery/jquery.masonry.min.js" });
 			// once masonry is loaded...
 			head.ready("masonry", function(){
-				head.js({ infinitescroll: "/public/js/jquery/infinite-scroll/jquery.infinitescroll.min.js" });
+				head.js({ infinitescroll: "/public/js/jquery/infinite-scroll/jquery.infinitescroll.min.js" },);
 			}); // END head.ready("masonry")
 
 		} else {
-			
+
 			// NOT GRID PAGES
 			// -----------------------------------------------------------------------------------------------
 			if(!$wp_isPageTypeResume) {
@@ -102,27 +102,28 @@ function load_therest(){
 			head.js({ jquerysmartresize: "/public/js/jquery/jquery.smartresize.js" } // loads with masonry on grid pages
 						 ,{ imagesloaded: "/public/js/jquery/jquery.imagesloaded.js" } // loads with masonry on grid pages
 			);
-
 		}
 		// END GRID PAGES ONLY
 
 		// NO MATTER WHAT (MUST LOAD LAST)
 		// -----------------------------------------------------------------------------------------------
 		head.js({ bootstrap: "/public/js/bootstrap/bootstrap.js" });
-		head.js({ gridlockedcustom: "/public/js/_custom-portfolio.js" });
+		head.ready("bootstrap", function(){
+			head.js({ gridlockedcustom: "/public/js/_custom-portfolio.js" });
+		});
 		head.ready("gridlockedcustom", function() {
-			
+
 			// RESUME PAGE ONLY
-			// -----------------------------------------------------------------------------------------------	
+			// -----------------------------------------------------------------------------------------------
 			if($wp_isPageTypeResume) {
-			
-				head.js({ jqueryhotkeys: "/public/js/jquery/jquery.hotkeys.js" }, 
+
+				head.js({ jqueryhotkeys: "/public/js/jquery/jquery.hotkeys.js" },
 				function(){
 					redirect_CtrlP();
-				});	
-			
+				});
+
 			}
-			// END RESUME PAGE ONLY	
+			// END RESUME PAGE ONLY
 
 		});
 		// END NO MATTER WHAT (MUST LOAD LAST)
@@ -135,10 +136,10 @@ function load_therest(){
 //		);
 
 		// CONDITIONAL VAR CHECKING HELPER
-		// -----------------------------------------------------------------------------------------------		
+		// -----------------------------------------------------------------------------------------------
 
-		
+
 
 	} // END if(window.jQuery)
-	
+
 } // END load_therest()

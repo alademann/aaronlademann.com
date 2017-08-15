@@ -1,37 +1,37 @@
 <?php get_header(); ?>
 <!--BEGIN #primary .hfeed-->
 <section id="primary" class="hfeed span12">
-	
+
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<!--<php include(custom_includes_dir() . "/portfolio/single-header.php"); ?>  -->
 	<!--BEGIN .hentry -->
-  <article class="<?php post_class(); ?> row-fluid" id="post-<?php the_ID(); ?>">
+  <article class="<?php echo join( ' ', get_post_class( '', the_ID() ) ); ?> row-fluid" id="post-<?php the_ID(); ?>">
 		<?php include(custom_includes_dir() . "/portfolio/get-image-sizes.php"); ?>
     <section id="slider-<?php the_ID(); ?>" class="slider span8 vert">
 			<?php if(!is_mobile() && !is_iPad()) { ?>
-				<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?> 
+				<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-pagination-thumbs.php"); ?>
 			<?php } ?>
 			<section class="slideStage">
 				<section class="slides_container clearfix">
-					<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-markup.php"); ?>  
+					<?php include(custom_includes_dir() . "/portfolio/slider-gallery-img-markup.php"); ?>
 				</section>
 			</section>
     </section>
 
 		<!--BEGIN #single-sidebar-->
   	<section id="single-sidebar" class="span4">
-  		<?php 
+  		<?php
   			if(get_the_content() != ''){
-  				$caption = get_the_content(); 
+  				$caption = get_the_content();
   				} else {
-  				$caption = stripslashes(htmlspecialchars_decode(get_post_meta(get_the_ID(), 'tz_portfolio_caption', TRUE))); 
-  			}		
-  			$link = get_post_meta(get_the_ID(), 'tz_portfolio_link', TRUE); 
+  				$caption = stripslashes(htmlspecialchars_decode(get_post_meta(get_the_ID(), 'tz_portfolio_caption', TRUE)));
+  			}
+  			$link = get_post_meta(get_the_ID(), 'tz_portfolio_link', TRUE);
   		?>
   		<!--BEGIN .entry-meta .entry-header-->
   		<header>
-  			<h1 class="entryTitle"><?php the_title(); ?></h1>					
+  			<h1 class="entryTitle"><?php the_title(); ?></h1>
   			<ul class="entry-header clearfix">
   				<li class="like-count">
   					<?php tz_printLikes(get_the_ID()); ?>
@@ -66,19 +66,19 @@
 									echo '<li><h3 class="widget-title">Portfolio Type</h3></li><li>';
 						      $i = 0;
 						      foreach($portfolio_type_terms as $portfolio_type){
-										if($i == 0){ 
-											$portfolio_type_main = $portfolio_type->name; 
+										if($i == 0){
+											$portfolio_type_main = $portfolio_type->name;
 						          $portfolio_type_main_link = get_term_link($portfolio_type->slug, 'portfolio-type');
-											echo '<strong>'; 
+											echo '<strong>';
 						          $title = 'View all ' . $portfolio_type_main . ' content in Aaron&rsquo;s Portfolio';
 										}
-						        if($i > 0){ 
-											$portfolio_type_child = $portfolio_type->name; 
+						        if($i > 0){
+											$portfolio_type_child = $portfolio_type->name;
 						          $portfolio_type_child_link = get_term_link($portfolio_type->slug, 'portfolio-type');
-											echo ' > '; 
+											echo ' > ';
 						          $title = 'View all ' . $portfolio_type_main . ' ' . $portfolio_type_child . ' content in Aaron&rsquo;s Portfolio';
 										}
-										echo '<a title="'. $title .'" href="'.get_term_link($portfolio_type->slug, 'portfolio-type').'">'.$portfolio_type->name.'</a>'; 
+										echo '<a title="'. $title .'" href="'.get_term_link($portfolio_type->slug, 'portfolio-type').'">'.$portfolio_type->name.'</a>';
 										if($i == 0){ echo '</strong>'; }
 						        $i++;
 						      } // END foreach()
@@ -93,15 +93,15 @@
 									echo '<li><h3 class="widget-title">Client / Project</h3></li><li>';
 						      $i = 0;
 						      foreach($client_terms as $client){
-										if($i == 0){ 
+										if($i == 0){
 											$client_main = $client->name;
-						          echo '<strong>'; 
-						          $title = 'View all projects done for ' . $client_main; 
+						          echo '<strong>';
+						          $title = 'View all projects done for ' . $client_main;
 						        }
-						        if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for ' . $client_main; 
+						        if($i > 0){ echo ' > '; $title = 'View all ' . $client->name . ' project elements for ' . $client_main;
 										}
-						        echo '<a title="'. $title .'" href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>'; 
-						        if($i == 0){ echo '</strong>'; 
+						        echo '<a title="'. $title .'" href="'.get_term_link($client->slug, 'project').'">'.$client->name.'</a>';
+						        if($i == 0){ echo '</strong>';
 										}
 						        $i++;
 						      } // END foreach()
@@ -120,10 +120,10 @@
 						      $i = 0;
 						      foreach($skill_terms as $skill){
 										if($i == 0){ echo '<strong>'; }
-											if($i > 0){ echo ' > '; 
+											if($i > 0){ echo ' > ';
 											}
 											echo '<a title="View all ' . $skill->name . ' content in Aaron&rsquo;s Portfolio" href="'.get_term_link($skill->slug, 'skill-type').'">'.$skill->name.'</a>';
-											if($i == 0){ echo '</strong>'; 
+											if($i == 0){ echo '</strong>';
 											}
 						          $i++;
 						        }
@@ -141,7 +141,7 @@
 									echo '<li><h3 class="widget-title">Media Type(s)</h3></li><li>';
 						      $i = 0;
 						      foreach($media_terms as $media){
-										if($i > 0){ echo ', '; 
+										if($i > 0){ echo ', ';
 										}
 						        echo '<a title="View all portfolio content made for the following media: ' . $media->name . '" href="'.get_term_link($media->slug, 'media-type').'">'.$media->name.'</a>';
 										$i++;
@@ -160,7 +160,7 @@
 									echo '<li><h3 class="widget-title">Tool(s) Used</h3></li><li>';
 						      $i = 0;
 						      foreach($tool_terms as $tool){
-										if($i > 0){ echo ', '; 
+										if($i > 0){ echo ', ';
 										}
 						        echo '<a title="View all pieces created using ' . $tool->name . '" href="'.get_term_link($tool->slug, 'tools-used').'">'.$tool->name.'</a>';
 										$i++;
@@ -183,7 +183,7 @@
 <?php endwhile; else: ?>
 	</header>
 	<!--BEGIN #post-0-->
-	<article id="post-0" class="<?php post_class() ?>">
+	<article id="post-0" <?php post_class() ?>>
 		<h1 class="entry-title">
 			<?php _e('Error 404 - Not Found', 'framework') ?>
 		</h1>

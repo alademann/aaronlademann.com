@@ -3,7 +3,7 @@
 body > * {
 	font-size: 1em;
 }
-// make sure block items that are within a span12 are padded 
+// make sure block items that are within a span12 are padded
 .row-fluid > .span12 > * {
 	padding: 0 $fluidGridGutterWidth;
 	width: 100% - ($fluidGridGutterWidth * 2);
@@ -15,7 +15,7 @@ body > * {
 }
 
 .entry-content {
-	padding: 0 $gridGutterWidth ($gridGutterWidth + 10) $gridGutterWidth; 
+	padding: 0 $gridGutterWidth ($gridGutterWidth + 10) $gridGutterWidth;
 	.container-fluid & {
 		padding: 0 0 $fluidGridGutterWidth 0;
 	}
@@ -34,7 +34,7 @@ body > * {
 } // END #container
 
 .navbar-fixed-top {
-	
+
 	.brand {
 		line-height: 36px;
 		height: 40px;
@@ -42,12 +42,12 @@ body > * {
 	}
 } // END .navbar-fixed-top
 
-.line {  
+.line {
 	position: relative;
 	@include float(left);
 	width: 100%;
 	left: 0;
-	
+
 	&.vert {
 		width: 0;
 		padding: 0;
@@ -64,12 +64,12 @@ body > * {
 #primary {
 	@include ie7(margin-top, $clearTheMasthead); // should match #content top margin (IE7 and IE6 doesn't care about #content)
 	.page-template-template-full-width-php & { float: none; }
-	
+
 	header {
 		padding: 0 $wp_masonry-hpad $wp_masonry-hpad $wp_masonry-hpad;
 
 		h1 {
-				
+
 			font-size: pxtoem($baseH1Size - 4);
 			font-weight: bold;
 			letter-spacing: -.1ex;
@@ -88,8 +88,8 @@ body > * {
 		& + span {
 			float: left;
 		}
-		&:before { 
-			font-size: 1.3em; 
+		&:before {
+			font-size: 1.3em;
 			@include ie9(font-size, 1.1em);
 		}
 
@@ -109,10 +109,10 @@ body > * {
 		@include transparent;
 		// reveal
 		&.transReady {
-			@include opacity(1); 
+			@include opacity(1);
 		}
 	} // end opacity
-	
+
 	.no-opacity & {
 		// no opacity support
 		display: none;
@@ -125,26 +125,26 @@ body > * {
 	// fix for IE since the masonry elem never seems to get the transReady class added
 	.scriptsuccess.opacity .ie & {
 		@include opacity(1);
-	}	
+	}
 	.scriptsuccess.no-opacity .ie & {
 		display: block;
-	}		
+	}
 
 	// enable css transitions
 	&.transReady, .scriptsuccess & {
-		@extend .tp_scale;
-		@extend .tp_alpha;
+		@include tp_scale;
+		@include tp_alpha;
 	} // end css transitions
 
 	// disable transitions on container
 	&.infinite-scroll {
 		@include transition-property(none);
 	}
-	
+
 // END progressive revealing of .masonry opacity
 
 	&, .masonry-brick, .masonry-brick .wellOverlay {
-		@extend .trans;
+		@include trans;
 	}
 	.masonry-brick {
 
@@ -153,7 +153,7 @@ body > * {
 		position: absolute;
 		top: 100%; // so it animates from the bottom;
 		@include transition-property("left, right, top");
-		
+
 		.post-thumb {
 			padding: 0;
 			margin: 0;
@@ -167,14 +167,14 @@ body > * {
 		}
 
 		.post-thumb a,
-		.post-thumb a img { 
+		.post-thumb a img {
 			@include float(left);
 			display: block;
 			width: auto;
 		}
 
 		&.hover, &.hover .wellOverlay {
-			@extend .tp_all;
+			@include tp_all;
 		}
 
 		&, .wellOverlay{
@@ -185,7 +185,7 @@ body > * {
 			padding: 0;
 		}
 
-		.wellOverlay { 
+		.wellOverlay {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -226,8 +226,8 @@ body > * {
 				@include stretch-y;
 			}
 			figcaption, .figcaption {
-				@extend .trans;
-				@extend .tp_all;
+				@include trans;
+				@include tp_all;
 				bottom: 0;
 				z-index: 10;
 			}
@@ -244,7 +244,7 @@ $loadingImg: "loading.gif";
 $loadingImgW: image-width($loadingImg);
 $loadingImgH: image-height($loadingImg);
 
-#primary #infscr-loading { 
+#primary #infscr-loading {
 	text-align: center;
 	z-index: 100;
 	position: fixed;
@@ -272,7 +272,7 @@ $loadingImgH: image-height($loadingImg);
 	#primary {
 		/* no left sidebar on .single pages */
 		$wp_primary-hpad_single: 5%;
-		$sliderDivider: ($wp_primary-hpad / 2); // space between image and caption / meta 
+		$sliderDivider: ($wp_primary-hpad / 2); // space between image and caption / meta
 
 
 		// primary .single page header that spans the entire top area below mast
@@ -316,13 +316,13 @@ $loadingImgH: image-height($loadingImg);
 
 				// css transitions
 				&, a, a > img {
-					@extend .trans;
-					@extend .tp_all;
+					@include trans;
+					@include tp_all;
 				}
 
 				a {
 					padding: .3em;
-					display: block;	
+					display: block;
 					width: $wp_media_widthThumbSm;
 					height: $wp_media_widthThumbSm;
 					background: transparent none;
@@ -331,11 +331,11 @@ $loadingImgH: image-height($loadingImg);
 					border: 0 none;
 					@include opacity(.25);
 					&:hover {
-						@extend .opaque;
+						@include opaque;
 					}
 				} // END .single .pagination li a
 				&.opaque a {
-					@extend .opaque;
+					@include opaque;
 				}
 
 			} // END .single .pagination li
@@ -346,13 +346,13 @@ $loadingImgH: image-height($loadingImg);
 		$stagePad: 3.3em;
 		$stagePadNum: 3.3;
 
-		.slideStage { 
-			padding: 0 $stagePad; 
+		.slideStage {
+			padding: 0 $stagePad;
 
 			.prev, .next {
 				display: none;
 			}
-		} 
+		}
 
 		// vertical layout when there is a lot of screen width to work with
 		// TODO: dynamically add/remove the .vert class based on the responsive conditions in the browser.
@@ -372,7 +372,7 @@ $loadingImgH: image-height($loadingImg);
 					margin: 2px 0;
 				}
 			}
-				
+
 			.slideStage {
 				$convertedEmPadding: emtopx($stagePadNum);
 				position: relative;
@@ -380,24 +380,24 @@ $loadingImgH: image-height($loadingImg);
 
 			}
 		} // END .slider.vert
-			
+
 		.slides_control, .slides_control .lightbox { width: 100% !important; } // adaptive image sizing
 		.slides_control { height: auto !important; }
 		.slides_control .lightbox { position: relative !important; } // override slides.js (wants to make this absolute really really bad)
 
 		/* jQuery "slider" captions */
-		.caption { 
+		.caption {
 			font-size: pxtoem(14);
 			font-weight: bold;
-			line-height: 1.6 !important; 
+			line-height: 1.6 !important;
 
 			a { display: inline; }
 
 		} // END .slider .caption
-	} // END article .slider	
+	} // END article .slider
 
 	// content area beneath slider (currently blank)
-	.entry-content { 
+	.entry-content {
 		display: none;
 	} // END .entry-content
 
@@ -405,8 +405,8 @@ $loadingImgH: image-height($loadingImg);
 	#single-sidebar {
 		$wp_sidebarPad: pxtoem(18);
 		z-index: 99;
-		@include stretch-y($navbarHeight,0); 
-		// the stretch-y compass method above creates absolute position... 
+		@include stretch-y($navbarHeight,0);
+		// the stretch-y compass method above creates absolute position...
 		// so we need to align it how we want our fluid layout to respond when screen size changes.
 		left: auto;
 		right: 0;
@@ -453,7 +453,7 @@ $loadingImgH: image-height($loadingImg);
 
 		// header is where the_content() and the_title() live on .single posts.
 		header {
-					
+
 			h1, .h1 {
 				//font-size: $baseH1Size_px;
 				font-weight: bold;
@@ -463,7 +463,7 @@ $loadingImgH: image-height($loadingImg);
 			}
 
 			ul.entry-header {
-					
+
 				.like-count, .published {
 					float: left;
 					position: relative;
@@ -475,7 +475,7 @@ $loadingImgH: image-height($loadingImg);
 							margin-right: 6px; // separate text from icon
 						}
 					}
-	
+
 				} // END #single-sidebar > .like-count, .published
 
 				// vertical divider between two <li> elems floating next to one another
@@ -491,11 +491,11 @@ $loadingImgH: image-height($loadingImg);
 				} // end #single-sidebar .caption
 
 			} // END .single #single-sidebar header ul.entry-header
-		} // END .single #single-sidebar header, .header	
+		} // END .single #single-sidebar header, .header
 
 		// footer is where the bulleted taxonomy lists live on .single posts.
 		footer {
-			.terms li { 
+			.terms li {
 				font-size: 0.846em;
 				line-height: normal;
 				.widget-title {
@@ -535,9 +535,9 @@ $loadingImgH: image-height($loadingImg);
 /* adaptive images */
 #primary, .masonry article {
 	// images within these containers, we want to scale to the size of their containers.
-	img, object, .wp-caption { 
-		max-width: 100% !important; 
-		width: 100% !important; 
+	img, object, .wp-caption {
+		max-width: 100% !important;
+		width: 100% !important;
 		//height: 100% !important;
 		//max-height: 100% !important;
 	}
@@ -559,34 +559,34 @@ $loadingImgH: image-height($loadingImg);
 
 	// UP TO LANDSCAPE PHONE
 	// ---------------------
-		@media (max-width : 480px) { 
-	
+		@media (max-width : 480px) {
+
 		} /* UP TO LANDSCAPE PHONE */
- 
+
 	// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
 	// --------------------------------------------------
-		@media (max-width : 767px) { 
-			
+		@media (max-width : 767px) {
+
 			.single {
-				
+
 				#primary {
 
 					#single-sidebar {
-					
+
 						z-index: 99;
 						background: rgba_ie($grayMedium,.1);
 						@include single-box-shadow(rgba_ie($grayMedium,.6), 3px, 0, 8px, 0, inset );
-						//@include stretch-y($navbarHeight,0); 
+						//@include stretch-y($navbarHeight,0);
 						position: relative;
-						// the stretch-y compass method above creates absolute position... 
+						// the stretch-y compass method above creates absolute position...
 						// so we need to align it how we want our fluid layout to respond when screen size changes.
 						left: auto;
 						right: 0;
 
 						header {
-						
+
 							h1 {
-								$h1_fontSize: $baseH1Size_px - .2; 
+								$h1_fontSize: $baseH1Size_px - .2;
 								font-size: $h1_fontSize;
 								margin-bottom: ($h1_fontSize / 9);
 							} // END .single #single-sidebar header h1
@@ -598,11 +598,11 @@ $loadingImgH: image-height($loadingImg);
 
 		//////////////////////////////////////////////////////////////
 		} /* END LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET */
- 
+
 	// PORTRAIT TABLET TO DEFAULT DESKTOP
 	// ----------------------------------
-		@media (min-width : 768px) and (max-width : 979px) { 
-		
+		@media (min-width : 768px) and (max-width : 979px) {
+
 		//////////////////////////////////////////////////////////////
 		} /* END PORTRAIT TABLET TO DEFAULT DESKTOP */
 
@@ -623,18 +623,18 @@ $loadingImgH: image-height($loadingImg);
 	// LARGE DESKTOP & UP
 	// ------------------
 		@media (min-width : 1200px) {
-	
+
 		//////////////////////////////////////////////////////////////
 		} /* END LARGE DESKTOP & UP */
 
 	/* END ALL DEVICES ------------------------------------------------- */
-		
+
 	// iPads
 	// ------------------
-		@media only screen 
+		@media only screen
 		and (min-device-width : 768px)
 		and (max-device-width : 1024px) {
-	
+
 		//////////////////////////////////////////////////////////////
 		} /* END iPads */
 
@@ -643,7 +643,7 @@ $loadingImgH: image-height($loadingImg);
 		@media only screen
 		and (min-device-width : 320px)
 		and (max-device-width : 480px) {
-			
+
 		//////////////////////////////////////////////////////////////
 		} /* END iPhones */
 
@@ -663,7 +663,7 @@ $loadingImgH: image-height($loadingImg);
 
 
 @mixin old_sidebar_styles {
-	
+
 	#sidebar {
 		position: fixed;
 		z-index: 500;
@@ -679,11 +679,11 @@ $loadingImgH: image-height($loadingImg);
 			left: $widgetIndent;
 			top: -6px;
 		} // END #sidebar .widget
-		.entry-meta { 
+		.entry-meta {
 			padding: 5px 15px;
 		}
-		#logo { 
-			margin-left: 0; 
+		#logo {
+			margin-left: 0;
 
 			h1 {
 				display: block;

@@ -1,10 +1,10 @@
 				<!--BEGIN .hentry -->
-				<div class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
-					
+				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
                     <?php tz_audio(get_the_ID()); ?>
-                    
+
 					<div id="jquery_jplayer_<?php the_ID(); ?>" class="jp-jplayer"></div>
-		
+
                     <div class="jp-audio-container">
                         <div class="jp-audio">
                             <div class="jp-type-single">
@@ -41,8 +41,8 @@
 						<?php the_content(''); ?>
 					<!--END .entry-content -->
 					</div>
-                    
+
                     <?php if(!is_singular()) : get_template_part('includes/post-meta'); endif; ?>
-                
-				<!--END .hentry-->  
+
+				<!--END .hentry-->
 				</div>

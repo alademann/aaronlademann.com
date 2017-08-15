@@ -2,7 +2,7 @@
 
 	jQuery gridlocked customization
 	(GRIDLOCK THEME CUSTOMIZATIONS BY AARON LADEMANN)
- 
+
 -----------------------------------------------------------------------------------------------------------*/
 
 var $ = jQuery.noConflict();
@@ -27,7 +27,7 @@ $isIE = $("body").hasClass("ie");
 /*--------------------------------------------------------------------------------------------------------
 
 	********************* HEAD.READY() *********************
- 
+
 ----------------------------------------------------------------------------------------------------------*/
 
 function dependents(elems) {
@@ -48,7 +48,7 @@ function dependents(elems) {
 if(window.jQuery) {
 
 	if($().masonry) {
-		masonTheLayout(); 
+		masonTheLayout();
 	} else {
 		// initial call for dependents()
 		// must call separately if the page is not masoned
@@ -68,7 +68,7 @@ if(window.jQuery) {
 	if($alerts.length) {
 		try {
 			// the class used here has to match the data-dismiss attribute of the close <a> tag.
-			$(".alert").alert(); // Enable bootstrap alerts		
+			$(".alert").alert(); // Enable bootstrap alerts
 		} catch(e) { }
 	} // END if alerts
 
@@ -78,7 +78,7 @@ if(window.jQuery) {
 	});
 
 	if(!$isIE) {
-		
+
 		window.addEventListener("orientationchange", function() { // switching between landscape and horizontal
 			updateOrientation();
 
@@ -89,7 +89,7 @@ if(window.jQuery) {
 		}, false);
 
 	}
-	
+
 
 	tz_widgetOverlay(); // TODO - only trigger this if the widget overlay function is enabled in WP
 	tz_navTitles(); // TODO - figure out what this does ;)
@@ -107,7 +107,7 @@ $('#container').removeClass('js-disabled');
 /*--------------------------------------------------------------------------------------------------------
 
 	********************* FUNCTIONS *********************
- 
+
 ----------------------------------------------------------------------------------------------------------*/
 
 function html5elems_init() {
@@ -127,7 +127,7 @@ function html5elems_init() {
 			});
 		});
 	} // END if($details_elems
-		
+
 } // END html5elems_init();
 
 /*-----------------------------------------------------------------------------------*/
@@ -135,20 +135,20 @@ function html5elems_init() {
 /*-----------------------------------------------------------------------------------*/
 function updateOrientation() {
 		var orientation = window.orientation;
-		
+
 		switch (orientation) {
 				// If we're horizontal
 				case 90:
 				case -90:
 					orientLandscape();
-					break;  
-				
+					break;
+
 				// If we're vertical
 				default:
 					orientPortrait();
 					break;
 		}
-		
+
 } // END updateOrientation
 
 function orientLandscape() {
@@ -191,17 +191,17 @@ function contentHeight() {
 	elemHeight = windowHeight - mastHeight;
 
 	$("#container").css("min-height", elemHeight - 50);
-	
+
 	if(!$isIphone) {
 		$(".single .lightbox img").css({
 		//maxHeight: elemHeight - 130,
 			maxHeight: elemHeight - 184,
 			height: "auto"
-		});	
+		});
 	} else {
 		$("body").addClass("foundiOS");
 	} // END if(!isIphone)
-	
+
 
 	//contentWidth();
 
@@ -219,7 +219,7 @@ function contentWidth() {
 	//console.info($(slider).width());
 	//console.info(windowWidth);
 	if($(slider).width() > 0) {
-		// single page, figure out the dynamic width of the 
+		// single page, figure out the dynamic width of the
 		// right sidebar as long as the window width isn't less than 1024
 		scrollBarWidth = 16;
 		newWidth = windowWidth - $(slider).width() - hPads - scrollBarWidth;
@@ -240,11 +240,11 @@ function contentWidth() {
 //	SLIDESHOW INITIATION (single page only)
 /*-----------------------------------------------------------------------------------*/
 function initiateSlides() {
-	
+
 	$(".slider").slides({
-		preloadImage: '/public/images/loading_light.gif', 
+		preloadImage: '/public/images/loading_light.gif',
 		preload: true,
-		generateNextPrev: true, 
+		generateNextPrev: true,
 		generatePagination: false,
 		effect: 'fade',
 		fadeEasing: 'easeOutQuad',
@@ -263,6 +263,7 @@ function initiateSlides() {
 	$.each(lboxes, function(i) {
 		//console.info("found a lightbox... it's number " + i);
 		$(".caption, img", this).addClass($cssFadeShowClass);
+
 		if(i == (howMany - 1)) {
 			// done iterating
 			//console.info("we've reached the end, jim");
@@ -340,7 +341,7 @@ function masonTheLayout() {
 	var infscrPageview, $wall, $masonryThumbs, infScrollNextSelector;
 	infscrPageview = 1;
 	$wall = $($masonryWrapperClass);
-	
+
 	dependents("all"); // trigger all the separate actions / functions that need to accompany the masonry layout.
 
 	//var iewall = $("body.ie").find("#" + $wall.attr("id"));
@@ -348,7 +349,7 @@ function masonTheLayout() {
 	// why isn't this working in IE???
 	//console.info("should be adding class transReady to #" + $wall.attr("id"));
 	$wall.addClass("transReady"); // so that we can delay the css transitions until everything is ready to roll.
-	
+
 	$masonryThumbs = $($masonryBoxClass).find("> .post-thumb > a > img");
 
 	//$masonryThumbs.imagesLoaded(function() {
@@ -387,7 +388,7 @@ function masonTheLayout() {
 	function scroll_forever() {
 
 		$container = $($masonryWrapperClass);
-		// infinitescroll() is called on the element that surrounds 
+		// infinitescroll() is called on the element that surrounds
 		// the items you will be loading more of
 		try {
 
@@ -427,11 +428,11 @@ function masonTheLayout() {
 				});
 
 			});
-			
+
 		} catch (e) {
 			console.log("Error (line 364 of _custom-portfolio.js): " + e);
 		}
-		
+
 		// END INFINITE SCROLL
 
 	} // END scroll_forever()
@@ -439,7 +440,7 @@ function masonTheLayout() {
 } // END masonTheLayout()
 
 function masonBrickBindings(elems) {
-	
+
 	// HENTRY EFFECTS
 	var hentries = elems;
 	$.each(hentries, function() {
@@ -533,7 +534,7 @@ function tz_whoLikes($post, $likes, $post_id) {
 		$wholikesit = $who + $others + $what;
 
 	} else {
-		// current user hasn't liked it yet	
+		// current user hasn't liked it yet
 		$wholikesit = $who + $what;
 	}
 
@@ -574,18 +575,18 @@ function bindPermalink(pl, here) {
 } // END bindPermalink()
 
 function caption_as_url(caption) {
-	
+
 	// strip whitespace
 	var captionAsUrl = caption.replace(/ /g,"_");
 	// strip quotes
 	captionAsUrl = captionAsUrl.replace(/"([^"]*)"/g, "$1");
 	return captionAsUrl;
 	//console.info(caption_as_url);
-	
+
 } // END caption_as_url()
 
 function tz_navTitles() {
-		
+
 	$('.nav-previous a').attr('title', $('.nav-previous a').text());
 	$('.nav-next a').attr('title', $('.nav-next a').text());
 
@@ -713,7 +714,7 @@ function ga_trackExternal() {
 
 		}); //end .bind("click");
 
-	}); // END .each(navBtns)	
+	}); // END .each(navBtns)
 
 } // END ga_trackExternal()
 
@@ -747,7 +748,7 @@ function trackLightBoxStuff(pglinks,arr) {
 						//console.info("clicked " + whichPage);
 
 						////////////////////////////// TRACK STUFF NOW ///////////////////////////////////////
-						
+
 						//console.info(currPage + "?paginate=" + caption_as_url(whichPage));
 
 						_gaq.push(['_trackPageview', currPage + "?paginate=" + caption_as_url(whichPage)]);
@@ -774,13 +775,13 @@ function trackLightBoxStuff(pglinks,arr) {
 		$.each(lightboxLink, function() {
 
 			$(this).bind("click", function() {
-				
+
 				var imageCaption, imageCaption_url;
 				imageCaption = $(this).find("> .caption").text();
 				imageCaption_url = caption_as_url(imageCaption);
 
 				_gaq.push(['_trackEvent', 'portfolio', 'fullsize-view', currPage + "?img=" + imageCaption_url]);
-				
+
 			}); //end .bind("click")
 
 

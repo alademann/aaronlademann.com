@@ -1,13 +1,13 @@
-<?php 
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ?>
 
-<?php 
+<?php
 $postType = 'portfolio';
 ?>
 <?php get_header(); ?>
-<?php include(custom_includes_dir() . "/portfolio/get-image-sizes.php"); ?> 
+<?php include(custom_includes_dir() . "/portfolio/get-image-sizes.php"); ?>
 
 <?php include(custom_includes_dir() . "/wp/wp-loop-vars.php"); ?>
 
@@ -17,14 +17,14 @@ $postType = 'portfolio';
 		<h1 class="search-results"><?php echo $total_results; ?> Projects Matching <mark class="label label-inverse"><?php echo get_query_var('s'); ?></mark></h1>
 	</header>
 	<!--BEGIN #masonry-->
-	<section id="masonry-portfolio"class="masonry clearfix">
-	
-	<?php if ( have_posts() ) : $count = 0; while ( have_posts() ) : the_post(); $count++; ?>	
+	<section id="masonry-portfolio" class="masonry clearfix">
+
+	<?php if ( have_posts() ) : $count = 0; while ( have_posts() ) : the_post(); $count++; ?>
 
 	<?php include(gridlocked_includes_dir() . "/standard.php"); ?>
 
 	<?php endwhile; ?>
-	
+
 	</section>
 	<!--END #masonry-->
 
@@ -44,7 +44,7 @@ $postType = 'portfolio';
 			</ul>
 		</nav>
 	</footer>
-	
+
 	<?php else: ?>
 
 	<article style="padding-left: 24px;" class="emptyResults">

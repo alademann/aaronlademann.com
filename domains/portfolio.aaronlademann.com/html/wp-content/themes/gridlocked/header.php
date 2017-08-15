@@ -14,7 +14,7 @@
 
 <!-- RSS & Pingbacks -->
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> RSS Feed" href="<?php if (get_option('tz_feedburner')) { echo get_option('tz_feedburner'); } else { bloginfo( 'rss2_url' ); } ?>">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">  
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--// RSS & Pingbacks -->
 
 <!-- HOOK HEAD -->
@@ -26,7 +26,7 @@
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/modernizr.min.js" id="modernizr"></script>
 <script type="text/javascript" src="<?php echo public_uri(); ?>/js/head<?php if(!$is_winIE) { echo ".load"; } ?>.min.js" id="headjs"></script>
 </head>
-<body class="<?php body_class(); ?> <?php echo $deviceClass; ?>">
+<body class="<?php echo join( ' ', get_body_class( '' ) ); ?> <?php echo $deviceClass; ?>">
 <!-- navbar -->
 <?php include(custom_includes_dir() . "/portfolio/navbar-top.php"); ?>
 <!-- // navbar -->
@@ -37,7 +37,7 @@
 		<?php include(custom_includes_dir() . "/wp/widget-overlay.php"); ?>
 		<?php include(custom_includes_dir() . "/php/debug.php"); ?>
 		<?php if( !is_page_template('template-resume.php') AND !is_page_template('template-full-width.php') AND !is_single() ){ ?>
-    <!-- SIDEBAR -->        
+    <!-- SIDEBAR -->
 
     <!--// SIDEBAR -->
 		<?php } ?>
