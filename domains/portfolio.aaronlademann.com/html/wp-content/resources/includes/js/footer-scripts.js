@@ -65,8 +65,7 @@ function load_therest(){
 		);
 		if($isBrowserIE) {
 			head.js({ jquerysmartresize: "/public/js/jquery/jquery.smartresize.js" } // loads with masonry on grid pages
-						, { imagesloaded: "/public/js/jquery/jquery.imagesloaded.js"} // loads with masonry on grid pages
-					  , { slidesjs: "/public/js/jquery/slides.min.jquery.js" }
+						,{ imagesloaded: "/public/js/jquery/jquery.imagesloaded.js" } // loads with masonry on grid pages
 			);
 		}
 		// END NO MATTER WHAT (MUST LOAD FIRST)

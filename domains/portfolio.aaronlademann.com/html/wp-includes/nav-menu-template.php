@@ -103,7 +103,7 @@ class Walker_Nav_Menu extends Walker {
 	 * @param object $item Page data object. Not used.
 	 * @param int $depth Depth of page. Not Used.
 	 */
-	function end_el(&$output, $item, $depth) {
+	function end_el($output, $item, $depth) {
 		$output .= "</li>\n";
 	}
 }

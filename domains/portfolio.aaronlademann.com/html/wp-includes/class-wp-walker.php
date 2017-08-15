@@ -93,7 +93,7 @@ class Walker {
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
 	 */
-	function end_el(&$output)    {}
+	function end_el($output)    {}
 
 	/**
 	 * Traverse elements to create list from elements.

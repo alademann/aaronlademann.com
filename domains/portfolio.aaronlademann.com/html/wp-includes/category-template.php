@@ -909,7 +909,7 @@ class Walker_Category extends Walker {
 	 * @param int $depth Depth of category. Not used.
 	 * @param array $args Only uses 'list' for whether should append to output.
 	 */
-	function end_el(&$output, $page, $depth, $args) {
+	function end_el($output, $page, $depth, $args) {
 		if ( 'list' != $args['style'] )
 			return;
 

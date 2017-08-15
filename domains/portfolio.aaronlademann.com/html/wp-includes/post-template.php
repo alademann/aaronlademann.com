@@ -1064,7 +1064,7 @@ class Walker_Page extends Walker {
 	 * @param object $page Page data object. Not used.
 	 * @param int $depth Depth of page. Not Used.
 	 */
-	function end_el(&$output, $page, $depth) {
+	function end_el($output, $page, $depth) {
 		$output .= "</li>\n";
 	}
 

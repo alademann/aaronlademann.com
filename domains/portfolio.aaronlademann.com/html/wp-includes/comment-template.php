@@ -1386,7 +1386,7 @@ class Walker_Comment extends Walker {
 	 * @param int $depth Depth of comment.
 	 * @param array $args
 	 */
-	function end_el(&$output, $comment, $depth, $args) {
+	function end_el($output, $comment, $depth, $args) {
 		if ( !empty($args['end-callback']) ) {
 			call_user_func($args['end-callback'], $comment, $args, $depth);
 			return;

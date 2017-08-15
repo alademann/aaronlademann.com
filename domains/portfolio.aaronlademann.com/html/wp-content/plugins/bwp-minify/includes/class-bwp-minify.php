@@ -50,22 +50,22 @@ class BWP_MINIFY extends BWP_FRAMEWORK {
 	 * Determine positions to manually put scripts in
 	 */
 	var $print_positions = array('header' => array(), 'footer' => array(), 'direct' => array(), 'ignore' => array());
-	
+
 	/**
 	 * Are scripts still queueable?
 	 */
 	var $queueable = true;
-	
+
 	/**
 	 * Queued styles to be printed
 	 */
 	var $styles = array(array()), $media_styles = array('print' => array()), $dynamic_styles = array(), $wp_styles_done = array();
-	 
+
 	/**
 	 * Are we still able to print styles?
 	 */
 	var $printable = true;
-	 
+
 	/**
 	 * Other options
 	 */
@@ -73,7 +73,7 @@ class BWP_MINIFY extends BWP_FRAMEWORK {
 
 	/**
 	 * Constructor
-	 */	
+	 */
 	function __construct($version = '1.0.10')
 	{
 		// Plugin's title
@@ -113,7 +113,7 @@ class BWP_MINIFY extends BWP_FRAMEWORK {
 
 	function default_minurl()
 	{
-		$this->options_default['input_minurl'] = apply_filters('bwp_minify_min_dir', plugin_dir_url($this->plugin_file) . 'min/');	
+		$this->options_default['input_minurl'] = apply_filters('bwp_minify_min_dir', plugin_dir_url($this->plugin_file) . 'min/');
 	}
 
 	function init_properties()
@@ -178,33 +178,33 @@ class BWP_MINIFY extends BWP_FRAMEWORK {
 			add_filter('locale_stylesheet_uri', array($this, 'minify_item'));
 		}
 	}
-	
+
 	/**
 	 * Build the Menus
 	 */
 	function build_menus()
 	{
-		add_options_page(__('Better WordPress Minify', 'bwp-minify'), 'BWP Minify', BWP_MINIFY_CAPABILITY, BWP_MINIFY_OPTION_GENERAL, array($this, 'build_option_pages'));		
+		add_options_page(__('Better WordPress Minify', 'bwp-minify'), 'BWP Minify', BWP_MINIFY_CAPABILITY, BWP_MINIFY_OPTION_GENERAL, array($this, 'build_option_pages'));
 	}
-	
+
 	/**
 	 * Build the option pages
 	 *
 	 * Utilizes BWP Option Page Builder (@see BWP_OPTION_PAGE)
-	 */	
+	 */
 	function build_option_pages()
 	{
 		if (!current_user_can(BWP_MINIFY_CAPABILITY))
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 
 		// Init the class
-		$page = $_GET['page'];		
+		$page = $_GET['page'];
 		$bwp_option_page = new BWP_OPTION_PAGE($page, $this->site_options);
-		
+
 		$options = array();
-		
+
 if (!empty($page))
-{	
+{
 	if ($page == BWP_MINIFY_OPTION_GENERAL)
 	{
 		$form = array(
@@ -212,7 +212,7 @@ if (!empty($page))
 			'item_labels'	=> array
 			(
 				__('General Options', 'bwp-minify'),
-				__('Minify CSS, JS files automatically?', 'bwp-minify'),				
+				__('Minify CSS, JS files automatically?', 'bwp-minify'),
 				__('Minify <code>bloginfo()</code> stylesheets?', 'bwp-minify'),
 				__('Minifying Options', 'bwp-minify'),
 				__('Minify URL (double-click to edit)', 'bwp-minify'),
@@ -286,7 +286,7 @@ if (!empty($page))
 		if (isset($_POST['submit_' . $bwp_option_page->get_form_name()]) && isset($options) && is_array($options))
 		{
 			check_admin_referer($page);
-			foreach ($options as $key => &$option)
+			foreach ($options as $key => $option)
 			{
 				// [WPMS Compatible]
 				if ($this->is_normal_admin() && in_array($key, $option_super_admin))
@@ -338,10 +338,10 @@ if (!empty($page))
 	</script>
 <?php
 
-		// Assign the form and option array		
+		// Assign the form and option array
 		$bwp_option_page->init($form, $options, $this->form_tabs);
 
-		// Build the option page	
+		// Build the option page
 		echo $bwp_option_page->generate_html_form();
 	}
 
@@ -375,15 +375,15 @@ if (!empty($page))
 			'ignore'	=> $this->options['input_ignore']
 		);
 
-		foreach ($positions as &$position)
+		foreach ($positions as $position)
 		{
 			if (!empty($position))
 			{
 				$position = explode("\n", $position);
 				$position = array_map('trim', $position);
 			}
-		}				
-		
+		}
+
 		$this->print_positions = $positions;
 	}
 
@@ -422,7 +422,7 @@ if (!empty($page))
 			break;
 		}
 	}
-	
+
 	function is_in($handle, $position = 'header')
 	{
 		if (!isset($this->print_positions[$position]) || !is_array($this->print_positions[$position]))
@@ -555,11 +555,11 @@ if (!empty($page))
 			$extra_media = ('scripts' == $type) ? array_merge($this->header_dynamic, $this->footer_dynamic, $this->wp_scripts_done) : array_merge($this->dynamic_styles, $this->wp_styles_done);
 			if (in_array($handle, $extra_media))
 				return 'wp';
-		}		
+		}
 		return false;
 	}
 
-	function append_minify_string(&$media = array(), &$count = 0, $src = '', $done = false, $parent = false, $type = 'scripts')
+	function append_minify_string($media = array(), $count = 0, $src = '', $done = false, $parent = false, $type = 'scripts')
 	{
 		$current_pointer = sizeof($media) - 1;
 		// Don't append if already added
@@ -594,9 +594,9 @@ if (!empty($page))
 			case 'script':
 				return "<script type='text/javascript' src='" . $this->get_minify_src($string) . "'></script>\n";
 			break;
-			
+
 			case 'style':
-			default:			
+			default:
 				return "<link rel='stylesheet' type='text/css' media='all' href='" . $this->get_minify_src($string) . "' />\n";
 			break;
 
@@ -622,7 +622,7 @@ if (!empty($page))
 		}
 		else
 			$rtl_href = $wp_styles->registered[$handle]->extra['rtl'];
-		
+
 		return $this->process_media_source($rtl_href);
 	}
 
@@ -634,14 +634,14 @@ if (!empty($page))
 	/**
 	 * Loop through current todo array to build our minify string (min/?f=style1.css,style2.css)
 	 *
-	 * If the number of stylesheets reaches a limit (by default the limit is 10) this plugin will split the minify string 
+	 * If the number of stylesheets reaches a limit (by default the limit is 10) this plugin will split the minify string
 	 * into an appropriate number of <link> tags. This is only to beautify your minify strings (they might get too long).
 	 * If you don't like such behaviour, change the limit to something higher, e.g. 50.
 	 */
 	function minify_styles($todo)
 	{
 		global $wp_styles;
-				
+
 		$total = sizeof($todo);
 		$count = 0;
 		$queued = 0;
@@ -693,8 +693,8 @@ if (!empty($page))
 						$this->media_styles[$media] = array();
 					$this->media_styles[$media][] = $src;
 				}
-				// If this style needs conditional statement (e.g. IE-specific stylesheets) 
-				// or is an alternate stylesheet (@see http://www.w3.org/TR/REC-html40/present/styles.html#h-14.3.1), 
+				// If this style needs conditional statement (e.g. IE-specific stylesheets)
+				// or is an alternate stylesheet (@see http://www.w3.org/TR/REC-html40/present/styles.html#h-14.3.1),
 				// we will not enqueue it (but still minify it).
 				else if ((isset($the_style->extra['conditional']) && $the_style->extra['conditional']) || (isset($the_style->extra['alt']) && $the_style->extra['alt']))
 				{
@@ -706,7 +706,7 @@ if (!empty($page))
 				{
 					$queued++;
 					$this->append_minify_string($this->styles, $queued, $src, $count == $total, true, 'styles');
-					// If this style has support for rtl language and the locale is rtl, 
+					// If this style has support for rtl language and the locale is rtl,
 					// we will have to append the rtl stylesheet also
 					if ('rtl' === $wp_styles->text_direction && isset($the_style->extra['rtl']) && $the_style->extra['rtl'])
 						$this->append_minify_string($this->styles, $queued, $this->rtl_css_href($handle), $count == $total, false, 'styles');
@@ -714,10 +714,10 @@ if (!empty($page))
 			}
 			else
 				// error: Call-time pass-by-reference deprecated
-				$this->ignores_style($handle, &$temp, $the_style->deps);
+				$this->ignores_style($handle, $temp, $the_style->deps);
 
 			if (true == $ignore)
-				$this->ignores_style($handle, &$temp, $the_style->deps);
+				$this->ignores_style($handle, $temp, $the_style->deps);
 		}
 
 		//$this->printable = false;
@@ -729,7 +729,7 @@ if (!empty($page))
 	 * Main function to print out our stylesheets
 	 *
 	 * Use actions provided to add other things before or after the output.
-	 */	
+	 */
 	function print_styles()
 	{
 		do_action('bwp_minify_before_styles');
@@ -744,7 +744,7 @@ if (!empty($page))
 
 		do_action('bwp_minify_after_styles');
 	}
-	
+
 	function print_media_styles()
 	{
 		do_action('bwp_minify_before_media_styles');
@@ -789,7 +789,7 @@ if (!empty($page))
 	/**
 	 * Loop through current todo array to build our minify string (min/?f=script1.js,script2.js)
 	 *
-	 * If the number of scripts reaches a limit (by default the limit is 10) this plugin will split the minify string 
+	 * If the number of scripts reaches a limit (by default the limit is 10) this plugin will split the minify string
 	 * into an appropriate number of <script> tags. This is to beautify your minify strings (or else they might get too long).
 	 * If you don't like such behaviour, change the limit to something higher, e.g. 50.
 	 */
@@ -842,7 +842,7 @@ if (!empty($page))
 				$src = $this->process_media_source($src);
 				// If this script is not allowed
 				if ('all' != $this->print_positions['allowed'] && !$this->is_in($script_handle, 'allowed'))
-					$this->ignores_script($script_handle, &$temp, $the_script->deps, $ignore_type);
+					$this->ignores_script($script_handle, $temp, $the_script->deps, $ignore_type);
 				// If this script does not belong to 'direct' or 'ignore' list
 				else if (!$this->is_in($script_handle, 'ignore') && !$this->is_in($script_handle, 'direct'))
 				{
@@ -875,10 +875,10 @@ if (!empty($page))
 						$count_h++; $header_count++;
 						$this->append_minify_string($this->header_scripts, $header_count, $src, $count_h == $total - $total_footer);
 						if (true == $this->is_l10n($script_handle))
-							$this->header_l10n[] = $script_handle;							
+							$this->header_l10n[] = $script_handle;
 					}
 					else
-						$this->ignores_script($script_handle, &$temp, $the_script->deps, $ignore_type);				
+						$this->ignores_script($script_handle, $temp, $the_script->deps, $ignore_type);
 				}
 				else
 				{
@@ -889,11 +889,11 @@ if (!empty($page))
 						$wp_scripts->registered[$script_handle]->ver = NULL;
 					}
 
-					$this->ignores_script($script_handle, &$temp, $the_script->deps, $ignore_type);
+					$this->ignores_script($script_handle, $temp, $the_script->deps, $ignore_type);
 				}
 			}
 			else
-				$this->ignores_script($script_handle, &$temp, $the_script->deps, $ignore_type);
+				$this->ignores_script($script_handle, $temp, $the_script->deps, $ignore_type);
 		}
 
 		//$this->queueable = false;
@@ -905,7 +905,7 @@ if (!empty($page))
 	 * Main function to print out our scripts
 	 *
 	 * Use actions provided to add other things before or after the output.
-	 */	
+	 */
 	function print_scripts($action = 'header')
 	{
 		do_action('bwp_minify_before_' . $action . '_scripts');
